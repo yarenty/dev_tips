@@ -18,12 +18,16 @@ tokio = { version = "1", features = ["full"] }
 serde = { version = "1.0", features = ["derive"] }
 ```
 
+
+remove 50% size of binary by:
 ```toml
 [profile.release]
+strip = true # remove if using bloat
 panic = "abort" # Strip expensive panic clean-up logic
 codegen-units = 1 # Compile crates one after another so the compiler can optimize better
 lto = true # Enables link to optimizations
 opt-level = "s" # Optimize for binary size - try "z" 
+
 ```
 
 # anyhow
