@@ -1,5 +1,14 @@
 # WASM
 
+https://github.com/WebAssembly
+(general) proposals, status, meetings, 
+
+
+
+https://github.com/bytecodealliance
+(rust) wasmtime, tools, runtime, bindgen,
+
+
 
 Update 202211:
 
@@ -11,6 +20,10 @@ Soon there willbe async support and hopefully cloud.
 Some good thoughts and intro: https://www.youtube.com/watch?v=DkpNqcfuPOM
 
 
+
+# wasmtime
+
+https://crates.io/crates/wasmtime
 
 
 
