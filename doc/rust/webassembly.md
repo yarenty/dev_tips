@@ -1,3 +1,19 @@
+# WASM
+
+
+Update 202211:
+
+![Status](../img/wasm/WASM_202211_status.png)
+
+This is still work in progress - but good direction. 
+Soon there willbe async support and hopefully cloud.
+
+Some good thoughts and intro: https://www.youtube.com/watch?v=DkpNqcfuPOM
+
+
+
+
+
 # YEW
 
 https://yew.rs/
