@@ -30,6 +30,20 @@ opt-level = "s" # Optimize for binary size - try "z"
 
 ```
 
+
+speedup debuging builds
+
+```toml
+
+# Enable a small amount of optimization in debug mode
+[profile.dev]
+opt-level = 1
+
+# Enable high optimizations for dependencies (incl. Bevy), but not for our code:
+[profile.dev.package."*"]
+opt-level = 3
+
+```
 # anyhow
 
 https://crates.io/crates/anyhow
