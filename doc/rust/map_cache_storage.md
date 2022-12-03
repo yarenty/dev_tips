@@ -1,3 +1,19 @@
+# DashMap
+
+https://crates.io/crates/dashmap
+
+Blazingly fast concurrent map in Rust.
+
+DashMap is an implementation of a concurrent associative array/hashmap in Rust.
+
+DashMap tries to implement an easy to use API similar to std::collections::HashMap with some slight changes to handle concurrency.
+
+DashMap tries to be very simple to use and to be a direct replacement for RwLock<HashMap<K, V>>. To accomplish these goals, all methods take &self instead of modifying methods taking &mut self. This allows you to put a DashMap in an Arc<T> and share it between threads while still being able to modify it.
+
+DashMap puts great effort into performance and aims to be as fast as possible. If you have any suggestions or tips do not hesitate to open an issue or a PR.
+
+
+
 # Memory storage
 
 ## EVMap
