@@ -67,5 +67,10 @@ sudo vi httpd.conf
 LoadModule php_module /usr/local/opt/php/lib/httpd/modules/libphp.so "Jaros CA"
 
 
+codesign -dv --verbose=4 "/usr/local/opt/php/lib/httpd/modules/libphp.so"
+
+
+
+
 
 
