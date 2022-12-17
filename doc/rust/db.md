@@ -222,3 +222,23 @@ Query::select()
 
 
 
+
+# tiberius
+
+https://crates.io/crates/tiberius
+
+
+A native Microsoft SQL Server (TDS) client for Rust.
+
+## Goals
+- A perfect implementation of the TDS protocol.
+- Asynchronous network IO.
+- Independent of the network protocol.
+- Support for latest versions of Linux, Windows and macOS.
+## Non-goals
+- Connection pooling (use bb8, mobc, deadpool or any of the other asynchronous connection pools)
+- Query building
+- Object-relational mapping
+
+
+
