@@ -220,5 +220,40 @@ looks like it should work ...
 
 
 
+## Bert
+
+https://crates.io/crates/rust-bert
+
+Rust-native state-of-the-art Natural Language Processing models and pipelines. Port of Hugging Face's Transformers library, using the tch-rs crate and pre-processing from rust-tokenizers. Supports multi-threaded tokenization and GPU inference. This repository exposes the model base architecture, task-specific heads (see below) and ready-to-use pipelines. Benchmarks are available at the end of this document.
+
+Get started with tasks including question answering, named entity recognition, translation, summarization, text generation, conversational agents and more in just a few lines of code:
+```rust
+    let qa_model = QuestionAnsweringModel::new(Default::default())?;
+                                                        
+    let question = String::from("Where does Amy live ?");
+    let context = String::from("Amy lives in Amsterdam");
+
+    let answers = qa_model.predict(&[QaInput { question, context }], 1, 32);
+```    
+Output:
+```log
+[Answer { score: 0.9976, start: 13, end: 21, answer: "Amsterdam" }]
+```
+
+The tasks currently supported include:
+
+- Translation
+- Summarization
+- Multi-turn dialogue
+- Zero-shot classification
+- Sentiment Analysis
+- Named Entity Recognition
+- Part of Speech tagging
+- Question-Answering
+- Language Generation
+- Sentence Embeddings
+
+
+
 
 
