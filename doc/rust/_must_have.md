@@ -2,6 +2,10 @@
 
 https://crates.io/crates/awesome-rust
 
+and another one:
+
+https://gist.github.com/cedrickchee/f729e848b52eab8fbc88a3910072198c
+
 
 # Simple short intro to rust
 https://fasterthanli.me/articles/a-half-hour-to-learn-rust
