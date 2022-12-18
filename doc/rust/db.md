@@ -2,6 +2,11 @@
 
 https://crates.io/crates/diesel
 
+
+## youtube
+https://www.youtube.com/watch?v=tRC4EIKhMzw
+
+
 Diesel - A safe, extensible ORM and Query Builder for Rust
 Diesel is the most productive way to interact with databases in Rust because of its safe and composable abstractions over queries.
 
