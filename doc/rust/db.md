@@ -27,7 +27,73 @@ diesel = { version = "<version>", features = ["<postgres|mysql|sqlite>"] }
 ## Getting Started
 Find our extensive Getting Started tutorial at https://diesel.rs/guides/getting-started. Guides on more specific features are coming soon.
 
+
+
+
 # r2d2
+
+https://github.com/sfackler/r2d2
+
+
+
+A generic connection pool for Rust.
+
+Documentation
+
+Opening a new database connection every time one is needed is both inefficient and can lead to resource exhaustion under high traffic conditions. A connection pool maintains a set of open connections to a database, handing them out for repeated use.
+
+r2d2 is agnostic to the connection type it is managing. Implementors of the ManageConnection trait provide the database-specific logic to create and check the health of connections.
+
+A (possibly not exhaustive) list of adaptors for different backends:
+
+| Backend |	Adaptor Crate|
+|------|-----|
+|rust-postgres	|r2d2-postgres
+|redis-rs	|use r2d2 feature of redis-rs
+|rust-memcache	|r2d2-memcache
+|rust-mysql-simple	|r2d2-mysql
+|rusqlite	|r2d2-sqlite
+|rsfbclient	|r2d2-firebird
+|rusted-cypher	|r2d2-cypher
+|diesel	|diesel::r2d2 (docs)
+|couchdb	|r2d2-couchdb
+|mongodb (archived)	| r2d2-mongodb (deprecated: official driver handles pooling internally)
+|odbc	|r2d2-odbc
+|jfs	|r2d2-jfs
+|oracle	|r2d2-oracle
+|ldap3	|r2d2-ldap
+|duckdb-rs	|use r2d2 feature of duckdb-rs
+
+## Example
+Using an imaginary "foodb" database.
+
+```rust
+use std::thread;
+
+extern crate r2d2;
+extern crate r2d2_foodb;
+
+fn main() {
+    let manager = r2d2_foodb::FooConnectionManager::new("localhost:1234");
+    let pool = r2d2::Pool::builder()
+        .max_size(15)
+        .build(manager)
+        .unwrap();
+
+    for _ in 0..20 {
+        let pool = pool.clone();
+        thread::spawn(move || {
+            let conn = pool.get().unwrap();
+            // use the connection
+            // it will be returned to the pool when it falls out of scope.
+        })
+    }
+}
+```
+
+
+
+
 
 
 # surrealDB
@@ -241,4 +307,54 @@ A native Microsoft SQL Server (TDS) client for Rust.
 - Object-relational mapping
 
 
+# deadpool
 
+https://crates.io/crates/deadpool
+
+Deadpool is a dead simple async pool for connections and objects of any type.
+
+This crate provides two implementations:
+
+Managed pool (deadpool::managed::Pool)
+
+Creates and recycles objects as needed
+Useful for database connection pools
+Enabled via the managed feature in your Cargo.toml
+Unmanaged pool (deadpool::unmanaged::Pool)
+
+All objects either need to be created by the user and added to the pool manually. It is also possible to create a pool from an existing collection of objects.
+Enabled via the unmanaged feature in your Cargo.toml
+
+
+# mobc
+
+https://crates.io/crates/mobc
+
+A generic connection pool with async/await support.
+
+Inspired by r2d2 and Golang SQL package.
+
+
+# bb8
+
+https://crates.io/crates/bb8
+
+full-featured connection pool, designed for asynchronous connections (using tokio). Originally based on r2d2.
+
+Opening a new database connection every time one is needed is both inefficient and can lead to resource exhaustion under high traffic conditions. A connection pool maintains a set of open connections to a database, handing them out for repeated use.
+
+bb8 is agnostic to the connection type it is managing. Implementors of the ManageConnection trait provide the database-specific logic to create and check the health of connections.
+
+A (possibly not exhaustive) list of adapters for different backends:
+
+| Backend |	Adapter Crate |
+|-----|-----|
+| tokio-postgres	| bb8-postgres (in-tree)
+| redis	| bb8-redis (in-tree)
+| rsmq	| rsmq_async
+| bolt-client	| bb8-bolt
+| diesel	| bb8-diesel
+| tiberius	| bb8-tiberius
+| nebula-client	| bb8-nebula
+| memcache-async	| bb8-memcached
+| lapin	| bb8-lapin
