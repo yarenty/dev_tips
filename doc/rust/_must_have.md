@@ -7,6 +7,11 @@ https://crates.io/crates/awesome-rust
 https://fasterthanli.me/articles/a-half-hour-to-learn-rust
 
 
+# Cheats
+
+https://cheats.rs/
+
+
 # Cargo.toml
 
 ```toml
