@@ -255,5 +255,22 @@ The tasks currently supported include:
 
 
 
+# BURN
+
+
+https://github.com/burn-rs/burn
+
+
+This library aims to be a complete deep learning framework with extreme flexibility written in Rust. The goal would be to satisfy researchers as well as practitioners making it easier to experiment, train and deploy your models.
+
+
+Features
+- Flexible and intuitive custom neural network module 🔥
+- Training with full support for metric, logging and checkpointing 📈
+- Tensor crate with backends as pluging 🔧
+  - Tch backend with CPU/GPU support 🚀
+  - NdArray backend with fast compile time 👌
+  - Autodiff backend making any backend differentiable 🌟
+- Dataset crate with multiple utilities and sources 📚
 
 
