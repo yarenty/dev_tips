@@ -5,12 +5,12 @@ https://crates.io/crates/hyper
 
 A fast and correct HTTP implementation for Rust.
 
-HTTP/1 and HTTP/2
-Asynchronous design
-Leading in performance
-Tested and correct
-Extensive production use
-Client and Server APIs
+- HTTP/1 and HTTP/2
+- Asynchronous design
+- Leading in performance
+- Tested and correct
+- Extensive production use
+- Client and Server APIs
 
 
 
@@ -40,3 +40,46 @@ An ergonomic, batteries-included HTTP Client for Rust.
 - WASM
 
 
+
+# Rocket
+
+https://rocket.rs/
+
+Rocket is a web framework for Rust that makes it simple to write fast, secure web applications without sacrificing flexibility, usability, or type safety.
+
+
+
+
+* Type Safe
+From request to response Rocket ensures that your types mean something.
+
+* Boilerplate Free
+Spend your time writing code that really matters, and let Rocket generate the rest.
+
+* Easy To Use
+Simple, intuitive APIs make Rocket approachable, no matter your background.
+
+* Extensible
+Create your own first-class primitives that any Rocket application can use.
+
+
+```rust
+#[macro_use] extern crate rocket;
+
+#[get("/hello/<name>/<age>")]
+fn hello(name: &str, age: u8) -> String {
+    format!("Hello, {} year old named {}!", age, name)
+}
+
+#[launch]
+fn rocket() -> _ {
+    rocket::build().mount("/", routes![hello])
+}
+```
+
+
+This is a complete Rocket application. It does exactly what you would expect. If you were to visit /hello/John/58, you’d see:
+
+Hello, 58 year old named John!
+
+If someone visits a path with an <age> that isn’t a u8, Rocket doesn’t blindly call hello. Instead, it tries other matching routes or returns a 404.
