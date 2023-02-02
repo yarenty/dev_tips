@@ -1,6 +1,14 @@
 # Books
 
 
+## Design patterns
+
+https://rust-unofficial.github.io/patterns/
+
+All patterns:
+https://github.com/DovAmir/awesome-design-patterns
+
+
 # Tutorials
 
 
