@@ -19,6 +19,8 @@ https://cheats.rs/
 
 # Tutorials
 
+https://google.github.io/comprehensive-rust/welcome.html
+
 
 
 # Scope 
