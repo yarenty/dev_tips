@@ -274,3 +274,7 @@ Features
 - Dataset crate with multiple utilities and sources 📚
 
 
+
+https://github.com/burn-rs/burn#examples
+
+
