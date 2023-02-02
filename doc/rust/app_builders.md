@@ -14,3 +14,11 @@ A full introduction and code review of the AWESOME-APP Rust template for buildin
 04:04 - Backend Code Review
 26:31 - Frontend Code Review
 40:04 - Setup files (Postcss, Rollup, TypeScript, and Awesome.toml)
+
+
+
+# TAURI
+
+
+https://tauri.app/v1/guides/getting-started/setup
+
