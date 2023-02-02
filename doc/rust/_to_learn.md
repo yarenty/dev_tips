@@ -5,6 +5,13 @@
 
 https://rust-lang-nursery.github.io/rust-cookbook/intro.html
 
+## Rust Atomics and Locks
+
+Low-Level Concurrency in Practice
+by Mara Bos
+
+https://marabos.nl/atomics/
+
 ## Design patterns
 
 https://rust-unofficial.github.io/patterns/
@@ -18,6 +25,8 @@ https://github.com/DovAmir/awesome-design-patterns
 https://cheats.rs/
 
 # Tutorials
+
+## Comprehensive rust 
 
 https://google.github.io/comprehensive-rust/welcome.html
 
