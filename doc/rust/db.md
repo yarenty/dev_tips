@@ -191,7 +191,6 @@ This crate provides only a syntax parser, and tries to avoid applying any SQL se
 
 
 
-# SeqQuery
 
 # SeaQuery
 
@@ -363,3 +362,45 @@ A (possibly not exhaustive) list of adapters for different backends:
 | nebula-client	| bb8-nebula
 | memcache-async	| bb8-memcached
 | lapin	| bb8-lapin
+
+
+
+# GreptimeDB
+
+https://github.com/GreptimeTeam/greptimedb
+
+GreptimeDB is an open-source time-series database with a special focus on scalability, analytical capabilities and efficiency. It's designed to work on infrastructure of the cloud era, and users benefit from its elasticity and commodity storage.
+
+Our core developers have been building time-series data platform for years. Based on their best-practices, GreptimeDB is born to give you:
+
+A standalone binary that scales to highly-available distributed cluster, providing a transparent experience for cluster users
+Optimized columnar layout for handling time-series data; compacted, compressed, stored on various storage backends
+Flexible index options, tackling high cardinality issues down
+Distributed, parallel query execution, leveraging elastic computing resource
+Native SQL, and Python scripting for advanced analytical scenarios
+Widely adopted database protocols and APIs
+Extensible table engine architecture for extensive workloads
+
+
+# parseable
+
+
+https://github.com/parseablehq/parseable
+Parseable is a lightweight, cloud native log observability engine. It can use either a local drive or S3 (and compatible stores) for backend data storage.
+
+Parseable is written in Rust and uses Apache Arrow and Parquet as underlying data structures. Additionally, it uses a simple, index-free mechanism to organize and query data allowing low latency, and high throughput ingestion and query.
+
+Parseable consumes up to ~80% lower memory and ~50% lower CPU than Elastic for similar ingestion throughput.
+
+Parseable UI Demo (Credentials: parseable,parseable) ↗︎
+Grafana Dashboard Demo ↗︎
+🚀 Features
+Choose your own storage backend - local drive or S3 (or compatible) object store.
+Ingestion API compatible with HTTP + JSON output of log agents - Fluentbit ↗︎, Vector ↗︎, Logstash ↗︎ and others.
+Query log data with PostgreSQL compatible SQL.
+Grafana ↗︎ for visualization.
+Auto schema inference (schema evolution coming soon ↗︎).
+Send alerts ↗︎ to webhook targets including Slack.
+Stats API ↗︎ to track ingestion and compressed data.
+Single binary includes all components - ingestion, store and query. Built-in UI.
+
