@@ -1,6 +1,10 @@
 # Books
 
 
+## Cookbook
+
+https://rust-lang-nursery.github.io/rust-cookbook/intro.html
+
 ## Design patterns
 
 https://rust-unofficial.github.io/patterns/
@@ -8,6 +12,10 @@ https://rust-unofficial.github.io/patterns/
 All patterns:
 https://github.com/DovAmir/awesome-design-patterns
 
+
+# Cheats
+
+https://cheats.rs/
 
 # Tutorials
 
