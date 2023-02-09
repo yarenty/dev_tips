@@ -31,6 +31,10 @@ https://cheats.rs/
 https://google.github.io/comprehensive-rust/welcome.html
 
 
+## Macros
+
+https://www.youtube.com/watch?v=MWRPYBoCEaY
+
 
 # Scope 
 
