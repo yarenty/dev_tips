@@ -1,4 +1,4 @@
-# List of awsome libraries !!!
+# List of awesome libraries !!!
 
 https://crates.io/crates/awesome-rust
 
@@ -40,7 +40,7 @@ opt-level = "s" # Optimize for binary size - try "z"
 ```
 
 
-speedup debuging builds
+speedup debugging builds
 
 ```toml
 
@@ -48,16 +48,16 @@ speedup debuging builds
 [profile.dev]
 opt-level = 1
 
-# Enable high optimizations for dependencies (incl. Bevy), but not for our code:
+# Enable high optimizations for dependencies, but not for our code:
 [profile.dev.package."*"]
 opt-level = 3
 
 ```
+
+
 # anyhow
 
 https://crates.io/crates/anyhow
-
-
 Error reporting ...
 
 
