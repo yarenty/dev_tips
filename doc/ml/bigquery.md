@@ -36,3 +36,30 @@ BigQuery ML supports the following types of models:
 
 
 
+
+
+
+
+| Functionality	                                                   | Snowflake                                                                              |	BigQuery
+|------------------------------------------------------------------|----------------------------------------------------------------------------------------|----
+| Separation of storage and compute	                               | Yes	                                                                                   | Yes
+| Supported cloud infrastructure	                                  | AWS, Azure, Google Cloud	                                                              | Google Cloud only
+| Isolated tenancy – option for dedicated resources	               | – Multi-tenant pooled resources <br/>– Isolated tenancy available via “VPS” tier	      | – Multi-tenant pooled resources <br/>– “VPC Service Controls” can be used to limit connectivity to your VPC
+| Control vs abstraction of compute	                               | – Configurable cluster size (1-128 nodes, 256 and 512 in preview)                      | – No control over compute types	Serverless, no control over compute (BigQuery determines how many “slots” each query needs)
+| Elasticity – Scaling for larger data volumes and faster queries	 | Cluster resize; No choice of node size	                                                | Fully abstracted – BigQuery decides how many “slots” to allocate for each query. No way to “force” more compute for faster queries.
+| Elasticity – Scaling for higher concurrency	                     | 8 concurrent queries per warehouse by default, <br/> Autoscaling up to 10 warehouses.	 | Limited to 100 concurrent users by default
+| Indexes	                                                         | “Search optimization service” indexes fields for accelerated point lookup queries, at additional cost; Materialized views | None
+| Compute tuning	                                                  | Compute is chosen from a fixed T-shirt size list which abstracts underlying # of nodes, CPU, RAM and SSD	| No choice over how many slots are allocated for queries
+| Storage format	                                                  | Columnar micro-partitioned & compressed storage	| Columnar & compressed storage (code named “Capacitor”)
+| Table-level partition & pruning techniques	                      | Data is automatically divided into micro-partitions. Pruning at micro-partition level. Table clustering (cluster keys)	| User-defined Table-level partitions. Pruning at partition level.
+| Result cache                                                     |	Yes	| Yes
+| Warm cache (SSD)	                                                | Yes, at micro–partition level granularity.	| No
+| Support for Semi-structured data & JSON functions within SQL	    | Yes	| Yes
+| Low-latency dashboards	                                          | Dozens of second load times at 100s of GB scale	| Dozens of second load times at 100s of GB scale
+| Enterprise BI	                                                   | Mature and broad Enterprise DW featureset	| Mature and broad Enterprise DW featureset
+| Data Apps <br/> (Customer-facing, low latency, high concurrency) |– Dozens of second load times at 100s of GB scale. <br/> – Scale-out to more clusters required starting from dozens of concurrent queries. | – Dozens of second load times at 100s of GB scale. <br/>– Supports up to 100 concurrent queries.
+| Ad hoc	                                                          | Decoupled storage/compute architecture allows to spin up ad-hoc resources	| Serverless architecture enables ad-hoc without worrying about compute
+
+
+
+When testing a TPC-DS workload, research firm GIGAOM found that Snowflake consistently performed better than BigQuery
