@@ -32,7 +32,7 @@ BigQuery ML supports the following types of models:
 
 
 
-![ML cheetsheet](../../resources/ml-model-cheatsheet.svg)
+![ML cheetsheet](../img/ml-model-cheatsheet.svg)
 
 
 
