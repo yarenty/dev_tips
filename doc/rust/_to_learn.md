@@ -19,6 +19,19 @@ https://rust-unofficial.github.io/patterns/
 All patterns:
 https://github.com/DovAmir/awesome-design-patterns
 
+## Rustonomicon - The Dark Arts of Unsafe Rust
+
+https://doc.rust-lang.org/nomicon/intro.html
+
+## The Little Book of Rust Macros
+
+https://veykril.github.io/tlborm/introduction.html
+
+
+## The Rust Performance Book
+
+https://nnethercote.github.io/perf-book/title-page.html
+
 
 # Cheats
 
@@ -34,6 +47,8 @@ https://google.github.io/comprehensive-rust/welcome.html
 ## Macros
 
 https://www.youtube.com/watch?v=MWRPYBoCEaY
+
+
 
 
 # Scope 
