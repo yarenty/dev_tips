@@ -65,4 +65,8 @@ print "Hello, world!"
 
 More: <https://rust-lang.github.io/mdBook/format/mdbook.html>
 
+RUST mdbook:
+https://rust-lang.github.io/mdBook/index.html
+
+https://rust-lang.github.io/mdBook/guide/creating.html
 
