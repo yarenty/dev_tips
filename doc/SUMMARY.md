@@ -90,7 +90,8 @@ Only interesting stuff (personally).
   - [MOEA](genetics/moea.md)
 - [Datasets](ml/datasets/README.md)
   - [Public](ml/datasets/public.md)
-  - [APIs](dml/atasets/apis.md)
+  - [APIs](ml/atasets/apis.md)
+- [XLA](ml/XLA_accelerated_compiler.md)
 
 
 # Tools
