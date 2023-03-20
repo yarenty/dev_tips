@@ -55,6 +55,42 @@ opt-level = 3
 ```
 
 
+Must have traits:
+
+```rust
+#[derive(Debug, Clone, Default, PartialEq)]
+pub struct UpdateUserRequest {
+    /// <p>The user's email address.</p>
+    #[doc(hidden)]
+    pub email: std::option::Option<std::string::String>,
+    /// <p>The user's first name.</p>
+    #[doc(hidden)]
+    pub first_name: std::option::Option<std::string::String>,
+    /// <p>The user's last name.</p>
+    #[doc(hidden)]
+    pub last_name: std::option::Option<std::string::String>,
+    /// <p>The user's password.</p>
+    #[doc(hidden)]
+    pub password: std::option::Option<std::string::String>,
+}
+```
+
+TRICK: automatic test for send & synd :
+
+```rust
+
+fn is_normal<T: Sized + Send + Sync + Unpin>() {}
+
+#[test]
+fn normal_types() {
+ is_normal<UpdateUserRequest>();
+}
+
+```
+
+
+
+
 # anyhow
 
 https://crates.io/crates/anyhow
