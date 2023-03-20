@@ -58,7 +58,12 @@ opt-level = 3
 Must have traits:
 
 ```rust
+#[cfg(feature="serde")]
+use serde::{Deserialize, Serialize};
+
+
 #[derive(Debug, Clone, Default, PartialEq)]
+#[cfg_attr(feature="serde", derive(Deserialize, Serialize))]
 pub struct UpdateUserRequest {
     /// <p>The user's email address.</p>
     #[doc(hidden)]
@@ -71,9 +76,30 @@ pub struct UpdateUserRequest {
     pub last_name: std::option::Option<std::string::String>,
     /// <p>The user's password.</p>
     #[doc(hidden)]
+    #[cfg_attr(feature="serde" serde(skip)]
     pub password: std::option::Option<std::string::String>,
 }
+
+
+fn main() {
+ 
+ let s = "{ \"email\": \"aa@aa.a\", \"first_name\": \"John\",  \"last_name\": \"Travolta\" }";
+ let u :UpdateUserRequest = serde_json::from_str(s).unwrap();
+ 
+}
 ```
+
+Serde - optional  - switched in cargo
+```toml
+
+[dependencies]
+serde= { version = "1.0", features=["derive"], optional = true}
+serde_json = "1.0"
+
+[features]
+serde = ["dep:serde"]
+```
+
 
 TRICK: automatic test for send & synd :
 
