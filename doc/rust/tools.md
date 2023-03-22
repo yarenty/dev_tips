@@ -1,3 +1,85 @@
+# coreutils
+
+cargo isntall coreutile
+
+
+# dusk  - replacement of du
+
+cargo install du-dusk
+
+dusk
+
+
+
+# mprocs - replacement of tmux for long running processes! 
+like DB, logs , ...
+
+cargo install mprocs
+
+
+# zellij - replacement of tmux - with colors and stuff
+
+cargo install zellij
+
+
+# ripgrep
+
+https://crates.io/crates/ripgrep
+
+
+ripgrep is a line-oriented search tool that recursively searches the current directory for a regex pattern. By default, ripgrep will respect gitignore rules and automatically skip hidden files/directories and binary files. ripgrep has first class support on Windows, macOS and Linux, with binary downloads available for every release. ripgrep is similar to other popular search tools like The Silver Searcher, ack and grep.
+
+cargo install ripgrep
+
+rg test
+
+
+
+# BAT
+
+Like cat but with syntax highlights of displaying unvisibles
+
+https://crates.io/crates/bat
+
+A cat(1) clone with wings.
+
+
+# EXA
+
+new ls
+
+
+https://crates.io/crates/exa
+
+exa is a modern replacement for the venerable file-listing command-line program ls that ships with Unix and Linux operating systems, giving it more features and better defaults. It uses colours to distinguish file types and metadata. It knows about symlinks, extended attributes, and Git. And it’s small, fast, and just one single binary.
+
+By deliberately making some decisions differently, exa attempts to be a more featureful, more user-friendly version of ls. For more information, see exa’s website.
+
+
+# bottom
+
+NICE TEXT GRAPHS
+
+https://crates.io/crates/bottom
+
+
+A customizable cross-platform graphical process/system monitor for the terminal. Supports Linux, macOS, and Windows.
+#tui #cross-platform #cli #monitoring #top
+
+
+
+# RUST in JUPYTER
+
+cargo install evcxr_jupyter
+
+and just: jupyter notebook
+
+
+----
+
+
+
+
 # zoxide
 
 https://crates.io/crates/zoxide
@@ -16,12 +98,6 @@ https://github.com/Zij-IT/clido
 TODO list in CLI
 
 
-# ripgrep
-
-https://crates.io/crates/ripgrep
-
-
-ripgrep is a line-oriented search tool that recursively searches the current directory for a regex pattern. By default, ripgrep will respect gitignore rules and automatically skip hidden files/directories and binary files. ripgrep has first class support on Windows, macOS and Linux, with binary downloads available for every release. ripgrep is similar to other popular search tools like The Silver Searcher, ack and grep.
 
 # joshuto
 
@@ -54,13 +130,7 @@ How does it work?
 bandwhich sniffs a given network interface and records IP packet size, cross referencing it with the /proc filesystem on linux, lsof on macOS, or using WinApi on windows. It is responsive to the terminal window size, displaying less info if there is no room for it. It will also attempt to resolve ips to their host name in the background using reverse DNS on a best effort basis.
 
 
-# BAT
 
-Like cat but with syntax highlights of displaying unvisibles
-
-https://crates.io/crates/bat
-
-A cat(1) clone with wings.
 
 
 # starship
@@ -95,27 +165,6 @@ https://github.com/resyncgg/armada
 Armada is a high performance TCP SYN scanner. This is equivalent to the type of scanning that nmap might perform when you use the -sS scan type. Armada's main goal is to answer the basic question "Is this port open?". It is then up to you, or your tooling, to dig further to identify what an open port is for.
 
 
-# EXA
-
-new ls
-
-
-https://crates.io/crates/exa
-
-exa is a modern replacement for the venerable file-listing command-line program ls that ships with Unix and Linux operating systems, giving it more features and better defaults. It uses colours to distinguish file types and metadata. It knows about symlinks, extended attributes, and Git. And it’s small, fast, and just one single binary.
-
-By deliberately making some decisions differently, exa attempts to be a more featureful, more user-friendly version of ls. For more information, see exa’s website.
-
-
-# bottom
-
-NICE TEXT GRAPHS
-
-https://crates.io/crates/bottom
-
-
-A customizable cross-platform graphical process/system monitor for the terminal. Supports Linux, macOS, and Windows.
-#tui #cross-platform #cli #monitoring #top
 
 
 
