@@ -1,5 +1,12 @@
 # Commands to install
 
+## killport
+
+https://github.com/jkfran/killport
+
+```shell
+cargo install killport
+```
 
 ## cmatrix
 
