@@ -404,3 +404,40 @@ Send alerts ↗︎ to webhook targets including Slack.
 Stats API ↗︎ to track ingestion and compressed data.
 Single binary includes all components - ingestion, store and query. Built-in UI.
 
+
+
+# WooriDB
+
+https://github.com/naomijub/wooridb
+
+WooriDB is a general purpose (EXPERIMENTAL) time serial database, which means it contains all entities registries indexed by DateTime. It is schemaless, key-value storage and uses its own query syntax that is similar to SparQL and Crux's Datalog.
+
+Some other features are:
+
+- Hashing keys content with ENCRYPT keyword.
+- Hashed values are filtered out and can only be checked with CHECK keyword.
+- Ron schemas for input and output.
+- JSON is supported via feature.
+- Entities are indexed by entity_name (Entity Tree), DateTime (Time Serial) and Uuid (Entity ID). Entity format is a HashMap where keys are strings and values are supported Types.
+- Stores persistent data locally.
+- Able to handle very large numbers when using the P suffix.  Ex: 98347883122138743294728345738925783257325789353593473247832493483478935673.9347324783249348347893567393473247832493483478935673P.
+- Configuration is done via environment variables.
+- Authentication and Authorization via session token
+- Conditional Update
+- Some Relation Algebra
+- Entity history
+
+Woori means our and although I developed this DB initially alone, it is in my culture to call everything that is done for our community and by our community ours.
+
+This project is hugely inspired by:
+
+- Crux;
+- Datomic;
+- Prometheus
+- SparQL.
+- Database Internals
+- Database System Concept
+- Designing Data Intensive Application
+- Professor Andy Pavlo Database classes.
+- Zero Trust in Time Series Data?
+
