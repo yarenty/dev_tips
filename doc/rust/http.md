@@ -72,7 +72,7 @@ fn hello(name: &str, age: u8) -> String {
 }
 
 #[launch]
-fn rocket() -> _ {
+fn rocket() -> () {
     rocket::build().mount("/", routes![hello])
 }
 ```
@@ -83,3 +83,25 @@ This is a complete Rocket application. It does exactly what you would expect. If
 Hello, 58 year old named John!
 
 If someone visits a path with an <age> that isn’t a u8, Rocket doesn’t blindly call hello. Instead, it tries other matching routes or returns a 404.
+
+
+
+# Axum 
+
+https://github.com/tokio-rs/axum
+
+https://docs.rs/axum/latest/axum/
+
+There is proposition to demote rocket and use Axum instead.
+Axum is build by tokio team
+No macros
+No middleware - use tower / tonic / hyper / - easy integration.
+
+
+Official features:
+
+- Route requests to handlers with a macro-free API.
+- Declaratively parse requests using extractors.
+- Simple and predictable error handling model.
+- Generate responses with minimal boilerplate.
+- Take full advantage of the tower and tower-http ecosystem of middleware, services, and utilities.
