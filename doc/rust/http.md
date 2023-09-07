@@ -94,6 +94,10 @@ https://docs.rs/axum/latest/axum/
 
 There is proposition to demote rocket and use Axum instead.
 Axum is build by tokio team
+
+https://tokio.rs/blog/2022-11-25-announcing-axum-0-6-0
+
+
 No macros
 No middleware - use tower / tonic / hyper / - easy integration.
 
@@ -105,3 +109,7 @@ Official features:
 - Simple and predictable error handling model.
 - Generate responses with minimal boilerplate.
 - Take full advantage of the tower and tower-http ecosystem of middleware, services, and utilities.
+
+https://medium.com/@lindblomdev/beginning-rust-by-exploring-a-very-basic-axum-web-api-in-detail-1f4c87e422e0
+
+https://www.youtube.com/watch?v=XZtlD_m59sM  - full course 
