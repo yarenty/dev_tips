@@ -27,7 +27,7 @@ async fn main() -> Result<()> {
 
 ```
 
-## Log
+## Simplelog
 
 https://github.com/drakulix/simplelog.rs
 
