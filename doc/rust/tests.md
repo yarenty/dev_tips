@@ -23,3 +23,14 @@ There is no particular scope with the code utilities provided, other than being 
 
 HAS!!! temp dirs / files  and HTTP requests
 
+
+# turmoil
+
+https://crates.io/crates/turmoil
+
+written by tokio team
+https://tokio.rs/blog/2023-01-03-announcing-turmoil
+
+
+Turmoil is a framework for testing distributed systems. It provides deterministic execution by running multiple concurrent hosts within a single thread. It introduces "hardship" into the system via changes in the simulated network. The network can be controlled manually or with a seeded rng.
+
