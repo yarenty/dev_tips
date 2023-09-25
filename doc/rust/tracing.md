@@ -38,3 +38,16 @@ inspired by prometeus
 
 quite interesting
 
+
+
+
+# open telemtry
+
+
+https://opentelemetry.io/docs/instrumentation/rust/
+
+
+https://github.com/open-telemetry/opentelemetry-rust#ecosystem
+
+
+
