@@ -197,3 +197,18 @@ And more!
 
 
 
+
+# lychee
+
+Link checker
+ 
+https://github.com/lycheeverse/lychee/tree/master
+
+
+
+⚡ A fast, async, stream-based link checker written in Rust.
+Finds broken hyperlinks and mail addresses inside Markdown, HTML, reStructuredText, or any other text file or website!
+
+Available as a command-line utility, a library and a GitHub Action.
+
+
