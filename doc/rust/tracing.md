@@ -51,3 +51,11 @@ https://github.com/open-telemetry/opentelemetry-rust#ecosystem
 
 
 
+
+
+# obsetrvability on wasm
+
+https://github.com/dylibso/observe-sdk
+
+https://github.com/dylibso/observe-sdk/tree/main/rust
+
