@@ -3,6 +3,8 @@
 https://github.com/lancedb/lance
 
 
+
+
 Modern columnar data format for ML. Convert from Parquet in 2-lines of code for 100x faster random access, a vector index, data versioning, and more.
 Compatible with pandas, DuckDB, Polars, and pyarrow with more integrations on the way.
 
@@ -21,3 +23,11 @@ Vector search: find nearest neighbors in milliseconds and combine OLAP-queries w
 Zero-copy, automatic versioning: manage versions of your data without needing extra infrastructure.
 
 Ecosystem integrations: Apache Arrow, Pandas, Polars, DuckDB and more on the way.
+
+
+
+## format
+
+
+https://lancedb.github.io/lance/format.html
+
