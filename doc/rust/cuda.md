@@ -34,3 +34,10 @@ https://docs.rapids.ai/api/cudf/stable/
 https://github.com/rayon-rs/rayon/issues/778
  still not?
 
+
+
+## RAPIDS
+
+https://github.com/rapidsai
+
+https://github.com/rapidsai/cudf/#contributing
