@@ -441,3 +441,32 @@ This project is hugely inspired by:
 - Professor Andy Pavlo Database classes.
 - Zero Trust in Time Series Data?
 
+
+
+
+# ADBC !
+
+
+https://github.com/apache/arrow-adbc/tree/main
+
+
+
+https://github.com/apache/arrow-adbc/blob/main/rust/src/lib.rs
+
+ADBC: Arrow Database Connectivity
+
+ADBC is an API standard (version 1.0.0) for database access libraries ("drivers") in C, Go, and Java that uses Arrow for result sets and query parameters. Instead of writing code to convert to and from Arrow data for each individual database, applications can build against the ADBC APIs, and link against drivers that implement the standard. Additionally, a JDBC/ODBC-style driver manager is provided. This also implements the ADBC APIs, but dynamically loads drivers and dispatches calls to them.
+
+Like JDBC/ODBC, the goal is to provide a generic API for multiple databases. ADBC, however, is focused on bulk columnar data retrieval and ingestion through an Arrow-based API rather than attempting to replace JDBC/ODBC in all use cases. Hence, ADBC is complementary to those existing standards.
+
+Like Arrow Flight SQL, ADBC is an Arrow-based way to work with databases. However, Flight SQL is a protocol defining a wire format and network transport as opposed to an API specification. Flight SQL requires a database to specifically implement support for it, while ADBC is a client API specification for wrapping existing database protocols which could be Arrow-native or not. Together, ADBC and Flight SQL offer a fully Arrow-native solution for clients and database vendors.
+
+For more about ADBC, see the introductory blog post.
+
+Status
+ADBC versions the API standard and the implementing libraries separately.
+
+The API standard (version 1.0.0) is considered stable, but enhancements may be made.
+
+Libraries are under development. For more details, see the documentation.
+
