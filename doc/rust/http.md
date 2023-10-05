@@ -12,7 +12,7 @@ A fast and correct HTTP implementation for Rust.
 - Extensive production use
 - Client and Server APIs
 
-
+Low level!
 
 # HyperFS
 
@@ -113,3 +113,39 @@ Official features:
 https://medium.com/@lindblomdev/beginning-rust-by-exploring-a-very-basic-axum-web-api-in-detail-1f4c87e422e0
 
 https://www.youtube.com/watch?v=XZtlD_m59sM  - full course 
+
+
+
+# Tungstenite
+
+https://crates.io/crates/tungstenite
+
+Lightweight stream-based WebSocket implementation for Rust.
+
+```rust
+use std::net::TcpListener;
+use std::thread::spawn;
+use tungstenite::accept;
+
+/// A WebSocket echo server
+fn main () {
+let server = TcpListener::bind("127.0.0.1:9001").unwrap();
+for stream in server.incoming() {
+spawn (move || {
+let mut websocket = accept(stream.unwrap()).unwrap();
+loop {
+let msg = websocket.read().unwrap();
+
+                // We do not want to send back ping/pong messages.
+                if msg.is_binary() || msg.is_text() {
+                    websocket.send(msg).unwrap();
+                }
+            }
+        });
+    }
+}
+```
+Take a look at the examples section to see how to write a simple client/server.
+
+
+
