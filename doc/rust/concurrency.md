@@ -114,3 +114,28 @@ from .. part of rust standard library
 
 https://blog.logrocket.com/concurrent-programming-rust-crossbeam/
 
+
+
+# Spin
+https://crates.io/crates/spin
+
+Spin-based synchronization primitives.
+
+This crate provides spin-based versions of the primitives in std::sync. Because synchronization is done through spinning, the primitives are suitable for use in no_std environments.
+
+Before deciding to use spin, we recommend reading this superb blog post by @matklad that discusses the pros and cons of spinlocks. If you have access to std, it's likely that the primitives in std::sync will serve you better except in very specific circumstances.
+
+Features
+- Mutex, RwLock, Once, Lazy and Barrier equivalents
+- Support for no_std environments
+- lock_api compatibility
+- Upgradeable RwLock guards
+- Guards can be sent and shared between threads
+- Guard leaking
+- Ticket locks
+- Different strategies for dealing with contention
+
+
+https://matklad.github.io/2020/01/02/spinlocks-considered-harmful.html
+
+
