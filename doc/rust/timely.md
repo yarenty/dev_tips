@@ -23,14 +23,13 @@ This will bring in the timely crate from crates.io, which should allow you to st
 
 ```rust
 extern crate timely;
-
 use timely::dataflow::operators::*;
 
 fn main() {
-timely::example(|scope| {
-(0..10).to_stream(scope)
-.inspect(|x| println!("seen: {:?}", x));
-});
+    timely::example(|scope| {
+        (0..10).to_stream(scope)
+            .inspect(|x| println!("seen: {:?}", x));
+    });
 }
 ```
 
