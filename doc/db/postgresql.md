@@ -138,3 +138,14 @@ You can do this instead:
 SELECT * FROM foo
 WHERE (bar IS NULL AND baz IS NULL)
 OR bar = baz;
+
+
+
+## PIGSTY
+
+https://pigsty.io/blog/pg/pg-eat-db-world/
+
+
+Lots of different postgress plugins
+
+
