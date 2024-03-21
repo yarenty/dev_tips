@@ -1,28 +1,4 @@
-
-apache
-
-apachectl start
-
-Step 1 — Install or Restart Apache Web Sharing on Mac
-To start Apache web sharing:
-
-sudo apachectl start
-To stop the Apache service:
-
-sudo apachectl stop
-To restart the Apache service:
-
-sudo apachectl restart
-To find the Apache version:
-
-httpd -v
-Now open your browser and open localhost — you will get this screen as below:
-
-
-
-
-
-PHP
+# PHP
 
 
 brew install php
@@ -55,7 +31,7 @@ Or, if you don't want/need a background service you can just run:
 
 
 
-SIGN!
+## SIGN! PHP on mac
 
 
 
@@ -71,6 +47,8 @@ codesign -dv --verbose=4 "/usr/local/opt/php/lib/httpd/modules/libphp.so"
 
 
 
+## MYSQL 
 
-
-
+```shell
+sudo apt install php8.1-mysql
+```
