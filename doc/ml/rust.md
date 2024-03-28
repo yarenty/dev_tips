@@ -130,6 +130,14 @@ If this strikes a chord with you, please take a look at the [roadmap](https://gi
 More about rust:  [[core]]
 
 
+
+
+
+
+
+# BAD ONES:
+
+
 ## Liquid ML
 
 https://crates.io/crates/liquid-ml
