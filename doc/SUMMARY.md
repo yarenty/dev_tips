@@ -19,7 +19,7 @@ Only interesting stuff (personally).
   - [gRPC](rust/gRPC.md)
   - [trps](rust/trpc.md)
   - [Timely](rust/timely.md)
-  - [Datafusion](rust/datafusion.md)
+  - [Datafusion](datafusion/datafusion.md)
   - [Meilisearch](rust/meilisearch.md)
   - [Storage](rust/storage.md)
   - [Raspberry Pi](rust/raspberry_pi.md)

@@ -21,3 +21,6 @@ https://www.youtube.com/watch?v=A8uMF64rbS8
 
 https://www.youtube.com/watch?v=A8uMF64rbS8
 
+## rust client
+
+https://questdb.io/docs/clients/ingest-rust/
