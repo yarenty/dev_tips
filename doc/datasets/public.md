@@ -1,5 +1,10 @@
 # Datasets
 
+
+https://github.com/yarenty/awesome-public-datasets
+
+
+
 ## Awsome 
 
 https://github.com/awesomedata/awesome-public-datasets
