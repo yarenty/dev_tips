@@ -8,6 +8,44 @@ https://www.youtube.com/watch?v=PzPXRmVHMxI
 
 https://docs.confluent.io/platform/current/quickstart/ce-docker-quickstart.html
 
+## Kafka - MAC
+
+The possible easiest way!!!
+
+```shell
+
+brew services start zookeeper
+brew services start kafka
+
+#to see:
+rpk topic consume output --brokers 127.0.0.1:9092 
+ 
+ 
+```
+
+Important directories:
+```shell
+
+# all definitions are here:
+cd /usr/local/etc/kafka
+
+# all logs are here
+cd /usr/local/var/log/kafka
+
+```
+If there is error conecting to 2181 - didnt start zookeeper
+
+More info on: https://www.conduktor.io/kafka/how-to-install-apache-kafka-on-mac-with-homebrew/
+
+
+
+```shell
+brew services stop kafka
+brew services stop zookeeper
+```
+
+
+
 
 ## KAFKA - WSL
 
