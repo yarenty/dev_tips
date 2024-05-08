@@ -33,6 +33,11 @@ https://veykril.github.io/tlborm/introduction.html
 https://nnethercote.github.io/perf-book/title-page.html
 
 
+## Atomics
+
+https://github.com/m-ou-se/rust-atomics-and-locks
+
+
 # Cheats
 
 https://cheats.rs/
