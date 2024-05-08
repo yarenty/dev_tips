@@ -1,3 +1,44 @@
+# Ratatui
+
+
+https://github.com/ratatui-org/ratatui
+
+Ratatui is a crate for cooking up terminal user interfaces in Rust. It is a lightweight library that provides a set of widgets and utilities to build complex Rust TUIs. Ratatui was forked from the tui-rs crate in 2023 in order to continue its development.
+
+Intro
+https://ratatui.rs/
+
+
+Examples
+
+https://github.com/ratatui-org/ratatui/blob/main/examples/README.md
+
+https://github.com/ratatui-org/ratatui/blob/main/BREAKING-CHANGES.md
+
+
+# Dialoguer
+
+https://github.com/console-rs/dialoguer/tree/master/examples
+
+A rust library for command line prompts and similar things.
+
+Best paired with other libraries in the family:
+
+console
+
+
+# Indicatif
+
+https://github.com/console-rs/indicatif
+
+Rust library for indicating progress in command line applications to users.
+
+This currently primarily provides progress bars and spinners as well as basic color support, but there are bigger plans for the future of this!
+
+
+
+
+
 # Cursive
 
 A TUI (Text User Interface) library focused on ease-of-use.
