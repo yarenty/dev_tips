@@ -149,3 +149,16 @@ https://pigsty.io/blog/pg/pg-eat-db-world/
 Lots of different postgress plugins
 
 
+
+## brew
+
+==> postgresql@14
+This formula has created a default database cluster with:
+initdb --locale=C -E UTF-8 /usr/local/var/postgresql@14
+For more details, read:
+https://www.postgresql.org/docs/14/app-initdb.html
+
+To restart postgresql@14 after an upgrade:
+brew services restart postgresql@14
+Or, if you don't want/need a background service you can just run:
+/usr/local/opt/postgresql@14/bin/postgres -D /usr/local/var/postgresql@14
