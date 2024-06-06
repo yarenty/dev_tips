@@ -58,4 +58,12 @@ Since Datafusion soon will be top ASF project, Comet as part of that will gain m
 - [Spark RAPIDS (NVIDIA)](https://github.com/nvidia/spark-rapids) – GPU executor plugin – most advanced (with build-in Java-to-GPU UDF compilator)
 - [Gluten (Intel) project based on Velox](https://github.com/oap-project/gluten) – accepted recently into Apache Incubator - the functionality may be similar, the technology (Rust vs C/C++) and the communities are different.
 - [Blaze (Datafusion based)](https://github.com/blaze-init/blaze) - has the same design goal ( it may help consolidate efforts), but a different approach (not ASF).
-ent approach (not ASF).&nbsp;</li></ul></div>
+
+
+----
+Tags:
+rust, spark, datafusion, comet, parquet, iceberg, plugins, rapids, photon, gluten, blaze, jvm,
+
+----
+Published: 04/02/2024
+
