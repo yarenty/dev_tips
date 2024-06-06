@@ -17,14 +17,30 @@ Also - list of tips / tricks how to use them, switch  on/off, extend ...
   - add tips how to use 
 
 
+## Structure:
+- doc - contains raw material - output of short investigation with links etc..
+- published - copy of published insights (mostly on yarenty.blogspot.com)
+- 
 
-## Publish
+
+
+## Articles:
+- 04/02/2024 - [Datafusion Comet](published/comet_202401/comet.md) - [https://yarenty.blogspot.com/2024/02/datafusion-comet.html](https://yarenty.blogspot.com/2024/02/datafusion-comet.html)
+
+
+
+
+
+## Publish all sources
 
 This is mdbook structure so:
 1. if pdf is needed uncomment it in book.toml
 2. Build:  ``` mdbook build ```
 3. Output in book directory
 4. Publish - manually
+
+
+
 
 
 
