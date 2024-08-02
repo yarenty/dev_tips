@@ -8,6 +8,12 @@
 
 
 
+https://pyo3.rs/v0.20.0/conversions/tables
+
+
+
+
 ### Datafusion
 
 [datafusion-python](https://github.com/apache/datafusion-python/blob/branch-36/Cargo.toml) 
+
