@@ -54,6 +54,9 @@ https://google.github.io/comprehensive-rust/welcome.html
 https://www.youtube.com/watch?v=MWRPYBoCEaY
 
 
+## Learning rust for fun
+
+https://security.humanativaspa.it/learning-rust-for-fun-and-backdoo-rs/
 
 
 # Scope 
