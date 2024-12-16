@@ -5,6 +5,7 @@
 https://eugenkiss.github.io/7guis/tasks
 
 
+## See [Dioxus / Freya](gui.md)
 
 ## floem
 

@@ -3,7 +3,7 @@
 
 opposite to ssg ;-)
 
-## [Dioxus -check](../rust/dioxus.md)
+## [Dioxus -check](../rust/gui.md)
 
 https://www.youtube.com/watch?v=7utPutDORb4
 
