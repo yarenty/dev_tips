@@ -1,7 +1,7 @@
 # Loco
 
 
-oposite to ssg ;-)
+opposite to ssg ;-)
 
 
 https://www.youtube.com/watch?v=7utPutDORb4
