@@ -26,6 +26,7 @@ Some good thoughts and intro: https://www.youtube.com/watch?v=DkpNqcfuPOM
 https://crates.io/crates/wasmtime
 
 
+# Dioxus [CHECK!](dioxus.md)
 
 # YEW
 

@@ -1,5 +1,6 @@
 # Static Site Generators
 
+## [Dioxus -check](../rust/dioxus.md)
 
 ## Zola
 
