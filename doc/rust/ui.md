@@ -7,6 +7,18 @@ https://eugenkiss.github.io/7guis/tasks
 
 ## See [Dioxus / Freya](gui.md)
 
+
+## Selen - UI
+
+
+https://github.com/eythaann/Seelen-UI
+
+Fully Customizable Desktop Environment for Windows
+Available in 70+ Languages
+
+
+
+
 ## floem
 
 https://github.com/lapce/floem?tab=readme-ov-file
