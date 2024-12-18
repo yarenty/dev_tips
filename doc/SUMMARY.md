@@ -3,6 +3,8 @@
 Keep list of technology/ comments/ how to use ...  
 Only interesting stuff (personally).
 
+[GithubMap](https://anvaka.github.io/map-of-github)
+
 
 - [Intro](intro.md)
 
