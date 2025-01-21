@@ -16,6 +16,20 @@ https://github.com/ratatui-org/ratatui/blob/main/examples/README.md
 https://github.com/ratatui-org/ratatui/blob/main/BREAKING-CHANGES.md
 
 
+# IOCraft
+
+https://github.com/ccbrown/iocraft
+
+iocraft is a library for crafting beautiful text output and interfaces for the terminal or logs. It allows you to easily build complex layouts and interactive elements using a declarative API.
+
+
+# INK
+
+https://github.com/vadimdemedes/ink
+
+this is more cool CLI than TUI 
+
+
 # Dialoguer
 
 https://github.com/console-rs/dialoguer/tree/master/examples
@@ -36,6 +50,17 @@ Rust library for indicating progress in command line applications to users.
 This currently primarily provides progress bars and spinners as well as basic color support, but there are bigger plans for the future of this!
 
 
+
+
+# Television
+
+
+https://github.com/alexpasmantier/television
+
+
+Television is a fast and versatile fuzzy finder TUI.
+
+It lets you quickly search through any kind of data source (files, git repositories, environment variables, docker images, you name it) using a fuzzy matching algorithm and is designed to be easily extensible.
 
 
 
