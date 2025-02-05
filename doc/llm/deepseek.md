@@ -17,3 +17,9 @@ https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/bl
 https://github.com/huggingface/open-r1
 
 
+
+
+https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-14B
+
+
+https://www.youtube.com/watch?v=kv8frWeKoeo
