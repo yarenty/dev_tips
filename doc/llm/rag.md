@@ -27,6 +27,10 @@ Chat UI: http://localhost:8000
 API: http://localhost:8000/docs
 Note: The Chat UI and API are only functional if the RAGapp is configured.
 
+## Top 10 - 2024
+
+https://sebastian-petrus.medium.com/top-10-rag-frameworks-github-repos-2024-12b2a81f4a49
+
 
 
 
