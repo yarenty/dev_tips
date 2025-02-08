@@ -1,5 +1,15 @@
+# AI
 
 
+## Landscape
+
+https://malywut.github.io/ai-engineering-landscape/
+
+![Landscape](../assets/ai_landscape_202502.png)
+
+
+
+## Comments
 dfdx - dfdx - Rust 16 - A pure-Rust CUDA accelerated learning toolkit.
 
 Burn - GitHub - burn-rs/burn: Burn - A Flexible and Comprehensive Deep Learning Framework in Rust 18 - A flexible and comprehensive deep learning framework.
