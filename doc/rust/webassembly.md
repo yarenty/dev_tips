@@ -12,7 +12,7 @@ https://github.com/bytecodealliance
 
 Update 202211:
 
-![Status](../img/wasm/WASM_202211_status.png)
+![Status](../assets/img/wasm/WASM_202211_status.png)
 
 This is still work in progress - but good direction. 
 Soon there willbe async support and hopefully cloud.

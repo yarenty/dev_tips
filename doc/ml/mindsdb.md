@@ -13,11 +13,11 @@
 A predictive layer for existing databases that enables rapid prototyping & deployment of ML Models from your database. Significantly reducing the time and cost of machine learning workflows.
 
 From:
-![img](../img/mindsdb/ML_classic.png)
+![img](../assets/img/mindsdb/ML_classic.png)
 
 To:
 
-![](../img/mindsdb/ML_modern.png)
+![](../assets/img/mindsdb/ML_modern.png)
 
 
 Get the predictions you need as simple tables in your database.
@@ -31,7 +31,7 @@ MindsDB looks and acts like a database and thus seamlessly interacts with your c
 
 ## Brochure
 
-[Brochure](MindsDB Product Brochure F21.pdf)
+[Brochure](../../resources/MindsDB%20Product%20Brochure%20F21.pdf)
 
 
 

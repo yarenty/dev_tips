@@ -491,7 +491,7 @@ Apache Kafka is an open-source distributed streaming platform, and some of the m
 
 - Koperator architecture
 
-![koperator](../img/kafka-operator-arch.png)
+![koperator](../assets/img/kafka-operator-arch.png)
 We took a different approach to what's out there - we believe for a good reason - please read on to understand more about our design motivations and some of the scenarios which were driving us to create Koperator.
 
 Koperator is a core part of Banzai Cloud Supertubes (now called Cisco Streaming Data Manager) that helps you create production-ready Apache Kafka clusters on Kubernetes, with scaling, rebalancing, and alerts based self healing. While the Koperator itself is an open-source project, the Banzai Cloud Supertubes product extends the functionality of Koperator with commercial features (for example, built-in monitoring and multiple ways of disaster recovery). Read a detailed comparison of Supertubes and Koperator.
@@ -507,7 +507,7 @@ Kafkawize is now fully opensource. 🥳 All the features of the Kafkawize are no
 
 Kafkawize is a Self service Apache Kafka Topic Management/Governance tool/portal. It is a web application which automates the process of creating and browsing Kafka topics, acls, avro schemas, connectors by introducing roles/authorizations to users of various teams of an organization.
 
-![kafkawize](../img/kafkawize_arch.png)
+![kafkawize](../assets/img/kafkawize_arch.png)
 
 !Note: Supports avro schema registry!
 
