@@ -4,6 +4,6 @@ This directory contains notes, tips, and tricks for using Git, a distributed ver
 
 ## Contents
 
--   [Git](git.md) - Git configuration and workflow tips.
+-   [Config](config.md) - Git configuration and workflow tips.
 
 > "Premature optimization is the root of all evil." - Donald Knuth

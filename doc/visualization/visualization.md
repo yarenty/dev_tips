@@ -16,3 +16,15 @@ This directory contains notes, tips, and resources related to data visualization
 -   [Tips](tips.md) - Visualization tips.
 
 > "The purpose of visualization is insight, not pictures." - Ben Shneiderman
+
+
+
+## Monodraw
+https://monodraw.helftone.com/
+TXT pics generator !!! amazing !!!!
+
+## iradesign
+https://iradesign.io/?utm_source=tldrnewsletter
+from doodling to ilustrations - MIT license
+
+## [Dioxus -check](../programming/rust/dioxus.md)

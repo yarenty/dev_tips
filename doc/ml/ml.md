@@ -20,3 +20,36 @@ This directory is dedicated to notes, code snippets, and resources related to Ma
 
 > "All models are wrong, but some are useful." - George E. P. Box
 
+
+Check:
+https://landscape.lfai.foundation/
+
+
+## Frameworks
+- Ray.io
+- MxNet
+
+## Cloud frameworks
+- Sparkling Water
+- Spark ML
+
+
+## Libraries /SDK
+- Tensorflow
+- H2O
+
+## Notebook env
+- Jupyter
+- Zeppelin
+- H2O Wave
+
+
+## Exploratory DAta Analysis
+- Apache Superset
+
+## Speach & NLP Platforms
+- Wit.ai
+- Dialogflow
+- Lex
+- Luis
+- Watson

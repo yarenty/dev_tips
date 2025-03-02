@@ -97,11 +97,11 @@ These notes are a collection of my personal learnings, tips, and tricks in the a
         - [Papers](ml/time_series/papers.md) - Papers on time series.
         - [Transformers](ml/time_series/time_serie_transformer.md) - Transformers in Time series.
         - [Tutorials](ml/time_series/tutorials.md) - Tutorials on time series.
-    - [Knowledge Graph](knowledge_graph/knowledge_graph.md) - About Knowledge Graph.
-        - [Papers](knowledge_graph/papers.md) - Papers about Knowledge Graph.
-        - [Meta](knowledge_graph/meta.md) - Information about Knowledge Graph Meta.
-    - [Genetics](genetics/genetics.md) - About genetics.
-        - [MOEA](genetics/moea.md) -  About genetic MOEA.
+    - [Knowledge Graph](ml/knowledge_graph/knowledge_graph.md) - About Knowledge Graph.
+        - [Papers](ml/knowledge_graph/papers.md) - Papers about Knowledge Graph.
+        - [Meta](ml/knowledge_graph/meta.md) - Information about Knowledge Graph Meta.
+    - [Genetics](ml/genetics/genetics.md) - About genetics.
+        - [MOEA](ml/genetics/moea.md) -  About genetic MOEA.
 
 # Tools
 
@@ -132,14 +132,12 @@ These notes are a collection of my personal learnings, tips, and tricks in the a
         - [DNS Toys](tools/shell/dns_toys.md) - Fun with DNS.
         - [TMUX](tools/shell/tmux.md) - Using TMUX terminal multiplexer.
     - [Fengshui](tools/fengshui.md) - Disk cleaning.
+    - [Live Demos](tools/live_demos/demo.md) - Create demo with typing.
 
 # Git
 
 - [Git](git/git.md) - Configuring Git for better workflow.
 
-# Live Demos
-
-- [Live Demos](live_demos/demo.md) - Create demo with typing.
 
 # Robot
 
