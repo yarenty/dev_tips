@@ -64,7 +64,7 @@ Architectural Decision Record
 Having had good success with so-called onion architecture (most recently specifically with the ZIO Service Pattern in Scala, incidentally), I sought to discover if this was an appropriate architecture for Rust applications. It turns out that it is, with certain caveats specific to this language.
 
 In that vein, I created a workspace-based project, with several libraries with dependencies all pointing in the right direction: from services to domain to core. That is, the most critical part of the application, domain, where business logic lives, has no dependencies on I/O or technical implementation concerns.
-![img_3.png](img_3.png)
+![img_3.png](../assets/img/trading/img_3.png/img/trading/img_3.png)
 
 ## Services
 Starting from a clean, rusty slate, as I set out to do, the simplest solution is bare functions. But we need to be able to do at least one other thing: Mock implementations for unit testing. With that in mind, using some mechanism to group related functions together and change the implementation at will seems like a good idea.
@@ -92,7 +92,7 @@ Getting into the weeds, I chose tungstenite over ezsockets for websocket support
 Code
 
 
-![img_2.png](img_2.png)
+![img_2.png](../assets/img/trading/img_2.png/img/trading/img_2.png)
 Though this is an exercise in building a real-world, relatively complex system in Rust, some elements of true production-grade software are missing:
 
 Use of a proper ADT error system rather than ‘String’
@@ -590,7 +590,7 @@ And, hey, look at that: AAPL actually got reasonably close to entry range.
 Next
 
 As is clear from the above, our singular trading strategy isn’t doing anything other than making a buy decision. We have the following left:
-![img_1.png](img_1.png)
+![img_1.png](../assets/img/trading/img_1.png/img/trading/img_1.png)
 Making sell decisions
 Generating Tradier API orders
 Storing orders & positions locally (mongodb)
@@ -1341,7 +1341,7 @@ Rust detail: I gave up on the ‘market_data lifetime. It became a matter of jum
 Also note that matching, even on primitives, is usually cleaner than an if-else.
 
 Ok, let’s see a bit of the system in action:
-![img.png](img.png)
+![img.png](../assets/img/trading/img.pngts/img/trading/img.png)
 
 A few interesting things happened here:
 
@@ -1760,7 +1760,7 @@ To use the project locally, one must also have a MongoDB instance running at the
 
 Mongo is very simple to install and run locally. After doing so, the shell can be used to easily manage and query the database:
 
-![img_4.png](img_4.png)
+![img_4.png](../assets/img/trading/img_4.png/img/trading/img_4.png)
 
 (Eventually, the project will be containerized and runnable on AWS, with the mongo instance running in its own container.)
 
@@ -1845,7 +1845,7 @@ As previously stated, I built this algorithmic trading system mainly as an exerc
 
 Thus, I admit to being slightly surprised to discover, upon examining the first real backtest run, that it had generated alpha that beat the index (NASDAQ): A two-year return of ~62.9% vs. 53.5% for the same time period, trading AAPL and AMZN:
 
-![img_5.png](img_5.png)
+![img_5.png](../assets/img/trading/img_5.png/img/trading/img_5.png)
 (P&L of $12,570 on $20,000 total capital.)
 
 This is with a Bollinger Band mean-reversion strategy — about as simple as it gets.
@@ -1859,7 +1859,7 @@ In the real world, giving any trading model/system real money without having und
 
 In this vein, I set out to extend the system to support backtesting for arbitrary ranges. A typical backtesting range is two years. From the config:
 
-![img_6.png](img_6.png)
+![img_6.png](../assets/img/trading/img_6.png/img/trading/img_6.png)
 
 local.toml
 While it would be very simple to make the end date configurable also, allowing for testing periods far in the past, I did not do that, as I wouldn’t test actual strats that way.
@@ -1879,7 +1879,7 @@ We will see how, using the dependency injection scheme already devised, we can i
 ## Code
 Here we can see the layout of the new crate (in Zed’s project view):
 
-![img_7.png](img_7.png)
+![img_7.png](../assets/img/trading/img_7.png/img/trading/img_7.png)
 
 We’ve got several new service modules, a main, and a tests module. (As usual, we won’t be covering unit tests here, but check out the repo if you’re interested.)
 
@@ -2187,7 +2187,7 @@ mod mock_historical_data_service;
 
 One interesting bit: The MarketDataService subscription mechanism is based on channels. The live service monitors its broker-data websocket, firing quotes as they arrive to all subscribers. Here, we have all the data at the outset: On subscribe, we simply create the channel and fire them all immediately.
 
-![img_8.png](img_8.png)
+![img_8.png](../assets/img/trading/img_8.png/img/trading/img_8.png)
 Voila.
 
 (Please see util.rs for the utility functions used above and elsewhere.)
@@ -2258,7 +2258,7 @@ Another detail worth noting is the shutdown of the trading services. Writing the
 
 Remember that each TradingService has an internal thread, to decouple and parallelize its processing. The shutdown:
 
-![img_9.png](img_9.png)
+![img_9.png](../assets/img/trading/img_9.png/img/trading/img_9.png)
 
 (A further improvement to the system, for efficiency, would be to either keep these threads alive between ‘days’ or use a thread pool. This would net very little gain in practice, however.)
 

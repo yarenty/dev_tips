@@ -129,9 +129,9 @@ These notes are a collection of my personal learnings, tips, and tricks in the a
     -   [Must Haves](tools/shell/must_have.md) - Must-have shell tools.
     -   [DNS Toys](tools/shell/dns_toys.md) - Fun with DNS.
     -   [TMUX](tools/shell/tmux.md) - Using TMUX terminal multiplexer.
-  -   [PDF](tools/pdf/pdf.md) - PDF tools
-    -   [MDmath symbols](tools/pdf/MDmath_symbols.md) - math symbols in markdown
-    -   [Latex](tools/pdf/latex.md) - latex documentation
+  -   [PDF](visualization/pdf/pdf.md) - PDF tools
+    -   [MDmath symbols](visualization/pdf/MDmath_symbols.md) - math symbols in markdown
+    -   [Latex](visualization/pdf/latex.md) - latex documentation
   -   [Fengshui](tools/fengshui.md) - Disk cleaning.
 
 # Git

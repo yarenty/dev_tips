@@ -54,76 +54,76 @@ So to test my hypothesis the first thing we need is a code signing authority. Un
 ## Here's what worked for me in the end.
 
 Open Keychain Access.app 
-![](img/Keychain-Access-Icon.png)
+![](../assets/img/www/Keychain-Access-Icon.png)
 
 In the Keychain Access Menu under the Certificate Assistant menu item, choose Open… [1]
-![](img/Menus.png)
+![](../assets/img/www/Menus.png)
 Click Continue to get to the first page of options
-![](img/Step-1.png)
+![](../assets/img/www/Step-1.png)
 Select Create a Certificate Authority (CA)
-![](img/Step-2.png)
+![](../assets/img/www/Step-2.png)
 Click Continue to get to the next page of options
 Choose a name for your new CA
-![](img/Step-3.png)
+![](../assets/img/www/Step-3.png)
 Choose the email for use with this CA
 Set the User Certificate dropdown to Code Signing
 Click Continue to get to the next page of options
 Click Continue to get to the next page of options[2]
-![](img/Step-4.png)
+![](../assets/img/www/Step-4.png)
 Fill in the rest of the fields for the CA Certificate[3]
-![](img/Step-5.png)
+![](../assets/img/www/Step-5.png)
 Click Continue to get to the next page of options
 Click Continue to get to the next page of options
-![](img/Step-6.png)
+![](../assets/img/www/Step-6.png)
 Click Continue to get to the next page of options
-![](img/Step-7.png)
+![](../assets/img/www/Step-7.png)
 Click Continue to get to the next page of options
-![](img/Step-8.png)
+![](../assets/img/www/Step-8.png)
 Click Continue to get to the next page of options
-![](img/Step-9.png)
+![](../assets/img/www/Step-9.png)
 Ensure that Code Signing is checked in the list of capabilities
-![](img/Step-10.png)
+![](../assets/img/www/Step-10.png)
 Click Continue to get to the next page of options
 Ensure that Code Signing is the only capability checked in the list of capabilities, and that This extension is critical is checked
-![](img/Step-11.png)
+![](../assets/img/www/Step-11.png)
 Click Continue to get to the next page of options
 Click Continue to get to the next page of options
-![](img/Step-12.png)
+![](../assets/img/www/Step-12.png)
 Click Continue to get to the next page of options
-![](img/Step-13.png)
+![](../assets/img/www/Step-13.png)
 Click Continue to get to the next page of options
-![](img/Step-14.png)
+![](../assets/img/www/Step-14.png)
 Click Continue to get to the next page of options
-![](img/Step-15.png)
+![](../assets/img/www/Step-15.png)
 Click Create to create your Certificate Authority
-![](img/Step-16.png)
+![](../assets/img/www/Step-16.png)
 You can close this window
-![](img/Step-17.png)
+![](../assets/img/www/Step-17.png)
 Right click your CA in the main Keychain Access window and choose Get Info
-![](img/Step-27.png)
+![](../assets/img/www/Step-27.png)
 Open the Trust disclosure triangle
-![](img/Step-28.png)
+![](../assets/img/www/Step-28.png)
 Set the topmost trust setting to Always Trust
-![](img/Step-29.png)
+![](../assets/img/www/Step-29.png)
 Close the window (you will be prompted to authenticate)
-![](img/Step-18.png)
+![](../assets/img/www/Step-18.png)
 You now have your own Certificate Authority which can issue code signing certificates, progress! Now let's use it do just that and create a code signing certificate.
 
 Open the Certificate assistant again to the What would you like to do? step (steps #2 & #3 above)
 Choose Create a certificate for yourself
-![](img/Step-30.png)
+![](../assets/img/www/Step-30.png)
 Click Continue to get to the next page of options
 Choose a name for the certificate
-![](img/Step-31-1.png)
+![](../assets/img/www/Step-31-1.png)
 Set the Identity Type to Leaf
 Set the Certificate Type to Code Signing
 Click Create to start the creation process
 Click Continue in the popup to create the certificate[4]
-![](img/Step-32.png)
+![](../assets/img/www/Step-32.png)
 Click Create to use the CA we created earlier to sign our new certificate
-![](img/Step-33-1.png)
+![](../assets/img/www/Step-33-1.png)
 Make note of the Common Name field in this window, as we'll need that value later
-![](img/Step-34-1.png)
+![](../assets/img/www/Step-34-1.png)
 Close the window
 
 
