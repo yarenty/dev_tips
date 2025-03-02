@@ -9,33 +9,33 @@ Only interesting stuff (personally).
 
 # Programming
 
-- [Rust](rust/README.md) - Information about Rust programming language.
-  - [Learning](rust/learning.md) - Resources for learning Rust.
-  - [Must Have](rust/_must_have.md) - Essential Rust crates and concepts.
-  - [CLI](rust/cli.md) - Building command-line interfaces with Rust.
-  - [TUI](rust/tui.md) - Text User Interface development in Rust.
-  - [GUI](rust/gui.md) - Graphical User Interface development in Rust.
-  - [Core](rust/core.md) - Core concepts of Rust programming.
-  - [JSON](rust/json.md) - Working with JSON in Rust.
-  - [gRPC](rust/gRPC.md) - Using gRPC with Rust.
-  - [trpc](rust/trpc.md) - using trpc with rust.
-  - [Timely](rust/timely.md) - Timely Dataflow in Rust.
+- [Rust](programming/rust/README.md) - Information about Rust programming language.
+  - [Learning](programming/rust/learning.md) - Resources for learning Rust.
+  - [Must Have](programming/rust/_must_have.md) - Essential Rust crates and concepts.
+  - [CLI](programming/rust/cli.md) - Building command-line interfaces with Rust.
+  - [TUI](programming/rust/tui.md) - Text User Interface development in Rust.
+  - [GUI](programming/rust/gui.md) - Graphical User Interface development in Rust.
+  - [Core](programming/rust/core.md) - Core concepts of Rust programming.
+  - [JSON](programming/rust/json.md) - Working with JSON in Rust.
+  - [gRPC](programming/rust/gRPC.md) - Using gRPC with Rust.
+  - [trpc](programming/rust/trpc.md) - using trpc with rust.
+  - [Timely](programming/rust/timely.md) - Timely Dataflow in Rust.
   - [Datafusion](datafusion/datafusion.md) - Working with Datafusion.
-  - [Meilisearch](rust/meilisearch.md) - Using Meilisearch with Rust.
-  - [Storage](rust/storage.md) - Storage solutions in Rust.
-  - [Raspberry Pi](rust/raspberry_pi.md) - Rust development on Raspberry Pi.
-  - [Charts](rust/charts.md) - Creating charts in Rust.
-  - [HTTP](rust/http.md) - Working with HTTP in Rust.
-  - [Loggers](rust/loggers.md) - Logging in Rust applications.
-  - [Generational Index](rust/generational_index.md) - Information about Generational Index.
-  - [Tests](rust/tests.md) - Testing in Rust.
-  - [Fun](rust/fun.md) - Fun projects in Rust.
-  - [Tools](rust/tools.md) - Useful Rust tools.
+  - [Meilisearch](programming/rust/meilisearch.md) - Using Meilisearch with Rust.
+  - [Storage](programming/rust/storage.md) - Storage solutions in Rust.
+  - [Raspberry Pi](programming/rust/raspberry_pi.md) - Rust development on Raspberry Pi.
+  - [Charts](programming/rust/charts.md) - Creating charts in Rust.
+  - [HTTP](programming/rust/http.md) - Working with HTTP in Rust.
+  - [Loggers](programming/rust/loggers.md) - Logging in Rust applications.
+  - [Generational Index](programming/rust/generational_index.md) - Information about Generational Index.
+  - [Tests](programming/rust/tests.md) - Testing in Rust.
+  - [Fun](programming/rust/fun.md) - Fun projects in Rust.
+  - [Tools](programming/rust/tools.md) - Useful Rust tools.
 
-- [Scala](scala/README.md) - Information about Scala programming language.
-  - [SBT](scala/sbt.md) - Using SBT build tool with Scala.
-- [Java](java/java.md) - Multi-tricks on OS - Java tips and OS tricks.
-- [Assembler](assembly.md) - Assembler programming notes.
+- [Scala](programming/scala/README.md) - Information about Scala programming language.
+  - [SBT](programming/scala/sbt.md) - Using SBT build tool with Scala.
+- [Java](programming/java/java.md) - Multi-tricks on OS - Java tips and OS tricks.
+- [Assembler](programming/assembly.md/assembly.md) - Assembler programming notes.
 
 - [Databases (DBs)](db/README.md) - Notes on different databases.
   - [MySQL](db/mysql.md) - Using MySQL database.
@@ -90,8 +90,8 @@ Only interesting stuff (personally).
 - [Knowledge Graph](knowledge_graph/README.md) - About Knowledge Graph.
   - [Papers](knowledge_graph/papers.md) - Papers about Knowledge Graph.
   - [Meta](knowledge_graph/meta.md) - Information about Knowledge Graph Meta.
-- [Genetics](genetics/README.md) - About genetics.
-  - [MOEA](genetics/moea.md) -  About genetic MOEA.
+- [Genetics](ml/genetics/README.md) - About genetics.
+  - [MOEA](ml/genetics/moea.md) -  About genetic MOEA.
 
 # Tools
 
@@ -106,10 +106,10 @@ Only interesting stuff (personally).
   - [JavaScript](visualization/javascript.md) - Visualization using JavaScript.
   - [Tips](visualization/tips.md) - Visualization tips.
 
-- [iOS/macOS](ios/README.md) - Notes about iOS and macOS development.
-  - [Slint GUI](ios/slint.md) - Declarative GUI for Rust.
-  - [OSX Cross Compilation](ios/osxcross.md) - Cross-compiling for macOS.
-  - [OSX Tricks](ios/osx_tricks.md) - macOS-specific tricks and tips.
+- [iOS/macOS](tools/ios/README.md) - Notes about iOS and macOS development.
+  - [Slint GUI](tools/ios/slint.md) - Declarative GUI for Rust.
+  - [OSX Cross Compilation](tools/ios/osxcross.md) - Cross-compiling for macOS.
+  - [OSX Tricks](tools/ios/osx_tricks.md) - macOS-specific tricks and tips.
 
 - [Shell](tools/shell/tools.md) - Shell usage tips and tricks.
   - [Color Codes](tools/shell/color_codes.md) - Shell color codes.
@@ -117,7 +117,7 @@ Only interesting stuff (personally).
   - [DNS Toys](tools/shell/dns_toys.md) - Fun with DNS.
   - [TMUX](tools/shell/tmux.md) - Using TMUX terminal multiplexer.
   - [Linux Books](tools/linux/books.md) - List of Linux books.
-  - [Git Configuration](tools/git.md) - Configuring Git for better workflow.
+  - [Git Configuration](git/git.md) - Configuring Git for better workflow.
 
-- [GitHub](tools/github.md) - Notes about GitHub features.
+- [GitHub](git/github.md) - Notes about GitHub features.
 - [DEMO - Typing Commands Live!](tools/demo.md) - Create demo with typing.

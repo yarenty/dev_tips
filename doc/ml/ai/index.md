@@ -5,7 +5,7 @@
 
 https://malywut.github.io/ai-engineering-landscape/
 
-![Landscape](../assets/ai_landscape_202502.png)
+![Landscape](../../assets/ai_landscape_202502.png)
 
 
 

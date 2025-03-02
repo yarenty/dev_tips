@@ -102,7 +102,7 @@ fn main() {
 
 
 # surrealDB
-[db->surrealDB](../db/surrealDB.md)
+[db->surrealDB](../../db/surrealDB.md)
 
 # mysql 
 https://crates.io/crates/mysql

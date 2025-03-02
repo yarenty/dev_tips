@@ -20,4 +20,4 @@ from doodling to ilustrations - MIT license
 
 
 
-## [Dioxus -check](../rust/dioxus.md)
+## [Dioxus -check](../programming/rust/dioxus.md)
