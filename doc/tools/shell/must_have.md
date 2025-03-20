@@ -8,6 +8,17 @@ https://github.com/jkfran/killport
 cargo install killport
 ```
 
+## fd - better find
+
+https://github.com/sharkdp/fd
+
+![](https://github.com/sharkdp/fd/raw/master/doc/screencast.svg)
+
+```shell
+brew install fd
+```
+
+
 ## cmatrix
 
 Matrix style screen saver
