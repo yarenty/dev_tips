@@ -1,4 +1,19 @@
-# cudarc
+# CUDA in Rust
+
+
+## Rust-CUDA
+
+https://github.com/Rust-GPU/Rust-CUDA
+
+An ecosystem of libraries and tools for writing and executing extremely fast GPU code fully in Rust
+
+
+### Goal
+The Rust CUDA Project is a project aimed at making Rust a tier-1 language for extremely fast GPU computing using the CUDA Toolkit. It provides tools for compiling Rust to extremely fast PTX code as well as libraries for using existing CUDA libraries with it.
+
+
+
+## cudarc
 
 
 https://crates.io/crates/cudarc
