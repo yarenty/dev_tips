@@ -20,5 +20,25 @@ https://github.com/prefix-dev/pixi
 
 https://github.com/prefix-dev/pixi/blob/main/docs/misc/Community.md
 
-
+| What they say:				          | What they mean:                           
+|-----------------------------|-------------------------------------------|
+| A major technological breakthrough...	 | Back to the drawing board.                
+| Developed after years of research	 | Discovered by pure accident.              
+| Project behind original schedule due	 | We're working on something else.          
+| to unforseen difficulties   |
+| Designs are within allowable limits	 | We made it, stretching a point or two.    
+| Customer satisfaction is believed	 | So far behind schedule that they'll be    
+| assured					                | grateful for anything at all.             
+| Close project coordination		 | We're gonna spread the blame, campers!    
+| Test results were extremely gratifying	 | It works, and boy, were we surprised!     
+| The design will be finalized...		 | We haven't started yet, but we've got     
+|                             | to say something.                         
+| The entire concept has been rejected	 | The guy who designed it quit.             
+| We're moving forward with a fresh	 | We hired three new guys, and they're      
+| approach				                | kicking it around.                        
+| A number of different approaches...	 | We don't know where we're going, but      
+|                             | we're moving.                             
+| Preliminary operational tests are	 | Blew up when we turned it on.             
+| inconclusive                
+| Modifications are underway		| We're starting over.                      
 
