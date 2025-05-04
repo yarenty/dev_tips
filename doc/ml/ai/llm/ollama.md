@@ -40,3 +40,15 @@ http://127.0.0.1:11434/
 
 
 
+
+
+## Models to check
+
+
+https://ollama.com/kirito1/qwen3-coder
+ - chinese version with FIM! - this need to be checked... also language 
+ - 
+
+
+
+
