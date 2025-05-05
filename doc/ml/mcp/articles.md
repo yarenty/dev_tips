@@ -12,3 +12,7 @@ https://iamcharliegraham.substack.com/p/mcps-gatekeepers-and-the-future-of?utm_s
 
 https://medium.com/data-science-collective/langchain-mcp-rag-ollama-the-key-to-powerful-agentic-ai-91529b2fa320
 
+
+
+MCP is unnecessary ;-) - not really - just atching title
+https://timkellogg.me/blog/2025/04/27/mcp-is-unnecessary?utm_source=tldrai
