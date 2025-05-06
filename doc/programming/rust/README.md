@@ -9,7 +9,7 @@ This directory contains notes, tips, and resources related to the Rust programmi
 -   [Must Have](_must_have.md) - Essential Rust crates and concepts.
 -   [CLI](cli.md) - Building command-line interfaces with Rust.
 -   [TUI](tui.md) - Text User Interface development in Rust.
--   [GUI](gui.md) - Graphical User Interface development in Rust.
+-   [GUI](gui/gui.mdi.md) - Graphical User Interface development in Rust.
 -   [Core Concepts](core.md) - Core concepts of Rust programming.
 -   [JSON](json.md) - Working with JSON in Rust.
 -   [gRPC](gRPC.md) - Using gRPC with Rust.
@@ -19,7 +19,7 @@ This directory contains notes, tips, and resources related to the Rust programmi
 -   [Storage](storage.md) - Storage solutions in Rust.
 -   [Raspberry Pi](raspberry_pi.md) - Rust development on Raspberry Pi.
 -   [Charts](charts.md) - Creating charts in Rust.
--   [HTTP](http.md) - Working with HTTP in Rust.
+-   [HTTP](web/http.mdp.md) - Working with HTTP in Rust.
 -   [Loggers](loggers.md) - Logging in Rust applications.
 -   [Generational Index](generational_index.md) - Information about Generational Index.
 -   [Tests](tests.md) - Testing in Rust.

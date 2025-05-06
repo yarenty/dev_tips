@@ -6,7 +6,7 @@ This directory contains notes, tips, and tricks for macOS and iOS development an
 
 -   [OSX](osx.md) - General OSX information.
 -   [iOS](ios.md) - iOS development and tricks.
--   [Slint GUI](slint.md) - Slint GUI for Rust.
+-   [Slint GUI](../../programming/rust/gui/slint.mdogramming/rust/gui/slint.md) - Slint GUI for Rust.
 -   [OSX Cross Compilation](osxcross.md) - Cross-compiling for macOS.
 -   [OSX Tricks](osx_tricks.md) - macOS-specific tips.
 
