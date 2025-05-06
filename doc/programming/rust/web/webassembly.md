@@ -12,7 +12,7 @@ https://github.com/bytecodealliance
 
 Update 202211:
 
-![Status](../../assets/img/wasm/WASM_202211_status.png)
+![Status](../../../assets/img/wasm/WASM_202211_status.png)
 
 This is still work in progress - but good direction. 
 Soon there willbe async support and hopefully cloud.
@@ -26,7 +26,7 @@ Some good thoughts and intro: https://www.youtube.com/watch?v=DkpNqcfuPOM
 https://crates.io/crates/wasmtime
 
 
-# Dioxus [CHECK!](gui.md)
+# Dioxus [CHECK!](gui/gui.mdi.md)
 
 # YEW
 

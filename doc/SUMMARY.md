@@ -13,7 +13,7 @@ These notes are a collection of my personal learnings, tips, and tricks in the a
         - [Must Have](programming/rust/_must_have.md) - Essential Rust crates and concepts.
         - [CLI](programming/rust/cli.md) - Building command-line interfaces with Rust.
         - [TUI](programming/rust/tui.md) - Text User Interface development in Rust.
-        - [GUI](programming/rust/gui.md) - Graphical User Interface development in Rust.
+        - [GUI](programming/rust/gui/gui.mdi.md) - Graphical User Interface development in Rust.
         - [Core Concepts](programming/rust/core.md) - Core concepts of Rust programming.
         - [JSON](programming/rust/json.md) - Working with JSON in Rust.
         - [gRPC](programming/rust/gRPC.md) - Using gRPC with Rust.
@@ -23,7 +23,7 @@ These notes are a collection of my personal learnings, tips, and tricks in the a
         - [Storage](programming/rust/storage.md) - Storage solutions in Rust.
         - [Raspberry Pi](programming/rust/raspberry_pi.md) - Rust development on Raspberry Pi.
         - [Charts](programming/rust/charts.md) - Creating charts in Rust.
-        - [HTTP](programming/rust/http.md) - Working with HTTP in Rust.
+        - [HTTP](programming/rust/web/http.mdp.md) - Working with HTTP in Rust.
         - [Loggers](programming/rust/loggers.md) - Logging in Rust applications.
         - [Generational Index](programming/rust/generational_index.md) - Information about Generational Index.
         - [Tests](programming/rust/tests.md) - Testing in Rust.
@@ -121,7 +121,7 @@ These notes are a collection of my personal learnings, tips, and tricks in the a
             - [Latex](visualization/pdf/latex.md) - latex documentation
     - [OSX](tools/osx/osx.md) - Notes about iOS and macOS development.
         - [iOS](tools/osx/ios.md) - iOS information.
-        - [Slint GUI](tools/osx/slint.md) - Declarative GUI for Rust.
+        - [Slint GUI](programming/rust/gui/slint.mdui/slint.md) - Declarative GUI for Rust.
         - [OSX Cross Compilation](tools/osx/osxcross.md) - Cross-compiling for macOS.
         - [OSX Tricks](tools/osx/osx_tricks.md) - macOS-specific tricks and tips.
     - [Linux](tools/linux/linux.md) - Linux configuration.

@@ -5,5 +5,6 @@ This directory contains notes, resources, and tips related to the World Wide Web
 ## Contents
 
 -   [WWW](www.md) - General web development and WWW-related topics.
+-   [Web- rust](../../programming/rust/web/http.md) - Web in rust.
 
 > "The Web as I envisaged it, we have not seen it yet. The future is still so much bigger than the past." - Tim Berners-Lee

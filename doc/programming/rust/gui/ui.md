@@ -5,7 +5,7 @@
 https://eugenkiss.github.io/7guis/tasks
 
 
-## See [Dioxus / Freya](gui.md)
+## See [Dioxus / Freya](gui/gui.mdi.md)
 
 
 ## Selen - UI
