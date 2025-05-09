@@ -16,9 +16,13 @@ https://github.com/google/A2A
 
 
 
+https://github.com/google/A2A
+
+
 ## Kafka
 
 https://www.confluent.io/blog/google-agent2agent-protocol-needs-kafka/?utm_source=tldrdata
+
 
 
 
