@@ -56,3 +56,13 @@ https://block.github.io/goose/docs/getting-started/using-extensions/
 
 ## Manage Goose Sessions
 https://block.github.io/goose/docs/guides/managing-goose-sessions/ 
+
+
+
+## Hints - tips
+
+
+https://block.github.io/goose/docs/guides/using-goosehints
+
+
+
