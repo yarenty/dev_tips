@@ -79,3 +79,13 @@ https://github.com/meta-llama/llama3
 ## Llama 2 - deprecated
 
 https://github.com/meta-llama/llama
+
+
+
+## CPP
+
+
+https://github.com/ggml-org/llama.cpp
+
+
+Inference of Meta's LLaMA model (and others) in pure C/C++
