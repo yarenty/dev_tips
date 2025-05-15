@@ -16,3 +16,12 @@ https://medium.com/data-science-collective/langchain-mcp-rag-ollama-the-key-to-p
 
 MCP is unnecessary ;-) - not really - just atching title
 https://timkellogg.me/blog/2025/04/27/mcp-is-unnecessary?utm_source=tldrai
+
+
+
+https://raz.sh/blog/2025-05-02_a_critical_look_at_mcp?utm_source=tldrnewsletter
+
+
+
+https://github.com/microsoft/lost_in_conversation?utm_source=tldrai
+
