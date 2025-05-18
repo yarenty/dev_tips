@@ -25,3 +25,10 @@ https://raz.sh/blog/2025-05-02_a_critical_look_at_mcp?utm_source=tldrnewsletter
 
 https://github.com/microsoft/lost_in_conversation?utm_source=tldrai
 
+
+
+
+https://medium.com/@elisowski/what-every-ai-engineer-should-know-about-a2a-mcp-acp-8335a210a742
+
+
+
