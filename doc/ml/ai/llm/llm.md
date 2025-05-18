@@ -1,3 +1,9 @@
+# LLMs
+
+![](https://x.com/i/status/1923611595852100085)
+
+![img.png](../../../assets/img/llms.png)
+
 
 # Awsome Rust LLM
 
