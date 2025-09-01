@@ -28,3 +28,8 @@ https://iradesign.io/?utm_source=tldrnewsletter
 from doodling to ilustrations - MIT license
 
 ## [Dioxus -check](../programming/rust/dioxus.md)
+
+
+## D2 lang
+
+https://d2lang.com/
