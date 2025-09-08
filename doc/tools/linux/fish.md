@@ -5,3 +5,17 @@ Things that require plugins and lots of code in shells like ZSH, like autosugges
 
 I have two fish plugins configured: z for jumping to a directory, and hydro as my shell prompt. Neither need configuration.
 
+## Installing
+
+
+
+
+
+# Starshio
+
+https://github.com/starship/starship
+
+```shell
+curl -sS https://starship.rs/install.sh | sh
+```
+
