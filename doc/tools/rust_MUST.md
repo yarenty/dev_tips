@@ -280,3 +280,156 @@ pre-commit run --all-files
 ```
 
 
+
+### .pre-commit-config.yaml :
+```yaml
+
+# Pre-commit hooks for the entire project
+# See https://pre-commit.com/ for more information
+
+repos:
+  # Basic file checks (run on all files)
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-json
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: debug-statements
+      - id: mixed-line-ending
+        args: ['--fix=lf']
+
+  # Rust formatting with nightly toolchain (backend only) - JARO: commented out since it's required a lot of changes :-(
+  - repo: local
+    hooks:
+      - id: rustfmt
+        name: rustfmt
+        entry: bash -c 'cd backend && cargo +nightly fmt --all -- --check'
+        language: system
+        files: ^backend/.*\.rs$
+        pass_filenames: false
+        always_run: true
+        stages: [pre-commit]
+
+  # Rust clippy linting (backend only)
+  - repo: local
+    hooks:
+      - id: rust-clippy
+        name: rust-clippy
+        entry: bash -c 'cd backend && cargo clippy --all-targets --all-features -- -D warnings'
+        language: system
+        files: ^backend/.*\.rs$
+        pass_filenames: false
+        always_run: true
+        stages: [pre-commit]
+
+  # Cargo deny for security and license checks (backend only)
+  - repo: local
+    hooks:
+      - id: cargo-deny
+        name: cargo-deny
+        entry: bash -c 'cd backend && cargo deny check'
+        language: system
+        files: ^backend/.*\.(toml|lock)$
+        pass_filenames: false
+        always_run: true
+        stages: [pre-commit]
+
+  # Cargo audit for security vulnerabilities (backend only)
+  - repo: local
+    hooks:
+      - id: cargo-audit
+        name: cargo-audit
+        entry: bash -c 'cd backend && cargo audit'
+        language: system
+        files: ^backend/.*\.(toml|lock)$
+        pass_filenames: false
+        always_run: true
+        stages: [pre-commit]
+
+  # Cargo check to ensure code compiles (backend only)
+  - repo: local
+    hooks:
+      - id: cargo-check
+        name: cargo-check
+        entry: bash -c 'cd backend && cargo check --all-targets --all-features'
+        language: system
+        files: ^backend/.*\.rs$
+        pass_filenames: false
+        always_run: true
+        stages: [pre-commit]
+
+# Configuration options
+default_install_hook_types: [pre-commit, pre-push]
+fail_fast: false
+minimum_pre_commit_version: "3.0.0"
+
+# Global file patterns
+files: \.(rs|toml|lock|yaml|yml|json)$
+exclude: |
+  (?x)^(
+    backend/target/.*|
+    \.git/.*|
+    \.cargo/.*|
+    backend/Cargo\.lock$|
+    frontend/.*|
+    docs/.*|
+    environments/.*|
+    tools/.*
+  )$
+
+```
+
+
+
+### .cargo/audit.toml :
+
+```yaml
+
+# Example audit config file
+#
+# It may be located in the user home (`~/.cargo/audit.toml`) or in the project
+# root (`.cargo/audit.toml`).
+#
+# All of the options which can be passed via CLI arguments can also be
+# permanently specified in this file.
+
+[advisories]
+ignore = [
+    # ignore "Marvin Attack: potential key recovery through timing sidechannels"
+    # it;s on sqlx-mysql 0.8.3 - which we did not use directly but several dependencies depend on it.
+    "RUSTSEC-2023-0071",
+
+] # advisory IDs to ignore e.g. ["RUSTSEC-2019-0001", ...]
+informational_warnings = ["unmaintained"] # warn for categories of informational advisories
+#severity_threshold = "low" # CVSS severity ("none", "low", "medium", "high", "critical")
+
+## Advisory Database Configuration
+#[database]
+#path = "~/.cargo/advisory-db" # Path where advisory git repo will be cloned
+#url = "https://github.com/RustSec/advisory-db.git" # URL to git repo
+#fetch = true # Perform a `git fetch` before auditing (default: true)
+#stale = false # Allow stale advisory DB (i.e. no commits for 90 days, default: false)
+
+# Output Configuration
+[output]
+#deny = ["unmaintained"] # exit on error if unmaintained dependencies are found
+format = "terminal" # "terminal" (human readable report) or "json"
+quiet = false # Only print information on error
+show_tree = true # Show inverse dependency trees along with advisories (default: true)
+
+## Target Configuration
+#[target]
+#arch = ["x86_64"] # Ignore advisories for CPU architectures other than these
+#os = ["linux", "windows"] # Ignore advisories for operating systems other than these
+
+[yanked]
+enabled = true # Warn for yanked crates in Cargo.lock (default: true)
+update_index = true # Auto-update the crates.io index (default: true)
+
+```
