@@ -1,0 +1,19 @@
+
+                                SEMINAR ANNOUNCEMENT
+
+Title:          Are Frogs Turing Compatible?
+Speaker:        Don "The Lion" Knuth
+
+                                ABSTRACT
+        Several researchers at the University of Louisiana have been studying
+the computing power of various amphibians, frogs in particular.  The problem
+of frog computability has become a critical issue that ranges across all areas
+of computer science.  It has been shown that anything computable by an amphi-
+bian community in a fixed-size pond is computable by a frog in the same-size
+pond -- that is to say, frogs are Pond-space complete.  We will show that
+there is a log-space, polywog-time reduction from any Turing machine program
+to a frog.  We will suggest these represent a proper subset of frog-computable
+functions.
+        This is not just a let's-see-how-far-those-frogs-can-jump seminar.
+This is only for hardcore amphibian-computation people and their colleagues.
+        Refreshments will be served.  Music will be played.
