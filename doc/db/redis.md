@@ -29,3 +29,7 @@ https://redis.com/blog/the-future-of-redis/
 https://redis.com/blog/redis-adopts-dual-source-available-licensing/
 
 
+Checking obsidian..
+this could be connected to 
+#cache #java #distributed #cross-platform 
+
