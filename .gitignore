@@ -10,7 +10,6 @@
 /doc/resources/.DS_Store
 book
 .obsidian
-.smart-env
 */*.pdf
 */*/*.pdf
 */*/*/*.pdf
@@ -47,3 +46,8 @@ book
 */*/*/*/*.zip
 */*/*/*/*/*.zip
 */*/*/*/*/*/*.zip
+
+
+
+# Ignore Smart Environment folder
+.smart-env
