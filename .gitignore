@@ -51,3 +51,7 @@ book
 
 # Ignore Smart Environment folder
 .smart-env
+/.DS_Store
+/doc/DPU/.DS_Store
+/doc/programming/.DS_Store
+/doc/ml/ai/.DS_Store
