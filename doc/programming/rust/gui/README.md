@@ -17,7 +17,7 @@ status: draft
 - [Lipo](lipo.md)
 - [mac-notification-sys](mac_notification_sys.md)
 - [Mac targets](macos.md)
-- [Matrix - rust bindings to ios version](matrix_rust_bindings_to_ios_version.md)
+- [Matrix - rust bindings to ios version](matrix.md)
 - [Mobile](mobile.md)
 - [Pake](pake.md)
 - [Rust xcode plugin](rust_xcode_plugin.md)

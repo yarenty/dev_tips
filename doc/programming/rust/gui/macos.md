@@ -45,7 +45,7 @@ status: draft
 > - [Cacao](cacao.md)
 > - [Lipo](lipo.md)
 > - [Rust xcode plugin](rust_xcode_plugin.md)
-> - [Matrix - rust bindings to ios version](matrix_rust_bindings_to_ios_version.md)
+> - [Matrix - rust bindings to ios version](matrix.md)
 > - [mac-notification-sys](mac_notification_sys.md)
 
 

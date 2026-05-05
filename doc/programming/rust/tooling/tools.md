@@ -43,8 +43,8 @@ status: draft
 <!-- auto-split by article_split.py -->
 > Auto-split: 18 additional top-level heading(s) extracted into sibling files:
 > - [dusk  - replacement of du](dusk_replacement_of_du.md)
-> - [mprocs - replacement of tmux for long running processes!](mprocs_replacement_of_tmux_for_long_running_processes.md)
-> - [zellij - replacement of tmux - with colors and stuff](zellij_replacement_of_tmux_with_colors_and_stuff.md)
+> - [mprocs - replacement of tmux for long running processes!](mprocs.md)
+> - [zellij - replacement of tmux - with colors and stuff](zellij.md)
 > - [ripgrep](ripgrep.md)
 > - [BAT](bat.md)
 > - [EXA](exa.md)

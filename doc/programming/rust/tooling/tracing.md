@@ -42,10 +42,10 @@ status: draft
 ## References / raw notes
 <!-- auto-split by article_split.py -->
 > Auto-split: 4 additional top-level heading(s) extracted into sibling files:
-> - [rust-prometheus form tikv](rust_prometheus_form_tikv.md)
+> - [rust-prometheus form tikv](rust_prometheus.md)
 > - [Loki](loki.md)
 > - [open telemtry](open_telemtry.md)
-> - [obsetrvability on wasm](obsetrvability_on_wasm.md)
+> - [obsetrvability on wasm](observability_on_wasm.md)
 
 
 <!-- Original content preserved verbatim below. Curate / prune during rewrite. -->

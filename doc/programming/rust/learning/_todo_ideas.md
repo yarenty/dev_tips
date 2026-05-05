@@ -44,7 +44,7 @@ status: draft
 > Auto-split: 3 additional top-level heading(s) extracted into sibling files:
 > - [XC in Rust](xc_in_rust.md)
 > - [7 more ideas](7_more_ideas.md)
-> - [from easier to advanced 1-by-1](from_easier_to_advanced_1_by_1.md)
+> - [from easier to advanced 1-by-1](from_easy_to_advanced.md)
 
 
 <!-- Original content preserved verbatim below. Curate / prune during rewrite. -->

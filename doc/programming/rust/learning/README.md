@@ -20,7 +20,7 @@ status: draft
 - [Cheats](cheats.md)
 - [Cheats](cheats_2.md)
 - [eyre](eyre.md)
-- [from easier to advanced 1-by-1](from_easier_to_advanced_1_by_1.md)
+- [from easier to advanced 1-by-1](from_easy_to_advanced.md)
 - [Github MAP](github_map.md)
 - [Scope](scope.md)
 - [Simple short intro to rust](simple_short_intro_to_rust.md)

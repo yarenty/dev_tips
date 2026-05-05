@@ -11,13 +11,12 @@ status: draft
 ## Articles
 
 - [Axum](axum.md)
-- [Dioxus [CHECK!](gui/gui.mdi.md)](dioxus_check_gui_gui_mdi_md.md)
 - [Feather](feather.md)
 - [Gloo](gloo.md)
 - [kuchiki](html.md)
 - [Hyper](http.md)
 - [HyperFS](hyperfs.md)
-- [obsetrvability on wasm](obsetrvability_on_wasm.md)
+- [obsetrvability on wasm](observability_on_wasm.md)
 - [Rewquest](rewquest.md)
 - [Rocket](rocket.md)
 - [Tungstenite](tungstenite.md)

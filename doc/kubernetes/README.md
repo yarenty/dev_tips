@@ -12,14 +12,9 @@ status: draft
 
 - [Akri](akri.md)
 - [Balena](balena.md)
-- [Build a local Docker image and push it to the Docker Hub](build_a_local_docker_image_and_push_it_to_the_docker_hub.md)
-- [Deploy the function using the image](deploy_the_function_using_the_image.md)
 - [Dokku](dokku.md)
 - [K3S](k3s.md)
 - [Kuasar](kuasar.md)
-- [Now invoke your function](now_invoke_your_function.md)
-- [Omit sudo if you wish, then move the arkade binary to /usr/local/bin/](omit_sudo_if_you_wish_then_move_the_arkade_binary_to_usr_loc.md)
-- [Once Proxying you can navigate to the below](once_proxying_you_can_navigate_to_the_below.md)
 
 ## Keywords
 

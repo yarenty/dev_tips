@@ -43,7 +43,7 @@ status: draft
 <!-- auto-split by article_split.py -->
 > Auto-split: 2 additional top-level heading(s) extracted into sibling files:
 > - [Tutorials](tutorials_2.md)
-> - [Linear Regression With Time Series](linear_regression_with_time_series.md)
+> - [Linear Regression With Time Series](linear_regression.md)
 
 
 <!-- Original content preserved verbatim below. Curate / prune during rewrite. -->

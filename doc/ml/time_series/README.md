@@ -12,7 +12,7 @@ status: draft
 
 - [forecasting](forecasting.md)
 - [Kolmogorov-Arnold Networks (KANs) for Time Series Forecasting](kan.md)
-- [Linear Regression With Time Series](linear_regression_with_time_series.md)
+- [Linear Regression With Time Series](linear_regression.md)
 - [Drop any and all nulls across all columns](missing_data.md)
 - [Papers](papers.md)
 - [Transformers](time_serie_transformer.md)
