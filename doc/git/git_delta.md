@@ -1,72 +1,84 @@
 ---
-title: delta
+title: delta — pretty diff & blame pager for Git
 main_link: https://github.com/dandavison/delta
-keywords: [git-delta, git, dandavison, brew, delta]
-status: draft
+keywords: [git, delta, git-delta, diff, pager, syntax-highlighting, dandavison]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# delta
+# delta — pretty diff & blame pager for Git
 
 **Main link:** <https://github.com/dandavison/delta>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`delta` is a syntax-highlighting pager for `git diff`, `git log`, `git show`, `git stash show`, `git blame`, and `git reflog`. Written in Rust by Dan Davison, it replaces the bare red/green diff output with a syntax-aware, side-by-side or unified view, with file headers, line numbers, hunk highlighting, and configurable themes. It plugs in via a single `core.pager` setting; everything else is opt-in.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Use it the moment you start reading more diffs than you write. The default `git diff` output is unreadable beyond about 30 lines; `delta` makes large reviews tractable. Pairs perfectly with the [[config|sane defaults]] snippet — in particular `diff.algorithm = histogram` (better hunk detection) and `merge.conflictStyle = zdiff3` (delta renders the third marker beautifully). The Rust install is one `brew install git-delta` (or `cargo install git-delta`) and there are no daemons / background processes — it's a one-shot pager so the cost is zero when you're not viewing diffs. Side-by-side mode (`delta.side-by-side = true`) is the killer feature for code review.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[config]] — global Git defaults that complement delta.
+- `diff-so-fancy` — older, perl-based predecessor; less feature-rich.
+- `bat` — same syntax-highlighting library (`syntect`) used as a `cat` replacement.
+- `difftastic` — structural / AST-aware diff (different goal: shows what *changed semantically*, not what changed line-wise).
+- `tig` — TUI Git browser; can be configured to use delta.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[github]] — Github README _(score 22.1)_
-- [[config]] — GIT configuration _(score 22.1)_
-- [[prometheus]] — prometheus _(score 20.9)_
-- [[workmux]] — Workmux _(score 18.1)_
-- [[delta]] — DeltaLake _(score 8.9)_
+- [[config]] — Global Git config that should pair with delta (`core.pager`, `interactive.diffFilter`, `delta.navigate`).
+- [[github]] — Other Git tooling note in this section.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#git-delta` `#git` `#dandavison` `#brew` `#install` `#installation`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#git` `#delta` `#git-delta` `#diff` `#pager` `#syntax-highlighting` `#dandavison`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Project: <https://github.com/dandavison/delta>
+- Install docs: <https://dandavison.github.io/delta/installation.html>
 
-# delta
+### Install (macOS)
 
-
+```shell
 brew install git-delta
+```
 
+Other platforms: `cargo install git-delta`, `apt install git-delta`, or grab a release binary from the GitHub releases page.
 
-https://github.com/dandavison/delta
+### Wire it into your global Git config
 
-
-https://dandavison.github.io/delta/installation.html
-
-
-```bash
-git config --global core.pager delta
+```shell
+git config --global core.pager 'delta'
 git config --global interactive.diffFilter 'delta --color-only'
-git config --global delta.navigate true
-git config --global merge.conflictStyle zdiff3
+git config --global delta.navigate true               # n/N to jump between files
+git config --global merge.conflictStyle zdiff3        # delta renders zdiff3 nicely
+```
+
+Equivalent in `~/.gitconfig`:
+
+```ini
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+    light = false              # set true if your terminal background is light
+    line-numbers = true
+    side-by-side = true        # uncomment for side-by-side diffs
+[merge]
+    conflictStyle = zdiff3
+```
+
+### Useful one-offs
+
+```shell
+git diff | delta                       # ad-hoc diff
+git log -p | delta                     # full history with diffs
+git blame <file> | delta                # syntax-highlighted blame
+git reflog --color=always | delta      # easier-to-read reflog
 ```

@@ -1,72 +1,48 @@
 ---
-title: GIT configuration
+title: Git configuration — sane defaults
 main_link: https://blog.gitbutler.com/how-git-core-devs-configure-git/
-keywords: [config, git, better, diff, branch, configuration, cache]
-status: draft
+keywords: [git, config, gitconfig, defaults, diff, rebase, push, fetch]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# GIT configuration
+# Git configuration — sane defaults
 
 **Main link:** <https://blog.gitbutler.com/how-git-core-devs-configure-git/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+A copy-paste-able `~/.gitconfig` snippet that turns Git into the tool it should already have been by default. Sourced from a GitButler blog post that distilled the "Spring Cleaning" thread on the Git mailing list, where Git's own core developers compared the settings they cannot live without. Most are safe global toggles (better diff algorithm, smarter push/fetch, sorted branch listings); a few are matters of taste (rebase-on-pull, `zdiff3` merge style, fsmonitor for big repos).
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for this whenever you set up a fresh machine or onboard a junior. The biggest single-character wins are `diff.algorithm = histogram` (vastly better diff output for moved code), `push.autoSetupRemote = true` (no more "set-upstream" gymnastics), `branch.sort = -committerdate` + `column.ui = auto` (sane `git branch` output), and `rebase.autoSquash = true` + `rebase.autoStash = true` (fixup workflow becomes painless). The "matter of taste" block is genuinely subjective — try `merge.conflictstyle = zdiff3` once and decide; some people love the extra base-version context, others find the third marker noisy.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[git_delta]] — pretty diff/blame pager that pairs with the `diff.*` settings here.
+- GitButler — the blog's authors; alternative branch-management UI on top of Git.
+- `git config --global` reference — `git help config` for every key documented here.
+- `direnv` / per-repo `.gitconfig` — when global isn't right for one repo.
+- conventional-commits / commitlint — if you adopt `commit.verbose = true` you may also want commit-message conventions.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[git_delta]] — delta _(score 22.1)_
-- [[github]] — Github README _(score 22.1)_
-- [[cache]] — Cache _(score 18.3)_
-- [[workmux]] — Workmux _(score 18.1)_
-- [[tools/linux/zellij|zellij]] — Zellij _(score 8.9)_
+- [[git_delta]] — Companion: better diff/blame rendering, configured exactly via the `core.pager` line in this config.
+- [[github]] — Other Git tooling tip in this section.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#config` `#git` `#default` `#better` `#diff` `#branch`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#git` `#config` `#gitconfig` `#defaults` `#diff` `#rebase` `#push` `#fetch`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+Source article: <https://blog.gitbutler.com/how-git-core-devs-configure-git/>
 
-# GIT configuration
+### The full snippet (ready for `~/.gitconfig`)
 
-
-
-
-FROM: https://blog.gitbutler.com/how-git-core-devs-configure-git/
-
-
-## ~/.gitconfig file.
-
-
-makes git better
-
-
-```yaml
+```ini
 [column]
 ui = auto
 [branch]
@@ -90,7 +66,6 @@ pruneTags = true
 all = true
 
 # why the hell not?
-
 [help]
 autocorrect = prompt
 [commit]
@@ -106,7 +81,6 @@ autoStash = true
 updateRefs = true
 
 # a matter of taste (uncomment if you dare)
-
 [core]
 # fsmonitor = true
 # untrackedCache = true
@@ -115,20 +89,51 @@ updateRefs = true
 # conflictstyle = zdiff3
 [pull]
 # rebase = true
-
 ```
 
-Copypasta.
+### Per-setting cheat sheet
 
+**Listing**
+- `column.ui = auto` — multi-column output for `git branch`, `git status`, `git tag`, `git clean`.
+- `branch.sort = -committerdate` — most-recent branches at the top, not alphabetical.
+- `tag.sort = version:refname` — natural-version sort (so `0.5.100` comes before `0.5.1000`).
 
-How do Git core devs configure their Gits?
-Before I dig into these one by one, there is an interesting question about if even the core Git developers think that some of these default values should be changed.
+**Init**
+- `init.defaultBranch = main` — silences the post-init nag screen.
 
-This came up not too long ago on the Git mailing list, and honestly, a few of these settings I personally learned from this thread called "Spring Cleaning" where Felipe Contreras challenged the Git core team to remove all their built up config options and aliases and see what it’s like to use Git stock, out of the box.
+**Diff**
+- `diff.algorithm = histogram` — newer, smarter algorithm; far better at detecting moved/refactored code than the 1986-era default `myers`.
+- `diff.colorMoved = plain` — colour moved lines distinctly from added/removed.
+- `diff.mnemonicPrefix = true` — replaces `a/`/`b/` in headers with `i/` (index), `w/` (worktree), `c/` (commit).
+- `diff.renames = true` — detect file renames in diffs (slightly slower, almost always wanted).
 
-He challenged the list to pay attention to what settings they really wanted to change and share the top settings changes that seemed the most important with the list.
+**Push**
+- `push.default = simple` — push current branch to same name on remote (default since 2.0).
+- `push.autoSetupRemote = true` — no more "fatal: no upstream branch" — just sets it.
+- `push.followTags = true` — push local tags along with commits automatically.
 
-The results were very interesting, a rather concise list of 9 config settings and 3 aliases that the experiment participants more or less agreed should arguably be new defaults. Let's just take a look at the proposed config setting changes.
+**Fetch**
+- `fetch.prune = true` — delete `origin/foo` when `foo` is gone on the server.
+- `fetch.pruneTags = true` — same for tags.
+- `fetch.all = true` — fetch from every configured remote.
+
+**Why the hell not**
+- `help.autocorrect = prompt` — Git asks "Did you mean `git status`?" before running it.
+- `commit.verbose = true` — the full diff is shown in the commit-message editor for context (stripped on save).
+- `rerere.enabled = true` + `rerere.autoupdate = true` — REuse REcorded REsolutions; remembers how you solved a rebase conflict and replays it next time.
+- `core.excludesfile = ~/.gitignore` — guessable path for the global ignore (Git also reads `~/.config/git/ignore`).
+- `rebase.autoSquash = true` — `git commit --fixup=…` commits get squashed automatically on rebase.
+- `rebase.autoStash = true` — uncommitted work is stashed/restored across rebases.
+- `rebase.updateRefs = true` — keeps stacked branch refs in sync when the base is rebased.
+
+**Matter of taste (commented out by default)**
+- `core.fsmonitor = true` + `core.untrackedCache = true` — speeds up `git status` on huge repos via a per-repo file-watcher process.
+- `merge.conflictstyle = zdiff3` — adds a `|||||||` block in conflicts showing the common ancestor. Either super useful or noisy depending on your taste. Requires Git ≥ 2.35.
+- `pull.rebase = true` — `git pull` always rebases instead of merging.
+
+### Original article context
+
+Felipe Contreras's "Spring Cleaning" thread on the Git mailing list challenged core developers to remove all their accumulated `gitconfig` and aliases and use vanilla Git. The condensed list of settings most participants ended up re-adding became the basis for this article:
 
 ```
 merge.conflictstyle = zdiff3
@@ -141,291 +146,3 @@ grep.patternType = perl
 feature.experimental = true
 branch.sort = committerdate
 ```
-
-Now, none of these have become the new defaults in the 3 or 4 years since this experiment, but it’s interesting that a lot of the Git developers themselves have a hard time using Git without several of these turned on.
-
-Even more interesting is that most of you probably don’t know what any of these do.
-
-So, let’s dig into them. What do these do and why should you almost certainly blindly trust me and go ahead and enable them?
-
-I'm going to group these settings into three categories:
-
-Clearly Makes Git Better
-Why the Hell Not?
-A Matter of Taste
-Let's get started.
-
-Clearly Makes Git Better
-This first group of settings clearly makes Git better by default. There are generally zero downsides to enabling any of them.
-
-Listing branches
-I noted this in a previous blog post here about Git Tips under “Branch Stuff” but as this was also in the Spring Cleaning list, I think everyone agrees that listing out Git branches should probably not be alpha-ordered by default.
-
-The two settings which help improve this are branch.sort and column.ui. The first of which sorts the list by the most recent commit date (so probably more interesting at the top) rather than by alpha order. The second will put the branch names in a column format so you can see more per screen.
-
-```
-
-git config --global column.ui auto
-git config --global branch.sort -committerdate
-```
-
-The column.ui setting also affects the output of other listing commands (clean, status, tag), but generally I think it’s better than the default.
-
-
-You can also sort by other things than committer date, but I think it’s pretty clearly the most useful one.
-
-Listing tags
-Speaking of listing things, it’s also pretty ridiculous that this isn’t the default for listing tags, since it’s what nearly everyone actually wants.
-
-Normally, if you list tags by alpha order, you’ll get something like this:
-
-```
-
-$ git tag
-nightly/0.5.100
-nightly/0.5.1000
-nightly/0.5.1001
-nightly/0.5.101
-nightly/0.5.1010
-```
-
-Nobody wants 0.5.101 to come after 0.5.1000, but that’s alpha order. You can fix this by setting this:
-
-git config --global tag.sort version:refname
-Which will generally do what you expect, treating dotted version numbers as a series of integer values for sorting purposes. Trust me, just enable this.
-
-Default branch
-This one may be a little more controversial, since it can be argued to be somewhat political, but there should be a default branch name in Git where it doesn’t complain every time you init a new repo.
-
-git config --global init.defaultBranch main
-Personally, I don’t have a problem with master and most of my repositories use that since that used to be the default, but I’m also fine with main, so whatever it is you want to use, just go ahead and set it.
-
-Mostly what I find stupid is that now Git is annoying about this rather than just updating the default value. I wish Git had some taste here, but they don't, so you should just set it to something you find reasonable. But whatever.
-
-Better diff
-There is actually a whole blog post that could be written about git diff algorithms, but the short story is that by default Git will use an old, fast, pretty reliable diff algorithm called "myers diff".
-
-To give you a sense of what ‘old’ means, it was first published in a paper in 1986, so it’s almost 40 years old now. If you’re as old as I am, perhaps I can give you some childhood perspective as to what that means. The movies ‘The Three Amigos’, ‘An American Tail’ and the first ‘Highlander’ came out in theaters that year.
-
-In any case, some advances have been made since then (with some tradeoffs too) and it may surprise you to know that Git actually ships with 4 built in diff algorithms it can use: myers, minimal, patience and histogram.
-
-Almost certainly what you want to be using is the histogram algorithm (an incremental improvement on ‘patience’), rather than the default of 'myers'. You can globally change it like this:
-
-git config --global diff.algorithm histogram
-Here is an example of simple code movement diffed in myers vs histogram, to give a short taste of how it can be a bit smarter:
-
-Let's say we move a css class below a similar one, change it a little, and then run git diff with the default myers algorithm. We may get something like this:
-
-
-Ok, a little confusing. Here is what histogram would give us in the same scenario:
-
-
-It's a bit more clear here what's actually happened.
-
-As recently as last year, Elijah (of our Git Merge fame) suggested that
-histogram or patience might make better defaults, in addition to Felipe's Spring Cleaning suggestion of the same thing, but in reality it’s unlikely to get through the gauntlet anytime soon.
-
-That’s a big one, but there are also a few more smaller tweaks you can make to git diff:
-```
-
-git config --global diff.colorMoved plain
-git config --global diff.mnemonicPrefix true
-git config --global diff.renames true
-```
-
-The colorMoved was also in the Spring Cleaning suggestion list, so it also should probably be a default change.
-
-Here is an example of the previous code movement with the colorMoved turned on:
-
-
-You can see actually the difference between the moved code and the added line. With colorMoved it will show code movement in different colors then added and removed lines.
-
-The diff.renames option will detect if a file has been renamed, which is generally good (if slightly more expensive) and diff.mnemonicPrefix will replace the a/ and b/ in your diff header output with where the diff is coming from, so i/ (index), w/ (working directory) or c/ commit.
-
-So if I diff a change in my index to my working directory I get this as my diff header instead:
-```
-
-❯ git diff
-diff --git i/apps/web/page.js w/apps/web/page.js
-index 7568be2ef..b9e9a00d7 100644
---- i/apps/web/page.js
-+++ w/apps/web/page.js
-```
-
-A little difficult to see in this example perhaps, but you can tell which side is from the index and which is from the working directory by the leading path names. It’s really subtle, but I like it.
-
-Better pushing
-One of the things that has continued to confuse and frustrate me since the very early days of Git is setting up tracking branches properly. When I push, where does it push, or does it push at all?
-
-There are three updated push settings that I think make for a much nicer default experience. The first (push.default simple) has been the new default since Git 2.0, but the others still need to be set explicitly.
-
-```
-
-git config --global push.default simple # (default since 2.0)
-git config --global push.autoSetupRemote true
-git config --global push.followTags true
-```
-
-This has always been a bit of a pain in Git. The new simple default is built more or less for centralized workflows and by default pushes the current branch to the same name on the remote. I think this is a pretty sensible default.
-
-However, if that branch does not exist and there is no tracking branch setup, you’ll still get this error:
-
-$ git push
-fatal: The current branch my-branch-name has no upstream branch.
-To push the current branch and set the remote as upstream, use
-```
-
-    git push --set-upstream origin my-branch-name
-```
-
-I have to imagine that you have all seen this roughly one million times.
-
-If you set push.autoSetupRemote to true, then you won’t get this error anymore. If the upstream is not set, it will automatically set it. I cannot tell you how much I love this setting.
-
-Finally, the push.followTags setting will push all tags that you have locally that aren’t on the server, every time you push anything. I’ve been bitten by this a few times - if you ever create tags locally, set this up so you don’t have to worry about other people not seeing them.
-
-Better fetching
-It can be argued that it’s nice to keep some historical local copies of branches and tags that used to be on the server but are not any longer, but I don’t really buy that.
-
-Personally, I think the default behavior of Git should be to make your remote references as close to what is on the remote as possible. Prune stuff that’s gone, etc.
-
-So, I think these fetch settings should be the default:
-```
-
-git config --global fetch.prune true
-git config --global fetch.pruneTags true
-git config --global fetch.all true
-```
-
-Really all that this does is make sure we delete origin/blah if blah is deleted on the server, and also do it automatically for all the remotes that we have configured. Seems pretty reasonable to me.
-
-Why the Hell Not?
-This next batch of settings are generally harmless and occasionally helpful.
-
-I’m not sure I would necessarily change the defaults, but I also don’t think it would hurt anyone and in many cases would be more helpful, so I’m including them in my list.
-
-Autocorrect prompting
-As I explained in great length in my previous post, there is a rather nice feature in Git where if your fingers trip up while typing a command, it will guess what you meant and try to run it.
-
-The default is to not do this at all. What I rather prefer is to guess and prompt you.
-```
-
-git config --global help.autocorrect prompt
-```
-
-If you want to read about this setting, it’s reasoning and it’s history ad nauseam, I have just the post for you.
-
-Commit with diffs
-This was also one of the suggestions in the Spring Cleaning list, I think mostly because it just adds more information to the context you can reference when you write your commit message in your editor.
-
-By default, a git commit will give you a message that looks something like this:
-
-
-Where there is just a list of files that were changed. If you set commit.verbose to be true, it will put the whole diff output in there for you to reference as you write your message.
-
-```
-
-git config --global commit.verbose true
-```
-
-Here’s what it looks like now when you go to commit:
-
-
-All of this will be removed from the commit message (everything under the hilarious -- >8 -- "scissors" line), but it can give you much more context in writing your message.
-
-Reuse recorded resolutions
-This setting is only useful if you’re doing rebases with conflicts over and over again. It’s not the most common situation, but there is not really an issue if it’s turned on and never used.
-
-```
-
-git config --global rerere.enabled true
-git config --global rerere.autoupdate true
-```
-
-The enabled option will make sure it records the before and after states of rebase conflicts and the autoupdate will automatically re-apply the resolutions if it sees them again. I wrote about this at some length over here, so I won’t bore you with the recap any further.
-
-Global ignore file
-This is pretty dumb, but as there is a ~/.gitconfig file with global values, it would be cool if there were a ~/.gitignore file with global values. This setting accomplishes that:
-
-```
-
-git config --global core.excludesfile ~/.gitignore
-```
-
-In reality, this is sort of unnecessary, since Git will already look for global ignore values in the following two places: ~/git/ignore and ~/.config/git/ignore but since those are a little obscure, I feel like it’s nice to have this more guessable path.
-
-Slightly nicer rebase
-This section mostly has to do with the use case where you're fixing up and squashing your commits. If you don't know what that is, please check out our previous blog post on autosquashing.
-
-However, if you are squashing and rebasing a lot (or even occasionally), these settings could help and certainly won't hurt things.
-
-```
-
-git config --global rebase.autoSquash true
-git config --global rebase.autoStash true
-git config --global rebase.updateRefs true
-```
-
-The updateRefs setting should almost certainly be a default, honestly. It just takes stacked refs in a branch and makes sure they're also moved when a branch is rebased.
-
-If you want to learn a tiny bit more about how to use fixup, autosquash and updateRefs, it's probably easiest to watch a few minutes of a talk where I go over it here:
-
-
-A Matter of Taste
-The next group is based on your personal taste, but most people don’t know they exist and a lot of people may find them useful. They are commented out in my TLDR settings.
-
-Better merge conflicts
-So, while this is brought up in the Spring Cleaning thread as something that might want to be the new default, I'm not sure that all of you would agree.
-
-When you have a merge conflict in Git, instead of inserting the conflict markers from left and right, you can ask it to insert what the base of it looked like too. Sometimes this can be really useful, but some people can find it pretty annoying.
-
-```
-
-git config --global merge.conflictstyle zdiff3
-```
-
-There have been discussions on the Git mailing list to make this the default and actually GitButler uses the diff3 strategy when dealing with merge conflict markers and to be totally honest, not all of us love it.
-
-Here is an example of a simple merge conflict marker you might get in a file when doing a merge or rebase:
-
-
-With the merge.conflictStyle zdiff3 setting, it would look like this:
-
-
-Essentially, in addition to the <<<<<< and >>>>>> sections that show you how you changed the block and how the other person changed it, it adds a ||||||| block that shows you what the block looked like before either of you changed it.
-
-That extra context (what that section looked like before either side modified it) can sometimes be super useful, but often it's just more data and somewhat confusing.
-
-Really, it's up to you if you prefer more data there.
-
-⚠️
-Git has nearly always had diff3 as a strategy. I'm recommending zdiff3 here, which stands for "zealous diff3" and is slightly better, but only available since Git 2.35 (Jan 2022). If you have an older Git version, just remove the "z".
-Better pulling
-The merge versus rebase debate is of course one that may never be agreed upon, but most of us have a preference. However, you may not know that you can set the git pull default so that it will only do one or the other. No need for git pull --rebase, you can make it the default:
-
-```
-
-git config --global pull.rebase true
-```
-
-This is a personal decision, but as I’ve migrated to the rebase only camp recently, it is in fact in my config.
-
-Run the fsmonitor processes
-Again, this is really only a thing for larger repositories, and maybe you don’t want filesystem monitors running all over the place, but it can make things like git status much faster if you have big working directories.
-
-Maybe it shouldn’t be a default, but it’s not very bad and can make a big difference. Maybe git clone should ask you if you want to set it or not. Whatever, it’s an option for you.
-
-```
-
-git config --global core.fsmonitor true
-git config --global core.untrackedCache true
-```
-
-This will run a filesystem monitor (per repository) that notices file changes and updates a cache so that git status doesn’t have to crawl every file and see if anything changed via a thousand mtime stat calls, it can just look at a simple log of file changes.
-
-⚠️
-Be aware that this will run a single process per repository that you are active in, which can be a lot. They mostly don't do much as they're event based, so it shouldn't affect memory or CPU noticeably, even with hundreds of them, but it's something to keep in mind. You can also leave out the --global and just enable it for your larger repos.
-Final thoughts
-Hopefully this has been a useful reference and maybe you learned some new Git config things, some of which should almost certainly already be the defaults, which isn’t even a controversial option in the Git mailing list community.
-
-There are lots of other ways to pimp your Git ride (aliases, cool external pager and diff tools, things like that) but I thought it would be best to just stick to globally useful and relatively simple vanilla Git settings.
