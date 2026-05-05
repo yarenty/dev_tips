@@ -655,9 +655,9 @@
 # Git
 
 - [Git](git/README.md)
-  - [GIT configuration](git/config.md)
-  - [delta](git/git_delta.md)
-  - [Github README](git/github.md)
+  - [Git configuration — sane defaults](git/config.md)
+  - [delta — pretty diff & blame pager for Git](git/git_delta.md)
+  - [GitHub profile README](git/github.md)
 
 # Demo
 
@@ -667,10 +667,10 @@
 # Funny
 
 - [Funny](funny/README.md)
-  - [Algorithms](funny/algorithms.md)
+  - [Brainfuck algorithms](funny/algorithms.md)
+  - [brain — Rust-flavoured language that compiles to Brainfuck](funny/brain.md)
   - [Brainfuck](funny/brainfuck.md)
-  - [Rust - brain](funny/rust_brain.md)
-  - [Sleep SORT algorithm](funny/sleepsort.md)
+  - [Sleep sort](funny/sleepsort.md)
 
 # Published
 
