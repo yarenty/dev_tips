@@ -619,15 +619,14 @@
 # Digital Twin
 
 - [Digital Twin](digital_twin/README.md)
-  - [Bmw](digital_twin/bmw.md)
-  - [Cps](digital_twin/cps.md)
-  - [Definition](digital_twin/definition.md)
-  - [Isc2022](digital_twin/isc2022.md)
-  - [Links](digital_twin/links.md)
-  - [Nvidia](digital_twin/nvidia.md)
-  - [Nvidia Omniverse](digital_twin/nvidia_omniverse.md)
-  - [Scilab](digital_twin/scilab.md)
-  - [Simulink](digital_twin/simulink.md)
+  - [BMW iFACTORY — digital-twin deployment case study](digital_twin/bmw.md)
+  - [Cyber-Physical Systems (CPS) — academic framing](digital_twin/cps.md)
+  - [Digital twin — definition & taxonomy](digital_twin/definition.md)
+  - [ISC 2022 — supercomputing & digital-twin keynote (NVIDIA + BMW)](digital_twin/isc2022.md)
+  - [Digital twin — curated reading list](digital_twin/links.md)
+  - [NVIDIA Omniverse — physically-accurate simulation platform](digital_twin/nvidia_omniverse.md)
+  - [Scilab — open-source numerical computation](digital_twin/scilab.md)
+  - [Simulink — MathWorks block-diagram simulation](digital_twin/simulink.md)
 
 # Games
 
