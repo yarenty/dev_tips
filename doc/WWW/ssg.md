@@ -54,7 +54,7 @@ status: draft
 
 # Static Site Generators
 
-## [Dioxus -check](../programming/rust/gui/gui.mdi.md)
+## [Dioxus -check](../programming/rust/gui/gui.md)
 
 ## Zola
 

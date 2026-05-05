@@ -57,7 +57,7 @@ status: draft
 
 opposite to ssg ;-)
 
-## [Dioxus -check](../programming/rust/gui/gui.mdi.md)
+## [Dioxus -check](../programming/rust/gui/gui.md)
 
 https://www.youtube.com/watch?v=7utPutDORb4
 

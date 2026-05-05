@@ -63,7 +63,7 @@ status: draft
 https://eugenkiss.github.io/7guis/tasks
 
 
-## See [Dioxus / Freya](gui/gui.mdi.md)
+## See [Dioxus / Freya](gui/gui.md)
 
 
 ## Selen - UI

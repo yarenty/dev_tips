@@ -52,7 +52,7 @@ status: draft
 <!-- auto-split by article_split.py -->
 > Auto-split: 5 additional top-level heading(s) extracted into sibling files:
 > - [wasmtime](wasmtime.md)
-> - [Dioxus](../gui/dioxus.md) (the original heading was a `[CHECK!]` reminder pointing at a nonexistent `gui/gui.mdi.md`; the real article is `programming/rust/gui/dioxus.md` and the empty split stub was deleted)
+> - [Dioxus](../gui/dioxus.md) (the original heading was a `[CHECK!]` reminder pointing at a nonexistent `gui/gui.md`; the real article is `programming/rust/gui/dioxus.md` and the empty split stub was deleted)
 > - [YEW](yew.md)
 > - [Gloo](gloo.md)
 > - [obsetrvability on wasm](observability_on_wasm.md)

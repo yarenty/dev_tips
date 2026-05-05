@@ -8,7 +8,7 @@ title = "Insights - 2022"
 [output.html]
 mathjax-support = true
 additional-js = ["mermaid.min.js", "mermaid-init.js"]
-additional-css = ["././mdbook-admonish.css"]
+additional-css = ["././mdbook-admonish.css", "./mdbook-admonish.css"]
 
 
 [output.html.playground]
@@ -21,7 +21,7 @@ command = "mdbook-mermaid"
 
 [preprocessor.admonish]
 command = "mdbook-admonish"
-assets_version = "1.0.0" # do not edit: managed by `mdbook-admonish install`
+assets_version = "3.0.3" # do not edit: managed by `mdbook-admonish install`
 
 #[output.pdf]
 #landscape = false

@@ -1,154 +1,679 @@
-<!-- keywords-extended by P6.5 -->
-# Personal Development Notes
+# dev_tips
 
-These notes are a collection of my personal learnings, tips, and tricks in the areas of programming, machine learning, cloud technologies, and more. I use it as a personal reference and to share knowledge I find useful.
-
-- [References](references.md) - Collection of external references.
-- [Intro](intro.md) - Introduction to the notes.
+[Index](README.md)
+[References](references.md)
 
 # Programming
 
-- [Programming](programming/programming.md) - Core programming languages and development topics.
-    - [Rust](programming/rust/rust.md) - Information about Rust programming language.
-        - [Learning](programming/rust/learning.md) - Resources for learning Rust.
-        - [Must Have](programming/rust/_must_have.md) - Essential Rust crates and concepts.
-        - [CLI](programming/rust/cli.md) - Building command-line interfaces with Rust.
-        - [TUI](programming/rust/tui.md) - Text User Interface development in Rust.
-        - [GUI](programming/rust/gui/gui.mdi.md) - Graphical User Interface development in Rust.
-        - [Core Concepts](programming/rust/core.md) - Core concepts of Rust programming.
-        - [JSON](programming/rust/json.md) - Working with JSON in Rust.
-        - [gRPC](programming/rust/gRPC.md) - Using gRPC with Rust.
-        - [trpc](programming/rust/trpc.md) - Using trpc with rust.
-        - [Timely](programming/rust/timely.md) - Timely Dataflow in Rust.
-        - [Meilisearch](programming/rust/meilisearch.md) - Using Meilisearch with Rust.
-        - [Storage](programming/rust/storage.md) - Storage solutions in Rust.
-        - [Raspberry Pi](programming/rust/raspberry_pi.md) - Rust development on Raspberry Pi.
-        - [Charts](programming/rust/charts.md) - Creating charts in Rust.
-        - [HTTP](programming/rust/web/http.mdp.md) - Working with HTTP in Rust.
-        - [Loggers](programming/rust/loggers.md) - Logging in Rust applications.
-        - [Generational Index](programming/rust/generational_index.md) - Information about Generational Index.
-        - [Tests](programming/rust/tests.md) - Testing in Rust.
-        - [Fun](programming/rust/fun.md) - Fun projects in Rust.
-        - [Tools](programming/rust/tools.md) - Useful Rust tools.
-    - [Scala](programming/scala/scala.md) - Information about Scala programming language.
-        - [SBT](programming/scala/sbt.md) - Using SBT build tool with Scala.
-    - [Java](programming/java/java.md) - Multi-tricks on OS - Java tips and OS tricks.
-    - [Assembler](programming/assembly.md) - Assembler programming notes.
-    - [Minio](programming/minio.md) - Minio tools and configuration.
-    - [Datafusion](programming/datafusion/datafusion.md) - Working with Datafusion.
-    - [Bunnix/Helios](programming/building_unix_system.md) - notes about Building Unix like system.
+- [Programming](programming/README.md)
+  - [Assembly](programming/assembly.md)
+  - [Caching](programming/caching/README.md)
+    - [Garnet](programming/caching/garnet.md)
+  - [Cpp](programming/cpp/README.md)
+    - [C++ ABI](programming/cpp/abi.md)
+    - [Circle](programming/cpp/circle.md)
+  - [Go](programming/go/README.md)
+  - [Java](programming/java/README.md)
+  - [Package Managers](programming/package_managers/README.md)
+  - [PHP](programming/php/README.md)
+    - [Mago](programming/php/mago.md)
+  - [Rust](programming/rust/README.md)
+    - [bottom](programming/rust/bottom.md)
+    - [Command line](programming/rust/cli.md)
+    - [Cursive](programming/rust/cursive.md)
+    - [Dialoguer](programming/rust/dialoguer.md)
+    - [Indicatif](programming/rust/indicatif.md)
+    - [INK](programming/rust/ink.md)
+    - [IOCraft](programming/rust/iocraft.md)
+    - [Television](programming/rust/television.md)
+    - [Termion](programming/rust/termion.md)
+    - [Ratatui](programming/rust/tui.md)
+    - [Concurrency](programming/rust/concurrency/README.md)
+      - [Actix](programming/rust/concurrency/actors.md)
+      - [Salsa](programming/rust/concurrency/salsa.md)
+      - [par-stream](programming/rust/concurrency/streaming.md)
+      - [Timely Dataflow](programming/rust/concurrency/timely.md)
+    - [Core](programming/rust/core/README.md)
+      - [RustOWL](programming/rust/core/borrow_check.md)
+      - [Derivative](programming/rust/core/derivative.md)
+      - [eyre](programming/rust/core/error.md)
+      - [slotmap crate](programming/rust/core/generational_index.md)
+      - [hashbrown](programming/rust/core/hashbrown.md)
+      - [HalfBrown](programming/rust/core/low_level_structures.md)
+      - [pin-project](programming/rust/core/pin_project.md)
+      - [reflect](programming/rust/core/reflection.md)
+      - [Reflection step by step - Article](programming/rust/core/reflection_step_by_step_article.md)
+      - [tinyvec](programming/rust/core/tinyvec.md)
+    - [Data](programming/rust/data/README.md)
+      - [ADBC !](programming/rust/data/adbc.md)
+      - [barrel](programming/rust/data/barrel.md)
+      - [bb8](programming/rust/data/bb8.md)
+      - [Cache](programming/rust/data/cache.md)
+      - [sccache - Shared Compilation Cache](programming/rust/data/compilation_cache.md)
+      - [RustCrypto: POLYVAL](programming/rust/data/crypto.md)
+      - [diesel](programming/rust/data/db.md)
+      - [deadpool](programming/rust/data/deadpool.md)
+      - [GlueSQL](programming/rust/data/gluesql.md)
+      - [GreptimeDB](programming/rust/data/greptimedb.md)
+      - [Lance](programming/rust/data/lance_data_format.md)
+      - [DashMap](programming/rust/data/map_cache_storage.md)
+      - [Meilisearch](programming/rust/data/meilisearch.md)
+      - [Memory storage](programming/rust/data/memory_storage.md)
+      - [LetSQL](programming/rust/data/ml_letsql.md)
+      - [mobc](programming/rust/data/mobc.md)
+      - [mysql](programming/rust/data/mysql.md)
+      - [parseable](programming/rust/data/parseable.md)
+      - [r2d2](programming/rust/data/r2d2.md)
+      - [refinery](programming/rust/data/refinery.md)
+      - [rusqlite](programming/rust/data/rusqlite.md)
+      - [SeaQuery](programming/rust/data/seaquery.md)
+      - [sqlparser](programming/rust/data/sqlparser.md)
+      - [surrealDB](programming/rust/data/surrealdb.md)
+      - [tiberius](programming/rust/data/tiberius.md)
+      - [Trustfall](programming/rust/data/trustfall.md)
+      - [WooriDB](programming/rust/data/wooridb.md)
+      - [Datafusion](programming/rust/data/datafusion/README.md)
+        - [blaze](programming/rust/data/datafusion/blaze.md)
+        - [DeltaLake](programming/rust/data/datafusion/delta.md)
+        - [gluten](programming/rust/data/datafusion/gluten.md)
+        - [Iceberg](programming/rust/data/datafusion/iceberg.md)
+        - [Lake soul](programming/rust/data/datafusion/lakesoul.md)
+        - [Spark rapids](programming/rust/data/datafusion/rapids.md)
+        - [Vortex (2024-10-17)](programming/rust/data/datafusion/vortex.md)
+        - [xorg](programming/rust/data/datafusion/xorg.md)
+    - [GUI](programming/rust/gui/README.md)
+      - [Cacao](programming/rust/gui/cacao.md)
+      - [Dioxus](programming/rust/gui/dioxus.md)
+      - [egui](programming/rust/gui/egui.md)
+      - [Iced](programming/rust/gui/ised.md)
+      - [Lipo](programming/rust/gui/lipo.md)
+      - [mac-notification-sys](programming/rust/gui/mac_notification_sys.md)
+      - [Mac targets](programming/rust/gui/macos.md)
+      - [Matrix - rust bindings to ios version](programming/rust/gui/matrix.md)
+      - [Mobile](programming/rust/gui/mobile.md)
+      - [Pake](programming/rust/gui/pake.md)
+      - [Rust xcode plugin](programming/rust/gui/rust_xcode_plugin.md)
+      - [Slint](programming/rust/gui/slint.md)
+      - [swww](programming/rust/gui/swww.md)
+      - [Tao](programming/rust/gui/tao.md)
+      - [Tauri](programming/rust/gui/tauri.md)
+      - [UIs](programming/rust/gui/ui.md)
+    - [Interop](programming/rust/interop/README.md)
+      - [ballista py](programming/rust/interop/ballista_py.md)
+      - [maturin](programming/rust/interop/maturin.md)
+      - [pyo3](programming/rust/interop/pyo3.md)
+      - [PUFF](programming/rust/interop/python.md)
+      - [Rust - Java interactions](programming/rust/interop/to_java.md)
+      - [Rust to .net](programming/rust/interop/to_net.md)
+      - [Rust - Python interactions](programming/rust/interop/to_python.md)
+    - [IO](programming/rust/io/README.md)
+      - [bytemuck](programming/rust/io/bytes_manipulation.md)
+      - [libhdfs3](programming/rust/io/hdfs.md)
+      - [JSON](programming/rust/io/json.md)
+      - [pest. The Elegant Parser](programming/rust/io/parsers.md)
+      - [Calamine](programming/rust/io/xls.md)
+      - [Storage](programming/rust/io/storage/README.md)
+    - [Learning](programming/rust/learning/README.md)
+      - [7 more ideas](programming/rust/learning/7_more_ideas.md)
+      - [List of awesome libraries !!!](programming/rust/learning/_must_have.md)
+      - [Books](programming/rust/learning/_to_learn.md)
+      - [Move blokchain from python to rust](programming/rust/learning/_todo_ideas.md)
+      - [println! speedup 500%](programming/rust/learning/_tricks.md)
+      - [anyhow](programming/rust/learning/anyhow.md)
+      - [Cargo.toml](programming/rust/learning/cargo_toml.md)
+      - [Cheats](programming/rust/learning/cheats.md)
+      - [Cheats](programming/rust/learning/cheats_2.md)
+      - [eyre](programming/rust/learning/eyre.md)
+      - [from easier to advanced 1-by-1](programming/rust/learning/from_easy_to_advanced.md)
+      - [Github MAP](programming/rust/learning/github_map.md)
+      - [Scope](programming/rust/learning/scope.md)
+      - [Simple short intro to rust](programming/rust/learning/simple_short_intro_to_rust.md)
+      - [thiserror](programming/rust/learning/thiserror.md)
+      - [Tutorials](programming/rust/learning/tutorials.md)
+      - [XC in Rust](programming/rust/learning/xc_in_rust.md)
+    - [Misc](programming/rust/misc/README.md)
+      - [algorithms](programming/rust/misc/alagorithms.md)
+      - [Coreaudio](programming/rust/misc/audio.md)
+      - [Awesome embedded in rust](programming/rust/misc/awesome_embedded_in_rust.md)
+      - [charts](programming/rust/misc/charts.md)
+      - [Claxon](programming/rust/misc/claxon.md)
+      - [Daktilo](programming/rust/misc/daktilo.md)
+      - [Drogue](programming/rust/misc/drogue.md)
+      - [Embassy](programming/rust/misc/embassy.md)
+      - [bats](programming/rust/misc/fun.md)
+      - [Hound](programming/rust/misc/hound.md)
+      - [lewton](programming/rust/misc/lewton.md)
+      - [minimp3](programming/rust/misc/minimp3.md)
+      - [Rust Embedded - book](programming/rust/misc/raspberry_pi.md)
+      - [Rodio](programming/rust/misc/rodio.md)
+      - [RTIC](programming/rust/misc/rtic.md)
+      - [Symphonia](programming/rust/misc/symphonia.md)
+      - [Windows RS](programming/rust/misc/windows.md)
+    - [ML](programming/rust/ml/README.md)
+      - [CUDA in Rust](programming/rust/ml/cuda.md)
+      - [Linfa](programming/rust/ml/linfa.md)
+      - [ML libraries in Rust](programming/rust/ml/ml_in_rust.md)
+    - [Net](programming/rust/net/README.md)
+      - [GRPC](programming/rust/net/grpc.md)
+      - [ruMQTT](programming/rust/net/mq.md)
+      - [NATS](programming/rust/net/nats.md)
+      - [paho MQTT](programming/rust/net/paho_mqtt.md)
+      - [tRPC](programming/rust/net/trpc.md)
+      - [Bore](programming/rust/net/tunelling.md)
+    - [Plugins](programming/rust/plugins/README.md)
+    - [Projects](programming/rust/projects/README.md)
+      - [Datafusion](programming/rust/projects/datafusion/README.md)
+    - [SQL Engine](programming/rust/sql_engine/README.md)
+      - [Books](programming/rust/sql_engine/books.md)
+      - [CrateDB](programming/rust/sql_engine/cratedb.md)
+      - [Databend](programming/rust/sql_engine/databend.md)
+      - [Datafusion SQL Query Planner](programming/rust/sql_engine/datafusion.md)
+      - [diesel](programming/rust/sql_engine/diesel.md)
+      - [Excel UDF in Rust](programming/rust/sql_engine/excel_udf_in_rust.md)
+      - [Hive UDF – User Defined Function with Example](programming/rust/sql_engine/hive.md)
+      - [MariaDB](programming/rust/sql_engine/mariadb.md)
+      - [QPML](programming/rust/sql_engine/qpml.md)
+      - [rawsql](programming/rust/sql_engine/rawsql.md)
+      - [ROAPI](programming/rust/sql_engine/roapi.md)
+      - [MS Server](programming/rust/sql_engine/rust_libs.md)
+      - [SeaQuery](programming/rust/sql_engine/seaquery.md)
+      - [Snowflake](programming/rust/sql_engine/snowflake.md)
+      - [Spark UDF](programming/rust/sql_engine/spark.md)
+      - [sql-parse](programming/rust/sql_engine/sql_parse.md)
+      - [sqlite](programming/rust/sql_engine/sqlite.md)
+      - [SQLIte loadable](programming/rust/sql_engine/sqlite_loadable.md)
+      - [SQLparser](programming/rust/sql_engine/sqlparser.md)
+      - [udf](programming/rust/sql_engine/udf_lib.md)
+      - [WASM: for libsql](programming/rust/sql_engine/wasm_for_libsql.md)
+    - [Tooling](programming/rust/tooling/README.md)
+      - [awesome app](programming/rust/tooling/app_builders.md)
+      - [armada](programming/rust/tooling/armada.md)
+      - [Bandwhich](programming/rust/tooling/bandwhich.md)
+      - [BAT](programming/rust/tooling/bat.md)
+      - [bottom](programming/rust/tooling/bottom.md)
+      - [clido](programming/rust/tooling/clido.md)
+      - [Debug](programming/rust/tooling/debug.md)
+      - [difftastic](programming/rust/tooling/difftastic.md)
+      - [dusk  - replacement of du](programming/rust/tooling/dusk_replacement_of_du.md)
+      - [EXA](programming/rust/tooling/exa.md)
+      - [joshuto](programming/rust/tooling/joshuto.md)
+      - [Loggers](programming/rust/tooling/loggers.md)
+      - [Loki](programming/rust/tooling/loki.md)
+      - [lychee](programming/rust/tooling/lychee.md)
+      - [mprocs - replacement of tmux for long running processes!](programming/rust/tooling/mprocs.md)
+      - [obsetrvability on wasm](programming/rust/tooling/observability_on_wasm.md)
+      - [open telemtry](programming/rust/tooling/open_telemtry.md)
+      - [iRust](programming/rust/tooling/repl.md)
+      - [ripgrep](programming/rust/tooling/ripgrep.md)
+      - [RUST in JUPYTER](programming/rust/tooling/rust_in_jupyter.md)
+      - [rust-prometheus form tikv](programming/rust/tooling/rust_prometheus.md)
+      - [starship](programming/rust/tooling/starship.md)
+      - [TAURI](programming/rust/tooling/tauri.md)
+      - [mockall](programming/rust/tooling/tests.md)
+      - [coreutils](programming/rust/tooling/tools.md)
+      - [topgrade](programming/rust/tooling/topgrade.md)
+      - [Tracing](programming/rust/tooling/tracing.md)
+      - [turmoil](programming/rust/tooling/turmoil.md)
+      - [tux](programming/rust/tooling/tux.md)
+      - [UCLicious](programming/rust/tooling/uclicious.md)
+      - [watchexec](programming/rust/tooling/watchexec.md)
+      - [zellij - replacement of tmux - with colors and stuff](programming/rust/tooling/zellij.md)
+      - [zoxide](programming/rust/tooling/zoxide.md)
+    - [Web](programming/rust/web/README.md)
+      - [Axum](programming/rust/web/axum.md)
+      - [Feather](programming/rust/web/feather.md)
+      - [Gloo](programming/rust/web/gloo.md)
+      - [kuchiki](programming/rust/web/html.md)
+      - [Hyper](programming/rust/web/http.md)
+      - [HyperFS](programming/rust/web/hyperfs.md)
+      - [obsetrvability on wasm](programming/rust/web/observability_on_wasm.md)
+      - [Rewquest](programming/rust/web/rewquest.md)
+      - [Rocket](programming/rust/web/rocket.md)
+      - [Tungstenite](programming/rust/web/tungstenite.md)
+      - [wasmtime](programming/rust/web/wasmtime.md)
+      - [WASM](programming/rust/web/webassembly.md)
+      - [YEW](programming/rust/web/yew.md)
+  - [Scala](programming/scala/README.md)
+    - [SBT](programming/scala/sbt.md)
+  - [Swift](programming/swift/README.md)
+  - [Unix Systems](programming/unix_systems/README.md)
+    - [Bunnix](programming/unix_systems/building_unix_system.md)
+    - [Helios](programming/unix_systems/helios.md)
+    - [Minio](programming/unix_systems/minio.md)
+    - [Programming in Web](programming/unix_systems/monaco.md)
 
 # Databases
 
-- [Databases](db/db.md) - Notes on different databases.
-    - [MySQL](db/mysql.md) - Using MySQL database.
-    - [PostgreSQL](db/postgresql.md) - Using PostgreSQL database.
-    - [Druid](db/druid.md) - Using Druid database.
-    - [Firebase](db/firebase.md) - Using Firebase real-time database.
-    - [InfluxDB](db/influxdb.md) - Using InfluxDB time-series database.
-
-# Internet of Things (IoT)
-
-- [IoT](iot/iot.md) - Notes about Internet of Things.
-    - [MQTT](iot/mqtt.md) - Using MQTT protocol for IoT.
-    - [Shodan](iot/shodan.md) - Using Shodan for IoT security.
-    - [Drogue](iot/drogue.md) - Using Drogue Cloud platform for IoT.
-
-# Kubernetes
-
-- [Kubernetes](kubernetes/kubernetes.md) - Notes about Kubernetes container orchestration.
-    - [K3S - for IoT](kubernetes/k3s.md) - K3S - Kubernetes for IoT (Raspberry Pi) - Lightweight Kubernetes for IoT.
-    - [AKRI](kubernetes/akri.md) - Expose devices in Kubernetes, also GPUs/FPGAs - Device discovery in Kubernetes.
-    - [Balena](kubernetes/balena.md) - Develop, deploy, and manage IoT projects. (Have a fleet) - IoT project management platform.
-
-# Messaging
-
-- [Messaging](messagging/messagging.md) - About messaging systems.
-    - [Kafka](messagging/kafka.md) - Using Apache Kafka.
-    - [Pulsar](messagging/pulsar.md) - Using Apache Pulsar.
-    - [Kinesis](messagging/kinesis.md) - Using Amazon Kinesis.
-
-# Games
-
-- [Games](games/games.md) -  Games development notes.
-    - [Engines](games/engines.md) - Game engines overview.
-    - [Core Wars](games/corewars.md) - Notes about Core Wars game.
-    - [Scala](games/game_in_scala.md) - Development of game in Scala.
-
-# Cloud
-
-- [Cloud](cloud/cloud.md) - Cloud related topics.
-    - [Oracle free](cloud/oracle_free_tier.md) - Using Oracle Cloud free tier.
-
-# Machine Learning (ML)
-
-- [ML](ml/ml.md) - Notes about Machine Learning.
-    - [Courses](ml/courses.md) - Machine learning courses.
-    - [Graph Neural Networks (Graph NN)](ml/graphNN.md) - Notes about Graph Neural Networks.
-    - [K-Means](ml/kmenas.md) - Notes about K-Means algorithm.
-    - [MindsDB](ml/mindsdb.md) - Using MindsDB.
-    - [MLCube](ml/mlcube.md) - Information about MLCube.
-    - [Rust for ML](ml/rust.md) - Machine Learning with Rust.
-    - [MLGO - LLVM](ml/mlgo_llvm.md) - MLGO for LLVM.
-    - [Data](ml/data/data.md) - Information about datasets.
-        - [Public](ml/data/public.md) - Public datasets for ML.
-        - [APIs](ml/data/apis.md) - Datasets APIs.
-    - [XLA Accelerated Compiler](ml/XLA_accelerated_compiler.md) - Using XLA accelerated compiler.
-    - [Time Series](ml/time_series/time_series.md) - About time series analysis.
-        - [Papers](ml/time_series/papers.md) - Papers on time series.
-        - [Transformers](ml/time_series/time_serie_transformer.md) - Transformers in Time series.
-        - [Tutorials](ml/time_series/tutorials.md) - Tutorials on time series.
-    - [Knowledge Graph](ml/knowledge_graph/knowledge_graph.md) - About Knowledge Graph.
-        - [Papers](ml/knowledge_graph/papers.md) - Papers about Knowledge Graph.
-        - [Meta](ml/knowledge_graph/meta.md) - Information about Knowledge Graph Meta.
-    - [Genetics](ml/genetics/genetics.md) - About genetics.
-        - [MOEA](ml/genetics/moea.md) -  About genetic MOEA.
+- [Databases](db/README.md)
+  - [Analytics](db/analytics/README.md)
+    - [Databend](db/analytics/databend/README.md)
+    - [Datafusion](db/analytics/datafusion/README.md)
+    - [Gluten](db/analytics/gluten/README.md)
+    - [Tachyons Distributed](db/analytics/tachyons_distributed/README.md)
+    - [Tensor Query](db/analytics/tensor_query/README.md)
+  - [Catalogs](db/catalogs/README.md)
+    - [Unity Hive Catalog](db/catalogs/unity_hive_catalog/README.md)
+  - [Distributed](db/distributed/README.md)
+    - [Ballista Distributed](db/distributed/ballista_distributed/README.md)
+    - [Federated](db/distributed/federated/README.md)
+    - [Federated Query Execution](db/distributed/federated_query_execution/README.md)
+    - [Long Running Query](db/distributed/long_running_query/README.md)
+    - [Scheduling](db/distributed/scheduling/README.md)
+      - [Google](db/distributed/scheduling/google/README.md)
+      - [Microsoft](db/distributed/scheduling/microsoft/README.md)
+      - [Vldb](db/distributed/scheduling/vldb/README.md)
+  - [Fabric](db/fabric/README.md)
+  - [Formats](db/formats/README.md)
+    - [Nimble File Format](db/formats/nimble_file_format/README.md)
+    - [Table Transfer Protocols](db/formats/table_transfer_protocols/README.md)
+  - [Nosql](db/nosql/README.md)
+    - [firebase](db/nosql/firebase.md)
+    - [hbase](db/nosql/hbase.md)
+    - [Redis](db/nosql/redis.md)
+  - [Quality](db/quality/README.md)
+    - [Data Quality](db/quality/data_quality.md)
+    - [Data Curation](db/quality/data_curation/README.md)
+    - [Data Quality Problems In AI](db/quality/data_quality_problems_in_AI/README.md)
+  - [Relational](db/relational/README.md)
+    - [edgeDB](db/relational/edgedb.md)
+    - [fauna](db/relational/fauna.md)
+    - [Limbo](db/relational/limbo.md)
+    - [mysql](db/relational/mysql.md)
+    - [postgresql](db/relational/postgresql.md)
+    - [Singlestore](db/relational/singlestore.md)
+    - [SurrealDB](db/relational/surrealdb.md)
+    - [TensorBase](db/relational/tensorbase.md)
+    - [toyDB](db/relational/toydb.md)
+    - [XLite](db/relational/xlite.md)
+    - [Postgres](db/relational/postgres/README.md)
+      - [Barman: PostgreSQL Backup and Recovery Manager](db/relational/postgres/barman.md)
+  - [Streaming](db/streaming/README.md)
+    - [CDC](db/streaming/cdc.md)
+    - [Noria: data-flow for high-performance web applications](db/streaming/noria.md)
+    - [Delta Live](db/streaming/delta_live/README.md)
+    - [Streaming Query Approximation](db/streaming/streaming_query_approximation/README.md)
+      - [Approximate Continuous Querying  over Distributed Streams](db/streaming/streaming_query_approximation/approximate_continuous_querying_over_distributed_streams.md)
+      - [Papers](db/streaming/streaming_query_approximation/papers.md)
+  - [Timeseries](db/timeseries/README.md)
+    - [Druid](db/timeseries/druid.md)
+    - [GreptimeDB](db/timeseries/greptimedb.md)
+    - [InfluxDB](db/timeseries/influxdb.md)
+    - [QuestDB](db/timeseries/questdb.md)
+  - [Tools](db/tools/README.md)
+    - [Indexing](db/tools/indexing.md)
+    - [Quary](db/tools/quary.md)
+    - [sqlmap](db/tools/sql_pen_test.md)
+    - [SQLFlow](db/tools/sqlflow.md)
+  - [UDF](db/udf/README.md)
+    - [External UDFs](db/udf/external_udfs.md)
+  - [Vector](db/vector/README.md)
+    - [chroma](db/vector/chroma.md)
+    - [qdrant](db/vector/qdrant.md)
 
 # Tools
 
-- [Tools](tools/tools.md) - General tools and utilities.
-    - [Visualization](visualization/visualization.md) - Tools and techniques for visualization.
-        - [Diagrams](visualization/diagrams.md) - Creating diagrams.
-        - [GG Tech](visualization/ggtech.md) - gg Tech diagrams
-        - [Grafana](visualization/grafana.md) - Using Grafana for visualization.
-        - [Manim](visualization/manim.md) - Using Manim for mathematical animations.
-        - [Portfolios](visualization/portfolios.md) - Information about portfolios.
-        - [Pudding](visualization/pudding.md) - Information about Pudding.
-        - [Rust](visualization/rust.md) - Visualization using rust.
-        - [JavaScript](visualization/javascript.md) - Visualization using JavaScript.
-        - [Tips](visualization/tips.md) - Visualization tips.
-        - [PDF](visualization/pdf/pdf.md) - PDF tools
-            - [MDmath symbols](visualization/pdf/MDmath_symbols.md) - math symbols in markdown
-            - [Latex](visualization/pdf/latex.md) - latex documentation
-    - [OSX](tools/osx/osx.md) - Notes about iOS and macOS development.
-        - [iOS](tools/osx/ios.md) - iOS information.
-        - [Slint GUI](programming/rust/gui/slint.mdui/slint.md) - Declarative GUI for Rust.
-        - [OSX Cross Compilation](tools/osx/osxcross.md) - Cross-compiling for macOS.
-        - [OSX Tricks](tools/osx/osx_tricks.md) - macOS-specific tricks and tips.
-    - [Linux](tools/linux/linux.md) - Linux configuration.
-        - [Books](tools/linux/books.md) - List of Linux books.
-    - [Shell](tools/shell/tools.md) - Shell usage tips and tricks.
-        - [Color Codes](tools/shell/color_codes.md) - Shell color codes.
-        - [Must Haves](tools/shell/must_have.md) - Must-have shell tools.
-        - [DNS Toys](tools/shell/dns_toys.md) - Fun with DNS.
-        - [TMUX](tools/shell/tmux.md) - Using TMUX terminal multiplexer.
-    - [Fengshui](tools/fengshui.md) - Disk cleaning.
-    - [Live Demos](tools/live_demos/demo.md) - Create demo with typing.
+- [Tools](tools/README.md)
+  - [Design](tools/design/README.md)
+    - [Deskreen](tools/design/applications.md)
+    - [Ascii generator](tools/design/ascii_generator.md)
+    - [Cleaning disk](tools/design/fengshui.md)
+    - [Harper](tools/design/gramma_harper.md)
+    - [lstr](tools/design/lstr.md)
+    - [RustDesk!](tools/design/rustdesk.md)
+    - [superfile](tools/design/superfile.md)
+    - [WeekToDo](tools/design/weektodo.md)
+  - [Editors](tools/editors/README.md)
+    - [IntelliJ productivity tips](tools/editors/intellij.md)
+    - [Markitdown](tools/editors/markitdown.md)
+    - [Mdfried](tools/editors/mdfried.md)
+    - [VOID](tools/editors/void.md)
+  - [Linux](tools/linux/README.md)
+    - [Books](tools/linux/books.md)
+    - [Byobu: Text-based Window Manager and Terminal Multiplexer](tools/linux/byobu.md)
+    - [Valgrind](tools/linux/debugger.md)
+    - [Fish](tools/linux/fish.md)
+    - [Helix](tools/linux/helix.md)
+    - [Lazygit](tools/linux/lazygit.md)
+    - [Mosh](tools/linux/mosh.md)
+    - [Starshio](tools/linux/starshio.md)
+    - [Project Summary: Byobu, Mosh, Xpra](tools/linux/terminals.md)
+    - [TMUX](tools/linux/tmux.md)
+    - [Tmux AI](tools/linux/tmux_ai.md)
+    - [Trippy](tools/linux/trace.md)
+    - [Zellij](tools/linux/zellij.md)
+  - [Live Demos](tools/live_demos/README.md)
+    - [DEMO](tools/live_demos/demo_overview.md)
+  - [Misc](tools/misc/README.md)
+    - [MARP](tools/misc/md_to_ppt_pdf_jpeg.md)
+    - [hyperswitch](tools/misc/payments.md)
+    - [Prek](tools/misc/prek.md)
+    - [Bacon](tools/misc/rust_must.md)
+    - [Workmux](tools/misc/workmux.md)
+  - [Networking](tools/networking/README.md)
+    - [MTR](tools/networking/mtr.md)
+  - [OSX](tools/osx/README.md)
+    - [Ios](tools/osx/ios.md)
+    - [Jail-break from not opening on OSX](tools/osx/osx_tricks.md)
+    - [OSX Cross](tools/osx/osxcross.md)
+    - [UTM](tools/osx/utm.md)
+  - [Security](tools/security/README.md)
+    - [NGrok - Free Firewall Tunnel](tools/security/ngrok.md)
+    - [Pake](tools/security/pake.md)
+    - [RustScan](tools/security/port_scan.md)
+    - [RustScan](tools/security/port_scanner_rustscan.md)
+    - [rathole](tools/security/rathole.md)
+    - [sniffnet](tools/security/sniffnet.md)
+    - [Pake](tools/security/web_to_app_pake.md)
+    - [Wireguard](tools/security/wireguard.md)
+  - [Shell](tools/shell/README.md)
+    - [Carbonyl](tools/shell/browser_in_terminal.md)
+    - [Browsh](tools/shell/browsh.md)
+    - [Shell color codes](tools/shell/color_codes.md)
+    - [Dns Toys](tools/shell/dns_toys.md)
+    - [Lynx](tools/shell/lynx.md)
+    - [Commands to install](tools/shell/must_have.md)
+    - [sshpass](tools/shell/sshpass.md)
+    - [Tmux](tools/shell/tmux.md)
+    - [Shell tools](tools/shell/tools.md)
+
+# Visualization
+
+- [Visualization](visualization/README.md)
+  - [Diagrams](visualization/diagrams.md)
+  - [Fonts](visualization/fonts.md)
+  - [Ggtech](visualization/ggtech.md)
+  - [Grafana](visualization/grafana.md)
+  - [Javascript](visualization/javascript.md)
+  - [Manim](visualization/manim.md)
+  - [Example data visualisations portfolios](visualization/portfolios.md)
+  - [Pudding](visualization/pudding.md)
+  - [rerun](visualization/rerun.md)
+  - [Plotters](visualization/rust.md)
+  - [Help](visualization/tips.md)
+  - [Latex](visualization/latex/README.md)
+  - [Pdf](visualization/pdf/README.md)
+    - [Latex](visualization/pdf/latex.md)
+    - [Mdmath Symbols](visualization/pdf/mdmath_symbols.md)
+    - [React Print](visualization/pdf/react.md)
+    - [typst](visualization/pdf/typst.md)
+  - [Web Templating](visualization/web_templating/README.md)
+    - [Liquid](visualization/web_templating/liquid.md)
+
+# Machine Learning
+
+- [Machine Learning](ml/README.md)
+  - [Agents](ml/agents/README.md)
+    - [anmell](ml/agents/anmell.md)
+    - [Cloude](ml/agents/cloude.md)
+    - [Google](ml/agents/co_scientist.md)
+    - [Coding Agents](ml/agents/coding_agents.md)
+    - [OpenDevin](ml/agents/devin.md)
+    - [Devin](ml/agents/devin_2.md)
+    - [Devon](ml/agents/devon.md)
+    - [Emdash](ml/agents/emdash.md)
+    - [FutureHouse](ml/agents/futurehouse.md)
+    - [Hf](ml/agents/hf.md)
+    - [Memory](ml/agents/memory.md)
+    - [OpenAI agents](ml/agents/openai.md)
+    - [Orchestration](ml/agents/orchestration.md)
+    - [Response](ml/agents/response.md)
+    - [smolagents](ml/agents/smolagents.md)
+    - [Task](ml/agents/task.md)
+    - [Uipath](ml/agents/uipath.md)
+    - [Agent Instructs](ml/agents/agent_instructs/README.md)
+  - [Bigquery](ml/bigquery/README.md)
+    - [Links](ml/bigquery/links.md)
+  - [Compilers](ml/compilers/README.md)
+    - [Kevin](ml/compilers/cuda_kevin.md)
+    - [MLGO](ml/compilers/mlgo_llvm.md)
+    - [Tiny - GPU](ml/compilers/tiny_gpu.md)
+    - [Tiramisu](ml/compilers/tiramisu.md)
+    - [XLA](ml/compilers/xla_accelerated_compiler.md)
+    - [CUDA](ml/compilers/cuda/README.md)
+  - [Data](ml/data/README.md)
+    - [API access to data](ml/data/apis.md)
+    - [For Tests](ml/data/for_tests.md)
+    - [Datasets](ml/data/public.md)
+    - [qdrant](ml/data/qdrant_vector_search.md)
+  - [Finetuning](ml/finetuning/README.md)
+    - [Fed-SB](ml/finetuning/fedsb.md)
+    - [unsloth](ml/finetuning/unsloth.md)
+  - [Frameworks](ml/frameworks/README.md)
+    - [DSPy](ml/frameworks/dspy.md)
+    - [H2O](ml/frameworks/h2o.md)
+    - [langgraph](ml/frameworks/langgraph.md)
+    - [MindsDB](ml/frameworks/mindsdb.md)
+    - [MLCube](ml/frameworks/mlcube.md)
+    - [PhiData](ml/frameworks/phidata.md)
+    - [BAD ONES:](ml/frameworks/rust_ml.md)
+  - [Fundamentals](ml/fundamentals/README.md)
+    - [Classification](ml/fundamentals/classification.md)
+    - [top 5 2022 couses](ml/fundamentals/courses.md)
+    - [Graphnn](ml/fundamentals/graphnn.md)
+    - [Kmeans](ml/fundamentals/kmeans.md)
+    - [Unlearning](ml/fundamentals/unlearning.md)
+    - [KAN](ml/fundamentals/kan/README.md)
+    - [ML](ml/fundamentals/ml/README.md)
+    - [ML Auto Indexing Dbs](ml/fundamentals/ml_auto_indexing_dbs/README.md)
+    - [No Deep Learning Needed](ml/fundamentals/no_deep_learning_needed/README.md)
+    - [Pattern Learning](ml/fundamentals/pattern_learning/README.md)
+    - [Zero Shot](ml/fundamentals/zero_shot/README.md)
+  - [Genetics](ml/genetics/README.md)
+    - [The MOEA Framework](ml/genetics/moea.md)
+  - [Knowledge Graph](ml/knowledge_graph/README.md)
+    - [Meta / Facebook  graph articles](ml/knowledge_graph/meta.md)
+    - [Research papers](ml/knowledge_graph/papers.md)
+    - [Petgraph](ml/knowledge_graph/petgraph.md)
+  - [LLM](ml/llm/README.md)
+    - [LLM_OS](ml/llm/llm_os.md)
+    - [Inspection](ml/llm/inspection/README.md)
+      - [Removing refusals with transformers](ml/llm/inspection/abliteration.md)
+      - [Inspectus](ml/llm/inspection/inspectus.md)
+      - [marena](ml/llm/inspection/leaderboards.md)
+      - [seal](ml/llm/inspection/seal.md)
+    - [Models](ml/llm/models/README.md)
+      - [AliceMind - mplug 2.0](ml/llm/models/alicemind_mplug_2_0.md)
+      - [Deepseek](ml/llm/models/deepseek.md)
+      - [Test the function](ml/llm/models/jetbrains_mellum.md)
+      - [llama-agentic-system](ml/llm/models/llama.md)
+      - [LLAMA](ml/llm/models/llama_2.md)
+      - [miniLLM](ml/llm/models/minillm.md)
+      - [mPLUG](ml/llm/models/mplug.md)
+      - [mPLUG-Owl](ml/llm/models/mplug_owl.md)
+      - [OLMo - Open Language Models](ml/llm/models/olmo.md)
+      - [Strawberry](ml/llm/models/strawberry.md)
+    - [Runtimes](ml/llm/runtimes/README.md)
+      - [Extensions](ml/llm/runtimes/extensions.md)
+      - [Goose](ml/llm/runtimes/goose.md)
+      - [Ollama](ml/llm/runtimes/ollama.md)
+      - [providers](ml/llm/runtimes/providers.md)
+      - [Rig](ml/llm/runtimes/rig.md)
+      - [rsllm](ml/llm/runtimes/rsllm.md)
+      - [Ollama](ml/llm/runtimes/ollama/README.md)
+        - [Ubuntu Share](ml/llm/runtimes/ollama/ubuntu_share.md)
+    - [System Prompts](ml/llm/system_prompts/README.md)
+      - [System Prompt](ml/llm/system_prompts/system_prompt.md)
+    - [Tokenizers](ml/llm/tokenizers/README.md)
+  - [MCP](ml/mcp/README.md)
+    - [Agent2Agent](ml/mcp/a2a.md)
+    - [Articles](ml/mcp/articles.md)
+    - [GenAI Toolbox](ml/mcp/mcp4db.md)
+    - [mcp ui](ml/mcp/mcp_ui.md)
+  - [Memory](ml/memory/README.md)
+    - [202505 Recents](ml/memory/202505_recents.md)
+    - [Task](ml/memory/agentic_ai_memory.md)
+    - [Caching](ml/memory/caching.md)
+    - [Episodic Memory](ml/memory/episodic_memory.md)
+    - [Response](ml/memory/response.md)
+  - [Orchestration](ml/orchestration/README.md)
+  - [Quantum](ml/quantum/README.md)
+  - [RAG](ml/rag/README.md)
+    - [Agentic RAG](ml/rag/agentic_rag.md)
+    - [Graph RAG](ml/rag/graph_rag.md)
+    - [KAG](ml/rag/kag.md)
+    - [NEO4J](ml/rag/neo4j_rag.md)
+    - [Summary Of Best Practices](ml/rag/summary_of_best_practices.md)
+    - [RAG Query Summarize](ml/rag/rag_query_summarize/README.md)
+  - [Skills](ml/skills/README.md)
+    - [Skills.sh](ml/skills/skills.sh.md)
+  - [Time Series](ml/time_series/README.md)
+    - [forecasting](ml/time_series/forecasting.md)
+    - [Kolmogorov-Arnold Networks (KANs) for Time Series Forecasting](ml/time_series/kan.md)
+    - [Linear Regression With Time Series](ml/time_series/linear_regression.md)
+    - [Drop any and all nulls across all columns](ml/time_series/missing_data.md)
+    - [Papers](ml/time_series/papers.md)
+    - [Transformers](ml/time_series/time_serie_transformer.md)
+    - [Time series research papers](ml/time_series/time_series_research_papers.md)
+    - [Time Series Transformer](ml/time_series/time_series_transformer.md)
+    - [Time Sieve](ml/time_series/time_sieve.md)
+    - [Tutorials](ml/time_series/tutorials.md)
+    - [Tutorials](ml/time_series/tutorials_2.md)
+  - [Tools](ml/tools/README.md)
+    - [burn](ml/tools/burn.md)
+    - [Candle](ml/tools/candle.md)
+    - [Cursor](ml/tools/cursor.md)
+    - [DeepLake](ml/tools/deeplake.md)
+    - [dfdx](ml/tools/dfdx.md)
+    - [dfdx: shape checked deep learning in rust](ml/tools/dfdx_shape_checked_deep_learning_in_rust.md)
+    - [LeRobot](ml/tools/lerobot.md)
+    - [License](ml/tools/license.md)
+    - [License](ml/tools/license_2.md)
+    - [n8n.io](ml/tools/n8n.md)
+    - [TabbyML](ml/tools/tabby.md)
+    - [tch](ml/tools/tch.md)
+    - [tch-rs](ml/tools/tch_rs.md)
+    - [tract](ml/tools/tract.md)
+    - [Webthinker](ml/tools/webthinker.md)
+  - [Voice](ml/voice/README.md)
+    - [Speech-to-text](ml/voice/assemblyai.md)
+    - [Build Voice AI with one API](ml/voice/build_voice_ai_with_one_api.md)
+
+# Cloud
+
+- [Cloud](cloud/README.md)
+  - [Oracle Free Tier](cloud/oracle_free_tier.md)
+
+# Kubernetes
+
+- [Kubernetes](kubernetes/README.md)
+  - [Akri](kubernetes/akri.md)
+  - [Balena](kubernetes/balena.md)
+  - [Dokku](kubernetes/dokku.md)
+  - [K3S](kubernetes/k3s.md)
+  - [Kuasar](kubernetes/kuasar.md)
+
+# IoT
+
+- [IoT](iot/README.md)
+  - [Drogue](iot/drogue.md)
+  - [IoT mqtt](iot/mqtt.md)
+  - [Shodan](iot/shodan.md)
+
+# Messaging
+
+- [Messaging](messaging/README.md)
+  - [Kafka](messaging/kafka.md)
+  - [Kafka](messaging/kafka_2.md)
+  - [Kinesis](messaging/kinesis.md)
+  - [MQTT](messaging/mqtt.md)
+  - [nats-server](messaging/nats.md)
+  - [patchbay.pub](messaging/patchbay.md)
+  - [Pulsar](messaging/pulsar.md)
+  - [Red Panda](messaging/red_panda.md)
+  - [redpanda](messaging/redpanda.md)
+
+# Observability
+
+- [Observability](observability/README.md)
+  - [grafana](observability/grafana.md)
+  - [node_exporter](observability/node_exporter.md)
+  - [OpenObserve](observability/openobserve.md)
+  - [prometheus](observability/prometheus.md)
+
+# DPU
+
+- [DPU](dpu/README.md)
+  - [Xilinx](dpu/xilinx/README.md)
+    - [Vitis](dpu/xilinx/vitis.md)
+  - [Xpu](dpu/xpu/README.md)
+
+# Trading
+
+- [Trading](trading/README.md)
+  - [A Basic Algo Trading System In Rust: Part I](trading/a_basic_algo_trading_system_in_rust_part_i.md)
+  - [A Basic Algo Trading System In Rust: Part III](trading/a_basic_algo_trading_system_in_rust_part_iii.md)
+  - [A Basic Algo Trading System In Rust: Part IV: Backtesting](trading/a_basic_algo_trading_system_in_rust_part_iv_backtesting.md)
+  - [Barter](trading/barter.md)
+  - [Building an Algorithmic Trading Platform in Rust](trading/bot_rust.md)
+  - [hummingbot](trading/hummingbot_python.md)
+  - [MQL5](trading/mql5.md)
+  - [MT5](trading/mt5.md)
+  - [Algo trading](trading/rust_algo_trading.md)
+  - [Trade Aggregation](trading/trade_aggregation_rust_candles.md)
+
+# Robotics
+
+- [Robotics](robot/README.md)
+  - [GR00T](robot/groot.md)
+
+# Digital Twin
+
+- [Digital Twin](digital_twin/README.md)
+  - [Bmw](digital_twin/bmw.md)
+  - [Cps](digital_twin/cps.md)
+  - [Definition](digital_twin/definition.md)
+  - [Isc2022](digital_twin/isc2022.md)
+  - [Links](digital_twin/links.md)
+  - [Nvidia](digital_twin/nvidia.md)
+  - [Nvidia Omniverse](digital_twin/nvidia_omniverse.md)
+  - [Scilab](digital_twin/scilab.md)
+  - [Simulink](digital_twin/simulink.md)
+
+# Games
+
+- [Games](games/README.md)
+  - [Core Wars](games/corewars.md)
+  - [Engines](games/engines.md)
+  - [GAME in Scala](games/game_in_scala.md)
+  - [Rust ZX](games/zxspectrum.md)
+
+# Web
+
+- [Web](www/README.md)
+  - [airtable](www/airtable.md)
+  - [apache](www/apache.md)
+  - [Fluent Templates](www/fluent_templates.md)
+  - [Loco](www/loco_rust_on_rails.md)
+  - [n8n.io](www/n8n_io.md)
+  - [Hyperswitch](www/payments.md)
+  - [How to future proof your apache modules in macOS by signing them with your own certificate authority](www/signing_mac_libs.md)
+  - [Static Site Generators](www/ssg.md)
+  - [HTTPS on websites](www/ssl.md)
+  - [tally](www/tools.md)
+  - [Yarenty Profile And Projects Summary](www/yarenty_profile_and_projects_summary.md)
 
 # Git
 
-- [Git](git/git.md) - Configuring Git for better workflow.
+- [Git](git/README.md)
+  - [GIT configuration](git/config.md)
+  - [delta](git/git_delta.md)
+  - [Github README](git/github.md)
 
+# Demo
 
-# Robot
-
-- [Robot](robot/robot.md) - robotics
+- [Demo](demo/README.md)
+  - [present term](demo/term.md)
 
 # Funny
 
-- [Funny](funny/funny.md) - funny
+- [Funny](funny/README.md)
+  - [Algorithms](funny/algorithms.md)
+  - [Brainfuck](funny/brainfuck.md)
+  - [Rust - brain](funny/rust_brain.md)
+  - [Sleep SORT algorithm](funny/sleepsort.md)
 
-# Suffix Chapters
-- [WWW](www/www.md) - web
-- [Trading](trading/trading.md) - trading
-- [Observability](observability/observability.md) - observability
+# Published
+
+- [Published](published/README.md)
+  - [Data Interpreter](published/data_interpreter.md)
+  - [Dataman](published/dataman.md)
