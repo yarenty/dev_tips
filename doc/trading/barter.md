@@ -1,106 +1,72 @@
 ---
 title: Barter
-main_link: https://github.com/barter-rs/barter-rs/blob/main/barter/examples/engine_with_live_trades.rs
-keywords: [barter, portfolios, trader, level]
-status: draft
+main_link: https://github.com/barter-rs/barter-rs
+keywords: [barter, rust, trading, event-driven, backtesting, engine, portfolio]
+status: reviewed
 ---
-
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
 
 # Barter
 
-**Main link:** <https://github.com/barter-rs/barter-rs/blob/main/barter/examples/engine_with_live_trades.rs>
+**Main link:** <https://github.com/barter-rs/barter-rs>
+
+Crate: <https://crates.io/crates/barter> · Live-trades example: <https://github.com/barter-rs/barter-rs/blob/main/barter/examples/engine_with_live_trades.rs>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Barter is an open-source Rust framework for event-driven live trading and backtesting. It ships a multi-threaded `Engine` that drives one or more `Trader`s (one per market pair), each composed of pluggable `Data`, `Strategy`, and `Execution` components plus a shared `Portfolio`. The whole system is wired by traits (`MarketGenerator`, `SignalGenerator`, `OrderGenerator`, `FillUpdater`, `ExecutionClient`, ...) so the *same* trader code runs against historical candles for backtesting and against the [barter-data](https://github.com/barter-rs/barter-data-rs) websocket feed for live trading. Engine control happens via an mpsc `command_tx` (e.g. `Command::Terminate`, `Command::ExitPosition`) and observability via an unbounded `event_rx`.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for Barter when you want a Rust framework that already made the unfun decisions for you: per-trader threads, async tokio runtime, an event loop you can event-source, and a statistic module that gives you Sharpe, Calmar, max drawdown, and one-pass dispersion stats out of the box. It maps cleanly onto a "one trader per market pair, shared portfolio across traders" mental model, which matches how most discretionary-style algos actually want to be deployed.
+
+It is *not* the right tool if you want to learn how a trading system is put together — for that, [[folbrecht_algo_trading_series]] is much more readable, because Folbrecht writes everything from `fn main` down. Barter is what you graduate to once you've outgrown your own toy. Compared to [[hummingbot_python]] it's leaner, lower-level, async-native, and lacks the connector zoo (Binance + a handful of others via barter-data, vs. Hummingbot's CEX+DEX firehose).
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[folbrecht_algo_trading_series]] — pedagogical from-scratch Rust trading system; nice contrast in scope.
+- [[bot_rust]] — tickgrinder, an older futures-rs platform; predecessor-style design.
+- [[trade_aggregation_rust_candles]] — modular candle aggregation that complements Barter's `MarketGenerator`.
+- [[hummingbot_python]] — Python equivalent with broader exchange coverage.
+- [[tokio]] — async runtime Barter is built on.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[a_basic_algo_trading_system_in_rust_part_i]] — A Basic Algo Trading System In Rust: Part I _(score 16.0)_
-- [[rust_algo_trading]] — Algo trading _(score 16.0)_
-- [[mql5]] — MQL5 _(score 16.0)_
-- [[a_basic_algo_trading_system_in_rust_part_iv_backtesting]] — A Basic Algo Trading System In Rust: Part IV: Backtesting _(score 16.0)_
-- [[a_basic_algo_trading_system_in_rust_part_iii]] — A Basic Algo Trading System In Rust: Part III _(score 9.5)_
+- [[folbrecht_algo_trading_series]] — sync, hand-rolled Rust counterpart
+- [[bot_rust]] — futures-rs based predecessor-style platform
+- [[trade_aggregation_rust_candles]] — candle aggregation primitives
+- [[tokio]] — async runtime
+- [[hummingbot_python]] — Python market-making framework
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#barter` `#trading` `#engine` `#portfolio` `#trader` `#data`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#trading` `#rust` `#barter` `#event-driven` `#backtesting` `#engine` `#portfolio` `#tokio`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+Per the project's overview, Barter is decomposed into the following trait-driven components:
 
-# Barter
+- **Data** — `MarketGenerator` produces `MarketEvent`s (the system heartbeat). `live::MarketFeed` uses barter-data websockets; `historical::MarketFeed` replays a candle iterator for backtests.
+- **Strategy** — `SignalGenerator` consumes `MarketEvent`s and emits advisory `Signal`s.
+- **Portfolio** — `MarketUpdater` + `OrderGenerator` + `FillUpdater` traits govern portfolio state. A `MetaPortfolio` turns `Signal`s into `OrderEvent`s and updates state on `MarketEvent` / `FillEvent`.
+- **Execution** — `ExecutionClient` turns `OrderEvent`s into `FillEvent`s. `SimulatedExecution` is provided for dry-runs and backtests.
+- **Statistic** — Sharpe, Calmar, max drawdown, one-pass dispersion over closed positions.
+- **Trader** — one market pair, owns its own `Data` / `Strategy` / `Execution`, shares the `Portfolio`.
+- **Engine** — multi-threaded driver of N `Trader`s, controllable via `command_tx`, observable via `event_rx`.
 
-https://crates.io/crates/barter
-
-
-Barter is an open-source Rust framework for building event-driven live-trading & backtesting systems. Algorithmic trade with the peace of mind that comes from knowing your strategies have been backtested with a near-identical trading Engine. It is:
-
-Fast: Barter provides a multi-threaded trading Engine framework built in high-performance Rust (in-rust-we-trust).
-Easy: Barter provides a modularised data architecture that focuses on simplicity.
-Customisable: A set of traits define how every Barter component communicates, providing a highly extensible framework for trading.
-
-## Overview
-Barter is an open-source Rust framework for building event-driven live-trading & backtesting systems. It provides a high-performance, easy to customise trading Engine that enables backtesting strategies on a near-identical system to live trading. The Engine can be controlled by issuing Commands over the Engine's command_tx. Similarly, the Engine's Events can be listened to using the event_rx (useful for event-sourcing). At a high level, it provides several de-coupled components that interact via a set of traits:
-
-- Data: MarketGenerator trait governs the generation of a MarketEvents that acts as the system heartbeat. For example, a live::MarketFeed implementation is provided that utilises Barter-Data WebSocket integrations to provide live exchange data (ie/ trades, candles, etc).
-- Strategy: The SignalGenerator trait governs potential generation of Signal after analysing incoming MarketEvents. Signals are advisory and sent to the Portfolio for analysis.
-- Portfolio: MarketUpdater, OrderGenerator, and FillUpdater govern global state Portfolio implementations. A Portfolio may generate OrderEvents after receiving advisory SignalEvents from a Strategy. The Portfolio's state updates after receiving MarketEvents and FillEvents.
-- Execution: The ExecutionClient trait governs the generation of FillEvents after receiving OrderEvents from the Portfolio. For example, a SimulatedExecution handler implementation is provided for simulating any exchange execution behaviour required in dry-trading or backtesting runs.
-- Statistic: Provides metrics such as Sharpe Ratio, Calmar Ratio, and Max Drawdown to analyse trading session performance. One-pass dispersion algorithms analyse each closed Position and efficiently calculates a trading summary.
-- Trader: Capable of trading a single market pair using a customisable selection of it's own Data, Strategy & Execution instances, as well as shared access to a global Portfolio.
-- Engine: Multi-threaded trading Engine capable of trading with an arbitrary number of Trader market pairs. Each contained Trader instance operates on its own thread.
-
-
-## Example
-- For brevity: Imports are not included - see /examples for everything you need!
-- For simplicity:
-  - Engine and Trader(s) are configuration with hard-coded values rather than loaded in configuration values.
-  - Engine only contains one Trader (usually you would have many Traders, one for each Market).
-  - Remote Commands (eg/ Command::Terminate, Command::ExitPosition) are not sent to the Engine via it's command_tx, this control over the Engine can be added as per your taste (eg/ connected to an HTTP endpoint).
+### Sketch of `main` from the live-trades example
 
 ```rust
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    // Setup Logger & Load Config For Engine & Trader Instances Here
-
-    // Create channel to distribute Commands to the Engine & it's Traders (eg/ Command::Terminate)
     let (command_tx, command_rx) = mpsc::channel(20);
-    
-    // Create Event channel to listen to all Engine Events in real-time
     let (event_tx, event_rx) = mpsc::unbounded_channel();
     let event_tx = EventTx::new(event_tx);
-    
-    // Generate unique identifier to associate an Engine's components
     let engine_id = Uuid::new_v4();
-    
-    // Create the Market(s) to be traded on (1-to-1 relationship with a Trader)
+
     let market = Market::new("binance", ("btc", "usdt", InstrumentKind::Spot));
-    
-    // Build global shared-state MetaPortfolio (1-to-1 relationship with an Engine)
+
     let portfolio = Arc::new(Mutex::new(
         MetaPortfolio::builder()
             .engine_id(engine_id)
@@ -117,14 +83,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             .build_and_init()
             .expect("failed to build & initialise MetaPortfolio"),
     ));
-    
-    // Build Trader(s)
-    let mut traders = Vec::new();
-    
-    // Create channel for each Trader so the Engine can distribute Commands to it
-    let (trader_command_tx, trader_command_rx) = mpsc::channel(10);
 
-    traders.push(
+    let (trader_command_tx, trader_command_rx) = mpsc::channel(10);
+    let mut traders = vec![
         Trader::builder()
             .engine_id(engine_id)
             .market(market.clone())
@@ -134,20 +95,14 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             .data(historical::MarketFeed::new([test_util::market_candle].into_iter()))
             .strategy(RSIStrategy::new(StrategyConfig { rsi_period: 14 }))
             .execution(SimulatedExecution::new(ExecutionConfig {
-                simulated_fees_pct: Fees {
-                        exchange: 0.1,
-                        slippage: 0.05,
-                        network: 0.0,}
-                }))
+                simulated_fees_pct: Fees { exchange: 0.1, slippage: 0.05, network: 0.0 },
+            }))
             .build()
-            .expect("failed to build trader")
-    );
-    
-    // Build Engine (1-to-many relationship with Traders)
-    
-    // Create HashMap<Market, trader_command_tx> so Engine can route Commands to Traders 
+            .expect("failed to build trader"),
+    ];
+
     let trader_command_txs = HashMap::from_iter([(market, trader_command_tx)]);
-    
+
     let engine = Engine::builder()
         .engine_id(engine_id)
         .command_rx(command_rx)
@@ -157,22 +112,15 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .statistics_summary(TradingSummary::init(StatisticConfig {
             starting_equity: 1000.0,
             trading_days_per_year: 365,
-            risk_free_return: 0.0
+            risk_free_return: 0.0,
         }))
         .build()
         .expect("failed to build engine");
-        
-    // Listen to Engine Events & do something with them
-    tokio::spawn(listen_to_events(event_rx)); 
-        
-    // --- Run Trading Session Until Remote Shutdown OR Data Feed ends naturally (ie/ backtest) ---
+
+    tokio::spawn(listen_to_events(event_rx));
     engine.run().await;
+    Ok(())
 }
-
-
-
 ```
 
-
-
-https://github.com/barter-rs/barter-rs/blob/main/barter/examples/engine_with_live_trades.rs
+The same `Trader` definition runs against `live::MarketFeed` for live trading — only the `data(...)` builder argument changes.

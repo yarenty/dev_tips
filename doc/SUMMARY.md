@@ -600,16 +600,12 @@
 # Trading
 
 - [Trading](trading/README.md)
-  - [A Basic Algo Trading System In Rust: Part I](trading/a_basic_algo_trading_system_in_rust_part_i.md)
-  - [A Basic Algo Trading System In Rust: Part III](trading/a_basic_algo_trading_system_in_rust_part_iii.md)
-  - [A Basic Algo Trading System In Rust: Part IV: Backtesting](trading/a_basic_algo_trading_system_in_rust_part_iv_backtesting.md)
+  - [Folbrecht: A Basic Algo Trading System in Rust (series)](trading/folbrecht_algo_trading_series.md)
   - [Barter](trading/barter.md)
-  - [Building an Algorithmic Trading Platform in Rust](trading/bot_rust.md)
-  - [hummingbot](trading/hummingbot_python.md)
-  - [MQL5](trading/mql5.md)
-  - [MT5](trading/mt5.md)
-  - [Algo trading](trading/rust_algo_trading.md)
-  - [Trade Aggregation](trading/trade_aggregation_rust_candles.md)
+  - [tickgrinder: Building an Algorithmic Trading Platform in Rust](trading/bot_rust.md)
+  - [Hummingbot](trading/hummingbot_python.md)
+  - [trade_aggregation-rs](trading/trade_aggregation_rust_candles.md)
+  - [MQL5 + Python: socket bridge and MetaTrader5 package](trading/mql5.md)
 
 # Robotics
 

@@ -1,61 +1,49 @@
 ---
-title: Trade Aggregation
-main_link: https://github.com/MathisWellmann/trade_aggregation-rs?tab=readme-ov-file
-keywords: [trade-aggregation-rust-candles, candle, aggregation, trade, mathiswellmann]
-status: draft
+title: trade_aggregation-rs
+main_link: https://github.com/MathisWellmann/trade_aggregation-rs
+keywords: [trade-aggregation, rust, candles, ohlc, market-data, low-latency]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# trade_aggregation-rs
 
-# Trade Aggregation
+**Main link:** <https://github.com/MathisWellmann/trade_aggregation-rs>
 
-**Main link:** <https://github.com/MathisWellmann/trade_aggregation-rs?tab=readme-ov-file>
+Go counterpart: <https://github.com/MathisWellmann/go_trade_aggregation>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+A small, modular Rust crate by [Mathis Wellmann](https://github.com/MathisWellmann) that aggregates a stream of trade ticks into candles. Three traits do all the work: `TakerTrade` (input — anything that looks like a trade), `AggregationRule` (when to close the current candle — by time, by volume, by ticks, by anything), and `ModularCandle` + `CandleComponent` (what to put *in* the candle — OHLC, VWAP, your own fields). A `Candle` macro stitches arbitrary components into a single struct. Designed for low-latency, incremental updates rather than batch DataFrame work.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Trade-to-candle aggregation is one of those things every trading system reimplements badly. This crate is worth using (or at least reading) because it separates the three independent decisions — *what's the input shape*, *when do we cut a candle*, *what does a candle contain* — into three traits, instead of hard-coding "1-minute OHLC from `(price, qty)` ticks" the way 90% of homegrown aggregators do. That means you can swap a time-based rule for a volume-based or imbalance-based rule without touching candle-construction code, which is exactly what you need when you start playing with non-time-uniform bars (volume bars, dollar bars, tick imbalance bars — see López de Prado's *Advances in Financial Machine Learning*, ch. 2).
+
+It pairs naturally with [[barter]]'s `MarketGenerator` (or with the live websocket layer in [[folbrecht_algo_trading_series]]) where it sits one level upstream of strategy code: trades come off the websocket, this crate emits candles, the strategy consumes candles.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[barter]] — Rust trading framework; this crate slots in upstream of `MarketGenerator`.
+- [[folbrecht_algo_trading_series]] — Folbrecht builds his own minimal aggregator inline; trade_aggregation-rs is the "do it properly" version.
+- [[candle]] — separate Hugging Face ML framework that unfortunately shares the name; not related.
+- [[polars]] — for batch / DataFrame-style aggregation when latency doesn't matter.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[candle]] — Candle _(score 20.9)_
-- [[a_basic_algo_trading_system_in_rust_part_i]] — A Basic Algo Trading System In Rust: Part I _(score 16.0)_
-- [[rust_algo_trading]] — Algo trading _(score 16.0)_
-- [[mql5]] — MQL5 _(score 16.0)_
-- [[a_basic_algo_trading_system_in_rust_part_iv_backtesting]] — A Basic Algo Trading System In Rust: Part IV: Backtesting _(score 16.0)_
+- [[barter]] — pairs naturally as upstream of `MarketGenerator`
+- [[folbrecht_algo_trading_series]] — has a hand-rolled equivalent inline
+- [[polars]] — batch-style alternative when latency is not a concern
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#trade-aggregation-rust-candles` `#trading` `#candle` `#aggregation` `#trade` `#mathiswellmann`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#trading` `#rust` `#candles` `#ohlc` `#market-data` `#low-latency` `#aggregation`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+From the project description:
 
-# Trade Aggregation
+> A high performance, modular and flexible trade aggregation crate, producing Candle data, suitable for low-latency applications and incremental updates. It allows the user to choose the rule dictating how a new candle is created through the `AggregationRule` trait, e.g.: Time, Volume based or some other information driven rule. It also allows the user to choose which type of candle will be created from the aggregation process through the `ModularCandle` trait. Combined with the `Candle` macro, it enables the user to flexibly create any type of `Candle` as long as each component implements the `CandleComponent` trait. The aggregation process is also generic over the type of input trade data as long as it implements the `TakerTrade` trait, allowing for greater flexibility for downstream projects.
 
-https://github.com/MathisWellmann/trade_aggregation-rs?tab=readme-ov-file
-
-A high performance, modular and flexible trade aggregation crate, producing Candle data, suitable for low-latency applications and incremental updates. It allows the user to choose the rule dictating how a new candle is created through the AggregationRule trait, e.g: Time, Volume based or some other information driven rule. It also allows the user to choose which type of candle will be created from the aggregation process through the ModularCandle trait. Combined with the Candle macro, it enables the user to flexibly create any type of Candle as long as each component implements the CandleComponent trait. The aggregation process is also generic over the type of input trade data as long as it implements the TakerTrade trait, allowing for greater flexibility for downstream projects.
-
-See MathisWellmann/go_trade_aggregation for a go implementation with less features and performance.
+The Go sibling project (`go_trade_aggregation`) exists but per the author has fewer features and lower performance, so prefer this Rust version when you have the choice.
