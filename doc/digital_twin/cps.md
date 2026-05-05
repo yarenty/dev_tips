@@ -1,78 +1,62 @@
 ---
-title: Cps
+title: Cyber-Physical Systems (CPS) — academic framing
 main_link: https://www.sciencedirect.com/science/article/pii/S2351978917304067
-keywords: [cps, digital, production, physical]
-status: draft
+keywords: [cps, cyber-physical-systems, industry-4.0, manufacturing, digital-twin, smart-manufacturing]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# Cps
+# Cyber-Physical Systems (CPS) — academic framing
 
 **Main link:** <https://www.sciencedirect.com/science/article/pii/S2351978917304067>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+A **cyber-physical system (CPS)** is the academic / Industry 4.0 framing of the same idea industry calls a digital twin: a tight integration of computational models, networking, and physical processes where the cyber and physical halves continuously sense, communicate, and actuate on each other. The two key papers in this folder review CPS-based production systems and the *correlation/comparison* between digital twins and CPS in smart-manufacturing contexts.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Treat **CPS** and [[definition|digital twin]] as the *same underlying concept seen from different communities*: CPS is the term you'll see in academic, NSF, and EU-Horizon funding contexts; "digital twin" is the term used by industrial vendors (Siemens, IBM, NVIDIA, BMW). The differences are mostly emphasis: CPS literature foregrounds **control loops, real-time semantics, formal methods, and safety**; digital-twin literature foregrounds **lifecycle visualisation and operational decision support**. If you're searching the literature for foundational ideas (sensor fusion, distributed control, formal modelling), use "CPS"; if you're looking for industrial case studies, use "digital twin". A CPS-aware approach will save you from the digital-twin literature's habit of glossing over hard real-time / safety constraints.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[definition]] — Industry framing of essentially the same concept.
+- [[isc2022]] — NVIDIA + BMW supercomputing-scale realisation of CPS principles.
+- **Industry 4.0** — German government strategic initiative that brought CPS into manufacturing discourse.
+- **IEC 61499** — function-block standard for distributed industrial control (a CPS-aligned alternative to PLCs).
+- **NSF CPS programme** — major US funder for academic CPS research.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[isc2022]] — Isc2022 _(score 22.4)_
-- [[digital_twin/links|links]] — Links _(score 22.4)_
-- [[definition]] — Definition _(score 22.4)_
-- [[scilab]] — Scilab _(score 16.0)_
-- [[bmw]] — Bmw _(score 12.9)_
+- [[definition]] — Industrial framing of the same concept.
+- [[isc2022]] — Concrete industrial deployment realising CPS ideas at scale.
+- [[bmw]] — BMW iFACTORY case study.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#cps` `#digital-twin` `#digital` `#systems` `#production` `#physical`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#cps` `#cyber-physical-systems` `#industry-4.0` `#manufacturing` `#digital-twin` `#smart-manufacturing`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Key papers
 
+- **A Review of the Roles of Digital Twin in CPS-based Production Systems** — Procedia Manufacturing, 2017: <https://www.sciencedirect.com/science/article/pii/S2351978917304067>
 
+  Surveys how digital twins fit into CPS-based production: control loops, condition monitoring, predictive maintenance, what-if simulation. Good entry point if you want the academic literature's framing of digital twins.
 
+- **Digital Twins and Cyber–Physical Systems toward Smart Manufacturing and Industry 4.0: Correlation and Comparison** — Engineering, Elsevier, 2019: <https://www.sciencedirect.com/science/article/pii/S209580991830612X>
 
-----
-A Review of the Roles of Digital Twin in CPS-based Production Systems
+  Direct head-to-head: terminology overlap, where the two concepts diverge, how Industry 4.0 reference architectures (RAMI 4.0) accommodate both.
 
-Digital TwinCyber-Physical SystemsIndustry 4.0Production Systems
+### CPS taxonomy at a glance
 
-https://www.sciencedirect.com/science/article/pii/S2351978917304067
+| Layer | What it is | Examples |
+|-------|-----------|----------|
+| Physical | The thing being controlled | Robot arm, turbine, vehicle, plant |
+| Sensor | Data acquisition | IMU, vision, force/torque, flow, temperature |
+| Network | Data transport | EtherCAT, OPC-UA, MQTT, ROS DDS, 5G |
+| Compute / decision | Models, control, AI | PLC + edge ML + cloud back-haul |
+| Actuator | Acting back on the physical | Servo, valve, switch, robot effector |
 
-!pdf
-
-----
-
-
-Digital Twins and Cyber–Physical Systems toward Smart Manufacturing and Industry 4.0: Correlation and Comparison
-
-https://www.sciencedirect.com/science/article/pii/S209580991830612X
-
-
-!pdf
-
-
-----
+The defining trait is the **closed loop** — the model doesn't just observe, it acts.
