@@ -10,7 +10,7 @@ tags:
   - packaging
 ---
 
-# Pake Project Overview
+# Pake
 
 - **Source:** [https://github.com/tw93/Pake](https://github.com/tw93/Pake) [https://github.com/tw93/Pake/releases](https://github.com/tw93/Pake/releases) [https://v2.tauri.app/start/prerequisites](https://v2.tauri.app/start/prerequisites) [https://twitter.com/intent/tweet?url=https://github.com/tw93/Pake&text=Pake%20-%20Turn%20any%20webpage%20into%20a%20desktop%20app%20with%20one%20command.%20Nearly%2020x%20smaller%20than%20Electron%20packages,%20supports%20macOS%20Windows%20Linux)
 
