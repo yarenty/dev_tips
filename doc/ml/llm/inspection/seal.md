@@ -30,11 +30,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[leaderboards]] — marena _(score 56.4)_
-- [[inspectus]] — Inspectus _(score 30.4)_
-- [[abliteration]] — Removing refusals with transformers _(score 30.4)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[time_serie_transformer]] — Transformers _(score 14.4)_
+- [[leaderboards]] — marena _(score 41.2)_
+- [[abliteration]] — Removing refusals with transformers _(score 23.4)_
+- [[inspectus]] — Inspectus _(score 23.4)_
+- [[airtable]] — airtable _(score 8.9)_
+- [[dataman]] — Dataman _(score 7.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

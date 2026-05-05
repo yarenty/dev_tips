@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[quary]] — Quary _(score 28.4)_
-- [[indexing]] — Indexing _(score 28.4)_
-- [[iceberg]] — Iceberg _(score 20.1)_
-- [[kafka]] — Kafka _(score 19.8)_
-- [[postgresql]] — postgresql _(score 19.6)_
+- [[kafka_2]] — Kafka _(score 23.6)_
+- [[kafka]] — Kafka _(score 23.6)_
+- [[iceberg]] — Iceberg _(score 17.0)_
+- [[apache]] — apache _(score 17.0)_
+- [[indexing]] — Indexing _(score 16.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

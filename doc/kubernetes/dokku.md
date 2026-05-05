@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[kuasar]] — Kuasar _(score 23.4)_
-- [[balena]] — Balena _(score 23.4)_
-- [[akri]] — Akri _(score 23.4)_
-- [[repl]] — iRust _(score 19.1)_
-- [[k3s]] — K3S _(score 11.4)_
+- [[balena]] — Balena _(score 28.6)_
+- [[kuasar]] — Kuasar _(score 22.9)_
+- [[akri]] — Akri _(score 22.9)_
+- [[repl]] — iRust _(score 17.7)_
+- [[k3s]] — K3S _(score 10.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

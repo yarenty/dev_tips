@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[sniffnet]] — sniffnet _(score 33.4)_
-- [[web_to_app_pake]] — Pake _(score 25.7)_
-- [[ngrok]] — NGrok - Free Firewall Tunnel _(score 25.7)_
-- [[tools/security/pake|pake]] — Pake _(score 25.7)_
-- [[wireguard]] — Wireguard _(score 18.9)_
+- [[wireguard]] — Wireguard _(score 35.7)_
+- [[sniffnet]] — sniffnet _(score 27.5)_
+- [[ngrok]] — NGrok - Free Firewall Tunnel _(score 27.5)_
+- [[tools/security/pake|pake]] — Pake _(score 22.6)_
+- [[web_to_app_pake]] — Pake _(score 21.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[tiramisu]] — Tiramisu _(score 33.4)_
-- [[xla_accelerated_compiler]] — XLA _(score 21.4)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[co_scientist]] — Google _(score 14.4)_
-- [[articles]] — Articles _(score 14.4)_
+- [[tiramisu]] — Tiramisu _(score 28.7)_
+- [[xla_accelerated_compiler]] — XLA _(score 16.9)_
+- [[vortex]] — Vortex (2024-10-17) _(score 12.9)_
+- [[isc2022]] — Isc2022 _(score 12.7)_
+- [[unsloth]] — unsloth _(score 12.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

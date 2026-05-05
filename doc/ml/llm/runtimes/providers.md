@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[goose]] — Goose _(score 58.4)_
-- [[ollama]] — Ollama _(score 41.9)_
-- [[extensions]] — Extensions _(score 37.5)_
-- [[deepseek]] — Deepseek _(score 31.8)_
-- [[llama_2]] — LLAMA _(score 23.5)_
+- [[goose]] — Goose _(score 23.8)_
+- [[deepseek]] — Deepseek _(score 19.8)_
+- [[extensions]] — Extensions _(score 16.0)_
+- [[ollama]] — Ollama _(score 16.0)_
+- [[web_to_app_pake]] — Pake _(score 7.8)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

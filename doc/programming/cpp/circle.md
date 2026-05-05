@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[abi]] — C++ ABI _(score 26.3)_
-- [[reflection]] — reflect _(score 20.5)_
-- [[rocket]] — Rocket _(score 20.5)_
-- [[alagorithms]] — algorithms _(score 13.4)_
-- [[rtic]] — RTIC _(score 13.4)_
+- [[abi]] — C++ ABI _(score 26.0)_
+- [[brainfuck]] — Brainfuck _(score 15.8)_
+- [[rtic]] — RTIC _(score 13.1)_
+- [[alagorithms]] — algorithms _(score 13.1)_
+- [[reflection]] — reflect _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

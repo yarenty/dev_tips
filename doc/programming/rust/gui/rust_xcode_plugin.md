@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[matrix]] — Matrix - rust bindings to ios version _(score 24.2)_
-- [[mobile]] — Mobile _(score 24.2)_
-- [[egui]] — egui _(score 24.2)_
-- [[debug]] — Debug _(score 14.7)_
-- [[rtic]] — RTIC _(score 14.7)_
+- [[mobile]] — Mobile _(score 17.1)_
+- [[egui]] — egui _(score 17.1)_
+- [[matrix]] — Matrix - rust bindings to ios version _(score 17.1)_
+- [[rtic]] — RTIC _(score 13.1)_
+- [[debug]] — Debug _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

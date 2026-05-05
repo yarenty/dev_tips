@@ -29,11 +29,9 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[build_voice_ai_with_one_api]] — Build Voice AI with one API _(score 44.3)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[tract]] — tract _(score 14.4)_
-- [[dfdx]] — dfdx _(score 14.4)_
-- [[articles]] — Articles _(score 14.4)_
+- [[build_voice_ai_with_one_api]] — Build Voice AI with one API _(score 33.8)_
+- [[markitdown]] — Markitdown _(score 8.2)_
+- [[byobu]] — Byobu: Text-based Window Manager and Terminal Multiplexer _(score 8.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

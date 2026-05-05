@@ -28,11 +28,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[osx_tricks]] — Jail-break from not opening on OSX _(score 26.8)_
-- [[osxcross]] — OSX Cross _(score 26.8)_
-- [[utm]] — UTM _(score 23.7)_
-- [[dfdx]] — dfdx _(score 15.0)_
-- [[lstr]] — lstr _(score 15.0)_
+- [[osxcross]] — OSX Cross _(score 23.1)_
+- [[osx_tricks]] — Jail-break from not opening on OSX _(score 16.0)_
+- [[utm]] — UTM _(score 12.9)_
+- [[matrix]] — Matrix - rust bindings to ios version _(score 8.9)_
+- [[bandwhich]] — Bandwhich _(score 7.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

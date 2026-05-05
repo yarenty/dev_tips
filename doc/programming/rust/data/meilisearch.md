@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[trustfall]] — Trustfall _(score 28.5)_
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 21.8)_
-- [[lance_data_format]] — Lance _(score 21.8)_
-- [[adbc]] — ADBC ! _(score 21.8)_
-- [[qdrant_vector_search]] — qdrant _(score 16.9)_
+- [[lance_data_format]] — Lance _(score 23.1)_
+- [[qdrant_vector_search]] — qdrant _(score 19.1)_
+- [[qdrant]] — qdrant _(score 19.1)_
+- [[trustfall]] — Trustfall _(score 17.1)_
+- [[adbc]] — ADBC ! _(score 17.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

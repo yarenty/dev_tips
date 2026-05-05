@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/net/nats|nats]] — NATS _(score 35.8)_
-- [[paho_mqtt]] — paho MQTT _(score 34.7)_
-- [[messaging/mqtt|mqtt]] — MQTT _(score 29.2)_
-- [[grpc]] — GRPC _(score 18.7)_
-- [[rtic]] — RTIC _(score 14.7)_
+- [[programming/rust/net/nats|nats]] — NATS _(score 32.7)_
+- [[paho_mqtt]] — paho MQTT _(score 32.3)_
+- [[messaging/mqtt|mqtt]] — MQTT _(score 28.3)_
+- [[grpc]] — GRPC _(score 17.1)_
+- [[iot/mqtt|mqtt]] — IoT mqtt _(score 15.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

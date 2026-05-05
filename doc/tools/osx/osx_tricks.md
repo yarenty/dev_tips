@@ -27,11 +27,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[osxcross]] — OSX Cross _(score 26.8)_
-- [[mdfried]] — Mdfried _(score 21.9)_
-- [[byobu]] — Byobu: Text-based Window Manager and Terminal Multiplexer _(score 21.9)_
-- [[utm]] — UTM _(score 14.8)_
-- [[ios]] — Ios _(score 14.8)_
+- [[byobu]] — Byobu: Text-based Window Manager and Terminal Multiplexer _(score 17.6)_
+- [[mdfried]] — Mdfried _(score 17.6)_
+- [[osxcross]] — OSX Cross _(score 16.0)_
+- [[joshuto]] — joshuto _(score 5.6)_
+- [[patchbay]] — patchbay.pub _(score 5.6)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

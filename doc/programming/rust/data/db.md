@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[barrel]] — barrel _(score 33.2)_
-- [[gluesql]] — GlueSQL _(score 33.2)_
-- [[programming/rust/data/mysql|mysql]] — mysql _(score 29.2)_
-- [[r2d2]] — r2d2 _(score 28.3)_
-- [[wooridb]] — WooriDB _(score 28.3)_
+- [[diesel]] — diesel _(score 33.3)_
+- [[programming/rust/data/seaquery|seaquery]] — SeaQuery _(score 27.4)_
+- [[gluesql]] — GlueSQL _(score 27.0)_
+- [[adbc]] — ADBC ! _(score 27.0)_
+- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 27.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[webassembly]] — WASM _(score 58.3)_
-- [[tungstenite]] — Tungstenite _(score 24.1)_
-- [[gloo]] — Gloo _(score 24.1)_
-- [[rocket]] — Rocket _(score 24.1)_
-- [[javascript]] — Javascript _(score 20.2)_
+- [[webassembly]] — WASM _(score 26.0)_
+- [[javascript]] — Javascript _(score 18.0)_
+- [[tungstenite]] — Tungstenite _(score 17.1)_
+- [[gloo]] — Gloo _(score 17.1)_
+- [[rocket]] — Rocket _(score 17.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

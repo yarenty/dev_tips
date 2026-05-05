@@ -30,11 +30,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[slint]] — Slint _(score 34.0)_
-- [[programming/rust/gui/tauri|tauri]] — Tauri _(score 30.6)_
-- [[mobile]] — Mobile _(score 30.6)_
-- [[egui]] — egui _(score 27.6)_
-- [[macos]] — Mac targets _(score 21.1)_
+- [[mobile]] — Mobile _(score 17.1)_
+- [[macos]] — Mac targets _(score 17.1)_
+- [[slint]] — Slint _(score 17.1)_
+- [[programming/rust/gui/tauri|tauri]] — Tauri _(score 17.1)_
+- [[egui]] — egui _(score 17.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

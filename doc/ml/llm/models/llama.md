@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[llama_2]] — LLAMA _(score 41.5)_
-- [[jetbrains_mellum]] — Test the function _(score 27.5)_
-- [[olmo]] — OLMo - Open Language Models _(score 27.5)_
-- [[mplug]] — mPLUG _(score 27.5)_
-- [[alicemind_mplug_2_0]] — AliceMind - mplug 2.0 _(score 27.5)_
+- [[llama_2]] — LLAMA _(score 35.0)_
+- [[jetbrains_mellum]] — Test the function _(score 20.3)_
+- [[mplug]] — mPLUG _(score 20.3)_
+- [[olmo]] — OLMo - Open Language Models _(score 20.3)_
+- [[alicemind_mplug_2_0]] — AliceMind - mplug 2.0 _(score 20.3)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

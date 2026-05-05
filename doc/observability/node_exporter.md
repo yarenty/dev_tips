@@ -27,11 +27,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[prometheus]] — prometheus _(score 31.1)_
-- [[observability/grafana|grafana]] — grafana _(score 22.9)_
-- [[openobserve]] — OpenObserve _(score 22.9)_
-- [[programming/rust/web/observability_on_wasm|observability_on_wasm]] — obsetrvability on wasm _(score 18.9)_
-- [[programming/rust/tooling/observability_on_wasm|observability_on_wasm]] — obsetrvability on wasm _(score 18.9)_
+- [[prometheus]] — prometheus _(score 29.5)_
+- [[observability/grafana|grafana]] — grafana _(score 29.5)_
+- [[openobserve]] — OpenObserve _(score 22.6)_
+- [[webassembly]] — WASM _(score 18.6)_
+- [[hbase]] — hbase _(score 6.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

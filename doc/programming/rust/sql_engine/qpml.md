@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/sql_engine/books|books]] — Books _(score 23.8)_
-- [[programming/rust/sql_engine/seaquery|seaquery]] — SeaQuery _(score 23.8)_
-- [[datafusion]] — Datafusion SQL Query Planner _(score 23.8)_
-- [[roapi]] — ROAPI _(score 23.8)_
-- [[diesel]] — diesel _(score 23.8)_
+- [[programming/rust/sql_engine/books|books]] — Books _(score 17.1)_
+- [[diesel]] — diesel _(score 17.1)_
+- [[datafusion]] — Datafusion SQL Query Planner _(score 17.1)_
+- [[programming/rust/sql_engine/seaquery|seaquery]] — SeaQuery _(score 17.1)_
+- [[roapi]] — ROAPI _(score 17.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

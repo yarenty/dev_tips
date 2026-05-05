@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[kafka]] — Kafka _(score 44.9)_
-- [[redpanda]] — redpanda _(score 31.3)_
-- [[kafka_2]] — Kafka _(score 28.3)_
-- [[pulsar]] — Pulsar _(score 28.3)_
-- [[apache]] — apache _(score 17.9)_
+- [[kafka]] — Kafka _(score 36.5)_
+- [[redpanda]] — redpanda _(score 29.9)_
+- [[kafka_2]] — Kafka _(score 27.6)_
+- [[pulsar]] — Pulsar _(score 27.6)_
+- [[prometheus]] — prometheus _(score 18.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

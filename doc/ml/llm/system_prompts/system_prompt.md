@@ -29,11 +29,8 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[mlgo_llvm]] — MLGO _(score 19.2)_
-- [[leaderboards]] — marena _(score 18.7)_
-- [[goose]] — Goose _(score 18.7)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[articles]] — Articles _(score 14.4)_
+- [[yarenty_profile_and_projects_summary]] — Yarenty Profile And Projects Summary _(score 8.9)_
+- [[tools/shell/tools|tools]] — Shell tools _(score 8.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

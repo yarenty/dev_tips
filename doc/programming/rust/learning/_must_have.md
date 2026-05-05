@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[eyre]] — eyre _(score 35.1)_
-- [[thiserror]] — thiserror _(score 34.0)_
-- [[anyhow]] — anyhow _(score 34.0)_
-- [[error]] — eyre _(score 25.1)_
-- [[cargo_toml]] — Cargo.toml _(score 23.5)_
+- [[cargo_toml]] — Cargo.toml _(score 17.1)_
+- [[cheats_2]] — Cheats _(score 17.1)_
+- [[simple_short_intro_to_rust]] — Simple short intro to rust _(score 17.1)_
+- [[anyhow]] — anyhow _(score 17.1)_
+- [[cheats]] — Cheats _(score 17.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

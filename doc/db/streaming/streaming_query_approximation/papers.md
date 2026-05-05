@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[approximate_continuous_querying_over_distributed_streams]] — Approximate Continuous Querying  over Distributed Streams _(score 39.9)_
-- [[noria]] — Noria: data-flow for high-performance web applications _(score 27.0)_
-- [[ml/time_series/papers|papers]] — Papers _(score 20.2)_
-- [[articles]] — Articles _(score 15.2)_
-- [[cdc]] — CDC _(score 15.0)_
+- [[approximate_continuous_querying_over_distributed_streams]] — Approximate Continuous Querying  over Distributed Streams _(score 45.6)_
+- [[ml/time_series/papers|papers]] — Papers _(score 19.1)_
+- [[noria]] — Noria: data-flow for high-performance web applications _(score 18.4)_
+- [[definition]] — Definition _(score 17.9)_
+- [[spark]] — Spark UDF _(score 10.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

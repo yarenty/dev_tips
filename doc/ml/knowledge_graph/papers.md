@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[petgraph]] — Petgraph _(score 33.4)_
-- [[ml/time_series/papers|papers]] — Papers _(score 22.6)_
-- [[db/streaming/streaming_query_approximation/papers|papers]] — Papers _(score 20.2)_
-- [[meta]] — Meta / Facebook  graph articles _(score 14.6)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[petgraph]] — Petgraph _(score 29.8)_
+- [[meta]] — Meta / Facebook  graph articles _(score 29.8)_
+- [[ml/time_series/papers|papers]] — Papers _(score 24.7)_
+- [[time_series_research_papers]] — Time series research papers _(score 21.0)_
+- [[db/streaming/streaming_query_approximation/papers|papers]] — Papers _(score 19.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

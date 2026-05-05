@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/gui/tauri|tauri]] — Tauri _(score 32.0)_
-- [[tools/security/pake|pake]] — Pake _(score 28.6)_
-- [[cli]] — Command line _(score 23.6)_
-- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 22.4)_
-- [[json]] — JSON _(score 14.7)_
+- [[tools/security/pake|pake]] — Pake _(score 28.4)_
+- [[programming/rust/gui/tauri|tauri]] — Tauri _(score 24.2)_
+- [[cli]] — Command line _(score 22.0)_
+- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 20.2)_
+- [[web_to_app_pake]] — Pake _(score 20.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

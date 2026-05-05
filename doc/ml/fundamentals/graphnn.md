@@ -28,11 +28,8 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[courses]] — top 5 2022 couses _(score 25.8)_
-- [[unlearning]] — Unlearning _(score 25.8)_
-- [[ml/bigquery/links|links]] — Links _(score 22.6)_
-- [[co_scientist]] — Google _(score 14.4)_
-- [[articles]] — Articles _(score 14.4)_
+- [[unlearning]] — Unlearning _(score 16.0)_
+- [[courses]] — top 5 2022 couses _(score 16.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

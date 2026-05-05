@@ -28,11 +28,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[weektodo]] — WeekToDo _(score 25.7)_
-- [[superfile]] — superfile _(score 25.7)_
-- [[fengshui]] — Cleaning disk _(score 25.7)_
-- [[lstr]] — lstr _(score 25.7)_
-- [[gramma_harper]] — Harper _(score 25.7)_
+- [[fengshui]] — Cleaning disk _(score 21.5)_
+- [[weektodo]] — WeekToDo _(score 21.5)_
+- [[lstr]] — lstr _(score 21.5)_
+- [[gramma_harper]] — Harper _(score 21.5)_
+- [[superfile]] — superfile _(score 21.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

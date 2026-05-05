@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[map_cache_storage]] — DashMap _(score 21.7)_
-- [[cache]] — Cache _(score 21.7)_
+- [[redis]] — Redis _(score 27.2)_
 - [[caching]] — Caching _(score 20.9)_
-- [[redis]] — Redis _(score 20.9)_
-- [[rtic]] — RTIC _(score 13.4)_
+- [[cache]] — Cache _(score 18.3)_
+- [[map_cache_storage]] — DashMap _(score 18.3)_
+- [[graph_rag]] — Graph RAG _(score 8.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[diagrams]] — Diagrams _(score 21.5)_
-- [[visualization/grafana|grafana]] — Grafana _(score 21.5)_
-- [[tools/linux/books|books]] — Books _(score 19.4)_
 - [[programming/rust/sql_engine/books|books]] — Books _(score 19.4)_
 - [[_to_learn]] — Books _(score 19.4)_
+- [[tools/linux/books|books]] — Books _(score 19.4)_
+- [[visualization/grafana|grafana]] — Grafana _(score 16.0)_
+- [[diagrams]] — Diagrams _(score 16.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

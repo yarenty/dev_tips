@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[inspectus]] — Inspectus _(score 30.4)_
-- [[leaderboards]] — marena _(score 30.4)_
-- [[ollama]] — Ollama _(score 23.5)_
-- [[llama_2]] — LLAMA _(score 23.5)_
-- [[time_serie_transformer]] — Transformers _(score 22.1)_
+- [[leaderboards]] — marena _(score 23.4)_
+- [[inspectus]] — Inspectus _(score 23.4)_
+- [[llama_2]] — LLAMA _(score 16.3)_
+- [[ollama]] — Ollama _(score 16.3)_
+- [[seal]] — seal _(score 11.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

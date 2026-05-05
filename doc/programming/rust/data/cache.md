@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[map_cache_storage]] — DashMap _(score 51.2)_
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 25.2)_
-- [[barrel]] — barrel _(score 25.2)_
-- [[gluesql]] — GlueSQL _(score 25.2)_
-- [[programming/rust/sql_engine/sqlparser|sqlparser]] — SQLparser _(score 18.0)_
+- [[map_cache_storage]] — DashMap _(score 38.5)_
+- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 21.5)_
+- [[gluesql]] — GlueSQL _(score 21.5)_
+- [[barrel]] — barrel _(score 21.5)_
+- [[programming/rust/sql_engine/sqlparser|sqlparser]] — SQLparser _(score 17.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

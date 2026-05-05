@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[databend]] — Databend _(score 35.8)_
-- [[sqlite]] — sqlite _(score 30.9)_
-- [[hive]] — Hive UDF – User Defined Function with Example _(score 30.9)_
-- [[mariadb]] — MariaDB _(score 28.7)_
-- [[spark]] — Spark UDF _(score 28.7)_
+- [[databend]] — Databend _(score 33.5)_
+- [[mariadb]] — MariaDB _(score 33.5)_
+- [[spark]] — Spark UDF _(score 27.7)_
+- [[sqlite]] — sqlite _(score 27.7)_
+- [[hive]] — Hive UDF – User Defined Function with Example _(score 23.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

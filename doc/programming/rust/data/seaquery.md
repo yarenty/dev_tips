@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/sql_engine/seaquery|seaquery]] — SeaQuery _(score 31.3)_
-- [[programming/rust/data/mysql|mysql]] — mysql _(score 21.8)_
-- [[parseable]] — parseable _(score 21.8)_
-- [[rusqlite]] — rusqlite _(score 21.8)_
-- [[db]] — diesel _(score 21.8)_
+- [[programming/rust/sql_engine/seaquery|seaquery]] — SeaQuery _(score 46.5)_
+- [[db]] — diesel _(score 27.4)_
+- [[sqlite]] — sqlite _(score 24.4)_
+- [[rusqlite]] — rusqlite _(score 24.0)_
+- [[programming/rust/data/mysql|mysql]] — mysql _(score 23.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

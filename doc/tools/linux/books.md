@@ -29,9 +29,9 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[tools/linux/tmux|tmux]] — TMUX _(score 24.3)_
-- [[tmux_ai]] — Tmux AI _(score 24.3)_
-- [[tools/linux/zellij|zellij]] — Zellij _(score 24.3)_
+- [[tmux_ai]] — Tmux AI _(score 20.3)_
+- [[tools/linux/tmux|tmux]] — TMUX _(score 20.3)_
+- [[tools/linux/zellij|zellij]] — Zellij _(score 20.3)_
 - [[programming/rust/sql_engine/books|books]] — Books _(score 19.4)_
 - [[_to_learn]] — Books _(score 19.4)_
 

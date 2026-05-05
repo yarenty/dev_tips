@@ -30,9 +30,10 @@ status: draft
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
 - [[rerun]] — rerun _(score 20.9)_
-- [[nvidia]] — Nvidia _(score 19.8)_
-- [[rapids]] — Spark rapids _(score 19.8)_
-- [[nvidia_omniverse]] — Nvidia Omniverse _(score 19.8)_
+- [[nvidia]] — Nvidia _(score 18.6)_
+- [[rapids]] — Spark rapids _(score 18.6)_
+- [[nvidia_omniverse]] — Nvidia Omniverse _(score 18.6)_
+- [[simulink]] — Simulink _(score 6.6)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

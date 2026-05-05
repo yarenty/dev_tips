@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[zxspectrum]] — Rust ZX _(score 23.4)_
-- [[game_in_scala]] — GAME in Scala _(score 23.4)_
-- [[low_level_structures]] — HalfBrown _(score 18.0)_
-- [[reflection]] — reflect _(score 18.0)_
-- [[engines]] — Engines _(score 11.4)_
+- [[zxspectrum]] — Rust ZX _(score 24.2)_
+- [[game_in_scala]] — GAME in Scala _(score 23.1)_
+- [[rtic]] — RTIC _(score 13.1)_
+- [[reflection]] — reflect _(score 13.1)_
+- [[low_level_structures]] — HalfBrown _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

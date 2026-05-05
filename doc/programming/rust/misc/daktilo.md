@@ -30,11 +30,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[claxon]] — Claxon _(score 23.7)_
-- [[hound]] — Hound _(score 23.7)_
-- [[programming/rust/misc/drogue|drogue]] — Drogue _(score 23.7)_
-- [[rtic]] — RTIC _(score 23.7)_
-- [[rodio]] — Rodio _(score 23.7)_
+- [[rtic]] — RTIC _(score 17.1)_
+- [[rodio]] — Rodio _(score 17.1)_
+- [[hound]] — Hound _(score 17.1)_
+- [[programming/rust/misc/drogue|drogue]] — Drogue _(score 17.1)_
+- [[claxon]] — Claxon _(score 17.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

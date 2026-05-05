@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[config]] — GIT configuration _(score 23.8)_
-- [[git_delta]] — delta _(score 23.8)_
-- [[akri]] — Akri _(score 19.8)_
-- [[workmux]] — Workmux _(score 19.8)_
-- [[rapids]] — Spark rapids _(score 19.8)_
+- [[git_delta]] — delta _(score 22.1)_
+- [[config]] — GIT configuration _(score 22.1)_
+- [[workmux]] — Workmux _(score 18.1)_
+- [[yarenty_profile_and_projects_summary]] — Yarenty Profile And Projects Summary _(score 8.9)_
+- [[cursive]] — Cursive _(score 6.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

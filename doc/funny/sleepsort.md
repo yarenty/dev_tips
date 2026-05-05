@@ -29,9 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[brainfuck]] — Brainfuck _(score 23.8)_
-- [[rust_brain]] — Rust - brain _(score 23.8)_
-- [[algorithms]] — Algorithms _(score 23.8)_
+- [[javascript]] — Javascript _(score 18.0)_
+- [[rust_brain]] — Rust - brain _(score 16.0)_
+- [[brainfuck]] — Brainfuck _(score 16.0)_
+- [[algorithms]] — Algorithms _(score 16.0)_
+- [[snowflake]] — Snowflake _(score 6.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

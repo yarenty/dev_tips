@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[meilisearch]] — Meilisearch _(score 28.5)_
-- [[programming/rust/data/seaquery|seaquery]] — SeaQuery _(score 21.8)_
-- [[parseable]] — parseable _(score 21.8)_
-- [[db]] — diesel _(score 21.8)_
-- [[articles]] — Articles _(score 15.2)_
+- [[db]] — diesel _(score 22.5)_
+- [[diesel]] — diesel _(score 18.5)_
+- [[meilisearch]] — Meilisearch _(score 17.1)_
+- [[programming/rust/data/seaquery|seaquery]] — SeaQuery _(score 17.1)_
+- [[parseable]] — parseable _(score 17.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[linfa]] — Linfa _(score 21.0)_
-- [[ml_in_rust]] — ML libraries in Rust _(score 21.0)_
-- [[_todo_ideas]] — Move blokchain from python to rust _(score 19.9)_
-- [[adbc]] — ADBC ! _(score 19.9)_
-- [[rtic]] — RTIC _(score 14.7)_
+- [[ml_in_rust]] — ML libraries in Rust _(score 24.9)_
+- [[linfa]] — Linfa _(score 24.9)_
+- [[yarenty_profile_and_projects_summary]] — Yarenty Profile And Projects Summary _(score 20.9)_
+- [[_todo_ideas]] — Move blokchain from python to rust _(score 18.8)_
+- [[adbc]] — ADBC ! _(score 18.8)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

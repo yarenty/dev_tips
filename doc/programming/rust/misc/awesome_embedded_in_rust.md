@@ -30,11 +30,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[raspberry_pi]] — Rust Embedded - book _(score 32.6)_
-- [[daktilo]] — Daktilo _(score 23.7)_
-- [[claxon]] — Claxon _(score 23.7)_
-- [[hound]] — Hound _(score 23.7)_
-- [[rtic]] — RTIC _(score 23.7)_
+- [[raspberry_pi]] — Rust Embedded - book _(score 32.8)_
+- [[rtic]] — RTIC _(score 17.1)_
+- [[hound]] — Hound _(score 17.1)_
+- [[daktilo]] — Daktilo _(score 17.1)_
+- [[claxon]] — Claxon _(score 17.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

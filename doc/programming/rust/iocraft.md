@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[termion]] — Termion _(score 23.9)_
-- [[paho_mqtt]] — paho MQTT _(score 19.9)_
-- [[_todo_ideas]] — Move blokchain from python to rust _(score 19.9)_
-- [[indicatif]] — Indicatif _(score 18.7)_
-- [[rtic]] — RTIC _(score 14.7)_
+- [[termion]] — Termion _(score 22.8)_
+- [[_todo_ideas]] — Move blokchain from python to rust _(score 18.8)_
+- [[paho_mqtt]] — paho MQTT _(score 18.8)_
+- [[indicatif]] — Indicatif _(score 17.1)_
+- [[rtic]] — RTIC _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

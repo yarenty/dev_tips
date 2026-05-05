@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[webthinker]] — Webthinker _(score 29.6)_
-- [[tract]] — tract _(score 21.4)_
-- [[articles]] — Articles _(score 17.5)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[llama_2]] — LLAMA _(score 14.4)_
+- [[webthinker]] — Webthinker _(score 24.2)_
+- [[tract]] — tract _(score 16.0)_
+- [[dfdx_shape_checked_deep_learning_in_rust]] — dfdx: shape checked deep learning in rust _(score 12.2)_
+- [[caching]] — Caching _(score 11.2)_
+- [[summary_of_best_practices]] — Summary Of Best Practices _(score 11.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

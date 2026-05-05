@@ -28,11 +28,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[redis]] — Redis _(score 28.7)_
-- [[hbase]] — hbase _(score 28.7)_
-- [[ml/bigquery/links|links]] — Links _(score 20.2)_
-- [[indexing]] — Indexing _(score 16.5)_
-- [[sqlflow]] — SQLFlow _(score 16.5)_
+- [[hbase]] — hbase _(score 23.4)_
+- [[redis]] — Redis _(score 23.4)_
+- [[oracle_free_tier]] — Oracle Free Tier _(score 14.5)_
+- [[fauna]] — fauna _(score 7.4)_
+- [[dialoguer]] — Dialoguer _(score 7.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

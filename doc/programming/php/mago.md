@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[app_builders]] — awesome app _(score 20.4)_
-- [[sql_parse]] — sql-parse _(score 20.4)_
-- [[streaming]] — par-stream _(score 20.4)_
-- [[_todo_ideas]] — Move blokchain from python to rust _(score 14.7)_
-- [[rtic]] — RTIC _(score 14.7)_
+- [[rtic]] — RTIC _(score 13.1)_
+- [[sql_parse]] — sql-parse _(score 13.1)_
+- [[streaming]] — par-stream _(score 13.1)_
+- [[app_builders]] — awesome app _(score 13.1)_
+- [[_todo_ideas]] — Move blokchain from python to rust _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

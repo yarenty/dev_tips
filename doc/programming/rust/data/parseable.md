@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/data/seaquery|seaquery]] — SeaQuery _(score 21.8)_
-- [[trustfall]] — Trustfall _(score 21.8)_
-- [[db]] — diesel _(score 21.8)_
-- [[articles]] — Articles _(score 15.2)_
-- [[postgresql]] — postgresql _(score 15.2)_
+- [[json]] — JSON _(score 19.4)_
+- [[observability/grafana|grafana]] — grafana _(score 18.6)_
+- [[db]] — diesel _(score 17.1)_
+- [[programming/rust/data/seaquery|seaquery]] — SeaQuery _(score 17.1)_
+- [[trustfall]] — Trustfall _(score 17.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

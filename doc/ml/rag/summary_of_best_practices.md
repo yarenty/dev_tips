@@ -27,11 +27,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[episodic_memory]] — Episodic Memory _(score 27.6)_
-- [[agentic_ai_memory]] — Task _(score 27.6)_
-- [[task]] — Task _(score 20.5)_
-- [[memory]] — Memory _(score 15.6)_
-- [[ml/memory/response|response]] — Response _(score 15.6)_
+- [[deeplake]] — DeepLake _(score 11.2)_
+- [[caching]] — Caching _(score 11.2)_
+- [[kag]] — KAG _(score 9.3)_
+- [[datafusion]] — Datafusion SQL Query Planner _(score 8.9)_
+- [[prek]] — Prek _(score 5.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

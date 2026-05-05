@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[barrel]] — barrel _(score 36.6)_
-- [[db]] — diesel _(score 33.2)_
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 30.1)_
-- [[programming/rust/sql_engine/sqlparser|sqlparser]] — SQLparser _(score 23.0)_
-- [[bb8]] — bb8 _(score 19.6)_
+- [[db]] — diesel _(score 27.0)_
+- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 27.0)_
+- [[barrel]] — barrel _(score 21.5)_
+- [[diesel]] — diesel _(score 18.5)_
+- [[programming/rust/sql_engine/sqlparser|sqlparser]] — SQLparser _(score 17.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

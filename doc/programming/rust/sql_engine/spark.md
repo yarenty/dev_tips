@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[hive]] — Hive UDF – User Defined Function with Example _(score 38.6)_
-- [[databend]] — Databend _(score 35.3)_
-- [[mariadb]] — MariaDB _(score 35.3)_
-- [[snowflake]] — Snowflake _(score 35.3)_
-- [[datafusion]] — Datafusion SQL Query Planner _(score 28.7)_
+- [[databend]] — Databend _(score 27.7)_
+- [[mariadb]] — MariaDB _(score 27.7)_
+- [[snowflake]] — Snowflake _(score 27.7)_
+- [[hive]] — Hive UDF – User Defined Function with Example _(score 23.2)_
+- [[datafusion]] — Datafusion SQL Query Planner _(score 21.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

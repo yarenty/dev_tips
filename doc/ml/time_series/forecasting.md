@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[time_serie_transformer]] — Transformers _(score 27.1)_
-- [[time_series_transformer]] — Time Series Transformer _(score 27.1)_
-- [[ml/time_series/papers|papers]] — Papers _(score 24.0)_
-- [[kan]] — Kolmogorov-Arnold Networks (KANs) for Time Series Forecasting _(score 20.9)_
-- [[articles]] — Articles _(score 17.5)_
+- [[kan]] — Kolmogorov-Arnold Networks (KANs) for Time Series Forecasting _(score 30.4)_
+- [[time_serie_transformer]] — Transformers _(score 21.5)_
+- [[time_series_transformer]] — Time Series Transformer _(score 21.5)_
+- [[ml/time_series/papers|papers]] — Papers _(score 21.5)_
+- [[linear_regression]] — Linear Regression With Time Series _(score 16.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

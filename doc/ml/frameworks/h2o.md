@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[mlcube]] — MLCube _(score 24.2)_
-- [[mindsdb]] — MindsDB _(score 24.2)_
-- [[langgraph]] — langgraph _(score 24.2)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[articles]] — Articles _(score 14.4)_
+- [[mindsdb]] — MindsDB _(score 21.4)_
+- [[mlcube]] — MLCube _(score 21.4)_
+- [[langgraph]] — langgraph _(score 21.4)_
+- [[xla_accelerated_compiler]] — XLA _(score 11.9)_
+- [[phidata]] — PhiData _(score 9.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

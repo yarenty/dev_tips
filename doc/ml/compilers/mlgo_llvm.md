@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[mlcube]] — MLCube _(score 27.0)_
-- [[mindsdb]] — MindsDB _(score 27.0)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[co_scientist]] — Google _(score 14.4)_
-- [[articles]] — Articles _(score 14.4)_
+- [[tiny_gpu]] — Tiny - GPU _(score 10.4)_
+- [[cuda_kevin]] — Kevin _(score 10.4)_
+- [[tiramisu]] — Tiramisu _(score 10.4)_
+- [[xla_accelerated_compiler]] — XLA _(score 10.4)_
+- [[windows]] — Windows RS _(score 6.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[db/timeseries/greptimedb|greptimedb]] — GreptimeDB _(score 26.1)_
-- [[questdb]] — QuestDB _(score 26.1)_
-- [[apache]] — apache _(score 25.6)_
-- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 17.6)_
-- [[tutorials_2]] — Tutorials _(score 17.6)_
+- [[questdb]] — QuestDB _(score 21.5)_
+- [[db/timeseries/greptimedb|greptimedb]] — GreptimeDB _(score 21.5)_
+- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 17.5)_
+- [[tutorials_2]] — Tutorials _(score 17.5)_
+- [[apache]] — apache _(score 17.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[cursive]] — Cursive _(score 30.3)_
-- [[termion]] — Termion _(score 27.6)_
-- [[television]] — Television _(score 26.9)_
-- [[programming/rust/bottom|bottom]] — bottom _(score 22.0)_
-- [[indicatif]] — Indicatif _(score 18.7)_
+- [[cursive]] — Cursive _(score 32.4)_
+- [[termion]] — Termion _(score 26.0)_
+- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 25.2)_
+- [[television]] — Television _(score 23.5)_
+- [[iocraft]] — IOCraft _(score 22.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

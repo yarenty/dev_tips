@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[sqlflow]] — SQLFlow _(score 23.5)_
-- [[quary]] — Quary _(score 23.5)_
-- [[indexing]] — Indexing _(score 23.5)_
-- [[demo_overview]] — DEMO _(score 15.0)_
-- [[dfdx]] — dfdx _(score 15.0)_
+- [[sqlflow]] — SQLFlow _(score 16.0)_
+- [[indexing]] — Indexing _(score 16.0)_
+- [[quary]] — Quary _(score 16.0)_
+- [[exa]] — EXA _(score 6.1)_
+- [[config]] — GIT configuration _(score 6.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

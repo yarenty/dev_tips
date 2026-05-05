@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[r2d2]] — r2d2 _(score 36.0)_
-- [[barrel]] — barrel _(score 31.6)_
-- [[tiberius]] — tiberius _(score 29.6)_
-- [[db]] — diesel _(score 28.3)_
-- [[cache]] — Cache _(score 25.2)_
+- [[r2d2]] — r2d2 _(score 22.5)_
+- [[db]] — diesel _(score 22.5)_
+- [[diesel]] — diesel _(score 18.5)_
+- [[tiberius]] — tiberius _(score 17.1)_
+- [[barrel]] — barrel _(score 17.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

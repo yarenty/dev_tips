@@ -28,11 +28,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[datafusion]] — Datafusion SQL Query Planner _(score 23.8)_
-- [[qpml]] — QPML _(score 23.8)_
-- [[roapi]] — ROAPI _(score 23.8)_
-- [[diesel]] — diesel _(score 23.8)_
-- [[_to_learn]] — Books _(score 22.1)_
+- [[_to_learn]] — Books _(score 20.5)_
+- [[tools/linux/books|books]] — Books _(score 19.4)_
+- [[qpml]] — QPML _(score 17.1)_
+- [[diesel]] — diesel _(score 17.1)_
+- [[datafusion]] — Datafusion SQL Query Planner _(score 17.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

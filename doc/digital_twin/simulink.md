@@ -26,11 +26,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[scilab]] — Scilab _(score 22.4)_
-- [[isc2022]] — Isc2022 _(score 22.4)_
-- [[nvidia_omniverse]] — Nvidia Omniverse _(score 22.4)_
-- [[nvidia]] — Nvidia _(score 22.4)_
-- [[digital_twin/links|links]] — Links _(score 22.4)_
+- [[nvidia]] — Nvidia _(score 22.6)_
+- [[isc2022]] — Isc2022 _(score 22.6)_
+- [[scilab]] — Scilab _(score 22.6)_
+- [[nvidia_omniverse]] — Nvidia Omniverse _(score 22.6)_
+- [[digital_twin/links|links]] — Links _(score 16.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -30,11 +30,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[brainfuck]] — Brainfuck _(score 32.0)_
-- [[rust_brain]] — Rust - brain _(score 32.0)_
-- [[sleepsort]] — Sleep SORT algorithm _(score 23.8)_
-- [[moea]] — The MOEA Framework _(score 20.9)_
-- [[sql_pen_test]] — sqlmap _(score 20.9)_
+- [[rust_brain]] — Rust - brain _(score 24.2)_
+- [[brainfuck]] — Brainfuck _(score 24.2)_
+- [[alagorithms]] — algorithms _(score 20.2)_
+- [[moea]] — The MOEA Framework _(score 20.2)_
+- [[sleepsort]] — Sleep SORT algorithm _(score 16.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

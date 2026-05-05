@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[toydb]] — toyDB _(score 31.5)_
-- [[limbo]] — Limbo _(score 26.6)_
-- [[xlite]] — XLite _(score 26.6)_
-- [[db/relational/mysql|mysql]] — mysql _(score 26.6)_
-- [[fauna]] — fauna _(score 26.6)_
+- [[toydb]] — toyDB _(score 25.9)_
+- [[fauna]] — fauna _(score 21.4)_
+- [[limbo]] — Limbo _(score 16.0)_
+- [[db/relational/mysql|mysql]] — mysql _(score 16.0)_
+- [[xlite]] — XLite _(score 16.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

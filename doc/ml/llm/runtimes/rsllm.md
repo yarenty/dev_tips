@@ -29,11 +29,7 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[ollama]] — Ollama _(score 30.5)_
-- [[candle]] — Candle _(score 26.9)_
-- [[ml/agents/response|response]] — Response _(score 18.7)_
-- [[agentic_ai_memory]] — Task _(score 18.7)_
-- [[llama_2]] — LLAMA _(score 18.7)_
+- [[ollama]] — Ollama _(score 16.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

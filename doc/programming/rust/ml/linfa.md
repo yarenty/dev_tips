@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[ml_in_rust]] — ML libraries in Rust _(score 36.7)_
-- [[rust_ml]] — BAD ONES: _(score 31.2)_
-- [[cuda]] — CUDA in Rust _(score 21.0)_
-- [[alagorithms]] — algorithms _(score 14.7)_
-- [[rtic]] — RTIC _(score 14.7)_
+- [[ml_in_rust]] — ML libraries in Rust _(score 37.0)_
+- [[rust_ml]] — BAD ONES: _(score 25.3)_
+- [[cuda]] — CUDA in Rust _(score 24.9)_
+- [[classification]] — Classification _(score 16.6)_
+- [[rtic]] — RTIC _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

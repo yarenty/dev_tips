@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[fedsb]] — Fed-SB _(score 15.2)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[co_scientist]] — Google _(score 14.4)_
-- [[articles]] — Articles _(score 14.4)_
-- [[public]] — Datasets _(score 14.4)_
+- [[fedsb]] — Fed-SB _(score 24.9)_
+- [[llama_2]] — LLAMA _(score 20.2)_
+- [[tabby]] — TabbyML _(score 13.3)_
+- [[candle]] — Candle _(score 13.1)_
+- [[yarenty_profile_and_projects_summary]] — Yarenty Profile And Projects Summary _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

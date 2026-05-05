@@ -27,11 +27,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[dataman]] — Dataman _(score 28.0)_
-- [[task]] — Task _(score 19.4)_
-- [[xorg]] — xorg _(score 15.2)_
-- [[articles]] — Articles _(score 15.2)_
-- [[public]] — Datasets _(score 15.2)_
+- [[dataman]] — Dataman _(score 24.9)_
+- [[ml/time_series/papers|papers]] — Papers _(score 11.0)_
+- [[time_series_research_papers]] — Time series research papers _(score 11.0)_
+- [[tools/security/pake|pake]] — Pake _(score 10.9)_
+- [[episodic_memory]] — Episodic Memory _(score 5.6)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

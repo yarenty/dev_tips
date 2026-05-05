@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[delta]] — DeltaLake _(score 34.6)_
-- [[vortex]] — Vortex (2024-10-17) _(score 26.4)_
-- [[gluten]] — gluten _(score 26.4)_
-- [[rapids]] — Spark rapids _(score 26.4)_
-- [[iceberg]] — Iceberg _(score 26.4)_
+- [[delta]] — DeltaLake _(score 24.9)_
+- [[vortex]] — Vortex (2024-10-17) _(score 17.1)_
+- [[gluten]] — gluten _(score 17.1)_
+- [[rapids]] — Spark rapids _(score 17.1)_
+- [[iceberg]] — Iceberg _(score 17.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

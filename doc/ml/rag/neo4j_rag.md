@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[graph_rag]] — Graph RAG _(score 24.5)_
-- [[ollama]] — Ollama _(score 15.6)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[articles]] — Articles _(score 14.4)_
-- [[llama_2]] — LLAMA _(score 14.4)_
+- [[graph_rag]] — Graph RAG _(score 21.6)_
+- [[rtic]] — RTIC _(score 13.1)_
+- [[ollama]] — Ollama _(score 13.1)_
+- [[rust]] — Plotters _(score 11.9)_
+- [[trustfall]] — Trustfall _(score 6.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

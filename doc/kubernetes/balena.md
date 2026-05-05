@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[kuasar]] — Kuasar _(score 23.4)_
-- [[dokku]] — Dokku _(score 23.4)_
-- [[akri]] — Akri _(score 23.4)_
-- [[messaging/mqtt|mqtt]] — MQTT _(score 18.6)_
-- [[iot/mqtt|mqtt]] — IoT mqtt _(score 18.6)_
+- [[dokku]] — Dokku _(score 28.6)_
+- [[messaging/mqtt|mqtt]] — MQTT _(score 24.3)_
+- [[kuasar]] — Kuasar _(score 22.9)_
+- [[akri]] — Akri _(score 22.9)_
+- [[iot/mqtt|mqtt]] — IoT mqtt _(score 18.3)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

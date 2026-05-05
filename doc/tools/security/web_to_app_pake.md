@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[tools/security/pake|pake]] — Pake _(score 37.5)_
-- [[programming/rust/tooling/tools|tools]] — coreutils _(score 26.9)_
-- [[trace]] — Trippy _(score 26.9)_
-- [[rathole]] — rathole _(score 25.7)_
-- [[tract]] — tract _(score 15.0)_
+- [[tools/security/pake|pake]] — Pake _(score 34.0)_
+- [[rathole]] — rathole _(score 21.5)_
+- [[programming/rust/gui/pake|pake]] — Pake _(score 20.2)_
+- [[deepseek]] — Deepseek _(score 19.8)_
+- [[javascript]] — Javascript _(score 18.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

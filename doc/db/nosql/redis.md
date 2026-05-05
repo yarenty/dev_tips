@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[firebase]] — firebase _(score 28.7)_
-- [[hbase]] — hbase _(score 28.7)_
-- [[noria]] — Noria: data-flow for high-performance web applications _(score 19.6)_
-- [[articles]] — Articles _(score 15.2)_
-- [[cache]] — Cache _(score 15.2)_
+- [[firebase]] — firebase _(score 23.4)_
+- [[hbase]] — hbase _(score 23.4)_
+- [[cache]] — Cache _(score 18.3)_
+- [[garnet]] — Garnet _(score 15.2)_
+- [[loco_rust_on_rails]] — Loco _(score 11.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

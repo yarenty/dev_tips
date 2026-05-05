@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[dfdx]] — dfdx _(score 47.4)_
-- [[candle]] — Candle _(score 29.6)_
-- [[void]] — VOID _(score 15.0)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[articles]] — Articles _(score 14.4)_
+- [[dfdx]] — dfdx _(score 43.7)_
+- [[candle]] — Candle _(score 22.3)_
+- [[cargo_toml]] — Cargo.toml _(score 13.1)_
+- [[rtic]] — RTIC _(score 13.1)_
+- [[lance_data_format]] — Lance _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

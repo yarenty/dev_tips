@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[markitdown]] — Markitdown _(score 26.4)_
-- [[void]] — VOID _(score 26.4)_
-- [[intellij]] — IntelliJ productivity tips _(score 26.4)_
-- [[terminals]] — Project Summary: Byobu, Mosh, Xpra _(score 21.9)_
-- [[mosh]] — Mosh _(score 21.9)_
+- [[tui]] — Ratatui _(score 25.2)_
+- [[intellij]] — IntelliJ productivity tips _(score 22.9)_
+- [[markitdown]] — Markitdown _(score 22.9)_
+- [[void]] — VOID _(score 22.9)_
+- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 18.8)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

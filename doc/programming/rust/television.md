@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[tui]] — Ratatui _(score 26.9)_
-- [[dialoguer]] — Dialoguer _(score 18.7)_
-- [[programming/rust/bottom|bottom]] — bottom _(score 18.7)_
-- [[ink]] — INK _(score 14.9)_
-- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 14.7)_
+- [[tui]] — Ratatui _(score 23.5)_
+- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 19.5)_
+- [[cursive]] — Cursive _(score 17.7)_
+- [[dialoguer]] — Dialoguer _(score 17.1)_
+- [[programming/rust/bottom|bottom]] — bottom _(score 17.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

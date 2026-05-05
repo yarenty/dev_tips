@@ -30,10 +30,8 @@ status: draft
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
 - [[rtic]] — RTIC _(score 20.9)_
-- [[demo_overview]] — DEMO _(score 15.0)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[articles]] — Articles _(score 14.4)_
-- [[public]] — Datasets _(score 14.4)_
+- [[candle]] — Candle _(score 8.3)_
+- [[n8n]] — n8n.io _(score 8.3)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

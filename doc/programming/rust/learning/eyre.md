@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[_must_have]] — List of awesome libraries !!! _(score 35.1)_
-- [[thiserror]] — thiserror _(score 26.9)_
-- [[anyhow]] — anyhow _(score 26.9)_
-- [[error]] — eyre _(score 18.0)_
-- [[rtic]] — RTIC _(score 18.0)_
+- [[error]] — eyre _(score 22.0)_
+- [[_must_have]] — List of awesome libraries !!! _(score 17.1)_
+- [[anyhow]] — anyhow _(score 17.1)_
+- [[thiserror]] — thiserror _(score 17.1)_
+- [[rtic]] — RTIC _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

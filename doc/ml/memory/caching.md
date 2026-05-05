@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[ml/memory/response|response]] — Response _(score 29.3)_
-- [[ml/agents/response|response]] — Response _(score 25.3)_
-- [[orchestration]] — Orchestration _(score 18.7)_
-- [[providers]] — providers _(score 18.7)_
-- [[202505_recents]] — 202505 Recents _(score 17.3)_
+- [[qdrant]] — qdrant _(score 17.3)_
+- [[qdrant_vector_search]] — qdrant _(score 17.3)_
+- [[ml/memory/response|response]] — Response _(score 16.0)_
+- [[202505_recents]] — 202505 Recents _(score 16.0)_
+- [[candle]] — Candle _(score 11.6)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[json]] — JSON _(score 18.7)_
-- [[parseable]] — parseable _(score 17.8)_
-- [[lance_data_format]] — Lance _(score 17.8)_
-- [[programming/rust/data/greptimedb|greptimedb]] — GreptimeDB _(score 17.8)_
-- [[cache]] — Cache _(score 17.8)_
+- [[delta]] — DeltaLake _(score 20.9)_
+- [[programming/rust/data/greptimedb|greptimedb]] — GreptimeDB _(score 17.7)_
+- [[json]] — JSON _(score 17.1)_
+- [[db/timeseries/greptimedb|greptimedb]] — GreptimeDB _(score 16.6)_
+- [[markitdown]] — Markitdown _(score 13.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

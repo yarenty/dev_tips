@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[hive]] — Hive UDF – User Defined Function with Example _(score 37.5)_
-- [[spark]] — Spark UDF _(score 35.3)_
-- [[snowflake]] — Snowflake _(score 35.3)_
-- [[mariadb]] — MariaDB _(score 35.3)_
-- [[udf_lib]] — udf _(score 23.8)_
+- [[mariadb]] — MariaDB _(score 33.5)_
+- [[spark]] — Spark UDF _(score 27.7)_
+- [[snowflake]] — Snowflake _(score 27.7)_
+- [[hive]] — Hive UDF – User Defined Function with Example _(score 23.2)_
+- [[udf_lib]] — udf _(score 21.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

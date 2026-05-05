@@ -27,11 +27,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[messaging/mqtt|mqtt]] — MQTT _(score 26.4)_
-- [[iot/drogue|drogue]] — Drogue _(score 22.6)_
-- [[shodan]] — Shodan _(score 22.6)_
-- [[paho_mqtt]] — paho MQTT _(score 19.8)_
-- [[mq]] — ruMQTT _(score 19.8)_
+- [[messaging/mqtt|mqtt]] — MQTT _(score 33.4)_
+- [[mq]] — ruMQTT _(score 27.2)_
+- [[paho_mqtt]] — paho MQTT _(score 27.2)_
+- [[shodan]] — Shodan _(score 22.3)_
+- [[iot/drogue|drogue]] — Drogue _(score 22.3)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[superfile]] — superfile _(score 25.7)_
-- [[gramma_harper]] — Harper _(score 25.7)_
-- [[demo_overview]] — DEMO _(score 15.0)_
-- [[weektodo]] — WeekToDo _(score 13.7)_
-- [[applications]] — Deskreen _(score 13.7)_
+- [[superfile]] — superfile _(score 21.5)_
+- [[applications]] — Deskreen _(score 21.5)_
+- [[weektodo]] — WeekToDo _(score 21.5)_
+- [[gramma_harper]] — Harper _(score 21.5)_
+- [[rtic]] — RTIC _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

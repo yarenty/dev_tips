@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[neo4j_rag]] — NEO4J _(score 24.5)_
-- [[summary_of_best_practices]] — Summary Of Best Practices _(score 24.5)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[articles]] — Articles _(score 14.4)_
-- [[kag]] — KAG _(score 12.5)_
+- [[neo4j_rag]] — NEO4J _(score 21.6)_
+- [[summary_of_best_practices]] — Summary Of Best Practices _(score 16.0)_
+- [[garnet]] — Garnet _(score 8.2)_
+- [[tips]] — Help _(score 8.2)_
+- [[ml/knowledge_graph/papers|papers]] — Research papers _(score 5.6)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

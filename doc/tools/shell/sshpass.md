@@ -27,11 +27,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[dns_toys]] — Dns Toys _(score 25.1)_
-- [[tools/shell/tools|tools]] — Shell tools _(score 25.1)_
-- [[lynx]] — Lynx _(score 25.1)_
-- [[tools/shell/tmux|tmux]] — Tmux _(score 25.1)_
-- [[must_have]] — Commands to install _(score 25.1)_
+- [[tools/shell/tools|tools]] — Shell tools _(score 21.4)_
+- [[dns_toys]] — Dns Toys _(score 21.4)_
+- [[tools/shell/tmux|tmux]] — Tmux _(score 21.4)_
+- [[must_have]] — Commands to install _(score 21.4)_
+- [[lynx]] — Lynx _(score 21.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

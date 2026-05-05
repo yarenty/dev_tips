@@ -28,11 +28,10 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rerun]] — rerun _(score 24.7)_
-- [[public]] — Datasets _(score 24.0)_
-- [[fonts]] — Fonts _(score 21.5)_
-- [[visualization/grafana|grafana]] — Grafana _(score 21.5)_
-- [[articles]] — Articles _(score 15.2)_
+- [[public]] — Datasets _(score 20.9)_
+- [[visualization/grafana|grafana]] — Grafana _(score 16.0)_
+- [[fonts]] — Fonts _(score 16.0)_
+- [[rerun]] — rerun _(score 16.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

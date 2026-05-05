@@ -29,11 +29,9 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[osx_tricks]] — Jail-break from not opening on OSX _(score 26.8)_
-- [[osxcross]] — OSX Cross _(score 26.8)_
-- [[ios]] — Ios _(score 23.7)_
-- [[articles]] — Articles _(score 20.2)_
-- [[dfdx]] — dfdx _(score 15.0)_
+- [[osxcross]] — OSX Cross _(score 20.3)_
+- [[osx_tricks]] — Jail-break from not opening on OSX _(score 16.0)_
+- [[ios]] — Ios _(score 12.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

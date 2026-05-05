@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[tools/misc/payments|payments]] — hyperswitch _(score 24.0)_
-- [[rust_must]] — Bacon _(score 24.0)_
-- [[workmux]] — Workmux _(score 24.0)_
-- [[prek]] — Prek _(score 24.0)_
-- [[rtic]] — RTIC _(score 17.0)_
+- [[prek]] — Prek _(score 16.0)_
+- [[rust_must]] — Bacon _(score 16.0)_
+- [[tools/misc/payments|payments]] — hyperswitch _(score 16.0)_
+- [[workmux]] — Workmux _(score 16.0)_
+- [[ssg]] — Static Site Generators _(score 8.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
+- [[cuda]] — CUDA in Rust _(score 32.9)_
+- [[candle]] — Candle _(score 25.1)_
 - [[system_prompt]] — System Prompt _(score 20.9)_
-- [[watchexec]] — watchexec _(score 19.8)_
-- [[dspy]] — DSPy _(score 19.8)_
-- [[candle]] — Candle _(score 19.8)_
-- [[cuda]] — CUDA in Rust _(score 19.8)_
+- [[unsloth]] — unsloth _(score 13.1)_
+- [[github]] — Github README _(score 8.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

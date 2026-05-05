@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[openai]] — OpenAI agents _(score 31.7)_
-- [[smolagents]] — smolagents _(score 29.3)_
-- [[coding_agents]] — Coding Agents _(score 23.5)_
-- [[task]] — Task _(score 23.5)_
-- [[cursor]] — Cursor _(score 14.4)_
+- [[coding_agents]] — Coding Agents _(score 21.6)_
+- [[smolagents]] — smolagents _(score 16.0)_
+- [[task]] — Task _(score 16.0)_
+- [[openai]] — OpenAI agents _(score 16.0)_
+- [[exa]] — EXA _(score 6.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

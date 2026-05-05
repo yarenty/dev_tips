@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[druid]] — Druid _(score 26.1)_
-- [[db/timeseries/greptimedb|greptimedb]] — GreptimeDB _(score 26.1)_
-- [[questdb]] — QuestDB _(score 26.1)_
-- [[indexing]] — Indexing _(score 16.5)_
-- [[sqlflow]] — SQLFlow _(score 16.5)_
+- [[db/timeseries/greptimedb|greptimedb]] — GreptimeDB _(score 21.5)_
+- [[questdb]] — QuestDB _(score 21.5)_
+- [[druid]] — Druid _(score 21.5)_
+- [[signing_mac_libs]] — How to future proof your apache modules in macOS by signing them with your own certificate authority _(score 8.9)_
+- [[linear_regression]] — Linear Regression With Time Series _(score 5.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

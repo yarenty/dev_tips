@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[turmoil]] — turmoil _(score 35.3)_
-- [[starship]] — starship _(score 26.4)_
-- [[debug]] — Debug _(score 26.4)_
-- [[tux]] — tux _(score 22.1)_
-- [[rtic]] — RTIC _(score 18.0)_
+- [[turmoil]] — turmoil _(score 17.1)_
+- [[starship]] — starship _(score 17.1)_
+- [[debug]] — Debug _(score 17.1)_
+- [[rtic]] — RTIC _(score 13.1)_
+- [[exa]] — EXA _(score 5.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

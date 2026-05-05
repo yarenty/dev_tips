@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[tungstenite]] — Tungstenite _(score 27.5)_
-- [[html]] — kuchiki _(score 27.5)_
-- [[webassembly]] — WASM _(score 24.1)_
-- [[json]] — JSON _(score 22.9)_
-- [[rtic]] — RTIC _(score 18.0)_
+- [[webassembly]] — WASM _(score 17.1)_
+- [[html]] — kuchiki _(score 17.1)_
+- [[tungstenite]] — Tungstenite _(score 17.1)_
+- [[rtic]] — RTIC _(score 13.1)_
+- [[json]] — JSON _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

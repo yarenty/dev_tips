@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[markitdown]] — Markitdown _(score 26.4)_
-- [[mdfried]] — Mdfried _(score 26.4)_
-- [[void]] — VOID _(score 26.4)_
-- [[dfdx]] — dfdx _(score 15.0)_
-- [[lstr]] — lstr _(score 15.0)_
+- [[markitdown]] — Markitdown _(score 22.9)_
+- [[void]] — VOID _(score 22.9)_
+- [[mdfried]] — Mdfried _(score 22.9)_
+- [[tips]] — Help _(score 8.9)_
+- [[monaco]] — Programming in Web _(score 6.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/tooling/observability_on_wasm|observability_on_wasm]] — obsetrvability on wasm _(score 56.4)_
-- [[webassembly]] — WASM _(score 24.1)_
-- [[rocket]] — Rocket _(score 24.1)_
-- [[rtic]] — RTIC _(score 14.7)_
-- [[assembly]] — Assembly _(score 13.4)_
+- [[programming/rust/tooling/observability_on_wasm|observability_on_wasm]] — obsetrvability on wasm _(score 39.7)_
+- [[webassembly]] — WASM _(score 17.1)_
+- [[rocket]] — Rocket _(score 17.1)_
+- [[rtic]] — RTIC _(score 13.1)_
+- [[assembly]] — Assembly _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[television]] — Television _(score 26.9)_
-- [[tui]] — Ratatui _(score 26.9)_
-- [[cli]] — Command line _(score 25.8)_
-- [[bandwhich]] — Bandwhich _(score 21.8)_
-- [[rtic]] — RTIC _(score 14.7)_
+- [[cli]] — Command line _(score 29.2)_
+- [[tui]] — Ratatui _(score 23.5)_
+- [[television]] — Television _(score 23.5)_
+- [[bandwhich]] — Bandwhich _(score 18.7)_
+- [[mdfried]] — Mdfried _(score 13.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[deeplake]] — DeepLake _(score 29.6)_
-- [[tract]] — tract _(score 21.4)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[articles]] — Articles _(score 14.4)_
-- [[agentic_ai_memory]] — Task _(score 14.4)_
+- [[deeplake]] — DeepLake _(score 24.2)_
+- [[tract]] — tract _(score 16.0)_
+- [[dfdx_shape_checked_deep_learning_in_rust]] — dfdx: shape checked deep learning in rust _(score 12.2)_
+- [[nvidia]] — Nvidia _(score 6.0)_
+- [[ollama]] — Ollama _(score 6.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

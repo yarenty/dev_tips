@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[mdfried]] — Mdfried _(score 26.4)_
-- [[void]] — VOID _(score 26.4)_
-- [[intellij]] — IntelliJ productivity tips _(score 26.4)_
-- [[indexing]] — Indexing _(score 15.0)_
-- [[prek]] — Prek _(score 15.0)_
+- [[intellij]] — IntelliJ productivity tips _(score 22.9)_
+- [[mdfried]] — Mdfried _(score 22.9)_
+- [[void]] — VOID _(score 22.9)_
+- [[hdfs]] — libhdfs3 _(score 13.5)_
+- [[mql5]] — MQL5 _(score 11.3)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

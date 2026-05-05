@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[n8n_io]] — n8n.io _(score 41.9)_
-- [[www/tools|tools]] — tally _(score 23.2)_
-- [[license_2]] — License _(score 21.4)_
-- [[license]] — License _(score 21.4)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[n8n_io]] — n8n.io _(score 58.6)_
+- [[www/tools|tools]] — tally _(score 20.2)_
+- [[javascript]] — Javascript _(score 18.0)_
+- [[license]] — License _(score 16.0)_
+- [[license_2]] — License _(score 16.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

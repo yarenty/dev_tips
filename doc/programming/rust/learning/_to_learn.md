@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[scope]] — Scope _(score 39.5)_
-- [[github_map]] — Github MAP _(score 23.5)_
-- [[cheats]] — Cheats _(score 23.5)_
-- [[cheats_2]] — Cheats _(score 23.5)_
-- [[programming/rust/learning/tutorials|tutorials]] — Tutorials _(score 23.5)_
+- [[scope]] — Scope _(score 26.0)_
+- [[programming/rust/sql_engine/books|books]] — Books _(score 20.5)_
+- [[tools/linux/books|books]] — Books _(score 19.4)_
+- [[github_map]] — Github MAP _(score 17.1)_
+- [[cheats_2]] — Cheats _(score 17.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

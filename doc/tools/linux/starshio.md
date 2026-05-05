@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[tools/linux/tmux|tmux]] — TMUX _(score 24.3)_
-- [[tmux_ai]] — Tmux AI _(score 24.3)_
-- [[fish]] — Fish _(score 24.3)_
-- [[tools/linux/zellij|zellij]] — Zellij _(score 24.3)_
 - [[starship]] — starship _(score 20.9)_
+- [[tmux_ai]] — Tmux AI _(score 20.3)_
+- [[tools/linux/tmux|tmux]] — TMUX _(score 20.3)_
+- [[fish]] — Fish _(score 20.3)_
+- [[tools/linux/zellij|zellij]] — Zellij _(score 20.3)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

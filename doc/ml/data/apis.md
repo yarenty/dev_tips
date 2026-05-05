@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[qdrant_vector_search]] — qdrant _(score 21.5)_
-- [[json]] — JSON _(score 20.2)_
-- [[articles]] — Articles _(score 17.5)_
-- [[qdrant]] — qdrant _(score 17.2)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[digital_twin/links|links]] — Links _(score 18.4)_
+- [[qdrant]] — qdrant _(score 17.7)_
+- [[qdrant_vector_search]] — qdrant _(score 16.0)_
+- [[definition]] — Definition _(score 12.3)_
+- [[airtable]] — airtable _(score 6.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

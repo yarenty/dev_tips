@@ -29,11 +29,10 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[tch_rs]] — tch-rs _(score 48.9)_
-- [[candle]] — Candle _(score 26.2)_
-- [[tract]] — tract _(score 21.4)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[articles]] — Articles _(score 14.4)_
+- [[tch_rs]] — tch-rs _(score 47.3)_
+- [[tract]] — tract _(score 16.0)_
+- [[candle]] — Candle _(score 16.0)_
+- [[n8n]] — n8n.io _(score 8.6)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

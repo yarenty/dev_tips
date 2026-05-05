@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rustdesk]] — RustDesk! _(score 22.8)_
-- [[sqlflow]] — SQLFlow _(score 15.0)_
-- [[dfdx]] — dfdx _(score 15.0)_
-- [[candle]] — Candle _(score 15.0)_
-- [[lstr]] — lstr _(score 15.0)_
+- [[wireguard]] — Wireguard _(score 8.9)_
+- [[meta]] — Meta / Facebook  graph articles _(score 8.9)_
+- [[deeplake]] — DeepLake _(score 5.9)_
+- [[prek]] — Prek _(score 5.9)_
+- [[mindsdb]] — MindsDB _(score 5.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[excel_udf_in_rust]] — Excel UDF in Rust _(score 22.9)_
-- [[bytes_manipulation]] — bytemuck _(score 18.7)_
-- [[json]] — JSON _(score 18.7)_
-- [[hdfs]] — libhdfs3 _(score 18.7)_
-- [[rtic]] — RTIC _(score 14.7)_
+- [[excel_udf_in_rust]] — Excel UDF in Rust _(score 19.7)_
+- [[bytes_manipulation]] — bytemuck _(score 17.1)_
+- [[json]] — JSON _(score 17.1)_
+- [[hdfs]] — libhdfs3 _(score 17.1)_
+- [[rtic]] — RTIC _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

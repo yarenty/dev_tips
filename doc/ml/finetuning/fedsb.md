@@ -29,11 +29,8 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[unsloth]] — unsloth _(score 27.2)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[task]] — Task _(score 14.4)_
-- [[articles]] — Articles _(score 14.4)_
-- [[agentic_ai_memory]] — Task _(score 14.4)_
+- [[unsloth]] — unsloth _(score 24.9)_
+- [[unlearning]] — Unlearning _(score 8.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

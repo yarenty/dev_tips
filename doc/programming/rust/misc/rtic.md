@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[fun]] — bats _(score 27.0)_
-- [[windows]] — Windows RS _(score 27.0)_
-- [[hound]] — Hound _(score 27.0)_
-- [[daktilo]] — Daktilo _(score 23.7)_
-- [[raspberry_pi]] — Rust Embedded - book _(score 23.7)_
+- [[raspberry_pi]] — Rust Embedded - book _(score 17.1)_
+- [[windows]] — Windows RS _(score 17.1)_
+- [[fun]] — bats _(score 17.1)_
+- [[hound]] — Hound _(score 17.1)_
+- [[daktilo]] — Daktilo _(score 17.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

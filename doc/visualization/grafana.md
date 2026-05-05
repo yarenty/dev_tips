@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rerun]] — rerun _(score 21.5)_
-- [[javascript]] — Javascript _(score 21.5)_
-- [[tips]] — Help _(score 21.5)_
 - [[observability/grafana|grafana]] — grafana _(score 20.9)_
-- [[prometheus]] — prometheus _(score 19.8)_
+- [[prometheus]] — prometheus _(score 18.9)_
+- [[tips]] — Help _(score 16.0)_
+- [[rerun]] — rerun _(score 16.0)_
+- [[javascript]] — Javascript _(score 16.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

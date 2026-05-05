@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[axum]] — Axum _(score 33.0)_
-- [[rocket]] — Rocket _(score 33.0)_
-- [[tungstenite]] — Tungstenite _(score 27.5)_
-- [[rewquest]] — Rewquest _(score 27.5)_
-- [[hyperfs]] — HyperFS _(score 27.5)_
+- [[axum]] — Axum _(score 26.0)_
+- [[rocket]] — Rocket _(score 26.0)_
+- [[tungstenite]] — Tungstenite _(score 17.1)_
+- [[hyperfs]] — HyperFS _(score 17.1)_
+- [[rewquest]] — Rewquest _(score 17.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

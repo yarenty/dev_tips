@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[mobile]] — Mobile _(score 48.4)_
-- [[lipo]] — Lipo _(score 30.6)_
-- [[slint]] — Slint _(score 30.6)_
-- [[egui]] — egui _(score 24.2)_
-- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 22.4)_
+- [[mobile]] — Mobile _(score 38.6)_
+- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 20.2)_
+- [[slint]] — Slint _(score 17.1)_
+- [[egui]] — egui _(score 17.1)_
+- [[lipo]] — Lipo _(score 17.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

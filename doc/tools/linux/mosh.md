@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[terminals]] — Project Summary: Byobu, Mosh, Xpra _(score 48.2)_
-- [[byobu]] — Byobu: Text-based Window Manager and Terminal Multiplexer _(score 48.2)_
-- [[tools/linux/tmux|tmux]] — TMUX _(score 24.3)_
-- [[license_2]] — License _(score 15.0)_
-- [[tools/shell/tmux|tmux]] — Tmux _(score 15.0)_
+- [[terminals]] — Project Summary: Byobu, Mosh, Xpra _(score 43.0)_
+- [[byobu]] — Byobu: Text-based Window Manager and Terminal Multiplexer _(score 43.0)_
+- [[tools/linux/tmux|tmux]] — TMUX _(score 20.3)_
+- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 9.9)_
+- [[bandwhich]] — Bandwhich _(score 9.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

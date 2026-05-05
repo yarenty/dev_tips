@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[audio]] — Coreaudio _(score 45.4)_
-- [[lewton]] — lewton _(score 31.9)_
-- [[rodio]] — Rodio _(score 31.9)_
-- [[windows]] — Windows RS _(score 28.9)_
-- [[rtic]] — RTIC _(score 23.7)_
+- [[audio]] — Coreaudio _(score 34.2)_
+- [[rodio]] — Rodio _(score 25.3)_
+- [[rtic]] — RTIC _(score 17.1)_
+- [[windows]] — Windows RS _(score 17.1)_
+- [[lewton]] — lewton _(score 17.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

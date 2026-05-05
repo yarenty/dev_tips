@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[tui]] — Ratatui _(score 30.3)_
-- [[programming/rust/bottom|bottom]] — bottom _(score 22.0)_
-- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 18.0)_
-- [[debug]] — Debug _(score 18.0)_
-- [[rtic]] — RTIC _(score 18.0)_
+- [[tui]] — Ratatui _(score 32.4)_
+- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 19.5)_
+- [[workmux]] — Workmux _(score 18.6)_
+- [[tools/linux/tmux|tmux]] — TMUX _(score 18.0)_
+- [[tools/shell/tmux|tmux]] — Tmux _(score 18.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

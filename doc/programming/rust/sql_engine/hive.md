@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[spark]] — Spark UDF _(score 38.6)_
-- [[databend]] — Databend _(score 37.5)_
-- [[sqlite]] — sqlite _(score 30.9)_
-- [[mariadb]] — MariaDB _(score 30.4)_
-- [[snowflake]] — Snowflake _(score 30.4)_
+- [[databend]] — Databend _(score 23.2)_
+- [[mariadb]] — MariaDB _(score 23.2)_
+- [[spark]] — Spark UDF _(score 23.2)_
+- [[sqlite]] — sqlite _(score 23.2)_
+- [[snowflake]] — Snowflake _(score 23.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

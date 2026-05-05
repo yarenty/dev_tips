@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rust_brain]] — Rust - brain _(score 42.3)_
-- [[algorithms]] — Algorithms _(score 32.0)_
-- [[alagorithms]] — algorithms _(score 13.4)_
-- [[derivative]] — Derivative _(score 13.4)_
-- [[rtic]] — RTIC _(score 13.4)_
+- [[rust_brain]] — Rust - brain _(score 39.4)_
+- [[algorithms]] — Algorithms _(score 24.2)_
+- [[circle]] — Circle _(score 15.8)_
+- [[derivative]] — Derivative _(score 13.1)_
+- [[rtic]] — RTIC _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

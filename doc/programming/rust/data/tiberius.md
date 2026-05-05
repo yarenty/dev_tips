@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[r2d2]] — r2d2 _(score 29.6)_
-- [[mobc]] — mobc _(score 21.8)_
-- [[deadpool]] — deadpool _(score 21.8)_
-- [[bb8]] — bb8 _(score 17.6)_
-- [[articles]] — Articles _(score 15.2)_
+- [[mobc]] — mobc _(score 21.5)_
+- [[r2d2]] — r2d2 _(score 17.1)_
+- [[deadpool]] — deadpool _(score 17.1)_
+- [[rtic]] — RTIC _(score 13.1)_
+- [[cache]] — Cache _(score 9.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

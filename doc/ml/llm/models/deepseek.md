@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[minillm]] — miniLLM _(score 35.8)_
-- [[goose]] — Goose _(score 31.8)_
-- [[providers]] — providers _(score 31.8)_
-- [[jetbrains_mellum]] — Test the function _(score 27.5)_
-- [[mplug]] — mPLUG _(score 27.5)_
+- [[jetbrains_mellum]] — Test the function _(score 20.3)_
+- [[mplug]] — mPLUG _(score 20.3)_
+- [[minillm]] — miniLLM _(score 20.3)_
+- [[goose]] — Goose _(score 19.8)_
+- [[providers]] — providers _(score 19.8)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

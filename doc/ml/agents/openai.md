@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[emdash]] — Emdash _(score 31.7)_
-- [[ml/agents/response|response]] — Response _(score 23.5)_
-- [[hf]] — Hf _(score 18.6)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[ml/memory/response|response]] — Response _(score 14.4)_
+- [[ml/agents/response|response]] — Response _(score 16.0)_
+- [[emdash]] — Emdash _(score 16.0)_
+- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 8.9)_
+- [[sql_pen_test]] — sqlmap _(score 5.7)_
+- [[n8n]] — n8n.io _(score 5.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

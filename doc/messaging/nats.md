@@ -27,11 +27,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[redpanda]] — redpanda _(score 30.2)_
-- [[apache]] — apache _(score 28.6)_
-- [[kafka_2]] — Kafka _(score 22.4)_
-- [[kafka]] — Kafka _(score 22.4)_
-- [[messaging/mqtt|mqtt]] — MQTT _(score 22.4)_
+- [[redpanda]] — redpanda _(score 22.9)_
+- [[apache]] — apache _(score 20.9)_
+- [[programming/rust/net/nats|nats]] — NATS _(score 20.2)_
+- [[kafka_2]] — Kafka _(score 16.0)_
+- [[kafka]] — Kafka _(score 16.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

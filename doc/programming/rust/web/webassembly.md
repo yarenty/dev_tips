@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[yew]] — YEW _(score 46.3)_
-- [[gloo]] — Gloo _(score 33.0)_
-- [[programming/rust/web/observability_on_wasm|observability_on_wasm]] — obsetrvability on wasm _(score 24.1)_
-- [[wasmtime]] — wasmtime _(score 24.1)_
-- [[javascript]] — Javascript _(score 20.2)_
+- [[programming/rust/web/observability_on_wasm|observability_on_wasm]] — obsetrvability on wasm _(score 17.1)_
+- [[gloo]] — Gloo _(score 17.1)_
+- [[wasmtime]] — wasmtime _(score 17.1)_
+- [[yew]] — YEW _(score 14.0)_
+- [[rtic]] — RTIC _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

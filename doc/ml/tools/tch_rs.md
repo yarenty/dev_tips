@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[tch]] — tch _(score 36.9)_
-- [[candle]] — Candle _(score 26.2)_
-- [[license_2]] — License _(score 21.4)_
-- [[tract]] — tract _(score 21.4)_
-- [[license]] — License _(score 21.4)_
+- [[tch]] — tch _(score 35.3)_
+- [[pyo3]] — pyo3 _(score 19.4)_
+- [[tract]] — tract _(score 16.0)_
+- [[candle]] — Candle _(score 16.0)_
+- [[license]] — License _(score 16.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

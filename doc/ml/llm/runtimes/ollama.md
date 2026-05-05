@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[goose]] — Goose _(score 41.9)_
-- [[providers]] — providers _(score 41.9)_
-- [[rsllm]] — rsllm _(score 30.5)_
-- [[llama_2]] — LLAMA _(score 23.5)_
-- [[deepseek]] — Deepseek _(score 23.5)_
+- [[deepseek]] — Deepseek _(score 16.3)_
+- [[llama_2]] — LLAMA _(score 16.3)_
+- [[rsllm]] — rsllm _(score 16.0)_
+- [[providers]] — providers _(score 16.0)_
+- [[goose]] — Goose _(score 16.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

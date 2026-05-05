@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[iot/drogue|drogue]] — Drogue _(score 30.4)_
-- [[meilisearch]] — Meilisearch _(score 25.7)_
-- [[qdrant_vector_search]] — qdrant _(score 25.7)_
-- [[iot/mqtt|mqtt]] — IoT mqtt _(score 22.6)_
-- [[qdrant]] — qdrant _(score 19.1)_
+- [[iot/drogue|drogue]] — Drogue _(score 28.3)_
+- [[programming/rust/misc/drogue|drogue]] — Drogue _(score 24.3)_
+- [[messaging/mqtt|mqtt]] — MQTT _(score 24.3)_
+- [[iot/mqtt|mqtt]] — IoT mqtt _(score 22.3)_
+- [[qdrant_vector_search]] — qdrant _(score 18.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[gluten]] — gluten _(score 22.6)_
-- [[sqlflow]] — SQLFlow _(score 19.6)_
-- [[noria]] — Noria: data-flow for high-performance web applications _(score 19.6)_
-- [[articles]] — Articles _(score 15.2)_
-- [[iceberg]] — Iceberg _(score 15.2)_
+- [[definition]] — Definition _(score 17.9)_
+- [[sqlflow]] — SQLFlow _(score 17.0)_
+- [[iceberg]] — Iceberg _(score 17.0)_
+- [[apache]] — apache _(score 17.0)_
+- [[mindsdb]] — MindsDB _(score 11.3)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

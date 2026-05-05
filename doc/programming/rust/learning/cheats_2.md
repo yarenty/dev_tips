@@ -30,11 +30,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[from_easy_to_advanced]] — from easier to advanced 1-by-1 _(score 23.5)_
-- [[scope]] — Scope _(score 23.5)_
-- [[cheats]] — Cheats _(score 23.5)_
-- [[_todo_ideas]] — Move blokchain from python to rust _(score 23.5)_
-- [[rtic]] — RTIC _(score 14.7)_
+- [[cheats]] — Cheats _(score 26.0)_
+- [[scope]] — Scope _(score 17.1)_
+- [[_todo_ideas]] — Move blokchain from python to rust _(score 17.1)_
+- [[from_easy_to_advanced]] — from easier to advanced 1-by-1 _(score 17.1)_
+- [[rtic]] — RTIC _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

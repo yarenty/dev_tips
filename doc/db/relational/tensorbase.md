@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[singlestore]] — Singlestore _(score 27.8)_
-- [[limbo]] — Limbo _(score 27.8)_
-- [[db/relational/surrealdb|surrealdb]] — SurrealDB _(score 26.6)_
-- [[db/relational/mysql|mysql]] — mysql _(score 26.6)_
-- [[postgresql]] — postgresql _(score 14.6)_
+- [[limbo]] — Limbo _(score 17.1)_
+- [[singlestore]] — Singlestore _(score 17.1)_
+- [[apache]] — apache _(score 17.0)_
+- [[db/relational/surrealdb|surrealdb]] — SurrealDB _(score 16.0)_
+- [[db/relational/mysql|mysql]] — mysql _(score 16.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[lakesoul]] — Lake soul _(score 34.6)_
-- [[vortex]] — Vortex (2024-10-17) _(score 32.2)_
-- [[blaze]] — blaze _(score 32.2)_
-- [[iceberg]] — Iceberg _(score 32.2)_
-- [[gluten]] — gluten _(score 26.4)_
+- [[lakesoul]] — Lake soul _(score 24.9)_
+- [[gluten]] — gluten _(score 22.6)_
+- [[git_delta]] — delta _(score 20.9)_
+- [[vortex]] — Vortex (2024-10-17) _(score 17.1)_
+- [[blaze]] — blaze _(score 17.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

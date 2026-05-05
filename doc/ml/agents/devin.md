@@ -29,11 +29,9 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[devin_2]] — Devin _(score 32.4)_
-- [[task]] — Task _(score 23.5)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[articles]] — Articles _(score 14.4)_
-- [[agentic_ai_memory]] — Task _(score 14.4)_
+- [[devin_2]] — Devin _(score 33.8)_
+- [[task]] — Task _(score 16.0)_
+- [[www/payments|payments]] — Hyperswitch _(score 8.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

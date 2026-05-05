@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[a_basic_algo_trading_system_in_rust_part_iv_backtesting]] — A Basic Algo Trading System In Rust: Part IV: Backtesting _(score 25.4)_
-- [[a_basic_algo_trading_system_in_rust_part_i]] — A Basic Algo Trading System In Rust: Part I _(score 25.4)_
-- [[rust_algo_trading]] — Algo trading _(score 25.4)_
-- [[classification]] — Classification _(score 17.5)_
-- [[articles]] — Articles _(score 15.2)_
+- [[classification]] — Classification _(score 16.6)_
+- [[rust_algo_trading]] — Algo trading _(score 16.0)_
+- [[a_basic_algo_trading_system_in_rust_part_iv_backtesting]] — A Basic Algo Trading System In Rust: Part IV: Backtesting _(score 16.0)_
+- [[a_basic_algo_trading_system_in_rust_part_i]] — A Basic Algo Trading System In Rust: Part I _(score 16.0)_
+- [[mt5]] — MT5 _(score 12.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

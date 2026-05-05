@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[articles]] — Articles _(score 26.1)_
-- [[mcp4db]] — GenAI Toolbox _(score 26.1)_
-- [[a2a]] — Agent2Agent _(score 26.1)_
-- [[anmell]] — anmell _(score 19.2)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[anmell]] — anmell _(score 16.3)_
+- [[articles]] — Articles _(score 16.0)_
+- [[a2a]] — Agent2Agent _(score 16.0)_
+- [[mcp4db]] — GenAI Toolbox _(score 16.0)_
+- [[fluent_templates]] — Fluent Templates _(score 5.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -29,11 +29,10 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[futurehouse]] — FutureHouse _(score 41.3)_
-- [[anmell]] — anmell _(score 23.5)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[tract]] — tract _(score 14.4)_
-- [[articles]] — Articles _(score 14.4)_
+- [[futurehouse]] — FutureHouse _(score 33.8)_
+- [[anmell]] — anmell _(score 16.0)_
+- [[ml/knowledge_graph/papers|papers]] — Research papers _(score 8.2)_
+- [[time_series_research_papers]] — Time series research papers _(score 8.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

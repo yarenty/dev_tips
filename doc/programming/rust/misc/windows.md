@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[audio]] — Coreaudio _(score 28.9)_
-- [[symphonia]] — Symphonia _(score 28.9)_
-- [[fun]] — bats _(score 27.0)_
-- [[hound]] — Hound _(score 27.0)_
-- [[rtic]] — RTIC _(score 27.0)_
+- [[symphonia]] — Symphonia _(score 17.1)_
+- [[rtic]] — RTIC _(score 17.1)_
+- [[fun]] — bats _(score 17.1)_
+- [[hound]] — Hound _(score 17.1)_
+- [[audio]] — Coreaudio _(score 17.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

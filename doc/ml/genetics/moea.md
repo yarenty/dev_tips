@@ -27,11 +27,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[algorithms]] — Algorithms _(score 20.9)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[license_2]] — License _(score 14.4)_
-- [[articles]] — Articles _(score 14.4)_
-- [[license]] — License _(score 14.4)_
+- [[algorithms]] — Algorithms _(score 20.2)_
+- [[alagorithms]] — algorithms _(score 20.2)_
+- [[lstr]] — lstr _(score 10.7)_
+- [[rustdesk]] — RustDesk! _(score 5.5)_
+- [[episodic_memory]] — Episodic Memory _(score 5.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -29,11 +29,8 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[minillm]] — miniLLM _(score 31.5)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[langgraph]] — langgraph _(score 14.4)_
-- [[ollama]] — Ollama _(score 14.4)_
-- [[llama_2]] — LLAMA _(score 14.4)_
+- [[reflection_step_by_step_article]] — Reflection step by step - Article _(score 8.2)_
+- [[meta]] — Meta / Facebook  graph articles _(score 8.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

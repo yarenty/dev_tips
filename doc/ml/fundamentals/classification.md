@@ -29,11 +29,9 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[courses]] — top 5 2022 couses _(score 31.3)_
-- [[graphnn]] — Graphnn _(score 25.8)_
-- [[unlearning]] — Unlearning _(score 25.8)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[articles]] — Articles _(score 14.4)_
+- [[courses]] — top 5 2022 couses _(score 20.6)_
+- [[unlearning]] — Unlearning _(score 16.0)_
+- [[graphnn]] — Graphnn _(score 16.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

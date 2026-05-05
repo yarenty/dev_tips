@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[bot_rust]] — Building an Algorithmic Trading Platform in Rust _(score 22.3)_
-- [[rust_algo_trading]] — Algo trading _(score 22.3)_
-- [[a_basic_algo_trading_system_in_rust_part_i]] — A Basic Algo Trading System In Rust: Part I _(score 22.3)_
-- [[mql5]] — MQL5 _(score 22.3)_
-- [[a_basic_algo_trading_system_in_rust_part_iii]] — A Basic Algo Trading System In Rust: Part III _(score 22.3)_
+- [[rust_algo_trading]] — Algo trading _(score 17.1)_
+- [[a_basic_algo_trading_system_in_rust_part_iii]] — A Basic Algo Trading System In Rust: Part III _(score 17.1)_
+- [[a_basic_algo_trading_system_in_rust_part_i]] — A Basic Algo Trading System In Rust: Part I _(score 17.1)_
+- [[bot_rust]] — Building an Algorithmic Trading Platform in Rust _(score 17.1)_
+- [[mql5]] — MQL5 _(score 16.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

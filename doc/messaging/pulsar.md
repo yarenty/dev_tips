@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[kafka_2]] — Kafka _(score 28.3)_
-- [[red_panda]] — Red Panda _(score 28.3)_
-- [[kafka]] — Kafka _(score 28.3)_
-- [[ml/bigquery/links|links]] — Links _(score 19.8)_
-- [[apache]] — apache _(score 17.9)_
+- [[kafka_2]] — Kafka _(score 27.6)_
+- [[red_panda]] — Red Panda _(score 27.6)_
+- [[kafka]] — Kafka _(score 27.6)_
+- [[apache]] — apache _(score 17.0)_
+- [[sqlflow]] — SQLFlow _(score 11.6)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

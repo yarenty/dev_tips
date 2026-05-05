@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[web_to_app_pake]] — Pake _(score 37.5)_
-- [[programming/rust/gui/pake|pake]] — Pake _(score 28.6)_
-- [[trace]] — Trippy _(score 26.9)_
-- [[programming/rust/gui/tauri|tauri]] — Tauri _(score 19.8)_
-- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 19.8)_
+- [[web_to_app_pake]] — Pake _(score 34.0)_
+- [[programming/rust/gui/pake|pake]] — Pake _(score 28.4)_
+- [[programming/rust/gui/tauri|tauri]] — Tauri _(score 20.2)_
+- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 20.2)_
+- [[trace]] — Trippy _(score 16.3)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

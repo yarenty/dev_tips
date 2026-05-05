@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[mq]] — ruMQTT _(score 35.8)_
-- [[grpc]] — GRPC _(score 18.7)_
-- [[http]] — Hyper _(score 14.7)_
-- [[rtic]] — RTIC _(score 14.7)_
-- [[messaging/mqtt|mqtt]] — MQTT _(score 13.2)_
+- [[mq]] — ruMQTT _(score 32.7)_
+- [[messaging/mqtt|mqtt]] — MQTT _(score 20.5)_
+- [[grpc]] — GRPC _(score 17.1)_
+- [[rtic]] — RTIC _(score 13.1)_
+- [[http]] — Hyper _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

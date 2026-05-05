@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[latex]] — Latex _(score 30.4)_
-- [[react]] — React Print _(score 21.5)_
-- [[mdmath_symbols]] — Mdmath Symbols _(score 21.5)_
-- [[agentic_ai_memory]] — Task _(score 17.9)_
-- [[visualization/grafana|grafana]] — Grafana _(score 17.5)_
+- [[latex]] — Latex _(score 24.9)_
+- [[mdmath_symbols]] — Mdmath Symbols _(score 16.0)_
+- [[react]] — React Print _(score 16.0)_
+- [[qpml]] — QPML _(score 8.9)_
+- [[ssg]] — Static Site Generators _(score 5.6)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[tensorbase]] — TensorBase _(score 27.8)_
-- [[limbo]] — Limbo _(score 27.8)_
-- [[programming/rust/learning/tutorials|tutorials]] — Tutorials _(score 21.0)_
-- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 19.8)_
-- [[db/relational/surrealdb|surrealdb]] — SurrealDB _(score 14.6)_
+- [[limbo]] — Limbo _(score 22.4)_
+- [[tensorbase]] — TensorBase _(score 17.1)_
+- [[db/relational/surrealdb|surrealdb]] — SurrealDB _(score 16.0)_
+- [[rtic]] — RTIC _(score 13.1)_
+- [[programming/rust/data/surrealdb|surrealdb]] — surrealDB _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[qdrant]] — qdrant _(score 28.2)_
-- [[barman]] — Barman: PostgreSQL Backup and Recovery Manager _(score 22.0)_
-- [[inspectus]] — Inspectus _(score 21.8)_
-- [[qdrant_vector_search]] — qdrant _(score 19.8)_
-- [[postgresql]] — postgresql _(score 16.5)_
+- [[qdrant]] — qdrant _(score 21.3)_
+- [[javascript]] — Javascript _(score 18.0)_
+- [[qdrant_vector_search]] — qdrant _(score 17.3)_
+- [[inspectus]] — Inspectus _(score 16.6)_
+- [[barman]] — Barman: PostgreSQL Backup and Recovery Manager _(score 16.6)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

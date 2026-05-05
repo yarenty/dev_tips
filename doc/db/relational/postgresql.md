@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[barman]] — Barman: PostgreSQL Backup and Recovery Manager _(score 39.2)_
-- [[db/relational/surrealdb|surrealdb]] — SurrealDB _(score 29.7)_
-- [[fauna]] — fauna _(score 29.7)_
-- [[db/relational/mysql|mysql]] — mysql _(score 26.6)_
-- [[programming/rust/data/surrealdb|surrealdb]] — surrealDB _(score 15.2)_
+- [[barman]] — Barman: PostgreSQL Backup and Recovery Manager _(score 28.3)_
+- [[db/relational/mysql|mysql]] — mysql _(score 21.9)_
+- [[programming/rust/data/mysql|mysql]] — mysql _(score 17.9)_
+- [[db/relational/surrealdb|surrealdb]] — SurrealDB _(score 16.0)_
+- [[fauna]] — fauna _(score 16.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

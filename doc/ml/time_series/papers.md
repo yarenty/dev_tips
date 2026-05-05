@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[time_series_research_papers]] — Time series research papers _(score 45.4)_
-- [[time_serie_transformer]] — Transformers _(score 30.6)_
-- [[time_series_transformer]] — Time Series Transformer _(score 30.6)_
-- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 24.0)_
-- [[linear_regression]] — Linear Regression With Time Series _(score 24.0)_
+- [[time_series_research_papers]] — Time series research papers _(score 48.5)_
+- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 28.6)_
+- [[tutorials_2]] — Tutorials _(score 28.6)_
+- [[ml/knowledge_graph/papers|papers]] — Research papers _(score 24.7)_
+- [[linear_regression]] — Linear Regression With Time Series _(score 21.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

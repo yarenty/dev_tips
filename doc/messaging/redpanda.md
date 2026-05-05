@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[red_panda]] — Red Panda _(score 31.3)_
-- [[kafka]] — Kafka _(score 31.3)_
-- [[messaging/nats|nats]] — nats-server _(score 30.2)_
-- [[pulsar]] — Pulsar _(score 22.4)_
-- [[kafka_2]] — Kafka _(score 22.4)_
+- [[red_panda]] — Red Panda _(score 29.9)_
+- [[kafka]] — Kafka _(score 29.9)_
+- [[messaging/nats|nats]] — nats-server _(score 22.9)_
+- [[kafka_2]] — Kafka _(score 21.0)_
+- [[pulsar]] — Pulsar _(score 21.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

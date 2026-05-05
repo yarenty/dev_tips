@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[embassy]] — Embassy _(score 40.8)_
-- [[awesome_embedded_in_rust]] — Awesome embedded in rust _(score 32.6)_
-- [[hound]] — Hound _(score 23.7)_
-- [[programming/rust/misc/drogue|drogue]] — Drogue _(score 23.7)_
-- [[rtic]] — RTIC _(score 23.7)_
+- [[awesome_embedded_in_rust]] — Awesome embedded in rust _(score 32.8)_
+- [[embassy]] — Embassy _(score 26.0)_
+- [[rtic]] — RTIC _(score 17.1)_
+- [[hound]] — Hound _(score 17.1)_
+- [[programming/rust/misc/drogue|drogue]] — Drogue _(score 17.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/tooling/zellij|zellij]] — zellij - replacement of tmux - with colors and stuff _(score 37.6)_
-- [[dusk_replacement_of_du]] — dusk  - replacement of du _(score 30.8)_
-- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 23.0)_
-- [[loki]] — Loki _(score 23.0)_
-- [[tools/linux/tmux|tmux]] — TMUX _(score 18.9)_
+- [[programming/rust/tooling/zellij|zellij]] — zellij - replacement of tmux - with colors and stuff _(score 29.4)_
+- [[dusk_replacement_of_du]] — dusk  - replacement of du _(score 23.4)_
+- [[tools/linux/zellij|zellij]] — Zellij _(score 18.0)_
+- [[tools/linux/tmux|tmux]] — TMUX _(score 18.0)_
+- [[tools/shell/tmux|tmux]] — Tmux _(score 18.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

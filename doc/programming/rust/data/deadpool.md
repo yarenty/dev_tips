@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/data/mysql|mysql]] — mysql _(score 30.1)_
-- [[r2d2]] — r2d2 _(score 30.1)_
-- [[adbc]] — ADBC ! _(score 21.8)_
-- [[articles]] — Articles _(score 15.2)_
-- [[cargo_toml]] — Cargo.toml _(score 14.7)_
+- [[programming/rust/data/mysql|mysql]] — mysql _(score 26.0)_
+- [[r2d2]] — r2d2 _(score 17.1)_
+- [[adbc]] — ADBC ! _(score 17.1)_
+- [[cargo_toml]] — Cargo.toml _(score 13.1)_
+- [[rtic]] — RTIC _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

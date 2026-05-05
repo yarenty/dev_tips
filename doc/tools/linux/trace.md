@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[web_to_app_pake]] — Pake _(score 26.9)_
-- [[programming/rust/tooling/tools|tools]] — coreutils _(score 26.9)_
-- [[tools/security/pake|pake]] — Pake _(score 26.9)_
-- [[tools/linux/tmux|tmux]] — TMUX _(score 24.3)_
-- [[demo_overview]] — DEMO _(score 15.0)_
+- [[tools/linux/tmux|tmux]] — TMUX _(score 20.3)_
+- [[tools/security/pake|pake]] — Pake _(score 16.3)_
+- [[web_to_app_pake]] — Pake _(score 16.3)_
+- [[programming/rust/tooling/tools|tools]] — coreutils _(score 16.3)_
+- [[dioxus]] — Dioxus _(score 9.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

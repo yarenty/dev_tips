@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[weektodo]] — WeekToDo _(score 25.7)_
-- [[lstr]] — lstr _(score 25.7)_
-- [[cursor]] — Cursor _(score 15.0)_
-- [[demo_overview]] — DEMO _(score 15.0)_
-- [[tract]] — tract _(score 15.0)_
+- [[weektodo]] — WeekToDo _(score 21.5)_
+- [[lstr]] — lstr _(score 21.5)_
+- [[rustdesk]] — RustDesk! _(score 9.5)_
+- [[fengshui]] — Cleaning disk _(score 9.5)_
+- [[applications]] — Deskreen _(score 9.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

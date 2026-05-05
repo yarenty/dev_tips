@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[mlcube]] — MLCube _(score 36.8)_
-- [[mindsdb]] — MindsDB _(score 29.1)_
-- [[olmo]] — OLMo - Open Language Models _(score 19.2)_
-- [[ollama]] — Ollama _(score 19.2)_
-- [[llama_2]] — LLAMA _(score 19.2)_
+- [[mlcube]] — MLCube _(score 25.7)_
+- [[mindsdb]] — MindsDB _(score 21.4)_
+- [[ollama]] — Ollama _(score 16.3)_
+- [[olmo]] — OLMo - Open Language Models _(score 16.3)_
+- [[llama_2]] — LLAMA _(score 16.3)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

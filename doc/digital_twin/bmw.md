@@ -27,11 +27,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[isc2022]] — Isc2022 _(score 31.3)_
-- [[definition]] — Definition _(score 28.3)_
-- [[cps]] — Cps _(score 25.2)_
-- [[scilab]] — Scilab _(score 22.4)_
-- [[digital_twin/links|links]] — Links _(score 22.4)_
+- [[isc2022]] — Isc2022 _(score 24.9)_
+- [[digital_twin/links|links]] — Links _(score 16.0)_
+- [[scilab]] — Scilab _(score 16.0)_
+- [[definition]] — Definition _(score 16.0)_
+- [[cps]] — Cps _(score 12.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -27,11 +27,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rust_in_jupyter]] — RUST in JUPYTER _(score 13.4)_
-- [[_todo_ideas]] — Move blokchain from python to rust _(score 13.4)_
-- [[dusk_replacement_of_du]] — dusk  - replacement of du _(score 13.4)_
-- [[programming/rust/gui/tauri|tauri]] — Tauri _(score 13.4)_
-- [[rtic]] — RTIC _(score 13.4)_
+- [[rtic]] — RTIC _(score 13.1)_
+- [[programming/rust/gui/tauri|tauri]] — Tauri _(score 13.1)_
+- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 13.1)_
+- [[rust_in_jupyter]] — RUST in JUPYTER _(score 13.1)_
+- [[_todo_ideas]] — Move blokchain from python to rust _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[prek]] — Prek _(score 48.2)_
-- [[tools/misc/payments|payments]] — hyperswitch _(score 24.0)_
-- [[workmux]] — Workmux _(score 24.0)_
-- [[rtic]] — RTIC _(score 17.0)_
-- [[tract]] — tract _(score 15.0)_
+- [[prek]] — Prek _(score 42.0)_
+- [[workmux]] — Workmux _(score 16.0)_
+- [[tools/misc/payments|payments]] — hyperswitch _(score 16.0)_
+- [[rtic]] — RTIC _(score 13.1)_
+- [[http]] — Hyper _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

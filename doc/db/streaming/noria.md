@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[cdc]] — CDC _(score 26.4)_
-- [[db/relational/mysql|mysql]] — mysql _(score 23.9)_
-- [[programming/rust/data/mysql|mysql]] — mysql _(score 22.6)_
-- [[articles]] — Articles _(score 15.2)_
-- [[cache]] — Cache _(score 15.2)_
+- [[db/relational/mysql|mysql]] — mysql _(score 17.9)_
+- [[programming/rust/data/mysql|mysql]] — mysql _(score 17.9)_
+- [[mariadb]] — MariaDB _(score 17.9)_
+- [[cdc]] — CDC _(score 10.4)_
+- [[applications]] — Deskreen _(score 8.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

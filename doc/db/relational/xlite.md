@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[limbo]] — Limbo _(score 26.6)_
-- [[toydb]] — toyDB _(score 26.6)_
-- [[edgedb]] — edgeDB _(score 26.6)_
-- [[db/relational/mysql|mysql]] — mysql _(score 26.6)_
-- [[sqlite]] — sqlite _(score 19.8)_
+- [[limbo]] — Limbo _(score 22.9)_
+- [[sqlite]] — sqlite _(score 18.9)_
+- [[db/relational/mysql|mysql]] — mysql _(score 16.0)_
+- [[toydb]] — toyDB _(score 16.0)_
+- [[edgedb]] — edgeDB _(score 16.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

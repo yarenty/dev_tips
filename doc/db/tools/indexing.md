@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[sqlflow]] — SQLFlow _(score 28.4)_
-- [[quary]] — Quary _(score 28.4)_
-- [[sql_pen_test]] — sqlmap _(score 23.5)_
-- [[questdb]] — QuestDB _(score 21.4)_
-- [[toydb]] — toyDB _(score 21.4)_
+- [[quary]] — Quary _(score 20.5)_
+- [[toydb]] — toyDB _(score 16.5)_
+- [[questdb]] — QuestDB _(score 16.5)_
+- [[sql_pen_test]] — sqlmap _(score 16.0)_
+- [[sqlflow]] — SQLFlow _(score 16.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

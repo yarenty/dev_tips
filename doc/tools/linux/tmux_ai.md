@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[tools/linux/tmux|tmux]] — TMUX _(score 31.1)_
-- [[tools/linux/zellij|zellij]] — Zellij _(score 31.1)_
-- [[helix]] — Helix _(score 24.3)_
-- [[fish]] — Fish _(score 24.3)_
-- [[tools/shell/tmux|tmux]] — Tmux _(score 21.9)_
+- [[tools/linux/tmux|tmux]] — TMUX _(score 26.3)_
+- [[fish]] — Fish _(score 26.3)_
+- [[tools/linux/zellij|zellij]] — Zellij _(score 26.3)_
+- [[helix]] — Helix _(score 20.3)_
+- [[tools/shell/tmux|tmux]] — Tmux _(score 18.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

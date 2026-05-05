@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/tooling/tools|tools]] — coreutils _(score 31.6)_
-- [[starship]] — starship _(score 26.4)_
-- [[debug]] — Debug _(score 26.4)_
-- [[rtic]] — RTIC _(score 18.0)_
-- [[topgrade]] — topgrade _(score 14.4)_
+- [[programming/rust/tooling/tools|tools]] — coreutils _(score 27.7)_
+- [[starship]] — starship _(score 17.1)_
+- [[topgrade]] — topgrade _(score 17.1)_
+- [[debug]] — Debug _(score 17.1)_
+- [[rtic]] — RTIC _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

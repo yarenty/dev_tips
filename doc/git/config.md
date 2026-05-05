@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[github]] — Github README _(score 23.8)_
-- [[git_delta]] — delta _(score 23.8)_
-- [[difftastic]] — difftastic _(score 20.9)_
-- [[observability/grafana|grafana]] — grafana _(score 19.8)_
-- [[workmux]] — Workmux _(score 19.8)_
+- [[git_delta]] — delta _(score 22.1)_
+- [[github]] — Github README _(score 22.1)_
+- [[cache]] — Cache _(score 18.3)_
+- [[workmux]] — Workmux _(score 18.1)_
+- [[tools/linux/zellij|zellij]] — Zellij _(score 8.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

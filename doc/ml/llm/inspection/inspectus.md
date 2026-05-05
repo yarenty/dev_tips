@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[leaderboards]] — marena _(score 30.4)_
-- [[seal]] — seal _(score 30.4)_
-- [[abliteration]] — Removing refusals with transformers _(score 30.4)_
-- [[ollama]] — Ollama _(score 18.7)_
-- [[llama_2]] — LLAMA _(score 18.7)_
+- [[leaderboards]] — marena _(score 23.4)_
+- [[abliteration]] — Removing refusals with transformers _(score 23.4)_
+- [[seal]] — seal _(score 23.4)_
+- [[rust_in_jupyter]] — RUST in JUPYTER _(score 8.9)_
+- [[charts]] — charts _(score 8.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[balena]] — Balena _(score 30.0)_
-- [[kuasar]] — Kuasar _(score 23.4)_
-- [[dokku]] — Dokku _(score 23.4)_
-- [[akri]] — Akri _(score 23.4)_
-- [[programming/rust/misc/drogue|drogue]] — Drogue _(score 18.6)_
+- [[balena]] — Balena _(score 29.1)_
+- [[kuasar]] — Kuasar _(score 22.9)_
+- [[akri]] — Akri _(score 22.9)_
+- [[dokku]] — Dokku _(score 22.9)_
+- [[programming/rust/misc/drogue|drogue]] — Drogue _(score 18.3)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/sql_engine/books|books]] — Books _(score 20.6)_
-- [[_to_learn]] — Books _(score 20.6)_
+- [[_to_learn]] — Books _(score 20.5)_
+- [[programming/rust/sql_engine/books|books]] — Books _(score 20.5)_
 - [[tools/linux/books|books]] — Books _(score 19.4)_
-- [[alagorithms]] — algorithms _(score 17.2)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[rtic]] — RTIC _(score 13.1)_
+- [[alagorithms]] — algorithms _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

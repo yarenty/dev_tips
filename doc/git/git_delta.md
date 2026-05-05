@@ -29,10 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[config]] — GIT configuration _(score 23.8)_
-- [[github]] — Github README _(score 23.8)_
-- [[prometheus]] — prometheus _(score 8.9)_
-- [[workmux]] — Workmux _(score 7.8)_
+- [[github]] — Github README _(score 22.1)_
+- [[config]] — GIT configuration _(score 22.1)_
+- [[prometheus]] — prometheus _(score 20.9)_
+- [[workmux]] — Workmux _(score 18.1)_
+- [[delta]] — DeltaLake _(score 8.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

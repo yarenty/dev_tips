@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[prek]] — Prek _(score 24.0)_
-- [[tools/linux/tmux|tmux]] — TMUX _(score 21.9)_
-- [[tools/shell/tmux|tmux]] — Tmux _(score 21.9)_
-- [[rtic]] — RTIC _(score 17.0)_
-- [[demo_overview]] — DEMO _(score 15.0)_
+- [[tools/shell/tmux|tmux]] — Tmux _(score 23.4)_
+- [[prek]] — Prek _(score 21.4)_
+- [[cursive]] — Cursive _(score 18.6)_
+- [[tools/linux/tmux|tmux]] — TMUX _(score 18.0)_
+- [[television]] — Television _(score 12.6)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

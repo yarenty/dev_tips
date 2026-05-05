@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[mprocs]] — mprocs - replacement of tmux for long running processes! _(score 37.6)_
-- [[dusk_replacement_of_du]] — dusk  - replacement of du _(score 30.8)_
-- [[tools/linux/zellij|zellij]] — Zellij _(score 27.7)_
-- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 23.0)_
-- [[tools/linux/tmux|tmux]] — TMUX _(score 18.9)_
+- [[mprocs]] — mprocs - replacement of tmux for long running processes! _(score 29.4)_
+- [[tools/linux/zellij|zellij]] — Zellij _(score 26.9)_
+- [[dusk_replacement_of_du]] — dusk  - replacement of du _(score 23.4)_
+- [[tools/linux/tmux|tmux]] — TMUX _(score 18.0)_
+- [[tools/shell/tmux|tmux]] — Tmux _(score 18.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

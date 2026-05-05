@@ -27,11 +27,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[goose]] — Goose _(score 30.7)_
-- [[providers]] — providers _(score 30.7)_
-- [[ollama]] — Ollama _(score 30.7)_
-- [[extensions]] — Extensions _(score 22.9)_
-- [[llama_2]] — LLAMA _(score 16.3)_
+- [[wireguard]] — Wireguard _(score 18.0)_
+- [[applications]] — Deskreen _(score 8.9)_
+- [[tools/shell/tmux|tmux]] — Tmux _(score 8.9)_
+- [[programming/rust/misc/drogue|drogue]] — Drogue _(score 6.0)_
+- [[sniffnet]] — sniffnet _(score 6.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

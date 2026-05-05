@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[co_scientist]] — Google _(score 41.3)_
-- [[devin_2]] — Devin _(score 23.5)_
-- [[anmell]] — anmell _(score 23.5)_
-- [[devin]] — OpenDevin _(score 23.5)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[co_scientist]] — Google _(score 33.8)_
+- [[devin_2]] — Devin _(score 16.0)_
+- [[devin]] — OpenDevin _(score 16.0)_
+- [[anmell]] — anmell _(score 16.0)_
+- [[webthinker]] — Webthinker _(score 6.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

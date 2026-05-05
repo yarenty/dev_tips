@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[ripgrep]] — ripgrep _(score 35.3)_
-- [[difftastic]] — difftastic _(score 29.4)_
-- [[topgrade]] — topgrade _(score 26.4)_
-- [[starship]] — starship _(score 26.4)_
-- [[watchexec]] — watchexec _(score 26.4)_
+- [[mprocs]] — mprocs - replacement of tmux for long running processes! _(score 29.4)_
+- [[programming/rust/tooling/zellij|zellij]] — zellij - replacement of tmux - with colors and stuff _(score 29.4)_
+- [[dusk_replacement_of_du]] — dusk  - replacement of du _(score 23.4)_
+- [[tools/linux/zellij|zellij]] — Zellij _(score 22.3)_
+- [[tools/linux/tmux|tmux]] — TMUX _(score 22.3)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[license_2]] — License _(score 36.1)_
-- [[dfdx]] — dfdx _(score 21.4)_
-- [[apache]] — apache _(score 17.9)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[articles]] — Articles _(score 14.4)_
+- [[license_2]] — License _(score 38.8)_
+- [[dfdx]] — dfdx _(score 17.1)_
+- [[apache]] — apache _(score 17.0)_
+- [[rtic]] — RTIC _(score 13.1)_
+- [[blaze]] — blaze _(score 11.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[a_basic_algo_trading_system_in_rust_part_iv_backtesting]] — A Basic Algo Trading System In Rust: Part IV: Backtesting _(score 32.5)_
-- [[rust_algo_trading]] — Algo trading _(score 32.5)_
-- [[ml/agents/response|response]] — Response _(score 17.9)_
-- [[definition]] — Definition _(score 17.9)_
-- [[agentic_ai_memory]] — Task _(score 17.9)_
+- [[a_basic_algo_trading_system_in_rust_part_iv_backtesting]] — A Basic Algo Trading System In Rust: Part IV: Backtesting _(score 24.9)_
+- [[rust_algo_trading]] — Algo trading _(score 17.1)_
+- [[liquid]] — Liquid _(score 13.1)_
+- [[rtic]] — RTIC _(score 13.1)_
+- [[scope]] — Scope _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

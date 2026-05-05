@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[tensorbase]] — TensorBase _(score 27.8)_
-- [[singlestore]] — Singlestore _(score 27.8)_
-- [[indexing]] — Indexing _(score 16.5)_
-- [[db/relational/surrealdb|surrealdb]] — SurrealDB _(score 14.6)_
-- [[db/relational/mysql|mysql]] — mysql _(score 14.6)_
+- [[singlestore]] — Singlestore _(score 22.4)_
+- [[sqlite]] — sqlite _(score 20.0)_
+- [[javascript]] — Javascript _(score 18.0)_
+- [[assembly]] — Assembly _(score 17.4)_
+- [[programming/rust/data/mysql|mysql]] — mysql _(score 17.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

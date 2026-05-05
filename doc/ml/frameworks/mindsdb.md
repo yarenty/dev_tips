@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[mlcube]] — MLCube _(score 41.7)_
-- [[dspy]] — DSPy _(score 29.1)_
-- [[mlgo_llvm]] — MLGO _(score 27.0)_
-- [[providers]] — providers _(score 19.2)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[dspy]] — DSPy _(score 21.4)_
+- [[mlcube]] — MLCube _(score 21.4)_
+- [[kafka_2]] — Kafka _(score 18.6)_
+- [[kafka]] — Kafka _(score 18.6)_
+- [[db/relational/mysql|mysql]] — mysql _(score 17.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

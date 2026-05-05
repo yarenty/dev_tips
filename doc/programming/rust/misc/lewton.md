@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[claxon]] — Claxon _(score 32.6)_
-- [[audio]] — Coreaudio _(score 31.9)_
-- [[symphonia]] — Symphonia _(score 31.9)_
-- [[hound]] — Hound _(score 23.7)_
-- [[rtic]] — RTIC _(score 23.7)_
+- [[symphonia]] — Symphonia _(score 17.1)_
+- [[rtic]] — RTIC _(score 17.1)_
+- [[hound]] — Hound _(score 17.1)_
+- [[claxon]] — Claxon _(score 17.1)_
+- [[audio]] — Coreaudio _(score 17.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

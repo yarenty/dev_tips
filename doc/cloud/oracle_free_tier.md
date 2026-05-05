@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[pulsar]] — Pulsar _(score 25.6)_
-- [[ml/bigquery/links|links]] — Links _(score 19.8)_
-- [[delta]] — DeltaLake _(score 17.9)_
-- [[apache]] — apache _(score 17.9)_
-- [[vortex]] — Vortex (2024-10-17) _(score 17.9)_
+- [[pulsar]] — Pulsar _(score 17.0)_
+- [[vortex]] — Vortex (2024-10-17) _(score 17.0)_
+- [[apache]] — apache _(score 17.0)_
+- [[firebase]] — firebase _(score 14.5)_
+- [[fauna]] — fauna _(score 7.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

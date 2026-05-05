@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 42.0)_
-- [[cursive]] — Cursive _(score 22.0)_
-- [[tui]] — Ratatui _(score 22.0)_
-- [[starship]] — starship _(score 18.0)_
-- [[rtic]] — RTIC _(score 18.0)_
+- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 36.5)_
+- [[tui]] — Ratatui _(score 17.1)_
+- [[cursive]] — Cursive _(score 17.1)_
+- [[rtic]] — RTIC _(score 13.1)_
+- [[starship]] — starship _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

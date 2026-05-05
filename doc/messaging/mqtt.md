@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[paho_mqtt]] — paho MQTT _(score 29.2)_
-- [[mq]] — ruMQTT _(score 29.2)_
-- [[patchbay]] — patchbay.pub _(score 29.1)_
-- [[kafka_2]] — Kafka _(score 23.7)_
-- [[kafka]] — Kafka _(score 22.4)_
+- [[paho_mqtt]] — paho MQTT _(score 28.3)_
+- [[mq]] — ruMQTT _(score 28.3)_
+- [[kafka_2]] — Kafka _(score 22.3)_
+- [[patchbay]] — patchbay.pub _(score 22.3)_
+- [[iot/mqtt|mqtt]] — IoT mqtt _(score 21.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -31,11 +31,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[n8n]] — n8n.io _(score 41.9)_
+- [[n8n]] — n8n.io _(score 58.6)_
 - [[www/tools|tools]] — tally _(score 24.2)_
-- [[repl]] — iRust _(score 19.1)_
-- [[rust_algo_trading]] — Algo trading _(score 17.7)_
-- [[demo_overview]] — DEMO _(score 17.7)_
+- [[javascript]] — Javascript _(score 18.0)_
+- [[repl]] — iRust _(score 17.7)_
+- [[chroma]] — chroma _(score 10.6)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

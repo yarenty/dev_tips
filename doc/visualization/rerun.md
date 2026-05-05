@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[tips]] — Help _(score 21.5)_
-- [[articles]] — Articles _(score 15.2)_
-- [[public]] — Datasets _(score 15.2)_
-- [[pudding]] — Pudding _(score 12.7)_
-- [[time_serie_transformer]] — Transformers _(score 9.8)_
+- [[time_serie_transformer]] — Transformers _(score 17.5)_
+- [[tips]] — Help _(score 16.0)_
+- [[pudding]] — Pudding _(score 16.0)_
+- [[missing_data]] — Drop any and all nulls across all columns _(score 9.8)_
+- [[kan]] — Kolmogorov-Arnold Networks (KANs) for Time Series Forecasting _(score 9.8)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

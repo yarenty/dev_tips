@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[datafusion]] — Datafusion SQL Query Planner _(score 23.8)_
-- [[qpml]] — QPML _(score 23.8)_
-- [[roapi]] — ROAPI _(score 23.8)_
-- [[sqlite]] — sqlite _(score 23.8)_
-- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 19.8)_
+- [[db]] — diesel _(score 33.3)_
+- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 22.0)_
+- [[programming/rust/data/mysql|mysql]] — mysql _(score 19.0)_
+- [[db/relational/mysql|mysql]] — mysql _(score 17.9)_
+- [[postgresql]] — postgresql _(score 17.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

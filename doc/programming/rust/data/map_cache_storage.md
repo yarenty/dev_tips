@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[cache]] — Cache _(score 51.2)_
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 25.2)_
-- [[barrel]] — barrel _(score 25.2)_
-- [[memory_storage]] — Memory storage _(score 21.8)_
-- [[programming/rust/sql_engine/sqlparser|sqlparser]] — SQLparser _(score 18.0)_
+- [[cache]] — Cache _(score 38.5)_
+- [[memory_storage]] — Memory storage _(score 17.1)_
+- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 17.1)_
+- [[barrel]] — barrel _(score 17.1)_
+- [[rtic]] — RTIC _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

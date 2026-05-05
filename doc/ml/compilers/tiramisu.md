@@ -27,11 +27,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[tiny_gpu]] — Tiny - GPU _(score 33.4)_
-- [[mlgo_llvm]] — MLGO _(score 25.2)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[articles]] — Articles _(score 14.4)_
-- [[cuda_kevin]] — Kevin _(score 13.2)_
+- [[tiny_gpu]] — Tiny - GPU _(score 28.7)_
+- [[cuda_kevin]] — Kevin _(score 22.4)_
+- [[mlgo_llvm]] — MLGO _(score 22.4)_
+- [[apache]] — apache _(score 17.0)_
+- [[vortex]] — Vortex (2024-10-17) _(score 11.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

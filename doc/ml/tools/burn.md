@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[tch_rs]] — tch-rs _(score 21.4)_
-- [[license_2]] — License _(score 21.4)_
-- [[tract]] — tract _(score 21.4)_
-- [[candle]] — Candle _(score 21.4)_
-- [[license]] — License _(score 21.4)_
+- [[tui]] — Ratatui _(score 19.5)_
+- [[license]] — License _(score 17.1)_
+- [[tract]] — tract _(score 16.0)_
+- [[candle]] — Candle _(score 16.0)_
+- [[license_2]] — License _(score 16.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

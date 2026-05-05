@@ -30,11 +30,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[mplug]] — mPLUG _(score 44.6)_
-- [[mplug_owl]] — mPLUG-Owl _(score 35.8)_
-- [[jetbrains_mellum]] — Test the function _(score 27.5)_
-- [[deepseek]] — Deepseek _(score 27.5)_
-- [[olmo]] — OLMo - Open Language Models _(score 27.5)_
+- [[mplug]] — mPLUG _(score 28.5)_
+- [[mplug_owl]] — mPLUG-Owl _(score 28.5)_
+- [[jetbrains_mellum]] — Test the function _(score 20.3)_
+- [[olmo]] — OLMo - Open Language Models _(score 20.3)_
+- [[deepseek]] — Deepseek _(score 20.3)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

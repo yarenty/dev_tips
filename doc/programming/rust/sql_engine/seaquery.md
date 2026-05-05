@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/data/seaquery|seaquery]] — SeaQuery _(score 31.3)_
-- [[datafusion]] — Datafusion SQL Query Planner _(score 23.8)_
-- [[qpml]] — QPML _(score 23.8)_
-- [[diesel]] — diesel _(score 23.8)_
-- [[sqlite]] — sqlite _(score 23.8)_
+- [[programming/rust/data/seaquery|seaquery]] — SeaQuery _(score 46.5)_
+- [[sqlite]] — sqlite _(score 28.4)_
+- [[db]] — diesel _(score 23.4)_
+- [[diesel]] — diesel _(score 23.0)_
+- [[datafusion]] — Datafusion SQL Query Planner _(score 21.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

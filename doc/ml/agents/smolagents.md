@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[anmell]] — anmell _(score 28.4)_
-- [[llama_2]] — LLAMA _(score 25.0)_
-- [[hf]] — Hf _(score 20.4)_
-- [[providers]] — providers _(score 19.2)_
-- [[ollama]] — Ollama _(score 19.2)_
+- [[anmell]] — anmell _(score 20.3)_
+- [[llama_2]] — LLAMA _(score 16.3)_
+- [[ollama]] — Ollama _(score 16.3)_
+- [[hf]] — Hf _(score 12.9)_
+- [[devin_2]] — Devin _(score 8.3)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

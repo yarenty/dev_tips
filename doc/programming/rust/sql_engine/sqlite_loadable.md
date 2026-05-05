@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[sqlite]] — sqlite _(score 31.5)_
-- [[programming/rust/sql_engine/seaquery|seaquery]] — SeaQuery _(score 23.8)_
-- [[rusqlite]] — rusqlite _(score 22.4)_
-- [[programming/rust/data/seaquery|seaquery]] — SeaQuery _(score 14.7)_
-- [[json]] — JSON _(score 14.7)_
+- [[sqlite]] — sqlite _(score 24.0)_
+- [[programming/rust/sql_engine/seaquery|seaquery]] — SeaQuery _(score 24.0)_
+- [[programming/rust/data/seaquery|seaquery]] — SeaQuery _(score 20.0)_
+- [[rusqlite]] — rusqlite _(score 20.0)_
+- [[rtic]] — RTIC _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

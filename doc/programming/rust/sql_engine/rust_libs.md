@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[wasm_for_libsql]] — WASM: for libsql _(score 36.0)_
-- [[rawsql]] — rawsql _(score 27.1)_
-- [[cratedb]] — CrateDB _(score 27.1)_
-- [[excel_udf_in_rust]] — Excel UDF in Rust _(score 27.1)_
-- [[rtic]] — RTIC _(score 18.0)_
+- [[excel_udf_in_rust]] — Excel UDF in Rust _(score 29.9)_
+- [[wasm_for_libsql]] — WASM: for libsql _(score 26.0)_
+- [[rawsql]] — rawsql _(score 21.5)_
+- [[cratedb]] — CrateDB _(score 17.1)_
+- [[databend]] — Databend _(score 15.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
