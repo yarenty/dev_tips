@@ -26,8 +26,8 @@ The architectural choices are worth contrasting with [[folbrecht_algo_trading_se
 - [[folbrecht_algo_trading_series]] — sync, hand-rolled, no external broker; intentional opposite.
 - [[barter]] — modern, async, in-process trait wiring; the "what tickgrinder would look like today".
 - [[hummingbot_python]] — Python equivalent with a similar plug-in module shape.
-- [[redis]] — pub/sub bus used here for inter-module messaging.
-- [[postgres]] — main storage backend.
+- [[db/nosql/redis|Redis]] — pub/sub bus used here for inter-module messaging.
+- [[db/relational/postgresql|PostgreSQL]] — main storage backend.
 
 ## Internal links
 
@@ -35,8 +35,8 @@ The architectural choices are worth contrasting with [[folbrecht_algo_trading_se
 
 - [[folbrecht_algo_trading_series]] — sync, channels-only counterpart
 - [[barter]] — modern async Rust trading framework
-- [[redis]] — pub/sub used as the message bus
-- [[postgres]] — primary persistence
+- [[db/nosql/redis|Redis]] — pub/sub used as the message bus
+- [[db/relational/postgresql|PostgreSQL]] — primary persistence
 - [[tokio]] — modern replacement for `futures-rs` patterns shown here
 
 ## Keywords

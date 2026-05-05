@@ -27,7 +27,7 @@ The default admin password (`admin/admin`) is a foot-gun if Grafana is exposed p
 
 ## Similar / related topics
 
-- [[grafana_viz]] (`visualization/grafana.md`) — same product, but framed as the dashboard-design / Mimir long-term-storage view.
+- [[visualization/grafana|grafana]] — same product, but framed as the dashboard-design / Mimir long-term-storage view.
 - [[prometheus]] — the canonical metrics datasource.
 - [Loki](https://grafana.com/oss/loki/) — Grafana's logs aggregation backend.
 - [Tempo](https://grafana.com/oss/tempo/) — Grafana's distributed-tracing backend.
@@ -38,7 +38,7 @@ The default admin password (`admin/admin`) is a foot-gun if Grafana is exposed p
 <!-- reviewed -->
 
 - [[prometheus]] — primary metrics datasource
-- [[grafana_viz]] (`visualization/grafana.md`) — dashboard-design framing of the same product
+- [[visualization/grafana|grafana]] — dashboard-design framing of the same product
 
 ## Keywords
 

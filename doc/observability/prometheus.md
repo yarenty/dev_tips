@@ -13,7 +13,7 @@ Repo: <https://github.com/prometheus/prometheus>
 
 ## Summary
 
-[Prometheus](https://prometheus.io/) is the de-facto open-source monitoring system: a single Go binary that scrapes HTTP endpoints exposing metrics in its plain-text exposition format, stores them in a local time-series database, and exposes a query language ([PromQL](https://prometheus.io/docs/prometheus/latest/querying/basics/)) for slicing them. It pairs almost universally with [[grafana_obs]] for dashboards and with [Alertmanager](https://prometheus.io/docs/alerting/latest/alertmanager/) for routing alerts to Slack/PagerDuty/etc. The ecosystem of [exporters](https://prometheus.io/docs/instrumenting/exporters/) (`node_exporter`, `cadvisor`, `postgres_exporter`, ...) means almost every system you'd want to monitor already has a way to emit Prometheus-shaped metrics.
+[Prometheus](https://prometheus.io/) is the de-facto open-source monitoring system: a single Go binary that scrapes HTTP endpoints exposing metrics in its plain-text exposition format, stores them in a local time-series database, and exposes a query language ([PromQL](https://prometheus.io/docs/prometheus/latest/querying/basics/)) for slicing them. It pairs almost universally with [[observability/grafana|grafana]] for dashboards and with [Alertmanager](https://prometheus.io/docs/alerting/latest/alertmanager/) for routing alerts to Slack/PagerDuty/etc. The ecosystem of [exporters](https://prometheus.io/docs/instrumenting/exporters/) (`node_exporter`, `cadvisor`, `postgres_exporter`, ...) means almost every system you'd want to monitor already has a way to emit Prometheus-shaped metrics.
 
 ## Insight
 
@@ -27,7 +27,7 @@ PromQL has four metric types — counter (only-goes-up; use `rate()` to read it)
 
 ## Similar / related topics
 
-- [[grafana_obs]] — what you put in front of Prometheus to draw the dashboards.
+- [[observability/grafana|grafana]] — what you put in front of Prometheus to draw the dashboards.
 - [VictoriaMetrics](https://victoriametrics.com/) — wire-compatible drop-in replacement, often quoted as more efficient at scale.
 - [Thanos](https://thanos.io/) / [Mimir](https://grafana.com/oss/mimir/) — long-term storage layers that sit *behind* (or alongside) Prometheus.
 - [OpenTelemetry](https://opentelemetry.io/) — newer, vendor-neutral spec; Prometheus can scrape OTLP metrics via the OTLP receiver, and OTel collectors can push *to* Prometheus-compatible endpoints.
@@ -37,8 +37,8 @@ PromQL has four metric types — counter (only-goes-up; use `rate()` to read it)
 
 <!-- reviewed -->
 
-- [[grafana_obs]] — paired dashboard frontend
-- [[grafana_viz]] (`visualization/grafana.md`) — Mimir long-term-storage discussion
+- [[observability/grafana|grafana]] — paired dashboard frontend
+- [[visualization/grafana|grafana]] — Mimir long-term-storage discussion
 
 ## Keywords
 

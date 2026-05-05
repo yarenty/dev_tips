@@ -1,95 +1,100 @@
 ---
-title: rerun
-main_link: https://github.com/rerun-io/rerun
-keywords: [rerun, robot, multimodal, security, models, time-series]
-status: draft
+title: "Rerun: time-aware multimodal data viewer for robotics & embodied AI"
+main_link: https://rerun.io/
+keywords: [rerun, robotics, multimodal, time-series, sensor-fusion, point-cloud, embodied-ai]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Rerun: time-aware multimodal data viewer for robotics & embodied AI
 
-# rerun
+**Main link:** <https://rerun.io/>
 
-**Main link:** <https://github.com/rerun-io/rerun>
+Repo: <https://github.com/rerun-io/rerun> · Docs: <https://www.rerun.io/docs>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+[Rerun](https://rerun.io/) is an open-source viewer (Rust core, Python + Rust SDKs) for *time-aware multimodal data* — exactly the cocktail you get out of a robot or any sensor-rich system: RGB camera frames, depth maps, lidar scans, segmentation masks, 3D point clouds, 3D meshes, transforms (the robot's pose over time), bounding boxes, scalar timeseries, and arbitrary tensors, all aligned on a shared timeline. You log to it from Python (`rr.init("my_run"); rr.log("camera/rgb", rr.Image(arr))`) and the viewer either pops up locally or ingests an `.rrd` file later for replay.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Rerun is what you reach for when:
+
+- A normal debugger doesn't help because the bug is "the robot misperceived the world at frame 1473 when sunlight hit the lens". You need to *see* what the robot saw.
+- A normal logger doesn't help because the interesting thing is the relationship between five streams over time, not a single line of text.
+- A normal Grafana dashboard doesn't help because your data isn't (just) scalars — it's images, point clouds, transforms, geometry.
+
+The killer move is the **shared time axis**: you scrub the timeline and every panel (the RGB feed, the segmentation overlay, the lidar scan, the 3D map, the scalar plot of motor torque) snaps to the same moment. This makes "what was the robot thinking right before it hit the wall?" a *visual* question, which is dramatically faster than reading log files.
+
+It's also useful outside robotics — anywhere you have spatial+temporal data: AR/VR, drone flight logs, computer-vision pipelines, simulation, even some kinds of generative-media QA. The team explicitly markets it for "embodied AI" and that's where most of the recent investment is going.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[visualization/grafana|grafana]] — for *scalar* time-series; complementary, not competing.
+- [Foxglove Studio](https://foxglove.dev/) — closer competitor; came from the ROS world; comparable feature set.
+- [PlotJuggler](https://github.com/facontidavide/PlotJuggler) — time-series plotter with strong ROS bag support; narrower scope.
+- [[diagrams]] / [[manim]] — when you want a *static* or *pre-rendered* representation, not a live data view.
+- [[groot]] — NVIDIA GR00T humanoid foundation model; one of the kinds of system whose internal state Rerun is good at visualising.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[time_serie_transformer]] — Transformers _(score 17.5)_
-- [[tips]] — Help _(score 16.0)_
-- [[pudding]] — Pudding _(score 16.0)_
-- [[missing_data]] — Drop any and all nulls across all columns _(score 9.8)_
-- [[kan]] — Kolmogorov-Arnold Networks (KANs) for Time Series Forecasting _(score 9.8)_
+- [[visualization/grafana|grafana]] — for scalar metrics; pairs with Rerun for the multimodal side
+- [[manim]] — for prepared explainer animations
+- [[diagrams]] — for static architecture / scene diagrams
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#rerun` `#visualization` `#robot` `#time` `#data` `#multimodal`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#visualization` `#rerun` `#robotics` `#multimodal` `#time-series` `#sensor-fusion` `#point-cloud` `#embodied-ai`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### What Rerun is for (paraphrased from the project's pitch)
 
-# rerun
+> Rerun is built to help you understand and improve complex processes that include rich multimodal data, like 2D, 3D, text, time series, tensors, etc. It is used in many industries, including robotics, simulation, computer vision, or anything that involves a lot of sensors or other signals that evolve over time.
 
+The canonical example: a vacuum cleaner that keeps hitting walls. Logging text won't tell you why. Step-debugging won't either. What you need is a viewer that lets you see, at frame N:
 
+- the RGB camera feed
+- the depth image
+- the lidar scan
+- the segmentation overlay (what the perception network thought it saw)
+- the 3D map of the room
+- detected objects + confidence
+- transforms (where the robot thought it was)
+- scalars (motor torque, battery voltage, ...)
 
-https://github.com/rerun-io/rerun
+…all on one timeline you can scrub.
 
-Time-aware multimodal data stack and visualizations
-Rerun is building the multimodal data stack to model, ingest, store, query and view robotics-style data. It's used in areas like robotics, spatial and embodied AI, generative media, industrial processing, simulation, security, and health.
+### Hello-world (Python)
 
+```python
+import numpy as np
+import rerun as rr
 
-![](https://camo.githubusercontent.com/caefa11f32d47e0922407f49d163c18a59cd1bf07fd304d7c04e60c8e44f8363/68747470733a2f2f7374617469632e726572756e2e696f2f6f70665f73637265656e73686f742f626565353130343063626139336330626165363265663663353766613730333730343031326134312f66756c6c2e706e67)
+rr.init("hello_world", spawn=True)            # spawns the viewer
 
+# Log an RGB image
+rr.log("camera/rgb", rr.Image(np.random.randint(0, 255, (480, 640, 3), dtype=np.uint8)))
 
-## What is Rerun for?
+# Log a 3D point cloud at the same time
+points = np.random.rand(1000, 3).astype(np.float32)
+colors = np.random.randint(0, 255, (1000, 3), dtype=np.uint8)
+rr.log("world/points", rr.Points3D(points, colors=colors))
 
-Rerun is built to help you understand and improve complex processes that include rich multimodal data, like 2D, 3D, text, time series, tensors, etc. It is used in many industries, including robotics, simulation, computer vision, or anything that involves a lot of sensors or other signals that evolve over time.
+# Log a scalar over time
+for t in range(100):
+    rr.set_time_seconds("sim_time", t * 0.01)
+    rr.log("metrics/torque", rr.Scalar(np.sin(t * 0.1)))
+```
 
-## Example use case
+### Recording → replay
 
-Say you're building a vacuum cleaning robot and it keeps running into walls. Why is it doing that? You need some tool to debug it, but a normal debugger isn't gonna be helpful. Similarly, just logging text won't be very helpful either. The robot may log "Going through doorway" but that won't explain why it thinks the wall is a door.
+`rr.init("name", spawn=False)` + `rr.save("trace.rrd")` writes a recording you can re-open later (`rerun trace.rrd`), share with a teammate, or commit a small one to git as a regression test. Recordings query cleanly: there's a `rerun.dataframe` API for extracting clean per-frame DataFrames, which is useful for building training datasets straight from the visualisation traces.
 
-What you need is a visual and temporal debugger, that can log all the different representations of the world the robots holds in its little head, such as:
+### Useful entry points
 
-- RGB camera feed
-- depth images
-- lidar scan
-- segmentation image (how the robot interprets what it sees)
-- its 3D map of the apartment
-- all the objects the robot has detected (or thinks it has detected), as 3D shapes in the 3D map
-- its confidence in its prediction
-- etc
-
-You also want to see how all these streams of data evolve over time so you can go back and pinpoint exactly what went wrong, when and why.
-
-Maybe it turns out that a glare from the sun hit one of the sensors in the wrong way, confusing the segmentation network leading to bad object detection. Or maybe it was a bug in the lidar scanning code. Or maybe the robot thought it was somewhere else in the apartment, because its odometry was broken. Or it could be one of a thousand other things. Rerun will help you find out!
-
-But seeing the world from the point of the view of the robot is not just for debugging - it will also give you ideas on how to improve the algorithms, new test cases to set up, or datasets to collect. It will also let you explain the brains of the robot to your colleagues, boss, and customers. And so on. Seeing is believing, and an image is worth a thousand words, and multimodal temporal logging is worth a thousand images :)
-
-While seeing and understanding your data is core to making progress in robotics, there is one more thing: You can also use the data you collected for visualization to create new datasets for training and evaluating the models and algorithms that run on your robot. Rerun provides query APIs to make it easy to extract clean datasets from your recording for exactly that purpose.
-
-Of course, Rerun is useful for much more than just robots. Any time you have any form of sensors, or 2D or 3D state evolving over time, Rerun is a great tool.
+- Site: <https://rerun.io/>
+- Docs: <https://www.rerun.io/docs>
+- Examples gallery: <https://www.rerun.io/examples>
+- Source: <https://github.com/rerun-io/rerun>

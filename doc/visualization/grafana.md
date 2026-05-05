@@ -28,7 +28,7 @@ For storage past Prometheus's default ~15-day local retention, **Mimir** is the 
 
 ## Similar / related topics
 
-- [[grafana_obs]] (`observability/grafana.md`) — same product, but framed as "how to run and configure it as part of an observability stack".
+- [[observability/grafana|grafana]] — same product, but framed as "how to run and configure it as part of an observability stack".
 - [[prometheus]] — the canonical metrics source for Grafana.
 - [Loki](https://grafana.com/oss/loki/) — Grafana's logs equivalent of Mimir.
 - [Tempo](https://grafana.com/oss/tempo/) — Grafana's distributed tracing storage.
@@ -39,7 +39,7 @@ For storage past Prometheus's default ~15-day local retention, **Mimir** is the 
 
 <!-- reviewed -->
 
-- [[grafana_obs]] — operator's view (under `observability/`)
+- [[observability/grafana|grafana]] — operator's view (under `observability/`)
 - [[prometheus]] — primary metrics source
 - [[plotters]] — for ad-hoc programmatic plots when a Grafana dashboard is overkill
 

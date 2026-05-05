@@ -26,7 +26,7 @@ It pairs naturally with [[barter]]'s `MarketGenerator` (or with the live websock
 - [[barter]] — Rust trading framework; this crate slots in upstream of `MarketGenerator`.
 - [[folbrecht_algo_trading_series]] — Folbrecht builds his own minimal aggregator inline; trade_aggregation-rs is the "do it properly" version.
 - [[candle]] — separate Hugging Face ML framework that unfortunately shares the name; not related.
-- [[polars]] — for batch / DataFrame-style aggregation when latency doesn't matter.
+- [Polars](https://pola.rs/) — for batch / DataFrame-style aggregation when latency doesn't matter.
 
 ## Internal links
 
@@ -34,7 +34,7 @@ It pairs naturally with [[barter]]'s `MarketGenerator` (or with the live websock
 
 - [[barter]] — pairs naturally as upstream of `MarketGenerator`
 - [[folbrecht_algo_trading_series]] — has a hand-rolled equivalent inline
-- [[polars]] — batch-style alternative when latency is not a concern
+- [Polars](https://pola.rs/) — batch-style alternative when latency is not a concern
 
 ## Keywords
 
