@@ -1,3 +1,48 @@
+---
+title: Caching
+main_link: https://thenewstack.io/what-is-semantic-caching/?utm_source=tldrdata
+keywords: [caching, memory, ml, semantic, llm, reddig, fastly]
+status: draft
+---
+
+<!-- auto-stubbed by article_stub.py -->
+
+# Caching
+
+**Main link:** <https://thenewstack.io/what-is-semantic-caching/?utm_source=tldrdata>
+
+## Summary
+
+<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+
+## Insight
+
+<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+
+## Similar / related topics
+
+<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+
+## Internal links
+
+<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+
+## Keywords
+
+`#caching` `#memory` `#ml` `#semantic` `#llm` `#reddig` `#fastly`
+
+## TODO
+
+- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
+- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
+- Add 3-5 entries under `## Similar / related topics`.
+- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
+- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+
+## References / raw notes
+
+<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+
 # Caching
 
 https://thenewstack.io/what-is-semantic-caching/?utm_source=tldrdata
@@ -91,5 +136,3 @@ Like how CDNs became the standard practice for optimizing web performance, Reddi
 To date, high computational requirements bar small-to-medium companies from competing on a level playing field. But he hopes semantic caching will make AI development cheaper, democratizing access in the same way TSMC once did for chip designers by handling costly manufacturing.
 
 As past breakthroughs lowered the bar, semantic caching could have similar ripple effects for emerging markets. As Reddig said, “Usage that wasn’t possible with the pre-existing cost structure now becomes more possible.”
-
-

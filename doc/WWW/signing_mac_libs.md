@@ -1,3 +1,48 @@
+---
+title: How to future proof your apache modules in macOS by signing them with your own certificate authority
+main_link: https://blog.phusion.nl/2020/12/22/future_of_macos_apache_modules/
+keywords: [signing-mac-libs, click, certificate, continue, signing]
+status: draft
+---
+
+<!-- auto-stubbed by article_stub.py -->
+
+# How to future proof your apache modules in macOS by signing them with your own certificate authority
+
+**Main link:** <https://blog.phusion.nl/2020/12/22/future_of_macos_apache_modules/>
+
+## Summary
+
+<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+
+## Insight
+
+<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+
+## Similar / related topics
+
+<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+
+## Internal links
+
+<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+
+## Keywords
+
+`#signing-mac-libs` `#click` `#certificate` `#continue` `#signing`
+
+## TODO
+
+- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
+- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
+- Add 3-5 entries under `## Similar / related topics`.
+- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
+- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+
+## References / raw notes
+
+<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+
 @Copy from: https://blog.phusion.nl/2020/12/22/future_of_macos_apache_modules/
 
 

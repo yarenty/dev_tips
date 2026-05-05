@@ -1,3 +1,48 @@
+---
+title: Removing refusals with transformers
+main_link: https://github.com/Sumandora/remove-refusals-with-transformers
+keywords: [abliteration, inspection, llm, ml, model, refusals, transformers, models]
+status: draft
+---
+
+<!-- auto-stubbed by article_stub.py -->
+
+# Removing refusals with transformers
+
+**Main link:** <https://github.com/Sumandora/remove-refusals-with-transformers>
+
+## Summary
+
+<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+
+## Insight
+
+<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+
+## Similar / related topics
+
+<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+
+## Internal links
+
+<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+
+## Keywords
+
+`#abliteration` `#inspection` `#llm` `#ml` `#model` `#refusals` `#transformers` `#models`
+
+## TODO
+
+- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
+- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
+- Add 3-5 entries under `## Similar / related topics`.
+- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
+- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+
+## References / raw notes
+
+<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+
 # Removing refusals with transformers
 
 https://github.com/Sumandora/remove-refusals-with-transformers
@@ -23,7 +68,3 @@ This is an uncensored version of Qwen/qwen3 created with abliteration (see remov
 This is a crude, proof-of-concept implementation to remove refusals from an LLM model without using TransformerLens.
 
 You can toggle non-thinking mode in Ollama by typing /no_think after the prompt.
-
-
-
-

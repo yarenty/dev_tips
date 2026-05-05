@@ -1,3 +1,48 @@
+---
+title: KAG
+main_link: https://github.com/OpenSPG/openspg
+keywords: [kag, rag, ml, knowledge, logical, reasoning, openspg]
+status: draft
+---
+
+<!-- auto-stubbed by article_stub.py -->
+
+# KAG
+
+**Main link:** <https://github.com/OpenSPG/openspg>
+
+## Summary
+
+<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+
+## Insight
+
+<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+
+## Similar / related topics
+
+<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+
+## Internal links
+
+<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+
+## Keywords
+
+`#kag` `#rag` `#ml` `#knowledge` `#logical` `#reasoning` `#openspg`
+
+## TODO
+
+- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
+- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
+- Add 3-5 entries under `## Similar / related topics`.
+- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
+- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+
+## References / raw notes
+
+<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+
 # KAG
 
 
@@ -35,7 +80,3 @@ https://openspg.yuque.com/ndx6g9/wc9oyq/wni2suux7g2tt6s2
 
 
 https://ai.plainenglish.io/kag-knowledge-augmented-generation-a-pratical-guide-better-than-rag-eaaa1793369c
-
-
-
-

@@ -1,3 +1,48 @@
+---
+title: API access to data
+main_link: https://datausa.io/api/data?drilldowns=Nation&measures=Population
+keywords: [apis, data, ml, api, json, public, random]
+status: draft
+---
+
+<!-- auto-stubbed by article_stub.py -->
+
+# API access to data
+
+**Main link:** <https://datausa.io/api/data?drilldowns=Nation&measures=Population>
+
+## Summary
+
+<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+
+## Insight
+
+<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+
+## Similar / related topics
+
+<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+
+## Internal links
+
+<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+
+## Keywords
+
+`#apis` `#data` `#ml` `#api` `#json` `#public` `#random`
+
+## TODO
+
+- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
+- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
+- Add 3-5 entries under `## Similar / related topics`.
+- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
+- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+
+## References / raw notes
+
+<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+
 # API access to data
 
 
@@ -69,6 +114,3 @@ https://mixedanalytics.com/blog/list-actually-free-open-no-auth-needed-apis/
 60	WordPress	Public posts from any WordPress site	https://techcrunch.com/wp-json/wp/v2/posts?per_page=100&context=embed
 61	xkcd	xkcd comics	http://xkcd.com/info.0.json
 62	Zippopotamus	Zip code information	https://api.zippopotam.us/us/90210
-
-
-

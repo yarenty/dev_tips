@@ -1,3 +1,49 @@
+---
+title: Papers
+main_link: https://www.connectedpapers.com/main/dcc9308f2b9879e9fecff30108faa544d977a73c/A-Framework-for-Pattern-Mining-and-Anomaly-Detection-in-Multi%20dimensional-Time-Series-and-Event-Logs/graph
+keywords: [papers, time-series, ml, time, series, framework, pattern]
+status: draft
+---
+
+<!-- auto-stubbed by article_stub.py -->
+
+# Papers
+
+**Main link:** <https://www.connectedpapers.com/main/dcc9308f2b9879e9fecff30108faa544d977a73c/A-Framework-for-Pattern-Mining-and-Anomaly-Detection-in-Multi%20dimensional-Time-Series-and-Event-Logs/graph>
+
+## Summary
+
+<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+
+## Insight
+
+<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+
+## Similar / related topics
+
+<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+
+## Internal links
+
+<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+
+## Keywords
+
+`#papers` `#time-series` `#ml` `#time` `#series` `#framework` `#pattern`
+
+## TODO
+
+- This file contains **2 top-level `#` headings** — it likely covers multiple distinct topics. Per plan.md §8 step 3, **split this file** into one article per topic.
+- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
+- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
+- Add 3-5 entries under `## Similar / related topics`.
+- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
+- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+
+## References / raw notes
+
+<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+
 # Papers
 
 <!-- merged from doc/ml/timeseires/papers.md -->
@@ -39,5 +85,3 @@ image::https://d3i71xaburhd42.cloudfront.net/00ced98edc1f87eb4bc8e8bf8441aec23a6
 ![](https://d3i71xaburhd42.cloudfront.net/00ced98edc1f87eb4bc8e8bf8441aec23a6be286/10-Figure4-1.png)
 
 image::https://d3i71xaburhd42.cloudfront.net/00ced98edc1f87eb4bc8e8bf8441aec23a6be286/10-Figure4-1.png[]
-
-

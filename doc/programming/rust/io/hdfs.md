@@ -1,3 +1,48 @@
+---
+title: libhdfs3
+main_link: https://github.com/ArroyoSystems/arroyo
+keywords: [hdfs, rust, programming, python, data, library, fast]
+status: draft
+---
+
+<!-- auto-stubbed by article_stub.py -->
+
+# libhdfs3
+
+**Main link:** <https://github.com/ArroyoSystems/arroyo>
+
+## Summary
+
+<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+
+## Insight
+
+<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+
+## Similar / related topics
+
+<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+
+## Internal links
+
+<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+
+## Keywords
+
+`#hdfs` `#rust` `#programming` `#python` `#data` `#library` `#fast`
+
+## TODO
+
+- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
+- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
+- Add 3-5 entries under `## Similar / related topics`.
+- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
+- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+
+## References / raw notes
+
+<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+
 # libhdfs3
 
 **Libhdfs3**, designed as an alternative implementation of libhdfs, is implemented based on native Hadoop RPC protocol and HDFS data transfer protocol. It gets rid of the drawbacks of JNI, and it has a lightweight, small memory footprint code base. In addition, it is easy to use and deploy.
@@ -379,25 +424,4 @@ mature and well tested - used in lots of libraries exposed in python.
 
 Importance
 
-Provides core competitevness  - expose tachyons in python language. 
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Provides core competitevness  - expose tachyons in python language.

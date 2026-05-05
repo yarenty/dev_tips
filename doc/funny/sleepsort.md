@@ -1,3 +1,48 @@
+---
+title: Sleep SORT algorithm
+main_link: https://gist.github.com/Thatkookooguy/3b7ce09a9f80a5e6541175104a5d49e9
+keywords: [sleepsort, funny, sort, sleep, sorting, list]
+status: draft
+---
+
+<!-- auto-stubbed by article_stub.py -->
+
+# Sleep SORT algorithm
+
+**Main link:** <https://gist.github.com/Thatkookooguy/3b7ce09a9f80a5e6541175104a5d49e9>
+
+## Summary
+
+<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+
+## Insight
+
+<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+
+## Similar / related topics
+
+<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+
+## Internal links
+
+<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+
+## Keywords
+
+`#sleepsort` `#funny` `#sort` `#sleep` `#sorting` `#list`
+
+## TODO
+
+- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
+- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
+- Add 3-5 entries under `## Similar / related topics`.
+- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
+- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+
+## References / raw notes
+
+<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+
 # Sleep SORT algorithm
 
 https://animeshchouhan.com/posts/sleepsort/
@@ -147,5 +192,3 @@ Even though sleep sort isn't great for big sets of numbers, it shows how creativ
 - [Princeton lectures/52Tries.pdf](https://www.cs.princeton.edu/courses/archive/fall13/cos226/lectures/52Tries.pdf)
 - [asyncio — Asynchronous I/O — Python 3.12.3 documentation](https://docs.python.org/3/library/asyncio.html)
 - [What are the advantages of asyncio over threads?](https://discuss.python.org/t/what-are-the-advantages-of-asyncio-over-threads/2112)
-
-

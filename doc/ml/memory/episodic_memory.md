@@ -1,3 +1,48 @@
+---
+title: Episodic Memory
+main_link: https://em-llm.github.io/?utm_source=chatgpt.com
+keywords: [episodic-memory, memory, ml, rag, llm, llms, retrieval]
+status: draft
+---
+
+<!-- auto-stubbed by article_stub.py -->
+
+# Episodic Memory
+
+**Main link:** <https://em-llm.github.io/?utm_source=chatgpt.com>
+
+## Summary
+
+<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+
+## Insight
+
+<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+
+## Similar / related topics
+
+<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+
+## Internal links
+
+<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+
+## Keywords
+
+`#episodic-memory` `#memory` `#ml` `#rag` `#llm` `#llms` `#retrieval`
+
+## TODO
+
+- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
+- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
+- Add 3-5 entries under `## Similar / related topics`.
+- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
+- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+
+## References / raw notes
+
+<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+
 Recent advancements in memory solutions for Agentic AI, Retrieval-Augmented Generation (RAG), and Large Language Models (LLMs) have focused on emulating human-like memory systems to enhance long-term context handling, reasoning, and adaptability. Here’s an overview of notable developments from 2024–2025:
 —
 ### 🧠 EM-LLM: Human-Like Episodic Memory for Infinite Contexts
@@ -16,6 +61,3 @@ AriGraph proposes a method where agents construct and update a memory graph that
 The concept of AI-native memory envisions systems where LLMs serve as core processors, supplemented by memory modules that store conclusions from reasoning processes. This approach aims to create personalized models that can handle complex inferences and adapt to individual users, marking a step towards artificial general intelligence (AGI) .([arXiv](https://arxiv.org/abs/2406.18312?utm_source=chatgpt.com))
 —
 These developments signify a shift towards more sophisticated memory architectures in AI, drawing inspiration from human cognition to address limitations in context handling and reasoning. By integrating mechanisms akin to episodic and semantic memory, these systems aim to enhance the capabilities of LLMs, RAG frameworks, and agentic AI models.
-
-
-

@@ -1,3 +1,49 @@
+---
+title: Move blokchain from python to rust
+main_link: https://github.com/joerdav/xc
+keywords: [todo-ideas, learning, rust, programming, add, api, project, level]
+status: draft
+---
+
+<!-- auto-stubbed by article_stub.py -->
+
+# Move blokchain from python to rust
+
+**Main link:** <https://github.com/joerdav/xc>
+
+## Summary
+
+<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+
+## Insight
+
+<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+
+## Similar / related topics
+
+<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+
+## Internal links
+
+<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+
+## Keywords
+
+`#todo-ideas` `#learning` `#rust` `#programming` `#add` `#api` `#project` `#level`
+
+## TODO
+
+- This file contains **4 top-level `#` headings** — it likely covers multiple distinct topics. Per plan.md §8 step 3, **split this file** into one article per topic.
+- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
+- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
+- Add 3-5 entries under `## Similar / related topics`.
+- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
+- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+
+## References / raw notes
+
+<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+
 # Move blokchain from python to rust
 
 https://medium.com/coinmonks/python-tutorial-build-a-blockchain-713c706f6531
@@ -407,6 +453,3 @@ It’s designed to take you from absolute beginner to getting hired, so there’
 see [https://zerotomastery.io/blog/rust-practice-projects/](https://zerotomastery.io/blog/rust-practice-projects/)
 
 ------
-
-
-

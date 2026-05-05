@@ -1,3 +1,48 @@
+---
+title: Drop any and all nulls across all columns
+main_link: https://towardsdatascience.com/how-to-handle-missing-data-for-time-series-680810f648ed
+keywords: [missing-data, time-series, ml, data, handle, missing, drop]
+status: draft
+---
+
+<!-- auto-stubbed by article_stub.py -->
+
+# Drop any and all nulls across all columns
+
+**Main link:** <https://towardsdatascience.com/how-to-handle-missing-data-for-time-series-680810f648ed>
+
+## Summary
+
+<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+
+## Insight
+
+<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+
+## Similar / related topics
+
+<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+
+## Internal links
+
+<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+
+## Keywords
+
+`#missing-data` `#time-series` `#ml` `#data` `#handle` `#missing` `#drop`
+
+## TODO
+
+- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
+- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
+- Add 3-5 entries under `## Similar / related topics`.
+- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
+- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+
+## References / raw notes
+
+<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+
 
 
 
@@ -17,4 +62,3 @@ Most ML models cannot process NaN or null values, so it is important that if you
 # Drop any and all nulls across all columns
 df.dropna(inplace=True)
 By default, pandas’ dropna function searches for nulls across the board (in all columns) and drops any row where there is a null in any column. However, this can be modified using various parameters.
-

@@ -1,3 +1,48 @@
+---
+title: MLCube
+main_link: https://github.com/mlcommons/mlcube_examples
+keywords: [mlcube, frameworks, ml, models, machine, learning, software]
+status: draft
+---
+
+<!-- auto-stubbed by article_stub.py -->
+
+# MLCube
+
+**Main link:** <https://github.com/mlcommons/mlcube_examples>
+
+## Summary
+
+<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+
+## Insight
+
+<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+
+## Similar / related topics
+
+<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+
+## Internal links
+
+<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+
+## Keywords
+
+`#mlcube` `#frameworks` `#ml` `#models` `#machine` `#learning` `#software`
+
+## TODO
+
+- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
+- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
+- Add 3-5 entries under `## Similar / related topics`.
+- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
+- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+
+## References / raw notes
+
+<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+
 # MLCube
 
 MLCube brings the concept of interchangeable parts to the world of machine learning models.  It is the shipping container that enables researchers and developers to easily share the software that powers machine learning.

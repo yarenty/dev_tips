@@ -1,3 +1,47 @@
+---
+title: Nvidia Omniverse
+main_link: 
+keywords: [nvidia-omniverse, digital-twin, modulus, pino, nvidia, fno]
+status: draft
+---
+
+<!-- auto-stubbed by article_stub.py -->
+
+# Nvidia Omniverse
+
+## Summary
+
+<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+
+## Insight
+
+<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+
+## Similar / related topics
+
+<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+
+## Internal links
+
+<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+
+## Keywords
+
+`#nvidia-omniverse` `#digital-twin` `#modulus` `#pino` `#nvidia` `#fno`
+
+## TODO
+
+- No `main_link` could be auto-detected. Add the canonical URL (project homepage / repo / paper) to the frontmatter.
+- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
+- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
+- Add 3-5 entries under `## Similar / related topics`.
+- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
+- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+
+## References / raw notes
+
+<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+
 Building Scientifically Accurate Digital Twins Using Modulus with Omniverse and AI
 By Bhoomi Gadhia
 Discuss (0)
@@ -49,4 +93,4 @@ About the Authors
 
 About Bhoomi Gadhia
 Bhoomi Gadhia is a senior product marketing manager at NVIDIA, focused on NVIDIA Modulus, an AI framework for developing physics-informed machine learning neural network models. She has over 10 years of experience in computer-aided engineering applications, working in technical and product marketing roles at Hexagon MSC Software and Ansys. Bhoomi resides in California and holds a master’s in mechanical engineering.
-View all posts by Bhoomi Gadhia 
+View all posts by Bhoomi Gadhia

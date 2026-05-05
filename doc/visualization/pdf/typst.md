@@ -1,3 +1,48 @@
+---
+title: typst
+main_link: https://github.com/typst/typst
+keywords: [typst, visualization, markup, typesetting, system, latex]
+status: draft
+---
+
+<!-- auto-stubbed by article_stub.py -->
+
+# typst
+
+**Main link:** <https://github.com/typst/typst>
+
+## Summary
+
+<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+
+## Insight
+
+<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+
+## Similar / related topics
+
+<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+
+## Internal links
+
+<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+
+## Keywords
+
+`#typst` `#visualization` `#markup` `#typesetting` `#system` `#latex`
+
+## TODO
+
+- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
+- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
+- Add 3-5 entries under `## Similar / related topics`.
+- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
+- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+
+## References / raw notes
+
+<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+
 # typst 
 
 
@@ -16,4 +61,3 @@ This repository contains the Typst compiler and its CLI, which is everything you
 
 
 ![](https://user-images.githubusercontent.com/17899797/228031796-ced0e452-fcee-4ae9-92da-b9287764ff25.png)
-

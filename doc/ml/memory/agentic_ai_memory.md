@@ -1,3 +1,49 @@
+---
+title: Task
+main_link: https://github.com/FoundationAgents/awesome-foundation-agents?tab=readme-ov-file#memory
+keywords: [agentic-ai-memory, memory, ml, retrieval, llms, systems, rag]
+status: draft
+---
+
+<!-- auto-stubbed by article_stub.py -->
+
+# Task
+
+**Main link:** <https://github.com/FoundationAgents/awesome-foundation-agents?tab=readme-ov-file#memory>
+
+## Summary
+
+<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+
+## Insight
+
+<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+
+## Similar / related topics
+
+<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+
+## Internal links
+
+<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+
+## Keywords
+
+`#agentic-ai-memory` `#memory` `#ml` `#retrieval` `#llms` `#systems` `#rag`
+
+## TODO
+
+- This file contains **2 top-level `#` headings** — it likely covers multiple distinct topics. Per plan.md §8 step 3, **split this file** into one article per topic.
+- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
+- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
+- Add 3-5 entries under `## Similar / related topics`.
+- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
+- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+
+## References / raw notes
+
+<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+
 Use the tools to answer the question: Has anyone looking into Agentic AI/RAG and memory solution, could be eidetic memory great solution for Agents/RAG/LLM. could you try find examples like in arXiv or PubMed , could you focus on memory issues / solutions - especially within latest years (2024/20205)
 
 
@@ -1199,5 +1245,3 @@ Future research is expected to further explore the integration of multimodal dat
 Overall, while no current system has yet achieved a complete eidetic memory analogous to that observed in some humans, the convergence of innovative memory management techniques discussed in the recent literature indicates that we are on the cusp of realizing AI memory mechanisms that are progressively more detailed, persistent, and adaptive. These developments represent an encouraging step toward resolving longstanding memory bottlenecks in LLMs and Agentic AI, ultimately supporting more coherent, contextually grounded, and intelligent agent behaviors.
 
 Keywords—Agentic AI, Retrieval-Augmented Generation (RAG), Large Language Models (LLMs), Eidetic Memory, Dynamic Memory Consolidation, Graph-Based Memory, Hybrid Architectures.
-
-

@@ -1,3 +1,48 @@
+---
+title: Assembly
+main_link: https://github.com/hackclub/some-assembly-required
+keywords: [assembly, programming, examples, understand, going, approachable]
+status: draft
+---
+
+<!-- auto-stubbed by article_stub.py -->
+
+# Assembly
+
+**Main link:** <https://github.com/hackclub/some-assembly-required>
+
+## Summary
+
+<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+
+## Insight
+
+<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+
+## Similar / related topics
+
+<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+
+## Internal links
+
+<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+
+## Keywords
+
+`#assembly` `#programming` `#examples` `#understand` `#going` `#approachable`
+
+## TODO
+
+- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
+- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
+- Add 3-5 entries under `## Similar / related topics`.
+- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
+- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+
+## References / raw notes
+
+<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+
 
 # Assembly
 
@@ -15,6 +60,3 @@ Embarking on this quest, I quickly found a lot of scattered and difficult to und
 I wanted to write down my learnings for those who are new to this part of their computer (like me!), including working code examples. This is by no means an exhaustive guide, but instead serves as an approachable introduction to assembly.
 
 Going through this guide takes as little as 30 minutes, but you can also spend a few hours going through it if you want to delve into the code examples.
-
-
-

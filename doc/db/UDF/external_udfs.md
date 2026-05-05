@@ -1,3 +1,48 @@
+---
+title: External UDFs
+main_link: https://lib.rs/crates/dlopen2
+keywords: [external-udfs, udf, db, ffi, rust, abi, shared]
+status: draft
+---
+
+<!-- auto-stubbed by article_stub.py -->
+
+# External UDFs
+
+**Main link:** <https://lib.rs/crates/dlopen2>
+
+## Summary
+
+<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+
+## Insight
+
+<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+
+## Similar / related topics
+
+<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+
+## Internal links
+
+<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+
+## Keywords
+
+`#external-udfs` `#udf` `#db` `#ffi` `#rust` `#abi` `#shared`
+
+## TODO
+
+- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
+- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
+- Add 3-5 entries under `## Similar / related topics`.
+- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
+- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+
+## References / raw notes
+
+<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+
 # External UDFs 
 
 **This is just a draft idea**, but in general it should work 
@@ -54,4 +99,3 @@ but under the hood could be implemented in rust or any other language which unde
 if implemented in rust, a macro could be provided which would do translation between FFI arrays and local arrays. 
 
 NOTE: there is a lot of `unsafe` in this implementation, thus it should be implemented with extra care.
-

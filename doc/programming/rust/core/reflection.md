@@ -1,3 +1,49 @@
+---
+title: reflect
+main_link: https://crates.io/crates/reflect
+keywords: [reflection, core, rust, programming, macro, api, author, type]
+status: draft
+---
+
+<!-- auto-stubbed by article_stub.py -->
+
+# reflect
+
+**Main link:** <https://crates.io/crates/reflect>
+
+## Summary
+
+<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+
+## Insight
+
+<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+
+## Similar / related topics
+
+<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+
+## Internal links
+
+<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+
+## Keywords
+
+`#reflection` `#core` `#rust` `#programming` `#macro` `#api` `#author` `#type`
+
+## TODO
+
+- This file contains **2 top-level `#` headings** — it likely covers multiple distinct topics. Per plan.md §8 step 3, **split this file** into one article per topic.
+- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
+- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
+- Add 3-5 entries under `## Similar / related topics`.
+- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
+- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+
+## References / raw notes
+
+<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+
 # reflect
 
 https://crates.io/crates/reflect
@@ -35,7 +81,4 @@ https://www.osohq.com/post/rust-reflection-pt-1
 
 he foundation of our runtime reflection system through classes and instances, and we've shown some simple dynamic type checking using the built in Any trait.
 
-Up next, things start getting a bit more complicated as we attempt to replicate Python's getattr magic method, and make it possible to look up attributes on Rust structs dynamically at runtime. 
-
-
-
+Up next, things start getting a bit more complicated as we attempt to replicate Python's getattr magic method, and make it possible to look up attributes on Rust structs dynamically at runtime.

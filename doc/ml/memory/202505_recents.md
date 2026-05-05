@@ -1,3 +1,48 @@
+---
+title: 202505 Recents
+main_link: https://github.com/FoundationAgents/awesome-foundation-agents
+keywords: [202505-recents, memory, ml, llms, rag, agentic, llm]
+status: draft
+---
+
+<!-- auto-stubbed by article_stub.py -->
+
+# 202505 Recents
+
+**Main link:** <https://github.com/FoundationAgents/awesome-foundation-agents>
+
+## Summary
+
+<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+
+## Insight
+
+<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+
+## Similar / related topics
+
+<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+
+## Internal links
+
+<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+
+## Keywords
+
+`#202505-recents` `#memory` `#ml` `#llms` `#rag` `#agentic` `#llm`
+
+## TODO
+
+- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
+- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
+- Add 3-5 entries under `## Similar / related topics`.
+- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
+- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+
+## References / raw notes
+
+<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+
 Recent Developments in Memory Solutions for Agentic AI, RAG, and LLMs
 Introduction: The Paramountcy of Memory in Advanced AI Systems
 Memory stands as a foundational element for the progression of sophisticated artificial intelligence systems, particularly those based on large language models (LLMs) and employed in agentic frameworks or retrieval-augmented generation (RAG) pipelines.1 The capacity of these systems to sustain coherent dialogues, engage in prolonged interactions, and execute intricate tasks hinges critically on their ability to effectively store, retrieve, and utilize information over time.1 Various mechanisms, including memory storage, retrieval, and memory-grounded generation, are underpinned by this crucial component, enabling LLM-based AI to move beyond mere pattern recognition towards more nuanced and context-aware processing.1 The ongoing research in this domain reflects a deep understanding that advancements in memory are not merely incremental improvements but are essential for unlocking the next level of intelligence in artificial systems.
@@ -103,4 +148,3 @@ Works cited
 39.	Retrieval Augmented Generation and Understanding in Vision: A Survey and New Outlook, accessed on May 7, 2025, https://arxiv.org/html/2503.18016v1
 40.	iwangjian/Paper-Reading-ConvAI: Paper reading list in conversational AI. - GitHub, accessed on May 7, 2025, https://github.com/iwangjian/Paper-Reading-ConvAI
 41.	NAACL2025 Tutorial: Adaptation of Large Language Models - arXiv, accessed on May 7, 2025, https://arxiv.org/html/2504.03931v2
-
