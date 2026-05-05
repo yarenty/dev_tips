@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[ml/bigquery/links|links]] — Links _(score 15)_
+- [[apache]] — apache _(score 15)_
+- [[pulsar]] — Pulsar _(score 10)_
+- [[vortex]] — Vortex (2024-10-17) _(score 5)_
+- [[delta]] — DeltaLake _(score 5)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[akri]] — Akri _(score 8)_
+- [[kuasar]] — Kuasar _(score 8)_
+- [[k3s]] — K3S _(score 8)_
+- [[balena]] — Balena _(score 8)_
+- [[repl]] — iRust _(score 5)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

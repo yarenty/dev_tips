@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[blaze]] — blaze _(score 28)_
+- [[rapids]] — Spark rapids _(score 23)_
+- [[iceberg]] — Iceberg _(score 18)_
+- [[vortex]] — Vortex (2024-10-17) _(score 18)_
+- [[lakesoul]] — Lake soul _(score 18)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

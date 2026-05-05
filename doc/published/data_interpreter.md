@@ -23,7 +23,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[task]] — Task _(score 15)_
+- [[articles]] — Articles _(score 15)_
+- [[public]] — Datasets _(score 15)_
+- [[dataman]] — Dataman _(score 13)_
+- [[xorg]] — xorg _(score 5)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

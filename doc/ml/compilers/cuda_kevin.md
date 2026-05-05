@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[ml/bigquery/links|links]] — Links _(score 15)_
+- [[articles]] — Articles _(score 15)_
+- [[xla_accelerated_compiler]] — XLA _(score 13)_
+- [[mlgo_llvm]] — MLGO _(score 13)_
+- [[tiny_gpu]] — Tiny - GPU _(score 13)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

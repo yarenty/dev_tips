@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[rust_algo_trading]] — Algo trading _(score 8)_
+- [[mql5]] — MQL5 _(score 8)_
+- [[trade_aggregation_rust_candles]] — Trade Aggregation _(score 8)_
+- [[a_basic_algo_trading_system_in_rust_part_iv_backtesting]] — A Basic Algo Trading System In Rust: Part IV: Backtesting _(score 8)_
+- [[hummingbot_python]] — hummingbot _(score 8)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[time_series_transformer]] — Time Series Transformer _(score 43)_
+- [[time_series_research_papers]] — Time series research papers _(score 23)_
+- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 23)_
+- [[ml/time_series/papers|papers]] — Papers _(score 23)_
+- [[linear_regression]] — Linear Regression With Time Series _(score 23)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

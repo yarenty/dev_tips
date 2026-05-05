@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[balena]] — Balena _(score 23)_
+- [[dokku]] — Dokku _(score 8)_
+- [[akri]] — Akri _(score 8)_
+- [[kuasar]] — Kuasar _(score 8)_
+- [[programming/rust/misc/drogue|drogue]] — Drogue _(score 5)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

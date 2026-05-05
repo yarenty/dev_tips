@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[system_prompt]] — System Prompt _(score 5)_
+- [[watchexec]] — watchexec _(score 5)_
+- [[dspy]] — DSPy _(score 5)_
+- [[candle]] — Candle _(score 5)_
+- [[cuda]] — CUDA in Rust _(score 5)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

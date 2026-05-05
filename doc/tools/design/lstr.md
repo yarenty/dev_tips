@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[demo_overview]] — DEMO _(score 15)_
+- [[rtic]] — RTIC _(score 15)_
+- [[cli]] — Command line _(score 15)_
+- [[gramma_harper]] — Harper _(score 13)_
+- [[superfile]] — superfile _(score 13)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

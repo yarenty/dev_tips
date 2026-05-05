@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[rocket]] — Rocket _(score 33)_
+- [[tungstenite]] — Tungstenite _(score 33)_
+- [[axum]] — Axum _(score 33)_
+- [[rewquest]] — Rewquest _(score 33)_
+- [[hyperfs]] — HyperFS _(score 33)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

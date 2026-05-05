@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[port_scan]] — RustScan _(score 23)_
+- [[rathole]] — rathole _(score 13)_
+- [[ngrok]] — NGrok - Free Firewall Tunnel _(score 13)_
+- [[web_to_app_pake]] — Pake _(score 13)_
+- [[sniffnet]] — sniffnet _(score 13)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

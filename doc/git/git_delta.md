@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[vitis]] — Vitis _(score 10)_
+- [[github]] — Github README _(score 8)_
+- [[config]] — GIT configuration _(score 8)_
+- [[visualization/grafana|grafana]] — Grafana _(score 5)_
+- [[rust_in_jupyter]] — RUST in JUPYTER _(score 5)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

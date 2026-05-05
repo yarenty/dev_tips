@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[rtic]] — RTIC _(score 25)_
+- [[tao]] — Tao _(score 23)_
+- [[slint]] — Slint _(score 23)_
+- [[lipo]] — Lipo _(score 23)_
+- [[hound]] — Hound _(score 20)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

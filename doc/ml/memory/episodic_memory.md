@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[agentic_ai_memory]] — Task _(score 38)_
+- [[ml/memory/response|response]] — Response _(score 38)_
+- [[memory]] — Memory _(score 35)_
+- [[ml/agents/response|response]] — Response _(score 30)_
+- [[task]] — Task _(score 25)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

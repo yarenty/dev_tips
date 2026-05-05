@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[rtic]] — RTIC _(score 20)_
+- [[linfa]] — Linfa _(score 18)_
+- [[ml_in_rust]] — ML libraries in Rust _(score 18)_
+- [[_todo_ideas]] — Move blokchain from python to rust _(score 15)_
+- [[adbc]] — ADBC ! _(score 15)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

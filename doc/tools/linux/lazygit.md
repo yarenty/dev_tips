@@ -23,7 +23,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[tools/linux/tmux|tmux]] — TMUX _(score 13)_
+- [[tools/linux/zellij|zellij]] — Zellij _(score 13)_
+- [[tmux_ai]] — Tmux AI _(score 13)_
+- [[fish]] — Fish _(score 13)_
+- [[helix]] — Helix _(score 13)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

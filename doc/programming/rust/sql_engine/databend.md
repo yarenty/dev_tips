@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[mariadb]] — MariaDB _(score 28)_
+- [[spark]] — Spark UDF _(score 28)_
+- [[hive]] — Hive UDF – User Defined Function with Example _(score 28)_
+- [[snowflake]] — Snowflake _(score 28)_
+- [[udf_lib]] — udf _(score 28)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

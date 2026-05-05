@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[n8n_io]] — n8n.io _(score 30)_
+- [[license]] — License _(score 23)_
+- [[license_2]] — License _(score 23)_
+- [[www/tools|tools]] — tally _(score 15)_
+- [[ml/bigquery/links|links]] — Links _(score 15)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[cache]] — Cache _(score 48)_
+- [[memory_storage]] — Memory storage _(score 28)_
+- [[rtic]] — RTIC _(score 25)_
+- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 23)_
+- [[barrel]] — barrel _(score 23)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

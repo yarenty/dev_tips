@@ -25,7 +25,15 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[nvidia]] — Nvidia _(score 15)_
+- [[rerun]] — rerun _(score 5)_
+- [[nvidia_omniverse]] — Nvidia Omniverse _(score 5)_
+- [[rapids]] — Spark rapids _(score 5)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

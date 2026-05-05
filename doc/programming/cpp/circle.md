@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[reflection]] — reflect _(score 20)_
+- [[alagorithms]] — algorithms _(score 15)_
+- [[rtic]] — RTIC _(score 15)_
+- [[abi]] — C++ ABI _(score 13)_
+- [[rocket]] — Rocket _(score 10)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

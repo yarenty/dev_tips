@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[rust_in_jupyter]] — RUST in JUPYTER _(score 28)_
+- [[programming/rust/tooling/zellij|zellij]] — zellij - replacement of tmux - with colors and stuff _(score 23)_
+- [[mprocs]] — mprocs - replacement of tmux for long running processes! _(score 23)_
+- [[rtic]] — RTIC _(score 20)_
+- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 18)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

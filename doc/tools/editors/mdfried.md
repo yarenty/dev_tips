@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[intellij]] — IntelliJ productivity tips _(score 13)_
+- [[void]] — VOID _(score 13)_
+- [[markitdown]] — Markitdown _(score 13)_
+- [[byobu]] — Byobu: Text-based Window Manager and Terminal Multiplexer _(score 10)_
+- [[terminals]] — Project Summary: Byobu, Mosh, Xpra _(score 10)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

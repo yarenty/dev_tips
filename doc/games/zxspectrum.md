@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[rtic]] — RTIC _(score 15)_
+- [[engines]] — Engines _(score 13)_
+- [[7_more_ideas]] — 7 more ideas _(score 10)_
+- [[corewars]] — Core Wars _(score 8)_
+- [[game_in_scala]] — GAME in Scala _(score 8)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

@@ -27,7 +27,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[goose]] — Goose _(score 48)_
+- [[ollama]] — Ollama _(score 38)_
+- [[deepseek]] — Deepseek _(score 30)_
+- [[llama_2]] — LLAMA _(score 25)_
+- [[extensions]] — Extensions _(score 23)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

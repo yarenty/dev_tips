@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[rust_prometheus]] — rust-prometheus form tikv _(score 43)_
+- [[loki]] — Loki _(score 28)_
+- [[programming/rust/tooling/observability_on_wasm|observability_on_wasm]] — obsetrvability on wasm _(score 28)_
+- [[open_telemtry]] — open telemtry _(score 28)_
+- [[loggers]] — Loggers _(score 23)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

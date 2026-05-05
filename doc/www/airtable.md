@@ -27,7 +27,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[www/tools|tools]] — tally _(score 8)_
+- [[uipath]] — Uipath _(score 5)_
+- [[leaderboards]] — marena _(score 5)_
+- [[seal]] — seal _(score 5)_
+- [[ssl]] — HTTPS on websites _(score 3)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

@@ -27,7 +27,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[llama]] — llama-agentic-system _(score 33)_
+- [[providers]] — providers _(score 25)_
+- [[agentic_ai_memory]] — Task _(score 20)_
+- [[alicemind_mplug_2_0]] — AliceMind - mplug 2.0 _(score 18)_
+- [[olmo]] — OLMo - Open Language Models _(score 18)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

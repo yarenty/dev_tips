@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[candle]] — Candle _(score 25)_
+- [[ollama]] — Ollama _(score 23)_
+- [[rig]] — Rig _(score 23)_
+- [[llama_2]] — LLAMA _(score 20)_
+- [[ml/memory/response|response]] — Response _(score 20)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

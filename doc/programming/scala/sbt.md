@@ -23,7 +23,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[rtic]] — RTIC _(score 15)_
+- [[rust_in_jupyter]] — RUST in JUPYTER _(score 10)_
+- [[dusk_replacement_of_du]] — dusk  - replacement of du _(score 10)_
+- [[_todo_ideas]] — Move blokchain from python to rust _(score 5)_
+- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 5)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

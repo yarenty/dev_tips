@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[latex]] — Latex _(score 23)_
+- [[agentic_ai_memory]] — Task _(score 15)_
+- [[react]] — React Print _(score 8)_
+- [[mdmath_symbols]] — Mdmath Symbols _(score 8)_
+- [[visualization/grafana|grafana]] — Grafana _(score 5)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

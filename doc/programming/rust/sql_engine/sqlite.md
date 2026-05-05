@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[sqlite_loadable]] — SQLIte loadable _(score 33)_
+- [[hive]] — Hive UDF – User Defined Function with Example _(score 23)_
+- [[databend]] — Databend _(score 23)_
+- [[udf_lib]] — udf _(score 23)_
+- [[scope]] — Scope _(score 20)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

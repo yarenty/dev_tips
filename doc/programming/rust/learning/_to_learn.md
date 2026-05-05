@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[scope]] — Scope _(score 38)_
+- [[programming/rust/learning/tutorials|tutorials]] — Tutorials _(score 28)_
+- [[cheats]] — Cheats _(score 28)_
+- [[cheats_2]] — Cheats _(score 28)_
+- [[github_map]] — Github MAP _(score 28)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

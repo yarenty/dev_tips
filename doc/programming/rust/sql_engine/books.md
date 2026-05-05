@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[_to_learn]] — Books _(score 25)_
+- [[diesel]] — diesel _(score 23)_
+- [[qpml]] — QPML _(score 23)_
+- [[datafusion]] — Datafusion SQL Query Planner _(score 23)_
+- [[roapi]] — ROAPI _(score 23)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

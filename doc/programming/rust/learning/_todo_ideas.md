@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[from_easy_to_advanced]] — from easier to advanced 1-by-1 _(score 38)_
+- [[xc_in_rust]] — XC in Rust _(score 28)_
+- [[7_more_ideas]] — 7 more ideas _(score 28)_
+- [[rtic]] — RTIC _(score 20)_
+- [[scope]] — Scope _(score 18)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[diagrams]] — Diagrams _(score 18)_
+- [[programming/rust/sql_engine/books|books]] — Books _(score 15)_
+- [[_to_learn]] — Books _(score 15)_
+- [[tools/linux/books|books]] — Books _(score 15)_
+- [[visualization/grafana|grafana]] — Grafana _(score 8)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

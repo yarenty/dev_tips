@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[db/relational/surrealdb|surrealdb]] — SurrealDB _(score 18)_
+- [[postgresql]] — postgresql _(score 18)_
+- [[articles]] — Articles _(score 15)_
+- [[db]] — diesel _(score 15)_
+- [[xlite]] — XLite _(score 13)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[sqlite]] — sqlite _(score 15)_
+- [[limbo]] — Limbo _(score 13)_
+- [[toydb]] — toyDB _(score 13)_
+- [[db/relational/mysql|mysql]] — mysql _(score 13)_
+- [[edgedb]] — edgeDB _(score 13)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

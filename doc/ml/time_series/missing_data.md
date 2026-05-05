@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[articles]] — Articles _(score 20)_
+- [[time_series_transformer]] — Time Series Transformer _(score 18)_
+- [[time_serie_transformer]] — Transformers _(score 18)_
+- [[forecasting]] — forecasting _(score 18)_
+- [[ml/bigquery/links|links]] — Links _(score 15)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

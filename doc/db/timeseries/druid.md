@@ -25,7 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 20)_
+- [[apache]] — apache _(score 20)_
+- [[questdb]] — QuestDB _(score 18)_
+- [[db/timeseries/greptimedb|greptimedb]] — GreptimeDB _(score 18)_
+- [[tutorials_2]] — Tutorials _(score 15)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 

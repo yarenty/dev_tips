@@ -23,7 +23,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+
+- [[digital_twin/links|links]] — Links _(score 18)_
+- [[nvidia_omniverse]] — Nvidia Omniverse _(score 8)_
+- [[isc2022]] — Isc2022 _(score 8)_
+- [[cps]] — Cps _(score 8)_
+- [[nvidia]] — Nvidia _(score 8)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 
 ## Keywords
 
