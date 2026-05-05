@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[mcp_ui]] — mcp ui _(score 26.1)_
-- [[a2a]] — Agent2Agent _(score 26.1)_
-- [[articles]] — Articles _(score 26.1)_
-- [[ml/bigquery/links|links]] — Links _(score 14.4)_
-- [[co_scientist]] — Google _(score 14.4)_
+- [[articles]] — Articles _(score 16.0)_
+- [[a2a]] — Agent2Agent _(score 16.0)_
+- [[mcp_ui]] — mcp ui _(score 16.0)_
+- [[spark]] — Spark UDF _(score 5.4)_
+- [[bb8]] — bb8 _(score 5.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

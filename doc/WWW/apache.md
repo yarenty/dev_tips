@@ -27,11 +27,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[messaging/nats|nats]] — nats-server _(score 28.6)_
-- [[druid]] — Druid _(score 25.6)_
-- [[kafka_2]] — Kafka _(score 17.9)_
-- [[kafka]] — Kafka _(score 17.9)_
-- [[html]] — kuchiki _(score 17.4)_
+- [[kafka_2]] — Kafka _(score 22.2)_
+- [[messaging/nats|nats]] — nats-server _(score 20.9)_
+- [[kafka]] — Kafka _(score 17.0)_
+- [[druid]] — Druid _(score 17.0)_
+- [[loco_rust_on_rails]] — Loco _(score 9.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

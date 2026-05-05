@@ -27,11 +27,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[data_interpreter]] — Data Interpreter _(score 28.0)_
-- [[data_quality]] — Data Quality _(score 23.4)_
-- [[xorg]] — xorg _(score 15.2)_
-- [[articles]] — Articles _(score 15.2)_
-- [[adbc]] — ADBC ! _(score 15.2)_
+- [[data_interpreter]] — Data Interpreter _(score 24.9)_
+- [[data_quality]] — Data Quality _(score 17.9)_
+- [[prek]] — Prek _(score 12.1)_
+- [[leaderboards]] — marena _(score 7.4)_
+- [[inspectus]] — Inspectus _(score 7.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

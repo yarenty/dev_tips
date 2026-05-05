@@ -28,8 +28,6 @@ status: draft
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
 - [[apache]] — apache _(score 16.0)_
-- [[sbt]] — SBT _(score 8.2)_
-- [[unsloth]] — unsloth _(score 8.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

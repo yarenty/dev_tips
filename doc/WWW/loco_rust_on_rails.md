@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[axum]] — Axum _(score 13.2)_
-- [[dioxus]] — Dioxus _(score 13.2)_
-- [[rtic]] — RTIC _(score 13.2)_
-- [[cache]] — Cache _(score 13.2)_
-- [[visualization/grafana|grafana]] — Grafana _(score 8.9)_
+- [[redis]] — Redis _(score 23.4)_
+- [[visualization/grafana|grafana]] — Grafana _(score 20.2)_
+- [[cache]] — Cache _(score 19.4)_
+- [[rtic]] — RTIC _(score 13.1)_
+- [[axum]] — Axum _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

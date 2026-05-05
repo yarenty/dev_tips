@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[mosh]] — Mosh _(score 48.2)_
-- [[terminals]] — Project Summary: Byobu, Mosh, Xpra _(score 39.3)_
-- [[tools/linux/tmux|tmux]] — TMUX _(score 24.3)_
-- [[license_2]] — License _(score 15.0)_
-- [[tools/shell/tmux|tmux]] — Tmux _(score 15.0)_
+- [[mosh]] — Mosh _(score 43.0)_
+- [[terminals]] — Project Summary: Byobu, Mosh, Xpra _(score 34.2)_
+- [[tools/linux/tmux|tmux]] — TMUX _(score 26.3)_
+- [[debugger]] — Valgrind _(score 19.7)_
+- [[tools/shell/tmux|tmux]] — Tmux _(score 18.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -29,10 +29,10 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[loco_rust_on_rails]] — Loco _(score 16.0)_
-- [[www/tools|tools]] — tally _(score 16.0)_
-- [[ssl]] — HTTPS on websites _(score 16.0)_
+- [[javascript]] — Javascript _(score 18.0)_
+- [[dioxus]] — Dioxus _(score 17.6)_
 - [[airtable]] — airtable _(score 16.0)_
+- [[www/tools|tools]] — tally _(score 16.0)_
 - [[yarenty_profile_and_projects_summary]] — Yarenty Profile And Projects Summary _(score 16.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->

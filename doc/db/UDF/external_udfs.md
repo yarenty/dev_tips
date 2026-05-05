@@ -29,11 +29,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[hive]] — Hive UDF – User Defined Function with Example _(score 19.9)_
-- [[spark]] — Spark UDF _(score 19.9)_
-- [[mariadb]] — MariaDB _(score 19.9)_
-- [[debug]] — Debug _(score 13.2)_
-- [[rtic]] — RTIC _(score 13.2)_
+- [[hive]] — Hive UDF – User Defined Function with Example _(score 19.2)_
+- [[mariadb]] — MariaDB _(score 19.2)_
+- [[spark]] — Spark UDF _(score 19.2)_
+- [[rtic]] — RTIC _(score 13.1)_
+- [[debug]] — Debug _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
