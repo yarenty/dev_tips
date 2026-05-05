@@ -1,7 +1,7 @@
 ---
 title: sqlite
 main_link: https://github.com/polyrand/rust-sqlite-ext-example
-keywords: [sqlite, sql-engine, rust, programming, extension, function, entry, point]
+keywords: [sqlite, sql-engine, rust, programming, extensions, function, entry, point]
 status: draft
 ---
 

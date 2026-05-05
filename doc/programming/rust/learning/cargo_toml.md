@@ -1,7 +1,7 @@
 ---
 title: Cargo.toml
 main_link: 
-keywords: [cargo-toml, learning, rust, programming, cargo, serde, trick, toml]
+keywords: [cargo-toml, learning, rust, programming, cargo, serde, tricks, toml]
 status: draft
 ---
 

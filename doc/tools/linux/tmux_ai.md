@@ -1,7 +1,7 @@
 ---
 title: Tmux AI
 main_link: https://tmuxai.dev/
-keywords: [tmux-ai, linux, tools, tmux, tmuxai, dev]
+keywords: [tmux-ai, linux, tools, tmux, dev]
 status: draft
 ---
 

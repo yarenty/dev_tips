@@ -1,7 +1,7 @@
 ---
 title: Pake
 main_link: https://github.com/tw93/Pake
-keywords: [pake, security, tools, tauri, windows, mac, linux]
+keywords: [pake, security, tools, tauri, windows, linux]
 status: draft
 ---
 

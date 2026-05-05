@@ -1,7 +1,7 @@
 ---
 title: tch
 main_link: https://github.com/LaurentMazare/tch-rs
-keywords: [tch, tools, ml, libtorch, pytorch, python, model]
+keywords: [tch, tools, ml, libtorch, pytorch, python, models]
 status: draft
 ---
 

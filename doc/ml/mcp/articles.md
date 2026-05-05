@@ -1,7 +1,7 @@
 ---
 title: Articles
 main_link: https://github.com/microsoft/lost_in_conversation?utm_source=tldrai
-keywords: [articles, mcp, ml, utm, source, tldrai, data]
+keywords: [articles, mcp, ml, utm, tldrai, data]
 status: draft
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Pake
 main_link: https://github.com/tw93/Pake
-keywords: [web-to-app-pake, security, tools, windows, linux, mac, available]
+keywords: [web-to-app-pake, security, tools, windows, linux, available]
 status: draft
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Commands to install
 main_link: https://github.com/jkfran/killport
-keywords: [must-have, shell, tools, zsh, powerlevel10k, custom, commands]
+keywords: [must-have, shell, tools, zsh, powerlevel10k, custom, command]
 status: draft
 ---
 

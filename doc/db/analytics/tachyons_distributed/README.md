@@ -1,6 +1,6 @@
 ---
 title: Tachyons Distributed
-keywords: [tachyons_distributed]
+keywords: [tachyons-distributed]
 status: draft
 ---
 

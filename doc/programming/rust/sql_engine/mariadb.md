@@ -1,7 +1,7 @@
 ---
 title: MariaDB
 main_link: https://github.com/pluots/sql-udf
-keywords: [mariadb, sql-engine, rust, programming, sql, udf, pluots, examples]
+keywords: [mariadb, sql-engine, rust, programming, sql, udf, pluots]
 status: draft
 ---
 

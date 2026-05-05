@@ -1,7 +1,7 @@
 ---
 title: Deepseek
 main_link: https://github.com/huggingface/open-r1
-keywords: [deepseek, models, llm, ml, huggingface, open, reproduce, blog]
+keywords: [deepseek, models, llm, ml, huggingface, reproduce, blog]
 status: draft
 ---
 

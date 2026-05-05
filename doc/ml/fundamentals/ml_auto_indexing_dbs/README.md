@@ -1,6 +1,6 @@
 ---
 title: ML Auto Indexing Dbs
-keywords: [ml_auto_indexing_dbs]
+keywords: [ml-auto-indexing-dbs]
 status: draft
 ---
 

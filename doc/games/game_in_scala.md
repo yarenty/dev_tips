@@ -1,7 +1,7 @@
 ---
 title: GAME in Scala
 main_link: https://regblanc.com/blog/cross-platform-game-development-in-scala-natively/
-keywords: [game-in-scala, games, game, scala, regblanc, blog]
+keywords: [game-in-scala, games, scala, regblanc, blog]
 status: draft
 ---
 

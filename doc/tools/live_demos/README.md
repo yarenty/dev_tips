@@ -1,6 +1,6 @@
 ---
 title: Live Demos
-keywords: [live_demos]
+keywords: [live-demos]
 status: draft
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: llama-agentic-system
 main_link: https://github.com/meta-llama/llama-agentic-system?tab=readme-ov-file
-keywords: [llama, models, llm, ml, code, stack, meta, model]
+keywords: [llama, models, llm, ml, code, stack, meta]
 status: draft
 ---
 

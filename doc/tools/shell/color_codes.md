@@ -1,7 +1,7 @@
 ---
 title: Shell color codes
 main_link: 
-keywords: [color-codes, shell, tools, codes, rust, color, full]
+keywords: [color-codes, shell, tools, code, rust, color]
 status: draft
 ---
 

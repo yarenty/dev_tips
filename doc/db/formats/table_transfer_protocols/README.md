@@ -1,6 +1,6 @@
 ---
 title: Table Transfer Protocols
-keywords: [table_transfer_protocols]
+keywords: [table-transfer-protocols]
 status: draft
 ---
 

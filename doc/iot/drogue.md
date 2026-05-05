@@ -1,7 +1,7 @@
 ---
 title: Drogue
 main_link: https://www.drogue.io
-keywords: [drogue, iot, data, way, users, internet]
+keywords: [drogue, iot, data, way, internet]
 status: draft
 ---
 

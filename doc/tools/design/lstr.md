@@ -1,7 +1,7 @@
 ---
 title: lstr
 main_link: https://github.com/bgreenwell/lstr/raw/main/assets/lstr-demo.gif
-keywords: [lstr, design, tools, tree, better, rust, inspired]
+keywords: [lstr, design, tools, tree, rust, inspired]
 status: draft
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Books
 main_link: https://github.com/andygrove/how-query-engines-work
-keywords: [books, sql-engine, rust, programming, howqueryengineswork, andygrove, query, engines]
+keywords: [books, sql-engine, rust, programming, howqueryengineswork, andygrove, query, engine]
 status: draft
 ---
 

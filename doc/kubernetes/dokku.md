@@ -1,7 +1,7 @@
 ---
 title: Dokku
 main_link: https://dokku.com/#install-apt
-keywords: [dokku, kubernetes, paas, service, seen, platform]
+keywords: [dokku, kubernetes, paas, services, seen, platform]
 status: draft
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Druid
 main_link: https://druid.apache.org/docs/latest/tutorials/index.html
-keywords: [druid, timeseries, db, start, apache, time, install]
+keywords: [druid, time-series, db, start, apache, time, install]
 status: draft
 ---
 

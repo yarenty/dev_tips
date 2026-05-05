@@ -1,7 +1,7 @@
 ---
 title: MS Server
 main_link: https://github.com/libsql/libsql_generate
-keywords: [rust-libs, sql-engine, rust, programming, libsql, crates, server, user]
+keywords: [rust-libs, sql-engine, rust, programming, libsql, crates, server]
 status: draft
 ---
 

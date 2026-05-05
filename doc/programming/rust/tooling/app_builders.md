@@ -1,7 +1,7 @@
 ---
 title: awesome app
 main_link: https://awesomeapp.org/
-keywords: [app-builders, tooling, rust, programming, awesome, app, code, review]
+keywords: [app-builders, tooling, rust, programming, awesome, code, review]
 status: draft
 ---
 

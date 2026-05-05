@@ -1,6 +1,6 @@
 ---
 title: Package Managers
-keywords: [package_managers]
+keywords: [package-managers]
 status: draft
 ---
 

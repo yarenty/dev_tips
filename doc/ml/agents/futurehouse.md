@@ -1,7 +1,7 @@
 ---
 title: FutureHouse
 main_link: https://www.futurehouse.org/
-keywords: [futurehouse, agents, ml, specialized, agent, literature, crow]
+keywords: [futurehouse, agents, ml, specialized, literature, crow]
 status: draft
 ---
 

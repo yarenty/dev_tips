@@ -1,7 +1,7 @@
 ---
 title: LLM_OS
 main_link: https://github.com/phidatahq/phidata/tree/main/cookbook/llm_os
-keywords: [llm-os, llm, ml, llms, generate, cookbook, tweet]
+keywords: [llm-os, llm, ml, generate, cookbook, tweet]
 status: draft
 ---
 

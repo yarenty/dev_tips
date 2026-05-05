@@ -1,7 +1,7 @@
 ---
 title: zellij - replacement of tmux - with colors and stuff
 main_link: 
-keywords: [zellij-replacement-of-tmux-with-colors-and-stuff, tooling, rust, programming, zellij, replacement, tmux, colors]
+keywords: [zellij-replacement-of-tmux-with-colors-and-stuff, tooling, rust, programming, zellij, replacement, tmux, color]
 status: draft
 ---
 

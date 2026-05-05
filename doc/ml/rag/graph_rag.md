@@ -1,7 +1,7 @@
 ---
 title: Graph RAG
 main_link: https://github.com/microsoft/graphrag
-keywords: [graph-rag, rag, ml, lancedb, todo, microsoft, graphrag]
+keywords: [graphrag, rag, ml, lancedb, todo, microsoft]
 status: draft
 ---
 

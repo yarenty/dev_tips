@@ -1,6 +1,6 @@
 ---
 title: Ballista Distributed
-keywords: [ballista_distributed]
+keywords: [ballista-distributed]
 status: draft
 ---
 

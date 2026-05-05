@@ -1,7 +1,7 @@
 ---
 title: Kuasar
 main_link: https://github.com/kuasar-io/kuasar
-keywords: [kuasar, kubernetes, sandbox, api, container, open]
+keywords: [kuasar, kubernetes, sandbox, api, container]
 status: draft
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Gloo
 main_link: 
-keywords: [gloo, web, rust, programming, apis, libraries, toolkit, wasm]
+keywords: [gloo, web, rust, programming, libraries, toolkit, wasm]
 status: draft
 ---
 

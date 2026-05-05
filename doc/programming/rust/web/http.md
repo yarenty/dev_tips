@@ -1,7 +1,7 @@
 ---
 title: Hyper
 main_link: https://github.com/tokio-rs/axum
-keywords: [web, rust, programming, rocket, axum, crates, simple]
+keywords: [web, rust, programming, rocket, axum, crates]
 status: draft
 ---
 

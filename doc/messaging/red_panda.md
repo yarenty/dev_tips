@@ -1,7 +1,7 @@
 ---
 title: Red Panda
 main_link: https://github.com/kafka-ops/julie
-keywords: [red-panda, messaging, kafka, apache, topics, topic]
+keywords: [redpanda, messaging, kafka, apache, topics]
 status: draft
 ---
 

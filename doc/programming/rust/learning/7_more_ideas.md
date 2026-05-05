@@ -1,7 +1,7 @@
 ---
 title: 7 more ideas
 main_link: 
-keywords: [7-more-ideas, learning, rust, programming, game, build, web, create]
+keywords: [7-more-ideas, learning, rust, programming, games, web]
 status: draft
 ---
 

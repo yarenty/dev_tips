@@ -1,7 +1,7 @@
 ---
 title: from easier to advanced 1-by-1
 main_link: https://zerotomastery.io/blog/rust-practice-projects/
-keywords: [from-easier-to-advanced-1-by-1, learning, rust, programming, add, api, level, project]
+keywords: [from-easier-to-advanced-1-by-1, learning, rust, programming, api, level]
 status: draft
 ---
 

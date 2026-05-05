@@ -1,6 +1,6 @@
 ---
 title: Streaming Query Approximation
-keywords: [streaming_query_approximation]
+keywords: [streaming-query-approximation]
 status: draft
 ---
 

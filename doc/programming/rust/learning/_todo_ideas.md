@@ -1,7 +1,7 @@
 ---
 title: Move blokchain from python to rust
 main_link: https://github.com/joerdav/xc
-keywords: [todo-ideas, learning, rust, programming, add, api, project, level]
+keywords: [todo-ideas, learning, rust, programming, api, level]
 status: draft
 ---
 

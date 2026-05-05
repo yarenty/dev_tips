@@ -1,7 +1,7 @@
 ---
 title: Limbo
 main_link: https://github.com/tursodatabase/limbo
-keywords: [limbo, relational, db, rust, linux, support, improved]
+keywords: [limbo, relational, db, rust, linux, improved]
 status: draft
 ---
 

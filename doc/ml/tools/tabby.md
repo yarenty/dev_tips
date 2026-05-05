@@ -1,7 +1,7 @@
 ---
 title: TabbyML
 main_link: https://github.com/TabbyML/tabby
-keywords: [tabby, tools, ml, ide, self, open, cloud]
+keywords: [tabby, tools, ml, ide, self, cloud]
 status: draft
 ---
 

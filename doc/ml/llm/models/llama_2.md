@@ -1,7 +1,7 @@
 ---
 title: LLAMA
 main_link: https://github.com/meta-llama/llama-stack
-keywords: [llama-2, models, llm, ml, code, stack, meta, model]
+keywords: [llama-2, models, llm, ml, code, stack, meta]
 status: draft
 ---
 

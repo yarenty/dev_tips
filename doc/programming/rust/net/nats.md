@@ -1,7 +1,7 @@
 ---
 title: NATS
 main_link: https://crates.io/crates/nats
-keywords: [nats, rust, programming, jetstream, highly, next, generation]
+keywords: [nats, rust, programming, jetstream, highly, generation]
 status: draft
 ---
 

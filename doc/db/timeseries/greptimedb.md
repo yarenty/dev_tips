@@ -1,7 +1,7 @@
 ---
 title: GreptimeDB
 main_link: https://github.com/GreptimeTeam/greptimedb
-keywords: [greptimedb, timeseries, db, time, series, distributed, greptimeteam]
+keywords: [greptimedb, time-series, db, time, series, distributed, greptimeteam]
 status: draft
 ---
 

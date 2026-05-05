@@ -1,6 +1,6 @@
 ---
 title: SQL Engine
-keywords: [sql_engine]
+keywords: [sql-engine]
 status: draft
 ---
 

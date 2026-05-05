@@ -1,7 +1,7 @@
 ---
 title: Actix
 main_link: https://crates.io/crates/actix
-keywords: [actors, concurrency, rust, programming, actor, message, system, messages]
+keywords: [actors, concurrency, rust, programming, messages, system]
 status: draft
 ---
 

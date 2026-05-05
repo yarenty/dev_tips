@@ -1,7 +1,7 @@
 ---
 title: Candle
 main_link: https://github.com/huggingface/candle
-keywords: [candle, tools, ml, model, tensor, cuda, llm]
+keywords: [candle, tools, ml, models, tensor, cuda, llm]
 status: draft
 ---
 

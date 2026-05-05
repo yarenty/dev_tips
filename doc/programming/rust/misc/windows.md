@@ -1,7 +1,7 @@
 ---
 title: Windows RS
 main_link: https://github.com/microsoft/windows-rs
-keywords: [windows, misc, rust, programming, apis, winrt, api, crates]
+keywords: [windows, misc, rust, programming, winrt, api, crates]
 status: draft
 ---
 

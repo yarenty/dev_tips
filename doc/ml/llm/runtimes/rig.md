@@ -1,7 +1,7 @@
 ---
 title: Rig
 main_link: https://github.com/0xPlaygrounds/rig
-keywords: [rig, runtimes, llm, ml, rust, crate, api, reference]
+keywords: [rig, runtimes, llm, ml, rust, crates, api, reference]
 status: draft
 ---
 

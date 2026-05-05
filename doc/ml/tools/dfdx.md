@@ -1,7 +1,7 @@
 ---
 title: dfdx
 main_link: https://github.com/coreylowman/dfdx
-keywords: [dfdx, tools, ml, tape, gradient, tensor, tensors]
+keywords: [dfdx, tools, ml, tape, gradient, tensor]
 status: draft
 ---
 

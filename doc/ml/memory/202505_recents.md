@@ -1,7 +1,7 @@
 ---
 title: 202505 Recents
 main_link: https://github.com/FoundationAgents/awesome-foundation-agents
-keywords: [202505-recents, memory, ml, llms, rag, agentic, llm]
+keywords: [202505-recents, memory, ml, llm, rag, agentic]
 status: draft
 ---
 

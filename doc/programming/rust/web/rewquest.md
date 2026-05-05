@@ -1,7 +1,7 @@
 ---
 title: Rewquest
 main_link: https://crates.io/crates/reqwest
-keywords: [rewquest, web, rust, programming, crates, client, plain, json]
+keywords: [rewquest, web, rust, programming, crates, client, json]
 status: draft
 ---
 

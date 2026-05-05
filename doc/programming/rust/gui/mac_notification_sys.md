@@ -1,7 +1,7 @@
 ---
 title: mac-notification-sys
 main_link: 
-keywords: [mac-notification-sys, gui, rust, programming, notifications, example, mac, notification]
+keywords: [mac-notification-sys, gui, rust, programming, notifications]
 status: draft
 ---
 

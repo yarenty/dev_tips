@@ -1,7 +1,7 @@
 ---
 title: Rust - brain
 main_link: https://github.com/brain-lang/brain
-keywords: [rust-brain, funny, brainfuck, brain, rust, programming]
+keywords: [brain, funny, brainfuck, rust, programming]
 status: draft
 ---
 

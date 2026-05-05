@@ -1,6 +1,6 @@
 ---
 title: Long Running Query
-keywords: [long_running_query]
+keywords: [long-running-query]
 status: draft
 ---
 

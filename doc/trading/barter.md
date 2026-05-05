@@ -1,7 +1,7 @@
 ---
 title: Barter
 main_link: https://github.com/barter-rs/barter-rs/blob/main/barter/examples/engine_with_live_trades.rs
-keywords: [barter, trading, engine, portfolio, trader, data]
+keywords: [barter, trading, engine, portfolios, trader, data]
 status: draft
 ---
 

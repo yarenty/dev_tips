@@ -1,7 +1,7 @@
 ---
 title: mcp ui
 main_link: https://github.com/idosal/mcp-ui
-keywords: [mcp-ui, mcp, ml, model, context, protocol, deliver]
+keywords: [mcp-ui, mcp, ml, models, context, protocol, deliver]
 status: draft
 ---
 

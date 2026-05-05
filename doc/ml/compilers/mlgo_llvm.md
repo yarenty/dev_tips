@@ -1,7 +1,7 @@
 ---
 title: MLGO
 main_link: https://github.com/google/ml-compiler-opt
-keywords: [mlgo-llvm, compilers, ml, compiler, llvm, learning, machine]
+keywords: [mlgo-llvm, compilers, ml, llvm, learning, machine]
 status: draft
 ---
 

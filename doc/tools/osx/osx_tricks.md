@@ -1,7 +1,7 @@
 ---
 title: Jail-break from not opening on OSX
 main_link: 
-keywords: [osx-tricks, osx, tools, jail, terminal, remove, break]
+keywords: [osx-tricks, osx, tools, jail, terminal, break]
 status: draft
 ---
 

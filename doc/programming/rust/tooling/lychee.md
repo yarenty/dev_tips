@@ -1,7 +1,7 @@
 ---
 title: lychee
 main_link: https://github.com/lycheeverse/lychee/tree/master
-keywords: [lychee, tooling, rust, programming, link, checker, finds, markdown]
+keywords: [lychee, tooling, rust, programming, links, checker, finds, markdown]
 status: draft
 ---
 

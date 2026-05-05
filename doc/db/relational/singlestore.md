@@ -1,7 +1,7 @@
 ---
 title: Singlestore
 main_link: https://singlestore-labs.github.io/singlestore-wasm-toolkit/html/Tutorial-Impl-Rust-Split.html
-keywords: [singlestore, relational, db, tutorial, impl, rust, split]
+keywords: [singlestore, relational, db, tutorials, impl, rust, split]
 status: draft
 ---
 

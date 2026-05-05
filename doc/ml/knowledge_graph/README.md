@@ -1,6 +1,6 @@
 ---
 title: Knowledge Graph
-keywords: [knowledge_graph]
+keywords: [knowledge-graph]
 status: draft
 ---
 

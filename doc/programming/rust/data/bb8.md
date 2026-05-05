@@ -1,7 +1,7 @@
 ---
 title: bb8
 main_link: https://crates.io/crates/bb8
-keywords: [bb8, data, rust, programming, connection, connections, database, crates]
+keywords: [bb8, data, rust, programming, connection, databases, crates]
 status: draft
 ---
 

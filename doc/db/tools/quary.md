@@ -1,7 +1,7 @@
 ---
 title: Quary
 main_link: https://github.com/quarylabs/quary
-keywords: [quary, tools, db, sql, create, cli, database]
+keywords: [quary, tools, db, sql, cli, databases]
 status: draft
 ---
 

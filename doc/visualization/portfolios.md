@@ -1,7 +1,7 @@
 ---
 title: Example data visualisations portfolios
 main_link: https://public.tableau.com/app/profile/kim.tricker#!/
-keywords: [portfolios, visualization, example, public, tableau, app]
+keywords: [portfolios, visualization, example, public, tableau]
 status: draft
 ---
 

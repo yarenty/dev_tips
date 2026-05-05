@@ -1,7 +1,7 @@
 ---
 title: println! speedup 500%
 main_link: 
-keywords: [tricks, learning, rust, programming, println, display, speedup, tczajka]
+keywords: [tricks, learning, rust, programming, display, speedup, tczajka]
 status: draft
 ---
 

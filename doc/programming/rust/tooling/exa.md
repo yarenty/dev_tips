@@ -1,7 +1,7 @@
 ---
 title: EXA
 main_link: https://crates.io/crates/exa
-keywords: [exa, tooling, rust, programming, crates, file, unix, linux]
+keywords: [exa, tooling, rust, programming, crates, unix, linux]
 status: draft
 ---
 

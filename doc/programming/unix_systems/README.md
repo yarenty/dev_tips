@@ -1,6 +1,6 @@
 ---
 title: Unix Systems
-keywords: [unix_systems]
+keywords: [unix-systems]
 status: draft
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: rust-prometheus form tikv
 main_link: https://github.com/tikv/rust-prometheus
-keywords: [rust-prometheus-form-tikv, tooling, rust, programming, enable, metric, prometheus, static]
+keywords: [rust-prometheus-form-tikv, tooling, rust, programming, enable, metric, prometheus]
 status: draft
 ---
 

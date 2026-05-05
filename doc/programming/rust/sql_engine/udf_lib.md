@@ -1,7 +1,7 @@
 ---
 title: udf
 main_link: https://crates.io/crates/udf
-keywords: [udf-lib, sql-engine, rust, programming, sql, function, struct, functions]
+keywords: [udf-lib, sql-engine, rust, programming, sql, function, struct]
 status: draft
 ---
 

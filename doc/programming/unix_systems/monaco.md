@@ -1,7 +1,7 @@
 ---
 title: Programming in Web
 main_link: https://github.com/microsoft/monaco-editor
-keywords: [monaco, unix-systems, programming, editor, try, web, check]
+keywords: [monaco, unix-systems, programming, editors, try, web, check]
 status: draft
 ---
 

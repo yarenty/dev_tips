@@ -1,7 +1,7 @@
 ---
 title: qdrant
 main_link: https://github.com/qdrant/qdrant
-keywords: [qdrant, vector, db, search, api, makes, neural]
+keywords: [qdrant, vector, db, search, api, neural]
 status: draft
 ---
 

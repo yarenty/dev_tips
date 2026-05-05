@@ -1,7 +1,7 @@
 ---
 title: Reflection step by step - Article
 main_link: https://www.osohq.com/post/rust-reflection-pt-1
-keywords: [reflection-step-by-step-article, core, rust, programming, reflection, step, article, runtime]
+keywords: [reflection-step-by-step-article, core, rust, programming, reflection, articles, runtimes]
 status: draft
 ---
 

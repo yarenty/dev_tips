@@ -1,7 +1,7 @@
 ---
 title: Mac targets
 main_link: https://github.com/BrainiumLLC/rust-xcode-plugin
-keywords: [macos, gui, rust, programming, matrix, mac, bindings, lipo]
+keywords: [macos, gui, rust, programming, matrix, bindings, lipo]
 status: draft
 ---
 

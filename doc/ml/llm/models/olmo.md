@@ -1,7 +1,7 @@
 ---
 title: OLMo - Open Language Models
 main_link: https://github.com/allenai/OLMo?tab=readme-ov-file
-keywords: [olmo, models, llm, ml, language, open, mix, dolmino]
+keywords: [olmo, models, llm, ml, language, mix, dolmino]
 status: draft
 ---
 

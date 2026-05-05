@@ -1,6 +1,6 @@
 ---
 title: Zero Shot
-keywords: [zero_shot]
+keywords: [zero-shot]
 status: draft
 ---
 

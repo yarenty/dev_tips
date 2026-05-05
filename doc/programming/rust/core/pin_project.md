@@ -1,7 +1,7 @@
 ---
 title: pin-project
 main_link: https://crates.io/crates/pin-project
-keywords: [pin-project, core, rust, programming, pin, project, crates, crate]
+keywords: [pin-project, core, rust, programming, pin, crates]
 status: draft
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: firebase
 main_link: https://console.firebase.google.com/project/brilliant-heat-2678/settings/integrations/analytics?pli=1
-keywords: [firebase, nosql, db, console, google, project, brilliant]
+keywords: [firebase, nosql, db, console, google, brilliant]
 status: draft
 ---
 

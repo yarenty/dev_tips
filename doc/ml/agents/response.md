@@ -1,7 +1,7 @@
 ---
 title: Response
 main_link: https://github.com/FoundationAgents/awesome-foundation-agents?tab=readme-ov-file#memory
-keywords: [response, agents, ml, memory, retrieval, llms, systems]
+keywords: [response, agents, ml, memory, retrieval, llm, system]
 status: draft
 ---
 

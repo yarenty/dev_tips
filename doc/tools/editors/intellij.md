@@ -1,7 +1,7 @@
 ---
 title: IntelliJ productivity tips
 main_link: https://www.youtube.com/watch?v=cK19rE2V9UY
-keywords: [intellij, editors, tools, video, secrets, productivity, tips]
+keywords: [intellij, editors, tools, video, secrets, productivity]
 status: draft
 ---
 

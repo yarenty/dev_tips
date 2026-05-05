@@ -1,7 +1,7 @@
 ---
 title: A Basic Algo Trading System In Rust: Part III
 main_link: 
-keywords: [a-basic-algo-trading-system-in-rust-part-iii, trading, rust, config, part, tests]
+keywords: [a-basic-algo-trading-system-in-rust-part-iii, trading, rust, config, test]
 status: draft
 ---
 

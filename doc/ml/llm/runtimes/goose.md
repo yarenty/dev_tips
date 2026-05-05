@@ -1,7 +1,7 @@
 ---
 title: Goose
 main_link: https://github.com/block/goose
-keywords: [goose, runtimes, llm, ml, deepseek, ollama, block, model]
+keywords: [goose, runtimes, llm, ml, deepseek, ollama, block, models]
 status: draft
 ---
 

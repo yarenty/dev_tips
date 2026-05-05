@@ -1,6 +1,6 @@
 ---
 title: Timeseries
-keywords: [timeseries]
+keywords: [time-series]
 status: draft
 ---
 

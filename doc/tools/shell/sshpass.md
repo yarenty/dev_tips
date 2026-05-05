@@ -1,7 +1,7 @@
 ---
 title: sshpass
 main_link: 
-keywords: [sshpass, shell, tools, replacement, example, create, test]
+keywords: [sshpass, shell, tools, replacement, test]
 status: draft
 ---
 

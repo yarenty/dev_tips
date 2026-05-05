@@ -1,7 +1,7 @@
 ---
 title: Ratatui
 main_link: https://github.com/ratatui-org/ratatui
-keywords: [tui, rust, programming, cursive, view, crates, termion]
+keywords: [tui, rust, programming, cursive, crates, termion]
 status: draft
 ---
 

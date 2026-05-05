@@ -1,6 +1,6 @@
 ---
 title: Pattern Learning
-keywords: [pattern_learning]
+keywords: [pattern-learning]
 status: draft
 ---
 

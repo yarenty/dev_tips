@@ -1,7 +1,7 @@
 ---
 title: Iceberg
 main_link: https://github.com/apache/iceberg
-keywords: [iceberg, datafusion, data, rust, apache, tables, java, sql]
+keywords: [iceberg, datafusion, data, rust, apache, table, java, sql]
 status: draft
 ---
 

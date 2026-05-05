@@ -1,7 +1,7 @@
 ---
 title: License
 main_link: https://github.com/tensorflow/tensorflow
-keywords: [license-2, tools, ml, apache, mit, note, contribution]
+keywords: [license-2, tools, ml, apache, mit, contribution]
 status: draft
 ---
 

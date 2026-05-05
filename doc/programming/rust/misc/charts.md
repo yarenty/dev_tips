@@ -1,7 +1,7 @@
 ---
 title: charts
 main_link: https://github.com/askanium/rustplotlib
-keywords: [charts, misc, rust, programming, chart, bar, tbd, vertical]
+keywords: [charts, misc, rust, programming, bar, tbd, vertical]
 status: draft
 ---
 

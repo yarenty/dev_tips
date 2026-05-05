@@ -1,7 +1,7 @@
 ---
 title: Mdfried
 main_link: https://github.com/benjajaja/mdfried?tab=readme-ov-file
-keywords: [mdfried, editors, tools, markdown, terminal, bigger, text]
+keywords: [mdfried, editors, tools, markdown, terminal, bigger]
 status: draft
 ---
 

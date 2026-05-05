@@ -1,7 +1,7 @@
 ---
 title: Circle
 main_link: https://www.circle-lang.org/
-keywords: [circle, cpp, programming, language, compiler, types, make]
+keywords: [circle, cpp, programming, language, compilers, type]
 status: draft
 ---
 

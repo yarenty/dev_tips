@@ -1,6 +1,6 @@
 ---
 title: System Prompts
-keywords: [system_prompts]
+keywords: [system-prompts]
 status: draft
 ---
 

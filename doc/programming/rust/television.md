@@ -1,7 +1,7 @@
 ---
 title: Television
 main_link: https://github.com/alexpasmantier/television
-keywords: [television, rust, programming, fuzzy, tui, alexpasmantier, fast]
+keywords: [television, rust, programming, fuzzy, tui, alexpasmantier]
 status: draft
 ---
 

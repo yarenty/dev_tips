@@ -1,6 +1,6 @@
 ---
 title: Formats
-keywords: [formats]
+keywords: [format]
 status: draft
 ---
 

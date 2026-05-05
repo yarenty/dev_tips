@@ -1,7 +1,7 @@
 ---
 title: marena
 main_link: https://lmarena.ai/
-keywords: [leaderboards, inspection, llm, ml, lmarena, seal, scale, leaderboard]
+keywords: [leaderboard, inspection, llm, ml, lmarena, seal, scale]
 status: draft
 ---
 

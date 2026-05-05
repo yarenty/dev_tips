@@ -1,7 +1,7 @@
 ---
 title: System Prompt
 main_link: https://github.com/yarenty/prompt_learning?tab=readme-ov-file
-keywords: [system-prompt, system-prompts, llm, ml, yarenty, status, prompt, learning]
+keywords: [system-prompts, llm, ml, yarenty, status, prompt, learning]
 status: draft
 ---
 

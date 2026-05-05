@@ -1,7 +1,7 @@
 ---
 title: SeaQuery
 main_link: https://crates.io/crates/sea-query
-keywords: [seaquery, data, rust, programming, query, table, postgres, dynamic]
+keywords: [seaquery, data, rust, programming, query, table, postgres]
 status: draft
 ---
 

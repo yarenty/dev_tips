@@ -1,7 +1,7 @@
 ---
 title: Cursive
 main_link: https://github.com/mimblewimble/grin
-keywords: [cursive, rust, programming, view, crates, views, provides]
+keywords: [cursive, rust, programming, views, crates]
 status: draft
 ---
 

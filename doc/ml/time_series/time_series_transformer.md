@@ -1,7 +1,7 @@
 ---
 title: Time Series Transformer
 main_link: https://github.com/allen-chiang/Time-Series-Transformer
-keywords: [time-series-transformer, time-series, ml, time, data, series, transformer]
+keywords: [time-series-transformer, time-series, ml, time, data, series, transformers]
 status: draft
 ---
 

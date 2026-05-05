@@ -1,7 +1,7 @@
 ---
 title: Tao
 main_link: https://github.com/qarmin/czkawka
-keywords: [tao, gui, rust, programming, crate, chkawka, taocopy, item]
+keywords: [tao, gui, rust, programming, crates, chkawka, taocopy]
 status: draft
 ---
 

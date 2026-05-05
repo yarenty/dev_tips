@@ -1,7 +1,7 @@
 ---
 title: PUFF
 main_link: https://github.com/hansonkd/puff
-keywords: [python, interop, rust, programming, high, level, build, graphql]
+keywords: [python, interop, rust, programming, level, graphql]
 status: draft
 ---
 

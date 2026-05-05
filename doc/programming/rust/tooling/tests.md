@@ -1,7 +1,7 @@
 ---
 title: mockall
 main_link: https://crates.io/crates/mockall
-keywords: [tests, tooling, rust, programming, crates, test, mock, turmoil]
+keywords: [test, tooling, rust, programming, crates, mock, turmoil]
 status: draft
 ---
 

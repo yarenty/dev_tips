@@ -1,7 +1,7 @@
 ---
 title: ripgrep
 main_link: https://crates.io/crates/ripgrep
-keywords: [ripgrep, tooling, rust, programming, crates, search, files, binary]
+keywords: [ripgrep, tooling, rust, programming, crates, search, binary]
 status: draft
 ---
 

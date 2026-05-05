@@ -1,7 +1,7 @@
 ---
 title: YEW
 main_link: https://github.com/yewstack/yew
-keywords: [yew, web, rust, programming, developers, javascript, framework, webassembly]
+keywords: [yew, web, rust, programming, developers, javascript, frameworks, webassembly]
 status: draft
 ---
 

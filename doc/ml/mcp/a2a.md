@@ -1,7 +1,7 @@
 ---
 title: Agent2Agent
 main_link: https://github.com/google/A2A
-keywords: [a2a, mcp, ml, agent, agents, task, each]
+keywords: [a2a, mcp, ml, agents, task]
 status: draft
 ---
 

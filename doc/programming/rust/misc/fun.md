@@ -1,7 +1,7 @@
 ---
 title: bats
 main_link: https://crates.io/crates/bats
-keywords: [fun, misc, rust, programming, crates, spooooky, app, printing]
+keywords: [fun, misc, rust, programming, crates, spooooky, printing]
 status: draft
 ---
 

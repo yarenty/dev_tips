@@ -1,7 +1,7 @@
 ---
 title: patchbay.pub
 main_link: 
-keywords: [patchbay, messaging, pubsub, pub, iot, create]
+keywords: [patchbay, messaging, pubsub, pub, iot]
 status: draft
 ---
 

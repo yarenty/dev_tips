@@ -1,7 +1,7 @@
 ---
 title: HyperFS
 main_link: https://crates.io/crates/hyperfs
-keywords: [hyperfs, web, rust, programming, crates, simple, server, files]
+keywords: [hyperfs, web, rust, programming, crates, server]
 status: draft
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Lake soul
 main_link: https://github.com/lakesoul-io/LakeSoul
-keywords: [lakesoul, datafusion, data, rust, supports, lake, lakehouse, acid]
+keywords: [lakesoul, datafusion, data, rust, lake, lakehouse, acid]
 status: draft
 ---
 

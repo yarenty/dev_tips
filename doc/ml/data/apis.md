@@ -1,7 +1,7 @@
 ---
 title: API access to data
 main_link: https://datausa.io/api/data?drilldowns=Nation&measures=Population
-keywords: [apis, data, ml, api, json, public, random]
+keywords: [apis, data, ml, api, json, random]
 status: draft
 ---
 

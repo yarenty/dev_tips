@@ -1,7 +1,7 @@
 ---
 title: Valgrind
 main_link: 
-keywords: [debugger, linux, tools, programs, bugs, university, bug]
+keywords: [debugger, linux, tools, programs, bugs, university]
 status: draft
 ---
 

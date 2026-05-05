@@ -1,7 +1,7 @@
 ---
 title: Pake
 main_link: https://github.com/tw93/Pake
-keywords: [pake, gui, rust, programming, command, line, tauri, mac]
+keywords: [pake, gui, rust, programming, command, line, tauri]
 status: draft
 ---
 

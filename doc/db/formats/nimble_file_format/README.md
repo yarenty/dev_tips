@@ -1,6 +1,6 @@
 ---
 title: Nimble File Format
-keywords: [nimble_file_format]
+keywords: [nimble-file-format]
 status: draft
 ---
 

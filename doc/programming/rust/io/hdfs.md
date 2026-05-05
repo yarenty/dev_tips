@@ -1,7 +1,7 @@
 ---
 title: libhdfs3
 main_link: https://github.com/ArroyoSystems/arroyo
-keywords: [hdfs, rust, programming, python, data, library, fast]
+keywords: [hdfs, rust, programming, python, data, library]
 status: draft
 ---
 

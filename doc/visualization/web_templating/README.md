@@ -1,6 +1,6 @@
 ---
 title: Web Templating
-keywords: [web_templating]
+keywords: [web-templating]
 status: draft
 ---
 

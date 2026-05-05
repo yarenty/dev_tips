@@ -1,7 +1,7 @@
 ---
 title: obsetrvability on wasm
 main_link: https://github.com/dylibso/observe-sdk
-keywords: [obsetrvability-on-wasm, tooling, rust, programming, dylibso, observe, sdk, obsetrvability]
+keywords: [obsetrvability-on-wasm, tooling, rust, programming, dylibso, observe, sdk, observability]
 status: draft
 ---
 

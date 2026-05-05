@@ -1,7 +1,7 @@
 ---
 title: maturin
 main_link: https://github.com/PyO3/maturin
-keywords: [maturin, interop, rust, programming, pyo3, build, python, windows]
+keywords: [maturin, interop, rust, programming, pyo3, python, windows]
 status: draft
 ---
 

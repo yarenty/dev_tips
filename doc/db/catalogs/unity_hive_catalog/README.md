@@ -1,6 +1,6 @@
 ---
 title: Unity Hive Catalog
-keywords: [unity_hive_catalog]
+keywords: [unity-hive-catalog]
 status: draft
 ---
 

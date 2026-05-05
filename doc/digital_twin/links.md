@@ -1,7 +1,7 @@
 ---
 title: Links
 main_link: https://www.ibm.com/topics/what-is-a-digital-twin
-keywords: [links, digital-twin, ibm, digital, twins, explore]
+keywords: [links, digital-twin, ibm, digital, explore]
 status: draft
 ---
 

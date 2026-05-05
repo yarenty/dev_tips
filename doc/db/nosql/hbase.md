@@ -1,7 +1,7 @@
 ---
 title: hbase
 main_link: 
-keywords: [hbase, nosql, db, opts, usr, local, root]
+keywords: [hbase, nosql, db, opts, usr, root]
 status: draft
 ---
 

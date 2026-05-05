@@ -1,7 +1,7 @@
 ---
 title: gluten
 main_link: https://github.com/apache/incubator-gluten?tab=readme-ov-file
-keywords: [gluten, datafusion, data, rust, spark, native, velox, build]
+keywords: [gluten, datafusion, data, rust, spark, native, velox]
 status: draft
 ---
 

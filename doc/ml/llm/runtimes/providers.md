@@ -1,7 +1,7 @@
 ---
 title: providers
 main_link: https://block.github.io/goose/docs/getting-started/providers
-keywords: [providers, runtimes, llm, ml, deepseek, ollama, model, goose]
+keywords: [providers, runtimes, llm, ml, deepseek, ollama, models, goose]
 status: draft
 ---
 

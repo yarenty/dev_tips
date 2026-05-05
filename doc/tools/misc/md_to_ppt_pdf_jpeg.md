@@ -1,7 +1,7 @@
 ---
 title: MARP
 main_link: https://github.com/marp-team/marp-cli
-keywords: [md-to-ppt-pdf-jpeg, misc, tools, pptx, slide, deck, images]
+keywords: [md-to-ppt-pdf-jpeg, misc, tools, pptx, slide, deck, image]
 status: draft
 ---
 

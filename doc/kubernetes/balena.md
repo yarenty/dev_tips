@@ -1,7 +1,7 @@
 ---
 title: Balena
 main_link: https://www.balena.io/
-keywords: [balena, kubernetes, iot, fleet, flexible, built]
+keywords: [balena, kubernetes, iot, fleet, flexible]
 status: draft
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: hummingbot
 main_link: https://github.com/hummingbot/hummingbot
-keywords: [hummingbot-python, trading, strategies, framework, exchanges, connectors]
+keywords: [hummingbot-python, trading, strategies, frameworks, exchanges, connectors]
 status: draft
 ---
 

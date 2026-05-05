@@ -1,7 +1,7 @@
 ---
 title: joshuto
 main_link: https://github.com/kamiyaa/joshuto
-keywords: [joshuto, tooling, rust, programming, crates, terminal, file, manager]
+keywords: [joshuto, tooling, rust, programming, crates, terminal, manager]
 status: draft
 ---
 

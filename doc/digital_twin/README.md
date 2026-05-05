@@ -1,6 +1,6 @@
 ---
 title: Digital Twin
-keywords: [digital_twin]
+keywords: [digital-twin]
 status: draft
 ---
 

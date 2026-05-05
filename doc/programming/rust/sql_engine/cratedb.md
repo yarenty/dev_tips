@@ -1,7 +1,7 @@
 ---
 title: CrateDB
 main_link: https://crate.io/docs/crate/reference/en/5.0/general/user-defined-functions.html
-keywords: [cratedb, sql-engine, rust, programming, crate, docs, reference, general]
+keywords: [cratedb, sql-engine, rust, programming, crates, docs, reference, general]
 status: draft
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Rocket
 main_link: https://rocket.rs/
-keywords: [rocket, web, rust, programming, hello, john, simple, type]
+keywords: [rocket, web, rust, programming, hello, john, type]
 status: draft
 ---
 

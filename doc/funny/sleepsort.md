@@ -1,7 +1,7 @@
 ---
 title: Sleep SORT algorithm
 main_link: https://gist.github.com/Thatkookooguy/3b7ce09a9f80a5e6541175104a5d49e9
-keywords: [sleepsort, funny, sort, sleep, sorting, list]
+keywords: [sleepsort, funny, sort, sleep, sorting]
 status: draft
 ---
 

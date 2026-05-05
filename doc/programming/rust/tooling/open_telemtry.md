@@ -1,7 +1,7 @@
 ---
 title: open telemtry
 main_link: https://github.com/open-telemetry/opentelemetry-rust#ecosystem
-keywords: [open-telemtry, tooling, rust, programming, open, opentelemetry, telemtry, docs]
+keywords: [open-telemtry, tooling, rust, programming, opentelemetry, telemtry, docs]
 status: draft
 ---
 

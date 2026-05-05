@@ -1,7 +1,7 @@
 ---
 title: prometheus
 main_link: 
-keywords: [prometheus, observability, brew, services, usr, local]
+keywords: [prometheus, observability, brew, services, usr]
 status: draft
 ---
 

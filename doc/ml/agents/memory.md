@@ -1,7 +1,7 @@
 ---
 title: Memory
 main_link: https://github.com/FoundationAgents/awesome-foundation-agents?tab=readme-ov-file#memory
-keywords: [memory, agents, ml, retrieval, llms, systems, rag]
+keywords: [memory, agents, ml, retrieval, llm, system, rag]
 status: draft
 ---
 

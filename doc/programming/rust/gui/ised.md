@@ -1,7 +1,7 @@
 ---
 title: Iced
 main_link: https://github.com/iced-rs/iced
-keywords: [ised, gui, rust, programming, message, counter, increment, decrement]
+keywords: [ised, gui, rust, programming, messages, counter, increment, decrement]
 status: draft
 ---
 

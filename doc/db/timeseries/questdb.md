@@ -1,7 +1,7 @@
 ---
 title: QuestDB
 main_link: https://github.com/questdb/questdb
-keywords: [questdb, timeseries, db, time, sql, series, a8umf64rbs8]
+keywords: [questdb, time-series, db, time, sql, series, a8umf64rbs8]
 status: draft
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: InfluxDB
 main_link: http://localhost:8086/
-keywords: [influxdb, timeseries, db, enter, click, initial, user]
+keywords: [influxdb, time-series, db, enter, click, initial]
 status: draft
 ---
 

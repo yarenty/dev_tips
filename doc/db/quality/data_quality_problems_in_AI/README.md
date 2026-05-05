@@ -1,6 +1,6 @@
 ---
 title: Data Quality Problems In AI
-keywords: [data_quality_problems_in_ai]
+keywords: [data-quality-problems-in-ai]
 status: draft
 ---
 

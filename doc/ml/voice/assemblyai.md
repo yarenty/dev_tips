@@ -1,7 +1,7 @@
 ---
 title: Speech-to-text
 main_link: https://www.assemblyai.com/build-voice-ai
-keywords: [assemblyai, voice, ml, build, speech, stt, text]
+keywords: [assemblyai, voice, ml, build, speech, stt]
 status: draft
 ---
 

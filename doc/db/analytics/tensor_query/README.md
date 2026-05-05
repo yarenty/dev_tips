@@ -1,6 +1,6 @@
 ---
 title: Tensor Query
-keywords: [tensor_query]
+keywords: [tensor-query]
 status: draft
 ---
 

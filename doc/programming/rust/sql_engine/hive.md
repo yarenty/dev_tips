@@ -1,7 +1,7 @@
 ---
 title: Hive UDF – User Defined Function with Example
 main_link: https://data-flair.training/blogs/hive-udf/
-keywords: [hive, sql-engine, rust, programming, udf, user, defined, function]
+keywords: [hive, sql-engine, rust, programming, udf, defined, function]
 status: draft
 ---
 

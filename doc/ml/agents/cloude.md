@@ -1,7 +1,7 @@
 ---
 title: Cloude
 main_link: https://www.anthropic.com/engineering/building-effective-agents
-keywords: [cloude, agents, ml, anthropic, engineering, building, effective]
+keywords: [cloude, agents, ml, anthropic, engineering, effective]
 status: draft
 ---
 

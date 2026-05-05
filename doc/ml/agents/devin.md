@@ -1,7 +1,7 @@
 ---
 title: OpenDevin
 main_link: https://github.com/OpenDevin/OpenDevin
-keywords: [devin, agents, ml, open, source, issues, welcome]
+keywords: [devin, agents, ml, open, issues, welcome]
 status: draft
 ---
 

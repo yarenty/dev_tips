@@ -1,7 +1,7 @@
 ---
 title: Salsa
 main_link: https://github.com/salsa-rs/salsa?tab=readme-ov-file
-keywords: [salsa, concurrency, rust, programming, inputs, key, queries, functions]
+keywords: [salsa, concurrency, rust, programming, inputs, key, queries, function]
 status: draft
 ---
 

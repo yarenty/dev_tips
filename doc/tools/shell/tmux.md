@@ -1,7 +1,7 @@
 ---
 title: Tmux
 main_link: 
-keywords: [tmux, shell, tools, ubuntu, mac, etc, install]
+keywords: [tmux, shell, tools, ubuntu, etc, install]
 status: draft
 ---
 

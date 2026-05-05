@@ -1,7 +1,7 @@
 ---
 title: toyDB
 main_link: https://github.com/erikgrinaker/toydb/tree/main**
-keywords: [toydb, relational, db, sql, distributed, based, main]
+keywords: [toydb, relational, db, sql, distributed, based]
 status: draft
 ---
 

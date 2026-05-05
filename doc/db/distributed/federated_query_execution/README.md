@@ -1,6 +1,6 @@
 ---
 title: Federated Query Execution
-keywords: [federated_query_execution]
+keywords: [federated-query-execution]
 status: draft
 ---
 

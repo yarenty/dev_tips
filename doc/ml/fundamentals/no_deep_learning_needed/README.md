@@ -1,6 +1,6 @@
 ---
 title: No Deep Learning Needed
-keywords: [no_deep_learning_needed]
+keywords: [no-deep-learning-needed]
 status: draft
 ---
 

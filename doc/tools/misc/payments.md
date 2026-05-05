@@ -1,7 +1,7 @@
 ---
 title: hyperswitch
 main_link: https://github.com/juspay/hyperswitch?tab=readme-ov-file
-keywords: [payments, misc, tools, payment, support, reduce, processors]
+keywords: [payments, misc, tools, reduce, processors]
 status: draft
 ---
 

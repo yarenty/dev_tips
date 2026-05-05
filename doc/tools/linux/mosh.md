@@ -1,7 +1,7 @@
 ---
 title: Mosh
 main_link: https://github.com/dustinkirkland/byobu
-keywords: [mosh, linux, tools, byobu, terminal, source, gplv3]
+keywords: [mosh, linux, tools, byobu, terminal, gplv3]
 status: draft
 ---
 

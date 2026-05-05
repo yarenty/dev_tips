@@ -1,7 +1,7 @@
 ---
 title: Claxon
 main_link: https://github.com/ruuda/claxon
-keywords: [claxon, misc, rust, programming, flac, example, decoding, decoder]
+keywords: [claxon, misc, rust, programming, flac, decoding, decoder]
 status: draft
 ---
 

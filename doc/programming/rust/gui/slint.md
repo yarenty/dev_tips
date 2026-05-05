@@ -1,7 +1,7 @@
 ---
 title: Slint
 main_link: https://github.com/slint-ui/slint-rust-template
-keywords: [slint, gui, rust, programming, tao, cargo, build, crate]
+keywords: [slint, gui, rust, programming, tao, cargo, crates]
 status: draft
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: sqlparser
 main_link: https://crates.io/crates/sqlparser
-keywords: [sqlparser, data, rust, programming, sql, parser, crate, specific]
+keywords: [sqlparser, data, rust, programming, sql, parser, crates, specific]
 status: draft
 ---
 

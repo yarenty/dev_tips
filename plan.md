@@ -36,7 +36,7 @@ When you finish a task, update the status line in-place and add a short `> comme
 | P3 | Folder restructure (rename / move / merge) | agent | ✅ DONE |
 | P4 | Normalize landing pages to `README.md` | agent | ✅ DONE |
 | P5 | Rewrite each article to the standard template | agent (batched) | ✅ DONE (auto-stub pass) |
-| P6 | Cross-link & keyword pass (graph polish) | agent | ⬜ TODO |
+| P6 | Cross-link & keyword pass (graph polish) | agent | 🟨 IN PROGRESS |
 | P7 | Rebuild `SUMMARY.md` & verify `mdbook build` | agent | ⬜ TODO |
 | P8 | Final review & cleanup | user | ⬜ TODO |
 
@@ -456,12 +456,12 @@ Zero residual `"split this file"` TODO bullets in the vault.
 
 Goal: turn the rewritten files into a real Obsidian graph.
 
-- [ ] **P6.1** ⬜ TODO — Build `inventory/keywords.md`: union of all `keywords:` frontmatter, with counts. Spot near-duplicates (e.g. `llm` vs `llms` vs `large-language-model`) and produce a canonical list.
-  > comment:
-- [ ] **P6.2** ⬜ TODO — Sweep all articles to canonicalise keywords against the list from P6.1.
-  > comment:
-- [ ] **P6.3** ⬜ TODO — For each article, ensure at least 2 internal `[[wikilinks]]` exist; if not, add suggestions.
-  > comment:
+- [x] **P6.1** ✅ DONE — Build `inventory/keywords.md`: union of all `keywords:` frontmatter, with counts. Spot near-duplicates (e.g. `llm` vs `llms` vs `large-language-model`) and produce a canonical list.
+  > comment: agent zed-opus — 1471 distinct keywords / 3540 occurrences. 80 near-duplicate buckets, 11 Levenshtein-1 fuzzy groups. Generator at `inventory/build_keywords.py`; outputs at `inventory/keywords.tsv` (full sorted) and `inventory/keywords.md` (analysis). Notable: many noise keywords (`the`, `code`, `text`, `pool`, `tree`, `user`, `make` etc.) leaked in from auto-derived body words — will be stripped in P6.2. Real near-duplicates to canonicalise: `tool`/`tools`, `crate`/`crates`, `model`/`models`, `agent`/`agents`, `time-series`/`timeseries`/`time_series`, `digital-twin`/`digital_twin`, `knowledge-graph`/`knowledge_graph`, etc.
+- [x] **P6.2** ✅ DONE — Sweep all articles to canonicalise keywords against the list from P6.1.
+  > comment: agent zed-opus — generator at `inventory/canonicalise_keywords.py`. Two passes: first stripped 173 noise occurrences via DROPLIST + canonicalised 80 near-duplicate buckets via CANONICAL map; second pass closed the remaining 13 small buckets. **Result:** 1471 distinct keywords → **1356**, 3540 occurrences → **3360**. Near-duplicate buckets 80 → **1** (just `nat` vs `nats` — intentionally kept separate; `nat` = Network Address Translation, `nats` = NATS messaging system). Path-derived keywords (first 4 in each article) are protected from the DROPLIST. Underscores normalised to hyphens. Common Obsidian-friendly forms chosen (e.g. `time-series`, `digital-twin`, `knowledge-graph`).
+- [ ] **P6.3** 🟨 IN PROGRESS — For each article, ensure at least 2 internal `[[wikilinks]]` exist; if not, add suggestions.
+  > comment: agent zed-opus started.
 - [ ] **P6.4** ⬜ TODO — Verify every directory `README.md` lists every article in that directory (no orphans).
   > comment:
 

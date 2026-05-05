@@ -1,7 +1,7 @@
 ---
 title: hashbrown
 main_link: 
-keywords: [hashbrown, core, rust, programming, now, part, official, hashmap]
+keywords: [hashbrown, core, rust, programming, now, official, hashmap]
 status: draft
 ---
 

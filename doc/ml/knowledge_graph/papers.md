@@ -1,7 +1,7 @@
 ---
 title: Research papers
 main_link: https://github.com/beikacao/blog/tree/main/2021-10-22
-keywords: [papers, knowledge-graph, ml, graph, knowledge, research, main]
+keywords: [papers, knowledge-graph, ml, graph, knowledge]
 status: draft
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Dialoguer
 main_link: https://github.com/console-rs/dialoguer/tree/master/examples
-keywords: [dialoguer, rust, programming, console, best, tree, master]
+keywords: [dialoguer, rust, programming, console, tree, master]
 status: draft
 ---
 

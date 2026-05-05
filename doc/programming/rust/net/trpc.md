@@ -1,7 +1,7 @@
 ---
 title: tRPC
 main_link: https://trpc.io/
-keywords: [trpc, rust, programming, automatic, end, easy, add]
+keywords: [trpc, rust, programming, automatic, end]
 status: draft
 ---
 

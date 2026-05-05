@@ -1,7 +1,7 @@
 ---
 title: Redis
 main_link: https://github.com/redis/redis
-keywords: [redis, nosql, db, data, structures, server, commands]
+keywords: [redis, nosql, db, data, structures, server, command]
 status: draft
 ---
 

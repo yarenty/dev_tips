@@ -1,7 +1,7 @@
 ---
 title: Trippy
 main_link: https://github.com/fujiapple852/trippy
-keywords: [trace, linux, tools, see, install, bsd, windows]
+keywords: [trace, linux, tools, see, install, windows]
 status: draft
 ---
 

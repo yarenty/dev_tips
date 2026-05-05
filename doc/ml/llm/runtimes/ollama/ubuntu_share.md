@@ -1,7 +1,7 @@
 ---
 title: Ubuntu Share
 main_link: 
-keywords: [ubuntu-share, ollama, runtimes, llm, ubuntu, machine, configure, server]
+keywords: [ubuntu-share, ollama, runtimes, llm, machine, configure, server]
 status: draft
 ---
 

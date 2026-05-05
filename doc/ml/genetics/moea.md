@@ -1,7 +1,7 @@
 ---
 title: The MOEA Framework
 main_link: 
-keywords: [moea, genetics, ml, framework, algorithms, source, nsga]
+keywords: [moea, genetics, ml, frameworks, algorithms, nsga]
 status: draft
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: smolagents
 main_link: https://huggingface.co/blog/smolagents
-keywords: [smolagents, agents, ml, hub, code, model, support]
+keywords: [smolagents, agents, ml, hub, code, models]
 status: draft
 ---
 

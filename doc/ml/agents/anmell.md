@@ -1,7 +1,7 @@
 ---
 title: anmell
 main_link: https://github.com/Anemll/Anemll?tab=readme-ov-file
-keywords: [anmell, agents, ml, anemll, ane, provide, models]
+keywords: [anmell, agents, ml, anemll, ane, models]
 status: draft
 ---
 

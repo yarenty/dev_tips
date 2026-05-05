@@ -1,7 +1,7 @@
 ---
 title: Rust xcode plugin
 main_link: https://github.com/BrainiumLLC/rust-xcode-plugin
-keywords: [rust-xcode-plugin, gui, rust, programming, xcode, plugin, brainiumllc, working]
+keywords: [rust-xcode-plugin, gui, rust, programming, xcode, plugins, brainiumllc]
 status: draft
 ---
 

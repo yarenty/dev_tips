@@ -1,7 +1,7 @@
 ---
 title: chroma
 main_link: https://github.com/chroma-core/chroma
-keywords: [chroma, vector, db, python, llm, fully, open]
+keywords: [chroma, vector, db, python, llm, fully]
 status: draft
 ---
 

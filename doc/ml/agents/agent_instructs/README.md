@@ -1,6 +1,6 @@
 ---
 title: Agent Instructs
-keywords: [agent_instructs]
+keywords: [agent-instructs]
 status: draft
 ---
 

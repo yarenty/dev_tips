@@ -1,7 +1,7 @@
 ---
 title: eyre
 main_link: https://github.com/awslabs/aws-sdk-rust
-keywords: [eyre, learning, rust, programming, file, crates, env, dotenv]
+keywords: [eyre, learning, rust, programming, crates, env, dotenv]
 status: draft
 ---
 

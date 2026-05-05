@@ -1,7 +1,7 @@
 ---
 title: sniffnet
 main_link: https://github.com/GyulyVGC/sniffnet?tab=readme-ov-file
-keywords: [sniffnet, security, tools, gyulyvgc, application, internet, cross]
+keywords: [sniffnet, security, tools, gyulyvgc, internet, cross]
 status: draft
 ---
 

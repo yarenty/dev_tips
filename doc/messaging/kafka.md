@@ -1,7 +1,7 @@
 ---
 title: Kafka
 main_link: https://github.com/fede1024/rust-rdkafka
-keywords: [kafka, messaging, apache, topics, topic, cluster]
+keywords: [kafka, messaging, apache, topics, cluster]
 status: draft
 ---
 

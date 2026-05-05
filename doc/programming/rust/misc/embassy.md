@@ -1,7 +1,7 @@
 ---
 title: Embassy
 main_link: https://github.com/embassy-rs/embassy
-keywords: [embassy, misc, rust, programming, usb, async, tasks, hals]
+keywords: [embassy, misc, rust, programming, usb, async, task, hals]
 status: draft
 ---
 

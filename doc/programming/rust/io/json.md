@@ -1,7 +1,7 @@
 ---
 title: JSON
 main_link: https://www.arroyo.dev/blog/fast-arrow-json-decoding
-keywords: [json, rust, programming, fast, arrow, transformer, serde]
+keywords: [json, rust, programming, fast, arrow, transformers, serde]
 status: draft
 ---
 

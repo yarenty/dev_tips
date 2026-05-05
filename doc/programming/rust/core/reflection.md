@@ -1,7 +1,7 @@
 ---
 title: reflect
 main_link: https://crates.io/crates/reflect
-keywords: [reflection, core, rust, programming, macro, api, author, type]
+keywords: [reflection, core, rust, programming, macros, api, author, type]
 status: draft
 ---
 

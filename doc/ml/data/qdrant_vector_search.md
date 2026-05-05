@@ -1,7 +1,7 @@
 ---
 title: qdrant
 main_link: https://github.com/qdrant/qdrant
-keywords: [qdrant-vector-search, data, ml, search, vector, engine, applications]
+keywords: [qdrant-vector-search, data, ml, search, vector, engine]
 status: draft
 ---
 

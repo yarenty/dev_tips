@@ -1,7 +1,7 @@
 ---
 title: edgeDB
 main_link: https://www.edgedb.com/
-keywords: [edgedb, relational, db, object, sql, graph, schema]
+keywords: [edgedb, relational, db, objects, sql, graph, schema]
 status: draft
 ---
 

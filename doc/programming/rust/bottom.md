@@ -1,7 +1,7 @@
 ---
 title: bottom
 main_link: https://crates.io/crates/bottom
-keywords: [bottom, rust, programming, nice, text, graphs, crates]
+keywords: [bottom, rust, programming, nice, graph, crates]
 status: draft
 ---
 

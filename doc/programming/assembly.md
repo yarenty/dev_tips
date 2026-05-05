@@ -1,7 +1,7 @@
 ---
 title: Assembly
 main_link: https://github.com/hackclub/some-assembly-required
-keywords: [assembly, programming, examples, understand, going, approachable]
+keywords: [assembly, programming, example, understand, going, approachable]
 status: draft
 ---
 

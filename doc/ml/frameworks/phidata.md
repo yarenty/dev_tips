@@ -1,7 +1,7 @@
 ---
 title: PhiData
 main_link: https://github.com/phidatahq/phidata/blob/main/README.md
-keywords: [phidata, frameworks, ml, assistant, llms, tools, llama3]
+keywords: [phidata, frameworks, ml, assistant, llm, tools, llama3]
 status: draft
 ---
 

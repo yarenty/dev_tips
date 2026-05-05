@@ -1,7 +1,7 @@
 ---
 title: watchexec
 main_link: https://github.com/watchexec/watchexec
-keywords: [watchexec, tooling, rust, programming, simple, crates, software, boring]
+keywords: [watchexec, tooling, rust, programming, crates, software, boring]
 status: draft
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: postgresql
 main_link: https://pigsty.io/blog/pg/pg-eat-db-world/
-keywords: [postgresql, relational, db, postgres, null, explain, data]
+keywords: [postgresql, relational, db, postgres, explain, data]
 status: draft
 ---
 

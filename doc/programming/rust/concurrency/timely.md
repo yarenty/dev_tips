@@ -1,7 +1,7 @@
 ---
 title: Timely Dataflow
 main_link: https://github.com/frankmcsherry/timely-dataflow
-keywords: [timely, concurrency, rust, programming, dataflow, differential, project, part]
+keywords: [timely, concurrency, rust, programming, dataflow, differential]
 status: draft
 ---
 

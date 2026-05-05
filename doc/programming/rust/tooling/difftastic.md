@@ -1,7 +1,7 @@
 ---
 title: difftastic
 main_link: https://crates.io/crates/difftastic
-keywords: [difftastic, tooling, rust, programming, crates, structural, diff, tool]
+keywords: [difftastic, tooling, rust, programming, crates, structural, diff, tools]
 status: draft
 ---
 

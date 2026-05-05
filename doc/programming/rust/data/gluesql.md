@@ -1,7 +1,7 @@
 ---
 title: GlueSQL
 main_link: https://crates.io/crates/gluesql
-keywords: [gluesql, data, rust, programming, sql, database, crates, library]
+keywords: [gluesql, data, rust, programming, sql, databases, crates, library]
 status: draft
 ---
 

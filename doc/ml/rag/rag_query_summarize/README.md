@@ -1,6 +1,6 @@
 ---
 title: RAG Query Summarize
-keywords: [rag_query_summarize]
+keywords: [rag-query-summarize]
 status: draft
 ---
 

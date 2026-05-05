@@ -1,7 +1,7 @@
 ---
 title: thiserror
 main_link: https://crates.io/crates/thiserror
-keywords: [thiserror, learning, rust, programming, error, crates, library, provides]
+keywords: [thiserror, learning, rust, programming, error, crates, library]
 status: draft
 ---
 

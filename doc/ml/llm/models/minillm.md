@@ -1,7 +1,7 @@
 ---
 title: miniLLM
 main_link: https://huggingface.co/MiniLLM?utm_source=tldrai
-keywords: [minillm, models, llm, ml, huggingface, utm, source, tldrai]
+keywords: [minillm, models, llm, ml, huggingface, utm, tldrai]
 status: draft
 ---
 

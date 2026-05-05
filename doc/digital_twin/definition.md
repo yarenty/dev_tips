@@ -1,7 +1,7 @@
 ---
 title: Definition
 main_link: https://www.ibm.com/blogs/internet-of-things/iot-cheat-sheet-digital-twin/
-keywords: [definition, digital-twin, digital, twins, twin, systems]
+keywords: [definition, digital-twin, digital, system]
 status: draft
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: clido
 main_link: https://github.com/Zij-IT/clido
-keywords: [clido, tooling, rust, programming, zij, todo, cli, list]
+keywords: [clido, tooling, rust, programming, zij, todo, cli]
 status: draft
 ---
 

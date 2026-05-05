@@ -1,7 +1,7 @@
 ---
 title: Databend
 main_link: https://github.com/datafuselabs/databend/issues/5731
-keywords: [databend, sql-engine, rust, programming, udf, function, sql, create]
+keywords: [databend, sql-engine, rust, programming, udf, function, sql]
 status: draft
 ---
 

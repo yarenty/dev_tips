@@ -1,7 +1,7 @@
 ---
 title: WooriDB
 main_link: https://github.com/naomijub/wooridb
-keywords: [wooridb, data, rust, programming, entity, database, time, datetime]
+keywords: [wooridb, data, rust, programming, entity, databases, time, datetime]
 status: draft
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Simple short intro to rust
 main_link: https://fasterthanli.me/articles/a-half-hour-to-learn-rust
-keywords: [simple-short-intro-to-rust, learning, rust, programming, simple, short, intro, fasterthanli]
+keywords: [simple-short-intro-to-rust, learning, rust, programming, intro, fasterthanli]
 status: draft
 ---
 

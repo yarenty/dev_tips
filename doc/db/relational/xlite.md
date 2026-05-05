@@ -1,7 +1,7 @@
 ---
 title: XLite
 main_link: https://github.com/x2bool/xlite
-keywords: [xlite, relational, db, excel, open, document, sqlite]
+keywords: [xlite, relational, db, excel, documents, sqlite]
 status: draft
 ---
 

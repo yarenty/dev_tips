@@ -1,7 +1,7 @@
 ---
 title: rawsql
 main_link: https://crates.io/crates/rawsql
-keywords: [rawsql, sql-engine, rust, programming, sql, crates, files, comment]
+keywords: [rawsql, sql-engine, rust, programming, sql, crates, comment]
 status: draft
 ---
 

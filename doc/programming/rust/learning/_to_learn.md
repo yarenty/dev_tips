@@ -1,7 +1,7 @@
 ---
 title: Books
 main_link: https://github.com/DovAmir/awesome-design-patterns
-keywords: [to-learn, learning, rust, programming, atomics, traits, book, error]
+keywords: [to-learn, learning, rust, programming, atomics, traits, books, error]
 status: draft
 ---
 

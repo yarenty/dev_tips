@@ -1,7 +1,7 @@
 ---
 title: fauna
 main_link: https://fauna.com/home-2
-keywords: [fauna, relational, db, graphql, udfs, database, data]
+keywords: [fauna, relational, db, graphql, udf, databases, data]
 status: draft
 ---
 

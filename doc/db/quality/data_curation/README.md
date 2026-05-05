@@ -1,6 +1,6 @@
 ---
 title: Data Curation
-keywords: [data_curation]
+keywords: [data-curation]
 status: draft
 ---
 

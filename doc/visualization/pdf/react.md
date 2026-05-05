@@ -1,7 +1,7 @@
 ---
 title: React Print
 main_link: https://github.com/OnedocLabs/react-print-pdf
-keywords: [react, visualization, print, components, hello, pdfs]
+keywords: [react, visualization, print, components, hello]
 status: draft
 ---
 

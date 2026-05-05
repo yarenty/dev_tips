@@ -1,7 +1,7 @@
 ---
 title: Mobile
 main_link: https://github.com/BrainiumLLC/cargo-mobile/?tab=readme-ov-file
-keywords: [mobile, gui, rust, programming, android, cargo, bevy, project]
+keywords: [mobile, gui, rust, programming, android, cargo, bevy]
 status: draft
 ---
 

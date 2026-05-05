@@ -1,7 +1,7 @@
 ---
 title: Removing refusals with transformers
 main_link: https://github.com/Sumandora/remove-refusals-with-transformers
-keywords: [abliteration, inspection, llm, ml, model, refusals, transformers, models]
+keywords: [abliteration, inspection, llm, ml, models, refusals, transformers]
 status: draft
 ---
 

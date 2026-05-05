@@ -1,7 +1,7 @@
 ---
 title: barrel
 main_link: https://crates.io/crates/barrel
-keywords: [barrel, data, rust, programming, sql, crates, database, builder]
+keywords: [barrel, data, rust, programming, sql, crates, databases, builder]
 status: draft
 ---
 

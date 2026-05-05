@@ -1,7 +1,7 @@
 ---
 title: burn
 main_link: https://github.com/tracel-ai/burn
-keywords: [burn, tools, ml, backend, see, rust, framework]
+keywords: [burn, tools, ml, backend, rust, frameworks]
 status: draft
 ---
 

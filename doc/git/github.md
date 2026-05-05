@@ -1,7 +1,7 @@
 ---
 title: Github README
 main_link: https://github.com/coderjojo/creative-profile-readme
-keywords: [git, readme, coderjojo, profile, list]
+keywords: [git, readme, coderjojo, profile]
 status: draft
 ---
 

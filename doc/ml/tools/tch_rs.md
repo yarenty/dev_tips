@@ -1,7 +1,7 @@
 ---
 title: tch-rs
 main_link: https://github.com/LaurentMazare/ocaml-torch
-keywords: [tch-rs, tools, ml, libtorch, pytorch, python, model]
+keywords: [tch-rs, tools, ml, libtorch, pytorch, python, models]
 status: draft
 ---
 

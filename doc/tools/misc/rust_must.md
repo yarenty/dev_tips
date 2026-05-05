@@ -1,7 +1,7 @@
 ---
 title: Bacon
 main_link: https://github.com/j178/prek
-keywords: [rust-must, misc, tools, hooks, install, cargo, commit]
+keywords: [rust-must-have, misc, tools, hooks, install, cargo, commit]
 status: draft
 ---
 

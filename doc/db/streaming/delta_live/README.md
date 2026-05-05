@@ -1,6 +1,6 @@
 ---
 title: Delta Live
-keywords: [delta_live]
+keywords: [delta-live]
 status: draft
 ---
 

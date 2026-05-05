@@ -1,7 +1,7 @@
 ---
 title: mysql
 main_link: https://crates.io/crates/mysql
-keywords: [mysql, data, rust, programming, support, pool, windows, see]
+keywords: [mysql, data, rust, programming, pool, windows]
 status: draft
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: starship
 main_link: https://crates.io/crates/starship
-keywords: [starship, tooling, rust, programming, fast, customizable, crates, prompt]
+keywords: [starship, tooling, rust, programming, customizable, crates, prompt]
 status: draft
 ---
 

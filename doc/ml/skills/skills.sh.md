@@ -1,7 +1,7 @@
 ---
 title: Skills.sh
 main_link: https://skills.sh/
-keywords: [skills-sh, skills, ml, agents, install, example, planning]
+keywords: [skills-sh, skills, ml, agents, install, planning]
 status: draft
 ---
 

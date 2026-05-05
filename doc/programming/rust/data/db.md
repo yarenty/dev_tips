@@ -1,7 +1,7 @@
 ---
 title: diesel
 main_link: https://github.com/sfackler/r2d2
-keywords: [db, data, rust, programming, sql, database, query, mysql]
+keywords: [db, data, rust, programming, sql, databases, query, mysql]
 status: draft
 ---
 
