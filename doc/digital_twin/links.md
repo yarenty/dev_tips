@@ -1,89 +1,68 @@
 ---
-title: Links
+title: Digital twin — curated reading list
 main_link: https://www.ibm.com/topics/what-is-a-digital-twin
-keywords: [ibm, digital, explore]
-status: draft
+keywords: [digital-twin, ibm, mathworks, reading-list, references]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# Links
+# Digital twin — curated reading list
 
 **Main link:** <https://www.ibm.com/topics/what-is-a-digital-twin>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Curated external reading on digital twins, organised by vendor / topic. The two big vendor stories worth knowing — **IBM** (Maximo, Rhapsody / MBSE, Watson IoT) and **MathWorks** (predictive-maintenance training course) — plus the IBM × Siemens Service-Lifecycle-Management announcement and a couple of customer case studies.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Use this as a **launch pad**, not a destination. The IBM links are the cleanest entry point to the *industrial* framing of digital twins (asset management, MBSE, IoT integration); the MathWorks chapters are the cleanest entry point to the *engineering* framing (state-space models, predictive maintenance, MATLAB/Simulink workflow). Read [[definition]] in this folder first for the conceptual grounding, then dip into vendor links here when you want to see how a specific tool ships the idea.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[definition]] — Distilled conceptual definition.
+- [[isc2022]] — NVIDIA + BMW supercomputing-scale narrative.
+- [[bmw]] — Concrete deployment case.
+- [[nvidia_omniverse]] — Tooling-stack alternative.
+- IBM Engineering Lifecycle Management (ELM) docs — once you go past the marketing pages.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[definition]] — Definition _(score 31.3)_
-- [[isc2022]] — Isc2022 _(score 22.4)_
-- [[scilab]] — Scilab _(score 16.0)_
-- [[nvidia]] — Nvidia _(score 10.4)_
-- [[cps]] — Cps _(score 10.4)_
+- [[definition]] — Start here.
+- [[nvidia_omniverse]] — NVIDIA-stack alternative reading path.
+- [[isc2022]] — Supercomputing-scale framing.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#links` `#digital-twin` `#ibm` `#digital` `#twins` `#explore`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#digital-twin` `#ibm` `#mathworks` `#reading-list` `#references`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### IBM family
 
+- **IBM topic page**: <https://www.ibm.com/topics/what-is-a-digital-twin> — the canonical IBM definition (also distilled in [[definition]]).
+- **IBM blog — IoT cheat sheet**: <https://www.ibm.com/blogs/internet-of-things/iot-cheat-sheet-digital-twin/> — engineer's-POV case studies.
+- **IBM Digital Twin Exchange**: <https://www.ibm.com/products/digital-twin-exchange> — vendor-marketplace approach for sharing twins.
+- **IBM Engineering Systems Design / Rhapsody**: <https://www.ibm.com/products/systems-design-rhapsody> — MBSE tooling.
+- **IBM Maximo Asset Management**: <https://www.ibm.com/products/maximo/asset-management> — operational-side asset twins + AR overlay.
+- **IBM developer article — Digital twins and IoT**: <https://developer.ibm.com/articles/digital-twins-and-the-internet-of-things/>
 
+### IBM × Siemens
 
-https://www.ibm.com/topics/what-is-a-digital-twin
+- **Siemens × IBM SLM announcement (2020)**: <https://newsroom.ibm.com/2020-06-17-Siemens-and-IBM-Deliver-Service-Lifecycle-Management-Solution> — joint Service-Lifecycle-Management product combining Maximo + Siemens Teamcenter.
 
+### Customer stories
 
-https://newsroom.ibm.com/2020-06-17-Siemens-and-IBM-Deliver-Service-Lifecycle-Management-Solution
+- **Hong Kong ASTRI / Rhapsody**: <https://www.ibm.com/case-studies/hong-kong-astri-engineering-rhapsody>
+- **Rotterdam port (IoT digital twin)**: <https://www.ibm.com/blogs/internet-of-things/iot-digital-twin-rotterdam/>
+- **UCSF Health & Maximo (smart medical buildings)**: <https://www.ibm.com/blogs/internet-of-things/iot-ucsf-health-and-maximo-smart-medical-buildings/>
+- **Asset operations transformation**: <https://reliabilityweb.com/articles/entry/digital-twin-transforming-asset-operations>
 
-https://reliabilityweb.com/articles/entry/digital-twin-transforming-asset-operations
+### MathWorks (Simulink-centric)
 
-https://www.ibm.com/products/digital-twin-exchange
-
-
-https://www.ibm.com/products/systems-design-rhapsody
-
-
-https://www.ibm.com/products/maximo/asset-management
-
-https://developer.ibm.com/articles/digital-twins-and-the-internet-of-things/
-
-
-https://www.ibm.com/case-studies/hong-kong-astri-engineering-rhapsody
-
-https://www.ibm.com/blogs/internet-of-things/iot-digital-twin-rotterdam/
-
-
-https://www.ibm.com/blogs/internet-of-things/iot-ucsf-health-and-maximo-smart-medical-buildings/
-
-
-
-
-https://explore.mathworks.com/digital-twins-for-predictive-maintenance
-https://explore.mathworks.com/digital-twins-for-predictive-maintenance/chapter-02-36US-762YW.html
-https://explore.mathworks.com/digital-twins-for-predictive-maintenance/chapter-03-36US-764YW.html
-https://explore.mathworks.com/digital-twins-for-predictive-maintenance/chapter-04-36US-761YW.html
-https://explore.mathworks.com/digital-twins-for-predictive-maintenance/chapter-05-36US-763YW.html
+- **Digital Twins for Predictive Maintenance — Course landing**: <https://explore.mathworks.com/digital-twins-for-predictive-maintenance>
+  - **Chapter 02**: <https://explore.mathworks.com/digital-twins-for-predictive-maintenance/chapter-02-36US-762YW.html>
+  - **Chapter 03**: <https://explore.mathworks.com/digital-twins-for-predictive-maintenance/chapter-03-36US-764YW.html>
+  - **Chapter 04**: <https://explore.mathworks.com/digital-twins-for-predictive-maintenance/chapter-04-36US-761YW.html>
+  - **Chapter 05**: <https://explore.mathworks.com/digital-twins-for-predictive-maintenance/chapter-05-36US-763YW.html>

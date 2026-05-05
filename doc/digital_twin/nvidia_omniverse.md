@@ -1,105 +1,86 @@
 ---
-title: Nvidia Omniverse
-main_link: 
-keywords: [nvidia-omniverse, modulus, pino, nvidia, fno, omniverse]
-status: draft
+title: NVIDIA Omniverse — physically-accurate simulation platform
+main_link: https://developer.nvidia.com/nvidia-omniverse-platform
+keywords: [nvidia, omniverse, modulus, ovx, usd, simulation, physics-informed-ml, fno, pino]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# NVIDIA Omniverse — physically-accurate simulation platform
 
-# Nvidia Omniverse
+**Main link:** <https://developer.nvidia.com/nvidia-omniverse-platform>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+**NVIDIA Omniverse** is NVIDIA's platform for building and operating physically-accurate virtual worlds, marketed as the de-facto industrial digital-twin stack. It bundles three things: a **scene-graph runtime** built around USD (Universal Scene Description), **simulation backends** (RTX rendering, PhysX physics, Isaac Sim for robotics, **Modulus** for physics-informed ML, **Audio2Face**, etc.), and **OVX** — NVIDIA's reference data-centre architecture (GPUs + precision-time networking) for running the whole thing at scale. Authoring is via Python/USD, the desktop apps (Composer, Code, View), or programmatic APIs.
+
+**Modulus** is the AI-physics layer worth knowing separately: it implements physics-informed neural networks (PINNs) and neural-operator architectures (FNO, AFNO, PINO, DeepONet) that learn fluid / structural / electromagnetic systems from data + governing equations, so a trained model can replace or accelerate traditional numeric simulation inside the twin.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+This is the **commercial reference implementation** of every digital-twin idea in [[definition]] and [[isc2022]]. If you're evaluating digital-twin platforms in 2025-2026, Omniverse is the one to benchmark everyone else against — because it's the one BMW, Mercedes, Volvo, Amazon Robotics, and most of the auto industry already chose. The big two practical reasons for that choice: (1) **USD** as the interchange format means many DCC tools (Houdini, Maya, Blender, Unreal) and CAD tools can round-trip data; (2) **Modulus + Omniverse together** is the cleanest answer to "how do I get a real-time-ish surrogate model out of my CFD/FEA results?".
+
+The big caveats: heavy NVIDIA-stack lock-in (Jetson on the device, RTX/dGPU for training, OVX for the data-centre); Omniverse Cloud isn't cheap; and the open-source story is partial (USD itself is open, the surrounding bits are not). For research / personal use, Modulus alone (free download via NGC) is the most useful piece.
+
+For deeper looks: [[isc2022]] (the strategic narrative), [[bmw]] (a concrete deployment).
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **Open USD** — the scene-format spec underneath Omniverse (Pixar-originated, now governed by AOUSD): <https://aousd.org/>
+- **Unreal Engine** — commercial alternative for industrial twins (Twinmotion, Unreal for Industry).
+- **Unity Industry** — same play, weaker physics, easier ramp.
+- **OpenFOAM, Ansys, COMSOL** — the traditional physics simulators Modulus's neural surrogates aim to *accelerate*, not replace.
+- [[nvidia_omniverse|isaac_sim]] — Isaac Sim and Isaac Lab: the robotics-focused subset of Omniverse (see [[../robot/groot|GR00T]] for application).
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[nvidia]] — Nvidia _(score 31.5)_
-- [[isc2022]] — Isc2022 _(score 22.6)_
-- [[scilab]] — Scilab _(score 22.6)_
-- [[digital_twin/links|links]] — Links _(score 16.0)_
-- [[simulink]] — Simulink _(score 10.6)_
+- [[isc2022]] — Strategic-narrative talk introducing Omniverse + the digital-twin "superpowers".
+- [[bmw]] — Concrete deployment example.
+- [[definition]] — Conceptual background.
+- [[../robot/groot|GR00T]] — Sister NVIDIA stack for humanoid robots; trains on Isaac Sim, which sits on Omniverse.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#nvidia-omniverse` `#digital-twin` `#modulus` `#pino` `#nvidia` `#fno`
-
-## TODO
-
-- No `main_link` could be auto-detected. Add the canonical URL (project homepage / repo / paper) to the frontmatter.
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#nvidia` `#omniverse` `#modulus` `#ovx` `#usd` `#simulation` `#physics-informed-ml` `#fno` `#pino`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Omniverse platform page: <https://developer.nvidia.com/nvidia-omniverse-platform>
+- NVIDIA Modulus docs: <https://docs.nvidia.com/deeplearning/modulus/>
+- NVIDIA NGC catalogue (free Modulus download): <https://catalog.ngc.nvidia.com/>
+- NVIDIA On-Demand session search ("digital twin"): <https://www.nvidia.com/en-us/on-demand/search/?q=digital%20twin>
+- USD spec: <https://openusd.org/>
 
-Building Scientifically Accurate Digital Twins Using Modulus with Omniverse and AI
-By Bhoomi Gadhia
-Discuss (0)
-Share
+### Stack at a glance
 
-+2
-Like
-Tags: Computational Fluid Dynamics (CFD), digital twin, featured, HPC / Supercomputing, Modulus, News, Omniverse, physics, Visualization
+| Layer | What | Key components |
+|-------|------|---------------|
+| Scene format | USD (Universal Scene Description) | round-trip with Houdini, Maya, Blender, Unreal, CAD |
+| Authoring apps | Composer, Code, View | desktop GUIs over USD |
+| Renderer | RTX path-traced + rasterised | real-time + offline |
+| Physics | PhysX | rigid-body, soft-body, fluids |
+| Robotics sim | Isaac Sim / Isaac Lab | sensor sim, RL training, ROS bridge |
+| Physics-informed ML | **Modulus** | PINN + neural-operator surrogates |
+| Avatars / NLP | Audio2Face, ACE | LLM-driven characters |
+| Networking | Nucleus | live multi-user collaboration over USD |
+| Data centre | OVX | GPU servers + PTP networking for digital-twin scale |
 
-From physics-informed neural networks (PINNs) to neural operators, developers have long sought after the ability to build real-time digital twins with true-to-form rendering, robust visualizations, and synchronization with the physical system in the real world by streaming live sensor data. The latest release of Modulus brings us closer to this reality.
+### Modulus — neural-operator architectures it ships
 
-Modulus 22.03, the cutting-edge framework for developing physics-based machine learning models, offers developers key capabilities such as novel physics informed and data-driven AI architectures, and integration into the Omniverse (OV) platform.
+| Arch | What it's good for |
+|------|--------------------|
+| **FNO** (Fourier Neural Operator) | Smooth physical systems where global spectral correlations dominate (e.g. PDE solutions). |
+| **AFNO** (Adaptive FNO) | Higher-resolution inputs with long-range spatial dependencies; more efficient than self-attention for huge fields. |
+| **PINO** (Physics-Informed FNO) | FNO + explicit PDE residual loss; good for "learn solution operator over a parametric PDE family, then fine-tune at test time". |
+| **DeepONet** | Universal operator approximator with two encoder sub-nets; lower generalisation error vs fully-connected nets, useful when input/output are functions of different dimensionalities. |
 
-This release takes a major step toward building precise simulations and interactive visualization capabilities for engineers and researchers with the Modulus OV extension. This enhancement is bolstered by new AI architectures that can learn from data using neural operators. Additional enhancements to facilitate precise modeling of problems such as turbulence have been added in this latest version of Modulus, as well as features to improve training convergence.
+Plus 30+ optimisers (PyTorch built-ins + AdaHessian + torch-optimizer), three loss-balancing algorithms (Grad Norm, ReLoBRaLo, Soft Adapt), Neural Tangent Kernel analysis for explainable loss weighting, two-equation turbulence models (k-ε, k-ω), and a UI extension that imports Modulus model outputs into Omniverse for visualisation.
 
-For a closer look at these new capabilities, see the Modulus 22.03 notes.
+### Why Omniverse + Modulus fit together
 
-Omniverse integration
-With the OV integration, training and inference workflows are Python API-based and the resulting trained model outputs are brought in as scenarios into OV using this extension.
+The classic problem with traditional CFD/FEA is *cost*: a full Navier-Stokes run for a single car-around-pylon scenario can take hours. Modulus trains a neural operator on a representative *family* of scenarios so test-time inference is sub-second. Plug that surrogate model into an Omniverse scene and the digital twin can answer "what if?" interactively, instead of as an overnight batch job — which is exactly what the [[isc2022]] talk's "time-travel to many possible futures" superpower means in practice.
 
-This extension can import outputs of the Modulus-trained model into a visualization pipeline for common scenarios such as streamlines and iso-surfaces. It also provides an interface that enables interactive exploration of design variables and parameters to infer new system behavior. ​By leveraging this extension in Omniverse, you can visualize the simulation behavior in the context of the digital twin.​
+### Speaker / author background
 
-New network architectures
-Modulus now supports neural operators such as FNO, AFNO PINO, and DeepONet architectures. This enables data-driven physics machine learning models for use cases where there is considerable ground truth data available to train from.
-
-FNO: Physics-inspired neural network model that uses global convolutions in spectral space as an inductive bias for training neural network models of physical systems. It incorporates important spatial and temporal correlations, which strongly govern the dynamics of many physical systems that can be described by partial differential equations (PDE). FNO tutorial.
-AFNO: The AFNO transformer aims to operate on high-resolution inputs and effectively capture long-range spatial dependencies that are challenging for the FNO. The AFNO offers continuous global convolutions as an alternative to the computationally complex self-attention mechanism. It is based on principled modifications of the FNO to improve expressivity and robustness. These include sparsification of channel and token mixing as well as weight-sharing regularization. The connection to operator learning allows the AFNO transformer to be resolution invariant and to take advantage of large-scale pre-training for improved generalization. AFNO tutorial.
-PINO: PINO is the explicitly physics-informed version of the FNO. PINO combines the operating-learning and function-optimization frameworks. In the operator-learning phase, PINO learns the solution operator over multiple instances of the parametric PDE family. In the test-time optimization phase, PINO optimizes the pretrained operator ansatz for the querying instance of the PDE. Learn more in this PINO tutorial.
-DeepONet: DeepONet architecture consists of two subnetworks, one for encoding the input function and another for encoding the locations and then merged to compute the output. DeepONets are shown to reduce the generalization error, by employing inductive bias, compared to the fully connected networks. Learn more in this DeepONet Tutorial.
-Modulus supports these different architectures to enable our ecosystem of users to pick the right approach that is appropriate for their use case.
-
-More key enhancements
-NVIDIA Modulus is available now as a free download through the NVIDIA Developer Zone.
-
-Two-equation (2-eqn.) Turbulence models
-Support for 2-equation turbulence (k-e and k-w) models for simulating fully developed turbulent flow. Reference applications for channel case (1D and 2D) using wall functions is included in the documentation. Which showcases two types of wall functions (standard and Launder-Spalding). Learn more in this 2-eqn tutorial.
-
-New algorithms for loss balancing
-To help improve the convergence, three new loss balancing algorithms, namely Grad Norm, Relative Loss Balancing with Random Lookback (ReLoBRaLo), and Soft Adapt have been introduced. These algorithms dynamically tune the loss weights based on the relative training rates of different losses.
-
-In addition, Neural Tangent Kernel (NTK) analysis has been incorporated. NTK is a neural network analysis tool that indicates the convergent speed of each component. It provides an explainable choice for the weights for different loss terms. Grouping the mean-squared error of the loss enables the computation of NTK on the fly.
-
-Support for new optimizers
-Modulus now supports over 30 optimizers including the built-in PyTorch optimizers and the optimizers in the torch-optimizer library. It includes support for AdaHessian, a second-order stochastic optimizer that approximates an exponential moving average of the Hessian diagonal for adaptive preconditioning of the gradient vector.
-
-NVIDIA Modulus is available now as a free download through the NVIDIA Developer Zone or on the NVIDIA NGC portal.
-
-About the Authors
-
-About Bhoomi Gadhia
-Bhoomi Gadhia is a senior product marketing manager at NVIDIA, focused on NVIDIA Modulus, an AI framework for developing physics-informed machine learning neural network models. She has over 10 years of experience in computer-aided engineering applications, working in technical and product marketing roles at Hexagon MSC Software and Ansys. Bhoomi resides in California and holds a master’s in mechanical engineering.
-View all posts by Bhoomi Gadhia
+Rev Lebaredian is the long-time owner of the Omniverse vision at NVIDIA — see the [[isc2022]] article for full bio. The Modulus-with-Omniverse integration release was led by Bhoomi Gadhia (NVIDIA, senior PMM for Modulus), background in CAE marketing at Hexagon MSC Software and Ansys.

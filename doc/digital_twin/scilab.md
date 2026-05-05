@@ -1,53 +1,67 @@
 ---
-title: Scilab
-main_link: 
-keywords: [scilab, nvidia]
-status: draft
+title: Scilab — open-source numerical computation
+main_link: https://www.scilab.org/
+keywords: [scilab, xcos, numerical-computation, matlab-alternative, simulation, open-source]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
+# Scilab — open-source numerical computation
 
-# Scilab
+**Main link:** <https://www.scilab.org/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+**Scilab** is a free, open-source MATLAB-style numerical-computation environment (originally INRIA, now Dassault Systèmes / ESI Group). It ships its own scripting language, a large standard library for linear algebra, signal processing, optimisation, and statistics, and **Xcos** — a graphical block-diagram editor for modelling and simulating dynamical systems (Scilab's answer to Simulink). Cross-platform, GPL/CeCILL-licensed.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Scilab matters in this folder because Xcos is a **realistic open-source path to building a digital-twin model** of mechanical, thermal, electrical, or hydraulic systems without paying for MATLAB/Simulink. The language and toolboxes overlap with MATLAB enough that most academic textbooks "just work" with minor syntax tweaks; the community is smaller, the polish is lower, but the price is zero. Reach for it when (a) you need symbolic/numerical sim of a dynamical system, (b) the target is research / teaching / one-off engineering rather than a long-term platform commitment, and (c) MATLAB licensing is a non-starter. Pair with [[simulink|Simulink]] notes for context if you're moving from one to the other.
+
+For real digital-twin operations at industrial scale, Scilab is undersized — see [[nvidia_omniverse]] or [[bmw|BMW iFACTORY]] for the upper end.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[simulink]] — Commercial counterpart from MathWorks; the industry standard for control-system block-diagram simulation.
+- **GNU Octave** — closer to MATLAB's *language* (most `.m` files run unmodified); no built-in block-diagram editor.
+- **OpenModelica** — open-source Modelica implementation; better choice for *equation-based* multi-domain physical modelling.
+- **Julia** + ModelingToolkit.jl — modern alternative for numerically-heavy simulation work.
+- **Python** + SciPy + control-systems-library — most-used open alternative for new projects.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[nvidia]] — Nvidia _(score 22.6)_
-- [[isc2022]] — Isc2022 _(score 22.6)_
-- [[nvidia_omniverse]] — Nvidia Omniverse _(score 22.6)_
-- [[digital_twin/links|links]] — Links _(score 16.0)_
-- [[simulink]] — Simulink _(score 10.6)_
+- [[simulink]] — Commercial counterpart in this folder.
+- [[definition]] — Conceptual background on digital twins.
+- [[nvidia_omniverse]] — Industrial-scale alternative tooling stack.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#scilab` `#digital-twin`
-
-## TODO
-
-- No `main_link` could be auto-detected. Add the canonical URL (project homepage / repo / paper) to the frontmatter.
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#scilab` `#xcos` `#numerical-computation` `#matlab-alternative` `#simulation` `#open-source`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Project site: <https://www.scilab.org/>
+- Download: <https://www.scilab.org/download>
+- Xcos overview: <https://www.scilab.org/about/scilab/xcos>
+- Tutorials & docs: <https://www.scilab.org/learn>
+- Scilab on GitLab: <https://gitlab.com/scilab/scilab>
 
+### Quick orientation
 
+| Component | What |
+|-----------|------|
+| Scilab CLI / IDE | Console + script editor + variable browser |
+| Scilab language | MATLAB-like syntax (not 100 % compatible) |
+| Standard library | Linear algebra, FFT, optimisation, ODE/PDE solvers, statistics |
+| **Xcos** | Block-diagram modelling/simulation (analogous to Simulink) |
+| ATOMS package manager | Community packages — control, image processing, etc. |
+| Toolboxes | Numeric optimisation, signal proc, statistics, embedded codegen |
+
+### Typical usage in a digital-twin context
+
+1. Build the **plant model** in Xcos as a block diagram (mechanical / electrical / thermal blocks).
+2. Add a **controller** block-diagram around it (PID, state-space, MPC).
+3. Run simulations with parameter sweeps to characterise behaviour.
+4. Export the model as C code (Xcos code-gen) for the embedded target.
+5. (For digital-twin sync) feed real sensor data via Scilab's serial / TCP / OPC bindings into the Xcos simulation to compare predicted vs measured.
