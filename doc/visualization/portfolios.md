@@ -1,62 +1,52 @@
 ---
-title: Example data visualisations portfolios
-main_link: https://public.tableau.com/app/profile/kim.tricker#!/
-keywords: [portfolios, example, public, tableau]
-status: draft
+title: Data-visualisation portfolios worth studying
+main_link: https://public.tableau.com/
+keywords: [portfolios, dataviz, tableau, inspiration, visualisation-examples]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Data-visualisation portfolios worth studying
 
-# Example data visualisations portfolios
-
-**Main link:** <https://public.tableau.com/app/profile/kim.tricker#!/>
+**Main link:** <https://public.tableau.com/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+A short rotating list of practitioner portfolios that I've found genuinely useful as references for *what good data viz looks like in the wild*. Most live on [Tableau Public](https://public.tableau.com/), which is a free hosting/discovery platform for interactive Tableau dashboards — useful as inspiration even if you'll never use Tableau yourself.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Looking at finished portfolios is a much faster way to develop taste than reading another book on chart design. Three things worth paying attention to as you scroll:
+
+1. **Restraint** — the best vizzes use one accent colour, lots of white space, and small multiples. Default Tableau and default Plotly look amateur for a reason.
+2. **The annotation layer** — titles, callouts, source attribution. The good portfolios make these load-bearing parts of the chart, not afterthoughts.
+3. **Interaction discipline** — when *do* tooltips / brush-and-link / drill-downs help, and when do they just hide the headline? Most of the best examples don't lean on interaction; the chart works as a static image first.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [The Pudding](https://pudding.cool/) — long-form data journalism, see [[pudding]].
+- [Information is Beautiful](https://informationisbeautiful.net/) — David McCandless's curated showcase.
+- [r/dataisbeautiful](https://www.reddit.com/r/dataisbeautiful/) — varied quality but a steady stream.
+- [[dataviz_resources]] — books and courses on the craft itself.
+- [[ggtech]] — branded chart aesthetics from tech companies.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[visualization/grafana|grafana]] — Grafana _(score 16.0)_
-- [[rerun]] — rerun _(score 16.0)_
-- [[javascript]] — Javascript _(score 16.0)_
-- [[tips]] — Help _(score 16.0)_
-- [[diagrams]] — Diagrams _(score 16.0)_
+- [[pudding]] — *The Pudding* — interactive data essays
+- [[dataviz_resources]] — books, courses
+- [[ggtech]] — branded chart styling
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#portfolios` `#visualization` `#example` `#public` `#tableau` `#app`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#visualization` `#portfolios` `#dataviz` `#tableau` `#inspiration`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+A few starting points (these go stale faster than I update them — treat as seeds, not a complete list):
 
-# Example data visualisations portfolios
+- Kim Tricker on Tableau Public: <https://public.tableau.com/app/profile/kim.tricker>
+- Okoampah Philip Kwaning on Tableau Public: <https://public.tableau.com/app/profile/okoampah.philip.kwaning>
+- Alina Bolat (GitHub): <https://github.com/alinabolat>
 
-
-https://public.tableau.com/app/profile/kim.tricker#!/
-
-https://public.tableau.com/app/profile/okoampah.philip.kwaning#!/
-
-https://github.com/alinabolat
+The Tableau Public **Viz of the Day** stream is also worth bookmarking: <https://public.tableau.com/app/discover/viz-of-the-day>.

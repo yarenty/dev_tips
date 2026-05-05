@@ -1,86 +1,59 @@
 ---
-title: Fonts
-main_link: https://github.com/rubjo/victor-mono
-keywords: [fonts, mono, victor, iosevka]
-status: draft
+title: Programming fonts
+main_link: https://github.com/be5invis/Iosevka
+keywords: [fonts, programming-fonts, iosevka, fira-code, victor-mono, ligatures, monospace]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Programming fonts
 
-# Fonts
-
-**Main link:** <https://github.com/rubjo/victor-mono>
+**Main link:** <https://github.com/be5invis/Iosevka>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+A short curated list of monospace fonts I've actually used or wanted to use for code. The big axes are:
+
+- **Ligature support** — `=>`, `!=`, `>=`, `->` rendered as a single glyph. Polarising; some people love it, some refuse to use it.
+- **Width** — Iosevka and Victor Mono are narrow, Source Code Pro and Space Mono are wider; matters when you have a 100-col rule and a vertical split.
+- **Italics shape** — Victor Mono ships handwritten cursive italics, which look fantastic in code with `*comments in italics*` if your editor highlights them that way.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Pick a font with **ligatures off by default** when you're new to a codebase — they hide the actual character sequence and that matters when you're grepping or pairing. Once you're comfortable, ligatures genuinely improve scan-ability of `>=` vs `=>` etc.
+
+For long sessions my preference is **Iosevka** (variable-width, dense, hyper-customisable through the build matrix at <https://typeof.net/Iosevka/customizer>), with **Victor Mono** as the "fun font" for slides, demos, and personal projects (the cursive italics make screen-recordings noticeably more readable). **Fira Code** is the safe default if you don't want to think about it — it ships everywhere and the ligature set is well-tuned.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [JetBrains Mono](https://www.jetbrains.com/lp/mono/) — JetBrains' own; ligatures on by default; ships with their IDEs.
+- [Cascadia Code](https://github.com/microsoft/cascadia-code) — Microsoft's; default in Windows Terminal.
+- [Hack](https://sourcefoundry.org/hack/) — utilitarian, no ligatures, very legible at small sizes.
+- [Berkeley Mono](https://berkeleygraphics.com/typefaces/berkeley-mono/) — paid, beautiful; cited by a lot of designer-developers.
+- [Nerd Fonts](https://www.nerdfonts.com/) — patches the above with extra glyphs (file-type icons, powerline arrows) so terminal prompts and file-tree plugins render correctly.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[visualization/grafana|grafana]] — Grafana _(score 16.0)_
-- [[rerun]] — rerun _(score 16.0)_
-- [[pudding]] — Pudding _(score 16.0)_
-- [[tips]] — Help _(score 16.0)_
-- [[javascript]] — Javascript _(score 16.0)_
+- [[diagrams]] — when you want a font for *labelling* diagrams, not for code
+- [[plotters]] — chart text rendering also depends on font choices
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#fonts` `#visualization` `#mono` `#victor` `#iosevka` `#code`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#visualization` `#fonts` `#programming-fonts` `#iosevka` `#fira-code` `#victor-mono` `#ligatures` `#monospace`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+| Font | Repo / link | Ligatures | Notes |
+|------|-------------|-----------|-------|
+| **Iosevka** | <https://github.com/be5invis/Iosevka> | yes | narrow, build-your-own variant via the customiser |
+| **Fira Code** | <https://github.com/tonsky/FiraCode> | yes | the canonical "ligature font"; safe default |
+| **Victor Mono** | <https://github.com/rubjo/victor-mono> | yes | cursive italics; great for screencasts |
+| **mononoki** | <https://madmalik.github.io/mononoki/> | no | clean, readable; small project |
+| **Source Code Pro** | <https://github.com/adobe-fonts/source-code-pro> | no | Adobe's; wide, very legible |
+| **Space Mono** | <https://fonts.google.com/specimen/Space+Mono> | no | Google Fonts; distinctive, slightly retro |
+| **JetBrains Mono** | <https://www.jetbrains.com/lp/mono/> | yes | default in JetBrains IDEs |
+| **Cascadia Code** | <https://github.com/microsoft/cascadia-code> | yes | default in Windows Terminal |
+| **Hack** | <https://sourcefoundry.org/hack/> | no | utilitarian, terminal-friendly |
 
-# Fonts
-
-## Fira code
-
-https://github.com/rubjo/victor-mono
-
-
-## Iosevka
-
-https://github.com/be5invis/Iosevka
-
-
-
-## mononoki
-
-
-https://madmalik.github.io/mononoki/
-
-
-## Source code pro
-
-https://github.com/adobe-fonts/source-code-pro
-
-
-
-## space mono
-
-https://fonts.google.com/specimen/Space+Mono
-
-## Victor mono - HIPSTER ;-)
-
-https://github.com/rubjo/victor-mono
+If your terminal prompt uses [Powerline](https://github.com/powerline/powerline) / [Starship](https://starship.rs/) / similar with file-type glyphs, you almost certainly want a [Nerd Fonts](https://www.nerdfonts.com/) patched build of whichever font above you pick.

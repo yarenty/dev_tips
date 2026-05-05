@@ -1,69 +1,57 @@
 ---
-title: Diagrams
-main_link: https://github.com/jgraph/drawio-desktop/releases/tag/v16.5.1
-keywords: [diagrams, lang, jgraph, drawio, desktop]
-status: draft
+title: "Diagrams: drawio + D2"
+main_link: https://www.drawio.com/
+keywords: [diagrams, drawio, d2lang, mermaid, plantuml, architecture-diagrams]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
+# Diagrams: drawio + D2
 
-# Diagrams
+**Main link:** <https://www.drawio.com/>
 
-**Main link:** <https://github.com/jgraph/drawio-desktop/releases/tag/v16.5.1>
+Repo (desktop app): <https://github.com/jgraph/drawio-desktop>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Two complementary tools for the "I need a diagram" problem:
+
+- **[drawio](https://www.drawio.com/)** (a.k.a. diagrams.net) — a free, GUI-driven, click-and-drag editor that runs in the browser, as a desktop app, or embedded in VS Code / Confluence / Jira. Files are saved as XML (or `.drawio`/`.drawio.svg`/`.drawio.png` so they round-trip), so they're git-friendly even though the editor is point-and-click. Works fully offline.
+- **[D2](https://d2lang.com/)** — a modern declarative diagram language by [Terrastruct](https://terrastruct.com/), think "what Mermaid should have been". You write `a -> b: label`, you get a SVG/PNG. Great for architecture diagrams that live next to code in a repo.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Use the right tool for the medium:
+
+- **In a doc / wiki / slide deck**, drawio. The output looks polished out of the box and non-technical reviewers can edit it.
+- **In a git repo / README / mdbook**, D2 (or Mermaid if your renderer supports it but not D2). Text-as-source means PRs can review diagram changes the same way they review code, and the rendered SVG is a build artifact rather than a binary blob.
+
+The thing to avoid is reaching for [PlantUML](https://plantuml.com/) for new work — its DSL is older and less ergonomic than D2's, and you need a Java runtime to render it. The thing to also avoid is keeping diagrams *only* as Visio/OmniGraffle/Lucid files; both lock you into a vendor and break offline.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [Mermaid](https://mermaid.js.org/) — Markdown-native diagram language; supported by GitHub, GitLab, mdbook (via `mdbook-mermaid`), Obsidian. Less expressive than D2 but more widely rendered.
+- [Excalidraw](https://excalidraw.com/) — hand-drawn-look whiteboard for sketches and quick brain dumps.
+- [PlantUML](https://plantuml.com/) — older declarative DSL; avoid for new work.
+- [[manim]] — when "diagram" really means "animation that explains a concept".
+- [[rerun]] — when "diagram" really means "what is the robot/sensor seeing right now".
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[rust]] — Plotters _(score 16.0)_
-- [[visualization/grafana|grafana]] — Grafana _(score 16.0)_
-- [[rerun]] — rerun _(score 16.0)_
-- [[tips]] — Help _(score 16.0)_
-- [[javascript]] — Javascript _(score 16.0)_
+- [[manim]] — when you need an animation, not a static diagram
+- [[rerun]] — multimodal time-aware visualisation (robotics)
+- [[plotters]] — Rust crate for generating chart images programmatically
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#diagrams` `#visualization` `#lang` `#jgraph` `#drawio` `#desktop`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#visualization` `#diagrams` `#drawio` `#d2lang` `#mermaid` `#architecture` `#docs-as-code`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- drawio web app: <https://app.diagrams.net/>
+- drawio desktop releases: <https://github.com/jgraph/drawio-desktop/releases>
+- D2 language: <https://d2lang.com/>
+- D2 playground: <https://play.d2lang.com/>
 
-## Diagrams
-
-https://www.diagrams.net/
-
-https://github.com/jgraph/drawio-desktop/releases/tag/v16.5.1
-
-also offline
-
-
-## D2 LANG
-
-
-https://d2lang.com/
-
-
-perfect for visulaization diagrams!!
+drawio supports many output formats including `.drawio.svg` (an SVG with the editable XML embedded), which is a great pick when you want both git-diffable text *and* a directly viewable image.

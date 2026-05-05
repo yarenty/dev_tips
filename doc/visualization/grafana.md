@@ -1,118 +1,94 @@
 ---
-title: Grafana
-main_link: https://github.com/grafana/mimir?utm_source=tldrnewsletter
-keywords: [grafana, mimir, storage, prometheus]
-status: draft
+title: "Grafana (the dashboard canvas) + Mimir for long-term metrics"
+main_link: https://grafana.com/
+keywords: [grafana, mimir, prometheus, dashboards, observability-overlap]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Grafana (the dashboard canvas) + Mimir for long-term metrics
 
-# Grafana
+**Main link:** <https://grafana.com/>
 
-**Main link:** <https://github.com/grafana/mimir?utm_source=tldrnewsletter>
+Mimir (the long-term Prometheus storage): <https://github.com/grafana/mimir>
+
+> Grafana also has a separate "operator's view" article under `observability/grafana.md` covering the *running and configuring* side. This article is about Grafana **as a visualisation tool** — what you put on the dashboard, not how you keep it alive — plus the long-term metrics layer (Mimir) that makes those dashboards still answer questions a year later.
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+[Grafana](https://grafana.com/) is the de-facto open-source dashboard canvas for time-series data. It connects to dozens of data sources (Prometheus, Loki, Tempo, InfluxDB, MySQL, PostgreSQL, BigQuery, Elasticsearch, ...) and lets you assemble panels — line charts, stat cells, heatmaps, tables — into shareable dashboards. [Grafana Mimir](https://grafana.com/oss/mimir/) is the companion project for *storing* Prometheus metrics at scale (object-store backed, horizontally scalable, multi-tenant) so that the dashboards above keep working past Prometheus's local-disk retention.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Two things people miss when they first reach for Grafana:
+
+1. **It's a viewer, not a database.** Grafana stores almost nothing of value (just dashboard JSON, users, datasource definitions). The interesting state lives in whatever you wired up as a datasource. That makes it cheap and disposable but also means you have to think separately about retention.
+2. **The dashboards are JSON.** Treat them as code. Provision via [grafana-as-code](https://grafana.com/docs/grafana/latest/administration/provisioning/) or [Grafonnet](https://github.com/grafana/grafonnet-lib) / [grafanalib](https://github.com/weaveworks/grafanalib), version them in git, code-review changes. The "click around in the UI to add a panel" workflow is fine for exploration but doesn't scale past a handful of dashboards.
+
+For storage past Prometheus's default ~15-day local retention, **Mimir** is the path of least surprise if you already speak Prometheus — it's wire-compatible, scales to ~1B active series in their published benchmarks, and uses object stores (S3 / GCS / Azure Blob / Swift) for the long-term tier. The alternatives are [Thanos](https://thanos.io/) (older, similar shape) and [VictoriaMetrics](https://victoriametrics.com/) (single-binary friendly, often quoted as more efficient).
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[grafana_obs]] (`observability/grafana.md`) — same product, but framed as "how to run and configure it as part of an observability stack".
+- [[prometheus]] — the canonical metrics source for Grafana.
+- [Loki](https://grafana.com/oss/loki/) — Grafana's logs equivalent of Mimir.
+- [Tempo](https://grafana.com/oss/tempo/) — Grafana's distributed tracing storage.
+- [VictoriaMetrics](https://victoriametrics.com/) / [Thanos](https://thanos.io/) — Mimir alternatives for long-term Prometheus.
+- [[rerun]] — for the *robotics / multimodal* side of "look at signals over time", where Grafana is the wrong tool.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[observability/grafana|grafana]] — grafana _(score 20.9)_
-- [[prometheus]] — prometheus _(score 18.9)_
-- [[tips]] — Help _(score 16.0)_
-- [[rerun]] — rerun _(score 16.0)_
-- [[javascript]] — Javascript _(score 16.0)_
+- [[grafana_obs]] — operator's view (under `observability/`)
+- [[prometheus]] — primary metrics source
+- [[plotters]] — for ad-hoc programmatic plots when a Grafana dashboard is overkill
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#grafana` `#visualization` `#mimir` `#storage` `#prometheus` `#install`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#visualization` `#grafana` `#mimir` `#prometheus` `#dashboards` `#metrics` `#timeseries`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Local install (macOS via Homebrew)
 
-# Grafana
-
-
-http://localhost:3000/?orgId=1
-
-root: q1t5
-
-
-
-## INSTALL
-
-
-https://grafana.com/docs/grafana/latest/installation/mac/
-
-
-```text
-
-==> Caveats
-To have launchd start grafana now and restart at login:
-  brew services start grafana
-Or, if you don't want/need a background service you can just run:
-  grafana-server --config=/usr/local/etc/grafana/grafana.ini --homepath /usr/local/share/grafana --packaging=brew cfg:default.paths.logs=/usr/local/var/log/grafana cfg:default.paths.data=/usr/local/var/lib/grafana cfg:default.paths.plugins=/usr/local/var/lib/grafana/plugins
-==> Summary
-🍺  /usr/local/Cellar/grafana/8.0.2: 4,416 files, 170.5MB
-[/u/l/C/h/3/sbin] : brew services start grafana
-
-==> Successfully started `grafana` (label: homebrew.mxcl.grafana)
-
-
-
-
-
+```sh
+brew install grafana
+brew services start grafana
+# then open http://localhost:3000  (default admin / admin)
 ```
 
+Foreground / no-launchd alternative if you'd rather not install a service:
 
-```text
-To restart grafana after an upgrade:
-  brew services restart grafana
-Or, if you don't want/need a background service you can just run:
-  /usr/local/opt/grafana/bin/grafana-server --config /usr/local/etc/grafana/grafana.ini --homepath /usr/local/opt/grafana/share/grafana --packaging=brew cfg:default.paths.logs=/usr/local/var/log/grafana cfg:default.paths.data=/usr/local/var/lib/grafana cfg:default.paths.plugins=/usr/local/var/lib/grafana/plugins
+```sh
+grafana-server \
+  --config=/usr/local/etc/grafana/grafana.ini \
+  --homepath=/usr/local/share/grafana \
+  --packaging=brew \
+  cfg:default.paths.logs=/usr/local/var/log/grafana \
+  cfg:default.paths.data=/usr/local/var/lib/grafana \
+  cfg:default.paths.plugins=/usr/local/var/lib/grafana/plugins
 ```
 
+Upgrade after `brew upgrade`:
 
-## Intro
+```sh
+brew services restart grafana
+```
 
-https://grafana.com/docs/grafana/latest/getting-started/getting-started/
+### Mimir at a glance
 
+From the project's pitch:
 
+- **Single binary, monolithic mode** for getting started (no extra dependencies).
+- **Horizontally scalable** to ~1B active time series in internal benchmarks.
+- **Global view**: queries can aggregate series from multiple Prometheus instances.
+- **Object-store backed**: AWS S3, GCS, Azure Blob, OpenStack Swift, anything S3-compatible.
+- **HA via replication**: zero-downtime restarts, upgrades, downgrades.
+- **Native multi-tenancy** with per-tenant limits and quality-of-service controls.
 
+### Other useful entry points
 
-
-## Minir
-
-
-https://github.com/grafana/mimir?utm_source=tldrnewsletter
-
-Grafana Mimir is an open source software project that provides a scalable long-term storage for Prometheus. Some of the core strengths of Grafana Mimir include:
-
-- Easy to install and maintain: Grafana Mimir’s extensive documentation, tutorials, and deployment tooling make it quick to get started. Using its monolithic mode, you can get Grafana Mimir up and running with just one binary and no additional dependencies. Once deployed, the best-practice dashboards, alerts, and playbooks packaged with Grafana Mimir make it easy to monitor the health of the system.
-- Massive scalability: You can run Grafana Mimir's horizontally-scalable architecture across multiple machines, resulting in the ability to process orders of magnitude more time series than a single Prometheus instance. Internal testing shows that Grafana Mimir handles up to 1 billion active time series.
-- Global view of metrics: Grafana Mimir enables you to run queries that aggregate series from multiple Prometheus instances, giving you a global view of your systems. Its query engine extensively parallelizes query execution, so that even the highest-cardinality queries complete with blazing speed.
-- Cheap, durable metric storage: Grafana Mimir uses object storage for long-term data storage, allowing it to take advantage of this ubiquitous, cost-effective, high-durability technology. It is compatible with multiple object store implementations, including AWS S3, Google Cloud Storage, Azure Blob Storage, OpenStack Swift, as well as any S3-compatible object storage.
-- High availability: Grafana Mimir replicates incoming metrics, ensuring that no data is lost in the event of machine failure. Its horizontally scalable architecture also means that it can be restarted, upgraded, or downgraded with zero downtime, which means no interruptions to metrics ingestion or querying.
-- Natively multi-tenant: Grafana Mimir’s multi-tenant architecture enables you to isolate data and queries from independent teams or business units, making it possible for these groups to share the same cluster. Advanced limits and quality-of-service controls ensure that capacity is shared fairly among tenants.
+- Grafana docs: <https://grafana.com/docs/grafana/latest/>
+- Getting started: <https://grafana.com/docs/grafana/latest/getting-started/getting-started/>
+- Mimir repo: <https://github.com/grafana/mimir>
+- Provisioning dashboards as YAML/JSON: <https://grafana.com/docs/grafana/latest/administration/provisioning/>

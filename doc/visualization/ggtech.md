@@ -1,56 +1,52 @@
 ---
-title: Ggtech
+title: "ggtech: ggplot2 themes for tech-company logos"
 main_link: https://github.com/ricardo-bion/ggtech
-keywords: [ggtech, ricardo, bion, javascript]
-status: draft
+keywords: [ggtech, ggplot2, r, charts, themes, branded-charts]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-
-# Ggtech
+# ggtech: ggplot2 themes for tech-company logos
 
 **Main link:** <https://github.com/ricardo-bion/ggtech>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+[`ggtech`](https://github.com/ricardo-bion/ggtech) is a small R package by [Ricardo Bion](https://github.com/ricardo-bion) (ex-Airbnb data scientist) that provides [ggplot2](https://ggplot2.tidyverse.org/) themes and palettes mimicking the in-house chart styles of well-known tech companies — Airbnb, Etsy, Facebook, Google, Twitter. You add `+ theme_tech(theme = "airbnb")` and your scatter plot suddenly looks like it came out of one of their data-team blog posts.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Mostly a curiosity / blog-post-aesthetic generator now, but worth knowing about for two reasons:
+
+1. As a **reference** for what good "branded chart" defaults look like — sensible greys, one accent colour, restrained gridlines, generous margins, decent fonts. These are good rules even outside ggplot2.
+2. As a reminder that **ggplot2's `theme()` system is just composable styling** — once you've read one of these branded themes, writing your own is straightforward.
+
+For most actual analysis the default `theme_minimal()` or [hrbrthemes](https://github.com/hrbrmstr/hrbrthemes) (Bob Rudis's typography-focused themes) are the better picks.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [hrbrthemes](https://github.com/hrbrmstr/hrbrthemes) — Bob Rudis's themes; the more actively maintained "good defaults" alternative.
+- [ggthemes](https://github.com/jrnold/ggthemes) — themes mimicking The Economist, FiveThirtyEight, Tufte, etc.
+- [ggplot2](https://ggplot2.tidyverse.org/) — the underlying grammar-of-graphics library.
+- [seaborn](https://seaborn.pydata.org/) — the closest "good defaults out of the box" equivalent for Python.
+- [[plotters]] — Rust analogue if you want to render charts from a Rust pipeline.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[javascript]] — Javascript _(score 22.0)_
-- [[visualization/grafana|grafana]] — Grafana _(score 16.0)_
-- [[tips]] — Help _(score 16.0)_
-- [[diagrams]] — Diagrams _(score 16.0)_
-- [[rerun]] — rerun _(score 16.0)_
+- [[plotters]] — Rust chart library
+- [[dataviz_resources]] — books / courses on what makes a chart good in the first place
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#ggtech` `#visualization` `#ricardo` `#bion`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#visualization` `#ggtech` `#ggplot2` `#r` `#charts` `#themes`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+Repo: <https://github.com/ricardo-bion/ggtech> · Author's blog (where the original announcement and chart examples lived): <https://medium.com/@bion>.
 
+The package ships:
 
-
-https://github.com/ricardo-bion/ggtech
+- `theme_tech(theme = ...)` — `airbnb`, `etsy`, `facebook`, `google`, `twitter`, `X23andme`.
+- `scale_color_tech` / `scale_fill_tech` — matching colour palettes.
+- A small set of bundled font files; you'll need to install them on your system for the themes to render correctly.
