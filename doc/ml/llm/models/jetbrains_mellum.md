@@ -1,11 +1,12 @@
 ---
 title: Test the function
 main_link: https://huggingface.co/JetBrains/Mellum-4b-base
-keywords: [jetbrains-mellum, models, llm, ml, fill, middle, sample, jetbrains]
+keywords: [jetbrains-mellum, models, fill, middle]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Test the function
 

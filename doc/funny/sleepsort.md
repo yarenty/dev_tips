@@ -1,11 +1,12 @@
 ---
 title: Sleep SORT algorithm
 main_link: https://gist.github.com/Thatkookooguy/3b7ce09a9f80a5e6541175104a5d49e9
-keywords: [sleepsort, funny, sort, sleep, sorting]
+keywords: [sleepsort, sort, sleep, sorting, javascript]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Sleep SORT algorithm
 

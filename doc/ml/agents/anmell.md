@@ -1,11 +1,12 @@
 ---
 title: anmell
 main_link: https://github.com/Anemll/Anemll?tab=readme-ov-file
-keywords: [anmell, agents, ml, anemll, ane, models]
+keywords: [anmell, anemll, ane, models, internet, security]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # anmell
 

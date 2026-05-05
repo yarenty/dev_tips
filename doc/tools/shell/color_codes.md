@@ -1,11 +1,12 @@
 ---
 title: Shell color codes
 main_link: 
-keywords: [color-codes, shell, tools, code, rust, color]
+keywords: [color-codes, shell, rust, color, programming]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Shell color codes
 

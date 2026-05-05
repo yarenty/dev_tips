@@ -1,11 +1,12 @@
 ---
 title: Kafka
 main_link: https://github.com/fede1024/rust-rdkafka
-keywords: [kafka, messaging, apache, topics, cluster]
+keywords: [kafka, apache, topics, cluster, platform, rust]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Kafka
 

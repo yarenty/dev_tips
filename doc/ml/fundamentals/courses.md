@@ -1,11 +1,12 @@
 ---
 title: top 5 2022 couses
 main_link: https://karpathy.ai/zero-to-hero.html
-keywords: [courses, fundamentals, ml, learning, python, data, gpt]
+keywords: [courses, python, meta, awesome]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # top 5 2022 couses
 

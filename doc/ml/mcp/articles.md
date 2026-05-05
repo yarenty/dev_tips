@@ -1,11 +1,12 @@
 ---
 title: Articles
 main_link: https://github.com/microsoft/lost_in_conversation?utm_source=tldrai
-keywords: [articles, mcp, ml, utm, tldrai, data]
+keywords: [articles, tldrai]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Articles
 

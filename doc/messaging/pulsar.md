@@ -1,11 +1,12 @@
 ---
 title: Pulsar
 main_link: https://pulsar.apache.org/
-keywords: [pulsar, messaging, apache, system, cloud, multi]
+keywords: [pulsar, apache, multi, kafka, kubernetes]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Pulsar
 

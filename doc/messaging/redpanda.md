@@ -1,11 +1,12 @@
 ---
 title: redpanda
 main_link: https://docs.redpanda.com
-keywords: [redpanda, messaging, rpk, start, cluster, keeper]
+keywords: [redpanda, rpk, cluster, keeper, apache, usr, cli]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # redpanda
 

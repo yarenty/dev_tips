@@ -1,11 +1,12 @@
 ---
 title: Project Summary: Byobu, Mosh, Xpra
 main_link: https://github.com/dustinkirkland/byobu
-keywords: [terminal, linux, tools, xpra, byobu, mosh]
+keywords: [terminal, linux, xpra, byobu, mosh]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Project Summary: Byobu, Mosh, Xpra
 

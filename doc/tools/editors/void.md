@@ -1,7 +1,7 @@
 ---
 title: VOID
 main_link: https://github.com/voideditor/void?tab=readme-ov-file
-keywords: [void, editors, tools, local, cursor, windsurf, voideditor]
+keywords: [void, editors, local, cursor, windsurf]
 status: draft
 ---
 

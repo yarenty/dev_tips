@@ -1,11 +1,12 @@
 ---
 title: Google
 main_link: https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/
-keywords: [co-scientist, agents, ml, research, specialized, futurehouse, scientific]
+keywords: [co-scientist, research, specialized, futurehouse]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Google
 

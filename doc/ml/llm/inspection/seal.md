@@ -1,7 +1,7 @@
 ---
 title: seal
 main_link: https://scale.com/leaderboard
-keywords: [seal, inspection, llm, ml, scale, leaderboard, info, infoshare2024]
+keywords: [seal, inspection, scale, leaderboard]
 status: draft
 ---
 

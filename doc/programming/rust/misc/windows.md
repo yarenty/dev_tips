@@ -1,11 +1,12 @@
 ---
 title: Windows RS
 main_link: https://github.com/microsoft/windows-rs
-keywords: [windows, misc, rust, programming, winrt, api, crates]
+keywords: [rust, winrt, api, compilers]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Windows RS
 

@@ -1,11 +1,12 @@
 ---
 title: Rust xcode plugin
 main_link: https://github.com/BrainiumLLC/rust-xcode-plugin
-keywords: [rust-xcode-plugin, gui, rust, programming, xcode, plugins, brainiumllc]
+keywords: [rust-xcode-plugin, rust, xcode, plugins]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/gui/macos.md` by `article_split.py`. Heading: **Rust xcode plugin**.
 

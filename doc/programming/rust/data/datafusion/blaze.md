@@ -1,11 +1,12 @@
 ---
 title: blaze
 main_link: 
-keywords: [blaze, datafusion, data, rust, spark, apache, plan]
+keywords: [blaze, rust, apache, distributed]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # blaze
 

@@ -1,11 +1,12 @@
 ---
 title: println! speedup 500%
 main_link: 
-keywords: [tricks, learning, rust, programming, display, speedup, tczajka]
+keywords: [tricks, rust, display, speedup]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # println! speedup 500%
 

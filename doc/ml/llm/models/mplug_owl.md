@@ -1,11 +1,12 @@
 ---
 title: mPLUG-Owl
 main_link: https://github.com/X-PLUG/mPLUG-Owl?tab=readme-ov-file
-keywords: [mplug-owl, models, llm, ml, owl, mplug, plug, owl3]
+keywords: [mplug-owl, models, owl, mplug]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/ml/llm/models/mplug.md` by `article_split.py`. Heading: **mPLUG-Owl**.
 

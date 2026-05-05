@@ -1,11 +1,12 @@
 ---
 title: Mago
 main_link: https://mago.carthage.software/
-keywords: [mago, php, programming, rust, blazing, code, vscode]
+keywords: [mago, php, rust, blazing]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Mago
 

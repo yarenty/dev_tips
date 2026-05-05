@@ -1,11 +1,12 @@
 ---
 title: Unlearning
 main_link: https://arxiv.org/abs/2502.20709?utm_source=tldrai
-keywords: [unlearning, fundamentals, ml, knowledge, federated, fused, overwriting]
+keywords: [unlearning, federated, fused]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Unlearning
 

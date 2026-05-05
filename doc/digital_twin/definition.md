@@ -1,11 +1,12 @@
 ---
 title: Definition
 main_link: https://www.ibm.com/blogs/internet-of-things/iot-cheat-sheet-digital-twin/
-keywords: [definition, digital-twin, digital, system]
+keywords: [definition, digital, ibm, quality, excel]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Definition
 

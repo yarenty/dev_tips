@@ -1,11 +1,12 @@
 ---
 title: QPML
 main_link: https://github.com/andygrove/qpml
-keywords: [qpml, sql-engine, rust, programming, plan, markup]
+keywords: [qpml, rust, plan, markup]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # QPML
 

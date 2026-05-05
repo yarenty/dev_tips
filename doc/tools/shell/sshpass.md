@@ -1,11 +1,12 @@
 ---
 title: sshpass
 main_link: 
-keywords: [sshpass, shell, tools, replacement, test]
+keywords: [sshpass, shell, replacement]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # sshpass
 

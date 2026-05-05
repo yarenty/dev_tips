@@ -1,11 +1,12 @@
 ---
 title: Lance
 main_link: https://github.com/lancedb/lance
-keywords: [lance-data-format, data, rust, programming, format, parquet, vector, duckdb]
+keywords: [lance-data-format, rust, format, parquet, vector, arrow, search, apache]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Lance
 

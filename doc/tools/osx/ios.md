@@ -1,7 +1,7 @@
 ---
 title: Ios
 main_link: https://developer.apple.com/support/app-store-improvements/
-keywords: [ios, osx, tools, developers, apple]
+keywords: [ios, apple, cross]
 status: draft
 ---
 

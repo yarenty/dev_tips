@@ -1,11 +1,12 @@
 ---
 title: Trade Aggregation
 main_link: https://github.com/MathisWellmann/trade_aggregation-rs?tab=readme-ov-file
-keywords: [trade-aggregation-rust-candles, trading, candle, aggregation, trade, mathiswellmann]
+keywords: [trade-aggregation-rust-candles, candle, aggregation, trade, mathiswellmann]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Trade Aggregation
 

@@ -1,11 +1,12 @@
 ---
 title: PhiData
 main_link: https://github.com/phidatahq/phidata/blob/main/README.md
-keywords: [phidata, frameworks, ml, assistant, llm, tools, llama3]
+keywords: [phidata, frameworks, assistant, vector]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # PhiData
 

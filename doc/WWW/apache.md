@@ -1,11 +1,12 @@
 ---
 title: apache
 main_link: 
-keywords: [apache, apachectl, restart, start, web]
+keywords: [apache, apachectl, restart, programming]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # apache
 

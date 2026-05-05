@@ -1,11 +1,12 @@
 ---
 title: DSPy
 main_link: https://github.com/stanfordnlp/dspy?tab=readme-ov-file
-keywords: [dspy, frameworks, ml, declarative, software, models]
+keywords: [dspy, frameworks, declarative, models, python, sql]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # DSPy
 

@@ -1,11 +1,12 @@
 ---
 title: Assembly
 main_link: https://github.com/hackclub/some-assembly-required
-keywords: [assembly, programming, example, understand, going, approachable]
+keywords: [assembly, example, understand, going, approachable, rust, level, linux]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Assembly
 

@@ -1,11 +1,12 @@
 ---
 title: Snowflake
 main_link: https://docs.snowflake.com/en/developer-guide/udf/sql/udf-sql.html
-keywords: [snowflake, sql-engine, rust, programming, udf, sql, python]
+keywords: [snowflake, rust, udf, sql, javascript, python]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Snowflake
 

@@ -1,11 +1,12 @@
 ---
 title: Tungstenite
 main_link: https://crates.io/crates/tungstenite
-keywords: [tungstenite, web, rust, programming, crates, lightweight, websocket, take]
+keywords: [tungstenite, rust, lightweight]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/web/http.md` by `article_split.py`. Heading: **Tungstenite**.
 

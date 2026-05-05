@@ -1,11 +1,12 @@
 ---
 title: SeaQuery
 main_link: https://crates.io/crates/sea-query
-keywords: [seaquery, sql-engine, rust, programming, postgres]
+keywords: [seaquery, rust, postgres, mysql, sqlite, sql]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # SeaQuery
 

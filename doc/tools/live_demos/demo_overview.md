@@ -1,11 +1,12 @@
 ---
 title: DEMO
 main_link: https://github.com/paxtonhare/demo-magic
-keywords: [demo-overview, live-demos, tools, code, paxtonhare, magic, jaro]
+keywords: [demo-overview, live-demos, paxtonhare, magic, demo]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # DEMO
 

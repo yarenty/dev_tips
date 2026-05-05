@@ -1,11 +1,12 @@
 ---
 title: SQLIte loadable
 main_link: https://github.com/asg017/sqlite-loadable-rs
-keywords: [sqlite-loadable, sql-engine, rust, programming, sqlite, loadable, virtual]
+keywords: [sqlite-loadable, rust, sqlite, loadable]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # SQLIte loadable
 

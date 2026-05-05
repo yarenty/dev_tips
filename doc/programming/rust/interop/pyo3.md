@@ -1,11 +1,12 @@
 ---
 title: pyo3
 main_link: 
-keywords: [pyo3, interop, rust, programming]
+keywords: [pyo3, rust]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/interop/python.md` by `article_split.py`. Heading: **pyo3**.
 

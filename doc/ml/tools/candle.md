@@ -1,11 +1,12 @@
 ---
 title: Candle
 main_link: https://github.com/huggingface/candle
-keywords: [candle, tools, ml, models, tensor, cuda, llm]
+keywords: [candle, models, cuda, vector, gpu]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Candle
 

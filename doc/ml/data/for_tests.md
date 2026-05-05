@@ -1,11 +1,12 @@
 ---
 title: For Tests
 main_link: https://github.com/Teradata/kylo/blob/master/samples/sample-data/orc/README.txt
-keywords: [for-tests, data, ml, orc, teradata, readme, avro]
+keywords: [for-tests, orc, teradata]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # For Tests
 

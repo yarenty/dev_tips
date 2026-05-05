@@ -1,11 +1,12 @@
 ---
 title: Iced
 main_link: https://github.com/iced-rs/iced
-keywords: [ised, gui, rust, programming, messages, counter, increment, decrement]
+keywords: [ised, rust, messages, counter, self]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Iced
 

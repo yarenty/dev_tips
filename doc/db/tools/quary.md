@@ -1,11 +1,12 @@
 ---
 title: Quary
 main_link: https://github.com/quarylabs/quary
-keywords: [quary, tools, db, sql, cli, databases]
+keywords: [quary, sql, cli, databases, linux, models]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Quary
 

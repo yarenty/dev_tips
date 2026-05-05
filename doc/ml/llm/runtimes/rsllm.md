@@ -1,11 +1,12 @@
 ---
 title: rsllm
 main_link: https://github.com/groovybits/rsllm
-keywords: [rsllm, runtimes, llm, ml, ndi, tts, candle, rust]
+keywords: [rsllm, ndi, tts]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # rsllm
 

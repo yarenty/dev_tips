@@ -1,11 +1,12 @@
 ---
 title: dfdx
 main_link: https://github.com/coreylowman/dfdx
-keywords: [dfdx, tools, ml, tape, gradient, tensor]
+keywords: [dfdx, tape, gradient, rust]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # dfdx
 

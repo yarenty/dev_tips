@@ -1,11 +1,12 @@
 ---
 title: INK
 main_link: https://github.com/vadimdemedes/ink
-keywords: [ink, rust, programming, cli, tui, vadimdemedes, cool]
+keywords: [ink, rust, cli, tui, vadimdemedes]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/tui.md` by `article_split.py`. Heading: **INK**.
 

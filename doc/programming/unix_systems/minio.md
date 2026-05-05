@@ -1,11 +1,12 @@
 ---
 title: Minio
 main_link: 
-keywords: [minio, unix-systems, programming]
+keywords: [minio, rust]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Minio
 

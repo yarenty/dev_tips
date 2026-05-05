@@ -1,11 +1,12 @@
 ---
 title: bb8
 main_link: https://crates.io/crates/bb8
-keywords: [bb8, data, rust, programming, connection, databases, crates]
+keywords: [bb8, rust, databases]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/data/db.md` by `article_split.py`. Heading: **bb8**.
 

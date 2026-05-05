@@ -1,11 +1,12 @@
 ---
 title: UIs
 main_link: https://github.com/eythaann/Seelen-UI
-keywords: [ui, gui, rust, programming, floem, widgets, transitions, customizable]
+keywords: [ui, rust, floem, widgets, gpu]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # UIs
 

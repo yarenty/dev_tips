@@ -1,11 +1,12 @@
 ---
 title: Noria: data-flow for high-performance web applications
 main_link: https://github.com/mit-pdos/noria#noria-data-flow-for-high-performance-web-applications
-keywords: [noria, streaming, db, mysql, zookeeper, data]
+keywords: [noria, streaming, mysql, zookeeper, applications]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Noria: data-flow for high-performance web applications
 

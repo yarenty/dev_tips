@@ -1,11 +1,12 @@
 ---
 title: Time Series Transformer
 main_link: https://github.com/allen-chiang/Time-Series-Transformer
-keywords: [time-series-transformer, time-series, ml, time, data, transformers]
+keywords: [time-series-transformer, time-series]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/ml/time_series/time_serie_transformer.md` by `article_split.py`. Heading: **Time Series Transformer**.
 

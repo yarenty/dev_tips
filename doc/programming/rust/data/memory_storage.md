@@ -1,11 +1,12 @@
 ---
 title: Memory storage
 main_link: https://github.com/jonhoo/evmap
-keywords: [memory-storage, data, rust, programming, reads, refresh, evmap]
+keywords: [memory-storage, rust, reads, refresh, storage, meta]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/data/map_cache_storage.md` by `article_split.py`. Heading: **Memory storage**.
 

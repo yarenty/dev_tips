@@ -1,11 +1,12 @@
 ---
 title: Axum
 main_link: https://github.com/tokio-rs/axum
-keywords: [axum, web, rust, programming, tokio, tower, api, middleware]
+keywords: [axum, rust, tokio, tower]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/web/http.md` by `article_split.py`. Heading: **Axum**.
 

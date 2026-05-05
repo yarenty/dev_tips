@@ -1,11 +1,12 @@
 ---
 title: typst
 main_link: https://github.com/typst/typst
-keywords: [typst, visualization, markup, typesetting, system, latex]
+keywords: [typst, markup, typesetting, latex, cli]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # typst
 

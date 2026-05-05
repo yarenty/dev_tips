@@ -1,11 +1,12 @@
 ---
 title: Rust Embedded - book
 main_link: https://github.com/rust-embedded/awesome-embedded-rust
-keywords: [raspberry-pi, misc, rust, programming, embassy, embedded, usb]
+keywords: [raspberry-pi, rust, embassy, embedded, awesome]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Rust Embedded - book
 

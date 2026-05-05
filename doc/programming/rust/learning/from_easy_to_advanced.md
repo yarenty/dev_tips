@@ -1,11 +1,12 @@
 ---
 title: from easier to advanced 1-by-1
 main_link: https://zerotomastery.io/blog/rust-practice-projects/
-keywords: [from-easier-to-advanced-1-by-1, learning, rust, programming, api, level]
+keywords: [from-easier-to-advanced-1-by-1, rust, api, level]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/learning/_todo_ideas.md` by `article_split.py`. Heading: **from easier to advanced 1-by-1**.
 

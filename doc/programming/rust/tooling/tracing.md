@@ -1,11 +1,12 @@
 ---
 title: Tracing
 main_link: https://github.com/tokio-rs/tracing
-keywords: [tracing, tooling, rust, programming, enable, metric, tokio, prometheus]
+keywords: [tracing, rust, enable, metric, prometheus, observability]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Tracing
 

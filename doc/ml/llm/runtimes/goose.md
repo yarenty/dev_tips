@@ -1,11 +1,12 @@
 ---
 title: Goose
 main_link: https://github.com/block/goose
-keywords: [goose, runtimes, llm, ml, deepseek, ollama, block, models]
+keywords: [goose, deepseek]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Goose
 

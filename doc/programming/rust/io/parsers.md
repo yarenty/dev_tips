@@ -1,11 +1,12 @@
 ---
 title: pest. The Elegant Parser
 main_link: https://github.com/pest-parser/awesome-pest
-keywords: [parser, rust, programming, pest, elegant, peg]
+keywords: [rust, pest, elegant, peg, meta]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # pest. The Elegant Parser
 

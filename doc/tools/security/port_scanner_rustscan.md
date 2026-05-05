@@ -1,11 +1,12 @@
 ---
 title: RustScan
 main_link: https://github.com/bee-san/RustScan
-keywords: [port-scanner-rustscan, security, tools, fast, bee, san, smart]
+keywords: [port-scanner-rustscan, security, fast, bee, san]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # RustScan
 

@@ -1,11 +1,12 @@
 ---
 title: Datafusion SQL Query Planner
 main_link: https://github.com/apache/arrow-datafusion/tree/master/datafusion/sql
-keywords: [datafusion, sql-engine, rust, programming, sql, planner, logical]
+keywords: [rust, sql, planner, query, apache]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Datafusion SQL Query Planner
 

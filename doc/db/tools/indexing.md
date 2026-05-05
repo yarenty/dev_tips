@@ -1,11 +1,12 @@
 ---
 title: Indexing
 main_link: https://use-the-index-luke.com/
-keywords: [indexing, tools, db, sql, index, luke, performance]
+keywords: [indexing, sql, index, luke]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Indexing
 

@@ -1,11 +1,12 @@
 ---
 title: Loggers
 main_link: https://github.com/tokio-rs/tracing
-keywords: [loggers, tooling, rust, programming, log4rs, tracing, simplelog, env]
+keywords: [loggers, rust, log4rs, tracing]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Loggers
 

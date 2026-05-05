@@ -1,11 +1,12 @@
 ---
 title: Nvidia Omniverse
 main_link: 
-keywords: [nvidia-omniverse, digital-twin, modulus, pino, nvidia, fno]
+keywords: [nvidia-omniverse, modulus, pino, nvidia, fno, omniverse]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Nvidia Omniverse
 

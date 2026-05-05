@@ -1,11 +1,12 @@
 ---
 title: Approximate Continuous Querying  over Distributed Streams
 main_link: http://www.cs.rutgers.edu/~muthu/massdal-code-index.html
-keywords: [approximate-continuous-querying-over-distributed-streams, streaming-query-approximation, streaming, db, tracking, sketch, distributed, data]
+keywords: [approximate-continuous-querying-over-distributed-streams, streaming-query-approximation, streaming, tracking, sketch, approximate, querying, distributed, streams]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Approximate Continuous Querying  over Distributed Streams
 

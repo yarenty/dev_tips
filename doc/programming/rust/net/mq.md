@@ -1,11 +1,12 @@
 ---
 title: ruMQTT
 main_link: https://github.com/bytebeamio/rumqtt
-keywords: [mq, rust, programming, nats, mqtt, paho, jetstream]
+keywords: [mq, rust, nats, mqtt, paho, level]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # ruMQTT
 

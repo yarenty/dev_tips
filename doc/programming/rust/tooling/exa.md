@@ -1,11 +1,12 @@
 ---
 title: EXA
 main_link: https://crates.io/crates/exa
-keywords: [exa, tooling, rust, programming, crates, unix, linux]
+keywords: [exa, rust, unix, replacement, git, linux]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **EXA**.
 

@@ -1,11 +1,12 @@
 ---
 title: eyre
 main_link: https://crates.io/crates/eyre
-keywords: [error, core, rust, programming, crates, report, handling, eyrehandler]
+keywords: [rust, report, eyre]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # eyre
 

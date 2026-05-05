@@ -1,11 +1,12 @@
 ---
 title: MT5
 main_link: https://www.metatrader5.com/en/automated-trading
-keywords: [mt5, trading, metatrader5, automated]
+keywords: [mt5, metatrader5, automated]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # MT5
 

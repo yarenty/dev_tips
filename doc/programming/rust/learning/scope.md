@@ -1,11 +1,12 @@
 ---
 title: Scope
 main_link: 
-keywords: [scope, learning, rust, programming, traits, error, lifetimes, generics]
+keywords: [scope, rust, traits]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/learning/_to_learn.md` by `article_split.py`. Heading: **Scope**.
 

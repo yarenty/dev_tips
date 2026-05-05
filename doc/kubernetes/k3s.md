@@ -1,11 +1,12 @@
 ---
 title: K3S
 main_link: https://k3s.io/
-keywords: [k3s, kubernetes, edge, iot, raspberry-pi, lightweight, openfaas]
+keywords: [k3s, kubernetes, edge, iot, raspberry-pi, lightweight, javascript]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # K3S
 

@@ -1,11 +1,12 @@
 ---
 title: SBT
 main_link: 
-keywords: [sbt, scala, programming, install]
+keywords: [sbt, scala, rust]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # SBT
 

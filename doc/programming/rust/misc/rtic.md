@@ -1,11 +1,12 @@
 ---
 title: RTIC
 main_link: https://github.com/rtic-rs/cortex-m-rtic
-keywords: [rtic, misc, rust, programming, cortex, real, crates]
+keywords: [rtic, rust, cortex, real]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/misc/raspberry_pi.md` by `article_split.py`. Heading: **RTIC**.
 

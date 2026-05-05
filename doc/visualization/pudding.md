@@ -1,7 +1,7 @@
 ---
 title: Pudding
 main_link: https://github.com/the-pudding/data
-keywords: [pudding, visualization, cool, dataset, data]
+keywords: [pudding, cool, dataset]
 status: draft
 ---
 

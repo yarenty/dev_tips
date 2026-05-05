@@ -1,11 +1,12 @@
 ---
 title: 7 more ideas
 main_link: 
-keywords: [7-more-ideas, learning, rust, programming, games, web]
+keywords: [7-more-ideas, rust, games, distributed]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/learning/_todo_ideas.md` by `article_split.py`. Heading: **7 more ideas**.
 

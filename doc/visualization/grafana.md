@@ -1,11 +1,12 @@
 ---
 title: Grafana
 main_link: https://github.com/grafana/mimir?utm_source=tldrnewsletter
-keywords: [grafana, visualization, mimir, storage, prometheus]
+keywords: [grafana, mimir, storage, prometheus]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Grafana
 

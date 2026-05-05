@@ -1,7 +1,7 @@
 ---
 title: Ascii generator
 main_link: https://convertcase.net/ascii-art-generator/
-keywords: [ascii-generator, design, tools, ascii, generator, convertcase, art]
+keywords: [ascii-generator, design, ascii, generator, convertcase]
 status: draft
 ---
 

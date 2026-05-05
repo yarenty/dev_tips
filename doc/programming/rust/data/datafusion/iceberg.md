@@ -1,11 +1,12 @@
 ---
 title: Iceberg
 main_link: https://github.com/apache/iceberg
-keywords: [iceberg, datafusion, data, rust, apache, java, sql]
+keywords: [iceberg, rust, apache, java, sql]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Iceberg
 

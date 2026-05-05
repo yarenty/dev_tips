@@ -1,11 +1,12 @@
 ---
 title: Bore
 main_link: https://github.com/ekzhang/bore
-keywords: [tunelling, rust, programming, tcp, nat, ekzhang, modern]
+keywords: [tunelling, rust, tcp, nat, ekzhang]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Bore
 

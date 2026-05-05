@@ -1,7 +1,7 @@
 ---
 title: AliceMind - mplug 2.0
 main_link: https://github.com/alibaba/AliceMind
-keywords: [alicemind-mplug-2-0, models, llm, ml, alicemind, mplug, alibaba]
+keywords: [alicemind-mplug-2-0, models, alicemind, mplug]
 status: draft
 ---
 

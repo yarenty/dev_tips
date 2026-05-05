@@ -1,11 +1,12 @@
 ---
 title: Linfa
 main_link: https://github.com/rust-ml/linfa
-keywords: [linfa, ml, rust, programming, tested, contains, linear, learning]
+keywords: [linfa, ml, rust, tested, vector, linear, python, models]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Linfa
 

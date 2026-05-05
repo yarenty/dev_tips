@@ -1,11 +1,12 @@
 ---
 title: toyDB
 main_link: https://github.com/erikgrinaker/toydb/tree/main**
-keywords: [toydb, relational, db, sql, distributed, based]
+keywords: [toydb, sql, distributed, based, databases, rust]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # toyDB
 

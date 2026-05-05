@@ -1,11 +1,12 @@
 ---
 title: Television
 main_link: https://github.com/alexpasmantier/television
-keywords: [television, rust, programming, fuzzy, tui, alexpasmantier]
+keywords: [television, rust, fuzzy, tui, alexpasmantier, git, search]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/tui.md` by `article_split.py`. Heading: **Television**.
 

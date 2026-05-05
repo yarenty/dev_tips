@@ -1,11 +1,12 @@
 ---
 title: Rewquest
 main_link: https://crates.io/crates/reqwest
-keywords: [rewquest, web, rust, programming, crates, client, json]
+keywords: [rewquest, rust, client]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/web/http.md` by `article_split.py`. Heading: **Rewquest**.
 

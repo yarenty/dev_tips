@@ -1,11 +1,12 @@
 ---
 title: Limbo
 main_link: https://github.com/tursodatabase/limbo
-keywords: [limbo, relational, db, rust, linux, improved]
+keywords: [limbo, rust, linux, improved, vector, javascript, sqlite]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Limbo
 

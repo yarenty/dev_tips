@@ -1,11 +1,12 @@
 ---
 title: Skills.sh
 main_link: https://skills.sh/
-keywords: [skills-sh, skills, ml, agents, planning]
+keywords: [skills-sh, skills, planning]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Skills.sh
 

@@ -1,7 +1,7 @@
 ---
 title: anyhow
 main_link: https://crates.io/crates/anyhow
-keywords: [anyhow, learning, rust, programming, crates, error, reporting]
+keywords: [anyhow, rust]
 status: draft
 ---
 

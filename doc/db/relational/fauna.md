@@ -1,11 +1,12 @@
 ---
 title: fauna
 main_link: https://fauna.com/home-2
-keywords: [fauna, relational, db, graphql, udf, databases, data]
+keywords: [fauna, graphql, udf, databases, nosql]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # fauna
 

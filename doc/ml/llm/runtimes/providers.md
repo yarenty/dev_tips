@@ -1,11 +1,12 @@
 ---
 title: providers
 main_link: https://block.github.io/goose/docs/getting-started/providers
-keywords: [providers, runtimes, llm, ml, deepseek, ollama, models, goose]
+keywords: [providers, deepseek, terminal]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/ml/llm/runtimes/goose.md` by `article_split.py`. Heading: **providers**.
 

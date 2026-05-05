@@ -1,7 +1,7 @@
 ---
 title: OpenObserve
 main_link: https://github.com/openobserve/openobserve
-keywords: [openobserve, observability]
+keywords: [openobserve, observability, prometheus]
 status: draft
 ---
 

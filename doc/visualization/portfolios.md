@@ -1,11 +1,12 @@
 ---
 title: Example data visualisations portfolios
 main_link: https://public.tableau.com/app/profile/kim.tricker#!/
-keywords: [portfolios, visualization, example, public, tableau]
+keywords: [portfolios, example, public, tableau]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Example data visualisations portfolios
 

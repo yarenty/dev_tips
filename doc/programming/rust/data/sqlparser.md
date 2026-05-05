@@ -1,11 +1,12 @@
 ---
 title: sqlparser
 main_link: https://crates.io/crates/sqlparser
-keywords: [sqlparser, data, rust, programming, sql, parser, crates, specific]
+keywords: [sqlparser, rust, sql, databases]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/data/db.md` by `article_split.py`. Heading: **sqlparser**.
 

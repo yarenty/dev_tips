@@ -1,11 +1,12 @@
 ---
 title: Dioxus
 main_link: https://github.com/DioxusLabs/dioxus
-keywords: [dioxus, gui, rust, programming, count, web, integrated]
+keywords: [dioxus, rust, count, cli, linux]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Dioxus
 

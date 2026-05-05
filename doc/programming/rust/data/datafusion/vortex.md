@@ -1,11 +1,12 @@
 ---
 title: Vortex (2024-10-17)
 main_link: https://github.com/spiraldb/vortex
-keywords: [vortex, datafusion, data, rust, apache, arrow, encodings]
+keywords: [vortex, rust, apache, arrow, gpus, compilers]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Vortex (2024-10-17)
 

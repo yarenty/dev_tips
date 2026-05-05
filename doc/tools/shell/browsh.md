@@ -1,7 +1,7 @@
 ---
 title: Browsh
 main_link: 
-keywords: [browsh, shell, tools]
+keywords: [browsh, shell]
 status: draft
 ---
 

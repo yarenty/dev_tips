@@ -1,11 +1,12 @@
 ---
 title: Yarenty Profile And Projects Summary
 main_link: http://www.eldersdiet.org
-keywords: [yarenty-profile-and-projects-summary, cuda, yarenty, software, cosmic]
+keywords: [yarenty-profile-and-projects-summary, cuda, yarenty, cosmic, profile, ml, gpu, iot]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Yarenty Profile And Projects Summary
 

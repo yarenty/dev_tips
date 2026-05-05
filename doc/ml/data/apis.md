@@ -1,11 +1,12 @@
 ---
 title: API access to data
 main_link: https://datausa.io/api/data?drilldowns=Nation&measures=Population
-keywords: [apis, data, ml, api, json, random]
+keywords: [apis, api, random, meta, quality, digital]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # API access to data
 

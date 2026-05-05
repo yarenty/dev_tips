@@ -1,11 +1,12 @@
 ---
 title: FutureHouse
 main_link: https://www.futurehouse.org/
-keywords: [futurehouse, agents, ml, specialized, literature, crow]
+keywords: [futurehouse, specialized, literature, crow, search, databases]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/ml/agents/co_scientist.md` by `article_split.py`. Heading: **FutureHouse**.
 

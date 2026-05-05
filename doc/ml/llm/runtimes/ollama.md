@@ -1,11 +1,12 @@
 ---
 title: Ollama
 main_link: https://github.com/ollama/ollama
-keywords: [ollama, runtimes, llm, ml, models, specific, rust]
+keywords: [models, specific, search, rust]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Ollama
 

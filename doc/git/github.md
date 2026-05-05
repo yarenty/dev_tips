@@ -1,11 +1,12 @@
 ---
 title: Github README
 main_link: https://github.com/coderjojo/creative-profile-readme
-keywords: [git, readme, coderjojo, profile]
+keywords: [git, coderjojo, profile]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Github README
 

@@ -1,11 +1,12 @@
 ---
 title: libhdfs3
 main_link: https://github.com/ArroyoSystems/arroyo
-keywords: [hdfs, rust, programming, python, data]
+keywords: [hdfs, rust, python, huggingface, openai, lake]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # libhdfs3
 

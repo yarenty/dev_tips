@@ -1,11 +1,12 @@
 ---
 title: armada
 main_link: https://github.com/resyncgg/armada
-keywords: [armada, tooling, rust, programming, tcp, scanner, syn, type]
+keywords: [armada, rust, tcp, scanner]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **armada**.
 

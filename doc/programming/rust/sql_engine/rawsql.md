@@ -1,11 +1,12 @@
 ---
 title: rawsql
 main_link: https://crates.io/crates/rawsql
-keywords: [rawsql, sql-engine, rust, programming, sql, crates, comment]
+keywords: [rawsql, rust, sql]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # rawsql
 

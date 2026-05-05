@@ -1,11 +1,12 @@
 ---
 title: Slint
 main_link: https://github.com/slint-ui/slint-rust-template
-keywords: [slint, gui, rust, programming, tao, cargo, crates]
+keywords: [slint, rust, tao]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Slint
 

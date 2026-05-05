@@ -1,11 +1,12 @@
 ---
 title: tinyvec
 main_link: https://crates.io/crates/tinyvec
-keywords: [tinyvec, core, rust, programming, vec, arrayvec, inline, heap]
+keywords: [tinyvec, rust, vec, arrayvec]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/core/low_level_structures.md` by `article_split.py`. Heading: **tinyvec**.
 

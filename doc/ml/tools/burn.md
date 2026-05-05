@@ -1,11 +1,12 @@
 ---
 title: burn
 main_link: https://github.com/tracel-ai/burn
-keywords: [burn, tools, ml, backend, rust, frameworks]
+keywords: [burn, backend, rust, frameworks, tui]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # burn
 

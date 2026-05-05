@@ -1,11 +1,12 @@
 ---
 title: NEO4J
 main_link: https://github.com/neo4j/neo4j-graphrag-python
-keywords: [neo4j-rag, rag, ml, graph, rust, python]
+keywords: [neo4j-rag, graph, rust, python, programming]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # NEO4J
 

@@ -1,11 +1,12 @@
 ---
 title: zoxide
 main_link: https://crates.io/crates/zoxide
-keywords: [zoxide, tooling, rust, programming, crates, smarter, inspired]
+keywords: [zoxide, rust, smarter]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **zoxide**.
 

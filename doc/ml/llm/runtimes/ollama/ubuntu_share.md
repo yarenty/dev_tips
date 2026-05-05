@@ -1,11 +1,12 @@
 ---
 title: Ubuntu Share
 main_link: 
-keywords: [ubuntu-share, ollama, runtimes, llm, machine, configure]
+keywords: [ubuntu-share, configure, ubuntu, share, internet, cli]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Ubuntu Share
 

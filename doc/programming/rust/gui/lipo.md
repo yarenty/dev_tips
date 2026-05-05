@@ -1,7 +1,7 @@
 ---
 title: Lipo
 main_link: https://crates.io/crates/cargo-lipo
-keywords: [lipo, gui, rust, programming, crates, cargo]
+keywords: [lipo, rust]
 status: draft
 ---
 

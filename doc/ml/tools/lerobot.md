@@ -1,11 +1,12 @@
 ---
 title: LeRobot
 main_link: https://github.com/huggingface/lerobot
-keywords: [lerobot, tools, ml, learning, real, world, robotics]
+keywords: [lerobot, real, world, models]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # LeRobot
 

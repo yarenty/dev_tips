@@ -1,11 +1,12 @@
 ---
 title: rathole
 main_link: https://github.com/rapiz1/rathole
-keywords: [rathole, security, tools, nat, rust, internet, rapiz1]
+keywords: [rathole, security, nat, rust, internet, programming]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # rathole
 

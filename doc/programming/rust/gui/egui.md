@@ -1,11 +1,12 @@
 ---
 title: egui
 main_link: https://github.com/emilk/egui
-keywords: [egui, gui, rust, programming, crates, demo, extras]
+keywords: [egui, rust, demo]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # egui
 

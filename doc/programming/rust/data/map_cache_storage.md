@@ -1,11 +1,12 @@
 ---
 title: DashMap
 main_link: https://github.com/jonhoo/evmap
-keywords: [map-cache-storage, data, rust, programming, moka, cache, crates, concurrent]
+keywords: [map-cache-storage, rust, moka, cache, self, replacement]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # DashMap
 

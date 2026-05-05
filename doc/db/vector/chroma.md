@@ -1,11 +1,12 @@
 ---
 title: chroma
 main_link: https://github.com/chroma-core/chroma
-keywords: [chroma, vector, db, python, llm, fully]
+keywords: [chroma, vector, python, llm, fully, javascript]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # chroma
 

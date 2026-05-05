@@ -1,11 +1,12 @@
 ---
 title: prometheus
 main_link: 
-keywords: [prometheus, observability, brew, services, usr]
+keywords: [prometheus, observability, brew, usr]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # prometheus
 

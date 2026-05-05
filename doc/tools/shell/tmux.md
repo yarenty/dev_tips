@@ -1,11 +1,12 @@
 ---
 title: Tmux
 main_link: 
-keywords: [tmux, shell, tools, ubuntu, etc]
+keywords: [tmux, shell, ubuntu, etc]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Tmux
 

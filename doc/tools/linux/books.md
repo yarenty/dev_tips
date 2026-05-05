@@ -1,11 +1,12 @@
 ---
 title: Books
 main_link: https://0xax.gitbooks.io/linux-insides/content/
-keywords: [books, linux, tools, insides, xax, gitbooks, content]
+keywords: [books, linux, insides, xax, gitbooks]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Books
 

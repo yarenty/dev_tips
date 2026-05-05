@@ -1,11 +1,12 @@
 ---
 title: minimp3
 main_link: https://github.com/lieff/minimp3
-keywords: [minimp3, misc, rust, programming, minimalistic, mp3, sse, neon]
+keywords: [minimp3, rust, minimalistic, mp3]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/misc/audio.md` by `article_split.py`. Heading: **minimp3**.
 

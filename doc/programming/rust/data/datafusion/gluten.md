@@ -1,11 +1,12 @@
 ---
 title: gluten
 main_link: https://github.com/apache/incubator-gluten?tab=readme-ov-file
-keywords: [gluten, datafusion, data, rust, spark, velox]
+keywords: [gluten, rust, velox, meta, level, distributed, arrow]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # gluten
 

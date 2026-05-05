@@ -1,11 +1,12 @@
 ---
 title: Matrix - rust bindings to ios version
 main_link: https://github.com/matrix-org/matrix-rust-sdk/tree/main/bindings/apple
-keywords: [matrix-rust-bindings-to-ios-version, gui, rust, programming, matrix, bindings, ios, version]
+keywords: [matrix-rust-bindings-to-ios-version, rust, matrix, bindings, ios]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/gui/macos.md` by `article_split.py`. Heading: **Matrix - rust bindings to ios version**.
 

@@ -1,11 +1,12 @@
 ---
 title: MQL5
 main_link: https://www.metatrader5.com/en/automated-trading/mql5
-keywords: [mql5, trading, self, data, socket, python]
+keywords: [mql5, self, socket, python, metatrader5, excel]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # MQL5
 

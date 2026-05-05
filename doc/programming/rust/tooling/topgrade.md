@@ -1,11 +1,12 @@
 ---
 title: topgrade
 main_link: https://github.com/r-darwish/topgrade
-keywords: [topgrade, tooling, rust, programming, crates, keeping, shell, darwish]
+keywords: [topgrade, rust, keeping, shell]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **topgrade**.
 

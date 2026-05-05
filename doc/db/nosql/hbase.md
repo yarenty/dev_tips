@@ -1,11 +1,12 @@
 ---
 title: hbase
 main_link: 
-keywords: [hbase, nosql, db, opts, usr, root]
+keywords: [hbase, nosql, opts, usr, root, security]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # hbase
 

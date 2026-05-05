@@ -1,3 +1,4 @@
+<!-- keywords-extended by P6.5 -->
 # Personal Development Notes
 
 These notes are a collection of my personal learnings, tips, and tricks in the areas of programming, machine learning, cloud technologies, and more. I use it as a personal reference and to share knowledge I find useful.

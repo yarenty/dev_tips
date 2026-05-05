@@ -1,11 +1,12 @@
 ---
 title: Building an Algorithmic Trading Platform in Rust
 main_link: https://github.com/ameobea/tickgrinder
-keywords: [bot-rust, trading, platform, futures, rust, technical]
+keywords: [bot-rust, platform, futures, rust, technical]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Building an Algorithmic Trading Platform in Rust
 

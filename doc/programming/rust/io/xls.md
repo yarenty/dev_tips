@@ -1,11 +1,12 @@
 ---
 title: Calamine
 main_link: https://github.com/tafia/calamine
-keywords: [xls, rust, programming, reader, excel, opendocument, spreadsheets]
+keywords: [xls, rust, reader, excel, opendocument]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Calamine
 

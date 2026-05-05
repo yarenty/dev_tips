@@ -1,11 +1,12 @@
 ---
 title: open telemtry
 main_link: https://github.com/open-telemetry/opentelemetry-rust#ecosystem
-keywords: [open-telemtry, tooling, rust, programming, opentelemetry, telemtry, docs]
+keywords: [open-telemtry, rust, opentelemetry, telemtry]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/tooling/tracing.md` by `article_split.py`. Heading: **open telemtry**.
 

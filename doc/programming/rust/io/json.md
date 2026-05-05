@@ -1,11 +1,12 @@
 ---
 title: JSON
 main_link: https://www.arroyo.dev/blog/fast-arrow-json-decoding
-keywords: [json, rust, programming, fast, arrow, transformers, serde]
+keywords: [rust, fast, arrow, transformers]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # JSON
 

@@ -1,11 +1,12 @@
 ---
 title: OpenAI agents
 main_link: https://platform.openai.com/docs/guides/function-calling?api-mode=responses
-keywords: [openai, agents, ml, platform, docs, guides, function]
+keywords: [platform, guides]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # OpenAI agents
 

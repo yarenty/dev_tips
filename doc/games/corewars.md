@@ -1,11 +1,12 @@
 ---
 title: Core Wars
 main_link: https://github.com/richpl/MARS
-keywords: [corewars, games, mov, mars, jmp, core]
+keywords: [corewars, games, mov, mars, jmp, rust, python]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Core Wars
 

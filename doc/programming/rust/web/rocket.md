@@ -1,11 +1,12 @@
 ---
 title: Rocket
 main_link: https://rocket.rs/
-keywords: [rocket, web, rust, programming, hello, john, type]
+keywords: [rocket, rust, hello, john]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/web/http.md` by `article_split.py`. Heading: **Rocket**.
 

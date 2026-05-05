@@ -1,11 +1,12 @@
 ---
 title: CrateDB
 main_link: https://crate.io/docs/crate/reference/en/5.0/general/user-defined-functions.html
-keywords: [cratedb, sql-engine, rust, programming, crates, docs, reference, general]
+keywords: [cratedb, rust]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/sql_engine/rust_libs.md` by `article_split.py`. Heading: **CrateDB**.
 

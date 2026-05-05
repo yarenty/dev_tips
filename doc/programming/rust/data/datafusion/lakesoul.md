@@ -1,11 +1,12 @@
 ---
 title: Lake soul
 main_link: https://github.com/lakesoul-io/LakeSoul
-keywords: [lakesoul, datafusion, data, rust, lake, lakehouse, acid]
+keywords: [lakesoul, rust, lake, lakehouse, streaming]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Lake soul
 

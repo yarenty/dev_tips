@@ -1,11 +1,12 @@
 ---
 title: ROAPI
 main_link: https://github.com/roapi/roapi/blob/main/columnq/src/query/graphql.rs
-keywords: [roapi, sql-engine, rust, programming, datafusion, arrow, graphql]
+keywords: [roapi, rust, arrow, design, apache, sql]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # ROAPI
 

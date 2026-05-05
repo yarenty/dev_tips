@@ -1,11 +1,12 @@
 ---
 title: n8n.io
 main_link: https://github.com/n8n-io/n8n
-keywords: [n8n-io, n8n, native, platform, code]
+keywords: [n8n-io, n8n, native, platform, javascript, python, models]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/www/tools.md` by `article_split.py`. Heading: **n8n.io**.
 

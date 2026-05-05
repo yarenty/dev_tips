@@ -1,11 +1,12 @@
 ---
 title: thiserror
 main_link: https://crates.io/crates/thiserror
-keywords: [thiserror, learning, rust, programming, error, crates]
+keywords: [thiserror, rust]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/learning/_must_have.md` by `article_split.py`. Heading: **thiserror**.
 

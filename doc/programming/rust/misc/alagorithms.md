@@ -1,11 +1,12 @@
 ---
 title: algorithms
 main_link: https://github.com/TheAlgorithms/Rust/blob/master/DIRECTORY.md
-keywords: [alagorithms, misc, rust, programming, thealgorithms, directory, blob, master]
+keywords: [alagorithms, rust, thealgorithms, directory, algorithms]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # algorithms
 

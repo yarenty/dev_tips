@@ -1,11 +1,12 @@
 ---
 title: maturin
 main_link: https://github.com/PyO3/maturin
-keywords: [maturin, interop, rust, programming, pyo3, python, windows]
+keywords: [maturin, rust, pyo3, python, linux]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/interop/python.md` by `article_split.py`. Heading: **maturin**.
 

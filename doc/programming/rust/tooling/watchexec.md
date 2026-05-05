@@ -1,11 +1,12 @@
 ---
 title: watchexec
 main_link: https://github.com/watchexec/watchexec
-keywords: [watchexec, tooling, rust, programming, crates, software, boring]
+keywords: [watchexec, rust, editors, linux]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **watchexec**.
 

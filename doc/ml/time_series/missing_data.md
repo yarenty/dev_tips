@@ -1,11 +1,12 @@
 ---
 title: Drop any and all nulls across all columns
 main_link: https://towardsdatascience.com/how-to-handle-missing-data-for-time-series-680810f648ed
-keywords: [missing-data, time-series, ml, data, handle, missing, drop]
+keywords: [missing-data, time-series, handle, missing, models]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Drop any and all nulls across all columns
 

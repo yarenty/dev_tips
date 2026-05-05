@@ -1,11 +1,12 @@
 ---
 title: tally
 main_link: https://github.com/n8n-io/n8n
-keywords: [tools, product, n8n, build]
+keywords: [n8n]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # tally
 

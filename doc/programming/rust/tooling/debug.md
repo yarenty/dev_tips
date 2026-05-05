@@ -1,11 +1,12 @@
 ---
 title: Debug
 main_link: https://crates.io/crates/debug_stub_derive
-keywords: [debug, tooling, rust, programming, stub, derive, crates, default]
+keywords: [debug, rust, stub, derive]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Debug
 

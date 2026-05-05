@@ -1,11 +1,12 @@
 ---
 title: Datasets
 main_link: https://github.com/yarenty/awesome-public-datasets
-keywords: [public, data, ml, pudding, awesome, awsome, agriculture]
+keywords: [public, pudding, awesome, awsome]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Datasets
 

@@ -1,11 +1,12 @@
 ---
 title: GRPC
 main_link: https://github.com/grpc-ecosystem/awesome-grpc
-keywords: [grpc, rust, programming, raft, consensus, distributed, paxos]
+keywords: [grpc, rust, raft, consensus, distributed]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # GRPC
 

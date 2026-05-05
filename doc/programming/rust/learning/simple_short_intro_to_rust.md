@@ -1,11 +1,12 @@
 ---
 title: Simple short intro to rust
 main_link: https://fasterthanli.me/articles/a-half-hour-to-learn-rust
-keywords: [simple-short-intro-to-rust, learning, rust, programming, intro, fasterthanli]
+keywords: [simple-short-intro-to-rust, rust, intro, fasterthanli]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/learning/_must_have.md` by `article_split.py`. Heading: **Simple short intro to rust**.
 

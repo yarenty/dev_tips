@@ -1,11 +1,12 @@
 ---
 title: MLGO
 main_link: https://github.com/google/ml-compiler-opt
-keywords: [mlgo-llvm, compilers, ml, llvm, learning, machine]
+keywords: [mlgo-llvm, compilers, llvm]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # MLGO
 

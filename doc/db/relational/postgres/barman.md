@@ -1,11 +1,12 @@
 ---
 title: Barman: PostgreSQL Backup and Recovery Manager
 main_link: https://github.com/EnterpriseDB/barman
-keywords: [barman, postgres, relational, db, postgresql, recovery, backup, python]
+keywords: [barman, postgres, postgresql, recovery, distributed, python]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Barman: PostgreSQL Backup and Recovery Manager
 

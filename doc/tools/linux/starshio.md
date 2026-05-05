@@ -1,11 +1,12 @@
 ---
 title: Starshio
 main_link: https://github.com/starship/starship
-keywords: [starshio, linux, tools, starship]
+keywords: [starshio, linux, starship]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/tools/linux/fish.md` by `article_split.py`. Heading: **Starshio**.
 

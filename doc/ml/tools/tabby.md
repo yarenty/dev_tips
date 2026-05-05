@@ -1,11 +1,12 @@
 ---
 title: TabbyML
 main_link: https://github.com/TabbyML/tabby
-keywords: [tabby, tools, ml, ide, self, cloud]
+keywords: [tabby, ide, self, gpus, cuda]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # TabbyML
 

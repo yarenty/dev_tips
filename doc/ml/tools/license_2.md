@@ -1,11 +1,12 @@
 ---
 title: License
 main_link: https://github.com/tensorflow/tensorflow
-keywords: [license-2, tools, ml, apache, mit, contribution]
+keywords: [license-2, apache, mit, contribution, license]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/ml/tools/tract.md` by `article_split.py`. Heading: **License**.
 

@@ -1,11 +1,12 @@
 ---
 title: Red Panda
 main_link: https://github.com/kafka-ops/julie
-keywords: [redpanda, messaging, kafka, apache, topics]
+keywords: [redpanda, kafka, apache, topics, self, quality, awesome, prometheus]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/messaging/kafka.md` by `article_split.py`. Heading: **Red Panda**.
 

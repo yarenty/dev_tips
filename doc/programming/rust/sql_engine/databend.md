@@ -1,11 +1,12 @@
 ---
 title: Databend
 main_link: https://github.com/datafuselabs/databend/issues/5731
-keywords: [databend, sql-engine, rust, programming, udf, function, sql]
+keywords: [databend, rust, udf, sql, mysql]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Databend
 

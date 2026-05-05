@@ -1,11 +1,12 @@
 ---
 title: mac-notification-sys
 main_link: 
-keywords: [mac-notification-sys, gui, rust, programming, notifications]
+keywords: [mac-notification-sys, rust, notifications]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/gui/macos.md` by `article_split.py`. Heading: **mac-notification-sys**.
 

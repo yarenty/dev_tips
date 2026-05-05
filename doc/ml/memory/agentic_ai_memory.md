@@ -1,11 +1,12 @@
 ---
 title: Task
 main_link: https://github.com/FoundationAgents/awesome-foundation-agents?tab=readme-ov-file#memory
-keywords: [agentic-ai-memory, memory, ml, retrieval, llm, system, rag]
+keywords: [agentic-ai-memory]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Task
 

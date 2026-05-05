@@ -1,11 +1,12 @@
 ---
 title: Gloo
 main_link: 
-keywords: [gloo, web, rust, programming, libraries, toolkit, wasm]
+keywords: [gloo, rust, libraries, toolkit]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/web/webassembly.md` by `article_split.py`. Heading: **Gloo**.
 

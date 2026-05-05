@@ -1,11 +1,12 @@
 ---
 title: Redis
 main_link: https://github.com/redis/redis
-keywords: [redis, nosql, db, data, structures]
+keywords: [redis, nosql, structures, cache, distributed, programming]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Redis
 

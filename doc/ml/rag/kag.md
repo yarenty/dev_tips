@@ -1,11 +1,12 @@
 ---
 title: KAG
 main_link: https://github.com/OpenSPG/openspg
-keywords: [kag, rag, ml, knowledge, logical, reasoning, openspg]
+keywords: [kag, logical, reasoning, vector, models]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # KAG
 

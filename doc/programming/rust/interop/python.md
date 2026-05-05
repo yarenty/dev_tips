@@ -1,11 +1,12 @@
 ---
 title: PUFF
 main_link: https://github.com/hansonkd/puff
-keywords: [python, interop, rust, programming, level, graphql]
+keywords: [python, rust, level, graphql, postgres]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # PUFF
 

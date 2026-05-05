@@ -1,11 +1,12 @@
 ---
 title: Links
 main_link: https://cloud.google.com/bigquery-ml/docs/introduction
-keywords: [links, bigquery, ml, syntax, cloud, google]
+keywords: [bigquery, syntax]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Links
 

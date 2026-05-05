@@ -1,11 +1,12 @@
 ---
 title: GreptimeDB
 main_link: https://github.com/GreptimeTeam/greptimedb
-keywords: [greptimedb, time-series, db, time, distributed, greptimeteam]
+keywords: [greptimedb, time-series, distributed, greptimeteam, platform, python]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # GreptimeDB
 

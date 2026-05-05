@@ -1,11 +1,12 @@
 ---
 title: Prek
 main_link: https://github.com/j178/prek
-keywords: [prek, misc, tools, hooks, cargo, commit]
+keywords: [prek, hooks, cargo, commit, quality, replacement, security, shell]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/tools/misc/rust_must.md` by `article_split.py`. Heading: **Prek**.
 

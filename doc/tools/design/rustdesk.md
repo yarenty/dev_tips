@@ -1,7 +1,7 @@
 ---
 title: RustDesk!
 main_link: https://rustdesk.com/
-keywords: [rustdesk, design, tools, finally, connection, between]
+keywords: [rustdesk, design, finally]
 status: draft
 ---
 

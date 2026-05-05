@@ -1,11 +1,12 @@
 ---
 title: Coding Agents
 main_link: https://github.com/HKUDS/DeepCode
-keywords: [coding-agents, agents, ml, free, amp, between]
+keywords: [coding-agents, amp, cli, models]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Coding Agents
 

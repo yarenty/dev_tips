@@ -1,11 +1,12 @@
 ---
 title: SQLFlow
 main_link: https://github.com/turbolytics/sql-flow?utm_source=tldrdata
-keywords: [sqlflow, tools, db, duckdb, data, kafka, sql]
+keywords: [sqlflow, duckdb, kafka, streaming, arrow, apache]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # SQLFlow
 

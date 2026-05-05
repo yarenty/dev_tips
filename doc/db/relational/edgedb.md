@@ -1,11 +1,12 @@
 ---
 title: edgeDB
 main_link: https://www.edgedb.com/
-keywords: [edgedb, relational, db, objects, sql, graph, schema]
+keywords: [edgedb, objects, sql, graph, databases]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # edgeDB
 

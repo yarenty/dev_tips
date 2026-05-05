@@ -1,7 +1,7 @@
 ---
 title: Latex
 main_link: 
-keywords: [latex, visualization]
+keywords: [latex]
 status: draft
 ---
 

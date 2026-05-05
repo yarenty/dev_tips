@@ -1,11 +1,12 @@
 ---
 title: Papers
 main_link: https://www.connectedpapers.com/main/dcc9308f2b9879e9fecff30108faa544d977a73c/A-Framework-for-Pattern-Mining-and-Anomaly-Detection-in-Multi%20dimensional-Time-Series-and-Event-Logs/graph
-keywords: [papers, time-series, ml, time, frameworks, pattern]
+keywords: [papers, time-series, frameworks, pattern, graph]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Papers
 

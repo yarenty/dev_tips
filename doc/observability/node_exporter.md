@@ -1,11 +1,12 @@
 ---
 title: node_exporter
 main_link: 
-keywords: [node-exporter, observability, node, exporter, services]
+keywords: [node-exporter, observability, node, exporter, usr]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # node_exporter
 

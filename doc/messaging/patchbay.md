@@ -1,11 +1,12 @@
 ---
 title: patchbay.pub
 main_link: 
-keywords: [patchbay, messaging, pubsub, pub, iot]
+keywords: [patchbay, pubsub, pub, iot, terminal, models]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # patchbay.pub
 

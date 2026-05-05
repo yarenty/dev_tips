@@ -1,11 +1,12 @@
 ---
 title: Javascript
 main_link: https://www.svelvet.io/docs/core-concepts/
-keywords: [javascript, visualization, svelvet, docs, core, concepts]
+keywords: [javascript, svelvet, concepts]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Javascript
 

@@ -1,11 +1,12 @@
 ---
 title: HalfBrown
 main_link: https://crates.io/crates/halfbrown
-keywords: [low-level-structures, core, rust, programming, crates, tinyvec, hashmap, vec]
+keywords: [low-level-structures, rust, tinyvec, vector]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # HalfBrown
 

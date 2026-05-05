@@ -1,11 +1,12 @@
 ---
 title: mysql
 main_link: 
-keywords: [mysql, relational, db, root, password, secure, reset]
+keywords: [mysql, root, password, secure]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # mysql
 

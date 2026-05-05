@@ -1,11 +1,12 @@
 ---
 title: Spark rapids
 main_link: https://github.com/NVIDIA/spark-rapids/blob/main/udf-compiler/README.md
-keywords: [rapids, datafusion, data, rust, spark, nvidia, readme, blob]
+keywords: [rapids, rust, nvidia]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Spark rapids
 

@@ -1,11 +1,12 @@
 ---
 title: awesome app
 main_link: https://awesomeapp.org/
-keywords: [app-builders, tooling, rust, programming, awesome, code, review]
+keywords: [app-builders, rust, awesome, tauri]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # awesome app
 

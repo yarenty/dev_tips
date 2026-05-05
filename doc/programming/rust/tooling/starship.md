@@ -1,11 +1,12 @@
 ---
 title: starship
 main_link: https://crates.io/crates/starship
-keywords: [starship, tooling, rust, programming, customizable, crates, prompt]
+keywords: [starship, rust, customizable, shell]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **starship**.
 

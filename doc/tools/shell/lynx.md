@@ -1,7 +1,7 @@
 ---
 title: Lynx
 main_link: 
-keywords: [lynx, shell, tools]
+keywords: [lynx, shell]
 status: draft
 ---
 

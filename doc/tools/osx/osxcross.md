@@ -1,11 +1,12 @@
 ---
 title: OSX Cross
 main_link: https://github.com/tpoechtrager/osxcross
-keywords: [osxcross, osx, tools, sdk, clang, cross, macos]
+keywords: [osxcross, sdk, clang, cross, linux]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # OSX Cross
 

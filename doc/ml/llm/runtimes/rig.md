@@ -1,11 +1,12 @@
 ---
 title: Rig
 main_link: https://github.com/0xPlaygrounds/rig
-keywords: [rig, runtimes, llm, ml, rust, crates, api, reference]
+keywords: [rig, rust, programming]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Rig
 

@@ -1,11 +1,12 @@
 ---
 title: Pake
 main_link: https://github.com/tw93/Pake
-keywords: [pake, security, tools, tauri, windows, linux]
+keywords: [pake, security, tauri, linux, frameworks, rust]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/tools/security/web_to_app_pake.md` by `article_split.py`. Heading: **Pake**.
 

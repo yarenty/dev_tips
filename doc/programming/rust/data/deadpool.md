@@ -1,11 +1,12 @@
 ---
 title: deadpool
 main_link: https://crates.io/crates/deadpool
-keywords: [deadpool, data, rust, programming, pool, objects, managed, enabled]
+keywords: [deadpool, rust, pool, objects]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/data/db.md` by `article_split.py`. Heading: **deadpool**.
 

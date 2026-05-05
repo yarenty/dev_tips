@@ -1,11 +1,12 @@
 ---
 title: Extensions
 main_link: https://block.github.io/goose/docs/getting-started/using-extensions/
-keywords: [extensions, runtimes, llm, ml, goose, block, docs, sessions]
+keywords: [extensions, goose, block]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/ml/llm/runtimes/goose.md` by `article_split.py`. Heading: **Extensions**.
 

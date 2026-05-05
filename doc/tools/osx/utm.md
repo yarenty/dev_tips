@@ -1,11 +1,12 @@
 ---
 title: UTM
 main_link: https://mac.getutm.app/
-keywords: [utm, osx, tools, apple, silicon, arm64, intel]
+keywords: [apple, silicon, arm64, linux]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # UTM
 

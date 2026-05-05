@@ -1,11 +1,12 @@
 ---
 title: mobc
 main_link: https://crates.io/crates/mobc
-keywords: [mobc, data, rust, programming, crates, inspired, golang, sql]
+keywords: [mobc, rust, sql]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/data/db.md` by `article_split.py`. Heading: **mobc**.
 

@@ -1,11 +1,12 @@
 ---
 title: superfile
 main_link: https://github.com/MHNightCat/superfile?utm_source=tldrnewsletter
-keywords: [superfile, design, tools, file, panel, select, mode]
+keywords: [superfile, design, file, panel, select]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # superfile
 

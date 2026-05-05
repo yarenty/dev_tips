@@ -1,7 +1,7 @@
 ---
 title: Algorithms
 main_link: https://esolangs.org/wiki/Brainfuck_algorithms
-keywords: [algorithms, funny, brainfuck, esolangs, wiki]
+keywords: [algorithms, brainfuck, esolangs, wiki]
 status: draft
 ---
 

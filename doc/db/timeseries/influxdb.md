@@ -1,11 +1,12 @@
 ---
 title: InfluxDB
 main_link: http://localhost:8086/
-keywords: [influxdb, time-series, db, enter, click, initial]
+keywords: [influxdb, time-series, enter, click, initial]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # InfluxDB
 

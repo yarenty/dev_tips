@@ -1,11 +1,12 @@
 ---
 title: Episodic Memory
 main_link: https://em-llm.github.io/?utm_source=chatgpt.com
-keywords: [episodic-memory, memory, ml, rag, llm, retrieval]
+keywords: [episodic-memory, graph, design]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Episodic Memory
 

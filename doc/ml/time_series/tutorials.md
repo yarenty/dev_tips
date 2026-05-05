@@ -1,11 +1,12 @@
 ---
 title: Tutorials
 main_link: https://www.kaggle.com/ryanholbrook/linear-regression-with-time-series/tutorial
-keywords: [tutorials, time-series, ml, linear, regression]
+keywords: [time-series, linear, regression, papers]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Tutorials
 

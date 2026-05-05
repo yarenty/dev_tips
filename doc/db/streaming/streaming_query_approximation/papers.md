@@ -1,11 +1,12 @@
 ---
 title: Papers
 main_link: https://dl.acm.org/doi/10.1145/1366102.1366106
-keywords: [papers, streaming-query-approximation, streaming, db, approximate, data, processing]
+keywords: [papers, streaming-query-approximation, streaming, approximate, quality, distributed, design, databases]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Papers
 

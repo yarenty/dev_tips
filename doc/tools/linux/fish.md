@@ -1,11 +1,12 @@
 ---
 title: Fish
 main_link: https://github.com/starship/starship
-keywords: [fish, linux, tools, julia, evans, reasons, shell]
+keywords: [fish, linux, julia, evans, reasons, tmux, shell]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Fish
 

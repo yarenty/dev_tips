@@ -1,11 +1,12 @@
 ---
 title: Data Quality
 main_link: https://github.com/sparkdq-community/sparkdq?utm_source=tldrdata
-keywords: [data-quality, quality, db, sparkdq, data, spark, pyspark]
+keywords: [data-quality, quality, sparkdq, spark, frameworks, apache]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Data Quality
 

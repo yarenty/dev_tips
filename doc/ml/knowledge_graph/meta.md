@@ -1,11 +1,12 @@
 ---
 title: Meta / Facebook  graph articles
 main_link: https://www.zdnet.com/article/metas-data2vec-is-the-next-step-toward-one-neural-network-to-rule-them-all/?utm_source=tldrnewsletter
-keywords: [meta, knowledge-graph, ml, neural, network, rule, facebook]
+keywords: [meta, knowledge-graph, neural, network, rule, graph, articles]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Meta / Facebook  graph articles
 

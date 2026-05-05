@@ -1,11 +1,12 @@
 ---
 title: Meilisearch
 main_link: https://github.com/meilisearch/Meilisearch
-keywords: [meilisearch, data, rust, programming, search, typo, engine, lightning]
+keywords: [meilisearch, rust, search, typo]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Meilisearch
 

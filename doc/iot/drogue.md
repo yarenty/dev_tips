@@ -1,11 +1,12 @@
 ---
 title: Drogue
 main_link: https://www.drogue.io
-keywords: [drogue, iot, data, way, internet]
+keywords: [drogue, iot, way, internet]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Drogue
 

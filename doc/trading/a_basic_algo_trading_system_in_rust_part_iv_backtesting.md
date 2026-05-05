@@ -1,11 +1,12 @@
 ---
 title: A Basic Algo Trading System In Rust: Part IV: Backtesting
 main_link: https://github.com/Paul-Folbrecht/algo-trading
-keywords: [a-basic-algo-trading-system-in-rust-part-iv-backtesting, trading, data, system, backtesting, rust]
+keywords: [a-basic-algo-trading-system-in-rust-part-iv-backtesting, backtesting, rust, basic]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/trading/rust_algo_trading.md` by `article_split.py`. Heading: **A Basic Algo Trading System In Rust: Part IV: Backtesting**.
 

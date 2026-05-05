@@ -1,11 +1,12 @@
 ---
 title: Command line
 main_link: https://crates.io/crates/cursive_table_view
-keywords: [cli, rust, programming, command, clap, line, cursive]
+keywords: [cli, rust, command, clap, line, tui]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Command line
 

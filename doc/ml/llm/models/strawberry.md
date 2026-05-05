@@ -1,7 +1,7 @@
 ---
 title: Strawberry
 main_link: https://strawberrybrowser.com/
-keywords: [strawberry, models, llm, ml, strawberrybrowser, self, driving, browser]
+keywords: [strawberry, models, strawberrybrowser, self]
 status: draft
 ---
 

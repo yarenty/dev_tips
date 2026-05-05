@@ -1,11 +1,12 @@
 ---
 title: DeltaLake
 main_link: https://github.com/delta-io/delta-rs
-keywords: [delta, datafusion, data, rust, lake, level, processing, apache]
+keywords: [delta, rust, lake, level]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # DeltaLake
 

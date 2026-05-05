@@ -1,11 +1,12 @@
 ---
 title: Dokku
 main_link: https://dokku.com/#install-apt
-keywords: [dokku, kubernetes, paas, services, seen, platform]
+keywords: [dokku, kubernetes, paas, seen, platform, self]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Dokku
 

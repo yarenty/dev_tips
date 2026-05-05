@@ -1,11 +1,12 @@
 ---
 title: tiberius
 main_link: https://crates.io/crates/tiberius
-keywords: [tiberius, data, rust, programming, tds, goals, asynchronous, connection]
+keywords: [tiberius, rust, tds, goals, sql, linux]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/data/db.md` by `article_split.py`. Heading: **tiberius**.
 

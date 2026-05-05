@@ -1,11 +1,12 @@
 ---
 title: A Basic Algo Trading System In Rust: Part I
 main_link: 
-keywords: [a-basic-algo-trading-system-in-rust-part-i, trading, rust, system, data, market]
+keywords: [a-basic-algo-trading-system-in-rust-part-i, rust, market, basic]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/trading/rust_algo_trading.md` by `article_split.py`. Heading: **A Basic Algo Trading System In Rust: Part I**.
 

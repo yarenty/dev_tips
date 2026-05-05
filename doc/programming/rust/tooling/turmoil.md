@@ -1,11 +1,12 @@
 ---
 title: turmoil
 main_link: https://crates.io/crates/turmoil
-keywords: [turmoil, tooling, rust, programming, crates, tokio, network, written]
+keywords: [turmoil, rust, tokio, distributed]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/tooling/tests.md` by `article_split.py`. Heading: **turmoil**.
 

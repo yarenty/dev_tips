@@ -1,11 +1,12 @@
 ---
 title: Build Voice AI with one API
 main_link: https://cdn.prod.website-files.com/67a08d9d7d19f8fb63692894/6914d25b2dda082d5761e28f_STT%20Landing%20page.avif
-keywords: [build-voice-ai-with-one-api, voice, ml, build, api, speech, pii]
+keywords: [build-voice-ai-with-one-api, voice, api, speech, platform]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/ml/voice/assemblyai.md` by `article_split.py`. Heading: **Build Voice AI with one API**.
 

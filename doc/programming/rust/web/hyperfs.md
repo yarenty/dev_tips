@@ -1,11 +1,12 @@
 ---
 title: HyperFS
 main_link: https://crates.io/crates/hyperfs
-keywords: [hyperfs, web, rust, programming, crates]
+keywords: [hyperfs, rust, python]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/web/http.md` by `article_split.py`. Heading: **HyperFS**.
 

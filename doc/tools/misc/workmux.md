@@ -1,11 +1,12 @@
 ---
 title: Workmux
 main_link: https://github.com/raine/workmux
-keywords: [workmux, misc, tools, tmux, git, worktrees, windows]
+keywords: [workmux, tmux, git, worktrees, meta, tui, shell]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Workmux
 

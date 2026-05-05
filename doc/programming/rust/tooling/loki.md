@@ -1,7 +1,7 @@
 ---
 title: Loki
 main_link: 
-keywords: [loki, tooling, rust, programming, inspired, prometeus, interesting]
+keywords: [loki, rust, prometeus]
 status: draft
 ---
 

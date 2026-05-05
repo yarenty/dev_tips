@@ -1,11 +1,12 @@
 ---
 title: XC in Rust
 main_link: https://github.com/joerdav/xc
-keywords: [xc-in-rust, learning, rust, programming, markdown, joerdav, defined, task]
+keywords: [xc-in-rust, rust, markdown, joerdav]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/learning/_todo_ideas.md` by `article_split.py`. Heading: **XC in Rust**.
 

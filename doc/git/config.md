@@ -1,11 +1,12 @@
 ---
 title: GIT configuration
 main_link: https://blog.gitbutler.com/how-git-core-devs-configure-git/
-keywords: [config, git, default, better, diff, branch]
+keywords: [config, git, better, diff, branch, configuration, cache]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # GIT configuration
 

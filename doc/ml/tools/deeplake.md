@@ -1,11 +1,12 @@
 ---
 title: DeepLake
 main_link: https://docs.activeloop.ai/examples/dl/quickstart
-keywords: [deeplake, tools, ml, deep, lake, data, store]
+keywords: [deeplake, deep, lake, quality, vector, gpus]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # DeepLake
 

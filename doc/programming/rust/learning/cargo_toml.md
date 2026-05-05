@@ -1,11 +1,12 @@
 ---
 title: Cargo.toml
 main_link: 
-keywords: [cargo-toml, learning, rust, programming, cargo, serde, tricks, toml]
+keywords: [cargo-toml, rust, serde]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/learning/_must_have.md` by `article_split.py`. Heading: **Cargo.toml**.
 

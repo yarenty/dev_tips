@@ -1,11 +1,12 @@
 ---
 title: Helix
 main_link: 
-keywords: [helix, linux, tools, lsp, tree, sitter, neovim]
+keywords: [helix, linux, lsp, sitter, search]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Helix
 

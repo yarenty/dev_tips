@@ -1,11 +1,12 @@
 ---
 title: Orchestration
 main_link: https://langchain-ai.github.io/langgraph/
-keywords: [orchestration, agents, ml, langgraph, parallelization, llm, workflow]
+keywords: [orchestration, langgraph, parallelization, graph]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Orchestration
 

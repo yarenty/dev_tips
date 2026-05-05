@@ -1,11 +1,12 @@
 ---
 title: UCLicious
 main_link: https://github.com/andoriyu/uclicious
-keywords: [uclicious, tooling, rust, programming, type, parser, optional, derive]
+keywords: [uclicious, rust, type, level]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # UCLicious
 

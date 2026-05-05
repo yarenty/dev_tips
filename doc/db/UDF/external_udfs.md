@@ -1,11 +1,12 @@
 ---
 title: External UDFs
 main_link: https://lib.rs/crates/dlopen2
-keywords: [external-udfs, udf, db, ffi, rust, abi, shared]
+keywords: [external-udfs, udf, ffi, rust, abi, programming, lib, arrow]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # External UDFs
 

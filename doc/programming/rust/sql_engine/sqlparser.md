@@ -1,11 +1,12 @@
 ---
 title: SQLparser
 main_link: https://crates.io/crates/sqlparser
-keywords: [sqlparser, sql-engine, rust, programming, sql, datafusion, crates, parser]
+keywords: [sqlparser, rust, sql]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # SQLparser
 

@@ -1,11 +1,12 @@
 ---
 title: Bmw
 main_link: 
-keywords: [bmw, digital-twin, production, system, michele, melchiorre]
+keywords: [bmw, production, michele, melchiorre]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Bmw
 

@@ -1,11 +1,12 @@
 ---
 title: RUST in JUPYTER
 main_link: 
-keywords: [rust-in-jupyter, tooling, rust, programming, jupyter, cargo, evcxr]
+keywords: [rust-in-jupyter, rust, jupyter]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **RUST in JUPYTER**.
 

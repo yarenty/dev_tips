@@ -1,11 +1,12 @@
 ---
 title: Kuasar
 main_link: https://github.com/kuasar-io/kuasar
-keywords: [kuasar, kubernetes, sandbox, api, container]
+keywords: [kuasar, kubernetes, sandbox, api, container, runtimes, security, linux]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Kuasar
 

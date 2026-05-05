@@ -1,11 +1,12 @@
 ---
 title: Tiny - GPU
 main_link: https://github.com/adam-maj/tiny-gpu
-keywords: [tiny-gpu, compilers, ml, gpu, gpus, verilog]
+keywords: [tiny-gpu, compilers, gpu, gpus, verilog]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Tiny - GPU
 

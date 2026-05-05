@@ -1,11 +1,12 @@
 ---
 title: ADBC !
 main_link: https://github.com/apache/arrow-adbc/tree/main
-keywords: [adbc, data, rust, programming, arrow, api, flight, sql]
+keywords: [adbc, rust, arrow, api, sql, retrieval, databases]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/data/db.md` by `article_split.py`. Heading: **ADBC !**.
 

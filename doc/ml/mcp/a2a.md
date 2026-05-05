@@ -1,11 +1,12 @@
 ---
 title: Agent2Agent
 main_link: https://github.com/google/A2A
-keywords: [a2a, mcp, ml, agents, task]
+keywords: [a2a, kafka]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Agent2Agent
 

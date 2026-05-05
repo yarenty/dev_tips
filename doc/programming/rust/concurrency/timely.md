@@ -1,11 +1,12 @@
 ---
 title: Timely Dataflow
 main_link: https://github.com/frankmcsherry/timely-dataflow
-keywords: [timely, concurrency, rust, programming, dataflow, differential]
+keywords: [timely, rust, dataflow, differential, distributed]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Timely Dataflow
 

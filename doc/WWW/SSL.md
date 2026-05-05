@@ -1,11 +1,12 @@
 ---
 title: HTTPS on websites
 main_link: 
-keywords: [ssl, certbot, websites, install]
+keywords: [ssl, certbot, websites]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # HTTPS on websites
 

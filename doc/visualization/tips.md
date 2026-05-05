@@ -1,11 +1,12 @@
 ---
 title: Help
 main_link: https://education.microsoft.com/nb-no/course/0a60eeb6/0
-keywords: [tips, visualization, dataviz, books, bookdepository, visualize]
+keywords: [tips, dataviz, books, bookdepository, visualize, microsoft]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Help
 

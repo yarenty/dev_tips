@@ -1,11 +1,12 @@
 ---
 title: coreutils
 main_link: https://github.com/Zij-IT/clido
-keywords: [tools, tooling, rust, programming, crates, linux, ripgrep, windows]
+keywords: [rust, linux, replacement, tmux]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # coreutils
 

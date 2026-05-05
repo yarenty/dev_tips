@@ -1,11 +1,12 @@
 ---
 title: langgraph
 main_link: https://langchain-ai.github.io/langgraph/
-keywords: [langgraph, frameworks, ml, langchain, replit, uber, linkedin]
+keywords: [langgraph, frameworks, langchain, replit, uber]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # langgraph
 

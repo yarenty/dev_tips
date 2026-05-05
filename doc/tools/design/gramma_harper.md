@@ -1,11 +1,12 @@
 ---
 title: Harper
 main_link: https://github.com/Automattic/harper
-keywords: [gramma-harper, design, tools, automattic, english, grammar, checker]
+keywords: [gramma-harper, design, automattic, english, grammar]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Harper
 

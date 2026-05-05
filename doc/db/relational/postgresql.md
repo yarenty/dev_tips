@@ -1,11 +1,12 @@
 ---
 title: postgresql
 main_link: https://pigsty.io/blog/pg/pg-eat-db-world/
-keywords: [postgresql, relational, db, postgres, explain, data]
+keywords: [postgresql, postgres, explain, mysql, usr]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # postgresql
 

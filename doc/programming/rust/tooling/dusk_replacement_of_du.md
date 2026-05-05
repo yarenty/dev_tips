@@ -1,11 +1,12 @@
 ---
 title: dusk  - replacement of du
 main_link: 
-keywords: [dusk-replacement-of-du, tooling, rust, programming, dusk, replacement, cargo]
+keywords: [dusk-replacement-of-du, rust, dusk, replacement]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **dusk  - replacement of du**.
 

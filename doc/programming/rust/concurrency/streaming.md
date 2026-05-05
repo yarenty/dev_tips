@@ -1,11 +1,12 @@
 ---
 title: par-stream
 main_link: https://github.com/jerry73204/par-stream
-keywords: [streaming, concurrency, rust, programming, parallel, streams, par, code]
+keywords: [streaming, rust, parallel, streams]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # par-stream
 

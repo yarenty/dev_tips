@@ -1,11 +1,12 @@
 ---
 title: Caching
 main_link: https://thenewstack.io/what-is-semantic-caching/?utm_source=tldrdata
-keywords: [caching, memory, ml, semantic, llm, reddig, fastly]
+keywords: [caching, semantic, reddig, quality, vector, gpu]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Caching
 

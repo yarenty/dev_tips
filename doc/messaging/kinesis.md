@@ -1,11 +1,12 @@
 ---
 title: Kinesis
 main_link: https://github.com/amazon-archives/aws-weathergen
-keywords: [kinesis, messaging, amazon, data, aws, process]
+keywords: [kinesis, amazon, aws, process, streaming, iot]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Kinesis
 

@@ -1,7 +1,7 @@
 ---
 title: Github MAP
 main_link: https://anvaka.github.io/map-of-github
-keywords: [github-map, learning, rust, programming, anvaka]
+keywords: [github-map, rust, anvaka]
 status: draft
 ---
 

@@ -1,11 +1,12 @@
 ---
 title: GenAI Toolbox
 main_link: https://github.com/googleapis/genai-toolbox/tree/main
-keywords: [mcp4db, mcp, ml, toolbox, genai, databases, googleapis]
+keywords: [mcp4db, toolbox, genai, databases]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # GenAI Toolbox
 

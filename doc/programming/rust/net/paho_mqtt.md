@@ -1,11 +1,12 @@
 ---
 title: paho MQTT
 main_link: https://crates.io/crates/paho-mqtt
-keywords: [paho-mqtt, rust, programming, paho, mqtt, api]
+keywords: [paho-mqtt, rust, paho, mqtt, api, linux]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/net/mq.md` by `article_split.py`. Heading: **paho MQTT**.
 

@@ -1,11 +1,12 @@
 ---
 title: MS Server
 main_link: https://github.com/libsql/libsql_generate
-keywords: [rust-libs, sql-engine, rust, programming, libsql, crates]
+keywords: [rust-libs, rust, libsql, server, excel, udf, sql]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # MS Server
 

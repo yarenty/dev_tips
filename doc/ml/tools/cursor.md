@@ -1,11 +1,12 @@
 ---
 title: Cursor
 main_link: 
-keywords: [cursor, tools, ml, write, important, plan]
+keywords: [cursor, write, important, plan]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Cursor
 

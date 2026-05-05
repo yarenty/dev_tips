@@ -1,11 +1,12 @@
 ---
 title: Cleaning disk
 main_link: https://github.com/qarmin/czkawka
-keywords: [fengshui, design, tools, cleaning, qarmin, czkawka, nice]
+keywords: [fengshui, design, cleaning, qarmin, czkawka, gui]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Cleaning disk
 

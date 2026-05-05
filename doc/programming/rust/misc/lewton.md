@@ -1,11 +1,12 @@
 ---
 title: lewton
 main_link: https://github.com/RustAudio/lewton
-keywords: [lewton, misc, rust, programming, rustaudio, vorbis, audio, decoder]
+keywords: [lewton, rust, rustaudio, vorbis]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/misc/audio.md` by `article_split.py`. Heading: **lewton**.
 

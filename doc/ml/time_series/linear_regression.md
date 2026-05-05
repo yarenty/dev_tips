@@ -1,11 +1,12 @@
 ---
 title: Linear Regression With Time Series
 main_link: https://www.kaggle.com/ryanholbrook/linear-regression-with-time-series/tutorial
-keywords: [linear-regression-with-time-series, time-series, ml, linear, regression]
+keywords: [linear-regression-with-time-series, time-series, linear, regression]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/ml/time_series/tutorials.md` by `article_split.py`. Heading: **Linear Regression With Time Series**.
 

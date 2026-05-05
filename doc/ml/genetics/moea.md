@@ -1,11 +1,12 @@
 ---
 title: The MOEA Framework
 main_link: 
-keywords: [moea, genetics, ml, frameworks, algorithms, nsga]
+keywords: [moea, genetics, frameworks, algorithms, nsga, design, programming]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # The MOEA Framework
 

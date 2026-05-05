@@ -1,11 +1,12 @@
 ---
 title: Nvidia
 main_link: https://developer.nvidia.com/nvidia-omniverse-platform#:~:text=NVIDIA%20Omniverse%E2%84%A2%20is%20a,and%20NVIDIA%20RTX%E2%84%A2%20technology
-keywords: [nvidia, digital-twin, omniverse, simulation, technology, rev]
+keywords: [nvidia, omniverse, simulation, technology, rev, digital, search]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Nvidia
 

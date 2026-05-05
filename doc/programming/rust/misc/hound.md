@@ -1,11 +1,12 @@
 ---
 title: Hound
 main_link: https://github.com/ruuda/hound
-keywords: [hound, misc, rust, programming, decoding, crates, changelog]
+keywords: [hound, rust, decoding]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/misc/audio.md` by `article_split.py`. Heading: **Hound**.
 

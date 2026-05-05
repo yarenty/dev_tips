@@ -1,11 +1,12 @@
 ---
 title: Feather
 main_link: https://github.com/BersisSe/feather?utm_source=tldrnewsletter
-keywords: [feather, web, rust, programming, api, first, context, modular]
+keywords: [feather, rust, api, first]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Feather
 

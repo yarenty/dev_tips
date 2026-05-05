@@ -1,11 +1,12 @@
 ---
 title: unsloth
 main_link: https://github.com/unslothai/unsloth
-keywords: [unsloth, finetuning, ml, install, cuda, llama, pip]
+keywords: [unsloth, finetuning, cuda, llama, gpu, gpus]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # unsloth
 

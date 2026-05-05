@@ -1,11 +1,12 @@
 ---
 title: MTR
 main_link: https://github.com/traviscross/mtr/tree/master
-keywords: [mtr, networking, tools, each, network, between, host]
+keywords: [mtr, networking, each, network, quality]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # MTR
 

@@ -1,11 +1,12 @@
 ---
 title: Static Site Generators
 main_link: https://github.com/getzola/zola
-keywords: [ssg, zola, easy, site, sass]
+keywords: [ssg, zola, easy, site, sass, javascript, cli, gui]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Static Site Generators
 

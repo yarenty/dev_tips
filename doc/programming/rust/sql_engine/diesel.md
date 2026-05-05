@@ -1,11 +1,12 @@
 ---
 title: diesel
 main_link: https://github.com/diesel-rs/diesel/tree/2.0.x
-keywords: [diesel, sql-engine, rust, programming, started, builder, guides]
+keywords: [diesel, rust, started, builder, mysql, databases]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # diesel
 

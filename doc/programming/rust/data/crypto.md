@@ -1,11 +1,12 @@
 ---
 title: RustCrypto: POLYVAL
 main_link: https://crates.io/crates/polyval
-keywords: [crypto, data, rust, programming, polyval, aes, gcm, rustcrypto]
+keywords: [crypto, rust, polyval, aes]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # RustCrypto: POLYVAL
 

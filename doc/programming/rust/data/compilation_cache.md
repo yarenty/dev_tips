@@ -1,11 +1,12 @@
 ---
 title: sccache - Shared Compilation Cache
 main_link: https://github.com/mozilla/sccache/
-keywords: [compilation-cache, data, rust, programming, sccache, compilation, wrapper, rustc]
+keywords: [compilation-cache, rust, sccache, compilation, cache, cuda, nvidia]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # sccache - Shared Compilation Cache
 

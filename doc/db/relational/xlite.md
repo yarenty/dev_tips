@@ -1,11 +1,12 @@
 ---
 title: XLite
 main_link: https://github.com/x2bool/xlite
-keywords: [xlite, relational, db, excel, documents, sqlite]
+keywords: [xlite, excel, documents, sqlite]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # XLite
 

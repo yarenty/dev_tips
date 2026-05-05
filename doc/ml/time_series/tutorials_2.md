@@ -1,7 +1,7 @@
 ---
 title: Tutorials
 main_link: 
-keywords: [tutorials-2, time-series, ml]
+keywords: [tutorials-2, time-series, papers]
 status: draft
 ---
 

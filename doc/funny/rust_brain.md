@@ -1,11 +1,12 @@
 ---
 title: Rust - brain
 main_link: https://github.com/brain-lang/brain
-keywords: [brain, funny, brainfuck, rust, programming]
+keywords: [brain, brainfuck, rust, programming]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/funny/brainfuck.md` by `article_split.py`. Heading: **Rust - brain**.
 

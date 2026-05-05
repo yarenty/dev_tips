@@ -1,11 +1,12 @@
 ---
 title: Helios
 main_link: https://sr.ht/~sircmpwn/helios/sources
-keywords: [helios, unix-systems, programming, sircmpwn, sources]
+keywords: [helios, sircmpwn, sources, rust]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/unix_systems/building_unix_system.md` by `article_split.py`. Heading: **Helios**.
 

@@ -1,11 +1,12 @@
 ---
 title: Pake
 main_link: https://github.com/tw93/Pake
-keywords: [pake, gui, rust, programming, line, tauri]
+keywords: [pake, rust, line, tauri]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Pake
 

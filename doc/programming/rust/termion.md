@@ -1,11 +1,12 @@
 ---
 title: Termion
 main_link: https://gitlab.redox-os.org/redox-os/termion
-keywords: [termion, rust, programming, redox, tty, api]
+keywords: [termion, rust, redox, tty, api, linux]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/tui.md` by `article_split.py`. Heading: **Termion**.
 

@@ -1,11 +1,12 @@
 ---
 title: Fonts
 main_link: https://github.com/rubjo/victor-mono
-keywords: [fonts, visualization, mono, victor, iosevka, code]
+keywords: [fonts, mono, victor, iosevka]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Fonts
 

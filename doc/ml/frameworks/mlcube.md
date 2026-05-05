@@ -1,11 +1,12 @@
 ---
 title: MLCube
 main_link: https://github.com/mlcommons/mlcube_examples
-keywords: [mlcube, frameworks, ml, models, machine, learning, software]
+keywords: [mlcube, frameworks, models, kubernetes]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # MLCube
 

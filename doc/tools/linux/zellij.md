@@ -1,11 +1,12 @@
 ---
 title: Zellij
 main_link: 
-keywords: [zellij, linux, tools, tmux, configuration, layouts, floating]
+keywords: [zellij, linux, tmux, configuration, layouts]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Zellij
 

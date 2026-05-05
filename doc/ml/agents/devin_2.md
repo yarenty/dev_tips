@@ -1,11 +1,12 @@
 ---
 title: Devin
 main_link: https://www.cognition-labs.com/introducing-devin
-keywords: [devin-2, agents, ml, issues, swe, resolve, django]
+keywords: [devin-2, issues, swe, resolve, devin, models]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/ml/agents/devin.md` by `article_split.py`. Heading: **Devin**.
 

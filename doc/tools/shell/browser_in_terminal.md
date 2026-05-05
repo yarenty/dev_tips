@@ -1,7 +1,7 @@
 ---
 title: Carbonyl
 main_link: https://github.com/fathyb/carbonyl
-keywords: [browser-in-terminal, shell, tools, lynx, browsh, fathyb]
+keywords: [browser-in-terminal, shell, lynx, browsh, fathyb]
 status: draft
 ---
 

@@ -1,11 +1,12 @@
 ---
 title: xorg
 main_link: https://github.com/xorq-labs/xorq?utm_source=tldrdata
-keywords: [xorg, datafusion, data, rust, xorq, python, multi, pipelines]
+keywords: [xorg, rust, xorq, python, cache, sql]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # xorg
 

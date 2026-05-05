@@ -1,11 +1,12 @@
 ---
 title: Speech-to-text
 main_link: https://www.assemblyai.com/build-voice-ai
-keywords: [assemblyai, voice, ml, build, speech, stt]
+keywords: [assemblyai, voice, speech, stt, text]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Speech-to-text
 

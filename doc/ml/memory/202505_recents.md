@@ -1,11 +1,12 @@
 ---
 title: 202505 Recents
 main_link: https://github.com/FoundationAgents/awesome-foundation-agents
-keywords: [202505-recents, memory, ml, llm, rag, agentic]
+keywords: [202505-recents, agentic]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # 202505 Recents
 

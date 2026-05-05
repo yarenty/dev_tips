@@ -1,11 +1,12 @@
 ---
 title: H2O
 main_link: https://h2o.ai/university/
-keywords: [h2o, frameworks, ml, university, aquarium, gpus, login]
+keywords: [h2o, frameworks, university, aquarium, gpus, platform]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # H2O
 

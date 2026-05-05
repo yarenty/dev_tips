@@ -1,7 +1,7 @@
 ---
 title: Deskreen
 main_link: https://github.com/pavlobu/deskreen
-keywords: [applications, design, tools, weektodo, rustdesk, share, wifi]
+keywords: [applications, design, weektodo, rustdesk, share]
 status: draft
 ---
 

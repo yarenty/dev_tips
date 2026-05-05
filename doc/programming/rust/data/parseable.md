@@ -1,11 +1,12 @@
 ---
 title: parseable
 main_link: https://github.com/parseablehq/parseable
-keywords: [parseable, data, rust, programming, ingestion, compatible, demo]
+keywords: [parseable, rust, ingestion, compatible, vector, arrow, observability]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/data/db.md` by `article_split.py`. Heading: **parseable**.
 

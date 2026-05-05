@@ -1,11 +1,12 @@
 ---
 title: difftastic
 main_link: https://crates.io/crates/difftastic
-keywords: [difftastic, tooling, rust, programming, crates, structural, diff, tools]
+keywords: [difftastic, rust, structural]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **difftastic**.
 

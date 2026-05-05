@@ -1,11 +1,12 @@
 ---
 title: Valgrind
 main_link: 
-keywords: [debugger, linux, tools, programs, bugs, university]
+keywords: [debugger, linux, programs, bugs, university, tmux, distributed, games]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Valgrind
 

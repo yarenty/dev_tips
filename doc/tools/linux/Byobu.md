@@ -1,11 +1,12 @@
 ---
 title: Byobu: Text-based Window Manager and Terminal Multiplexer
 main_link: https://github.com/dustinkirkland/byobu
-keywords: [byobu, linux, tools, terminal, multiplexer, gplv3]
+keywords: [byobu, linux, terminal, multiplexer, gplv3, text, based, distributed, tmux]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Byobu: Text-based Window Manager and Terminal Multiplexer
 

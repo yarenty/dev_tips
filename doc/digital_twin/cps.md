@@ -1,11 +1,12 @@
 ---
 title: Cps
 main_link: https://www.sciencedirect.com/science/article/pii/S2351978917304067
-keywords: [cps, digital-twin, digital, system, production, physical]
+keywords: [cps, digital, production, physical]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Cps
 

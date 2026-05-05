@@ -1,11 +1,12 @@
 ---
 title: Kolmogorov-Arnold Networks (KANs) for Time Series Forecasting
 main_link: https://towardsdatascience.com/kolmogorov-arnold-networks-kans-for-time-series-forecasting-9d49318c3172
-keywords: [kan, time-series, ml, kolmogorov, arnold, forecasting]
+keywords: [kan, time-series, kolmogorov, arnold, forecasting, python, models]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Kolmogorov-Arnold Networks (KANs) for Time Series Forecasting
 

@@ -1,11 +1,12 @@
 ---
 title: Tmux AI
 main_link: https://tmuxai.dev/
-keywords: [tmux-ai, linux, tools, tmux, dev]
+keywords: [tmux-ai, linux, tmux, dev]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/tools/linux/tmux.md` by `article_split.py`. Heading: **Tmux AI**.
 

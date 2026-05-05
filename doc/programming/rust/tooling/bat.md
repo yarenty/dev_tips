@@ -1,11 +1,12 @@
 ---
 title: BAT
 main_link: https://crates.io/crates/bat
-keywords: [bat, tooling, rust, programming, cat, crates, syntax, highlights]
+keywords: [bat, rust, cat]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **BAT**.
 

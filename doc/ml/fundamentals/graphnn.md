@@ -1,7 +1,7 @@
 ---
 title: Graphnn
 main_link: https://ai.googleblog.com/2022/03/robust-graph-neural-networks.html
-keywords: [graphnn, fundamentals, ml, gnn, google, googleblog, robust]
+keywords: [graphnn, gnn, googleblog]
 status: draft
 ---
 

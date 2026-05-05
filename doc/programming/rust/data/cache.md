@@ -1,11 +1,12 @@
 ---
 title: Cache
 main_link: https://crates.io/crates/moka
-keywords: [cache, data, rust, programming, moka, crates, quick, concurrent]
+keywords: [cache, rust, moka, sql, replacement]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/data/map_cache_storage.md` by `article_split.py`. Heading: **Cache**.
 

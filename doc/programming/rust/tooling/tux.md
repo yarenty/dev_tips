@@ -1,11 +1,12 @@
 ---
 title: tux
 main_link: https://crates.io/crates/tux
-keywords: [tux, tooling, rust, programming, test, crates, miscellaneous, utilities]
+keywords: [tux, rust]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/tooling/tests.md` by `article_split.py`. Heading: **tux**.
 

@@ -1,11 +1,12 @@
 ---
 title: tch
 main_link: https://github.com/LaurentMazare/tch-rs
-keywords: [tch, tools, ml, libtorch, pytorch, python, models]
+keywords: [tch, libtorch, pytorch, python]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # tch
 

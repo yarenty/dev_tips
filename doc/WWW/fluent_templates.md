@@ -1,11 +1,12 @@
 ---
 title: Fluent Templates
 main_link: https://github.com/XAMPPRocky/fluent-templates
-keywords: [fluent-templates, fluent, templates, loader, xampprocky]
+keywords: [fluent-templates, fluent, templates, loader, xampprocky, level, rust]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Fluent Templates
 

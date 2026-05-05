@@ -1,11 +1,12 @@
 ---
 title: Time series research papers
 main_link: https://www.connectedpapers.com/main/dcc9308f2b9879e9fecff30108faa544d977a73c/A-Framework-for-Pattern-Mining-and-Anomaly-Detection-in-Multi%20dimensional-Time-Series-and-Event-Logs/graph
-keywords: [time-series-research-papers, time-series, ml, time, frameworks, pattern]
+keywords: [time-series-research-papers, time-series, frameworks, pattern, research, papers, graph]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/ml/time_series/papers.md` by `article_split.py`. Heading: **Time series research papers**.
 

@@ -1,11 +1,12 @@
 ---
 title: tRPC
 main_link: https://trpc.io/
-keywords: [trpc, rust, programming, automatic, end]
+keywords: [trpc, rust, automatic, end]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # tRPC
 

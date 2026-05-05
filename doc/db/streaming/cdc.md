@@ -1,11 +1,12 @@
 ---
 title: CDC
 main_link: https://github.com/apache/flink-cdc
-keywords: [cdc, streaming, db, debezium, kafka, data, mysql]
+keywords: [cdc, streaming, debezium, kafka]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # CDC
 

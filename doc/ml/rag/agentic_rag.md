@@ -1,11 +1,12 @@
 ---
 title: Agentic RAG
 main_link: https://decodingml.substack.com/p/observability-for-rag-agents?utm_source=tldrai
-keywords: [agentic-rag, rag, ml, decodingml, substack, observability, agents]
+keywords: [agentic-rag, decodingml, substack, observability, agentic]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Agentic RAG
 

@@ -1,11 +1,12 @@
 ---
 title: Oracle Free Tier
 main_link: https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm#Details_of_the_Always_Free_Compute_instance__a1_flex
-keywords: [oracle-free-tier, cloud, free, always, instance, apache]
+keywords: [oracle-free-tier, always, instance, apache, nosql, console]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Oracle Free Tier
 

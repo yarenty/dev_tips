@@ -1,11 +1,12 @@
 ---
 title: How to future proof your apache modules in macOS by signing them with your own certificate authority
 main_link: https://blog.phusion.nl/2020/12/22/future_of_macos_apache_modules/
-keywords: [signing-mac-libs, click, certificate, continue, signing]
+keywords: [signing-mac-libs, click, certificate, continue, signing, apache, macos, cross]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # How to future proof your apache modules in macOS by signing them with your own certificate authority
 

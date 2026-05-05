@@ -1,11 +1,12 @@
 ---
 title: eyre
 main_link: https://github.com/awslabs/aws-sdk-rust
-keywords: [eyre, learning, rust, programming, crates, env, dotenv]
+keywords: [eyre, rust, env, shell]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/learning/_must_have.md` by `article_split.py`. Heading: **eyre**.
 

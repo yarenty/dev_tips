@@ -1,11 +1,12 @@
 ---
 title: Trippy
 main_link: https://github.com/fujiapple852/trippy
-keywords: [trace, linux, tools, see, windows]
+keywords: [trace, linux, see, cli, cargo]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Trippy
 

@@ -1,11 +1,12 @@
 ---
 title: Hyperswitch
 main_link: https://github.com/juspay/hyperswitch
-keywords: [payments, powering, open, switch]
+keywords: [payments, powering, open, switch, sdk, digital]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Hyperswitch
 

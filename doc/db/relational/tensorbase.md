@@ -1,11 +1,12 @@
 ---
 title: TensorBase
 main_link: https://github.com/tensorbase/tensorbase
-keywords: [tensorbase, relational, db, arrow, wip, modern, rust]
+keywords: [tensorbase, arrow, wip, modern, rust, datafusion, apache]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # TensorBase
 

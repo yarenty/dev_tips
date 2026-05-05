@@ -1,11 +1,12 @@
 ---
 title: mPLUG
 main_link: https://github.com/X-PLUG/mPLUG-DocOwl?utm_source=tldrai
-keywords: [mplug, models, llm, ml, plug, owl, alicemind, docowl]
+keywords: [mplug, models, plug, owl]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # mPLUG
 

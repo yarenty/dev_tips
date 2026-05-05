@@ -1,11 +1,12 @@
 ---
 title: bytemuck
 main_link: https://crates.io/crates/bytemuck
-keywords: [bytes-manipulation, rust, programming, crates, bits, between]
+keywords: [bytes-manipulation, rust, bits]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # bytemuck
 

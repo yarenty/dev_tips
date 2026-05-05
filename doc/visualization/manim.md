@@ -1,7 +1,7 @@
 ---
 title: Manim
 main_link: https://github.com/ManimCommunity/manim
-keywords: [manim, visualization, create, manimcommunity, animation, engine]
+keywords: [manim, create, manimcommunity, animation]
 status: draft
 ---
 

@@ -1,11 +1,12 @@
 ---
 title: Barter
 main_link: https://github.com/barter-rs/barter-rs/blob/main/barter/examples/engine_with_live_trades.rs
-keywords: [barter, trading, engine, portfolios, trader, data]
+keywords: [barter, portfolios, trader, level]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Barter
 

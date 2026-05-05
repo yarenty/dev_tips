@@ -1,11 +1,12 @@
 ---
 title: Loco
 main_link: https://github.com/loco-rs/loco
-keywords: [loco-rust-on-rails, rails, storage, rust, background]
+keywords: [loco-rust-on-rails, rails, storage, rust, background, programming, cache]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Loco
 

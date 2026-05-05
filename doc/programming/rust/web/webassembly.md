@@ -1,11 +1,12 @@
 ---
 title: WASM
 main_link: https://github.com/yewstack/yew
-keywords: [webassembly, web, rust, programming, yew, developers, javascript, gloo]
+keywords: [webassembly, rust, yew, observability]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # WASM
 

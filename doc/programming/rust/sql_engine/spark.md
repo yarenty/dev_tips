@@ -1,11 +1,12 @@
 ---
 title: Spark UDF
 main_link: https://sparkbyexamples.com/spark/spark-sql-udf/#:~:text=In%20this%20article%2C%20you%20have,and%20SQL%20(after%20registering
-keywords: [spark, sql-engine, rust, programming, udf, sql, defined]
+keywords: [rust, udf, sql, design, databases]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Spark UDF
 

@@ -1,11 +1,12 @@
 ---
 title: iRust
 main_link: https://gitpod.io/#https://github.com/sigmaSd/IRust
-keywords: [repl, tooling, rust, programming, gitpod, crates, cross, platform]
+keywords: [repl, rust, gitpod, cross, platform]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # iRust
 

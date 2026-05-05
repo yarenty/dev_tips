@@ -1,11 +1,12 @@
 ---
 title: Kmeans
 main_link: https://github.com/rust-ml/book/blob/master/src/3_kmeans.md
-keywords: [kmeans, fundamentals, ml, rust, books, blob, master]
+keywords: [kmeans, rust, books, blob, programming]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Kmeans
 

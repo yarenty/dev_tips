@@ -1,11 +1,12 @@
 ---
 title: Summary Of Best Practices
 main_link: 
-keywords: [summary-of-best-practices, rag, ml, query, chunking, retrieval, documents]
+keywords: [summary-of-best-practices, query, chunking, quality, vector]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Summary Of Best Practices
 

@@ -1,11 +1,12 @@
 ---
 title: MARP
 main_link: https://github.com/marp-team/marp-cli
-keywords: [md-to-ppt-pdf-jpeg, misc, tools, pptx, slide, deck, image]
+keywords: [md-to-ppt-pdf-jpeg, pptx, slide, deck, gui]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # MARP
 

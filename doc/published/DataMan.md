@@ -1,11 +1,12 @@
 ---
 title: Dataman
 main_link: 
-keywords: [dataman, published, data, quality, criteria, domain]
+keywords: [dataman, published, quality, criteria, domain, inspection, replacement]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Dataman
 

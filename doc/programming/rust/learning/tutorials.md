@@ -1,11 +1,12 @@
 ---
 title: Tutorials
 main_link: https://google.github.io/comprehensive-rust/welcome.html
-keywords: [tutorials, learning, rust, programming, comprehensive, macros, mwrpyboceay, fun]
+keywords: [rust, comprehensive, macros, security]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/learning/_to_learn.md` by `article_split.py`. Heading: **Tutorials**.
 

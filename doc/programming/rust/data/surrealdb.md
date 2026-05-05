@@ -1,7 +1,7 @@
 ---
 title: surrealDB
 main_link: 
-keywords: [surrealdb, data, rust, programming]
+keywords: [surrealdb, rust]
 status: draft
 ---
 

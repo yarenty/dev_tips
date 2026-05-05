@@ -1,11 +1,12 @@
 ---
 title: Graph RAG
 main_link: https://github.com/microsoft/graphrag
-keywords: [graphrag, rag, ml, lancedb, todo, microsoft]
+keywords: [graphrag, lancedb, microsoft, graph]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Graph RAG
 

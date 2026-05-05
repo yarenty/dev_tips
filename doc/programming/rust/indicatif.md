@@ -1,11 +1,12 @@
 ---
 title: Indicatif
 main_link: https://github.com/console-rs/indicatif
-keywords: [indicatif, rust, programming, progress, console, indicating]
+keywords: [indicatif, rust, progress, console, indicating]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/tui.md` by `article_split.py`. Heading: **Indicatif**.
 

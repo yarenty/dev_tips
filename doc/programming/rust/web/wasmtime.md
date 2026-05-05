@@ -1,7 +1,7 @@
 ---
 title: wasmtime
 main_link: https://crates.io/crates/wasmtime
-keywords: [wasmtime, web, rust, programming, crates]
+keywords: [wasmtime, rust]
 status: draft
 ---
 

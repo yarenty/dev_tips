@@ -1,11 +1,12 @@
 ---
 title: hummingbot
 main_link: https://github.com/hummingbot/hummingbot
-keywords: [hummingbot-python, trading, strategies, frameworks, exchanges, connectors]
+keywords: [hummingbot-python, strategies, frameworks, exchanges, connectors, rust]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # hummingbot
 

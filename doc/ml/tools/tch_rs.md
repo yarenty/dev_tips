@@ -1,11 +1,12 @@
 ---
 title: tch-rs
 main_link: https://github.com/LaurentMazare/ocaml-torch
-keywords: [tch-rs, tools, ml, libtorch, pytorch, python, models]
+keywords: [tch-rs, libtorch, pytorch, python, tch, pyo3]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/ml/tools/tch.md` by `article_split.py`. Heading: **tch-rs**.
 

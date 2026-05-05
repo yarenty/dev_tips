@@ -1,11 +1,12 @@
 ---
 title: BAD ONES:
 main_link: https://github.com/rust-ml/linfa
-keywords: [rust-ml, frameworks, ml, rust, contains, linear, regression]
+keywords: [rust-ml, frameworks, rust, linear, vector, distributed]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # BAD ONES:
 

@@ -1,11 +1,12 @@
 ---
 title: Bunnix
 main_link: https://drewdevault.com/2024/05/24/2024-05-24-Bunnix.html?utm_source=tldrnewsletter
-keywords: [building-unix-system, unix-systems, programming, helios, unix, kernel, hare]
+keywords: [building-unix-system, helios, unix, kernel, rust, self]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Bunnix
 

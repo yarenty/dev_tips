@@ -1,11 +1,12 @@
 ---
 title: Excel UDF in Rust
 main_link: https://crates.io/crates/xladd-derive
-keywords: [excel-udf-in-rust, sql-engine, rust, programming, excel, udf, crates, xladd]
+keywords: [excel-udf-in-rust, rust, excel, udf]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/sql_engine/rust_libs.md` by `article_split.py`. Heading: **Excel UDF in Rust**.
 

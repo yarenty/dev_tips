@@ -1,11 +1,12 @@
 ---
 title: mockall
 main_link: https://crates.io/crates/mockall
-keywords: [test, tooling, rust, programming, crates, mock, turmoil]
+keywords: [rust, mock]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # mockall
 

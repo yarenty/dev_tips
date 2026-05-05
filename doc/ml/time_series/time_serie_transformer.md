@@ -1,11 +1,12 @@
 ---
 title: Transformers
 main_link: https://github.com/allen-chiang/Time-Series-Transformer
-keywords: [time-serie-transformer, time-series, ml, time, data, transformers]
+keywords: [time-serie-transformer, time-series]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Transformers
 

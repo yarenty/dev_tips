@@ -1,7 +1,7 @@
 ---
 title: Awesome embedded in rust
 main_link: https://github.com/rust-embedded/awesome-embedded-rust
-keywords: [awesome-embedded-in-rust, misc, rust, programming, awesome, embedded]
+keywords: [awesome-embedded-in-rust, rust, awesome, embedded]
 status: draft
 ---
 

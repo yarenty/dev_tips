@@ -1,11 +1,12 @@
 ---
 title: Data Interpreter
 main_link: 
-keywords: [data-interpreter, published, data, interpreter, graph, task]
+keywords: [data-interpreter, published, interpreter, graph, security, frameworks]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Data Interpreter
 

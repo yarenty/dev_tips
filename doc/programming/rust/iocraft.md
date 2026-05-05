@@ -1,11 +1,12 @@
 ---
 title: IOCraft
 main_link: https://github.com/ccbrown/iocraft
-keywords: [iocraft, rust, programming, api, ccbrown, crafting]
+keywords: [iocraft, rust, api, ccbrown, crafting, terminal]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/tui.md` by `article_split.py`. Heading: **IOCraft**.
 

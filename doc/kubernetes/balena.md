@@ -1,11 +1,12 @@
 ---
 title: Balena
 main_link: https://www.balena.io/
-keywords: [balena, kubernetes, iot, fleet, flexible]
+keywords: [balena, kubernetes, iot, fleet, flexible, internet, platform, design]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Balena
 

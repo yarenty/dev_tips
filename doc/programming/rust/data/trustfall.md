@@ -1,11 +1,12 @@
 ---
 title: Trustfall
 main_link: https://github.com/obi1kenobi/trustfall
-keywords: [trustfall, data, rust, programming, engine, querying, kind]
+keywords: [trustfall, rust, querying, graph, databases, models]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Trustfall
 

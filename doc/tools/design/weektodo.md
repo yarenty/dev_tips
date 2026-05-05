@@ -1,7 +1,7 @@
 ---
 title: WeekToDo
 main_link: https://weektodo.me/
-keywords: [weektodo, design, tools, free, todo]
+keywords: [weektodo, design]
 status: draft
 ---
 

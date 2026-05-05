@@ -1,11 +1,12 @@
 ---
 title: Links
 main_link: https://www.ibm.com/topics/what-is-a-digital-twin
-keywords: [links, digital-twin, ibm, digital, explore]
+keywords: [ibm, digital, explore]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Links
 

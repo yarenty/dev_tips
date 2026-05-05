@@ -1,7 +1,7 @@
 ---
 title: Daktilo
 main_link: https://github.com/orhun/daktilo
-keywords: [daktilo, misc, rust, programming, typewriter, orhun, sound, effect]
+keywords: [daktilo, rust, typewriter, orhun]
 status: draft
 ---
 

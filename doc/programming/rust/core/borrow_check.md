@@ -1,11 +1,12 @@
 ---
 title: RustOWL
 main_link: https://github.com/cordx56/rustowl
-keywords: [borrow-check, core, rust, programming, visualize, ownership, lifetimes, variable]
+keywords: [borrow-check, rust, visualize, ownership, editors]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # RustOWL
 

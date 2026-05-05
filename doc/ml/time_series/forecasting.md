@@ -1,11 +1,12 @@
 ---
 title: forecasting
 main_link: https://medium.datadriveninvestor.com/time-series-forecasting-a-comparative-analysis-of-sarimax-rnn-lstm-prophet-and-transformer-aed4930ae187
-keywords: [forecasting, time-series, ml, close, data, stock, arima]
+keywords: [forecasting, time-series, close, stock, excel, linear]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # forecasting
 

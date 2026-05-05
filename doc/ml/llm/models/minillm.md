@@ -1,11 +1,12 @@
 ---
 title: miniLLM
 main_link: https://huggingface.co/MiniLLM?utm_source=tldrai
-keywords: [minillm, models, llm, ml, huggingface, utm, tldrai]
+keywords: [minillm, models]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # miniLLM
 

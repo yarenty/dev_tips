@@ -1,11 +1,12 @@
 ---
 title: smolagents
 main_link: https://huggingface.co/blog/smolagents
-keywords: [smolagents, agents, ml, hub, code, models]
+keywords: [smolagents, hub, models]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # smolagents
 

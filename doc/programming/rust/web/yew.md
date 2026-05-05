@@ -1,11 +1,12 @@
 ---
 title: YEW
 main_link: https://github.com/yewstack/yew
-keywords: [yew, web, rust, programming, developers, javascript, frameworks, webassembly]
+keywords: [yew, rust, javascript, frameworks]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/web/webassembly.md` by `article_split.py`. Heading: **YEW**.
 

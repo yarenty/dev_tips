@@ -1,11 +1,12 @@
 ---
 title: Brainfuck
 main_link: https://github.com/brain-lang/brain
-keywords: [brainfuck, funny, language, programming, brain, programs]
+keywords: [brainfuck, language, programming, brain, programs, rust, compilers]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Brainfuck
 

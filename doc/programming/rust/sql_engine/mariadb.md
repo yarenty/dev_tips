@@ -1,11 +1,12 @@
 ---
 title: MariaDB
 main_link: https://github.com/pluots/sql-udf
-keywords: [mariadb, sql-engine, rust, programming, sql, udf, pluots]
+keywords: [mariadb, rust, sql, udf, mysql, console]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # MariaDB
 

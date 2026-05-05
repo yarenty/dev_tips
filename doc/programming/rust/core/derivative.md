@@ -1,11 +1,12 @@
 ---
 title: Derivative
 main_link: https://mcarton.github.io/rust-derivative/latest/index.html
-keywords: [derivative, core, rust, programming, default, debuging, hash, mcarton]
+keywords: [derivative, rust, debuging]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Derivative
 

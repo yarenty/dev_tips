@@ -1,11 +1,12 @@
 ---
 title: Emdash
 main_link: https://github.com/generalaction/emdash
-keywords: [emdash, agents, ml, cli, code, openai, codex]
+keywords: [emdash, cli, git]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Emdash
 

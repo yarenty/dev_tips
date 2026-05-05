@@ -1,11 +1,12 @@
 ---
 title: Symphonia
 main_link: https://github.com/pdeljanov/Symphonia
-keywords: [symphonia, misc, rust, programming, audio, providing, api, features]
+keywords: [symphonia, rust, audio, providing]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/misc/audio.md` by `article_split.py`. Heading: **Symphonia**.
 

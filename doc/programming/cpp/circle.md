@@ -1,11 +1,12 @@
 ---
 title: Circle
 main_link: https://www.circle-lang.org/
-keywords: [circle, cpp, programming, language, compilers, type]
+keywords: [circle, cpp, language, compilers, type, rust]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Circle
 

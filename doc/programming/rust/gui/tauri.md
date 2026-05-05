@@ -1,11 +1,12 @@
 ---
 title: Tauri
 main_link: https://github.com/tauri-apps/tauri?
-keywords: [tauri, gui, rust, programming, android, cargo, mobile]
+keywords: [tauri, rust, android, level]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Tauri
 

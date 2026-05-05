@@ -1,11 +1,12 @@
 ---
 title: Hyper
 main_link: https://github.com/tokio-rs/axum
-keywords: [web, rust, programming, rocket, axum, crates]
+keywords: [rust, rocket, axum, level, design]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Hyper
 

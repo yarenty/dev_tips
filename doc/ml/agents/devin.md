@@ -1,11 +1,12 @@
 ---
 title: OpenDevin
 main_link: https://github.com/OpenDevin/OpenDevin
-keywords: [devin, agents, ml, open, issues, welcome]
+keywords: [devin, open, issues, welcome]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # OpenDevin
 

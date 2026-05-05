@@ -1,11 +1,12 @@
 ---
 title: diesel
 main_link: https://github.com/sfackler/r2d2
-keywords: [db, data, rust, programming, sql, databases, mysql]
+keywords: [db, rust, sql, databases, diesel, mysql]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # diesel
 

@@ -1,11 +1,12 @@
 ---
 title: System Prompt
 main_link: https://github.com/yarenty/prompt_learning?tab=readme-ov-file
-keywords: [system-prompts, llm, ml, yarenty, status, prompt, learning]
+keywords: [system-prompts, yarenty, status, prompt]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # System Prompt
 

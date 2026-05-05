@@ -1,11 +1,12 @@
 ---
 title: LLAMA
 main_link: https://github.com/meta-llama/llama-stack
-keywords: [llama-2, models, llm, ml, code, meta]
+keywords: [llama-2, models, meta, llama]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/ml/llm/models/llama.md` by `article_split.py`. Heading: **LLAMA**.
 

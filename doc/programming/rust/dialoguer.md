@@ -1,11 +1,12 @@
 ---
 title: Dialoguer
 main_link: https://github.com/console-rs/dialoguer/tree/master/examples
-keywords: [dialoguer, rust, programming, console, tree, master]
+keywords: [dialoguer, rust, console, master]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/tui.md` by `article_split.py`. Heading: **Dialoguer**.
 

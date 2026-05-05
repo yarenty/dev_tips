@@ -1,11 +1,12 @@
 ---
 title: Ratatui
 main_link: https://github.com/ratatui-org/ratatui
-keywords: [tui, rust, programming, cursive, crates, termion]
+keywords: [tui, rust, cursive, termion, terminal]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Ratatui
 

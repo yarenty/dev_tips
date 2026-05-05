@@ -1,11 +1,12 @@
 ---
 title: Liquid
 main_link: https://github.com/Shopify/liquid
-keywords: [liquid, web-templating, visualization, shopify, lib, crates]
+keywords: [liquid, web-templating, shopify, lib, rust]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Liquid
 

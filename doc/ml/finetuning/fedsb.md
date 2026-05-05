@@ -1,11 +1,12 @@
 ---
 title: Fed-SB
 main_link: https://github.com/CERT-Lab/fed-sb
-keywords: [fedsb, finetuning, ml, fed, lora, federated, communication]
+keywords: [fedsb, finetuning, fed, lora, federated, models]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Fed-SB
 

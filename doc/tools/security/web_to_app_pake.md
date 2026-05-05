@@ -1,11 +1,12 @@
 ---
 title: Pake
 main_link: https://github.com/tw93/Pake
-keywords: [web-to-app-pake, security, tools, windows, linux, available]
+keywords: [web-to-app-pake, security, linux, available, pake, deepseek, javascript]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Pake
 

@@ -1,11 +1,12 @@
 ---
 title: IntelliJ productivity tips
 main_link: https://www.youtube.com/watch?v=cK19rE2V9UY
-keywords: [intellij, editors, tools, video, secrets, productivity]
+keywords: [intellij, editors, video, secrets, productivity, tips]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # IntelliJ productivity tips
 

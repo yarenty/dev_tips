@@ -1,11 +1,12 @@
 ---
 title: Jail-break from not opening on OSX
 main_link: 
-keywords: [osx-tricks, osx, tools, jail, terminal, break]
+keywords: [osx-tricks, jail, terminal, break]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Jail-break from not opening on OSX
 

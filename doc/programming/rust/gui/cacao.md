@@ -1,11 +1,12 @@
 ---
 title: Cacao
 main_link: 
-keywords: [cacao, gui, rust, programming, appkit, quality, uikit, swift]
+keywords: [cacao, rust, appkit, quality]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/gui/macos.md` by `article_split.py`. Heading: **Cacao**.
 

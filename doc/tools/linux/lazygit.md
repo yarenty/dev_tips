@@ -1,11 +1,12 @@
 ---
 title: Lazygit
 main_link: 
-keywords: [lazygit, linux, tools, magit, london, want, raving]
+keywords: [lazygit, linux, magit, london, want]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Lazygit
 

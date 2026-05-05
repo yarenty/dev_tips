@@ -1,11 +1,12 @@
 ---
 title: rerun
 main_link: https://github.com/rerun-io/rerun
-keywords: [rerun, visualization, robot, time, data, multimodal]
+keywords: [rerun, robot, multimodal, security, models, time-series]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # rerun
 

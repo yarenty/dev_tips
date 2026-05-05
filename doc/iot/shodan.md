@@ -1,11 +1,12 @@
 ---
 title: Shodan
 main_link: https://www.shodan.io/
-keywords: [shodan, iot, internet, search, engine, everything]
+keywords: [shodan, iot, internet, search, everything]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Shodan
 

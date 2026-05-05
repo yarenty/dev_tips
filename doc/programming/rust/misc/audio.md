@@ -1,11 +1,12 @@
 ---
 title: Coreaudio
 main_link: https://github.com/RustAudio/coreaudio-rs
-keywords: [audio, misc, rust, programming, flac, symphonia, claxon, api]
+keywords: [audio, rust, flac, symphonia]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Coreaudio
 

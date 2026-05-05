@@ -1,7 +1,7 @@
 ---
 title: Cheats
 main_link: https://cheats.rs/
-keywords: [cheats-2, learning, rust, programming]
+keywords: [cheats-2, rust, cheats]
 status: draft
 ---
 

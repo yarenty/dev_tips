@@ -1,11 +1,12 @@
 ---
 title: rust-prometheus form tikv
 main_link: https://github.com/tikv/rust-prometheus
-keywords: [rust-prometheus-form-tikv, tooling, rust, programming, enable, metric, prometheus]
+keywords: [rust-prometheus-form-tikv, rust, enable, metric, prometheus]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/tooling/tracing.md` by `article_split.py`. Heading: **rust-prometheus form tikv**.
 

@@ -1,11 +1,12 @@
 ---
 title: Singlestore
 main_link: https://singlestore-labs.github.io/singlestore-wasm-toolkit/html/Tutorial-Impl-Rust-Split.html
-keywords: [singlestore, relational, db, tutorials, impl, rust, split]
+keywords: [singlestore, impl, rust, vector, programming]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Singlestore
 

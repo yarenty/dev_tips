@@ -1,11 +1,12 @@
 ---
 title: Response
 main_link: https://github.com/FoundationAgents/awesome-foundation-agents?tab=readme-ov-file#memory
-keywords: [response, agents, ml, memory, retrieval, llm, system]
+keywords: [response]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/ml/agents/memory.md` by `article_split.py`. Heading: **Response**.
 

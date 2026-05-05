@@ -1,11 +1,12 @@
 ---
 title: Deepseek
 main_link: https://github.com/huggingface/open-r1
-keywords: [deepseek, models, llm, ml, huggingface, reproduce, blog]
+keywords: [deepseek, models, reproduce]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Deepseek
 

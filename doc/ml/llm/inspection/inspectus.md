@@ -1,11 +1,12 @@
 ---
 title: Inspectus
 main_link: https://github.com/labmlai/inspectus?utm_source=tldrai
-keywords: [inspectus, inspection, llm, ml, jupyter, python, api]
+keywords: [inspectus, inspection, jupyter, python, visualization]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Inspectus
 

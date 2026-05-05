@@ -1,11 +1,12 @@
 ---
 title: Rodio
 main_link: https://github.com/RustAudio/rodio
-keywords: [rodio, misc, rust, programming, symphonia, playback, handled, format]
+keywords: [rodio, rust, symphonia, playback]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/misc/audio.md` by `article_split.py`. Heading: **Rodio**.
 

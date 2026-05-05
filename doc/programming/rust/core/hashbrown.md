@@ -1,11 +1,12 @@
 ---
 title: hashbrown
 main_link: 
-keywords: [hashbrown, core, rust, programming, now, official, hashmap]
+keywords: [hashbrown, rust, now, official]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/core/low_level_structures.md` by `article_split.py`. Heading: **hashbrown**.
 

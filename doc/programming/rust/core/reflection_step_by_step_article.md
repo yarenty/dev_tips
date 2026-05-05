@@ -1,11 +1,12 @@
 ---
 title: Reflection step by step - Article
 main_link: https://www.osohq.com/post/rust-reflection-pt-1
-keywords: [reflection-step-by-step-article, core, rust, programming, reflection, articles, runtimes]
+keywords: [reflection-step-by-step-article, rust, reflection, articles, python]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/core/reflection.md` by `article_split.py`. Heading: **Reflection step by step - Article**.
 

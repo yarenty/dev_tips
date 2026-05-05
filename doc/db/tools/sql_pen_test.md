@@ -1,11 +1,12 @@
 ---
 title: sqlmap
 main_link: https://github.com/sqlmapproject/sqlmap
-keywords: [sql-pen-test, tools, db, sqlmapproject, screenshots, switches, wiki]
+keywords: [sql-pen-test, sqlmapproject, screenshots, switches, git, platform, security]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # sqlmap
 

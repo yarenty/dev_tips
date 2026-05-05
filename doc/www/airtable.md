@@ -1,11 +1,12 @@
 ---
 title: airtable
 main_link: https://www.airtable.com/
-keywords: [airtable, product, agility, scale, connect]
+keywords: [airtable, agility, scale, connect, digital]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/www/tools.md` by `article_split.py`. Heading: **airtable**.
 

@@ -1,11 +1,12 @@
 ---
 title: Druid
 main_link: https://druid.apache.org/docs/latest/tutorials/index.html
-keywords: [druid, time-series, db, start, apache]
+keywords: [druid, time-series, apache]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Druid
 

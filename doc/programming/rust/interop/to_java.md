@@ -1,11 +1,12 @@
 ---
 title: Rust - Java interactions
 main_link: https://github.com/giovanniberti/robusta
-keywords: [to-java, interop, rust, programming, java, jni, type, questdb]
+keywords: [to-java, rust, java, jni, pyo3, cache]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Rust - Java interactions
 

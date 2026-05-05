@@ -1,11 +1,12 @@
 ---
 title: Plotters
 main_link: https://github.com/plotters-rs/plotters
-keywords: [rust, visualization, gtk, cairo, czkawka, crates]
+keywords: [rust, gtk, cairo, czkawka, programming, vector, console, graph]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Plotters
 

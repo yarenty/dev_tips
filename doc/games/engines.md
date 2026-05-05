@@ -1,11 +1,12 @@
 ---
 title: Engines
 main_link: https://github.com/PistonDevelopers/piston/wiki/Games-Made-With-Piston
-keywords: [engine, games, piston, bevy, rust, crates]
+keywords: [games, piston, bevy, rust, programming]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Engines
 

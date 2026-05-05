@@ -1,7 +1,7 @@
 ---
 title: Scilab
 main_link: 
-keywords: [scilab, digital-twin]
+keywords: [scilab, nvidia]
 status: draft
 ---
 

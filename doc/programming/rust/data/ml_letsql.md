@@ -1,11 +1,12 @@
 ---
 title: LetSQL
 main_link: https://www.letsql.com/posts/candle-image-segmentation/
-keywords: [ml-letsql, data, rust, programming, image, models, sam]
+keywords: [ml-letsql, rust, image, models, huggingface]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # LetSQL
 

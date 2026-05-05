@@ -1,11 +1,12 @@
 ---
 title: Task
 main_link: 
-keywords: [task, agents, ml, rag, memory, agentic, solution]
+keywords: [agentic]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/ml/agents/memory.md` by `article_split.py`. Heading: **Task**.
 

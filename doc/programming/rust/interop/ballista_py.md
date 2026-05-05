@@ -1,11 +1,12 @@
 ---
 title: ballista py
 main_link: https://github.com/hyperium/tonic/blob/master/examples/src/helloworld/server.rs
-keywords: [ballista-py, interop, rust, programming, ballista, hyperium, tonic, blob]
+keywords: [ballista-py, rust, ballista, hyperium]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/interop/python.md` by `article_split.py`. Heading: **ballista py**.
 

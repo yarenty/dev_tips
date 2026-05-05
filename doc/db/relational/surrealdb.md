@@ -1,11 +1,12 @@
 ---
 title: SurrealDB
 main_link: https://surrealdb.com/
-keywords: [surrealdb, relational, db, complete, select, data]
+keywords: [surrealdb, complete, select]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # SurrealDB
 

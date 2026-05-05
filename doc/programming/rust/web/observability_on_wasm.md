@@ -1,11 +1,12 @@
 ---
 title: obsetrvability on wasm
 main_link: https://github.com/dylibso/observe-sdk
-keywords: [obsetrvability-on-wasm, web, rust, programming, dylibso, observe, sdk, observability]
+keywords: [obsetrvability-on-wasm, rust, dylibso, observe]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/web/webassembly.md` by `article_split.py`. Heading: **obsetrvability on wasm**.
 

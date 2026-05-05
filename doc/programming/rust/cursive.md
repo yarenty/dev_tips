@@ -1,11 +1,12 @@
 ---
 title: Cursive
 main_link: https://github.com/mimblewimble/grin
-keywords: [cursive, rust, programming, views, crates]
+keywords: [cursive, rust, views, tui, git, tmux]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/tui.md` by `article_split.py`. Heading: **Cursive**.
 

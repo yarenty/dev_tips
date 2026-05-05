@@ -1,11 +1,12 @@
 ---
 title: Kafka
 main_link: https://github.com/kafka-rust/kafka-rust/blob/master/examples/console-consumer.rs
-keywords: [kafka-2, messaging, apache, rust, documentation, streams]
+keywords: [kafka-2, apache, rust, documentation, streams, kafka, programming]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/messaging/kafka.md` by `article_split.py`. Heading: **Kafka**.
 

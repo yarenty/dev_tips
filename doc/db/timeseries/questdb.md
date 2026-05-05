@@ -1,11 +1,12 @@
 ---
 title: QuestDB
 main_link: https://github.com/questdb/questdb
-keywords: [questdb, time-series, db, time, sql, a8umf64rbs8]
+keywords: [questdb, time-series, sql, a8umf64rbs8, rust]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # QuestDB
 

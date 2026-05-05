@@ -1,11 +1,12 @@
 ---
 title: grafana
 main_link: 
-keywords: [grafana, observability, usr, local, cfg, default]
+keywords: [grafana, observability, usr, local, cfg]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # grafana
 

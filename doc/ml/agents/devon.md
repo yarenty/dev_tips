@@ -1,11 +1,12 @@
 ---
 title: Devon
 main_link: https://github.com/entropy-research/Devon?utm_source=tldrai
-keywords: [devon, agents, ml, python, features, multi]
+keywords: [devon, python, features, multi]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Devon
 

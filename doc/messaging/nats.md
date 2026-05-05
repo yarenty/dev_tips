@@ -1,11 +1,12 @@
 ---
 title: nats-server
 main_link: 
-keywords: [nats, messaging, server, start, now, restart]
+keywords: [nats, server, now, restart, usr]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # nats-server
 

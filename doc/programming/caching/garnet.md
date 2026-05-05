@@ -1,11 +1,12 @@
 ---
 title: Garnet
 main_link: https://github.com/microsoft/garnet?tab=readme-ov-file
-keywords: [garnet, caching, programming, microsoft, redis, cache]
+keywords: [garnet, caching, microsoft, redis, cache]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Garnet
 

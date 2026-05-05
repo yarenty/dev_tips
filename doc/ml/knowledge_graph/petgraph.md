@@ -1,11 +1,12 @@
 ---
 title: Petgraph
 main_link: https://github.com/petgraph/petgraph/tree/master
-keywords: [petgraph, knowledge-graph, ml, graph, graphmap, stablegraph, rust]
+keywords: [petgraph, knowledge-graph, graph, graphmap, stablegraph]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Petgraph
 

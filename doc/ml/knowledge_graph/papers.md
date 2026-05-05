@@ -1,11 +1,12 @@
 ---
 title: Research papers
 main_link: https://github.com/beikacao/blog/tree/main/2021-10-22
-keywords: [papers, knowledge-graph, ml, graph, knowledge]
+keywords: [papers, knowledge-graph, graph, research]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Research papers
 

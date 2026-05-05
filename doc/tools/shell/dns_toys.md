@@ -1,11 +1,12 @@
 ---
 title: Dns Toys
 main_link: https://www.dns.toys/
-keywords: [dns-toys, shell, tools, pass, number, value, cidr]
+keywords: [dns-toys, shell, pass, number, value]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Dns Toys
 

@@ -1,11 +1,12 @@
 ---
 title: Kevin
 main_link: https://cognition.ai/blog/kevin-32b?utm_source=tldrai
-keywords: [cuda-kevin, compilers, ml, turn, cognition, multi, writing]
+keywords: [cuda-kevin, compilers, turn, cognition, multi, cuda, models]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Kevin
 

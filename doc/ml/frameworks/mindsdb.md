@@ -1,11 +1,12 @@
 ---
 title: MindsDB
 main_link: https://mindsdb.com/
-keywords: [mindsdb, frameworks, ml, machine, learning, customers, models]
+keywords: [mindsdb, frameworks, customers, mysql, quality, kafka]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # MindsDB
 

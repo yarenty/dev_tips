@@ -1,11 +1,12 @@
 ---
 title: WooriDB
 main_link: https://github.com/naomijub/wooridb
-keywords: [wooridb, data, rust, programming, entity, databases, datetime]
+keywords: [wooridb, rust, entity, databases, prometheus]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/data/db.md` by `article_split.py`. Heading: **WooriDB**.
 

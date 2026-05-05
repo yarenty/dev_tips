@@ -1,7 +1,7 @@
 ---
 title: rusqlite
 main_link: https://crates.io/crates/rusqlite
-keywords: [rusqlite, data, rust, programming, crates, sqlite, ergonomic, wrapper]
+keywords: [rusqlite, rust, sqlite]
 status: draft
 ---
 

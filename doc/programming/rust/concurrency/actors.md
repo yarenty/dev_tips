@@ -1,11 +1,12 @@
 ---
 title: Actix
 main_link: https://crates.io/crates/actix
-keywords: [actors, concurrency, rust, programming, messages, system]
+keywords: [actors, rust, messages, self]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Actix
 

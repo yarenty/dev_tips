@@ -1,11 +1,12 @@
 ---
 title: Bacon
 main_link: https://github.com/j178/prek
-keywords: [rust-must-have, misc, tools, hooks, cargo, commit]
+keywords: [rust-must-have, hooks, cargo, commit, terminal, rust]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Bacon
 

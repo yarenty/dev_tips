@@ -1,7 +1,7 @@
 ---
 title: Ggtech
 main_link: https://github.com/ricardo-bion/ggtech
-keywords: [ggtech, visualization, ricardo, bion]
+keywords: [ggtech, ricardo, bion, javascript]
 status: draft
 ---
 

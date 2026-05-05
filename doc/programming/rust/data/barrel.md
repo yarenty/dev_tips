@@ -1,11 +1,12 @@
 ---
 title: barrel
 main_link: https://crates.io/crates/barrel
-keywords: [barrel, data, rust, programming, sql, crates, databases, builder]
+keywords: [barrel, rust, sql]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/data/db.md` by `article_split.py`. Heading: **barrel**.
 

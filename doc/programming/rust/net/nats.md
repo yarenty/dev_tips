@@ -1,11 +1,12 @@
 ---
 title: NATS
 main_link: https://crates.io/crates/nats
-keywords: [nats, rust, programming, jetstream, highly, generation]
+keywords: [nats, rust, jetstream, highly, generation, mqtt, streaming, platform]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/net/mq.md` by `article_split.py`. Heading: **NATS**.
 

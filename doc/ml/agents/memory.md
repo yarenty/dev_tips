@@ -1,11 +1,12 @@
 ---
 title: Memory
 main_link: https://github.com/FoundationAgents/awesome-foundation-agents?tab=readme-ov-file#memory
-keywords: [memory, agents, ml, retrieval, llm, system, rag]
+keywords: [memory]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Memory
 

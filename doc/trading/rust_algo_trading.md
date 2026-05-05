@@ -1,11 +1,12 @@
 ---
 title: Algo trading
 main_link: https://github.com/Paul-Folbrecht/algo-trading
-keywords: [rust-algo-trading, trading, rust, system, data, code]
+keywords: [rust-algo-trading, rust, programming]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Algo trading
 

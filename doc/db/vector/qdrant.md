@@ -1,11 +1,12 @@
 ---
 title: qdrant
 main_link: https://github.com/qdrant/qdrant
-keywords: [qdrant, vector, db, search, api, neural]
+keywords: [qdrant, vector, search, api, neural, rust]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # qdrant
 

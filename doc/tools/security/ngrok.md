@@ -1,11 +1,12 @@
 ---
 title: NGrok - Free Firewall Tunnel
 main_link: https://dashboard.ngrok.com/get-started/setup
-keywords: [ngrok, security, tools, request, auth, basic, oauth]
+keywords: [ngrok, security, request, auth, basic, tunnel, internet]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # NGrok - Free Firewall Tunnel
 

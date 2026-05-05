@@ -1,11 +1,12 @@
 ---
 title: Markitdown
 main_link: https://github.com/microsoft/markitdown?utm_source=tldrai
-keywords: [markitdown, editors, tools, text, openai, exif]
+keywords: [markitdown, editors, text, openai, exif, excel, python]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Markitdown
 

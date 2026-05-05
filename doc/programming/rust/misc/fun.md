@@ -1,11 +1,12 @@
 ---
 title: bats
 main_link: https://crates.io/crates/bats
-keywords: [fun, misc, rust, programming, crates, spooooky, printing]
+keywords: [fun, rust, spooooky, terminal]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # bats
 

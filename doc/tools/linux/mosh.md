@@ -1,11 +1,12 @@
 ---
 title: Mosh
 main_link: https://github.com/dustinkirkland/byobu
-keywords: [mosh, linux, tools, byobu, terminal, gplv3]
+keywords: [mosh, linux, byobu, terminal, gplv3]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Mosh
 

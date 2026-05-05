@@ -1,11 +1,12 @@
 ---
 title: clido
 main_link: https://github.com/Zij-IT/clido
-keywords: [clido, tooling, rust, programming, zij, todo, cli]
+keywords: [clido, rust, zij, cli]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **clido**.
 

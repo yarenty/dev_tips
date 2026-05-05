@@ -1,11 +1,12 @@
 ---
 title: Shell tools
 main_link: https://github.com/wfxr/forgit
-keywords: [tools, shell, prompt, gum, forgit, wfxr]
+keywords: [shell, prompt, gum, forgit, wfxr, git]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Shell tools
 

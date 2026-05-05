@@ -1,7 +1,7 @@
 ---
 title: Uipath
 main_link: https://www.uipath.com/blog/product-and-updates/langgraph-uipath-advancing-agentic-automation-together
-keywords: [uipath, agents, ml, tbd, blog, product, updates]
+keywords: [uipath, tbd, blog]
 status: draft
 ---
 

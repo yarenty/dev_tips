@@ -1,11 +1,12 @@
 ---
 title: XLA
 main_link: https://github.com/openxla/xla
-keywords: [xla-accelerated-compiler, compilers, ml, tensorflow, gpus, cpus, pytorch]
+keywords: [xla-accelerated-compiler, compilers, tensorflow, gpus, cpus, linear, frameworks]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # XLA
 

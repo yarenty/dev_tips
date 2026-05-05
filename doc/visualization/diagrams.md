@@ -1,7 +1,7 @@
 ---
 title: Diagrams
 main_link: https://github.com/jgraph/drawio-desktop/releases/tag/v16.5.1
-keywords: [diagrams, visualization, lang, jgraph, drawio, desktop]
+keywords: [diagrams, lang, jgraph, drawio, desktop]
 status: draft
 ---
 

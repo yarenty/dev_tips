@@ -1,11 +1,12 @@
 ---
 title: GlueSQL
 main_link: https://crates.io/crates/gluesql
-keywords: [gluesql, data, rust, programming, sql, databases, crates]
+keywords: [gluesql, rust, sql, databases]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/data/db.md` by `article_split.py`. Heading: **GlueSQL**.
 

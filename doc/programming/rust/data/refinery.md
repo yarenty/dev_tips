@@ -1,11 +1,12 @@
 ---
 title: refinery
 main_link: https://crates.io/crates/refinery
-keywords: [refinery, data, rust, programming, crates, powerful, sql, migration]
+keywords: [refinery, rust, powerful, sql]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/data/db.md` by `article_split.py`. Heading: **refinery**.
 

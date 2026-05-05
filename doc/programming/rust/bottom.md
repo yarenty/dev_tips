@@ -1,11 +1,12 @@
 ---
 title: bottom
 main_link: https://crates.io/crates/bottom
-keywords: [bottom, rust, programming, nice, graph, crates]
+keywords: [bottom, rust, nice, graph]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/tui.md` by `article_split.py`. Heading: **bottom**.
 

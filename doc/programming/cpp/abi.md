@@ -1,7 +1,7 @@
 ---
 title: C++ ABI
 main_link: https://itanium-cxx-abi.github.io/cxx-abi/abi.html
-keywords: [abi, cpp, programming, cxx, itanium]
+keywords: [abi, cpp, cxx, itanium, rust]
 status: draft
 ---
 

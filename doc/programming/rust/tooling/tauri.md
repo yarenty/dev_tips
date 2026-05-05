@@ -1,7 +1,7 @@
 ---
 title: TAURI
 main_link: https://tauri.app/v1/guides/getting-started/setup
-keywords: [tauri, tooling, rust, programming, guides, started, setup]
+keywords: [tauri, rust, guides, started]
 status: draft
 ---
 

@@ -1,11 +1,12 @@
 ---
 title: Rust to .net
 main_link: https://github.com/FractalFir/rustc_codegen_clr
-keywords: [to-net, interop, rust, programming, rustc, codegen, clr, compilers]
+keywords: [to-net, rust, rustc, codegen]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Rust to .net
 

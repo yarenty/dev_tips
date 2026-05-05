@@ -1,11 +1,12 @@
 ---
 title: List of awesome libraries !!!
 main_link: https://gist.github.com/cedrickchee/f729e848b52eab8fbc88a3910072198c
-keywords: [must-have, learning, rust, programming, crates, error, env]
+keywords: [must-have, rust, awesome, libraries]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # List of awesome libraries !!!
 

@@ -1,11 +1,12 @@
 ---
 title: reflect
 main_link: https://crates.io/crates/reflect
-keywords: [reflection, core, rust, programming, macros, api, author, type]
+keywords: [reflection, rust, macros, api, level]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # reflect
 

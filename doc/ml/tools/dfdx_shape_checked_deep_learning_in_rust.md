@@ -1,11 +1,12 @@
 ---
 title: dfdx: shape checked deep learning in rust
 main_link: https://crates.io/crates/dfdx
-keywords: [dfdx-shape-checked-deep-learning-in-rust, tools, ml, tape, gradient, tensor]
+keywords: [dfdx-shape-checked-deep-learning-in-rust, tape, gradient, dfdx, deep, rust, gpu]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/ml/tools/dfdx.md` by `article_split.py`. Heading: **dfdx: shape checked deep learning in rust**.
 

@@ -1,7 +1,7 @@
 ---
 title: Simulink
 main_link: 
-keywords: [simulink, digital-twin]
+keywords: [simulink, nvidia]
 status: draft
 ---
 

@@ -1,11 +1,12 @@
 ---
 title: Mobile
 main_link: https://github.com/BrainiumLLC/cargo-mobile/?tab=readme-ov-file
-keywords: [mobile, gui, rust, programming, android, cargo, bevy]
+keywords: [mobile, rust, android, level, tauri]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Mobile
 

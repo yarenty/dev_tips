@@ -1,11 +1,12 @@
 ---
 title: udf
 main_link: https://crates.io/crates/udf
-keywords: [udf-lib, sql-engine, rust, programming, sql, function, struct]
+keywords: [udf-lib, rust, sql, udf, mysql]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # udf
 

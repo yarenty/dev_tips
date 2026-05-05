@@ -1,11 +1,12 @@
 ---
 title: Tao
 main_link: https://github.com/qarmin/czkawka
-keywords: [tao, gui, rust, programming, crates, chkawka, taocopy]
+keywords: [tao, rust, chkawka]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/gui/slint.md` by `article_split.py`. Heading: **Tao**.
 

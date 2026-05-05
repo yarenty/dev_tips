@@ -1,11 +1,12 @@
 ---
 title: slotmap crate
 main_link: 
-keywords: [generational-index, core, rust, programming, special, king, super, index]
+keywords: [generational-index, rust, special, king]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # slotmap crate
 

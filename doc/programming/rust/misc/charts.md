@@ -1,11 +1,12 @@
 ---
 title: charts
 main_link: https://github.com/askanium/rustplotlib
-keywords: [charts, misc, rust, programming, bar, tbd, vertical]
+keywords: [charts, rust, bar, tbd, visualization]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # charts
 

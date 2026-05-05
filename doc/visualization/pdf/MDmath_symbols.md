@@ -1,11 +1,12 @@
 ---
 title: Mdmath Symbols
 main_link: 
-keywords: [mdmath-symbols, visualization, symbol, script, int, mathrm]
+keywords: [mdmath-symbols, symbol, script, int, mathrm]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Mdmath Symbols
 

@@ -1,11 +1,12 @@
 ---
 title: Rust ZX
 main_link: https://github.com/rustzx/rustzx
-keywords: [zxspectrum, games, rust, rustzx]
+keywords: [zxspectrum, games, rust, rustzx, programming]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Rust ZX
 

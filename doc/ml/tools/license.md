@@ -1,11 +1,12 @@
 ---
 title: License
 main_link: http://www.apache.org/licenses/LICENSE-2.0
-keywords: [license, tools, ml, mit, licensed, apache, dual]
+keywords: [license, mit, licensed, apache, distributed, rust]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/ml/tools/dfdx.md` by `article_split.py`. Heading: **License**.
 

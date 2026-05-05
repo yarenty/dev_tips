@@ -1,11 +1,12 @@
 ---
 title: Rust - Python interactions
 main_link: https://github.com/apache/datafusion-python/blob/branch-36/Cargo.toml
-keywords: [to-python, interop, rust, programming, python, pyo3, datafusion, interactions]
+keywords: [to-python, rust, python, pyo3, apache]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Rust - Python interactions
 

@@ -1,11 +1,12 @@
 ---
 title: WASM: for libsql
 main_link: https://github.com/libsql/libsql_generate
-keywords: [wasm-for-libsql, sql-engine, rust, programming, libsql, crates, wasm, bindgen]
+keywords: [wasm-for-libsql, rust, libsql]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/sql_engine/rust_libs.md` by `article_split.py`. Heading: **WASM: for libsql**.
 

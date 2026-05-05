@@ -1,11 +1,12 @@
 ---
 title: tract
 main_link: https://github.com/sonos/tract
-keywords: [tract, tools, ml, nnef, onnx, tensorflow, operators]
+keywords: [tract, nnef, onnx, tensorflow]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # tract
 

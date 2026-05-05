@@ -1,7 +1,7 @@
 ---
 title: swww
 main_link: https://github.com/LGFae/swww?tab=readme-ov-file
-keywords: [swww, gui, rust, programming, wayland, wallpaper, lgfae, solution]
+keywords: [swww, rust, wayland, wallpaper]
 status: draft
 ---
 

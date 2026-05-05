@@ -1,7 +1,7 @@
 ---
 title: kuchiki
 main_link: https://crates.io/crates/kuchiki
-keywords: [web, rust, programming, crates, xml, tree, manipulation]
+keywords: [rust, xml]
 status: draft
 ---
 

@@ -1,11 +1,12 @@
 ---
 title: Classification
 main_link: https://github.com/ayrna/dlordinal?utm_source=tldrai
-keywords: [classification, fundamentals, ml, ordinal, dlordinal, python, deep]
+keywords: [classification, ordinal, dlordinal, python]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Classification
 

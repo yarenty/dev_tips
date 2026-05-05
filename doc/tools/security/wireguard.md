@@ -1,11 +1,12 @@
 ---
 title: Wireguard
 main_link: https://www.wireguard.com/
-keywords: [wireguard, vpn, security, networking, tunnel, nat, kernel]
+keywords: [wireguard, vpn, security, networking, tunnel, nat, internet]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Wireguard
 

@@ -1,11 +1,12 @@
 ---
 title: Webthinker
 main_link: https://github.com/RUC-NLPIR/WebThinker?utm_source=tldrai
-keywords: [webthinker, tools, ml, lrms, search, deep, reasoning]
+keywords: [webthinker, lrms, search, deep]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Webthinker
 

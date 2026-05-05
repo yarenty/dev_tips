@@ -1,11 +1,12 @@
 ---
 title: TMUX
 main_link: https://tmuxai.dev/
-keywords: [tmux, linux, tools, few, important, comand, shortcuts]
+keywords: [tmux, linux, few, important, comand]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # TMUX
 

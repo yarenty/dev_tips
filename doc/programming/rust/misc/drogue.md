@@ -1,11 +1,12 @@
 ---
 title: Drogue
 main_link: https://www.drogue.io
-keywords: [drogue, misc, rust, programming, iot, data]
+keywords: [drogue, rust, iot, internet]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 > Auto-split from `doc/programming/rust/misc/raspberry_pi.md` by `article_split.py`. Heading: **Drogue**.
 

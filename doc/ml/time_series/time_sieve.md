@@ -1,11 +1,12 @@
 ---
 title: Time Sieve
 main_link: https://github.com/xll0328/TimeSieve/tree/main
-keywords: [timesieve, time-series, ml, time, sieve, extracting]
+keywords: [timesieve, time-series, sieve, extracting]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # Time Sieve
 

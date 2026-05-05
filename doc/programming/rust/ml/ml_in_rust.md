@@ -1,11 +1,12 @@
 ---
 title: ML libraries in Rust
 main_link: https://github.com/rust-ml/linfa
-keywords: [ml-in-rust, ml, rust, programming, contains, linear, regression, liquidml]
+keywords: [ml-in-rust, ml, rust, linear, libraries, vector]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # ML libraries in Rust
 

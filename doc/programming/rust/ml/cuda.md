@@ -1,11 +1,12 @@
 ---
 title: CUDA in Rust
 main_link: https://github.com/Rust-GPU/Rust-CUDA
-keywords: [cuda, ml, rust, programming, gpu, api, cubecl, cudf]
+keywords: [cuda, ml, rust, gpu, api]
 status: draft
 ---
 
 <!-- auto-stubbed by article_stub.py -->
+<!-- keywords-extended by P6.5 -->
 
 # CUDA in Rust
 
