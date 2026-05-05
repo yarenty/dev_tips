@@ -7,3 +7,7 @@ This directory contains notes and tools for creating live demonstrations of comm
 -   [Live Demos](demo.md) - Creating live command demos.
 
 > "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it." - Brian Kernighan
+
+<!-- merged from doc/tools/live_demos/demo.md -->
+
+todo
