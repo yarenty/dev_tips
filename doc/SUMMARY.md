@@ -614,7 +614,7 @@
 # Robotics
 
 - [Robotics](robot/README.md)
-  - [GR00T](robot/groot.md)
+  - [NVIDIA GR00T — humanoid-robot foundation model](robot/groot.md)
 
 # Digital Twin
 
@@ -662,7 +662,7 @@
 # Demo
 
 - [Demo](demo/README.md)
-  - [present term](demo/term.md)
+  - [presenterm — markdown presentations in the terminal](demo/term.md)
 
 # Funny
 

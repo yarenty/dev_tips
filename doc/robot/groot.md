@@ -1,60 +1,58 @@
 ---
-title: GR00T
-main_link: https://spectrum.ieee.org/nvidia-gr00t-ros
-keywords: [groot, robot, spectrum, ieee, nvidia, ros]
-status: draft
+title: NVIDIA GR00T — humanoid-robot foundation model
+main_link: https://developer.nvidia.com/isaac/gr00t
+keywords: [groot, nvidia, humanoid-robot, foundation-model, isaac, ros, robotics]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# NVIDIA GR00T — humanoid-robot foundation model
 
-# GR00T
-
-**Main link:** <https://spectrum.ieee.org/nvidia-gr00t-ros>
+**Main link:** <https://developer.nvidia.com/isaac/gr00t>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+GR00T (Generalist Robot 00 Technology) is NVIDIA's general-purpose **foundation model for humanoid robots**, announced at GTC 2024. It's trained on multimodal demonstration data (videos, teleop, simulation) so a single network can drive walking, manipulation, and language-conditioned task execution across many humanoid bodies. NVIDIA ships GR00T together with the **Isaac** robotics stack (Isaac Sim, Isaac Lab, Project GROOT N1 open weights) and bridges to ROS 2 via NVIDIA's existing `isaac_ros_*` packages.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+This is the "GPT for humanoids" play — instead of bespoke controllers per platform / per skill, train one model and adapt it. Worth tracking if you build on humanoids (1X, Figure, Apptronik, Fourier, Boston Dynamics, Unitree); the open-weights **GR00T N1** release in 2025 made it real for hobbyists and labs (RTX-class GPUs are enough for fine-tune / inference). Less interesting if you're on industrial arms — for those Isaac Lab + classic RL is still the better workflow. The bridge story (GR00T as a high-level planner, ROS 2 / `isaac_ros_*` for low-level control + sensors) is what makes it actually deployable rather than a research demo.
+
+Caveat: Isaac stack assumes NVIDIA hardware end-to-end (Jetson on the robot, RTX/dGPU for training, Omniverse for sim). Lock-in is real.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **Isaac Sim / Isaac Lab** — NVIDIA's GPU-accelerated robot simulator and RL training environment.
+- **ROS 2** — the open-source middleware GR00T bridges into for sensor pipelines and low-level control.
+- **OpenVLA, RT-2, Octo** — academic / open vision-language-action foundation models in the same space.
+- **Boston Dynamics Spot SDK / Figure / 1X NEO** — humanoid platforms GR00T targets.
+- [[nvidia_omniverse]] — companion 3D simulation/digital-twin platform from NVIDIA.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[rerun]] — rerun _(score 20.9)_
-- [[nvidia]] — Nvidia _(score 18.6)_
-- [[rapids]] — Spark rapids _(score 18.6)_
-- [[nvidia_omniverse]] — Nvidia Omniverse _(score 18.6)_
-- [[simulink]] — Simulink _(score 6.6)_
+- [[nvidia_omniverse]] — Companion NVIDIA simulation platform; GR00T training pipelines run on it.
+- [[lerobot]] — Hugging Face's open robot-learning framework (related space, different vendor).
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#groot` `#robot` `#spectrum` `#ieee` `#nvidia` `#ros`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#groot` `#nvidia` `#humanoid-robot` `#foundation-model` `#isaac` `#ros` `#robotics`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- NVIDIA Isaac GR00T product page: <https://developer.nvidia.com/isaac/gr00t>
+- IEEE Spectrum: *NVIDIA Wants to Be the OS for Humanoid Robots*: <https://spectrum.ieee.org/nvidia-gr00t-ros>
+- GR00T N1 open release blog: <https://blogs.nvidia.com/blog/gr00t-n1-open-humanoid-robot-foundation-model-simulation-frameworks/>
+- Isaac Lab repo: <https://github.com/isaac-sim/IsaacLab>
+- Isaac ROS packages: <https://github.com/NVIDIA-ISAAC-ROS>
 
-# GR00T
+### Why the ROS-2 bridge matters
 
-https://spectrum.ieee.org/nvidia-gr00t-ros
+GR00T is the *brain* (high-level perception + action policy). To run on a real humanoid you still need:
 
+- a **real-time low-level controller** for joint actuation (typically EtherCAT / CAN);
+- **sensor drivers** (cameras, IMU, depth, force-torque);
+- a **safety / e-stop** layer;
+- a way to **publish / subscribe** to all of those over a deterministic bus.
 
-![GR00T](https://spectrum.ieee.org/media-library/a-man-in-a-black-leather-jacket-stands-in-front-of-an-enormous-screen-displaying-flowcharts-and-graphics-of-robots-during-a-pres.jpg?id=51767293&width=2400&height=1440)
+That's exactly what ROS 2 gives you, so NVIDIA's positioning is "GR00T policy on Jetson + ROS 2 underneath" rather than reinventing the middleware. The `isaac_ros_*` package family wraps the GPU-accelerated bits (depth, segmentation, AprilTag, VSLAM, …) as ROS 2 nodes so they slot into existing humanoid stacks.
