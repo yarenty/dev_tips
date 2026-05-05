@@ -1,7 +1,7 @@
 ---
 title: HTTPS on websites
 main_link: 
-keywords: [ssl, certbot, ssls, websites, install]
+keywords: [ssl, certbot, websites, install]
 status: draft
 ---
 

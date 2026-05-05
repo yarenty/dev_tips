@@ -1,7 +1,7 @@
 ---
 title: Hyperswitch
 main_link: https://github.com/juspay/hyperswitch
-keywords: [payments, powering, payment, open, switch]
+keywords: [payments, powering, open, switch]
 status: draft
 ---
 
