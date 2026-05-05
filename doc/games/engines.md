@@ -1,65 +1,62 @@
 ---
-title: Engines
-main_link: https://github.com/PistonDevelopers/piston/wiki/Games-Made-With-Piston
-keywords: [games, piston, bevy, rust, programming]
-status: draft
+title: Rust game engines
+main_link: https://arewegameyet.rs/
+keywords: [game-engines, rust, bevy, piston, ecs, rendering]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Rust game engines
 
-# Engines
-
-**Main link:** <https://github.com/PistonDevelopers/piston/wiki/Games-Made-With-Piston>
+**Main link:** <https://arewegameyet.rs/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Quick comparative pointer at the two long-standing Rust game engines: **Bevy** (the modern, ECS-first, hot-reloading, growing-fast option) and **Piston** (the older, more modular, less opinionated option). Both are open-source crates; Bevy is now the default suggestion for new Rust gamedev projects.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+If you're starting a new Rust game in 2026, reach for **Bevy** unless you have a specific reason not to. It has momentum, an ECS that genuinely teaches you the architecture pattern, a thriving plugin ecosystem (UI, physics, audio, networking), and active discussion on its weekly newsletter. **Piston** is the older "kit of crates" approach — every subsystem is a separate crate you compose. It's still maintained but development is sleepy; pick it if you want minimalism / explicit control over what's pulled in. For tooling, browse `arewegameyet.rs` — the Rust-gamedev community's living portal.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- `macroquad` / `miniquad` — minimal, single-file game frameworks; great for jam-style projects.
+- `ggez` — friendlier "LÖVE2D for Rust" wrapper.
+- Godot + GDExtension Rust bindings — when you want a full game editor, not just an engine.
+- `wgpu`, `winit` — the layer Bevy/Piston build on; useful directly if you want a custom renderer.
+- [[zxspectrum]] — Sibling Rust gamedev project (an emulator, but same ecosystem).
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[zxspectrum]] — Rust ZX _(score 29.4)_
-- [[rtic]] — RTIC _(score 13.1)_
-- [[programming/rust/sql_engine/sqlparser|sqlparser]] — SQLparser _(score 13.1)_
-- [[starship]] — starship _(score 13.1)_
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 13.1)_
+- [[zxspectrum]] — Other Rust gamedev work (Z80 emulator).
+- [[corewars]] — Same "build a tiny VM/sim in Rust" lineage.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#engines` `#games` `#piston` `#bevy` `#rust` `#crates`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#game-engines` `#rust` `#bevy` `#piston` `#ecs` `#rendering`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Bevy
 
+- Project site: <https://bevyengine.org/>
+- Repo: <https://github.com/bevyengine/bevy>
+- Weekly newsletter / "This Week in Bevy": <https://thisweekinbevy.com/>
+- Plugin index: <https://bevyengine.org/assets/>
 
-## Bevy  - Rust engine
+ECS-first, data-driven, supports hot-reload, fast-moving (breaking changes between releases until 1.0). Good docs, excellent example gallery.
 
-https://bevyengine.org/
+### Piston
 
-## Piston
+- crates.io: <https://crates.io/crates/piston>
+- "Games made with Piston" gallery: <https://github.com/PistonDevelopers/piston/wiki/Games-Made-With-Piston>
+- Repo: <https://github.com/PistonDevelopers/piston>
 
-https://crates.io/crates/piston
+Modular: a core event/window crate plus a long list of optional sibling crates (`piston2d-graphics`, `piston-image`, …). Slower-moving than Bevy now.
 
-### piston games
-https://github.com/PistonDevelopers/piston/wiki/Games-Made-With-Piston
+### Where to look next
+
+- **Are We Game Yet?** — community-maintained portal listing engines, libraries, sample projects, and learning resources: <https://arewegameyet.rs/>
+- **Rust Game Dev Discord / forum** — most active community hub.
+- **`r/rust_gamedev`** subreddit — weekly screenshots and recent updates.

@@ -632,10 +632,10 @@
 # Games
 
 - [Games](games/README.md)
-  - [Core Wars](games/corewars.md)
-  - [Engines](games/engines.md)
-  - [GAME in Scala](games/game_in_scala.md)
-  - [Rust ZX](games/zxspectrum.md)
+  - [Core War](games/corewars.md)
+  - [Rust game engines](games/engines.md)
+  - [Cross-platform game development in Scala (natively)](games/game_in_scala.md)
+  - [rustzx — ZX Spectrum emulator in Rust](games/zxspectrum.md)
 
 # Web
 
