@@ -13,12 +13,7 @@ status: draft
 - [Core Wars](corewars.md)
 - [Engines](engines.md)
 - [GAME in Scala](game_in_scala.md)
-- [Games](games.md)
 - [Rust ZX](zxspectrum.md)
-
-## Description
-
-This directory contains notes, ideas, and code related to game development.
 
 ## Keywords
 

@@ -33,7 +33,6 @@ status: draft
 
 ## TODO
 
-- This file contains **3 top-level `#` headings** — it likely covers multiple distinct topics. Per plan.md §8 step 3, **split this file** into one article per topic.
 - Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
 - Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
 - Add 3-5 entries under `## Similar / related topics`.
@@ -41,6 +40,11 @@ status: draft
 - Promote `status: draft` to `status: reviewed` once the rewrite is complete.
 
 ## References / raw notes
+<!-- auto-split by article_split.py -->
+> Auto-split: 2 additional top-level heading(s) extracted into sibling files:
+> - [Rust - brain](rust_brain.md)
+> - [Algorithms](algorithms.md)
+
 
 <!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
 
@@ -91,27 +95,3 @@ The Brainfuck programming language consists of eight commands, each of which is 
      
 - http://esoteric.sange.fi/brainfuck/ - The Brainfuck archive. Panu Kalliokoski provides a collection of Brainfuck compilers, interpreters, preprocessors, and of course extant Brainfuck programs.
 - http://en.wikipedia.org/wiki/Brainfuck - Wikipedia's entry on Brainfuck. The entry contains a in-depth description of the language and several basic algorithms, as well as a list of derivative languages.
-
-
-
-
-
-
-# Rust - brain
-
-https://github.com/brain-lang/brain
-
-brain is a strongly-typed, high-level programming language that compiles into brainfuck. Its syntax is based on the Rust programming language (which it is also implemented in). Though many Rust concepts will work in brain, it deviates when necessary in order to better suit the needs of brainfuck programming.
-
-brainfuck is an esoteric programming language with only 8 single-byte instructions: +, -, >, <, ,, ., [, ]. These limited instructions make brainfuck code extremely verbose and difficult to write. It can take a long time to figure out what a brainfuck program is trying to do. brain makes it easier to create brainfuck programs by allowing you to write in a more readable and understandable language.
-
-The type system makes it possible to detect a variety of logical errors when compiling, instead of waiting until runtime. This is an extra layer of convenience that brainfuck does not have. The compiler takes care of generating all the necessary brainfuck code to work with the raw bytes in the brainfuck turing machine.
-
-The brain programming language compiles directly into brainfuck. The generated brainfuck code can be run by a brainfuck interpreter. brain only targets this interpreter which means that its generated programs are only guaranteed to work when run with that. The interpreter implements a brainfuck specification specially designed and written for the brain programming language project.
-
-
-
-# Algorithms
-
-
-https://esolangs.org/wiki/Brainfuck_algorithms

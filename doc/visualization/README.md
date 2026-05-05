@@ -27,11 +27,6 @@ status: draft
 - [rerun](rerun.md)
 - [Plotters](rust.md)
 - [Help](tips.md)
-- [Visualization](visualization.md)
-
-## Description
-
-This directory contains notes, tips, and resources related to data visualization tools and techniques.
 
 ## Keywords
 

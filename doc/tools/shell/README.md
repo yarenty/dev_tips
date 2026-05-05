@@ -11,16 +11,14 @@ status: draft
 ## Articles
 
 - [Carbonyl](browser_in_terminal.md)
+- [Browsh](browsh.md)
 - [Shell color codes](color_codes.md)
 - [Dns Toys](dns_toys.md)
+- [Lynx](lynx.md)
 - [Commands to install](must_have.md)
 - [sshpass](sshpass.md)
 - [Tmux](tmux.md)
 - [Shell tools](tools.md)
-
-## Description
-
-This directory contains notes, tips, and tricks for shell scripting and command-line tools.
 
 ## Keywords
 

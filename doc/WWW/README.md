@@ -10,21 +10,17 @@ status: draft
 
 ## Articles
 
+- [airtable](airtable.md)
 - [apache](apache.md)
 - [Fluent Templates](fluent_templates.md)
 - [Loco](loco_rust_on_rails.md)
+- [n8n.io](n8n_io.md)
 - [Hyperswitch](payments.md)
 - [How to future proof your apache modules in macOS by signing them with your own certificate authority](signing_mac_libs.md)
 - [Static Site Generators](ssg.md)
 - [HTTPS on websites](ssl.md)
 - [tally](tools.md)
 - [Yarenty Profile And Projects Summary](yarenty_profile_and_projects_summary.md)
-
-## Description
-
-# WWW
-
-This directory contains notes, resources, and tips related to the World Wide Web, web development, and web technologies.
 
 ## Keywords
 

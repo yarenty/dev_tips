@@ -10,11 +10,14 @@ status: draft
 
 ## Articles
 
+- [AliceMind - mplug 2.0](alicemind_mplug_2_0.md)
 - [Deepseek](deepseek.md)
 - [Test the function](jetbrains_mellum.md)
 - [llama-agentic-system](llama.md)
+- [LLAMA](llama_2.md)
 - [miniLLM](minillm.md)
 - [mPLUG](mplug.md)
+- [mPLUG-Owl](mplug_owl.md)
 - [OLMo - Open Language Models](olmo.md)
 - [Strawberry](strawberry.md)
 

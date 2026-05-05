@@ -33,7 +33,6 @@ status: draft
 
 ## TODO
 
-- This file contains **2 top-level `#` headings** — it likely covers multiple distinct topics. Per plan.md §8 step 3, **split this file** into one article per topic.
 - Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
 - Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
 - Add 3-5 entries under `## Similar / related topics`.
@@ -41,6 +40,10 @@ status: draft
 - Promote `status: draft` to `status: reviewed` once the rewrite is complete.
 
 ## References / raw notes
+<!-- auto-split by article_split.py -->
+> Auto-split: 1 additional top-level heading(s) extracted into sibling files:
+> - [TAURI](tauri.md)
+
 
 <!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
 
@@ -60,10 +63,3 @@ A full introduction and code review of the AWESOME-APP Rust template for buildin
 04:04 - Backend Code Review
 26:31 - Frontend Code Review
 40:04 - Setup files (Postcss, Rollup, TypeScript, and Awesome.toml)
-
-
-
-# TAURI
-
-
-https://tauri.app/v1/guides/getting-started/setup

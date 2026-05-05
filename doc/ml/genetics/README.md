@@ -12,10 +12,6 @@ status: draft
 
 - [The MOEA Framework](moea.md)
 
-## Description
-
-This directory contains notes and resources related to genetics and genetic algorithms.
-
 ## Keywords
 
 `#genetics`

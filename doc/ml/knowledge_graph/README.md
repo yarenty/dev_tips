@@ -14,10 +14,6 @@ status: draft
 - [Research papers](papers.md)
 - [Petgraph](petgraph.md)
 
-## Description
-
-This directory contains notes, papers, and resources related to knowledge graphs.
-
 ## Keywords
 
 `#knowledge_graph`

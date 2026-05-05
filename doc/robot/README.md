@@ -12,10 +12,6 @@ status: draft
 
 - [GR00T](groot.md)
 
-## Description
-
-This directory contains notes, resources, and projects related to robotics, automation, and physical computing.
-
 ## Keywords
 
 `#robot`

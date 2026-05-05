@@ -12,10 +12,6 @@ status: draft
 
 - [DEMO](demo_overview.md)
 
-## Description
-
-This directory contains notes and tools for creating live demonstrations of command-line interactions and code execution.
-
 ## Keywords
 
 `#live_demos`

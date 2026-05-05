@@ -33,7 +33,6 @@ status: draft
 
 ## TODO
 
-- This file contains **2 top-level `#` headings** — it likely covers multiple distinct topics. Per plan.md §8 step 3, **split this file** into one article per topic.
 - Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
 - Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
 - Add 3-5 entries under `## Similar / related topics`.
@@ -41,6 +40,10 @@ status: draft
 - Promote `status: draft` to `status: reviewed` once the rewrite is complete.
 
 ## References / raw notes
+<!-- auto-split by article_split.py -->
+> Auto-split: 1 additional top-level heading(s) extracted into sibling files:
+> - [Tmux AI](tmux_ai.md)
+
 
 <!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
 
@@ -60,26 +63,4 @@ tmux kill-session -t <>
 # INSIDE:
 Ctrl b-d 
 Ctrl b-[
-```
-
-
-# Tmux AI
-
-
-https://tmuxai.dev/
-
-```shell
-CHAT PANE
-TmuxAI» start docker container mysql and then connect to mysql shell.
-First I'll start the container:
-TmuxAI» docker run --name mysql_container -e MYSQL_ROOT_PASSWORD=password -d mysql:latest
-Do you want to execute this command? [Y]es/No/Edit:
-TmuxAI» Now I will connect to the mysql shell.
-TmuxAI» docker exec -it mysql_container mysql -u root -p
-Do you want to execute this command? [Y]es/No/Edit:
-TmuxAI» I'll now send the password to the mysql shell.
-TmuxAI» Sending keys: password
-TmuxAI» Sending keys: Enter
-TmuxAI» I've successfully connected to the MySQL shell.
-
 ```

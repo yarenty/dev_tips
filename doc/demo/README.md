@@ -12,12 +12,6 @@ status: draft
 
 - [present term](term.md)
 
-## Description
-
-How to present stuff to autdience - repos / demos / ppts / resources.
-
-- [presentterm](term.md) - presentation in terminal window
-
 ## Keywords
 
 `#demo`

@@ -15,10 +15,6 @@ status: draft
 - [OpenObserve](openobserve.md)
 - [prometheus](prometheus.md)
 
-## Description
-
-This directory contains notes, tools, and best practices for implementing observability in software systems.
-
 ## Keywords
 
 `#observability`

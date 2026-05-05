@@ -11,14 +11,9 @@ status: draft
 ## Articles
 
 - [API access to data](apis.md)
-- [Data](data.md)
 - [For Tests](for_tests.md)
 - [Datasets](public.md)
 - [qdrant](qdrant_vector_search.md)
-
-## Description
-
-This directory contains notes and links to various datasets that can be used for machine learning.
 
 ## Keywords
 

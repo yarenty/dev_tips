@@ -12,6 +12,7 @@ status: draft
 
 - [MARP](md_to_ppt_pdf_jpeg.md)
 - [hyperswitch](payments.md)
+- [Prek](prek.md)
 - [Bacon](rust_must.md)
 - [Workmux](workmux.md)
 

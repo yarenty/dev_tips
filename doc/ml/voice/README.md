@@ -11,6 +11,7 @@ status: draft
 ## Articles
 
 - [Speech-to-text](assemblyai.md)
+- [Build Voice AI with one API](build_voice_ai_with_one_api.md)
 
 ## Keywords
 

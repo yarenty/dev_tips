@@ -33,7 +33,6 @@ status: draft
 
 ## TODO
 
-- This file contains **2 top-level `#` headings** — it likely covers multiple distinct topics. Per plan.md §8 step 3, **split this file** into one article per topic.
 - Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
 - Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
 - Add 3-5 entries under `## Similar / related topics`.
@@ -41,6 +40,10 @@ status: draft
 - Promote `status: draft` to `status: reviewed` once the rewrite is complete.
 
 ## References / raw notes
+<!-- auto-split by article_split.py -->
+> Auto-split: 1 additional top-level heading(s) extracted into sibling files:
+> - [swww](swww.md)
+
 
 <!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
 
@@ -101,14 +104,3 @@ Elkowars Wacky Widgets is a standalone widget system made in Rust that allows yo
 Documentation and instructions on how to install can be found here.
 
 Dharmx also wrote a nice, beginner friendly introductory guide for eww here.
-
-
-
-
-
-# swww
-
-https://github.com/LGFae/swww?tab=readme-ov-file
-
-A Solution to your Wayland Wallpaper Woes
-Efficient animated wallpaper daemon for wayland, controlled at runtime

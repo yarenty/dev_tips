@@ -16,7 +16,7 @@ status: draft
 
 - [bytemuck](bytes_manipulation.md)
 - [libhdfs3](hdfs.md)
-- [Json](json.md)
+- [JSON](json.md)
 - [pest. The Elegant Parser](parsers.md)
 - [Calamine](xls.md)
 

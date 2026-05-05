@@ -10,10 +10,23 @@ status: draft
 
 ## Articles
 
+- [7 more ideas](7_more_ideas.md)
 - [List of awesome libraries !!!](_must_have.md)
 - [Books](_to_learn.md)
 - [Move blokchain from python to rust](_todo_ideas.md)
 - [println! speedup 500%](_tricks.md)
+- [anyhow](anyhow.md)
+- [Cargo.toml](cargo_toml.md)
+- [Cheats](cheats.md)
+- [Cheats](cheats_2.md)
+- [eyre](eyre.md)
+- [from easier to advanced 1-by-1](from_easier_to_advanced_1_by_1.md)
+- [Github MAP](github_map.md)
+- [Scope](scope.md)
+- [Simple short intro to rust](simple_short_intro_to_rust.md)
+- [thiserror](thiserror.md)
+- [Tutorials](tutorials.md)
+- [XC in Rust](xc_in_rust.md)
 
 ## Keywords
 

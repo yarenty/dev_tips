@@ -14,10 +14,6 @@ status: draft
 - [delta](git_delta.md)
 - [Github README](github.md)
 
-## Description
-
-This directory contains notes, tips, and tricks for using Git, a distributed version control system.
-
 ## Keywords
 
 `#git`

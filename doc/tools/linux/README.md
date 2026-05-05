@@ -16,16 +16,13 @@ status: draft
 - [Fish](fish.md)
 - [Helix](helix.md)
 - [Lazygit](lazygit.md)
-- [Linux](linux.md)
 - [Mosh](mosh.md)
+- [Starshio](starshio.md)
 - [Project Summary: Byobu, Mosh, Xpra](terminals.md)
 - [TMUX](tmux.md)
+- [Tmux AI](tmux_ai.md)
 - [Trippy](trace.md)
 - [Zellij](zellij.md)
-
-## Description
-
-This directory contains notes, tips, and resources for Linux system administration and usage.
 
 ## Keywords
 

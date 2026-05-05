@@ -14,6 +14,7 @@ status: draft
 - [Task](agentic_ai_memory.md)
 - [Caching](caching.md)
 - [Episodic Memory](episodic_memory.md)
+- [Response](response.md)
 
 ## Keywords
 

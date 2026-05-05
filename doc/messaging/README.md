@@ -11,16 +11,14 @@ status: draft
 ## Articles
 
 - [Kafka](kafka.md)
+- [Kafka](kafka_2.md)
 - [Kinesis](kinesis.md)
 - [MQTT](mqtt.md)
 - [nats-server](nats.md)
 - [patchbay.pub](patchbay.md)
 - [Pulsar](pulsar.md)
+- [Red Panda](red_panda.md)
 - [redpanda](redpanda.md)
-
-## Description
-
-This directory contains notes and information about various messaging systems and protocols.
 
 ## Keywords
 

@@ -10,24 +10,21 @@ status: draft
 
 ## Articles
 
+- [ip address add dev wg0 192.168.2.1/24](ip_address_add_dev_wg0_192_168_2_1_24.md)
+- [ip address add dev wg0 192.168.2.1 peer 192.168.2.2](ip_address_add_dev_wg0_192_168_2_1_peer_192_168_2_2.md)
+- [ip link add dev wg0 type wireguard](ip_link_add_dev_wg0_type_wireguard.md)
+- [ip link set up dev wg0](ip_link_set_up_dev_wg0.md)
+- [modprobe wireguard && echo module wireguard +p > /sys/kernel/debug/dynamic_debug/control](modprobe_wireguard_echo_module_wireguard_p_sys_kernel_debug_.md)
 - [NGrok - Free Firewall Tunnel](ngrok.md)
+- [Pake](pake.md)
 - [RustScan](port_scan.md)
 - [RustScan](port_scanner_rustscan.md)
 - [rathole](rathole.md)
 - [sniffnet](sniffnet.md)
 - [Pake](web_to_app_pake.md)
+- [wg set wg0 listen-port 51820 private-key /path/to/private-key peer ABCDEF... allowed-ips 192.168.88.0/24 endpoint 209.202.254.14:8172](wg_set_wg0_listen_port_51820_private_key_path_to_private_key.md)
+- [wg setconf wg0 myconfig.conf](wg_setconf_wg0_myconfig_conf.md)
 - [Wireguard](wireguard.md)
-
-## Description
-
-# Personal secuity  intrusion detection systems
-
-
-## Suricata
-
-https://suricata.io/
-
-Suricata is the leading independent open source threat detection engine. By combining intrusion detection (IDS), intrusion prevention (IPS), network security monitoring (NSM) and PCAP processing, Suricata can quickly identify, stop, and assess even the most sophisticated attacks.
 
 ## Keywords
 

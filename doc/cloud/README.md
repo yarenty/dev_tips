@@ -10,12 +10,7 @@ status: draft
 
 ## Articles
 
-- [Cloud](cloud.md)
 - [Oracle Free Tier](oracle_free_tier.md)
-
-## Description
-
-This directory contains notes, tips, and best practices for working with cloud computing services and architectures.
 
 ## Keywords
 

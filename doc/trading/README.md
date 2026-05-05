@@ -10,6 +10,9 @@ status: draft
 
 ## Articles
 
+- [A Basic Algo Trading System In Rust: Part I](a_basic_algo_trading_system_in_rust_part_i.md)
+- [A Basic Algo Trading System In Rust: Part III](a_basic_algo_trading_system_in_rust_part_iii.md)
+- [A Basic Algo Trading System In Rust: Part IV: Backtesting](a_basic_algo_trading_system_in_rust_part_iv_backtesting.md)
 - [Barter](barter.md)
 - [Building an Algorithmic Trading Platform in Rust](bot_rust.md)
 - [hummingbot](hummingbot_python.md)
@@ -17,10 +20,6 @@ status: draft
 - [MT5](mt5.md)
 - [Algo trading](rust_algo_trading.md)
 - [Trade Aggregation](trade_aggregation_rust_candles.md)
-
-## Description
-
-This directory contains notes, resources, and strategies related to algorithmic trading and financial markets.
 
 ## Keywords
 

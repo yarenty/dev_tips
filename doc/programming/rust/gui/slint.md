@@ -33,7 +33,6 @@ status: draft
 
 ## TODO
 
-- This file contains **2 top-level `#` headings** — it likely covers multiple distinct topics. Per plan.md §8 step 3, **split this file** into one article per topic.
 - Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
 - Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
 - Add 3-5 entries under `## Similar / related topics`.
@@ -41,6 +40,10 @@ status: draft
 - Promote `status: draft` to `status: reviewed` once the rewrite is complete.
 
 ## References / raw notes
+<!-- auto-split by article_split.py -->
+> Auto-split: 1 additional top-level heading(s) extracted into sibling files:
+> - [Tao](tao.md)
+
 
 <!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
 
@@ -110,29 +113,3 @@ https://slint.dev/releases/1.5.1/docs/rust/slint/
 
 
 https://slint.dev/releases/1.5.1/editor/
-
-
-
-# Tao
-
-
-Crate taoCopy item path
-source · [−]
-Tao is a cross-platform application window creation and event loop management library.
-
-
-https://docs.rs/tao/latest/tao/
-
-
-
-
-
-
-
-## Chkawka
-
-
-see krokiet!!!
-
-
-https://github.com/qarmin/czkawka

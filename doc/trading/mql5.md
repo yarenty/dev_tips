@@ -33,7 +33,7 @@ status: draft
 
 ## TODO
 
-- This file contains **22 top-level `#` headings** — it likely covers multiple distinct topics. Per plan.md §8 step 3, **split this file** into one article per topic.
+- This file is pathologically multi-topic: it has many lines like `# Initializing X` that are actually **unfenced code comments**, not real Markdown headings. **Before splitting**, wrap the embedded Python / shell code in ```` ``` ```` fences (or convert to indented code blocks). Then re-run `python3 inventory/article_split.py --path <this-file>` from the repo root.
 - Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
 - Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
 - Add 3-5 entries under `## Similar / related topics`.

@@ -24,10 +24,6 @@ status: draft
 - [UDF](udf/README.md)
 - [Vector](vector/README.md)
 
-## Description
-
-This directory contains notes, tips, and quick references for working with different database systems. From SQL to NoSQL, you'll find useful snippets and commands here.
-
 ## Keywords
 
 `#db`

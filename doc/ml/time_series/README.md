@@ -12,17 +12,15 @@ status: draft
 
 - [forecasting](forecasting.md)
 - [Kolmogorov-Arnold Networks (KANs) for Time Series Forecasting](kan.md)
+- [Linear Regression With Time Series](linear_regression_with_time_series.md)
 - [Drop any and all nulls across all columns](missing_data.md)
 - [Papers](papers.md)
 - [Transformers](time_serie_transformer.md)
+- [Time series research papers](time_series_research_papers.md)
+- [Time Series Transformer](time_series_transformer.md)
 - [Time Sieve](time_sieve.md)
 - [Tutorials](tutorials.md)
-
-## Description
-
-# Time Series
-
-This directory contains notes, papers, and tutorials related to time series analysis.
+- [Tutorials](tutorials_2.md)
 
 ## Keywords
 

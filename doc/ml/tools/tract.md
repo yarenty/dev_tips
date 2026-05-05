@@ -33,7 +33,6 @@ status: draft
 
 ## TODO
 
-- This file contains **2 top-level `#` headings** — it likely covers multiple distinct topics. Per plan.md §8 step 3, **split this file** into one article per topic.
 - Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
 - Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
 - Add 3-5 entries under `## Similar / related topics`.
@@ -41,6 +40,10 @@ status: draft
 - Promote `status: draft` to `status: reviewed` once the rewrite is complete.
 
 ## References / raw notes
+<!-- auto-split by article_split.py -->
+> Auto-split: 1 additional top-level heading(s) extracted into sibling files:
+> - [License](license_2.md)
+
 
 <!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
 
@@ -215,26 +218,3 @@ Notes:
   performance results for TensorFlow (not -Lite) on the Pi 3.
   They use all four cores of the device. Both TensorFlow-Lite and tract
   here have been made to run on a single-core.
-
-# License
-
-Note: files in the `tensorflow/protos` directory are copied from the
-[TensorFlow](https://github.com/tensorflow/tensorflow) project and are not
-covered by the following licence statement.
-
-Note: files in the `onnx/protos` directory are copied from the
-[ONNX](https://github.com/onnx/onnx) project and are not
-covered by the following license statement.
-
-## Apache 2.0/MIT
-
-All original work licensed under either of
-* Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
-* MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
-  at your option.
-
-## Contribution
-
-Unless you explicitly state otherwise, any Contribution intentionally submitted
-for inclusion in the work by you, as defined in the Apache-2.0 license, shall
-be dual licensed as above, without any additional terms or conditions.

@@ -10,13 +10,10 @@ status: draft
 
 ## Articles
 
+- [Algorithms](algorithms.md)
 - [Brainfuck](brainfuck.md)
-- [Funny](funny.md)
+- [Rust - brain](rust_brain.md)
 - [Sleep SORT algorithm](sleepsort.md)
-
-## Description
-
-This directory is a collection of humorous programming anecdotes, jokes, and interesting, quirky discoveries related to technology.
 
 ## Keywords
 

@@ -13,6 +13,7 @@ status: draft
 - [Removing refusals with transformers](abliteration.md)
 - [Inspectus](inspectus.md)
 - [marena](leaderboards.md)
+- [seal](seal.md)
 
 ## Keywords
 

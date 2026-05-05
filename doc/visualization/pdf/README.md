@@ -12,13 +12,8 @@ status: draft
 
 - [Latex](latex.md)
 - [Mdmath Symbols](mdmath_symbols.md)
-- [PDF](pdf.md)
 - [React Print](react.md)
 - [typst](typst.md)
-
-## Description
-
-This directory contains notes and resources for working with PDF tools.
 
 ## Keywords
 

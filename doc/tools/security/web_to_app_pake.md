@@ -33,7 +33,6 @@ status: draft
 
 ## TODO
 
-- This file contains **2 top-level `#` headings** — it likely covers multiple distinct topics. Per plan.md §8 step 3, **split this file** into one article per topic.
 - Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
 - Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
 - Add 3-5 entries under `## Similar / related topics`.
@@ -41,6 +40,10 @@ status: draft
 - Promote `status: draft` to `status: reviewed` once the rewrite is complete.
 
 ## References / raw notes
+<!-- auto-split by article_split.py -->
+> Auto-split: 1 additional top-level heading(s) extracted into sibling files:
+> - [Pake](pake.md)
+
 
 <!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
 
@@ -121,18 +124,3 @@ No material inconsistencies spotted.
 3. How can a user find documentation for advanced usage or troubleshooting?
 4. Where can users download application binaries?
 5. What are some of the popular applications Pake supports?
-
-
-# Pake
-
-https://github.com/tw93/Pake
-
-Pake supports Mac, Windows, and Linux. Check out README for Popular Packages, Command-Line Packaging, and Customized Development information. Feel free to share your suggestions in Discussions.
-
-
-## Features
-- 
-- 🎐 Nearly 20 times smaller than an Electron package (around 5M!)
-- 🚀 With Rust Tauri, Pake is much more lightweight and faster than JS-based frameworks.
-- 📦 Battery-included package — shortcut pass-through, immersive windows, and minimalist customization.
-- 👻 Pake is just a simple tool — replace the old bundle approach with Tauri (though PWA is good enough).

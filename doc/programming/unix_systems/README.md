@@ -11,6 +11,7 @@ status: draft
 ## Articles
 
 - [Bunnix](building_unix_system.md)
+- [Helios](helios.md)
 - [Minio](minio.md)
 - [Programming in Web](monaco.md)
 

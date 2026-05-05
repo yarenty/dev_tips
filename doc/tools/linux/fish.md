@@ -33,7 +33,6 @@ status: draft
 
 ## TODO
 
-- This file contains **2 top-level `#` headings** — it likely covers multiple distinct topics. Per plan.md §8 step 3, **split this file** into one article per topic.
 - Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
 - Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
 - Add 3-5 entries under `## Similar / related topics`.
@@ -41,6 +40,10 @@ status: draft
 - Promote `status: draft` to `status: reviewed` once the rewrite is complete.
 
 ## References / raw notes
+<!-- auto-split by article_split.py -->
+> Auto-split: 1 additional top-level heading(s) extracted into sibling files:
+> - [Starshio](starshio.md)
+
 
 <!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
 
@@ -52,15 +55,3 @@ Things that require plugins and lots of code in shells like ZSH, like autosugges
 I have two fish plugins configured: z for jumping to a directory, and hydro as my shell prompt. Neither need configuration.
 
 ## Installing
-
-
-
-
-
-# Starshio
-
-https://github.com/starship/starship
-
-```shell
-curl -sS https://starship.rs/install.sh | sh
-```

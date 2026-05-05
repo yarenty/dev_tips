@@ -14,10 +14,6 @@ status: draft
 - [IoT mqtt](mqtt.md)
 - [Shodan](shodan.md)
 
-## Description
-
-This directory contains notes and information related to the Internet of Things, including protocols, platforms, and security considerations.
-
 ## Keywords
 
 `#iot`

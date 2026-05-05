@@ -12,6 +12,8 @@ status: draft
 
 - [GRPC](grpc.md)
 - [ruMQTT](mq.md)
+- [NATS](nats.md)
+- [paho MQTT](paho_mqtt.md)
 - [tRPC](trpc.md)
 - [Bore](tunelling.md)
 

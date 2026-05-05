@@ -14,8 +14,10 @@ status: draft
 
 ## Articles
 
+- [Extensions](extensions.md)
 - [Goose](goose.md)
 - [Ollama](ollama.md)
+- [providers](providers.md)
 - [Rig](rig.md)
 - [rsllm](rsllm.md)
 

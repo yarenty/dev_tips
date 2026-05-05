@@ -33,7 +33,6 @@ status: draft
 
 ## TODO
 
-- This file contains **2 top-level `#` headings** — it likely covers multiple distinct topics. Per plan.md §8 step 3, **split this file** into one article per topic.
 - Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
 - Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
 - Add 3-5 entries under `## Similar / related topics`.
@@ -41,6 +40,10 @@ status: draft
 - Promote `status: draft` to `status: reviewed` once the rewrite is complete.
 
 ## References / raw notes
+<!-- auto-split by article_split.py -->
+> Auto-split: 1 additional top-level heading(s) extracted into sibling files:
+> - [FutureHouse](futurehouse.md)
+
 
 <!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
 
@@ -66,26 +69,3 @@ Given a scientist’s research goal that has been specified in natural language,
 
 paper:
 https://storage.googleapis.com/coscientist_paper/ai_coscientist.pdf
-
-
-
-
-
-# FutureHouse
-
-
-https://www.futurehouse.org/
-
-
-https://www.futurehouse.org/research-announcements/launching-futurehouse-platform-ai-agents
-
-
-![](https://cdn.prod.website-files.com/66a40c47259cac29adc80121/6812b7be363b4d85677c0779_Agents2.png)
-
-- Crow is a general-purpose agent that can search the literature and provide concise, scholarly answers to questions, and is perfect for use via API.
-
-- Falcon is specialized for deep literature reviews. It can search and synthesize more scientific literature than any other agent we are aware of, and also has access to several specialized scientific databases, like OpenTargets.
-
-- Owl (formerly HasAnyone) is specialized to answer the question “Has anyone done X before?”
-
-- Phoenix (experimental) is our deployment of ChemCrow, an agent with access to specialized tools that allow it to help researchers in planning chemistry experiments.

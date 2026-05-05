@@ -11,9 +11,11 @@ status: draft
 ## Articles
 
 - [Books](books.md)
+- [CrateDB](cratedb.md)
 - [Databend](databend.md)
 - [Datafusion SQL Query Planner](datafusion.md)
 - [diesel](diesel.md)
+- [Excel UDF in Rust](excel_udf_in_rust.md)
 - [Hive UDF – User Defined Function with Example](hive.md)
 - [MariaDB](mariadb.md)
 - [QPML](qpml.md)
@@ -28,6 +30,7 @@ status: draft
 - [SQLIte loadable](sqlite_loadable.md)
 - [SQLparser](sqlparser.md)
 - [udf](udf_lib.md)
+- [WASM: for libsql](wasm_for_libsql.md)
 
 ## Keywords
 

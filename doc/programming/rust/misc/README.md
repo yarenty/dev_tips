@@ -12,9 +12,20 @@ status: draft
 
 - [algorithms](alagorithms.md)
 - [Coreaudio](audio.md)
+- [Awesome embedded in rust](awesome_embedded_in_rust.md)
 - [charts](charts.md)
+- [Claxon](claxon.md)
+- [Daktilo](daktilo.md)
+- [Drogue](drogue.md)
+- [Embassy](embassy.md)
 - [bats](fun.md)
+- [Hound](hound.md)
+- [lewton](lewton.md)
+- [minimp3](minimp3.md)
 - [Rust Embedded - book](raspberry_pi.md)
+- [Rodio](rodio.md)
+- [RTIC](rtic.md)
+- [Symphonia](symphonia.md)
 - [Windows RS](windows.md)
 
 ## Keywords

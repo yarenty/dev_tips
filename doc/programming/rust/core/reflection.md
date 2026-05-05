@@ -33,7 +33,6 @@ status: draft
 
 ## TODO
 
-- This file contains **2 top-level `#` headings** — it likely covers multiple distinct topics. Per plan.md §8 step 3, **split this file** into one article per topic.
 - Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
 - Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
 - Add 3-5 entries under `## Similar / related topics`.
@@ -41,6 +40,10 @@ status: draft
 - Promote `status: draft` to `status: reviewed` once the rewrite is complete.
 
 ## References / raw notes
+<!-- auto-split by article_split.py -->
+> Auto-split: 1 additional top-level heading(s) extracted into sibling files:
+> - [Reflection step by step - Article](reflection_step_by_step_article.md)
+
 
 <!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
 
@@ -66,19 +69,3 @@ Meanwhile the library is tracking the control flow and function invocations to b
 The reflection API is just a means for defining a procedural macro. The library boils it all away and emits clean Rust source code free of any actual runtime reflection. Note that this is not a statement about compiler optimizations -- we are not relying on the Rust compiler to do heroic optimizations on shitty generated code. Literally the source code authored through the reflection API will be what a seasoned macro author would have produced simply using syn and quote.
 
 From the perspective of the person that ends up calling the macro, everything about how it is called is the same as if the macro were written the old fashioned way without reflection, and their code compiles exactly as fast and performs exactly as fast. The advantage is to the macro author for whom developing and maintaining a robust macro is greatly simplified.
-
-
-
-
-
-
-
-# Reflection step by step - Article
-
-using Any!
-
-https://www.osohq.com/post/rust-reflection-pt-1
-
-he foundation of our runtime reflection system through classes and instances, and we've shown some simple dynamic type checking using the built in Any trait.
-
-Up next, things start getting a bit more complicated as we attempt to replicate Python's getattr magic method, and make it possible to look up attributes on Rust structs dynamically at runtime.

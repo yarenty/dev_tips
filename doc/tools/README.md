@@ -20,10 +20,6 @@ status: draft
 - [Security](security/README.md)
 - [Shell](shell/README.md)
 
-## Description
-
-This directory contains notes, tips, and configurations for various tools and utilities.
-
 ## Keywords
 
 `#tools`

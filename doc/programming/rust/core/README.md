@@ -14,8 +14,12 @@ status: draft
 - [Derivative](derivative.md)
 - [eyre](error.md)
 - [slotmap crate](generational_index.md)
+- [hashbrown](hashbrown.md)
 - [HalfBrown](low_level_structures.md)
+- [pin-project](pin_project.md)
 - [reflect](reflection.md)
+- [Reflection step by step - Article](reflection_step_by_step_article.md)
+- [tinyvec](tinyvec.md)
 
 ## Keywords
 
