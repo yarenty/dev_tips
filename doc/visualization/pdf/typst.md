@@ -1,72 +1,101 @@
 ---
-title: typst
-main_link: https://github.com/typst/typst
-keywords: [typst, markup, typesetting, latex, cli]
-status: draft
+title: "Typst: a modern, fast LaTeX-shaped typesetting system"
+main_link: https://typst.app/
+keywords: [typst, typesetting, latex, pdf, documents, scripting]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Typst: a modern, fast LaTeX-shaped typesetting system
 
-# typst
+**Main link:** <https://typst.app/>
 
-**Main link:** <https://github.com/typst/typst>
+Repo: <https://github.com/typst/typst> · Docs: <https://typst.app/docs/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+[Typst](https://typst.app/) is a markup-based typesetting system written in Rust that aims to be "as powerful as LaTeX while being much easier to learn". You write `.typ` files (markdown-flavoured syntax with a small typed scripting language for layout, computation, and reusable components), and the `typst compile` CLI produces a PDF. Math typesetting, bibliography management, cross-references, and templates are all first-class. There's a [collaborative web editor](https://typst.app/) similar to Overleaf-for-LaTeX, plus a free local CLI.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The pitch over LaTeX is mostly:
+
+- **Compile times in milliseconds, not seconds**, thanks to incremental compilation. This makes "edit, see PDF" almost as tight a loop as a Markdown preview.
+- **Friendly error messages**, because Typst's compiler was designed in 2023 by people who knew what bad error messages look like, instead of accreted over 40 years.
+- **A real scripting language**, typed and lexically-scoped, instead of LaTeX's `\if\else\fi` and `\edef` gymnastics. You can write `let pi = 3.14` and reuse it the way you'd expect.
+- **Sensible defaults**: a fresh `.typ` file produces something that looks fine without preamble incantations.
+
+The pitch *for* LaTeX, if you're considering staying:
+
+- The journal templates of every academic field were written 20 years ago in LaTeX. Typst has templates but the ecosystem is much smaller.
+- LaTeX has tikz, biblatex, and several decades of Stack Exchange answers for every weird symbol.
+- Typst is young — APIs may still shift in minor ways.
+
+For a personal CV, a thesis from scratch, a one-off report, technical notes — pick Typst. For a journal submission, contributing to a paper started in LaTeX, or anywhere you'd benefit from `tikz` — stay LaTeX.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [LaTeX](https://www.latex-project.org/) — the older, much-larger-ecosystem alternative.
+- [[react]] — `react-print-pdf` if your "document" is really a layout problem and you'd rather think in components than typesetting.
+- [Pandoc](https://pandoc.org/) — converts almost anything to almost anything (incl. Markdown → PDF via LaTeX, ConTeXt, or wkhtmltopdf).
+- [SILE](https://sile-typesetter.org/) — another modern typesetter; even smaller community than Typst.
+- [[mdmath_symbols]] — the math-symbol cheat sheet (LaTeX syntax, also accepted by Typst's math mode).
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[latex]] — Latex _(score 24.9)_
-- [[mdmath_symbols]] — Mdmath Symbols _(score 16.0)_
-- [[react]] — React Print _(score 16.0)_
-- [[qpml]] — QPML _(score 8.9)_
-- [[ssg]] — Static Site Generators _(score 5.6)_
+- [[react]] — alternative when "PDF" is really "HTML, but printed"
+- [[mdmath_symbols]] — math-symbol cheat sheet usable in either LaTeX or Typst's math mode
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#typst` `#visualization` `#markup` `#typesetting` `#system` `#latex`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#visualization` `#pdf` `#typst` `#typesetting` `#latex-alternative` `#documents` `#rust`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Project pitch
 
-# typst 
+> Typst is a new markup-based typesetting system that is designed to be as powerful as LaTeX while being much easier to learn and use. Typst has:
+>
+> - Built-in markup for the most common formatting tasks
+> - Flexible functions for everything else
+> - A tightly integrated scripting system
+> - Math typesetting, bibliography management, and more
+> - Fast compile times thanks to incremental compilation
+> - Friendly error messages in case something goes wrong
 
+### Hello-world
 
-https://github.com/typst/typst
+```typst
+= My document title
 
-Typst is a new markup-based typesetting system that is designed to be as powerful as LaTeX while being much easier to learn and use. Typst has:
+This is a paragraph with *emphasis* and _italics_.
 
-- Built-in markup for the most common formatting tasks
-- Flexible functions for everything else
-- A tightly integrated scripting system
-- Math typesetting, bibliography management, and more
-- Fast compile times thanks to incremental compilation
-- Friendly error messages in case something goes wrong
+#let pi = 3.14159
+The value of pi is #pi.
 
-This repository contains the Typst compiler and its CLI, which is everything you need to compile Typst documents locally. For the best writing experience, consider signing up to our collaborative online editor for free.
+== Math
+$ integral_0^infinity e^(-x^2) dif x = sqrt(pi) / 2 $
 
+== A figure
+#figure(
+  image("plot.png", width: 80%),
+  caption: [A plot generated externally.],
+) <plot>
 
-![](https://user-images.githubusercontent.com/17899797/228031796-ced0e452-fcee-4ae9-92da-b9287764ff25.png)
+See @plot for the data.
+```
+
+Compile with:
+
+```sh
+typst compile my_doc.typ        # produces my_doc.pdf
+typst watch my_doc.typ          # live recompile on save
+```
+
+### Useful entry points
+
+- Web editor: <https://typst.app/>
+- Source: <https://github.com/typst/typst>
+- Documentation: <https://typst.app/docs/>
+- Community templates: <https://typst.app/universe>

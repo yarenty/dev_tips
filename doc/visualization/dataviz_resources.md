@@ -1,81 +1,68 @@
 ---
-title: Help
-main_link: https://education.microsoft.com/nb-no/course/0a60eeb6/0
-keywords: [tips, dataviz, books, bookdepository, visualize, microsoft]
-status: draft
+title: Data-viz resources — books, courses, references
+main_link: https://datavizproject.com/
+keywords: [dataviz, books, courses, tufte, knaflic, yau, chart-design, references]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Data-viz resources — books, courses, references
 
-# Help
-
-**Main link:** <https://education.microsoft.com/nb-no/course/0a60eeb6/0>
+**Main link:** <https://datavizproject.com/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+A short curated reading / reference list for *the craft* of data visualisation — picking the right chart type, communicating clearly, avoiding chartjunk — independent of any specific tool. Use this list to develop taste; use [[plotters]] / [[svelvet]] / [[ggtech]] / [[manim]] / [[visualization/grafana|grafana]] / [[diagrams]] / [[rerun]] etc. to actually draw the thing.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The classic mistake is to learn one tool deeply (matplotlib, ggplot2, Tableau, ...) and assume the chart-design problem is solved. It isn't — every tool defaults to ugly because the *defaults* are written by the library author, not by a designer. The books below teach the *design* layer, which transfers between every tool you'll ever touch.
+
+If you only have time for one thing: read **Storytelling with Data** (Knaflic) — it's the most directly actionable for "I have to send a deck on Monday and the charts in it have to convince someone".
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[portfolios]] — practitioners' Tableau Public portfolios for studying finished work.
+- [[pudding]] — *The Pudding* — long-form data journalism; gold standard for interactive essays.
+- [[ggtech]] — branded chart aesthetics from tech companies.
+- [Datawrapper Academy](https://academy.datawrapper.de/) — short, focused articles on chart design (free).
+- [Storytelling with Data podcast](https://www.storytellingwithdata.com/podcast) — companion to Knaflic's books.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[programming/rust/sql_engine/books|books]] — Books _(score 19.4)_
-- [[_to_learn]] — Books _(score 19.4)_
-- [[tools/linux/books|books]] — Books _(score 19.4)_
-- [[visualization/grafana|grafana]] — Grafana _(score 16.0)_
-- [[diagrams]] — Diagrams _(score 16.0)_
+- [[portfolios]] — finished portfolios to study
+- [[pudding]] — best-in-class interactive data journalism
+- [[ggtech]] — examples of branded "good defaults"
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#tips` `#visualization` `#dataviz` `#books` `#bookdepository` `#visualize`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#visualization` `#dataviz` `#books` `#courses` `#chart-design` `#references` `#tufte` `#knaflic`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Books I'd actually buy
 
-# Help
+| Book | Author | Why |
+|------|--------|-----|
+| **Storytelling with Data** | Cole Nussbaumer Knaflic | <https://www.amazon.co.uk/dp/1119002257> — the most directly actionable book on this list; pre-attentive attributes, slide-deck-ready charts, "what to focus the eye on". |
+| **Visualize This** | Nathan Yau | <https://www.amazon.co.uk/dp/0470944889> — the practical "how to actually make these in code" companion (R + JavaScript); pairs well with Knaflic's design focus. |
+| **The Visual Display of Quantitative Information** | Edward Tufte | <https://www.edwardtufte.com/tufte/books_vdqi> — the canonical text. Read for the *vocabulary* (chartjunk, data-ink ratio, small multiples) even if the examples feel dated. |
+| **Information Dashboard Design** | Stephen Few | the right book for anyone building a Grafana / Looker / Tableau dashboard for an operations team. |
+| **Functional Art** | Alberto Cairo | the journalist's perspective; lots on what *not* to do. |
 
+### Courses / interactive references
 
-## How to create effective charts and diagrams
+- **DataViz Project** — searchable catalogue of chart types with descriptions and use-cases: <https://datavizproject.com/>
+- **From Data to Viz** — flowchart that picks a chart type from your data shape: <https://www.data-to-viz.com/>
+- **Datawrapper Academy** — short focused articles, free: <https://academy.datawrapper.de/>
+- **Microsoft Learn — How to create effective charts and diagrams**: <https://education.microsoft.com/nb-no/course/0a60eeb6/0>
+- **Storytelling with Data** workshops + podcast: <https://www.storytellingwithdata.com/>
 
-https://education.microsoft.com/nb-no/course/0a60eeb6/0
+### Quick gut-check before publishing a chart
 
-
-
-## Dataviz
-
-https://datavizproject.com/
-
-
-
-## Books 
-
-
-https://www.bookdepository.com/Visualize-This-Nathan-Yau/9780470944882
-https://www.amazon.co.uk/dp/0470944889
-
-
-
-
-
-https://www.bookdepository.com/Storytelling-with-Data-Cole-Nussbaumer-Knaflic/9781119002253
-https://www.amazon.co.uk/dp/1119002257
+1. Can you read it from across the room? (size, contrast, font)
+2. Is the headline a *finding*, not a label? ("Sales up 40% in Q3" beats "Quarterly Sales".)
+3. Have you removed everything that doesn't carry information? (gridlines, 3D effects, drop shadows, redundant legends)
+4. Is your colour choice colour-blind safe? Test with [Sim Daltonism](https://michelf.ca/projects/sim-daltonism/) or [Coblis](https://www.color-blindness.com/coblis-color-blindness-simulator/).
+5. Does the y-axis start at zero (when it should — bar charts always; line charts only when the range warrants)?

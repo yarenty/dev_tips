@@ -1,129 +1,95 @@
 ---
-title: React Print
+title: "react-print-pdf: build PDFs as React components"
 main_link: https://github.com/OnedocLabs/react-print-pdf
-keywords: [react, print, components, hello]
-status: draft
+keywords: [react-print-pdf, react, pdf, components, onedoc, html-to-pdf]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# React Print
+# react-print-pdf: build PDFs as React components
 
 **Main link:** <https://github.com/OnedocLabs/react-print-pdf>
 
+Author/SaaS: <https://www.onedoclabs.com/>
+
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+[`react-print-pdf`](https://github.com/OnedocLabs/react-print-pdf) is an Apache-2.0 React + TypeScript component library for assembling PDFs the same way you assemble web pages — `<PageTop>`, `<PageBottom>`, `<PageBreak>`, plus your own components — and rendering the result via headless Chromium (or a hosted service like [Onedoc](https://www.onedoclabs.com/) or [Prince XML](https://www.princexml.com/)). Aimed at developers who'd rather think in HTML/CSS/React than in `\LaTeX` macros or `docx` XML.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for this when:
+
+- Your "PDF" is really an *invoice / contract / résumé / brochure* — a document with structured data, dynamic fields, and a layout that's mostly boxes and text. The thing where "build it like a webpage and print it" is the obvious answer.
+- You already have a React/TypeScript front-end team and don't want them to context-switch into a separate typesetting language.
+- You want **dynamic data integration** (pull from your database into the PDF template) and would rather express that as `{props.invoice.lineItems.map(...)}` than as a Jinja-style template.
+
+Don't reach for this when:
+
+- You need precise typesetting (kerning, microtype, complex math, multi-column journal layouts) — use [[typst]] or LaTeX.
+- You need offline / on-device PDF generation without spawning a Chromium — use a server-side library (Puppeteer-free routes are limited; consider [`pdfkit`](https://github.com/foliojs/pdfkit) directly, or [WeasyPrint](https://weasyprint.org/) on the Python side).
+- The PDF is the *only* output and there's no React in your stack — you'd be pulling in a node toolchain just for this.
+
+The "Onedoc" piece in the name refers to [OnedocLabs](https://www.onedoclabs.com/), a hosted service from the same team that takes your React component and renders + hosts the PDF for you. The library works fine without it (you bring your own Puppeteer / Prince XML), but it's where the company's revenue comes from.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [@react-pdf/renderer](https://react-pdf.org/) — older React-to-PDF library; renders to PDF directly *without* a browser engine, which is faster but supports a smaller subset of CSS.
+- [Puppeteer](https://pptr.dev/) — headless Chrome; the lower-level "render any HTML to PDF" tool that `react-print-pdf` ultimately sits on top of.
+- [Prince XML](https://www.princexml.com/) — commercial HTML-to-PDF engine; the alternative back-end the library mentions.
+- [WeasyPrint](https://weasyprint.org/) — Python-side equivalent for HTML-to-PDF.
+- [[typst]] — when you'd rather think in typesetting than in HTML/CSS.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[typst]] — typst _(score 16.0)_
-- [[latex]] — Latex _(score 16.0)_
-- [[mdmath_symbols]] — Mdmath Symbols _(score 16.0)_
-- [[rocket]] — Rocket _(score 8.9)_
+- [[typst]] — alternative when you want a typesetting language instead of HTML/CSS
+- [[mdmath_symbols]] — math-symbol cheat sheet (LaTeX/MathJax/KaTeX, also embeddable in HTML PDFs)
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#react` `#visualization` `#print` `#components` `#hello` `#pdfs`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#visualization` `#pdf` `#react` `#react-print-pdf` `#components` `#onedoc` `#html-to-pdf`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Project pitch (from the repo README)
 
-# React Print
+> A collection of high-quality, unstyled components for creating beautiful PDFs using React and TypeScript. Forget about docx, latex, or painful outdated libraries.
 
-The new way to build documents.
+Key features (per the project):
 
-High-quality, unstyled components for creating PDFs.
+- Easy to use (claimed first PDF in <5 minutes).
+- Open source (Apache 2.0).
+- Components & templates from the Onedoc team and the community.
+- 100% layout control (margins, headers, footers, ...).
+- Dynamic data integration into the PDF.
 
+### Quickstart
 
-https://github.com/OnedocLabs/react-print-pdf
+```sh
+npm install @onedoc/react-print     # or yarn add / pnpm add
+```
 
-
-
-## Key Features 🎯
-- Easy to use: Build your first PDF with react-print-pdf in less than 5 minutes.
-- Open source: Freedom is beautiful, and so is Onedoc. React-print-pdf is open source and free to use.
-- Components & Templates: Kickstart your next document by using our list of components and template created by Onedoc's Team and the community.
-- 100% Layout's control: Unlike other solutions, you have complete control over 100% of your layout, including margins, headers, footers, and more.
-- Integrate dynamic data to your PDF: Streamline data from your database and integrate it seamlessly into your PDFs.
-
-## Introduction ℹ️
-A collection of high-quality, unstyled components for creating beautiful PDFs using React and TypeScript. Forget about docx, latex, or painful outdated libraries. With react-print-pdf, embrace a new way to create PDFs, designed by and for developers.
-
-## Why❓
-We believe documents are at the core of communication—invoices, contracts, resumes, brochures, etc. They are the primary method for exchanging information with others professionally. So, why do we continue to use decades-old technology to create them? We believe you deserve better. Document production needs to be modernized. Start today and create your next PDF the same way you build a web app. And yes, this includes automating data integration into your documents. Say hello to react-print-pdf.
-
-## How does it differ from other solutions? 🧐
-Unlike other solutions, react-print-pdf gives you complete control over your documents, allowing you to design complex layouts with features like footnotes, headers, margins, and more. Additionally, it enables you to track and analyze specific parts of your document, and build and update charts using data from your database. And this is just the beginning—our team and the community will continue to develop great features to simplify the PDF generation process.
-
-
-## Getting started 🚀
-1. Installation 💿
-   Get the react-print component library.
-
-With npm
-npm install @onedoc/react-print
-With yarn
-yarn add @onedoc/react-print
-With pnpm
-pnpm add @onedoc/react-print
-
-2. Import component ↪️
-   Import the components you need to your PDF template from our list of pre-build components :
-
+```tsx
 import { PageTop, PageBottom, PageBreak } from "@onedoc/react-print";
 
-3. Integrate in your document 📄
-   Integrate your components and include styles where needed.
-
-export const document = ({ props }) => {
-return (
-<div>
-<PageTop>
-<span>Hello #1</span>
-</PageTop>
-<div>Hello #2</div>
-<PageBottom>
-<div className="text-gray-400 text-sm">Hello #3</div>
-</PageBottom>
-<PageBreak />
-<span>Hello #4, but on a new page ! </span>
-</div>
+export const MyDocument = ({ props }) => (
+  <div>
+    <PageTop>
+      <span>Hello #1</span>
+    </PageTop>
+    <div>Hello #2</div>
+    <PageBottom>
+      <div className="text-gray-400 text-sm">Hello #3</div>
+    </PageBottom>
+    <PageBreak />
+    <span>Hello #4, but on a new page!</span>
+  </div>
 );
-};
+```
 
-## Components 🗂️
-A set of standard components to help you build amazing documents without having to deal with the mess of creating complex layouts and maintaining archaic markup. Help us extend this list by actively contributing and adding your favorite components!
+### Component catalogue + integrations
 
-[Browse all currently supported components →](https://react.onedoclabs.com/introduction#components)
-
-
-
-## Integrations 🔗
-PDF designed with react-print-print can be generated, hosted (and more) with your preferred document management providers.
-
-- [Onedoc : HTML to PDF, cloud hosting, analytics and more.](https://www.onedoclabs.com/)
-- [Prince XML : simple HTML to PDF tool](https://www.princexml.com/)
-- Others (coming soon..)
+- All currently supported components: <https://react.onedoclabs.com/introduction#components>
+- Onedoc cloud (HTML-to-PDF + hosting + analytics): <https://www.onedoclabs.com/>
+- Prince XML alternative back-end: <https://www.princexml.com/>
