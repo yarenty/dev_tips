@@ -78,39 +78,6 @@ mdbook-admonish install
 
 PDF rendering is commented out in `book.toml`; uncomment to enable.
 
-## Maintenance scripts (under `inventory/`)
-
-The vault was reorganized in 2025-2026 in eight phases (see `plan.md`). Every transformation has a re-runnable script:
-
-| Script | Phase | What it does |
-|--------|-------|--------------|
-| `build_move_map.py` | P2 | Build src→dst plan from the taxonomy rules. |
-| `apply_move_map.py` | P3 | Execute the move map (MOVE / MERGE / DELETE / RENAME). |
-| `readme_gen.py` | P4 | Auto-generate landing `README.md` for every directory. |
-| `article_stub.py` | P5 | Auto-stub every article with frontmatter + TODO + section skeleton. |
-| `article_split.py` | P5 | Split multi-topic auto-stubs into one article per H1. |
-| `build_keywords.py` | P6.1 | Inventory all keywords and find near-duplicates. |
-| `canonicalise_keywords.py` | P6.2 | Apply canonical map + droplist to all frontmatter. |
-| `suggest_wikilinks.py` | P6.3 | IDF-scored wikilink suggester for `## Internal links`. |
-| `check_orphans.py` | P6.4 | Flag any article missing from its directory's README. |
-| `suggest_keywords.py` | P6.5 | 5-strategy auto-suggest of additional keywords. |
-| `strip_universal_keywords.py` | P6.5 | Path-aware noise filter — drops universally-frequent / path-redundant keywords. |
-| `build_summary.py` | P7 | Regenerate `doc/SUMMARY.md` from the directory tree. |
-| `find_bad_splits*.py` | safety nets | Detect splitter mistakes (shell-prompts as H1, etc.). |
-
-All scripts are idempotent and safe to re-run.
-
-## Audit reports (under `inventory/`)
-
-| File | What it tells you |
-|------|-------------------|
-| `move_map.tsv`, `move_map_summary.md` | Source→destination plan (P2 output). |
-| `keywords.tsv`, `keywords.md` | Current keyword vocabulary, frequencies, near-duplicates. |
-| `keyword_suggestions.md` | MEDIUM/LOW keyword suggestions awaiting human review (P6.5). |
-| `orphans.md` | Articles not listed in their parent README (P6.4 — currently 0 real orphans). |
-| `duplicates.md`, `broken_links.md`, `empty_or_stub.md` | P1 audit snapshots (pre-reorg). |
-| `p5_summary.md`, `p5_split_summary.md` | Auto-stub and splitting outcome reports. |
-| `suspect_splits.md` | Files whose names look like they came from a bad split. |
 
 ## Conventions
 

@@ -1,221 +1,137 @@
 ---
-title: How to future proof your apache modules in macOS by signing them with your own certificate authority
+title: Signing 3rd-party Apache modules on macOS Big Sur+
 main_link: https://blog.phusion.nl/2020/12/22/future_of_macos_apache_modules/
-keywords: [signing-mac-libs, click, certificate, continue, signing, apache, macos, cross]
-status: draft
+keywords: [apache, macos, code-signing, certificate-authority, big-sur, mod-passenger, keychain]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# How to future proof your apache modules in macOS by signing them with your own certificate authority
+# Signing 3rd-party Apache modules on macOS Big Sur+
 
 **Main link:** <https://blog.phusion.nl/2020/12/22/future_of_macos_apache_modules/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+A walk-through (Camden Narzt, Phusion) for **future-proofing 3rd-party Apache modules** (e.g. `mod_passenger`, third-party `mod_php`) on modern macOS. Starting with Big Sur, Apple's bundled Apache logs `AH06665: No code signing authority for module …` — a deprecation warning that will eventually become an error. The fix is to **create your own self-signed Code-Signing CA in Keychain Access**, sign the module with `codesign`, and tell Apache the authority to trust via `LoadModule … "Common Name"`.
+
+## Summary in one sentence
+
+Make your own CA, sign the `.so`, add the CA's Common Name to the `LoadModule` directive — done.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+You'll need this whenever you want to use a third-party Apache module on macOS without buying an Apple Developer Program account. The recipe works for any `.so` Apache loads — Passenger, mod_php, custom mods. The clever bit is the new `"Common Name"` field at the end of the `LoadModule` directive (added in Big Sur) which lets Apache accept any signing authority *that's trusted on the local machine*, not just Apple-approved ones. Once your CA is in the user keychain marked Always Trust, your self-signed mods load with `AH06662: Allowing module loading process to continue …` instead of the deprecation warning.
+
+The Keychain Access workflow is finicky and easy to get wrong; follow the steps in order and don't use the shortcuts in the Certificate Assistant menu (they trigger weird "wrong key" bugs). Save the CA — you'll need it again every macOS upgrade or when a new module ships.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[apache]] — `apachectl` cheat-sheet for the macOS system Apache.
+- **`codesign(1)` man page** — Apple's CLI for code signing.
+- **Apple Developer Program** — paid alternative; gets you a real Team ID so you don't need this hack.
+- **Homebrew Apache** (`brew install httpd`) — alternative path: a separate Apache install that doesn't enforce code-signing.
+- Phusion Passenger docs: <https://www.phusionpassenger.com/library/install/apache/>
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[apache]] — apache _(score 21.0)_
-- [[influxdb]] — InfluxDB _(score 20.9)_
-- [[ssl]] — HTTPS on websites _(score 16.0)_
-- [[fluent_templates]] — Fluent Templates _(score 16.0)_
-- [[loco_rust_on_rails]] — Loco _(score 16.0)_
+- [[apache]] — System Apache cheat-sheet you'll need alongside this.
+- [[ssl]] — Companion HTTPS-on-Apache note.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#signing-mac-libs` `#click` `#certificate` `#continue` `#signing`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#apache` `#macos` `#code-signing` `#certificate-authority` `#big-sur` `#mod-passenger` `#keychain`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Original article (Camden Narzt, Phusion, Dec 2020): <https://blog.phusion.nl/2020/12/22/future_of_macos_apache_modules/>
+- `codesign(1)`: `man codesign`
+- Apache `LoadModule` docs: <https://httpd.apache.org/docs/2.4/mod/mod_so.html#loadmodule>
 
-@Copy from: https://blog.phusion.nl/2020/12/22/future_of_macos_apache_modules/
+### Background — the chain of macOS changes
 
+1. **macOS 10.14 Mojave** introduced Library Validation for Apache modules — only Apple-signed or paid-developer-signed `.so` files would load. Broke every 3rd-party module.
+2. **10.14.4** — Apple reverted the change after community pushback.
+3. **Big Sur (11)** — re-introduced as a *deprecation warning*: `AH06665: No code signing authority for module …` Modules still load but Apple is signalling future enforcement.
+4. **The fix** — Apache 2.4 added an optional `"Common Name"` argument on `LoadModule` so Apple can let you specify your own trusted authority.
 
-# How to future proof your apache modules in macOS by signing them with your own certificate authority
-
-> Camden Narzt
-> CAMDEN NARZT
-> SOFTWARE DEVELOPER
-> December 22nd, 2020
-
-## Backstory
-
-Back when macOS 10.14 Mojave was released, Apple made a change to the Apache web-server that ships with macOS, so that it wouldn't load any modules that aren't signed by either Apple or a paid developer account. This issue affected not only Passenger users, but also users of other 3rd party modules such as php.
-
-Error version 1 (for unsigned module):
+### Two error variants you may have seen
 
 ```log
-httpd: Syntax error on line 545 of /private/etc/apache2/httpd.conf: Syntax error on line 1 of /private/etc/apache2/other/passenger.conf: Cannot load /usr/local/opt/passenger-enterprise/libexec/buildout/apache2/mod_passenger.so into server: dlopen(/usr/local/opt/passenger-enterprise/libexec/buildout/apache2/mod_passenger.so, 10): no suitable image found.  Did find:
-/usr/local/opt/passenger-enterprise/libexec/buildout/apache2/mod_passenger.so: code signature in (/usr/local/opt/passenger-enterprise/libexec/buildout/apache2/mod_passenger.so) not valid for use in process using Library Validation: mapped file has no cdhash, completely unsigned? Code has to be at least ad-hoc signed.
+# (1) Unsigned module:
+httpd: ... mapped file has no cdhash, completely unsigned? Code has to be at least ad-hoc signed.
 
-/usr/local/opt/passenger-enterprise/libexec/buildout/apache2/mod_passenger.so: stat() failed with errno=22
+# (2) Ad-hoc signed but no Team ID:
+httpd: ... mapped file has no Team ID and is not a platform binary
+       (signed with custom identity or adhoc?)
 ```
 
-Ad hoc signing the module, like the initial Apache error told me to, resulted in a different error telling me that the signature was not sufficient for loading into Apache.
+The walk-through below resolves both.
 
-Error version 2 for ad-hoc signed module:
+### Step-by-step recipe
 
-```log
-httpd: Syntax error on line 545 of /private/etc/apache2/httpd.conf: Syntax error on line 1 of /private/etc/apache2/other/passenger.conf: Cannot load /usr/local/opt/passenger-enterprise/libexec/buildout/apache2/mod_passenger.so into server: dlopen(/usr/local/opt/passenger-enterprise/libexec/buildout/apache2/mod_passenger.so, 10): no suitable image found.  Did find:
-/usr/local/opt/passenger-enterprise/libexec/buildout/apache2/mod_passenger.so: code signature in (/usr/local/opt/passenger-enterprise/libexec/buildout/apache2/mod_passenger.so) not valid for use in process using Library Validation: mapped file has no Team ID and is not a platform binary (signed with custom identity or adhoc?)
+#### A. Create a self-signed Code-Signing Certificate Authority
 
-/usr/local/opt/passenger-enterprise/libexec/buildout/apache2/mod_passenger.so: stat() failed with errno=22
-```
+Open **Keychain Access.app**, then `Keychain Access → Certificate Assistant → Open…` (use this menu path; do NOT use the more-direct shortcuts — they trigger contextual bugs).
 
-To get a Team ID, you need a paid developer account which is a non-starter for most web developers so I filed a radar with Apple and in macOS 10.14.4 this change was reverted.
+1. Choose **Create a Certificate Authority (CA)**.
+2. Pick a **name** for your CA (e.g. `My Code Signing CA`).
+3. Set your **email** (any address you control).
+4. Set **User Certificate** dropdown → **Code Signing**.
+5. Click through the rest of the wizard, accepting defaults except:
+   - On the *Capabilities* page, ensure **Code Signing** is checked.
+   - On the *Critical Extensions* page, ensure Code Signing is the only checked item AND tick **This extension is critical**.
+6. Finish. Your CA appears in the main Keychain Access window.
+7. **Right-click the CA → Get Info → Trust → "When using this certificate" = Always Trust**. Authenticate when prompted.
 
-## Contemporary
-Fast forward to the release of Big Sur, where I noticed that Apache had a new message for me when I load Passenger:
+#### B. Issue a code-signing leaf certificate from that CA
 
-```log 
-AH06665: No code signing authority for module at /usr/local/opt/passenger/libexec/buildout/apache2/mod_passenger.so specified in LoadModule directive. Proceeding with loading process, but this will be an error condition in a future version of macOS.
-```
+1. Open the Certificate Assistant again.
+2. Choose **Create a certificate for yourself**.
+3. Pick a name for the leaf cert (e.g. `Yarenty Code Signing`).
+4. Set **Identity Type** = `Leaf`, **Certificate Type** = `Code Signing`.
+5. Click **Create** → **Continue** → **Create** (uses your CA from step A to sign).
+6. **Note the Common Name** of the leaf cert — you'll need it twice below.
 
-Which is already better than the last approach because Apple is giving advance warning to users before things stop working. Looking at the /etc/apache2/httpd.conf config file that ships with macOS Big Sur, there's also a big clue as to how Apple expects developers to deal with this warning; in the module loading section of the file, this example is given:
-
-```
-# LoadModule my_custom_module /usr/local/libexec/mod_my_custom.so "My Signature Authority"
-```
-
-The "My Signature Authority" part at the end is new to Big Sur, and looks like we can specify which signing authority we want to allow for loading this Apache module. Which means it might not need to be from a paid developer account.
-
-So to test my hypothesis the first thing we need is a code signing authority. Unfortunately Apple's directions for creating one are very sparse, and I also encountered a lot of random errors while I did so. So while I normally use GnuPG or OpenSSL to work with keys and certificates, in this case I just used the graphical tool.
-
-## Here's what worked for me in the end.
-
-Open Keychain Access.app 
-![](../assets/img/www/Keychain-Access-Icon.png)
-
-In the Keychain Access Menu under the Certificate Assistant menu item, choose Open… [1]
-![](../assets/img/www/Menus.png)
-Click Continue to get to the first page of options
-![](../assets/img/www/Step-1.png)
-Select Create a Certificate Authority (CA)
-![](../assets/img/www/Step-2.png)
-Click Continue to get to the next page of options
-Choose a name for your new CA
-![](../assets/img/www/Step-3.png)
-Choose the email for use with this CA
-Set the User Certificate dropdown to Code Signing
-Click Continue to get to the next page of options
-Click Continue to get to the next page of options[2]
-![](../assets/img/www/Step-4.png)
-Fill in the rest of the fields for the CA Certificate[3]
-![](../assets/img/www/Step-5.png)
-Click Continue to get to the next page of options
-Click Continue to get to the next page of options
-![](../assets/img/www/Step-6.png)
-Click Continue to get to the next page of options
-![](../assets/img/www/Step-7.png)
-Click Continue to get to the next page of options
-![](../assets/img/www/Step-8.png)
-Click Continue to get to the next page of options
-![](../assets/img/www/Step-9.png)
-Ensure that Code Signing is checked in the list of capabilities
-![](../assets/img/www/Step-10.png)
-Click Continue to get to the next page of options
-Ensure that Code Signing is the only capability checked in the list of capabilities, and that This extension is critical is checked
-![](../assets/img/www/Step-11.png)
-Click Continue to get to the next page of options
-Click Continue to get to the next page of options
-![](../assets/img/www/Step-12.png)
-Click Continue to get to the next page of options
-![](../assets/img/www/Step-13.png)
-Click Continue to get to the next page of options
-![](../assets/img/www/Step-14.png)
-Click Continue to get to the next page of options
-![](../assets/img/www/Step-15.png)
-Click Create to create your Certificate Authority
-![](../assets/img/www/Step-16.png)
-You can close this window
-![](../assets/img/www/Step-17.png)
-Right click your CA in the main Keychain Access window and choose Get Info
-![](../assets/img/www/Step-27.png)
-Open the Trust disclosure triangle
-![](../assets/img/www/Step-28.png)
-Set the topmost trust setting to Always Trust
-![](../assets/img/www/Step-29.png)
-Close the window (you will be prompted to authenticate)
-![](../assets/img/www/Step-18.png)
-You now have your own Certificate Authority which can issue code signing certificates, progress! Now let's use it do just that and create a code signing certificate.
-
-Open the Certificate assistant again to the What would you like to do? step (steps #2 & #3 above)
-Choose Create a certificate for yourself
-![](../assets/img/www/Step-30.png)
-Click Continue to get to the next page of options
-Choose a name for the certificate
-![](../assets/img/www/Step-31-1.png)
-Set the Identity Type to Leaf
-Set the Certificate Type to Code Signing
-Click Create to start the creation process
-Click Continue in the popup to create the certificate[4]
-![](../assets/img/www/Step-32.png)
-Click Create to use the CA we created earlier to sign our new certificate
-![](../assets/img/www/Step-33-1.png)
-Make note of the Common Name field in this window, as we'll need that value later
-![](../assets/img/www/Step-34-1.png)
-Close the window
-
-
-We now have a code signing certificate that is trusted by our mac. The next step is to sign the Apache module. This requires using the Terminal app to run the command described below.
-
-In this command the -s flag is followed by the cert's Common Name we took note of in step #10. And the --keychain flag is followed by the path to the login keychain for your user, which will likely be the same as the example. And the last argument is the path to the module we are signing, in this case the Passenger module.
+#### C. Sign the Apache module
 
 ```shell
-codesign -s "Camden Jared Narzt" --keychain ~/Library/Keychains/login.keychain-db /usr/local/opt/passenger/libexec/buildout/apache2/mod_passenger.so
+codesign \
+  -s "Yarenty Code Signing" \
+  --keychain ~/Library/Keychains/login.keychain-db \
+  /usr/local/opt/passenger/libexec/buildout/apache2/mod_passenger.so
 ```
 
-Then edit the apache config file you use to load the module; in my case: /etc/apache2/other/passenger.conf.
+Substitute the path to whichever module you're signing.
 
-Add the same Common Name you used in the codesign command in double quotes to the LoadModule line like so:
+#### D. Tell Apache to trust this authority for that module
 
+Edit `/etc/apache2/other/passenger.conf` (or wherever the `LoadModule` lives):
+
+```apache
+LoadModule passenger_module \
+    /usr/local/opt/passenger/libexec/buildout/apache2/mod_passenger.so \
+    "Yarenty Code Signing"
 ```
-LoadModule passenger_module /usr/local/opt/passenger/libexec/buildout/apache2/mod_passenger.so "Camden Jared Narzt"
+
+Validate config and reload:
+
+```shell
+sudo apachectl -t
+sudo apachectl restart
 ```
-Checking the config with apachectl -t we see a new message:
+
+You should now see in the error log:
 
 ```log
-AH06662: Allowing module loading process to continue for module at /usr/local/opt/passenger/libexec/buildout/apache2/mod_passenger.so because module signature matches authority "Camden Jared Narzt" specified in LoadModule directive
+AH06662: Allowing module loading process to continue for module at
+/usr/local/opt/passenger/libexec/buildout/apache2/mod_passenger.so
+because module signature matches authority "Yarenty Code Signing"
+specified in LoadModule directive
 ```
 
-Indicating that our system considers the module to be validly signed and will load it without issue going forward.
+### Why Phusion can't sign modules for you (their answer)
 
-
-## Conclusion
-
-Now you might wonder why we don't sign the module for you?
-
-* For this to work you must have the code signing certificate which signed the module in your keychain, and we don't distribute a code signing certificate yet[5], nor does our mac build box have the ability to sign modules at this time.
-* You may need the Certificate Authority certificate too in order to trust the code signing certificate, and we don't want the responsibility of being a root authority on your system.
-* The most common method of installing Passenger on macOS is via Homebrew, which means we don't have the opportunity to sign the module, and Homebrew doesn't currently use or distribute a code signing certificate either.
-
-## Footnotes
-1. Even though there are more direct shortcuts to what we want to do in this sub-menu, they can trigger weird issues due to some kind of contextual behaviour bug where Certificate Assistant tries to use a random key from your system to generate the Certificate Authority Back
-2. You shouldn't need to extend the Validity Period here, as long as the certificate is valid when the signature is made it should keep working Back
-3. If this isn't your first Certificate Authority, you may be asked to choose a previous CA to cross sign your new CA Back
-4. We don't care that others won't trust this certificate, we set our mac to trust it back when we trusted the certificate authority in step #30 Back
-5. We do distribute a code signing key, however that is insufficient for this process Back
+- Sub-trusting their cert chain on your Mac is your responsibility — they don't want to be a root CA on user systems.
+- Most Passenger installs come via Homebrew, which doesn't currently distribute a code-signing certificate.
+- Their build box doesn't currently sign mods either.

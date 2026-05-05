@@ -1,96 +1,85 @@
 ---
-title: Loco
-main_link: https://github.com/loco-rs/loco
-keywords: [loco-rust-on-rails, rails, storage, rust, background, programming, cache]
-status: draft
+title: Loco — Rails-style web framework for Rust
+main_link: https://loco.rs/
+keywords: [loco, rust, web-framework, rails, axum, sea-orm, full-stack]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Loco — Rails-style web framework for Rust
 
-# Loco
-
-**Main link:** <https://github.com/loco-rs/loco>
+**Main link:** <https://loco.rs/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+**Loco** is a full-stack Rust web framework deliberately patterned on Ruby on Rails — convention over configuration, generators, ORM-baked-in, controllers + views + workers + mailers + scheduler + storage + cache, all in one box. Built on top of **Axum** (HTTP), **SeaORM** (DB / migrations), and **sidekiq.rs / Redis** (background jobs). Created by Dotan Nahum (`jondot`); MIT-licensed; the slogan is literally "Rust on Rails".
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The right choice when you're a solo dev or small team building a **server-rendered web app** in Rust and don't want to assemble Axum + an ORM + workers + auth + mailers from individual crates yourself. The Rails-style generators (`loco generate model post title:string`) and the convention layout mean you can be productive in minutes instead of days. Where Loco shines is the *feature breadth*: it ships background workers, scheduling, mailers, file storage abstraction (S3/GCS/Azure/local), cache layer, and authentication out of the box — most other Rust frameworks make you pick those individually.
+
+The trade-offs to know: (1) it's the **opposite of static-site generators** like [[ssg|Zola]] — full server rendering and DB access; (2) it's still relatively young (pre-1.0 as of 2025); (3) deep customisation means leaving the convention path, which can be painful; (4) the Rails-developer audience is small (most Rails devs aren't switching to Rust); the actual audience is **Rust devs who want a productive web framework**.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **Axum** — the lower-level HTTP framework Loco builds on; reach for Axum directly if you want full control.
+- **Actix Web / Rocket / Warp** — competing Rust web frameworks; smaller scope (HTTP only, no ORM/workers).
+- **Ruby on Rails** — the original; Loco's API is a deliberate homage.
+- **Phoenix (Elixir)** — equivalent "batteries-included" framework for the BEAM.
+- [[ssg]] — opposite end of the spectrum (static generation vs full server-rendered app).
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[redis]] — Redis _(score 23.4)_
-- [[visualization/grafana|grafana]] — Grafana _(score 20.2)_
-- [[cache]] — Cache _(score 19.4)_
-- [[rtic]] — RTIC _(score 13.1)_
-- [[axum]] — Axum _(score 13.1)_
+- [[ssg]] — Static-site-generation alternative (when you don't need a server).
+- [[fluent_templates]] — i18n layer that pairs well with Loco's view layer.
+- [[apache]] / [[ssl]] — Possible deployment substrates.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#loco-rust-on-rails` `#rails` `#storage` `#rust` `#background`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#loco` `#rust` `#web-framework` `#rails` `#axum` `#sea-orm` `#full-stack`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Project site: <https://loco.rs/>
+- Repo: <https://github.com/loco-rs/loco>
+- Author's intro article (Jondot): <https://jondot.medium.com/introduction-to-loco-the-rust-on-rails-7322a9095d7d>
+- YouTube intro: <https://www.youtube.com/watch?v=7utPutDORb4>
 
-# Loco
+### Loco features at a glance
 
+| Layer | What you get out of the box |
+|-------|-----------------------------|
+| HTTP | **Axum** routing + middleware |
+| ORM / migrations | **SeaORM** with generators |
+| Controllers | Request body / params / validation, content-aware response |
+| Views | Tera templating; pairs with [[fluent_templates]] for i18n |
+| Background jobs | Redis-backed queue (default) or in-process threads; `Worker::perform` trait |
+| Scheduler | Cron-like, but Rust-native and elegant |
+| Mailers | Async email delivery via the same worker infrastructure |
+| Storage | Pluggable: in-memory, local disk, S3, GCS, Azure |
+| Cache | Built-in cache layer (Redis or in-memory) |
+| Auth | JWT, sessions, password hashing |
+| Generators | `loco generate {model,controller,scaffold,migration,worker,mailer,scheduler}` |
 
-opposite to ssg ;-)
+### Quick start (paraphrased from the docs)
 
-## [Dioxus -check](../programming/rust/gui/gui.md)
+```shell
+# Install the CLI (cargo)
+cargo install loco-cli
 
-https://www.youtube.com/watch?v=7utPutDORb4
+# New app:
+loco new myapp
+cd myapp
 
-https://jondot.medium.com/introduction-to-loco-the-rust-on-rails-7322a9095d7d
+# Generate a scaffold:
+cargo loco generate scaffold post title:string content:text
 
-https://loco.rs/
+# Run migrations + start the server:
+cargo loco db migrate
+cargo loco start
+```
 
-https://github.com/loco-rs/loco
+### Why "convention over configuration" matters
 
-
-
-## What's Loco?
-Loco is strongly inspired by Rails. If you know Rails and Rust, you'll feel at home. If you only know Rails and new to Rust, you'll find Loco refreshing. We do not assume you know Rails.
-
-For a deeper dive into how Loco works, including detailed guides, examples, and API references, check out our documentation website.
-
-## Features of Loco:
-- Convention Over Configuration: Similar to Ruby on Rails, Loco emphasizes simplicity and productivity by reducing the need for boilerplate code. It uses sensible defaults, allowing developers to focus on writing business logic rather than spending time on configuration.
-
-- Rapid Development: Aim for high developer productivity, Loco’s design focuses on reducing boilerplate code and providing intuitive APIs, allowing developers to iterate quickly and build prototypes with minimal effort.
-
-- ORM Integration: Model your business with robust entities, eliminating the need to write SQL. Define relationships, validation, and custom logic directly on your entities for enhanced maintainability and scalability.
-
-- Controllers: Handle web requests parameters, body, validation, and render a response that is content-aware. We use Axum for the best performance, simplicity, and extensibility. Controllers also allow you to easily build middlewares, which can be used to add logic such as authentication, logging, or error handling before passing requests to the main controller actions.
-
-- Views: Loco can integrate with templating engines to generate dynamic HTML content from templates.
-
-- Background Jobs: Perform compute or I/O intensive jobs in the background with a Redis backed queue, or with threads. Implementing a worker is as simple as implementing a perform function for the Worker trait.
-
-- Scheduler: Simplifies the traditional, often cumbersome crontab system, making it easier and more elegant to schedule tasks or shell scripts.
-
-- Mailers: A mailer will deliver emails in the background using the existing loco background worker infrastructure. It will all be seamless for you.
-
-- Storage: In Loco Storage, we facilitate working with files through multiple operations. Storage can be in-memory, on disk, or use cloud services such as AWS S3, GCP, and Azure.
-
-- Cache: Loco provides an cache layer to improve application performance by storing frequently accessed data.
+In Rails this means a `Post` model maps to a `posts` table and is served by `PostsController` whose `new`/`create`/`edit`/`update`/`destroy` actions render `app/views/posts/*.html.erb` — without any wiring. Loco mirrors that pattern in Rust: `models/post.rs` + `controllers/posts.rs` + `views/posts/*.tera` are wired together by the framework's startup convention. If you've used Rails this is immediately familiar; if you haven't, the docs cover the conventions explicitly.

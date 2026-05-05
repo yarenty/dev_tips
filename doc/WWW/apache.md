@@ -1,71 +1,80 @@
 ---
-title: apache
-main_link: 
-keywords: [apache, apachectl, restart, programming]
-status: draft
+title: Apache HTTPD on macOS — quick commands
+main_link: https://httpd.apache.org/
+keywords: [apache, apachectl, httpd, macos, web-server, localhost]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Apache HTTPD on macOS — quick commands
 
-# apache
+**Main link:** <https://httpd.apache.org/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Cheat-sheet for the **Apache HTTPD web server** that ships pre-installed on macOS. Macs have shipped with Apache for ~20 years (now in `/usr/sbin/httpd` with config in `/etc/apache2/`); it's the fastest way to get a local web server running for testing, signing experiments, or PHP development without installing anything. Controlled with `apachectl`.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Use the system Apache when you just need *a localhost web server* and don't want a Homebrew install or a Docker container. It's invaluable for testing things like SSL renewal, Apache module loading (see [[signing_mac_libs]]), and old-school PHP/CGI experiments. **Don't** use it for actual development of new web apps — Apache is fine but heavyweight; for that reach for `caddy`, `python -m http.server`, or your framework's bundled dev server. The system Apache is also the one that mod-signing changes in Big Sur affect, so if you're hitting "code signature not valid" loading 3rd-party modules, you're in [[signing_mac_libs]] territory.
+
+The default doc-root on macOS is `/Library/WebServer/Documents/`. The default config is `/etc/apache2/httpd.conf`.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[signing_mac_libs]] — How to load 3rd-party Apache modules on modern macOS (Mojave+).
+- **nginx** — the most-used alternative; `brew install nginx`.
+- **Caddy** — modern HTTPS-by-default web server; cleaner config than Apache.
+- **`python -m http.server` / `npx serve`** — for one-off static-file serving.
+- [[ssl|HTTPS on websites]] — adding HTTPS via Certbot once Apache is up.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[kafka_2]] — Kafka _(score 22.2)_
-- [[messaging/nats|nats]] — nats-server _(score 20.9)_
-- [[kafka]] — Kafka _(score 17.0)_
-- [[druid]] — Druid _(score 17.0)_
-- [[loco_rust_on_rails]] — Loco _(score 9.2)_
+- [[signing_mac_libs]] — Companion: signing 3rd-party Apache modules so macOS lets them load.
+- [[ssl]] — Adding HTTPS via Certbot.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#apache` `#apachectl` `#restart` `#start` `#web`
-
-## TODO
-
-- No `main_link` could be auto-detected. Add the canonical URL (project homepage / repo / paper) to the frontmatter.
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#apache` `#apachectl` `#httpd` `#macos` `#web-server` `#localhost`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Apache HTTPD project: <https://httpd.apache.org/>
+- macOS Apache docs (Apple): <https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/MaintaingYourOwnLocalizedStrings/MaintaingYourOwnLocalizedStrings.html>
+- Default macOS config: `/etc/apache2/httpd.conf`
+- Default doc-root: `/Library/WebServer/Documents/`
 
-# apache
+### `apachectl` cheat-sheet
 
-apachectl start
-
-Step 1 — Install or Restart Apache Web Sharing on Mac
-To start Apache web sharing:
-
+```shell
+# Start the system Apache (needs sudo on macOS):
 sudo apachectl start
-To stop the Apache service:
 
+# Stop:
 sudo apachectl stop
-To restart the Apache service:
 
+# Restart (graceful):
 sudo apachectl restart
-To find the Apache version:
 
+# Test config without restarting:
+sudo apachectl -t
+
+# Find the version:
 httpd -v
-Now open your browser and open localhost — you will get this screen as below:
+
+# Tail the access log:
+tail -f /var/log/apache2/access_log
+
+# Tail the error log (most useful when modules fail to load):
+tail -f /var/log/apache2/error_log
+```
+
+After `apachectl start`, open <http://localhost> — by default you'll see the cheerful "It works!" page.
+
+### Common troubleshooting
+
+- **"AH06665: No code signing authority"** — see [[signing_mac_libs]].
+- **Port 80 already in use** — likely macOS web sharing is enabled in System Settings → Sharing, or another web server is running. `sudo lsof -i :80` to find the culprit.
+- **Permission denied on doc-root** — Apache runs as user `_www`; check that the doc-root is readable by it.
+- **Changes to `httpd.conf` not taking effect** — you forgot `sudo apachectl restart`. `apachectl -t` first to validate syntax.
