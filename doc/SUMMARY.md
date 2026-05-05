@@ -639,17 +639,15 @@
 # Web
 
 - [Web](www/README.md)
-  - [airtable](www/airtable.md)
-  - [apache](www/apache.md)
-  - [Fluent Templates](www/fluent_templates.md)
-  - [Loco](www/loco_rust_on_rails.md)
-  - [n8n.io](www/n8n_io.md)
-  - [Hyperswitch](www/payments.md)
-  - [How to future proof your apache modules in macOS by signing them with your own certificate authority](www/signing_mac_libs.md)
-  - [Static Site Generators](www/ssg.md)
-  - [HTTPS on websites](www/ssl.md)
-  - [tally](www/tools.md)
-  - [Yarenty Profile And Projects Summary](www/yarenty_profile_and_projects_summary.md)
+  - [Airtable — spreadsheet/database hybrid](www/airtable.md)
+  - [Apache HTTPD on macOS — quick commands](www/apache.md)
+  - [fluent-templates — Fluent i18n for Rust templates](www/fluent_templates.md)
+  - [Loco — Rails-style web framework for Rust](www/loco_rust_on_rails.md)
+  - [Signing 3rd-party Apache modules on macOS Big Sur+](www/signing_mac_libs.md)
+  - [Static Site Generators (Zola, Tera)](www/ssg.md)
+  - [HTTPS for websites — Certbot + Apache](www/ssl.md)
+  - [Tally — free form & survey builder](www/tally.md)
+  - [YarentY — public profile & projects summary](www/yarenty_profile_and_projects_summary.md)
 
 # Git
 

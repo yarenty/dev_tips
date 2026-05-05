@@ -1,105 +1,91 @@
 ---
-title: Static Site Generators
-main_link: https://github.com/getzola/zola
-keywords: [ssg, zola, easy, site, sass, javascript, cli, gui]
-status: draft
+title: Static Site Generators (Zola, Tera)
+main_link: https://www.getzola.org/
+keywords: [ssg, zola, tera, static-site-generator, rust, sass, jinja]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Static Site Generators (Zola, Tera)
 
-# Static Site Generators
-
-**Main link:** <https://github.com/getzola/zola>
+**Main link:** <https://www.getzola.org/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Notes on **Zola** — a fast, single-binary, dependency-free static-site generator written in Rust — and its templating engine **Tera** (Jinja2-style, also Rust). Zola compiles a tree of Markdown into HTML/CSS/JS in under a second, with built-in Sass compilation, syntax highlighting, table of contents, taxonomies (tags/categories), shortcodes, and internal links — no Node, no Ruby, no plugin chain.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The right choice for **personal blogs, project documentation, knowledge bases, and conference / workshop landing pages** that don't need a server. Single-binary install (`brew install zola` or one curl), no `node_modules` to babysit, and the build is fast enough that you can use `zola serve` as a live-preview during writing. Tera as the templating engine is comfortable if you've used Jinja2 or Django templates.
+
+When **not** to reach for Zola:
+- You need real interactivity / forms / auth → see [[loco_rust_on_rails|Loco]] or any full web framework.
+- Your team is JS-native and wants component-based authoring → Astro, Next.js, SvelteKit, or Hugo with theme components.
+- You need plugin ecosystem breadth → Hugo or 11ty have far more themes and integrations.
+
+In the Rust ecosystem, Zola's main competition is `mdBook` (which is what *this* vault publishes with) — Zola is more general-purpose, mdBook is laser-focused on book/handbook output.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **mdBook** — sibling Rust SSG focused on handbook/book output; what this very vault uses.
+- **Hugo** — Go-based SSG; the de-facto incumbent for blogs and personal sites.
+- **Eleventy (11ty)** — Node-based SSG; very flexible templating.
+- **Astro / Next.js (export)** — when you want React-style components on a static output.
+- [[loco_rust_on_rails|Loco]] — the *opposite* of an SSG; full server-rendered framework.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[javascript]] — Javascript _(score 18.0)_
-- [[dioxus]] — Dioxus _(score 17.6)_
-- [[airtable]] — airtable _(score 16.0)_
-- [[www/tools|tools]] — tally _(score 16.0)_
-- [[yarenty_profile_and_projects_summary]] — Yarenty Profile And Projects Summary _(score 16.0)_
+- [[loco_rust_on_rails]] — Server-rendered counterpart; Zola is the "static" half of the same web-dev decision tree.
+- [[fluent_templates]] — i18n layer that pairs naturally with Tera (Zola's template engine).
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#ssg` `#zola` `#easy` `#site` `#sass`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#ssg` `#zola` `#tera` `#static-site-generator` `#rust` `#sass` `#jinja`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Zola
 
-# Static Site Generators
+- Project site: <https://www.getzola.org/>
+- Repo: <https://github.com/getzola/zola>
+- Getting-started overview: <https://www.getzola.org/documentation/getting-started/overview/>
+- Themes: <https://www.getzola.org/themes/>
 
-## [Dioxus -check](../programming/rust/gui/gui.md)
+Project pitch (from the home page):
 
-## Zola
+> **No dependencies** — single executable with Sass compilation, syntax highlighting, table of contents.
+> **Blazing fast** — average site generated in <1 s including Sass and highlighting.
+> **Scalable** — pure static files; trivial to host.
+> **Easy to use** — intuitive CLI and template engine.
+> **Flexible** — fits blogs, knowledge bases, landing pages.
+> **Augmented Markdown** — shortcodes and internal links built in.
 
-https://www.getzola.org/documentation/getting-started/overview/
+### Tera
 
+- Project site: <https://keats.github.io/tera/>
+- Repo: <https://github.com/Keats/tera>
 
-https://www.getzola.org/
+Templating engine that powers Zola (and is usable standalone). Jinja2 / Django templates / Liquid / Twig if you've used any of those.
 
-No dependencies
-Zola comes as a single executable with Sass compilation, syntax highlighting, table of contents and many other features that traditionally require setting up a dev environment or adding some JavaScript libraries to your site.
+Pitch:
 
-Blazing fast
-The average site will be generated in less than a second, including Sass compilation and syntax highlighting.
+> Easy to use. Performant — template compilation and rendering measured in nanoseconds. Familiar — Jinja2 / Django / Liquid / Twig syntax.
 
-Scalable
-Zola renders your whole site as static files, making it trivial to handle any kind of traffic you will throw at it at no cost without having to worry about managing a server or a database.
+### Quick start with Zola
 
-Easy to use
-From the CLI to the template engine, everything is designed to be intuitive. Don't take my word for it though, look at the documentation and see for yourself.
+```shell
+brew install zola             # macOS / Linuxbrew
+# or:  cargo install zola
 
-Flexible
-Zola gets out of your way so you can focus on your content, be it a blog, a knowledge base, a landing page or a combination of them.
+zola init my-site
+cd my-site
+# Add content/ pages, templates/ files, sass/ partials, themes/ if any.
 
-Augmented Markdown
-Zola comes with shortcodes and internal links to make it easier to write your content.
+zola serve                    # live-reload dev server on http://127.0.0.1:1111
+zola build                    # produces public/ for deployment
+```
 
-https://github.com/getzola/zola
+### Note on Dioxus
 
-
-
-
-
-##  Tera
-
-
-https://keats.github.io/tera/
-
-
-A powerful, easy to use template engine for Rust
-
-Easy to use
-Designed from the ground up to be easy to use and provide good error messages.
-
-Performant
-Template compilation and rendering are measured in nanoseconds.
-
-Familiar
-Used to Jinja2, Django templates, Liquid or Twig? You will feel right at home.
+The original raw notes mentioned **Dioxus** as something to check; that's a *different* product (a Rust UI framework, not an SSG). See `programming/rust/gui/dioxus.md` for the actual notes.
