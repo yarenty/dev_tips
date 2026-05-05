@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[ollama]] — Ollama _(score 25)_
-- [[llama_2]] — LLAMA _(score 25)_
-- [[time_serie_transformer]] — Transformers _(score 20)_
-- [[leaderboards]] — marena _(score 18)_
-- [[inspectus]] — Inspectus _(score 18)_
+- [[inspectus]] — Inspectus _(score 30.4)_
+- [[leaderboards]] — marena _(score 30.4)_
+- [[ollama]] — Ollama _(score 23.5)_
+- [[llama_2]] — LLAMA _(score 23.5)_
+- [[time_serie_transformer]] — Transformers _(score 22.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#abliteration` `#inspection` `#llm` `#ml` `#model` `#refusals` `#transformers` `#models`

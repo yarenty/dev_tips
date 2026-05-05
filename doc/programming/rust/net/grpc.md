@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[mobile]] — Mobile _(score 20)_
-- [[rtic]] — RTIC _(score 20)_
-- [[http]] — Hyper _(score 20)_
-- [[alagorithms]] — algorithms _(score 20)_
-- [[programming/rust/data/greptimedb|greptimedb]] — GreptimeDB _(score 15)_
+- [[programming/rust/data/greptimedb|greptimedb]] — GreptimeDB _(score 22.1)_
+- [[db/timeseries/greptimedb|greptimedb]] — GreptimeDB _(score 19.4)_
+- [[alagorithms]] — algorithms _(score 14.7)_
+- [[http]] — Hyper _(score 14.7)_
+- [[rtic]] — RTIC _(score 14.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#grpc` `#rust` `#programming` `#raft` `#consensus` `#distributed` `#paxos`

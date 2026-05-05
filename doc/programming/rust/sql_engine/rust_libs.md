@@ -1,7 +1,7 @@
 ---
 title: MS Server
 main_link: https://github.com/libsql/libsql_generate
-keywords: [rust-libs, sql-engine, rust, programming, libsql, crates, server]
+keywords: [rust-libs, sql-engine, rust, programming, libsql, crates]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[wasm_for_libsql]] — WASM: for libsql _(score 38)_
-- [[cratedb]] — CrateDB _(score 33)_
-- [[excel_udf_in_rust]] — Excel UDF in Rust _(score 33)_
-- [[rtic]] — RTIC _(score 25)_
-- [[rawsql]] — rawsql _(score 23)_
+- [[wasm_for_libsql]] — WASM: for libsql _(score 36.0)_
+- [[rawsql]] — rawsql _(score 27.1)_
+- [[cratedb]] — CrateDB _(score 27.1)_
+- [[excel_udf_in_rust]] — Excel UDF in Rust _(score 27.1)_
+- [[rtic]] — RTIC _(score 18.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#rust-libs` `#sql-engine` `#rust` `#programming` `#libsql` `#crates` `#server` `#user`

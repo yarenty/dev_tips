@@ -1,7 +1,7 @@
 ---
 title: Grafana
 main_link: https://github.com/grafana/mimir?utm_source=tldrnewsletter
-keywords: [grafana, visualization, mimir, storage, prometheus, install]
+keywords: [grafana, visualization, mimir, storage, prometheus]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[observability/grafana|grafana]] — grafana _(score 15)_
-- [[prometheus]] — prometheus _(score 15)_
-- [[tips]] — Help _(score 8)_
-- [[rerun]] — rerun _(score 8)_
-- [[javascript]] — Javascript _(score 8)_
+- [[rerun]] — rerun _(score 21.5)_
+- [[javascript]] — Javascript _(score 21.5)_
+- [[tips]] — Help _(score 21.5)_
+- [[observability/grafana|grafana]] — grafana _(score 20.9)_
+- [[prometheus]] — prometheus _(score 19.8)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#grafana` `#visualization` `#mimir` `#storage` `#prometheus` `#install`

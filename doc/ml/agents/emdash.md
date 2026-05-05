@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[task]] — Task _(score 23)_
-- [[coding_agents]] — Coding Agents _(score 23)_
-- [[smolagents]] — smolagents _(score 18)_
-- [[openai]] — OpenAI agents _(score 18)_
-- [[ml/bigquery/links|links]] — Links _(score 15)_
+- [[openai]] — OpenAI agents _(score 31.7)_
+- [[smolagents]] — smolagents _(score 29.3)_
+- [[coding_agents]] — Coding Agents _(score 23.5)_
+- [[task]] — Task _(score 23.5)_
+- [[cursor]] — Cursor _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#emdash` `#agents` `#ml` `#cli` `#code` `#openai` `#codex`

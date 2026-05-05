@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[scope]] — Scope _(score 38)_
-- [[programming/rust/learning/tutorials|tutorials]] — Tutorials _(score 28)_
-- [[cheats]] — Cheats _(score 28)_
-- [[cheats_2]] — Cheats _(score 28)_
-- [[github_map]] — Github MAP _(score 28)_
+- [[scope]] — Scope _(score 39.5)_
+- [[github_map]] — Github MAP _(score 23.5)_
+- [[cheats]] — Cheats _(score 23.5)_
+- [[cheats_2]] — Cheats _(score 23.5)_
+- [[programming/rust/learning/tutorials|tutorials]] — Tutorials _(score 23.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#to-learn` `#learning` `#rust` `#programming` `#atomics` `#traits` `#book` `#error`

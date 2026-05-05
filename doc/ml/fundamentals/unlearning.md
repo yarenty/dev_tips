@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[ml/bigquery/links|links]] — Links _(score 15)_
-- [[articles]] — Articles _(score 15)_
-- [[public]] — Datasets _(score 15)_
-- [[courses]] — top 5 2022 couses _(score 13)_
-- [[graphnn]] — Graphnn _(score 13)_
+- [[courses]] — top 5 2022 couses _(score 25.8)_
+- [[graphnn]] — Graphnn _(score 25.8)_
+- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[articles]] — Articles _(score 14.4)_
+- [[public]] — Datasets _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#unlearning` `#fundamentals` `#ml` `#knowledge` `#federated` `#fused` `#overwriting`

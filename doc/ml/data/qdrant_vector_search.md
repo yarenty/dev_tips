@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[qdrant]] — qdrant _(score 20)_
-- [[articles]] — Articles _(score 20)_
-- [[ml/bigquery/links|links]] — Links _(score 15)_
-- [[meilisearch]] — Meilisearch _(score 15)_
-- [[apis]] — API access to data _(score 13)_
+- [[meilisearch]] — Meilisearch _(score 28.9)_
+- [[qdrant]] — qdrant _(score 26.9)_
+- [[apis]] — API access to data _(score 21.5)_
+- [[articles]] — Articles _(score 17.5)_
+- [[ml/bigquery/links|links]] — Links _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#qdrant-vector-search` `#data` `#ml` `#search` `#vector` `#engine` `#applications`

@@ -26,14 +26,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[license]] — License _(score 15)_
-- [[ml/bigquery/links|links]] — Links _(score 15)_
-- [[articles]] — Articles _(score 15)_
-- [[algorithms]] — Algorithms _(score 15)_
-- [[license_2]] — License _(score 15)_
+- [[algorithms]] — Algorithms _(score 20.9)_
+- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[license_2]] — License _(score 14.4)_
+- [[articles]] — Articles _(score 14.4)_
+- [[license]] — License _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#moea` `#genetics` `#ml` `#framework` `#algorithms` `#source` `#nsga`

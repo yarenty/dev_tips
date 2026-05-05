@@ -1,7 +1,7 @@
 ---
 title: Commands to install
 main_link: https://github.com/jkfran/killport
-keywords: [must-have, shell, tools, zsh, powerlevel10k, custom, command]
+keywords: [must-have, shell, tools, zsh, powerlevel10k, custom]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[fish]] — Fish _(score 20)_
-- [[tools/shell/tools|tools]] — Shell tools _(score 13)_
-- [[lynx]] — Lynx _(score 13)_
-- [[sshpass]] — sshpass _(score 13)_
-- [[tools/shell/tmux|tmux]] — Tmux _(score 13)_
+- [[tools/shell/tools|tools]] — Shell tools _(score 25.1)_
+- [[lynx]] — Lynx _(score 25.1)_
+- [[sshpass]] — sshpass _(score 25.1)_
+- [[tools/shell/tmux|tmux]] — Tmux _(score 25.1)_
+- [[fish]] — Fish _(score 21.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#must-have` `#shell` `#tools` `#zsh` `#powerlevel10k` `#custom` `#commands`

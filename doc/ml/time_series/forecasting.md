@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[ml/time_series/papers|papers]] — Papers _(score 23)_
-- [[public]] — Datasets _(score 20)_
-- [[articles]] — Articles _(score 20)_
-- [[time_series_transformer]] — Time Series Transformer _(score 18)_
-- [[time_serie_transformer]] — Transformers _(score 18)_
+- [[time_serie_transformer]] — Transformers _(score 27.1)_
+- [[time_series_transformer]] — Time Series Transformer _(score 27.1)_
+- [[ml/time_series/papers|papers]] — Papers _(score 24.0)_
+- [[kan]] — Kolmogorov-Arnold Networks (KANs) for Time Series Forecasting _(score 20.9)_
+- [[articles]] — Articles _(score 17.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#forecasting` `#time-series` `#ml` `#close` `#data` `#stock` `#arima`

@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[hound]] — Hound _(score 33)_
-- [[rtic]] — RTIC _(score 28)_
-- [[audio]] — Coreaudio _(score 28)_
-- [[lewton]] — lewton _(score 23)_
-- [[daktilo]] — Daktilo _(score 18)_
+- [[audio]] — Coreaudio _(score 41.4)_
+- [[lewton]] — lewton _(score 32.6)_
+- [[hound]] — Hound _(score 32.6)_
+- [[daktilo]] — Daktilo _(score 23.7)_
+- [[rtic]] — RTIC _(score 23.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#claxon` `#misc` `#rust` `#programming` `#flac` `#example` `#decoding` `#decoder`

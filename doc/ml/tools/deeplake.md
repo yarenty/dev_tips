@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[articles]] — Articles _(score 20)_
-- [[webthinker]] — Webthinker _(score 18)_
-- [[ml/bigquery/links|links]] — Links _(score 15)_
-- [[llama_2]] — LLAMA _(score 15)_
-- [[tract]] — tract _(score 13)_
+- [[webthinker]] — Webthinker _(score 29.6)_
+- [[tract]] — tract _(score 21.4)_
+- [[articles]] — Articles _(score 17.5)_
+- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[llama_2]] — LLAMA _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#deeplake` `#tools` `#ml` `#deep` `#lake` `#data` `#store`

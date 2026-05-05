@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rust_brain]] — Rust - brain _(score 33)_
-- [[algorithms]] — Algorithms _(score 23)_
-- [[derivative]] — Derivative _(score 15)_
-- [[alagorithms]] — algorithms _(score 15)_
-- [[rtic]] — RTIC _(score 15)_
+- [[rust_brain]] — Rust - brain _(score 42.3)_
+- [[algorithms]] — Algorithms _(score 32.0)_
+- [[alagorithms]] — algorithms _(score 13.4)_
+- [[derivative]] — Derivative _(score 13.4)_
+- [[rtic]] — RTIC _(score 13.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#brainfuck` `#funny` `#language` `#programming` `#brain` `#programs`

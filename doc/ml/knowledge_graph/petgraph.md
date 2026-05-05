@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[ml/knowledge_graph/papers|papers]] — Research papers _(score 18)_
-- [[rtic]] — RTIC _(score 15)_
-- [[ml/bigquery/links|links]] — Links _(score 15)_
-- [[articles]] — Articles _(score 15)_
-- [[memory]] — Memory _(score 15)_
+- [[ml/knowledge_graph/papers|papers]] — Research papers _(score 33.4)_
+- [[meta]] — Meta / Facebook  graph articles _(score 14.6)_
+- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[articles]] — Articles _(score 14.4)_
+- [[ml/time_series/papers|papers]] — Papers _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#petgraph` `#knowledge-graph` `#ml` `#graph` `#graphmap` `#stablegraph` `#rust`

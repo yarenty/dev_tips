@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[lynx]] — Lynx _(score 28)_
-- [[browsh]] — Browsh _(score 28)_
-- [[tract]] — tract _(score 15)_
-- [[tools/shell/tools|tools]] — Shell tools _(score 13)_
-- [[must_have]] — Commands to install _(score 13)_
+- [[browsh]] — Browsh _(score 34.0)_
+- [[lynx]] — Lynx _(score 34.0)_
+- [[tools/shell/tools|tools]] — Shell tools _(score 25.1)_
+- [[must_have]] — Commands to install _(score 25.1)_
+- [[tract]] — tract _(score 15.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#browser-in-terminal` `#shell` `#tools` `#lynx` `#browsh` `#fathyb`

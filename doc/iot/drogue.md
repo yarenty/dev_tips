@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/misc/drogue|drogue]] — Drogue _(score 25)_
-- [[articles]] — Articles _(score 15)_
-- [[shodan]] — Shodan _(score 13)_
-- [[iot/mqtt|mqtt]] — IoT mqtt _(score 8)_
-- [[xorg]] — xorg _(score 5)_
+- [[programming/rust/misc/drogue|drogue]] — Drogue _(score 30.7)_
+- [[shodan]] — Shodan _(score 30.4)_
+- [[iot/mqtt|mqtt]] — IoT mqtt _(score 22.6)_
+- [[messaging/mqtt|mqtt]] — MQTT _(score 18.6)_
+- [[xorg]] — xorg _(score 15.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#drogue` `#iot` `#data` `#way` `#users` `#internet`

@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[tmux_ai]] — Tmux AI _(score 28)_
-- [[tools/shell/tmux|tmux]] — Tmux _(score 20)_
-- [[tools/linux/zellij|zellij]] — Zellij _(score 18)_
-- [[tract]] — tract _(score 15)_
-- [[fish]] — Fish _(score 13)_
+- [[tmux_ai]] — Tmux AI _(score 31.1)_
+- [[tools/linux/zellij|zellij]] — Zellij _(score 31.1)_
+- [[fish]] — Fish _(score 24.3)_
+- [[tools/shell/tmux|tmux]] — Tmux _(score 21.9)_
+- [[tract]] — tract _(score 15.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#tmux` `#linux` `#tools` `#few` `#important` `#comand` `#shortcuts`

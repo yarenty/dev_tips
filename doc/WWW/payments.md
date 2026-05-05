@@ -25,8 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
+- [[tools/misc/payments|payments]] — hyperswitch _(score 20.9)_
+- [[devin]] — OpenDevin _(score 20.9)_
+- [[loco_rust_on_rails]] — Loco _(score 16.0)_
+- [[www/tools|tools]] — tally _(score 16.0)_
+- [[ssl]] — HTTPS on websites _(score 16.0)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
 `#payments` `#powering` `#payment` `#open` `#switch`

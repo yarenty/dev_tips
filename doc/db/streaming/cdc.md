@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[noria]] — Noria: data-flow for high-performance web applications _(score 23)_
-- [[db/relational/mysql|mysql]] — mysql _(score 20)_
-- [[programming/rust/data/mysql|mysql]] — mysql _(score 20)_
-- [[postgresql]] — postgresql _(score 20)_
-- [[sqlflow]] — SQLFlow _(score 15)_
+- [[noria]] — Noria: data-flow for high-performance web applications _(score 38.4)_
+- [[sqlflow]] — SQLFlow _(score 27.4)_
+- [[db/relational/mysql|mysql]] — mysql _(score 23.9)_
+- [[programming/rust/data/mysql|mysql]] — mysql _(score 22.6)_
+- [[kafka]] — Kafka _(score 19.8)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#cdc` `#streaming` `#db` `#debezium` `#kafka` `#data` `#mysql`

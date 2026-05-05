@@ -1,7 +1,7 @@
 ---
 title: SeaQuery
 main_link: https://crates.io/crates/sea-query
-keywords: [seaquery, sql-engine, rust, programming, query, table, postgres]
+keywords: [seaquery, sql-engine, rust, programming, postgres]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/data/seaquery|seaquery]] — SeaQuery _(score 40)_
-- [[sqlite]] — sqlite _(score 28)_
-- [[diesel]] — diesel _(score 23)_
-- [[qpml]] — QPML _(score 23)_
-- [[datafusion]] — Datafusion SQL Query Planner _(score 23)_
+- [[programming/rust/data/seaquery|seaquery]] — SeaQuery _(score 31.3)_
+- [[datafusion]] — Datafusion SQL Query Planner _(score 23.8)_
+- [[qpml]] — QPML _(score 23.8)_
+- [[diesel]] — diesel _(score 23.8)_
+- [[sqlite]] — sqlite _(score 23.8)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#seaquery` `#sql-engine` `#rust` `#programming` `#query` `#table` `#postgres` `#dynamic`

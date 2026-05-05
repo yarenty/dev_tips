@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[mariadb]] — MariaDB _(score 33)_
-- [[spark]] — Spark UDF _(score 23)_
-- [[snowflake]] — Snowflake _(score 23)_
-- [[datafusion]] — Datafusion SQL Query Planner _(score 23)_
-- [[rawsql]] — rawsql _(score 23)_
+- [[rawsql]] — rawsql _(score 28.7)_
+- [[mariadb]] — MariaDB _(score 28.7)_
+- [[datafusion]] — Datafusion SQL Query Planner _(score 28.7)_
+- [[spark]] — Spark UDF _(score 28.7)_
+- [[snowflake]] — Snowflake _(score 28.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#sql-parse` `#sql-engine` `#rust` `#programming` `#ast` `#code` `#sql` `#parse`

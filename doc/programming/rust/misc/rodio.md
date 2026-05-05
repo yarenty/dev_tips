@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[symphonia]] — Symphonia _(score 33)_
-- [[hound]] — Hound _(score 28)_
-- [[claxon]] — Claxon _(score 28)_
-- [[rtic]] — RTIC _(score 28)_
-- [[minimp3]] — minimp3 _(score 28)_
+- [[symphonia]] — Symphonia _(score 31.9)_
+- [[lewton]] — lewton _(score 23.7)_
+- [[claxon]] — Claxon _(score 23.7)_
+- [[hound]] — Hound _(score 23.7)_
+- [[minimp3]] — minimp3 _(score 23.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#rodio` `#misc` `#rust` `#programming` `#symphonia` `#playback` `#handled` `#format`

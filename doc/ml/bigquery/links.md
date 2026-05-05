@@ -1,7 +1,7 @@
 ---
 title: Links
 main_link: https://cloud.google.com/bigquery-ml/docs/introduction
-keywords: [links, bigquery, ml, syntax, time, cloud, google]
+keywords: [links, bigquery, ml, syntax, cloud, google]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rtic]] — RTIC _(score 15)_
-- [[articles]] — Articles _(score 15)_
-- [[digital_twin/links|links]] — Links _(score 15)_
-- [[co_scientist]] — Google _(score 15)_
-- [[time_series_transformer]] — Time Series Transformer _(score 10)_
+- [[digital_twin/links|links]] — Links _(score 20.2)_
+- [[co_scientist]] — Google _(score 14.4)_
+- [[articles]] — Articles _(score 14.4)_
+- [[time_series_transformer]] — Time Series Transformer _(score 14.4)_
+- [[graphnn]] — Graphnn _(score 10.6)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#links` `#bigquery` `#ml` `#syntax` `#time` `#cloud` `#google`

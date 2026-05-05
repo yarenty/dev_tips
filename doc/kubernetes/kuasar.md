@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[dokku]] — Dokku _(score 8)_
-- [[akri]] — Akri _(score 8)_
-- [[k3s]] — K3S _(score 8)_
-- [[balena]] — Balena _(score 8)_
-- [[paho_mqtt]] — paho MQTT _(score 5)_
+- [[dokku]] — Dokku _(score 23.4)_
+- [[akri]] — Akri _(score 23.4)_
+- [[balena]] — Balena _(score 23.4)_
+- [[paho_mqtt]] — paho MQTT _(score 17.2)_
+- [[k3s]] — K3S _(score 11.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#kuasar` `#kubernetes` `#sandbox` `#api` `#container` `#open`

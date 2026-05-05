@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[_todo_ideas]] — Move blokchain from python to rust _(score 28)_
-- [[scope]] — Scope _(score 28)_
-- [[thiserror]] — thiserror _(score 28)_
-- [[eyre]] — eyre _(score 28)_
-- [[axum]] — Axum _(score 25)_
+- [[_todo_ideas]] — Move blokchain from python to rust _(score 36.5)_
+- [[thiserror]] — thiserror _(score 23.5)_
+- [[eyre]] — eyre _(score 23.5)_
+- [[scope]] — Scope _(score 23.5)_
+- [[axum]] — Axum _(score 19.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#from-easier-to-advanced-1-by-1` `#learning` `#rust` `#programming` `#add` `#api` `#level` `#project`

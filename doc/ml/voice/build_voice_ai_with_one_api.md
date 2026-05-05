@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[assemblyai]] — Speech-to-text _(score 33)_
-- [[ml/bigquery/links|links]] — Links _(score 15)_
-- [[articles]] — Articles _(score 15)_
-- [[cuda]] — CUDA in Rust _(score 10)_
-- [[inspectus]] — Inspectus _(score 10)_
+- [[assemblyai]] — Speech-to-text _(score 44.3)_
+- [[inspectus]] — Inspectus _(score 19.6)_
+- [[cuda]] — CUDA in Rust _(score 19.6)_
+- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[articles]] — Articles _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#build-voice-ai-with-one-api` `#voice` `#ml` `#build` `#api` `#speech` `#pii`

@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[lance_data_format]] — Lance _(score 28)_
-- [[cache]] — Cache _(score 28)_
-- [[webassembly]] — WASM _(score 20)_
-- [[mobile]] — Mobile _(score 20)_
-- [[rtic]] — RTIC _(score 20)_
+- [[lance_data_format]] — Lance _(score 21.8)_
+- [[cache]] — Cache _(score 21.8)_
+- [[candle]] — Candle _(score 16.9)_
+- [[articles]] — Articles _(score 15.2)_
+- [[public]] — Datasets _(score 15.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#ml-letsql` `#data` `#rust` `#programming` `#image` `#model` `#sam` `#images`

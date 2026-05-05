@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[http]] — Hyper _(score 33)_
-- [[rocket]] — Rocket _(score 28)_
-- [[feather]] — Feather _(score 23)_
-- [[rtic]] — RTIC _(score 20)_
-- [[yew]] — YEW _(score 18)_
+- [[http]] — Hyper _(score 33.0)_
+- [[feather]] — Feather _(score 29.3)_
+- [[rocket]] — Rocket _(score 24.1)_
+- [[rtic]] — RTIC _(score 14.7)_
+- [[tungstenite]] — Tungstenite _(score 12.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#axum` `#web` `#rust` `#programming` `#tokio` `#tower` `#api` `#middleware`

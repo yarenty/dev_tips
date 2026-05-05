@@ -1,7 +1,7 @@
 ---
 title: Inspectus
 main_link: https://github.com/labmlai/inspectus?utm_source=tldrai
-keywords: [inspectus, inspection, llm, ml, language, jupyter, python, api]
+keywords: [inspectus, inspection, llm, ml, jupyter, python, api]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[leaderboards]] — marena _(score 18)_
-- [[seal]] — seal _(score 18)_
-- [[abliteration]] — Removing refusals with transformers _(score 18)_
-- [[ollama]] — Ollama _(score 15)_
-- [[rig]] — Rig _(score 15)_
+- [[leaderboards]] — marena _(score 30.4)_
+- [[seal]] — seal _(score 30.4)_
+- [[abliteration]] — Removing refusals with transformers _(score 30.4)_
+- [[ollama]] — Ollama _(score 18.7)_
+- [[llama_2]] — LLAMA _(score 18.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#inspectus` `#inspection` `#llm` `#ml` `#language` `#jupyter` `#python` `#api`

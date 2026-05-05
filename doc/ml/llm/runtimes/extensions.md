@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[goose]] — Goose _(score 38)_
-- [[providers]] — providers _(score 23)_
-- [[ollama]] — Ollama _(score 18)_
-- [[rsllm]] — rsllm _(score 18)_
-- [[rig]] — Rig _(score 18)_
+- [[goose]] — Goose _(score 46.4)_
+- [[providers]] — providers _(score 37.5)_
+- [[rsllm]] — rsllm _(score 29.3)_
+- [[ollama]] — Ollama _(score 29.3)_
+- [[llama_2]] — LLAMA _(score 18.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#extensions` `#runtimes` `#llm` `#ml` `#goose` `#block` `#docs` `#sessions`

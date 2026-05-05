@@ -1,7 +1,7 @@
 ---
 title: Time Series Transformer
 main_link: https://github.com/allen-chiang/Time-Series-Transformer
-keywords: [time-series-transformer, time-series, ml, time, data, series, transformers]
+keywords: [time-series-transformer, time-series, ml, time, data, transformers]
 status: draft
 ---
 
@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[time_serie_transformer]] — Transformers _(score 43)_
-- [[time_series_research_papers]] — Time series research papers _(score 23)_
-- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 23)_
-- [[ml/time_series/papers|papers]] — Papers _(score 23)_
-- [[linear_regression]] — Linear Regression With Time Series _(score 23)_
+- [[time_serie_transformer]] — Transformers _(score 41.5)_
+- [[time_series_research_papers]] — Time series research papers _(score 30.6)_
+- [[ml/time_series/papers|papers]] — Papers _(score 30.6)_
+- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 24.0)_
+- [[linear_regression]] — Linear Regression With Time Series _(score 24.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#time-series-transformer` `#time-series` `#ml` `#time` `#data` `#series` `#transformer`

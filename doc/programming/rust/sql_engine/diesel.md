@@ -1,7 +1,7 @@
 ---
 title: diesel
 main_link: https://github.com/diesel-rs/diesel/tree/2.0.x
-keywords: [diesel, sql-engine, rust, programming, started, query, builder, guides]
+keywords: [diesel, sql-engine, rust, programming, started, builder, guides]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[sqlite]] — sqlite _(score 28)_
-- [[db]] — diesel _(score 25)_
-- [[qpml]] — QPML _(score 23)_
-- [[datafusion]] — Datafusion SQL Query Planner _(score 23)_
-- [[roapi]] — ROAPI _(score 23)_
+- [[datafusion]] — Datafusion SQL Query Planner _(score 23.8)_
+- [[qpml]] — QPML _(score 23.8)_
+- [[roapi]] — ROAPI _(score 23.8)_
+- [[sqlite]] — sqlite _(score 23.8)_
+- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 19.8)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#diesel` `#sql-engine` `#rust` `#programming` `#started` `#query` `#builder` `#guides`

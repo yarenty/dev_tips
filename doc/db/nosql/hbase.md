@@ -26,14 +26,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[redis]] — Redis _(score 13)_
-- [[firebase]] — firebase _(score 13)_
-- [[db/relational/mysql|mysql]] — mysql _(score 10)_
-- [[indexing]] — Indexing _(score 5)_
-- [[sqlflow]] — SQLFlow _(score 5)_
+- [[redis]] — Redis _(score 28.7)_
+- [[firebase]] — firebase _(score 28.7)_
+- [[db/relational/mysql|mysql]] — mysql _(score 25.3)_
+- [[indexing]] — Indexing _(score 16.5)_
+- [[sqlflow]] — SQLFlow _(score 16.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#hbase` `#nosql` `#db` `#opts` `#usr` `#local` `#root`

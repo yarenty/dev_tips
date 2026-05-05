@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[fish]] — Fish _(score 20)_
-- [[tools/shell/tools|tools]] — Shell tools _(score 13)_
-- [[must_have]] — Commands to install _(score 13)_
-- [[lynx]] — Lynx _(score 13)_
-- [[sshpass]] — sshpass _(score 13)_
+- [[tools/shell/tools|tools]] — Shell tools _(score 25.1)_
+- [[lynx]] — Lynx _(score 25.1)_
+- [[sshpass]] — sshpass _(score 25.1)_
+- [[must_have]] — Commands to install _(score 25.1)_
+- [[fish]] — Fish _(score 21.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#dns-toys` `#shell` `#tools` `#pass` `#number` `#value` `#cidr`

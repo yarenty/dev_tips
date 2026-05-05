@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rtic]] — RTIC _(score 15)_
-- [[rust]] — Plotters _(score 10)_
-- [[visualization/grafana|grafana]] — Grafana _(score 5)_
-- [[html]] — kuchiki _(score 5)_
-- [[starship]] — starship _(score 5)_
+- [[rust]] — Plotters _(score 20.9)_
+- [[visualization/grafana|grafana]] — Grafana _(score 17.5)_
+- [[starship]] — starship _(score 15.4)_
+- [[rtic]] — RTIC _(score 15.4)_
+- [[html]] — kuchiki _(score 15.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#liquid` `#web-templating` `#visualization` `#shopify` `#lib` `#crates`

@@ -1,7 +1,7 @@
 ---
 title: Indicatif
 main_link: https://github.com/console-rs/indicatif
-keywords: [indicatif, rust, programming, progress, console, library, indicating]
+keywords: [indicatif, rust, programming, progress, console, indicating]
 status: draft
 ---
 
@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[cli]] — Command line _(score 23)_
-- [[rtic]] — RTIC _(score 20)_
-- [[dialoguer]] — Dialoguer _(score 18)_
-- [[termion]] — Termion _(score 18)_
-- [[iocraft]] — IOCraft _(score 18)_
+- [[dialoguer]] — Dialoguer _(score 26.9)_
+- [[iocraft]] — IOCraft _(score 18.7)_
+- [[termion]] — Termion _(score 18.7)_
+- [[cli]] — Command line _(score 18.7)_
+- [[rtic]] — RTIC _(score 14.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#indicatif` `#rust` `#programming` `#progress` `#console` `#library` `#indicating`

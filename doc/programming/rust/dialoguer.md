@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[cli]] — Command line _(score 23)_
-- [[rtic]] — RTIC _(score 20)_
-- [[indicatif]] — Indicatif _(score 18)_
-- [[html]] — kuchiki _(score 15)_
-- [[alagorithms]] — algorithms _(score 15)_
+- [[indicatif]] — Indicatif _(score 26.9)_
+- [[alagorithms]] — algorithms _(score 22.9)_
+- [[html]] — kuchiki _(score 22.4)_
+- [[cli]] — Command line _(score 18.7)_
+- [[rtic]] — RTIC _(score 14.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#dialoguer` `#rust` `#programming` `#console` `#best` `#tree` `#master`

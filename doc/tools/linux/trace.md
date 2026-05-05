@@ -1,7 +1,7 @@
 ---
 title: Trippy
 main_link: https://github.com/fujiapple852/trippy
-keywords: [trace, linux, tools, see, install, windows]
+keywords: [trace, linux, tools, see, windows]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[web_to_app_pake]] — Pake _(score 15)_
-- [[demo_overview]] — DEMO _(score 15)_
-- [[tools/security/pake|pake]] — Pake _(score 15)_
-- [[programming/rust/tooling/tools|tools]] — coreutils _(score 15)_
-- [[tools/linux/tmux|tmux]] — TMUX _(score 13)_
+- [[web_to_app_pake]] — Pake _(score 26.9)_
+- [[programming/rust/tooling/tools|tools]] — coreutils _(score 26.9)_
+- [[tools/security/pake|pake]] — Pake _(score 26.9)_
+- [[tools/linux/tmux|tmux]] — TMUX _(score 24.3)_
+- [[demo_overview]] — DEMO _(score 15.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#trace` `#linux` `#tools` `#see` `#install` `#bsd` `#windows`

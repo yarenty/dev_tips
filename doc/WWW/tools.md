@@ -1,7 +1,7 @@
 ---
 title: tally
 main_link: https://github.com/n8n-io/n8n
-keywords: [tools, product, n8n, build, native]
+keywords: [tools, product, n8n, build]
 status: draft
 ---
 
@@ -25,8 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
+- [[airtable]] — airtable _(score 24.2)_
+- [[n8n_io]] — n8n.io _(score 24.2)_
+- [[n8n]] — n8n.io _(score 23.2)_
+- [[tract]] — tract _(score 15.0)_
+- [[dfdx]] — dfdx _(score 15.0)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
 `#tools` `#product` `#n8n` `#build` `#native`

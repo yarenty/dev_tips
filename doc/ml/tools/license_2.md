@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[license]] — License _(score 33)_
-- [[tract]] — tract _(score 23)_
-- [[apache]] — apache _(score 15)_
-- [[ml/bigquery/links|links]] — Links _(score 15)_
-- [[articles]] — Articles _(score 15)_
+- [[license]] — License _(score 36.1)_
+- [[tract]] — tract _(score 21.4)_
+- [[apache]] — apache _(score 17.9)_
+- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[articles]] — Articles _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#license-2` `#tools` `#ml` `#apache` `#mit` `#note` `#contribution`

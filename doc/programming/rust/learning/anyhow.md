@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[_must_have]] — List of awesome libraries !!! _(score 28)_
-- [[thiserror]] — thiserror _(score 28)_
-- [[rtic]] — RTIC _(score 25)_
-- [[scope]] — Scope _(score 23)_
-- [[_to_learn]] — Books _(score 23)_
+- [[thiserror]] — thiserror _(score 34.0)_
+- [[_must_have]] — List of awesome libraries !!! _(score 34.0)_
+- [[_to_learn]] — Books _(score 30.6)_
+- [[scope]] — Scope _(score 30.6)_
+- [[rtic]] — RTIC _(score 18.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#anyhow` `#learning` `#rust` `#programming` `#crates` `#error` `#reporting`

@@ -26,14 +26,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[ios]] — Ios _(score 13)_
-- [[osxcross]] — OSX Cross _(score 13)_
-- [[utm]] — UTM _(score 13)_
-- [[mdfried]] — Mdfried _(score 10)_
-- [[byobu]] — Byobu: Text-based Window Manager and Terminal Multiplexer _(score 10)_
+- [[osxcross]] — OSX Cross _(score 26.8)_
+- [[mdfried]] — Mdfried _(score 21.9)_
+- [[byobu]] — Byobu: Text-based Window Manager and Terminal Multiplexer _(score 21.9)_
+- [[utm]] — UTM _(score 14.8)_
+- [[ios]] — Ios _(score 14.8)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#osx-tricks` `#osx` `#tools` `#jail` `#terminal` `#remove` `#break`

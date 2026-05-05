@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[iot/drogue|drogue]] — Drogue _(score 13)_
-- [[meilisearch]] — Meilisearch _(score 10)_
-- [[qdrant_vector_search]] — qdrant _(score 10)_
-- [[iot/mqtt|mqtt]] — IoT mqtt _(score 8)_
-- [[programming/rust/sql_engine/books|books]] — Books _(score 5)_
+- [[iot/drogue|drogue]] — Drogue _(score 30.4)_
+- [[meilisearch]] — Meilisearch _(score 25.7)_
+- [[qdrant_vector_search]] — qdrant _(score 25.7)_
+- [[iot/mqtt|mqtt]] — IoT mqtt _(score 22.6)_
+- [[qdrant]] — qdrant _(score 19.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#shodan` `#iot` `#internet` `#search` `#engine` `#everything`

@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[ml/bigquery/links|links]] — Links _(score 15)_
-- [[redis]] — Redis _(score 13)_
-- [[hbase]] — hbase _(score 13)_
-- [[indexing]] — Indexing _(score 5)_
-- [[sqlflow]] — SQLFlow _(score 5)_
+- [[redis]] — Redis _(score 28.7)_
+- [[hbase]] — hbase _(score 28.7)_
+- [[ml/bigquery/links|links]] — Links _(score 20.2)_
+- [[indexing]] — Indexing _(score 16.5)_
+- [[sqlflow]] — SQLFlow _(score 16.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#firebase` `#nosql` `#db` `#console` `#google` `#project` `#brilliant`

@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rtic]] — RTIC _(score 28)_
-- [[claxon]] — Claxon _(score 23)_
-- [[symphonia]] — Symphonia _(score 23)_
-- [[audio]] — Coreaudio _(score 23)_
-- [[hound]] — Hound _(score 18)_
+- [[claxon]] — Claxon _(score 32.6)_
+- [[audio]] — Coreaudio _(score 31.9)_
+- [[symphonia]] — Symphonia _(score 31.9)_
+- [[hound]] — Hound _(score 23.7)_
+- [[rtic]] — RTIC _(score 23.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#lewton` `#misc` `#rust` `#programming` `#rustaudio` `#vorbis` `#audio` `#decoder`

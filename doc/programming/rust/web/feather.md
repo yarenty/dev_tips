@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[axum]] — Axum _(score 23)_
-- [[rtic]] — RTIC _(score 20)_
-- [[rocket]] — Rocket _(score 18)_
-- [[yew]] — YEW _(score 18)_
-- [[webassembly]] — WASM _(score 18)_
+- [[axum]] — Axum _(score 29.3)_
+- [[webassembly]] — WASM _(score 24.1)_
+- [[rocket]] — Rocket _(score 24.1)_
+- [[rtic]] — RTIC _(score 14.7)_
+- [[assembly]] — Assembly _(score 13.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#feather` `#web` `#rust` `#programming` `#api` `#first` `#context` `#modular`

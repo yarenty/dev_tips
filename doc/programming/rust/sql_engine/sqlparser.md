@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 40)_
-- [[gluesql]] — GlueSQL _(score 30)_
-- [[datafusion]] — Datafusion SQL Query Planner _(score 28)_
-- [[rawsql]] — rawsql _(score 28)_
-- [[rtic]] — RTIC _(score 25)_
+- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 39.6)_
+- [[datafusion]] — Datafusion SQL Query Planner _(score 34.7)_
+- [[rawsql]] — rawsql _(score 32.0)_
+- [[gluesql]] — GlueSQL _(score 23.0)_
+- [[rtic]] — RTIC _(score 18.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#sqlparser` `#sql-engine` `#rust` `#programming` `#sql` `#datafusion` `#crate` `#parser`

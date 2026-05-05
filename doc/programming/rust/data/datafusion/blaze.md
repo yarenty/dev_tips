@@ -1,7 +1,7 @@
 ---
 title: blaze
 main_link: 
-keywords: [blaze, datafusion, data, rust, spark, native, apache, plan]
+keywords: [blaze, datafusion, data, rust, spark, apache, plan]
 status: draft
 ---
 
@@ -26,14 +26,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[gluten]] — gluten _(score 28)_
-- [[rapids]] — Spark rapids _(score 23)_
-- [[iceberg]] — Iceberg _(score 23)_
-- [[vortex]] — Vortex (2024-10-17) _(score 23)_
-- [[delta]] — DeltaLake _(score 23)_
+- [[gluten]] — gluten _(score 33.8)_
+- [[rapids]] — Spark rapids _(score 33.8)_
+- [[vortex]] — Vortex (2024-10-17) _(score 32.2)_
+- [[delta]] — DeltaLake _(score 32.2)_
+- [[iceberg]] — Iceberg _(score 32.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#blaze` `#datafusion` `#data` `#rust` `#spark` `#native` `#apache` `#plan`

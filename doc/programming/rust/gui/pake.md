@@ -1,7 +1,7 @@
 ---
 title: Pake
 main_link: https://github.com/tw93/Pake
-keywords: [pake, gui, rust, programming, command, line, tauri]
+keywords: [pake, gui, rust, programming, line, tauri]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/gui/tauri|tauri]] — Tauri _(score 33)_
-- [[cli]] — Command line _(score 30)_
-- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 25)_
-- [[debug]] — Debug _(score 20)_
-- [[json]] — JSON _(score 20)_
+- [[programming/rust/gui/tauri|tauri]] — Tauri _(score 32.0)_
+- [[tools/security/pake|pake]] — Pake _(score 28.6)_
+- [[cli]] — Command line _(score 23.6)_
+- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 22.4)_
+- [[json]] — JSON _(score 14.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#pake` `#gui` `#rust` `#programming` `#command` `#line` `#tauri` `#mac`

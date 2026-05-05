@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[ml/agents/response|response]] — Response _(score 20)_
-- [[ollama]] — Ollama _(score 20)_
-- [[llama_2]] — LLAMA _(score 20)_
-- [[memory]] — Memory _(score 20)_
-- [[ml/memory/response|response]] — Response _(score 20)_
+- [[ml/agents/response|response]] — Response _(score 18.7)_
+- [[ml/memory/response|response]] — Response _(score 18.7)_
+- [[ollama]] — Ollama _(score 18.7)_
+- [[llama_2]] — LLAMA _(score 18.7)_
+- [[ml/bigquery/links|links]] — Links _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#phidata` `#frameworks` `#ml` `#assistant` `#llms` `#tools` `#llama3`

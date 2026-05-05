@@ -1,7 +1,7 @@
 ---
 title: IOCraft
 main_link: https://github.com/ccbrown/iocraft
-keywords: [iocraft, rust, programming, api, ccbrown, library, crafting]
+keywords: [iocraft, rust, programming, api, ccbrown, crafting]
 status: draft
 ---
 
@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[termion]] — Termion _(score 23)_
-- [[rtic]] — RTIC _(score 20)_
-- [[paho_mqtt]] — paho MQTT _(score 20)_
-- [[indicatif]] — Indicatif _(score 18)_
-- [[_todo_ideas]] — Move blokchain from python to rust _(score 15)_
+- [[termion]] — Termion _(score 23.9)_
+- [[paho_mqtt]] — paho MQTT _(score 19.9)_
+- [[_todo_ideas]] — Move blokchain from python to rust _(score 19.9)_
+- [[indicatif]] — Indicatif _(score 18.7)_
+- [[rtic]] — RTIC _(score 14.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#iocraft` `#rust` `#programming` `#api` `#ccbrown` `#library` `#crafting`

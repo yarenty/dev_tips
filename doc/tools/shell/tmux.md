@@ -1,7 +1,7 @@
 ---
 title: Tmux
 main_link: 
-keywords: [tmux, shell, tools, ubuntu, etc, install]
+keywords: [tmux, shell, tools, ubuntu, etc]
 status: draft
 ---
 
@@ -26,14 +26,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[tools/linux/tmux|tmux]] — TMUX _(score 20)_
-- [[tools/shell/tools|tools]] — Shell tools _(score 13)_
-- [[must_have]] — Commands to install _(score 13)_
-- [[lynx]] — Lynx _(score 13)_
-- [[sshpass]] — sshpass _(score 13)_
+- [[tools/shell/tools|tools]] — Shell tools _(score 25.1)_
+- [[lynx]] — Lynx _(score 25.1)_
+- [[sshpass]] — sshpass _(score 25.1)_
+- [[must_have]] — Commands to install _(score 25.1)_
+- [[tools/linux/tmux|tmux]] — TMUX _(score 21.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#tmux` `#shell` `#tools` `#ubuntu` `#mac` `#etc` `#install`

@@ -26,14 +26,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[typst]] — typst _(score 13)_
-- [[react]] — React Print _(score 8)_
-- [[mdmath_symbols]] — Mdmath Symbols _(score 8)_
-- [[visualization/grafana|grafana]] — Grafana _(score 5)_
-- [[tips]] — Help _(score 5)_
+- [[typst]] — typst _(score 30.4)_
+- [[react]] — React Print _(score 21.5)_
+- [[mdmath_symbols]] — Mdmath Symbols _(score 21.5)_
+- [[tips]] — Help _(score 17.5)_
+- [[visualization/grafana|grafana]] — Grafana _(score 17.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#latex` `#visualization`

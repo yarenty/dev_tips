@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rust_algo_trading]] — Algo trading _(score 33)_
-- [[a_basic_algo_trading_system_in_rust_part_i]] — A Basic Algo Trading System In Rust: Part I _(score 33)_
-- [[lance_data_format]] — Lance _(score 20)_
-- [[dataman]] — Dataman _(score 15)_
-- [[rtic]] — RTIC _(score 15)_
+- [[rust_algo_trading]] — Algo trading _(score 32.5)_
+- [[a_basic_algo_trading_system_in_rust_part_i]] — A Basic Algo Trading System In Rust: Part I _(score 32.5)_
+- [[lance_data_format]] — Lance _(score 16.4)_
+- [[articles]] — Articles _(score 15.2)_
+- [[dataman]] — Dataman _(score 15.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#a-basic-algo-trading-system-in-rust-part-iv-backtesting` `#trading` `#data` `#system` `#backtesting` `#rust`

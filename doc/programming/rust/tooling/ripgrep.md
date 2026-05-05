@@ -1,7 +1,7 @@
 ---
 title: ripgrep
 main_link: https://crates.io/crates/ripgrep
-keywords: [ripgrep, tooling, rust, programming, crates, search, binary]
+keywords: [ripgrep, tooling, rust, programming, crates, search]
 status: draft
 ---
 
@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/tooling/tools|tools]] — coreutils _(score 28)_
-- [[rtic]] — RTIC _(score 25)_
-- [[cursive]] — Cursive _(score 25)_
-- [[starship]] — starship _(score 23)_
-- [[debug]] — Debug _(score 23)_
+- [[programming/rust/tooling/tools|tools]] — coreutils _(score 35.3)_
+- [[starship]] — starship _(score 26.4)_
+- [[debug]] — Debug _(score 26.4)_
+- [[cursive]] — Cursive _(score 18.0)_
+- [[rtic]] — RTIC _(score 18.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#ripgrep` `#tooling` `#rust` `#programming` `#crates` `#search` `#files` `#binary`

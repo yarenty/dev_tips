@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[matrix]] — Matrix - rust bindings to ios version _(score 38)_
-- [[lipo]] — Lipo _(score 33)_
-- [[rust_xcode_plugin]] — Rust xcode plugin _(score 28)_
-- [[cacao]] — Cacao _(score 28)_
-- [[mac_notification_sys]] — mac-notification-sys _(score 28)_
+- [[matrix]] — Matrix - rust bindings to ios version _(score 42.0)_
+- [[lipo]] — Lipo _(score 33.1)_
+- [[rust_xcode_plugin]] — Rust xcode plugin _(score 24.2)_
+- [[cacao]] — Cacao _(score 24.2)_
+- [[mac_notification_sys]] — mac-notification-sys _(score 24.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#macos` `#gui` `#rust` `#programming` `#matrix` `#mac` `#bindings` `#lipo`

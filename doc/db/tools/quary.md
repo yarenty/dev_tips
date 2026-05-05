@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[sqlflow]] — SQLFlow _(score 18)_
-- [[indexing]] — Indexing _(score 18)_
-- [[demo_overview]] — DEMO _(score 15)_
-- [[db]] — diesel _(score 15)_
-- [[sql_pen_test]] — sqlmap _(score 13)_
+- [[sqlflow]] — SQLFlow _(score 28.4)_
+- [[indexing]] — Indexing _(score 28.4)_
+- [[db]] — diesel _(score 27.8)_
+- [[sql_pen_test]] — sqlmap _(score 23.5)_
+- [[demo_overview]] — DEMO _(score 15.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#quary` `#tools` `#db` `#sql` `#create` `#cli` `#database`

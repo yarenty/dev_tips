@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[memory]] — Memory _(score 33)_
-- [[agentic_ai_memory]] — Task _(score 25)_
-- [[202505_recents]] — 202505 Recents _(score 20)_
-- [[ml/agents/response|response]] — Response _(score 18)_
-- [[ml/bigquery/links|links]] — Links _(score 15)_
+- [[202505_recents]] — 202505 Recents _(score 36.0)_
+- [[ml/agents/response|response]] — Response _(score 30.2)_
+- [[ml/memory/response|response]] — Response _(score 27.1)_
+- [[agentic_ai_memory]] — Task _(score 27.1)_
+- [[memory]] — Memory _(score 24.3)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#task` `#agents` `#ml` `#rag` `#memory` `#agentic` `#solution`

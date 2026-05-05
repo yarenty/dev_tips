@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rtic]] — RTIC _(score 20)_
-- [[adbc]] — ADBC ! _(score 15)_
-- [[time_serie_transformer]] — Transformers _(score 15)_
-- [[roapi]] — ROAPI _(score 15)_
-- [[rewquest]] — Rewquest _(score 15)_
+- [[rewquest]] — Rewquest _(score 22.9)_
+- [[roapi]] — ROAPI _(score 22.1)_
+- [[adbc]] — ADBC ! _(score 22.1)_
+- [[time_serie_transformer]] — Transformers _(score 19.8)_
+- [[rtic]] — RTIC _(score 14.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#json` `#rust` `#programming` `#fast` `#arrow` `#transformer` `#serde`

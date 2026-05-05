@@ -28,13 +28,12 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[nvidia]] — Nvidia _(score 15)_
-- [[rerun]] — rerun _(score 5)_
-- [[nvidia_omniverse]] — Nvidia Omniverse _(score 5)_
-- [[rapids]] — Spark rapids _(score 5)_
+- [[rerun]] — rerun _(score 20.9)_
+- [[nvidia]] — Nvidia _(score 19.8)_
+- [[rapids]] — Spark rapids _(score 19.8)_
+- [[nvidia_omniverse]] — Nvidia Omniverse _(score 19.8)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#groot` `#robot` `#spectrum` `#ieee` `#nvidia` `#ros`

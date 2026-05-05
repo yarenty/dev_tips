@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rust_algo_trading]] — Algo trading _(score 33)_
-- [[a_basic_algo_trading_system_in_rust_part_iv_backtesting]] — A Basic Algo Trading System In Rust: Part IV: Backtesting _(score 23)_
-- [[debug]] — Debug _(score 15)_
-- [[scope]] — Scope _(score 15)_
-- [[tungstenite]] — Tungstenite _(score 15)_
+- [[a_basic_algo_trading_system_in_rust_part_iv_backtesting]] — A Basic Algo Trading System In Rust: Part IV: Backtesting _(score 32.5)_
+- [[rust_algo_trading]] — Algo trading _(score 32.5)_
+- [[ml/agents/response|response]] — Response _(score 17.9)_
+- [[definition]] — Definition _(score 17.9)_
+- [[agentic_ai_memory]] — Task _(score 17.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#a-basic-algo-trading-system-in-rust-part-i` `#trading` `#rust` `#system` `#data` `#market`

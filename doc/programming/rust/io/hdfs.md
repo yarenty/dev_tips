@@ -1,7 +1,7 @@
 ---
 title: libhdfs3
 main_link: https://github.com/ArroyoSystems/arroyo
-keywords: [hdfs, rust, programming, python, data, library]
+keywords: [hdfs, rust, programming, python, data]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[lance_data_format]] — Lance _(score 25)_
-- [[programming/rust/data/greptimedb|greptimedb]] — GreptimeDB _(score 25)_
-- [[cache]] — Cache _(score 25)_
-- [[parseable]] — parseable _(score 25)_
-- [[json]] — JSON _(score 23)_
+- [[json]] — JSON _(score 18.7)_
+- [[parseable]] — parseable _(score 17.8)_
+- [[lance_data_format]] — Lance _(score 17.8)_
+- [[programming/rust/data/greptimedb|greptimedb]] — GreptimeDB _(score 17.8)_
+- [[cache]] — Cache _(score 17.8)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#hdfs` `#rust` `#programming` `#python` `#data` `#library` `#fast`

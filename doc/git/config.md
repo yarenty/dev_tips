@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[github]] — Github README _(score 8)_
-- [[git_delta]] — delta _(score 8)_
-- [[observability/grafana|grafana]] — grafana _(score 5)_
-- [[workmux]] — Workmux _(score 5)_
-- [[difftastic]] — difftastic _(score 5)_
+- [[github]] — Github README _(score 23.8)_
+- [[git_delta]] — delta _(score 23.8)_
+- [[difftastic]] — difftastic _(score 20.9)_
+- [[observability/grafana|grafana]] — grafana _(score 19.8)_
+- [[workmux]] — Workmux _(score 19.8)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#config` `#git` `#default` `#better` `#diff` `#branch`

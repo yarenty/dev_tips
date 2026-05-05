@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rtic]] — RTIC _(score 25)_
-- [[html]] — kuchiki _(score 23)_
-- [[http]] — Hyper _(score 23)_
-- [[rewquest]] — Rewquest _(score 23)_
-- [[wasmtime]] — wasmtime _(score 23)_
+- [[rewquest]] — Rewquest _(score 27.5)_
+- [[http]] — Hyper _(score 27.5)_
+- [[wasmtime]] — wasmtime _(score 27.5)_
+- [[html]] — kuchiki _(score 27.5)_
+- [[webassembly]] — WASM _(score 24.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#tungstenite` `#web` `#rust` `#programming` `#crates` `#lightweight` `#websocket` `#take`

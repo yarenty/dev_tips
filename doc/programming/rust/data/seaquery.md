@@ -1,7 +1,7 @@
 ---
 title: SeaQuery
 main_link: https://crates.io/crates/sea-query
-keywords: [seaquery, data, rust, programming, query, table, postgres]
+keywords: [seaquery, data, rust, programming, postgres]
 status: draft
 ---
 
@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/sql_engine/seaquery|seaquery]] — SeaQuery _(score 40)_
-- [[rusqlite]] — rusqlite _(score 28)_
-- [[programming/rust/data/mysql|mysql]] — mysql _(score 28)_
-- [[db]] — diesel _(score 23)_
-- [[parseable]] — parseable _(score 23)_
+- [[programming/rust/sql_engine/seaquery|seaquery]] — SeaQuery _(score 31.3)_
+- [[programming/rust/data/mysql|mysql]] — mysql _(score 21.8)_
+- [[parseable]] — parseable _(score 21.8)_
+- [[rusqlite]] — rusqlite _(score 21.8)_
+- [[db]] — diesel _(score 21.8)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#seaquery` `#data` `#rust` `#programming` `#query` `#table` `#postgres` `#dynamic`

@@ -1,7 +1,7 @@
 ---
 title: node_exporter
 main_link: 
-keywords: [node-exporter, observability, node, exporter, brew, services]
+keywords: [node-exporter, observability, node, exporter, services]
 status: draft
 ---
 
@@ -26,14 +26,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[prometheus]] — prometheus _(score 18)_
-- [[observability/grafana|grafana]] — grafana _(score 8)_
-- [[openobserve]] — OpenObserve _(score 8)_
-- [[programming/rust/tooling/observability_on_wasm|observability_on_wasm]] — obsetrvability on wasm _(score 5)_
-- [[git_delta]] — delta _(score 5)_
+- [[prometheus]] — prometheus _(score 31.1)_
+- [[observability/grafana|grafana]] — grafana _(score 22.9)_
+- [[openobserve]] — OpenObserve _(score 22.9)_
+- [[programming/rust/web/observability_on_wasm|observability_on_wasm]] — obsetrvability on wasm _(score 18.9)_
+- [[programming/rust/tooling/observability_on_wasm|observability_on_wasm]] — obsetrvability on wasm _(score 18.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#node-exporter` `#observability` `#node` `#exporter` `#brew` `#services`

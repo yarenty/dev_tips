@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[thiserror]] — thiserror _(score 33)_
-- [[_must_have]] — List of awesome libraries !!! _(score 28)_
-- [[error]] — eyre _(score 25)_
-- [[rtic]] — RTIC _(score 25)_
-- [[anyhow]] — anyhow _(score 23)_
+- [[_must_have]] — List of awesome libraries !!! _(score 35.1)_
+- [[thiserror]] — thiserror _(score 26.9)_
+- [[anyhow]] — anyhow _(score 26.9)_
+- [[error]] — eyre _(score 18.0)_
+- [[rtic]] — RTIC _(score 18.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#eyre` `#learning` `#rust` `#programming` `#file` `#crates` `#env` `#dotenv`

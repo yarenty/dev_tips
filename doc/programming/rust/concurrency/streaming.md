@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rtic]] — RTIC _(score 20)_
-- [[lychee]] — lychee _(score 20)_
-- [[timely]] — Timely Dataflow _(score 18)_
-- [[salsa]] — Salsa _(score 18)_
-- [[actors]] — Actix _(score 18)_
+- [[timely]] — Timely Dataflow _(score 26.4)_
+- [[actors]] — Actix _(score 26.4)_
+- [[salsa]] — Salsa _(score 26.4)_
+- [[lychee]] — lychee _(score 14.7)_
+- [[rtic]] — RTIC _(score 14.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#streaming` `#concurrency` `#rust` `#programming` `#parallel` `#stream` `#par` `#code`

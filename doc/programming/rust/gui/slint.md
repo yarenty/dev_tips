@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[tao]] — Tao _(score 28)_
-- [[lipo]] — Lipo _(score 28)_
-- [[rtic]] — RTIC _(score 25)_
-- [[egui]] — egui _(score 23)_
-- [[mobile]] — Mobile _(score 23)_
+- [[lipo]] — Lipo _(score 34.0)_
+- [[mobile]] — Mobile _(score 30.6)_
+- [[egui]] — egui _(score 27.6)_
+- [[tao]] — Tao _(score 24.4)_
+- [[programming/rust/gui/tauri|tauri]] — Tauri _(score 18.6)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#slint` `#gui` `#rust` `#programming` `#tao` `#cargo` `#build` `#crate`

@@ -26,14 +26,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[nvidia]] — Nvidia _(score 23)_
-- [[digital_twin/links|links]] — Links _(score 18)_
-- [[scilab]] — Scilab _(score 8)_
-- [[isc2022]] — Isc2022 _(score 8)_
-- [[cps]] — Cps _(score 8)_
+- [[nvidia]] — Nvidia _(score 30.2)_
+- [[scilab]] — Scilab _(score 22.4)_
+- [[isc2022]] — Isc2022 _(score 22.4)_
+- [[digital_twin/links|links]] — Links _(score 22.4)_
+- [[bmw]] — Bmw _(score 10.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#nvidia-omniverse` `#digital-twin` `#modulus` `#pino` `#nvidia` `#fno`

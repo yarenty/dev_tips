@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[postgresql]] — postgresql _(score 30)_
-- [[xlite]] — XLite _(score 10)_
-- [[limbo]] — Limbo _(score 10)_
-- [[toydb]] — toyDB _(score 10)_
-- [[chroma]] — chroma _(score 10)_
+- [[postgresql]] — postgresql _(score 39.2)_
+- [[limbo]] — Limbo _(score 22.6)_
+- [[toydb]] — toyDB _(score 22.6)_
+- [[xlite]] — XLite _(score 22.6)_
+- [[chroma]] — chroma _(score 22.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#barman` `#postgres` `#relational` `#db` `#postgresql` `#recovery` `#backup` `#python`

@@ -36,7 +36,7 @@ When you finish a task, update the status line in-place and add a short `> comme
 | P3 | Folder restructure (rename / move / merge) | agent | ✅ DONE |
 | P4 | Normalize landing pages to `README.md` | agent | ✅ DONE |
 | P5 | Rewrite each article to the standard template | agent (batched) | ✅ DONE (auto-stub pass) |
-| P6 | Cross-link & keyword pass (graph polish) | agent | 🟨 IN PROGRESS |
+| P6 | Cross-link & keyword pass (graph polish) | agent | ✅ DONE |
 | P7 | Rebuild `SUMMARY.md` & verify `mdbook build` | agent | ⬜ TODO |
 | P8 | Final review & cleanup | user | ⬜ TODO |
 
@@ -460,10 +460,10 @@ Goal: turn the rewritten files into a real Obsidian graph.
   > comment: agent zed-opus — 1471 distinct keywords / 3540 occurrences. 80 near-duplicate buckets, 11 Levenshtein-1 fuzzy groups. Generator at `inventory/build_keywords.py`; outputs at `inventory/keywords.tsv` (full sorted) and `inventory/keywords.md` (analysis). Notable: many noise keywords (`the`, `code`, `text`, `pool`, `tree`, `user`, `make` etc.) leaked in from auto-derived body words — will be stripped in P6.2. Real near-duplicates to canonicalise: `tool`/`tools`, `crate`/`crates`, `model`/`models`, `agent`/`agents`, `time-series`/`timeseries`/`time_series`, `digital-twin`/`digital_twin`, `knowledge-graph`/`knowledge_graph`, etc.
 - [x] **P6.2** ✅ DONE — Sweep all articles to canonicalise keywords against the list from P6.1.
   > comment: agent zed-opus — generator at `inventory/canonicalise_keywords.py`. Two passes: first stripped 173 noise occurrences via DROPLIST + canonicalised 80 near-duplicate buckets via CANONICAL map; second pass closed the remaining 13 small buckets. **Result:** 1471 distinct keywords → **1356**, 3540 occurrences → **3360**. Near-duplicate buckets 80 → **1** (just `nat` vs `nats` — intentionally kept separate; `nat` = Network Address Translation, `nats` = NATS messaging system). Path-derived keywords (first 4 in each article) are protected from the DROPLIST. Underscores normalised to hyphens. Common Obsidian-friendly forms chosen (e.g. `time-series`, `digital-twin`, `knowledge-graph`).
-- [ ] **P6.3** 🟨 IN PROGRESS — For each article, ensure at least 2 internal `[[wikilinks]]` exist; if not, add suggestions.
-  > comment: agent zed-opus started.
-- [ ] **P6.4** ⬜ TODO — Verify every directory `README.md` lists every article in that directory (no orphans).
-  > comment:
+- [x] **P6.3** ✅ DONE — For each article, ensure at least 2 internal `[[wikilinks]]` exist; if not, add suggestions.
+  > comment: agent zed-opus — generator at `inventory/suggest_wikilinks.py`. Algorithm: for each article, score every other vault article on (a) shared keywords weighted by inverse document frequency — rare keywords like `kafka` score high, generic ones like `rust` score near zero, (b) +4 same parent dir, (c) +12 if the candidate's title appears verbatim in the body. Top 5 candidates with score ≥ 5 are written under `## Internal links` as `[[stem]] — title (score N)` bullets, behind a `<!-- internal-links-suggested by P6.3 -->` marker. Ambiguous stems (multiple files share the name) get the full path: `[[parent/stem|stem]]`. **Result:** 484/487 articles received auto-suggested wikilinks (3 had no candidate scoring ≥ 5). Sample: `git/git_delta` → `[[config]] [[github]]`; `messaging/kafka` → `[[red_panda]] [[redpanda]] [[kafka_2]] [[pulsar]] [[apache]]`; `ml/llm/models/llama` → `[[llama_2]] [[jetbrains_mellum]] [[olmo]] [[mplug]] [[alicemind_mplug_2_0]]`. Each block is followed by a TODO bullet asking a human to prune low-signal links.
+- [x] **P6.4** ✅ DONE — Verify every directory `README.md` lists every article in that directory (no orphans).
+  > comment: agent zed-opus — generator at `inventory/check_orphans.py`; output at `inventory/orphans.md`. Scanned 132 directories; **0 dead references** and **0 real orphans**. The only flagged orphans are `doc/SUMMARY.md` (mdBook ToC, regenerated in P7) and `doc/references.md` (intentionally kept and not listed in the hand-written `doc/README.md`).
 
 ---
 

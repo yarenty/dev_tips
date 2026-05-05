@@ -1,7 +1,7 @@
 ---
 title: SurrealDB
 main_link: https://surrealdb.com/
-keywords: [surrealdb, relational, db, complete, select, data, table]
+keywords: [surrealdb, relational, db, complete, select, data]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/data/surrealdb|surrealdb]] — surrealDB _(score 20)_
-- [[fauna]] — fauna _(score 18)_
-- [[postgresql]] — postgresql _(score 18)_
-- [[indexing]] — Indexing _(score 15)_
-- [[articles]] — Articles _(score 15)_
+- [[fauna]] — fauna _(score 29.7)_
+- [[postgresql]] — postgresql _(score 29.7)_
+- [[programming/rust/data/surrealdb|surrealdb]] — surrealDB _(score 24.0)_
+- [[indexing]] — Indexing _(score 16.5)_
+- [[articles]] — Articles _(score 15.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#surrealdb` `#relational` `#db` `#complete` `#select` `#data` `#table`

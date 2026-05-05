@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[linfa]] — Linfa _(score 38)_
-- [[rust_ml]] — BAD ONES: _(score 25)_
-- [[rtic]] — RTIC _(score 20)_
-- [[kmeans]] — Kmeans _(score 20)_
-- [[alagorithms]] — algorithms _(score 20)_
+- [[rust_ml]] — BAD ONES: _(score 39.0)_
+- [[linfa]] — Linfa _(score 36.7)_
+- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 17.5)_
+- [[linear_regression]] — Linear Regression With Time Series _(score 17.5)_
+- [[kmeans]] — Kmeans _(score 15.6)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#ml-in-rust` `#ml` `#rust` `#programming` `#contains` `#linear` `#regression` `#liquidml`

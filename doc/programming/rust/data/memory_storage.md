@@ -1,7 +1,7 @@
 ---
 title: Memory storage
 main_link: https://github.com/jonhoo/evmap
-keywords: [memory-storage, data, rust, programming, reads, map, refresh, evmap]
+keywords: [memory-storage, data, rust, programming, reads, refresh, evmap]
 status: draft
 ---
 
@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[cache]] — Cache _(score 28)_
-- [[rtic]] — RTIC _(score 20)_
-- [[adbc]] — ADBC ! _(score 18)_
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 18)_
-- [[lance_data_format]] — Lance _(score 18)_
+- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 21.8)_
+- [[lance_data_format]] — Lance _(score 21.8)_
+- [[adbc]] — ADBC ! _(score 21.8)_
+- [[cache]] — Cache _(score 21.8)_
+- [[articles]] — Articles _(score 15.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#memory-storage` `#data` `#rust` `#programming` `#reads` `#map` `#refresh` `#evmap`

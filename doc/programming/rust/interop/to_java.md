@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[pyo3]] — pyo3 _(score 28)_
-- [[cache]] — Cache _(score 20)_
-- [[rtic]] — RTIC _(score 20)_
-- [[python]] — PUFF _(score 18)_
-- [[ballista_py]] — ballista py _(score 18)_
+- [[ballista_py]] — ballista py _(score 25.5)_
+- [[python]] — PUFF _(score 25.5)_
+- [[pyo3]] — pyo3 _(score 25.5)_
+- [[questdb]] — QuestDB _(score 20.9)_
+- [[rtic]] — RTIC _(score 14.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#to-java` `#interop` `#rust` `#programming` `#java` `#jni` `#type` `#questdb`

@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[langgraph]] — langgraph _(score 15)_
-- [[ollama]] — Ollama _(score 15)_
-- [[ml/bigquery/links|links]] — Links _(score 15)_
-- [[llama_2]] — LLAMA _(score 15)_
-- [[minillm]] — miniLLM _(score 15)_
+- [[minillm]] — miniLLM _(score 31.5)_
+- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[langgraph]] — langgraph _(score 14.4)_
+- [[ollama]] — Ollama _(score 14.4)_
+- [[llama_2]] — LLAMA _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#articles` `#mcp` `#ml` `#utm` `#source` `#tldrai` `#data`

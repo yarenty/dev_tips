@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rtic]] — RTIC _(score 20)_
-- [[armada]] — armada _(score 15)_
-- [[grpc]] — GRPC _(score 13)_
-- [[mq]] — ruMQTT _(score 13)_
-- [[trpc]] — tRPC _(score 13)_
+- [[armada]] — armada _(score 23.6)_
+- [[trpc]] — tRPC _(score 18.7)_
+- [[grpc]] — GRPC _(score 18.7)_
+- [[mq]] — ruMQTT _(score 18.7)_
+- [[rtic]] — RTIC _(score 14.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#tunelling` `#rust` `#programming` `#tcp` `#nat` `#ekzhang` `#modern`

@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[graph_rag]] — Graph RAG _(score 23)_
-- [[ollama]] — Ollama _(score 20)_
-- [[rtic]] — RTIC _(score 15)_
-- [[ml/bigquery/links|links]] — Links _(score 15)_
-- [[llama_2]] — LLAMA _(score 15)_
+- [[graph_rag]] — Graph RAG _(score 24.5)_
+- [[ollama]] — Ollama _(score 15.6)_
+- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[articles]] — Articles _(score 14.4)_
+- [[llama_2]] — LLAMA _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#neo4j-rag` `#rag` `#ml` `#graph` `#rust` `#python` `#step`

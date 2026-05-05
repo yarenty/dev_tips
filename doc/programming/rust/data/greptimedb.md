@@ -1,7 +1,7 @@
 ---
 title: GreptimeDB
 main_link: https://github.com/GreptimeTeam/greptimedb
-keywords: [greptimedb, data, rust, programming, time, series, distributed, greptimeteam]
+keywords: [greptimedb, data, rust, programming, distributed, greptimeteam]
 status: draft
 ---
 
@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[db/timeseries/greptimedb|greptimedb]] — GreptimeDB _(score 35)_
-- [[rtic]] — RTIC _(score 25)_
-- [[wooridb]] — WooriDB _(score 23)_
-- [[adbc]] — ADBC ! _(score 18)_
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 18)_
+- [[db/timeseries/greptimedb|greptimedb]] — GreptimeDB _(score 37.2)_
+- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 21.8)_
+- [[wooridb]] — WooriDB _(score 21.8)_
+- [[adbc]] — ADBC ! _(score 21.8)_
+- [[articles]] — Articles _(score 15.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#greptimedb` `#data` `#rust` `#programming` `#time` `#series` `#distributed` `#greptimeteam`

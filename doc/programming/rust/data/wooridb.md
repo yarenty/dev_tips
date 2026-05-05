@@ -1,7 +1,7 @@
 ---
 title: WooriDB
 main_link: https://github.com/naomijub/wooridb
-keywords: [wooridb, data, rust, programming, entity, databases, time, datetime]
+keywords: [wooridb, data, rust, programming, entity, databases, datetime]
 status: draft
 ---
 
@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rtic]] — RTIC _(score 25)_
-- [[barrel]] — barrel _(score 23)_
-- [[db]] — diesel _(score 23)_
-- [[programming/rust/data/greptimedb|greptimedb]] — GreptimeDB _(score 23)_
-- [[r2d2]] — r2d2 _(score 23)_
+- [[r2d2]] — r2d2 _(score 28.3)_
+- [[barrel]] — barrel _(score 28.3)_
+- [[db]] — diesel _(score 28.3)_
+- [[programming/rust/data/greptimedb|greptimedb]] — GreptimeDB _(score 21.8)_
+- [[bb8]] — bb8 _(score 16.3)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#wooridb` `#data` `#rust` `#programming` `#entity` `#database` `#time` `#datetime`

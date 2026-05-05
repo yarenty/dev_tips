@@ -1,7 +1,7 @@
 ---
 title: SQLIte loadable
 main_link: https://github.com/asg017/sqlite-loadable-rs
-keywords: [sqlite-loadable, sql-engine, rust, programming, sqlite, table, loadable, virtual]
+keywords: [sqlite-loadable, sql-engine, rust, programming, sqlite, loadable, virtual]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[sqlite]] — sqlite _(score 33)_
-- [[rusqlite]] — rusqlite _(score 25)_
-- [[programming/rust/sql_engine/seaquery|seaquery]] — SeaQuery _(score 23)_
-- [[debug]] — Debug _(score 20)_
-- [[json]] — JSON _(score 20)_
+- [[sqlite]] — sqlite _(score 31.5)_
+- [[programming/rust/sql_engine/seaquery|seaquery]] — SeaQuery _(score 23.8)_
+- [[rusqlite]] — rusqlite _(score 22.4)_
+- [[programming/rust/data/seaquery|seaquery]] — SeaQuery _(score 14.7)_
+- [[json]] — JSON _(score 14.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#sqlite-loadable` `#sql-engine` `#rust` `#programming` `#sqlite` `#table` `#loadable` `#virtual`

@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 23)_
-- [[ml/bigquery/links|links]] — Links _(score 15)_
-- [[articles]] — Articles _(score 15)_
-- [[time_series_transformer]] — Time Series Transformer _(score 13)_
-- [[time_series_research_papers]] — Time series research papers _(score 13)_
+- [[ml/time_series/papers|papers]] — Papers _(score 24.0)_
+- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 24.0)_
+- [[time_series_research_papers]] — Time series research papers _(score 24.0)_
+- [[time_series_transformer]] — Time Series Transformer _(score 24.0)_
+- [[ml/bigquery/links|links]] — Links _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#tutorials-2` `#time-series` `#ml`

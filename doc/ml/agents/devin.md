@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[devin_2]] — Devin _(score 28)_
-- [[task]] — Task _(score 23)_
-- [[tract]] — tract _(score 15)_
-- [[ml/bigquery/links|links]] — Links _(score 15)_
-- [[articles]] — Articles _(score 15)_
+- [[devin_2]] — Devin _(score 32.4)_
+- [[task]] — Task _(score 23.5)_
+- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[articles]] — Articles _(score 14.4)_
+- [[agentic_ai_memory]] — Task _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#devin` `#agents` `#ml` `#open` `#source` `#issues` `#welcome`

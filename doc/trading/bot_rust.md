@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[alagorithms]] — algorithms _(score 15)_
-- [[charts]] — charts _(score 15)_
-- [[rtic]] — RTIC _(score 15)_
-- [[rust_algo_trading]] — Algo trading _(score 13)_
-- [[a_basic_algo_trading_system_in_rust_part_i]] — A Basic Algo Trading System In Rust: Part I _(score 13)_
+- [[a_basic_algo_trading_system_in_rust_part_i]] — A Basic Algo Trading System In Rust: Part I _(score 23.5)_
+- [[rust_algo_trading]] — Algo trading _(score 23.5)_
+- [[alagorithms]] — algorithms _(score 13.2)_
+- [[rtic]] — RTIC _(score 13.2)_
+- [[charts]] — charts _(score 13.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#bot-rust` `#trading` `#platform` `#futures` `#rust` `#technical`

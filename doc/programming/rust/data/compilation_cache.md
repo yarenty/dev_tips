@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[cache]] — Cache _(score 28)_
-- [[rusqlite]] — rusqlite _(score 23)_
-- [[rtic]] — RTIC _(score 20)_
-- [[adbc]] — ADBC ! _(score 18)_
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 18)_
+- [[rusqlite]] — rusqlite _(score 30.7)_
+- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 21.8)_
+- [[adbc]] — ADBC ! _(score 21.8)_
+- [[cache]] — Cache _(score 21.8)_
+- [[articles]] — Articles _(score 15.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#compilation-cache` `#data` `#rust` `#programming` `#sccache` `#compilation` `#wrapper` `#rustc`

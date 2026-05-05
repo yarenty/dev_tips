@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[utm]] — UTM _(score 18)_
-- [[osxcross]] — OSX Cross _(score 13)_
-- [[osx_tricks]] — Jail-break from not opening on OSX _(score 13)_
-- [[dfdx]] — dfdx _(score 5)_
-- [[lstr]] — lstr _(score 5)_
+- [[osx_tricks]] — Jail-break from not opening on OSX _(score 26.8)_
+- [[osxcross]] — OSX Cross _(score 26.8)_
+- [[utm]] — UTM _(score 23.7)_
+- [[dfdx]] — dfdx _(score 15.0)_
+- [[lstr]] — lstr _(score 15.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#ios` `#osx` `#tools` `#developer` `#apple` `#support` `#app`

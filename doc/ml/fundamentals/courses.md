@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[classification]] — Classification _(score 28)_
-- [[articles]] — Articles _(score 20)_
-- [[lance_data_format]] — Lance _(score 15)_
-- [[ml/bigquery/links|links]] — Links _(score 15)_
-- [[_to_learn]] — Books _(score 15)_
+- [[classification]] — Classification _(score 31.3)_
+- [[articles]] — Articles _(score 17.5)_
+- [[_to_learn]] — Books _(score 16.9)_
+- [[lance_data_format]] — Lance _(score 15.2)_
+- [[ml/bigquery/links|links]] — Links _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#courses` `#fundamentals` `#ml` `#learning` `#python` `#data` `#gpt`

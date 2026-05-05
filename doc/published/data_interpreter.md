@@ -26,14 +26,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[task]] — Task _(score 15)_
-- [[articles]] — Articles _(score 15)_
-- [[public]] — Datasets _(score 15)_
-- [[dataman]] — Dataman _(score 13)_
-- [[xorg]] — xorg _(score 5)_
+- [[dataman]] — Dataman _(score 28.0)_
+- [[task]] — Task _(score 19.4)_
+- [[xorg]] — xorg _(score 15.2)_
+- [[articles]] — Articles _(score 15.2)_
+- [[public]] — Datasets _(score 15.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#data-interpreter` `#published` `#data` `#interpreter` `#graph` `#task`

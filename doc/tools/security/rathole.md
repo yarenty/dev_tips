@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[sniffnet]] — sniffnet _(score 18)_
-- [[rtic]] — RTIC _(score 15)_
-- [[web_to_app_pake]] — Pake _(score 13)_
-- [[ngrok]] — NGrok - Free Firewall Tunnel _(score 13)_
-- [[tools/security/pake|pake]] — Pake _(score 13)_
+- [[sniffnet]] — sniffnet _(score 33.4)_
+- [[web_to_app_pake]] — Pake _(score 25.7)_
+- [[ngrok]] — NGrok - Free Firewall Tunnel _(score 25.7)_
+- [[tools/security/pake|pake]] — Pake _(score 25.7)_
+- [[wireguard]] — Wireguard _(score 18.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#rathole` `#security` `#tools` `#nat` `#rust` `#internet` `#rapiz1`

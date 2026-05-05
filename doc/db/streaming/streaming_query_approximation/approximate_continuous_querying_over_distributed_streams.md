@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[db/streaming/streaming_query_approximation/papers|papers]] — Papers _(score 33)_
-- [[lance_data_format]] — Lance _(score 15)_
-- [[noria]] — Noria: data-flow for high-performance web applications _(score 15)_
-- [[articles]] — Articles _(score 15)_
-- [[cdc]] — CDC _(score 15)_
+- [[db/streaming/streaming_query_approximation/papers|papers]] — Papers _(score 39.9)_
+- [[noria]] — Noria: data-flow for high-performance web applications _(score 27.0)_
+- [[lance_data_format]] — Lance _(score 15.2)_
+- [[dataman]] — Dataman _(score 15.2)_
+- [[articles]] — Articles _(score 15.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#approximate-continuous-querying-over-distributed-streams` `#streaming-query-approximation` `#streaming` `#db` `#tracking` `#sketch` `#distributed` `#data`

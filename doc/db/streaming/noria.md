@@ -1,7 +1,7 @@
 ---
 title: Noria: data-flow for high-performance web applications
 main_link: https://github.com/mit-pdos/noria#noria-data-flow-for-high-performance-web-applications
-keywords: [noria, streaming, db, mysql, server, zookeeper, data]
+keywords: [noria, streaming, db, mysql, zookeeper, data]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[cdc]] — CDC _(score 23)_
-- [[db/relational/mysql|mysql]] — mysql _(score 20)_
-- [[programming/rust/data/mysql|mysql]] — mysql _(score 20)_
-- [[cache]] — Cache _(score 15)_
-- [[articles]] — Articles _(score 15)_
+- [[cdc]] — CDC _(score 26.4)_
+- [[db/relational/mysql|mysql]] — mysql _(score 23.9)_
+- [[programming/rust/data/mysql|mysql]] — mysql _(score 22.6)_
+- [[articles]] — Articles _(score 15.2)_
+- [[cache]] — Cache _(score 15.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#noria` `#streaming` `#db` `#mysql` `#server` `#zookeeper` `#data`

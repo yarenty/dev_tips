@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/learning/tutorials|tutorials]] — Tutorials _(score 20)_
-- [[tensorbase]] — TensorBase _(score 18)_
-- [[limbo]] — Limbo _(score 18)_
-- [[webassembly]] — WASM _(score 15)_
-- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 15)_
+- [[tensorbase]] — TensorBase _(score 27.8)_
+- [[limbo]] — Limbo _(score 27.8)_
+- [[programming/rust/learning/tutorials|tutorials]] — Tutorials _(score 21.0)_
+- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 19.8)_
+- [[db/relational/surrealdb|surrealdb]] — SurrealDB _(score 14.6)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#singlestore` `#relational` `#db` `#tutorial` `#impl` `#rust` `#split`

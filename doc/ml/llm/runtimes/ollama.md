@@ -1,7 +1,7 @@
 ---
 title: Ollama
 main_link: https://github.com/ollama/ollama
-keywords: [ollama, runtimes, llm, ml, models, language, specific, rust]
+keywords: [ollama, runtimes, llm, ml, models, specific, rust]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[goose]] — Goose _(score 38)_
-- [[providers]] — providers _(score 28)_
-- [[llama_2]] — LLAMA _(score 25)_
-- [[deepseek]] — Deepseek _(score 25)_
-- [[rsllm]] — rsllm _(score 23)_
+- [[goose]] — Goose _(score 41.9)_
+- [[providers]] — providers _(score 41.9)_
+- [[rsllm]] — rsllm _(score 30.5)_
+- [[llama_2]] — LLAMA _(score 23.5)_
+- [[deepseek]] — Deepseek _(score 23.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#ollama` `#runtimes` `#llm` `#ml` `#models` `#language` `#specific` `#rust`

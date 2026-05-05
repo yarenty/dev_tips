@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[r2d2]] — r2d2 _(score 23)_
-- [[programming/rust/data/mysql|mysql]] — mysql _(score 23)_
-- [[rtic]] — RTIC _(score 20)_
-- [[cargo_toml]] — Cargo.toml _(score 20)_
-- [[adbc]] — ADBC ! _(score 18)_
+- [[programming/rust/data/mysql|mysql]] — mysql _(score 30.1)_
+- [[r2d2]] — r2d2 _(score 30.1)_
+- [[adbc]] — ADBC ! _(score 21.8)_
+- [[articles]] — Articles _(score 15.2)_
+- [[cargo_toml]] — Cargo.toml _(score 14.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#deadpool` `#data` `#rust` `#programming` `#pool` `#objects` `#managed` `#enabled`

@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[leaderboards]] — marena _(score 33)_
-- [[inspectus]] — Inspectus _(score 18)_
-- [[abliteration]] — Removing refusals with transformers _(score 18)_
-- [[ml/bigquery/links|links]] — Links _(score 15)_
-- [[articles]] — Articles _(score 15)_
+- [[leaderboards]] — marena _(score 56.4)_
+- [[inspectus]] — Inspectus _(score 30.4)_
+- [[abliteration]] — Removing refusals with transformers _(score 30.4)_
+- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[time_serie_transformer]] — Transformers _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#seal` `#inspection` `#llm` `#ml` `#scale` `#leaderboard` `#info` `#infoshare2024`

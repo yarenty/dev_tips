@@ -1,7 +1,7 @@
 ---
 title: zoxide
 main_link: https://crates.io/crates/zoxide
-keywords: [zoxide, tooling, rust, programming, crates, smarter, command, inspired]
+keywords: [zoxide, tooling, rust, programming, crates, smarter, inspired]
 status: draft
 ---
 
@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rtic]] — RTIC _(score 25)_
-- [[loki]] — Loki _(score 23)_
-- [[starship]] — starship _(score 23)_
-- [[debug]] — Debug _(score 23)_
-- [[tux]] — tux _(score 23)_
+- [[loki]] — Loki _(score 30.8)_
+- [[starship]] — starship _(score 26.4)_
+- [[debug]] — Debug _(score 26.4)_
+- [[rtic]] — RTIC _(score 18.0)_
+- [[topgrade]] — topgrade _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#zoxide` `#tooling` `#rust` `#programming` `#crates` `#smarter` `#command` `#inspired`

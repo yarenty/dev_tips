@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[ml/bigquery/links|links]] — Links _(score 15)_
-- [[articles]] — Articles _(score 15)_
-- [[ml/knowledge_graph/papers|papers]] — Research papers _(score 13)_
-- [[petgraph]] — Petgraph _(score 13)_
-- [[llama_2]] — LLAMA _(score 10)_
+- [[ml/knowledge_graph/papers|papers]] — Research papers _(score 26.6)_
+- [[petgraph]] — Petgraph _(score 26.6)_
+- [[llama_2]] — LLAMA _(score 22.6)_
+- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[ml/time_series/papers|papers]] — Papers _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#meta` `#knowledge-graph` `#ml` `#neural` `#network` `#rule` `#facebook`

@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[weektodo]] — WeekToDo _(score 28)_
-- [[rustdesk]] — RustDesk! _(score 28)_
-- [[tract]] — tract _(score 15)_
-- [[lstr]] — lstr _(score 13)_
-- [[ascii_generator]] — Ascii generator _(score 13)_
+- [[weektodo]] — WeekToDo _(score 34.5)_
+- [[rustdesk]] — RustDesk! _(score 34.5)_
+- [[ascii_generator]] — Ascii generator _(score 25.7)_
+- [[lstr]] — lstr _(score 25.7)_
+- [[tract]] — tract _(score 15.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#applications` `#design` `#tools` `#weektodo` `#rustdesk` `#share` `#wifi`

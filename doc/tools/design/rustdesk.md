@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[applications]] — Deskreen _(score 18)_
-- [[lstr]] — lstr _(score 13)_
-- [[weektodo]] — WeekToDo _(score 13)_
-- [[ascii_generator]] — Ascii generator _(score 13)_
-- [[fengshui]] — Cleaning disk _(score 13)_
+- [[applications]] — Deskreen _(score 34.5)_
+- [[weektodo]] — WeekToDo _(score 25.7)_
+- [[ascii_generator]] — Ascii generator _(score 25.7)_
+- [[fengshui]] — Cleaning disk _(score 25.7)_
+- [[lstr]] — lstr _(score 25.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#rustdesk` `#design` `#tools` `#finally` `#connection` `#between` `#mac`

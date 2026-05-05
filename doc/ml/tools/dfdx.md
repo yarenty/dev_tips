@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[dfdx_shape_checked_deep_learning_in_rust]] — dfdx: shape checked deep learning in rust _(score 38)_
-- [[tract]] — tract _(score 23)_
-- [[license]] — License _(score 23)_
-- [[license_2]] — License _(score 23)_
-- [[candle]] — Candle _(score 18)_
+- [[dfdx_shape_checked_deep_learning_in_rust]] — dfdx: shape checked deep learning in rust _(score 47.4)_
+- [[candle]] — Candle _(score 29.6)_
+- [[license_2]] — License _(score 21.4)_
+- [[tract]] — tract _(score 21.4)_
+- [[license]] — License _(score 21.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#dfdx` `#tools` `#ml` `#tape` `#gradient` `#tensor` `#tensors`

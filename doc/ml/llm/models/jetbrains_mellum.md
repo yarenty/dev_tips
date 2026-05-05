@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[deepseek]] — Deepseek _(score 18)_
-- [[alicemind_mplug_2_0]] — AliceMind - mplug 2.0 _(score 18)_
-- [[olmo]] — OLMo - Open Language Models _(score 18)_
-- [[llama_2]] — LLAMA _(score 18)_
-- [[strawberry]] — Strawberry _(score 18)_
+- [[deepseek]] — Deepseek _(score 27.5)_
+- [[strawberry]] — Strawberry _(score 27.5)_
+- [[olmo]] — OLMo - Open Language Models _(score 27.5)_
+- [[mplug]] — mPLUG _(score 27.5)_
+- [[llama_2]] — LLAMA _(score 27.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#jetbrains-mellum` `#models` `#llm` `#ml` `#fill` `#middle` `#sample` `#jetbrains`

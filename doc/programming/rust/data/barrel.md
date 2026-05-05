@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[gluesql]] — GlueSQL _(score 33)_
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 28)_
-- [[db]] — diesel _(score 28)_
-- [[bb8]] — bb8 _(score 28)_
-- [[mobc]] — mobc _(score 28)_
+- [[gluesql]] — GlueSQL _(score 36.6)_
+- [[db]] — diesel _(score 33.2)_
+- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 30.1)_
+- [[mobc]] — mobc _(score 30.1)_
+- [[diesel]] — diesel _(score 23.6)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#barrel` `#data` `#rust` `#programming` `#sql` `#crates` `#database` `#builder`

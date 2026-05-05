@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rust_algo_trading]] — Algo trading _(score 8)_
-- [[mql5]] — MQL5 _(score 8)_
-- [[bot_rust]] — Building an Algorithmic Trading Platform in Rust _(score 8)_
-- [[a_basic_algo_trading_system_in_rust_part_i]] — A Basic Algo Trading System In Rust: Part I _(score 8)_
-- [[a_basic_algo_trading_system_in_rust_part_iii]] — A Basic Algo Trading System In Rust: Part III _(score 8)_
+- [[bot_rust]] — Building an Algorithmic Trading Platform in Rust _(score 22.3)_
+- [[rust_algo_trading]] — Algo trading _(score 22.3)_
+- [[a_basic_algo_trading_system_in_rust_part_i]] — A Basic Algo Trading System In Rust: Part I _(score 22.3)_
+- [[mql5]] — MQL5 _(score 22.3)_
+- [[a_basic_algo_trading_system_in_rust_part_iii]] — A Basic Algo Trading System In Rust: Part III _(score 22.3)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#hummingbot-python` `#trading` `#strategies` `#framework` `#exchanges` `#connectors`

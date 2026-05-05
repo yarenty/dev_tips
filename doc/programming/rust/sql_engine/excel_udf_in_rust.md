@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rtic]] — RTIC _(score 25)_
-- [[mariadb]] — MariaDB _(score 23)_
-- [[spark]] — Spark UDF _(score 23)_
-- [[hive]] — Hive UDF – User Defined Function with Example _(score 23)_
-- [[snowflake]] — Snowflake _(score 23)_
+- [[mariadb]] — MariaDB _(score 30.4)_
+- [[spark]] — Spark UDF _(score 30.4)_
+- [[snowflake]] — Snowflake _(score 30.4)_
+- [[hive]] — Hive UDF – User Defined Function with Example _(score 30.4)_
+- [[databend]] — Databend _(score 18.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#excel-udf-in-rust` `#sql-engine` `#rust` `#programming` `#excel` `#udf` `#crates` `#xladd`

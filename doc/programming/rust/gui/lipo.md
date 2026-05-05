@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[slint]] — Slint _(score 28)_
-- [[rtic]] — RTIC _(score 25)_
-- [[egui]] — egui _(score 23)_
-- [[mobile]] — Mobile _(score 23)_
-- [[programming/rust/gui/tauri|tauri]] — Tauri _(score 23)_
+- [[slint]] — Slint _(score 34.0)_
+- [[programming/rust/gui/tauri|tauri]] — Tauri _(score 30.6)_
+- [[mobile]] — Mobile _(score 30.6)_
+- [[egui]] — egui _(score 27.6)_
+- [[macos]] — Mac targets _(score 21.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#lipo` `#gui` `#rust` `#programming` `#crates` `#cargo`

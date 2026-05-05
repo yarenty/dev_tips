@@ -1,7 +1,7 @@
 ---
 title: Tutorials
 main_link: https://www.kaggle.com/ryanholbrook/linear-regression-with-time-series/tutorial
-keywords: [tutorials, time-series, ml, linear, regression, time, series]
+keywords: [tutorials, time-series, ml, linear, regression]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[linear_regression]] — Linear Regression With Time Series _(score 43)_
-- [[time_series_transformer]] — Time Series Transformer _(score 23)_
-- [[tutorials_2]] — Tutorials _(score 23)_
-- [[time_series_research_papers]] — Time series research papers _(score 23)_
-- [[time_serie_transformer]] — Transformers _(score 23)_
+- [[linear_regression]] — Linear Regression With Time Series _(score 39.1)_
+- [[ml/time_series/papers|papers]] — Papers _(score 24.0)_
+- [[time_serie_transformer]] — Transformers _(score 24.0)_
+- [[time_series_research_papers]] — Time series research papers _(score 24.0)_
+- [[time_series_transformer]] — Time Series Transformer _(score 24.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#tutorials` `#time-series` `#ml` `#linear` `#regression` `#time` `#series`

@@ -26,14 +26,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rtic]] — RTIC _(score 15)_
-- [[json]] — JSON _(score 15)_
-- [[helios]] — Helios _(score 13)_
-- [[building_unix_system]] — Bunnix _(score 13)_
-- [[monaco]] — Programming in Web _(score 13)_
+- [[building_unix_system]] — Bunnix _(score 25.2)_
+- [[helios]] — Helios _(score 25.2)_
+- [[monaco]] — Programming in Web _(score 25.2)_
+- [[json]] — JSON _(score 13.4)_
+- [[rtic]] — RTIC _(score 13.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#minio` `#unix-systems` `#programming`

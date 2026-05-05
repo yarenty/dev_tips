@@ -1,7 +1,7 @@
 ---
 title: Markitdown
 main_link: https://github.com/microsoft/markitdown?utm_source=tldrai
-keywords: [markitdown, editors, tools, text, openai, exif, install]
+keywords: [markitdown, editors, tools, text, openai, exif]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[indexing]] — Indexing _(score 15)_
-- [[intellij]] — IntelliJ productivity tips _(score 13)_
-- [[void]] — VOID _(score 13)_
-- [[mdfried]] — Mdfried _(score 13)_
-- [[prek]] — Prek _(score 10)_
+- [[mdfried]] — Mdfried _(score 26.4)_
+- [[void]] — VOID _(score 26.4)_
+- [[intellij]] — IntelliJ productivity tips _(score 26.4)_
+- [[indexing]] — Indexing _(score 15.0)_
+- [[prek]] — Prek _(score 15.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#markitdown` `#editors` `#tools` `#text` `#openai` `#exif` `#install`

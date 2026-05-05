@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rtic]] — RTIC _(score 20)_
-- [[grpc]] — GRPC _(score 13)_
-- [[mq]] — ruMQTT _(score 13)_
-- [[paho_mqtt]] — paho MQTT _(score 13)_
-- [[tunelling]] — Bore _(score 13)_
+- [[paho_mqtt]] — paho MQTT _(score 18.7)_
+- [[tunelling]] — Bore _(score 18.7)_
+- [[grpc]] — GRPC _(score 18.7)_
+- [[mq]] — ruMQTT _(score 18.7)_
+- [[rtic]] — RTIC _(score 14.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#trpc` `#rust` `#programming` `#automatic` `#end` `#easy` `#add`

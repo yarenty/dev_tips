@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[brainfuck]] — Brainfuck _(score 33)_
-- [[rtic]] — RTIC _(score 20)_
-- [[algorithms]] — Algorithms _(score 13)_
-- [[_todo_ideas]] — Move blokchain from python to rust _(score 10)_
-- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 10)_
+- [[brainfuck]] — Brainfuck _(score 42.3)_
+- [[algorithms]] — Algorithms _(score 32.0)_
+- [[alagorithms]] — algorithms _(score 14.7)_
+- [[programming/rust/gui/tauri|tauri]] — Tauri _(score 14.7)_
+- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 14.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#rust-brain` `#funny` `#brainfuck` `#brain` `#rust` `#programming`

@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rtic]] — RTIC _(score 15)_
-- [[circle]] — Circle _(score 13)_
-- [[_todo_ideas]] — Move blokchain from python to rust _(score 5)_
-- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 5)_
-- [[html]] — kuchiki _(score 5)_
+- [[circle]] — Circle _(score 26.3)_
+- [[_todo_ideas]] — Move blokchain from python to rust _(score 13.4)_
+- [[programming/rust/gui/tauri|tauri]] — Tauri _(score 13.4)_
+- [[html]] — kuchiki _(score 13.4)_
+- [[rtic]] — RTIC _(score 13.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#abi` `#cpp` `#programming` `#cxx` `#itanium`

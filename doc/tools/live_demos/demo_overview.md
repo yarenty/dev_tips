@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[n8n]] — n8n.io _(score 10)_
-- [[color_codes]] — Shell color codes _(score 10)_
-- [[dfdx]] — dfdx _(score 5)_
-- [[lstr]] — lstr _(score 5)_
-- [[sqlflow]] — SQLFlow _(score 5)_
+- [[n8n]] — n8n.io _(score 20.8)_
+- [[color_codes]] — Shell color codes _(score 20.8)_
+- [[n8n_io]] — n8n.io _(score 17.7)_
+- [[sqlflow]] — SQLFlow _(score 15.0)_
+- [[dfdx]] — dfdx _(score 15.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#demo-overview` `#live-demos` `#tools` `#code` `#paxtonhare` `#magic` `#jaro`

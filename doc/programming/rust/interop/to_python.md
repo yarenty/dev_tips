@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[pyo3]] — pyo3 _(score 33)_
-- [[maturin]] — maturin _(score 28)_
-- [[python]] — PUFF _(score 23)_
-- [[rtic]] — RTIC _(score 20)_
-- [[cargo_toml]] — Cargo.toml _(score 20)_
+- [[maturin]] — maturin _(score 39.3)_
+- [[pyo3]] — pyo3 _(score 33.8)_
+- [[python]] — PUFF _(score 31.1)_
+- [[cargo_toml]] — Cargo.toml _(score 14.7)_
+- [[rtic]] — RTIC _(score 14.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#to-python` `#interop` `#rust` `#programming` `#python` `#pyo3` `#datafusion` `#interactions`

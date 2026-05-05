@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[www/tools|tools]] — tally _(score 8)_
-- [[uipath]] — Uipath _(score 5)_
-- [[leaderboards]] — marena _(score 5)_
-- [[seal]] — seal _(score 5)_
-- [[ssl]] — HTTPS on websites _(score 3)_
+- [[www/tools|tools]] — tally _(score 24.2)_
+- [[seal]] — seal _(score 20.2)_
+- [[uipath]] — Uipath _(score 20.2)_
+- [[leaderboards]] — marena _(score 20.2)_
+- [[ssl]] — HTTPS on websites _(score 16.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#airtable` `#product` `#agility` `#scale` `#connect`

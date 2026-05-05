@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[slint]] — Slint _(score 38)_
-- [[rtic]] — RTIC _(score 25)_
-- [[egui]] — egui _(score 23)_
-- [[lipo]] — Lipo _(score 23)_
-- [[matrix]] — Matrix - rust bindings to ios version _(score 18)_
+- [[slint]] — Slint _(score 36.4)_
+- [[lipo]] — Lipo _(score 27.6)_
+- [[egui]] — egui _(score 27.6)_
+- [[matrix]] — Matrix - rust bindings to ios version _(score 24.2)_
+- [[rtic]] — RTIC _(score 18.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#tao` `#gui` `#rust` `#programming` `#crate` `#chkawka` `#taocopy` `#item`

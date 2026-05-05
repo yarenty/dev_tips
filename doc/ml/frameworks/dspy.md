@@ -1,7 +1,7 @@
 ---
 title: DSPy
 main_link: https://github.com/stanfordnlp/dspy?tab=readme-ov-file
-keywords: [dspy, frameworks, ml, declarative, software, language, models]
+keywords: [dspy, frameworks, ml, declarative, software, models]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[mlcube]] — MLCube _(score 23)_
-- [[mindsdb]] — MindsDB _(score 18)_
-- [[ollama]] — Ollama _(score 15)_
-- [[olmo]] — OLMo - Open Language Models _(score 15)_
-- [[ml/bigquery/links|links]] — Links _(score 15)_
+- [[mlcube]] — MLCube _(score 36.8)_
+- [[mindsdb]] — MindsDB _(score 29.1)_
+- [[olmo]] — OLMo - Open Language Models _(score 19.2)_
+- [[ollama]] — Ollama _(score 19.2)_
+- [[llama_2]] — LLAMA _(score 19.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#dspy` `#frameworks` `#ml` `#declarative` `#software` `#language` `#models`

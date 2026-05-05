@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rtic]] — RTIC _(score 28)_
-- [[hound]] — Hound _(score 18)_
-- [[daktilo]] — Daktilo _(score 18)_
-- [[claxon]] — Claxon _(score 18)_
-- [[programming/rust/misc/drogue|drogue]] — Drogue _(score 18)_
+- [[daktilo]] — Daktilo _(score 23.7)_
+- [[claxon]] — Claxon _(score 23.7)_
+- [[hound]] — Hound _(score 23.7)_
+- [[programming/rust/misc/drogue|drogue]] — Drogue _(score 23.7)_
+- [[rtic]] — RTIC _(score 23.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#alagorithms` `#misc` `#rust` `#programming` `#thealgorithms` `#directory` `#blob` `#master`

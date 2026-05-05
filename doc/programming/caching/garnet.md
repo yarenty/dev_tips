@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[cache]] — Cache _(score 20)_
-- [[caching]] — Caching _(score 15)_
-- [[redis]] — Redis _(score 15)_
-- [[rtic]] — RTIC _(score 15)_
-- [[map_cache_storage]] — DashMap _(score 10)_
+- [[map_cache_storage]] — DashMap _(score 21.7)_
+- [[cache]] — Cache _(score 21.7)_
+- [[caching]] — Caching _(score 20.9)_
+- [[redis]] — Redis _(score 20.9)_
+- [[rtic]] — RTIC _(score 13.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#garnet` `#caching` `#programming` `#microsoft` `#redis` `#cache` `#research`

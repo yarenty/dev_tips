@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[license]] — License _(score 23)_
-- [[license_2]] — License _(score 23)_
-- [[tutorials_2]] — Tutorials _(score 15)_
-- [[demo_overview]] — DEMO _(score 15)_
-- [[extensions]] — Extensions _(score 15)_
+- [[license_2]] — License _(score 21.4)_
+- [[license]] — License _(score 21.4)_
+- [[demo_overview]] — DEMO _(score 15.0)_
+- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[articles]] — Articles _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#tract` `#tools` `#ml` `#nnef` `#onnx` `#tensorflow` `#operators`

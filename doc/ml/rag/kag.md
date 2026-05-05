@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[ml/bigquery/links|links]] — Links _(score 15)_
-- [[articles]] — Articles _(score 15)_
-- [[summary_of_best_practices]] — Summary Of Best Practices _(score 13)_
-- [[neo4j_rag]] — NEO4J _(score 13)_
-- [[agentic_rag]] — Agentic RAG _(score 13)_
+- [[agentic_rag]] — Agentic RAG _(score 24.5)_
+- [[neo4j_rag]] — NEO4J _(score 24.5)_
+- [[summary_of_best_practices]] — Summary Of Best Practices _(score 24.5)_
+- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[articles]] — Articles _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#kag` `#rag` `#ml` `#knowledge` `#logical` `#reasoning` `#openspg`

@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[devin]] — OpenDevin _(score 18)_
-- [[ml/bigquery/links|links]] — Links _(score 15)_
-- [[articles]] — Articles _(score 15)_
-- [[anmell]] — anmell _(score 13)_
-- [[orchestration]] — Orchestration _(score 13)_
+- [[devin]] — OpenDevin _(score 32.4)_
+- [[anmell]] — anmell _(score 23.5)_
+- [[orchestration]] — Orchestration _(score 23.5)_
+- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[articles]] — Articles _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#devin-2` `#agents` `#ml` `#issues` `#swe` `#resolve` `#django`

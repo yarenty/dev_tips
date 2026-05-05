@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[articles]] — Articles _(score 15)_
-- [[rerun]] — rerun _(score 13)_
-- [[public]] — Datasets _(score 10)_
-- [[visualization/grafana|grafana]] — Grafana _(score 8)_
-- [[fonts]] — Fonts _(score 8)_
+- [[rerun]] — rerun _(score 24.7)_
+- [[public]] — Datasets _(score 24.0)_
+- [[fonts]] — Fonts _(score 21.5)_
+- [[visualization/grafana|grafana]] — Grafana _(score 21.5)_
+- [[articles]] — Articles _(score 15.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#pudding` `#visualization` `#cool` `#dataset` `#data`

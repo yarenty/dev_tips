@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[tinyvec]] — tinyvec _(score 38)_
-- [[pin_project]] — pin-project _(score 33)_
-- [[hashbrown]] — hashbrown _(score 33)_
-- [[rtic]] — RTIC _(score 25)_
-- [[error]] — eyre _(score 23)_
+- [[tinyvec]] — tinyvec _(score 42.4)_
+- [[hashbrown]] — hashbrown _(score 33.5)_
+- [[error]] — eyre _(score 28.0)_
+- [[pin_project]] — pin-project _(score 28.0)_
+- [[eyre]] — eyre _(score 18.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#low-level-structures` `#core` `#rust` `#programming` `#crates` `#tinyvec` `#hashmap` `#vec`

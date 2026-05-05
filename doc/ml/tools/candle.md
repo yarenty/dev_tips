@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[dfdx]] — dfdx _(score 28)_
-- [[tch_rs]] — tch-rs _(score 28)_
-- [[llama_2]] — LLAMA _(score 25)_
-- [[burn]] — burn _(score 23)_
-- [[memory]] — Memory _(score 20)_
+- [[dfdx]] — dfdx _(score 29.6)_
+- [[tch_rs]] — tch-rs _(score 26.2)_
+- [[llama_2]] — LLAMA _(score 23.5)_
+- [[burn]] — burn _(score 21.4)_
+- [[dfdx_shape_checked_deep_learning_in_rust]] — dfdx: shape checked deep learning in rust _(score 17.6)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#candle` `#tools` `#ml` `#model` `#tensor` `#cuda` `#llm`

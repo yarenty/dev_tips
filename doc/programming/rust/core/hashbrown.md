@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[low_level_structures]] — HalfBrown _(score 23)_
-- [[rtic]] — RTIC _(score 20)_
-- [[error]] — eyre _(score 18)_
-- [[reflection_step_by_step_article]] — Reflection step by step - Article _(score 18)_
-- [[reflection]] — reflect _(score 18)_
+- [[low_level_structures]] — HalfBrown _(score 33.5)_
+- [[reflection_step_by_step_article]] — Reflection step by step - Article _(score 24.7)_
+- [[reflection]] — reflect _(score 24.7)_
+- [[error]] — eyre _(score 24.7)_
+- [[eyre]] — eyre _(score 14.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#hashbrown` `#core` `#rust` `#programming` `#now` `#part` `#official` `#hashmap`

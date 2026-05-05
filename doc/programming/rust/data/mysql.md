@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[cache]] — Cache _(score 28)_
-- [[db]] — diesel _(score 23)_
-- [[r2d2]] — r2d2 _(score 23)_
-- [[deadpool]] — deadpool _(score 23)_
-- [[rtic]] — RTIC _(score 20)_
+- [[r2d2]] — r2d2 _(score 30.1)_
+- [[deadpool]] — deadpool _(score 30.1)_
+- [[db]] — diesel _(score 29.2)_
+- [[cache]] — Cache _(score 21.8)_
+- [[db/relational/mysql|mysql]] — mysql _(score 19.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#mysql` `#data` `#rust` `#programming` `#support` `#pool` `#windows` `#see`

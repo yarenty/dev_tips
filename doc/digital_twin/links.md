@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[ml/bigquery/links|links]] — Links _(score 15)_
-- [[isc2022]] — Isc2022 _(score 13)_
-- [[definition]] — Definition _(score 13)_
-- [[cps]] — Cps _(score 13)_
-- [[scilab]] — Scilab _(score 8)_
+- [[isc2022]] — Isc2022 _(score 30.2)_
+- [[definition]] — Definition _(score 30.2)_
+- [[scilab]] — Scilab _(score 22.4)_
+- [[ml/bigquery/links|links]] — Links _(score 20.2)_
+- [[cps]] — Cps _(score 18.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#links` `#digital-twin` `#ibm` `#digital` `#twins` `#explore`

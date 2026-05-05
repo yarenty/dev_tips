@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[sqlite_loadable]] — SQLIte loadable _(score 33)_
-- [[hive]] — Hive UDF – User Defined Function with Example _(score 23)_
-- [[databend]] — Databend _(score 23)_
-- [[udf_lib]] — udf _(score 23)_
-- [[scope]] — Scope _(score 20)_
+- [[sqlite_loadable]] — SQLIte loadable _(score 31.5)_
+- [[hive]] — Hive UDF – User Defined Function with Example _(score 30.9)_
+- [[databend]] — Databend _(score 30.9)_
+- [[extensions]] — Extensions _(score 20.9)_
+- [[udf_lib]] — udf _(score 18.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#sqlite` `#sql-engine` `#rust` `#programming` `#extension` `#function` `#entry` `#point`

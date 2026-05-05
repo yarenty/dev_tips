@@ -26,14 +26,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[ml/bigquery/links|links]] — Links _(score 15)_
-- [[articles]] — Articles _(score 15)_
-- [[memory]] — Memory _(score 15)_
-- [[episodic_memory]] — Episodic Memory _(score 15)_
-- [[agentic_ai_memory]] — Task _(score 15)_
+- [[episodic_memory]] — Episodic Memory _(score 27.6)_
+- [[agentic_ai_memory]] — Task _(score 27.6)_
+- [[task]] — Task _(score 20.5)_
+- [[memory]] — Memory _(score 15.6)_
+- [[ml/memory/response|response]] — Response _(score 15.6)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#summary-of-best-practices` `#rag` `#ml` `#query` `#chunking` `#retrieval` `#documents`

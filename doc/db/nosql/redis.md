@@ -1,7 +1,7 @@
 ---
 title: Redis
 main_link: https://github.com/redis/redis
-keywords: [redis, nosql, db, data, structures, server, command]
+keywords: [redis, nosql, db, data, structures]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[noria]] — Noria: data-flow for high-performance web applications _(score 15)_
-- [[cache]] — Cache _(score 15)_
-- [[articles]] — Articles _(score 15)_
-- [[firebase]] — firebase _(score 13)_
-- [[hbase]] — hbase _(score 13)_
+- [[firebase]] — firebase _(score 28.7)_
+- [[hbase]] — hbase _(score 28.7)_
+- [[noria]] — Noria: data-flow for high-performance web applications _(score 19.6)_
+- [[articles]] — Articles _(score 15.2)_
+- [[cache]] — Cache _(score 15.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#redis` `#nosql` `#db` `#data` `#structures` `#server` `#commands`

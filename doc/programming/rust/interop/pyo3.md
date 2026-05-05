@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[maturin]] — maturin _(score 23)_
-- [[to_python]] — Rust - Python interactions _(score 23)_
-- [[rtic]] — RTIC _(score 20)_
-- [[python]] — PUFF _(score 18)_
-- [[ballista_py]] — ballista py _(score 18)_
+- [[maturin]] — maturin _(score 33.8)_
+- [[to_python]] — Rust - Python interactions _(score 33.8)_
+- [[ballista_py]] — ballista py _(score 25.5)_
+- [[python]] — PUFF _(score 25.5)_
+- [[rtic]] — RTIC _(score 14.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#pyo3` `#interop` `#rust` `#programming`

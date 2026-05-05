@@ -1,7 +1,7 @@
 ---
 title: Skills.sh
 main_link: https://skills.sh/
-keywords: [skills-sh, skills, ml, agents, install, planning]
+keywords: [skills-sh, skills, ml, agents, planning]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[ml/bigquery/links|links]] — Links _(score 15)_
-- [[articles]] — Articles _(score 15)_
-- [[anmell]] — anmell _(score 10)_
-- [[devin]] — OpenDevin _(score 10)_
-- [[orchestration]] — Orchestration _(score 10)_
+- [[orchestration]] — Orchestration _(score 19.5)_
+- [[devin_2]] — Devin _(score 19.5)_
+- [[anmell]] — anmell _(score 19.5)_
+- [[devin]] — OpenDevin _(score 19.5)_
+- [[ml/bigquery/links|links]] — Links _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#skills-sh` `#skills` `#ml` `#agents` `#install` `#example` `#planning`

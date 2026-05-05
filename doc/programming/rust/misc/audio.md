@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[symphonia]] — Symphonia _(score 43)_
-- [[claxon]] — Claxon _(score 38)_
-- [[rodio]] — Rodio _(score 33)_
-- [[lewton]] — lewton _(score 33)_
-- [[hound]] — Hound _(score 28)_
+- [[symphonia]] — Symphonia _(score 45.4)_
+- [[claxon]] — Claxon _(score 41.4)_
+- [[lewton]] — lewton _(score 31.9)_
+- [[rodio]] — Rodio _(score 31.9)_
+- [[daktilo]] — Daktilo _(score 23.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#audio` `#misc` `#rust` `#programming` `#flac` `#symphonia` `#claxon` `#api`

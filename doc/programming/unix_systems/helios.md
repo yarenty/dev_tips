@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[building_unix_system]] — Bunnix _(score 18)_
-- [[rtic]] — RTIC _(score 15)_
-- [[minio]] — Minio _(score 13)_
-- [[monaco]] — Programming in Web _(score 13)_
-- [[_todo_ideas]] — Move blokchain from python to rust _(score 5)_
+- [[building_unix_system]] — Bunnix _(score 34.1)_
+- [[minio]] — Minio _(score 25.2)_
+- [[monaco]] — Programming in Web _(score 25.2)_
+- [[_todo_ideas]] — Move blokchain from python to rust _(score 13.4)_
+- [[rtic]] — RTIC _(score 13.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#helios` `#unix-systems` `#programming` `#sircmpwn` `#sources`

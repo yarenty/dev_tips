@@ -1,7 +1,7 @@
 ---
 title: diesel
 main_link: https://github.com/sfackler/r2d2
-keywords: [db, data, rust, programming, sql, databases, query, mysql]
+keywords: [db, data, rust, programming, sql, databases, mysql]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[barrel]] — barrel _(score 38)_
-- [[gluesql]] — GlueSQL _(score 38)_
-- [[adbc]] — ADBC ! _(score 33)_
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 33)_
-- [[programming/rust/data/seaquery|seaquery]] — SeaQuery _(score 33)_
+- [[barrel]] — barrel _(score 33.2)_
+- [[gluesql]] — GlueSQL _(score 33.2)_
+- [[programming/rust/data/mysql|mysql]] — mysql _(score 29.2)_
+- [[r2d2]] — r2d2 _(score 28.3)_
+- [[wooridb]] — WooriDB _(score 28.3)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#db` `#data` `#rust` `#programming` `#sql` `#database` `#query` `#mysql`

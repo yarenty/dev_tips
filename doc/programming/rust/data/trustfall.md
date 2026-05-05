@@ -1,7 +1,7 @@
 ---
 title: Trustfall
 main_link: https://github.com/obi1kenobi/trustfall
-keywords: [trustfall, data, rust, programming, query, engine, querying, kind]
+keywords: [trustfall, data, rust, programming, engine, querying, kind]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[db]] — diesel _(score 23)_
-- [[programming/rust/data/seaquery|seaquery]] — SeaQuery _(score 23)_
-- [[meilisearch]] — Meilisearch _(score 23)_
-- [[parseable]] — parseable _(score 23)_
-- [[rtic]] — RTIC _(score 20)_
+- [[meilisearch]] — Meilisearch _(score 28.5)_
+- [[programming/rust/data/seaquery|seaquery]] — SeaQuery _(score 21.8)_
+- [[parseable]] — parseable _(score 21.8)_
+- [[db]] — diesel _(score 21.8)_
+- [[articles]] — Articles _(score 15.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#trustfall` `#data` `#rust` `#programming` `#query` `#engine` `#querying` `#kind`

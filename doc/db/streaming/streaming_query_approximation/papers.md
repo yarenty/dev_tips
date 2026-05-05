@@ -1,7 +1,7 @@
 ---
 title: Papers
 main_link: https://dl.acm.org/doi/10.1145/1366102.1366106
-keywords: [papers, streaming-query-approximation, streaming, db, approximate, query, data, processing]
+keywords: [papers, streaming-query-approximation, streaming, db, approximate, data, processing]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[approximate_continuous_querying_over_distributed_streams]] — Approximate Continuous Querying  over Distributed Streams _(score 23)_
-- [[noria]] — Noria: data-flow for high-performance web applications _(score 15)_
-- [[articles]] — Articles _(score 15)_
-- [[cdc]] — CDC _(score 15)_
-- [[ml/time_series/papers|papers]] — Papers _(score 15)_
+- [[approximate_continuous_querying_over_distributed_streams]] — Approximate Continuous Querying  over Distributed Streams _(score 39.9)_
+- [[noria]] — Noria: data-flow for high-performance web applications _(score 27.0)_
+- [[ml/time_series/papers|papers]] — Papers _(score 20.2)_
+- [[articles]] — Articles _(score 15.2)_
+- [[cdc]] — CDC _(score 15.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#papers` `#streaming-query-approximation` `#streaming` `#db` `#approximate` `#query` `#data` `#processing`

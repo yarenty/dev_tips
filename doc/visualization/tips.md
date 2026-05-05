@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[diagrams]] — Diagrams _(score 18)_
-- [[programming/rust/sql_engine/books|books]] — Books _(score 15)_
-- [[_to_learn]] — Books _(score 15)_
-- [[tools/linux/books|books]] — Books _(score 15)_
-- [[visualization/grafana|grafana]] — Grafana _(score 8)_
+- [[diagrams]] — Diagrams _(score 21.5)_
+- [[visualization/grafana|grafana]] — Grafana _(score 21.5)_
+- [[tools/linux/books|books]] — Books _(score 19.4)_
+- [[programming/rust/sql_engine/books|books]] — Books _(score 19.4)_
+- [[_to_learn]] — Books _(score 19.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#tips` `#visualization` `#dataviz` `#books` `#bookdepository` `#visualize`

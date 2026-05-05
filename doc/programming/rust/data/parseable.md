@@ -1,7 +1,7 @@
 ---
 title: parseable
 main_link: https://github.com/parseablehq/parseable
-keywords: [parseable, data, rust, programming, ingestion, query, compatible, demo]
+keywords: [parseable, data, rust, programming, ingestion, compatible, demo]
 status: draft
 ---
 
@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[db]] — diesel _(score 23)_
-- [[programming/rust/data/seaquery|seaquery]] — SeaQuery _(score 23)_
-- [[trustfall]] — Trustfall _(score 23)_
-- [[rtic]] — RTIC _(score 20)_
-- [[json]] — JSON _(score 20)_
+- [[programming/rust/data/seaquery|seaquery]] — SeaQuery _(score 21.8)_
+- [[trustfall]] — Trustfall _(score 21.8)_
+- [[db]] — diesel _(score 21.8)_
+- [[articles]] — Articles _(score 15.2)_
+- [[postgresql]] — postgresql _(score 15.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#parseable` `#data` `#rust` `#programming` `#ingestion` `#query` `#compatible` `#demo`

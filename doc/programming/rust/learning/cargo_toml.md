@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[json]] — JSON _(score 25)_
-- [[_tricks]] — println! speedup 500% _(score 23)_
-- [[debug]] — Debug _(score 20)_
-- [[rtic]] — RTIC _(score 20)_
-- [[_todo_ideas]] — Move blokchain from python to rust _(score 18)_
+- [[_tricks]] — println! speedup 500% _(score 32.4)_
+- [[json]] — JSON _(score 23.6)_
+- [[_todo_ideas]] — Move blokchain from python to rust _(score 23.5)_
+- [[debug]] — Debug _(score 14.7)_
+- [[rtic]] — RTIC _(score 14.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#cargo-toml` `#learning` `#rust` `#programming` `#cargo` `#serde` `#trick` `#toml`

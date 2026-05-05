@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[swww]] — swww _(score 28)_
-- [[dioxus]] — Dioxus _(score 28)_
-- [[debug]] — Debug _(score 20)_
-- [[rtic]] — RTIC _(score 20)_
-- [[egui]] — egui _(score 18)_
+- [[swww]] — swww _(score 24.2)_
+- [[dioxus]] — Dioxus _(score 24.2)_
+- [[egui]] — egui _(score 24.2)_
+- [[debug]] — Debug _(score 14.7)_
+- [[rtic]] — RTIC _(score 14.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#ui` `#gui` `#rust` `#programming` `#floem` `#widgets` `#transitions` `#customizable`

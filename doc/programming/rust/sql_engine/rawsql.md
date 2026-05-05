@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[snowflake]] — Snowflake _(score 33)_
-- [[programming/rust/sql_engine/sqlparser|sqlparser]] — SQLparser _(score 28)_
-- [[rtic]] — RTIC _(score 25)_
-- [[mariadb]] — MariaDB _(score 23)_
-- [[spark]] — Spark UDF _(score 23)_
+- [[programming/rust/sql_engine/sqlparser|sqlparser]] — SQLparser _(score 32.0)_
+- [[spark]] — Spark UDF _(score 28.7)_
+- [[snowflake]] — Snowflake _(score 28.7)_
+- [[mariadb]] — MariaDB _(score 28.7)_
+- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 23.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#rawsql` `#sql-engine` `#rust` `#programming` `#sql` `#crates` `#files` `#comment`

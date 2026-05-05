@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rocket]] — Rocket _(score 25)_
-- [[rtic]] — RTIC _(score 20)_
-- [[actors]] — Actix _(score 20)_
-- [[alagorithms]] — algorithms _(score 20)_
-- [[_todo_ideas]] — Move blokchain from python to rust _(score 18)_
+- [[_todo_ideas]] — Move blokchain from python to rust _(score 23.5)_
+- [[rocket]] — Rocket _(score 20.1)_
+- [[alagorithms]] — algorithms _(score 14.7)_
+- [[actors]] — Actix _(score 14.7)_
+- [[rtic]] — RTIC _(score 14.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#7-more-ideas` `#learning` `#rust` `#programming` `#game` `#build` `#web` `#create`

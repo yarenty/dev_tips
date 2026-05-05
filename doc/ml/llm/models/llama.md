@@ -1,7 +1,7 @@
 ---
 title: llama-agentic-system
 main_link: https://github.com/meta-llama/llama-agentic-system?tab=readme-ov-file
-keywords: [llama, models, llm, ml, code, stack, meta]
+keywords: [llama, models, llm, ml, code, meta]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[llama_2]] — LLAMA _(score 43)_
-- [[alicemind_mplug_2_0]] — AliceMind - mplug 2.0 _(score 18)_
-- [[olmo]] — OLMo - Open Language Models _(score 18)_
-- [[mplug]] — mPLUG _(score 18)_
-- [[jetbrains_mellum]] — Test the function _(score 18)_
+- [[llama_2]] — LLAMA _(score 41.5)_
+- [[jetbrains_mellum]] — Test the function _(score 27.5)_
+- [[olmo]] — OLMo - Open Language Models _(score 27.5)_
+- [[mplug]] — mPLUG _(score 27.5)_
+- [[alicemind_mplug_2_0]] — AliceMind - mplug 2.0 _(score 27.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#llama` `#models` `#llm` `#ml` `#code` `#stack` `#meta` `#model`

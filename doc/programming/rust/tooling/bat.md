@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rtic]] — RTIC _(score 25)_
-- [[starship]] — starship _(score 23)_
-- [[debug]] — Debug _(score 23)_
-- [[tux]] — tux _(score 23)_
-- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 23)_
+- [[starship]] — starship _(score 26.4)_
+- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 26.4)_
+- [[debug]] — Debug _(score 26.4)_
+- [[ml/bigquery/links|links]] — Links _(score 20.9)_
+- [[programming/rust/bottom|bottom]] — bottom _(score 18.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#bat` `#tooling` `#rust` `#programming` `#cat` `#crates` `#syntax` `#highlights`

@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[memory]] — Memory _(score 20)_
-- [[phidata]] — PhiData _(score 20)_
-- [[agentic_ai_memory]] — Task _(score 20)_
-- [[task]] — Task _(score 15)_
-- [[ml/bigquery/links|links]] — Links _(score 15)_
+- [[agentic_ai_memory]] — Task _(score 18.7)_
+- [[phidata]] — PhiData _(score 18.7)_
+- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[task]] — Task _(score 14.4)_
+- [[articles]] — Articles _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#llm-os` `#llm` `#ml` `#llms` `#generate` `#cookbook` `#tweet`

@@ -1,7 +1,7 @@
 ---
 title: Termion
 main_link: https://gitlab.redox-os.org/redox-os/termion
-keywords: [termion, rust, programming, redox, tty, api, library]
+keywords: [termion, rust, programming, redox, tty, api]
 status: draft
 ---
 
@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[iocraft]] — IOCraft _(score 23)_
-- [[rtic]] — RTIC _(score 20)_
-- [[paho_mqtt]] — paho MQTT _(score 20)_
-- [[indicatif]] — Indicatif _(score 18)_
-- [[tui]] — Ratatui _(score 18)_
+- [[tui]] — Ratatui _(score 27.6)_
+- [[iocraft]] — IOCraft _(score 23.9)_
+- [[paho_mqtt]] — paho MQTT _(score 19.9)_
+- [[indicatif]] — Indicatif _(score 18.7)_
+- [[rtic]] — RTIC _(score 14.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#termion` `#rust` `#programming` `#redox` `#tty` `#api` `#library`

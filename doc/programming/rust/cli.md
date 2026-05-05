@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[cursive]] — Cursive _(score 28)_
-- [[rtic]] — RTIC _(score 20)_
-- [[programming/rust/gui/pake|pake]] — Pake _(score 20)_
-- [[tui]] — Ratatui _(score 18)_
-- [[ink]] — INK _(score 18)_
+- [[cursive]] — Cursive _(score 26.9)_
+- [[tui]] — Ratatui _(score 26.9)_
+- [[programming/rust/gui/pake|pake]] — Pake _(score 23.6)_
+- [[rtic]] — RTIC _(score 14.7)_
+- [[ink]] — INK _(score 13.8)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#cli` `#rust` `#programming` `#command` `#clap` `#line` `#cursive`

@@ -1,7 +1,7 @@
 ---
 title: OLMo - Open Language Models
 main_link: https://github.com/allenai/OLMo?tab=readme-ov-file
-keywords: [olmo, models, llm, ml, language, mix, dolmino]
+keywords: [olmo, models, llm, ml, mix, dolmino]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[ollama]] — Ollama _(score 20)_
-- [[jetbrains_mellum]] — Test the function _(score 18)_
-- [[deepseek]] — Deepseek _(score 18)_
-- [[alicemind_mplug_2_0]] — AliceMind - mplug 2.0 _(score 18)_
-- [[llama_2]] — LLAMA _(score 18)_
+- [[jetbrains_mellum]] — Test the function _(score 27.5)_
+- [[deepseek]] — Deepseek _(score 27.5)_
+- [[mplug]] — mPLUG _(score 27.5)_
+- [[llama_2]] — LLAMA _(score 27.5)_
+- [[alicemind_mplug_2_0]] — AliceMind - mplug 2.0 _(score 27.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#olmo` `#models` `#llm` `#ml` `#language` `#open` `#mix` `#dolmino`

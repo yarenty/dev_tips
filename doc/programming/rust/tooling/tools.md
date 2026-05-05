@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[ripgrep]] — ripgrep _(score 38)_
-- [[difftastic]] — difftastic _(score 38)_
-- [[starship]] — starship _(score 33)_
-- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 33)_
-- [[bandwhich]] — Bandwhich _(score 33)_
+- [[ripgrep]] — ripgrep _(score 35.3)_
+- [[difftastic]] — difftastic _(score 29.4)_
+- [[topgrade]] — topgrade _(score 26.4)_
+- [[starship]] — starship _(score 26.4)_
+- [[watchexec]] — watchexec _(score 26.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#tools` `#tooling` `#rust` `#programming` `#crates` `#linux` `#ripgrep` `#windows`

@@ -1,7 +1,7 @@
 ---
 title: delta
 main_link: https://github.com/dandavison/delta
-keywords: [git-delta, git, dandavison, brew, install, installation]
+keywords: [git-delta, git, dandavison, brew]
 status: draft
 ---
 
@@ -28,14 +28,12 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[vitis]] — Vitis _(score 10)_
-- [[github]] — Github README _(score 8)_
-- [[config]] — GIT configuration _(score 8)_
-- [[visualization/grafana|grafana]] — Grafana _(score 5)_
-- [[rust_in_jupyter]] — RUST in JUPYTER _(score 5)_
+- [[config]] — GIT configuration _(score 23.8)_
+- [[github]] — Github README _(score 23.8)_
+- [[prometheus]] — prometheus _(score 8.9)_
+- [[workmux]] — Workmux _(score 7.8)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#git-delta` `#git` `#dandavison` `#brew` `#install` `#installation`

@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[mindsdb]] — MindsDB _(score 28)_
-- [[dspy]] — DSPy _(score 23)_
-- [[mlgo_llvm]] — MLGO _(score 15)_
-- [[ml/bigquery/links|links]] — Links _(score 15)_
-- [[articles]] — Articles _(score 15)_
+- [[mindsdb]] — MindsDB _(score 41.7)_
+- [[dspy]] — DSPy _(score 36.8)_
+- [[mlgo_llvm]] — MLGO _(score 27.0)_
+- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[articles]] — Articles _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#mlcube` `#frameworks` `#ml` `#models` `#machine` `#learning` `#software`

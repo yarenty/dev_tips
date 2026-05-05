@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[tract]] — tract _(score 15)_
-- [[cursor]] — Cursor _(score 15)_
-- [[demo_overview]] — DEMO _(score 15)_
-- [[lstr]] — lstr _(score 13)_
-- [[weektodo]] — WeekToDo _(score 13)_
+- [[weektodo]] — WeekToDo _(score 25.7)_
+- [[lstr]] — lstr _(score 25.7)_
+- [[cursor]] — Cursor _(score 15.0)_
+- [[demo_overview]] — DEMO _(score 15.0)_
+- [[tract]] — tract _(score 15.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#superfile` `#design` `#tools` `#file` `#panel` `#select` `#mode`

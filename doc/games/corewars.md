@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[zxspectrum]] — Rust ZX _(score 8)_
-- [[game_in_scala]] — GAME in Scala _(score 8)_
-- [[engines]] — Engines _(score 8)_
-- [[low_level_structures]] — HalfBrown _(score 5)_
-- [[reflection]] — reflect _(score 5)_
+- [[zxspectrum]] — Rust ZX _(score 23.4)_
+- [[game_in_scala]] — GAME in Scala _(score 23.4)_
+- [[low_level_structures]] — HalfBrown _(score 18.0)_
+- [[reflection]] — reflect _(score 18.0)_
+- [[engines]] — Engines _(score 11.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#corewars` `#games` `#mov` `#mars` `#jmp` `#core`

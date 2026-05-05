@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rustdesk]] — RustDesk! _(score 10)_
-- [[dfdx]] — dfdx _(score 5)_
-- [[lstr]] — lstr _(score 5)_
-- [[sqlflow]] — SQLFlow _(score 5)_
-- [[candle]] — Candle _(score 5)_
+- [[rustdesk]] — RustDesk! _(score 22.8)_
+- [[sqlflow]] — SQLFlow _(score 15.0)_
+- [[dfdx]] — dfdx _(score 15.0)_
+- [[candle]] — Candle _(score 15.0)_
+- [[lstr]] — lstr _(score 15.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#mtr` `#networking` `#tools` `#each` `#network` `#between` `#host`

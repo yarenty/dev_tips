@@ -28,12 +28,11 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[algorithms]] — Algorithms _(score 18)_
-- [[brainfuck]] — Brainfuck _(score 8)_
-- [[rust_brain]] — Rust - brain _(score 8)_
+- [[brainfuck]] — Brainfuck _(score 23.8)_
+- [[rust_brain]] — Rust - brain _(score 23.8)_
+- [[algorithms]] — Algorithms _(score 23.8)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#sleepsort` `#funny` `#sort` `#sleep` `#sorting` `#list`

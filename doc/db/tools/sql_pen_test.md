@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[demo_overview]] — DEMO _(score 15)_
-- [[sqlflow]] — SQLFlow _(score 13)_
-- [[quary]] — Quary _(score 13)_
-- [[indexing]] — Indexing _(score 13)_
-- [[dfdx]] — dfdx _(score 5)_
+- [[sqlflow]] — SQLFlow _(score 23.5)_
+- [[quary]] — Quary _(score 23.5)_
+- [[indexing]] — Indexing _(score 23.5)_
+- [[demo_overview]] — DEMO _(score 15.0)_
+- [[dfdx]] — dfdx _(score 15.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#sql-pen-test` `#tools` `#db` `#sqlmapproject` `#screenshots` `#switches` `#wiki`

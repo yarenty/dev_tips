@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[engines]] — Engines _(score 8)_
-- [[corewars]] — Core Wars _(score 8)_
-- [[zxspectrum]] — Rust ZX _(score 8)_
-- [[uipath]] — Uipath _(score 5)_
-- [[deepseek]] — Deepseek _(score 5)_
+- [[corewars]] — Core Wars _(score 23.4)_
+- [[zxspectrum]] — Rust ZX _(score 23.4)_
+- [[uipath]] — Uipath _(score 20.2)_
+- [[deepseek]] — Deepseek _(score 20.2)_
+- [[engines]] — Engines _(score 11.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#game-in-scala` `#games` `#game` `#scala` `#regblanc` `#blog`

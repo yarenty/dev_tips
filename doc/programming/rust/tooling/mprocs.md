@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/tooling/zellij|zellij]] — zellij - replacement of tmux - with colors and stuff _(score 28)_
-- [[dusk_replacement_of_du]] — dusk  - replacement of du _(score 23)_
-- [[rtic]] — RTIC _(score 20)_
-- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 18)_
-- [[loki]] — Loki _(score 18)_
+- [[programming/rust/tooling/zellij|zellij]] — zellij - replacement of tmux - with colors and stuff _(score 37.6)_
+- [[dusk_replacement_of_du]] — dusk  - replacement of du _(score 30.8)_
+- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 23.0)_
+- [[loki]] — Loki _(score 23.0)_
+- [[tools/linux/tmux|tmux]] — TMUX _(score 18.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#mprocs-replacement-of-tmux-for-long-running-processes` `#tooling` `#rust` `#programming` `#mprocs` `#replacement` `#tmux` `#long`

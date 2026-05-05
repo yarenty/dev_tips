@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[ml/agents/response|response]] — Response _(score 43)_
-- [[agentic_ai_memory]] — Task _(score 40)_
-- [[ml/memory/response|response]] — Response _(score 40)_
-- [[task]] — Task _(score 33)_
-- [[episodic_memory]] — Episodic Memory _(score 25)_
+- [[ml/agents/response|response]] — Response _(score 47.4)_
+- [[ml/memory/response|response]] — Response _(score 44.4)_
+- [[agentic_ai_memory]] — Task _(score 44.4)_
+- [[episodic_memory]] — Episodic Memory _(score 38.5)_
+- [[task]] — Task _(score 36.3)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#memory` `#agents` `#ml` `#retrieval` `#llms` `#systems` `#rag`

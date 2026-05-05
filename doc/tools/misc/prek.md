@@ -1,7 +1,7 @@
 ---
 title: Prek
 main_link: https://github.com/j178/prek
-keywords: [prek, misc, tools, hooks, install, cargo, commit]
+keywords: [prek, misc, tools, hooks, cargo, commit]
 status: draft
 ---
 
@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rust_must]] — Bacon _(score 33)_
-- [[license]] — License _(score 15)_
-- [[rtic]] — RTIC _(score 15)_
-- [[license_2]] — License _(score 15)_
-- [[workmux]] — Workmux _(score 13)_
+- [[rust_must]] — Bacon _(score 48.2)_
+- [[workmux]] — Workmux _(score 24.0)_
+- [[rtic]] — RTIC _(score 17.0)_
+- [[license_2]] — License _(score 15.0)_
+- [[license]] — License _(score 15.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#prek` `#misc` `#tools` `#hooks` `#install` `#cargo` `#commit`

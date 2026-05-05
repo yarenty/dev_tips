@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/sql_engine/sqlparser|sqlparser]] — SQLparser _(score 40)_
-- [[gluesql]] — GlueSQL _(score 38)_
-- [[barrel]] — barrel _(score 28)_
-- [[mobc]] — mobc _(score 28)_
-- [[refinery]] — refinery _(score 28)_
+- [[programming/rust/sql_engine/sqlparser|sqlparser]] — SQLparser _(score 39.6)_
+- [[refinery]] — refinery _(score 30.1)_
+- [[mobc]] — mobc _(score 30.1)_
+- [[barrel]] — barrel _(score 30.1)_
+- [[gluesql]] — GlueSQL _(score 30.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#sqlparser` `#data` `#rust` `#programming` `#sql` `#parser` `#crate` `#specific`

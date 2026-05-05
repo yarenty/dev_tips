@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/gui/tauri|tauri]] — Tauri _(score 25)_
-- [[diesel]] — diesel _(score 20)_
-- [[rtic]] — RTIC _(score 20)_
-- [[loki]] — Loki _(score 18)_
-- [[starship]] — starship _(score 18)_
+- [[diesel]] — diesel _(score 31.8)_
+- [[starship]] — starship _(score 23.0)_
+- [[loki]] — Loki _(score 23.0)_
+- [[programming/rust/gui/tauri|tauri]] — Tauri _(score 22.4)_
+- [[db]] — diesel _(score 14.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#tauri` `#tooling` `#rust` `#programming` `#app` `#guides` `#started` `#setup`

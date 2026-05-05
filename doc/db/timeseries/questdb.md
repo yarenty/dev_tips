@@ -1,7 +1,7 @@
 ---
 title: QuestDB
 main_link: https://github.com/questdb/questdb
-keywords: [questdb, time-series, db, time, sql, series, a8umf64rbs8]
+keywords: [questdb, time-series, db, time, sql, a8umf64rbs8]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[db/timeseries/greptimedb|greptimedb]] — GreptimeDB _(score 23)_
-- [[druid]] — Druid _(score 18)_
-- [[time_series_transformer]] — Time Series Transformer _(score 15)_
-- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 15)_
-- [[time_series_research_papers]] — Time series research papers _(score 15)_
+- [[db/timeseries/greptimedb|greptimedb]] — GreptimeDB _(score 32.7)_
+- [[druid]] — Druid _(score 26.1)_
+- [[time_series_research_papers]] — Time series research papers _(score 24.3)_
+- [[ml/time_series/papers|papers]] — Papers _(score 24.3)_
+- [[time_series_transformer]] — Time Series Transformer _(score 24.3)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#questdb` `#timeseries` `#db` `#time` `#sql` `#series` `#a8umf64rbs8`

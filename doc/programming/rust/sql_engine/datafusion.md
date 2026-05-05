@@ -1,7 +1,7 @@
 ---
 title: Datafusion SQL Query Planner
 main_link: https://github.com/apache/arrow-datafusion/tree/master/datafusion/sql
-keywords: [datafusion, sql-engine, rust, programming, sql, query, planner, logical]
+keywords: [datafusion, sql-engine, rust, programming, sql, planner, logical]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/sql_engine/sqlparser|sqlparser]] — SQLparser _(score 38)_
-- [[roapi]] — ROAPI _(score 28)_
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 25)_
-- [[diesel]] — diesel _(score 23)_
-- [[qpml]] — QPML _(score 23)_
+- [[programming/rust/sql_engine/sqlparser|sqlparser]] — SQLparser _(score 34.7)_
+- [[roapi]] — ROAPI _(score 29.7)_
+- [[qpml]] — QPML _(score 23.8)_
+- [[diesel]] — diesel _(score 23.8)_
+- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 19.6)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#datafusion` `#sql-engine` `#rust` `#programming` `#sql` `#query` `#planner` `#logical`

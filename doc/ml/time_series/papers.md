@@ -1,7 +1,7 @@
 ---
 title: Papers
 main_link: https://www.connectedpapers.com/main/dcc9308f2b9879e9fecff30108faa544d977a73c/A-Framework-for-Pattern-Mining-and-Anomaly-Detection-in-Multi%20dimensional-Time-Series-and-Event-Logs/graph
-keywords: [papers, time-series, ml, time, series, frameworks, pattern]
+keywords: [papers, time-series, ml, time, frameworks, pattern]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[time_series_research_papers]] — Time series research papers _(score 43)_
-- [[time_series_transformer]] — Time Series Transformer _(score 23)_
-- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 23)_
-- [[time_serie_transformer]] — Transformers _(score 23)_
-- [[linear_regression]] — Linear Regression With Time Series _(score 23)_
+- [[time_series_research_papers]] — Time series research papers _(score 45.4)_
+- [[time_serie_transformer]] — Transformers _(score 30.6)_
+- [[time_series_transformer]] — Time Series Transformer _(score 30.6)_
+- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 24.0)_
+- [[linear_regression]] — Linear Regression With Time Series _(score 24.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#papers` `#time-series` `#ml` `#time` `#series` `#framework` `#pattern`

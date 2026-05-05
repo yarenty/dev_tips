@@ -26,14 +26,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[visualization/grafana|grafana]] — Grafana _(score 15)_
-- [[prometheus]] — prometheus _(score 13)_
-- [[node_exporter]] — node_exporter _(score 8)_
-- [[openobserve]] — OpenObserve _(score 8)_
-- [[programming/rust/tooling/observability_on_wasm|observability_on_wasm]] — obsetrvability on wasm _(score 5)_
+- [[prometheus]] — prometheus _(score 31.1)_
+- [[openobserve]] — OpenObserve _(score 22.9)_
+- [[node_exporter]] — node_exporter _(score 22.9)_
+- [[visualization/grafana|grafana]] — Grafana _(score 20.9)_
+- [[programming/rust/web/observability_on_wasm|observability_on_wasm]] — obsetrvability on wasm _(score 18.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#grafana` `#observability` `#usr` `#local` `#cfg` `#default`

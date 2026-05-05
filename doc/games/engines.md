@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rtic]] — RTIC _(score 20)_
-- [[zxspectrum]] — Rust ZX _(score 13)_
-- [[starship]] — starship _(score 10)_
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 10)_
-- [[egui]] — egui _(score 10)_
+- [[zxspectrum]] — Rust ZX _(score 24.6)_
+- [[starship]] — starship _(score 16.6)_
+- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 16.6)_
+- [[programming/rust/sql_engine/sqlparser|sqlparser]] — SQLparser _(score 16.6)_
+- [[rtic]] — RTIC _(score 16.6)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#engines` `#games` `#piston` `#bevy` `#rust` `#crates`

@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[tests]] — mockall _(score 28)_
-- [[bandwhich]] — Bandwhich _(score 28)_
-- [[rtic]] — RTIC _(score 25)_
-- [[starship]] — starship _(score 23)_
-- [[debug]] — Debug _(score 23)_
+- [[tests]] — mockall _(score 35.3)_
+- [[bandwhich]] — Bandwhich _(score 34.1)_
+- [[starship]] — starship _(score 26.4)_
+- [[debug]] — Debug _(score 26.4)_
+- [[tracing]] — Tracing _(score 19.3)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#turmoil` `#tooling` `#rust` `#programming` `#crates` `#tokio` `#network` `#written`

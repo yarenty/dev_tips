@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[ios]] — Ios _(score 13)_
-- [[osx_tricks]] — Jail-break from not opening on OSX _(score 13)_
-- [[utm]] — UTM _(score 13)_
-- [[sniffnet]] — sniffnet _(score 10)_
-- [[dfdx]] — dfdx _(score 5)_
+- [[osx_tricks]] — Jail-break from not opening on OSX _(score 26.8)_
+- [[sniffnet]] — sniffnet _(score 23.2)_
+- [[dfdx]] — dfdx _(score 15.0)_
+- [[utm]] — UTM _(score 14.8)_
+- [[ios]] — Ios _(score 14.8)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#osxcross` `#osx` `#tools` `#sdk` `#clang` `#cross` `#macos`

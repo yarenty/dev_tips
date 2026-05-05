@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[void]] — VOID _(score 13)_
-- [[markitdown]] — Markitdown _(score 13)_
-- [[mdfried]] — Mdfried _(score 13)_
-- [[dfdx]] — dfdx _(score 5)_
-- [[lstr]] — lstr _(score 5)_
+- [[markitdown]] — Markitdown _(score 26.4)_
+- [[mdfried]] — Mdfried _(score 26.4)_
+- [[void]] — VOID _(score 26.4)_
+- [[dfdx]] — dfdx _(score 15.0)_
+- [[lstr]] — lstr _(score 15.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#intellij` `#editors` `#tools` `#video` `#secrets` `#productivity` `#tips`

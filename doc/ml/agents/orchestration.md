@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[memory]] — Memory _(score 28)_
-- [[task]] — Task _(score 23)_
-- [[langgraph]] — langgraph _(score 20)_
-- [[agentic_ai_memory]] — Task _(score 20)_
-- [[ml/agents/response|response]] — Response _(score 18)_
+- [[ml/agents/response|response]] — Response _(score 27.8)_
+- [[task]] — Task _(score 23.5)_
+- [[langgraph]] — langgraph _(score 23.2)_
+- [[agentic_ai_memory]] — Task _(score 18.7)_
+- [[ml/memory/response|response]] — Response _(score 18.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#orchestration` `#agents` `#ml` `#langgraph` `#parallelization` `#llms` `#workflow`

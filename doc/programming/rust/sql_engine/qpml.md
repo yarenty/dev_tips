@@ -1,7 +1,7 @@
 ---
 title: QPML
 main_link: https://github.com/andygrove/qpml
-keywords: [qpml, sql-engine, rust, programming, query, plan, markup, language]
+keywords: [qpml, sql-engine, rust, programming, plan, markup]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[diesel]] — diesel _(score 23)_
-- [[datafusion]] — Datafusion SQL Query Planner _(score 23)_
-- [[roapi]] — ROAPI _(score 23)_
-- [[programming/rust/sql_engine/books|books]] — Books _(score 23)_
-- [[programming/rust/sql_engine/seaquery|seaquery]] — SeaQuery _(score 23)_
+- [[programming/rust/sql_engine/books|books]] — Books _(score 23.8)_
+- [[programming/rust/sql_engine/seaquery|seaquery]] — SeaQuery _(score 23.8)_
+- [[datafusion]] — Datafusion SQL Query Planner _(score 23.8)_
+- [[roapi]] — ROAPI _(score 23.8)_
+- [[diesel]] — diesel _(score 23.8)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#qpml` `#sql-engine` `#rust` `#programming` `#query` `#plan` `#markup` `#language`

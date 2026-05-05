@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[ml/bigquery/links|links]] — Links _(score 20)_
-- [[demo_overview]] — DEMO _(score 15)_
-- [[extensions]] — Extensions _(score 15)_
-- [[articles]] — Articles _(score 15)_
-- [[tract]] — tract _(score 13)_
+- [[ml/bigquery/links|links]] — Links _(score 22.1)_
+- [[tract]] — tract _(score 21.4)_
+- [[demo_overview]] — DEMO _(score 15.0)_
+- [[articles]] — Articles _(score 14.4)_
+- [[extensions]] — Extensions _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#tabby` `#tools` `#ml` `#ide` `#self` `#open` `#cloud`

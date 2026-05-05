@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[cursive]] — Cursive _(score 33)_
-- [[programming/rust/bottom|bottom]] — bottom _(score 28)_
-- [[television]] — Television _(score 28)_
-- [[termion]] — Termion _(score 28)_
-- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 25)_
+- [[cursive]] — Cursive _(score 30.3)_
+- [[termion]] — Termion _(score 27.6)_
+- [[television]] — Television _(score 26.9)_
+- [[programming/rust/bottom|bottom]] — bottom _(score 22.0)_
+- [[indicatif]] — Indicatif _(score 18.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#tui` `#rust` `#programming` `#cursive` `#view` `#crates` `#termion`

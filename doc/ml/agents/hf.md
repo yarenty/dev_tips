@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[smolagents]] — smolagents _(score 28)_
-- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 20)_
-- [[openai]] — OpenAI agents _(score 18)_
-- [[tutorials_2]] — Tutorials _(score 15)_
-- [[ml/bigquery/links|links]] — Links _(score 15)_
+- [[smolagents]] — smolagents _(score 32.4)_
+- [[openai]] — OpenAI agents _(score 30.6)_
+- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 22.1)_
+- [[programming/rust/learning/tutorials|tutorials]] — Tutorials _(score 19.8)_
+- [[ml/bigquery/links|links]] — Links _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#hf` `#agents` `#ml` `#huggingface` `#smolagents` `#docs` `#tutorials`

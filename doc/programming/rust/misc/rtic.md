@@ -1,7 +1,7 @@
 ---
 title: RTIC
 main_link: https://github.com/rtic-rs/cortex-m-rtic
-keywords: [rtic, misc, rust, programming, cortex, real, time, crates]
+keywords: [rtic, misc, rust, programming, cortex, real, crates]
 status: draft
 ---
 
@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[hound]] — Hound _(score 23)_
-- [[windows]] — Windows RS _(score 23)_
-- [[raspberry_pi]] — Rust Embedded - book _(score 23)_
-- [[fun]] — bats _(score 23)_
-- [[daktilo]] — Daktilo _(score 18)_
+- [[fun]] — bats _(score 27.0)_
+- [[windows]] — Windows RS _(score 27.0)_
+- [[hound]] — Hound _(score 27.0)_
+- [[daktilo]] — Daktilo _(score 23.7)_
+- [[raspberry_pi]] — Rust Embedded - book _(score 23.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#rtic` `#misc` `#rust` `#programming` `#cortex` `#real` `#time` `#crates`

@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[starshio]] — Starshio _(score 23)_
-- [[tract]] — tract _(score 15)_
-- [[tools/linux/tmux|tmux]] — TMUX _(score 13)_
-- [[tools/linux/zellij|zellij]] — Zellij _(score 13)_
-- [[tmux_ai]] — Tmux AI _(score 13)_
+- [[tools/linux/tmux|tmux]] — TMUX _(score 24.3)_
+- [[tmux_ai]] — Tmux AI _(score 24.3)_
+- [[starshio]] — Starshio _(score 24.3)_
+- [[tools/linux/zellij|zellij]] — Zellij _(score 24.3)_
+- [[tools/shell/tmux|tmux]] — Tmux _(score 21.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#fish` `#linux` `#tools` `#julia` `#evans` `#reasons` `#shell`

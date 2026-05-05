@@ -1,7 +1,7 @@
 ---
 title: Vitis
 main_link: https://support.xilinx.com/s/article/76616?language=en_US
-keywords: [vitis, xilinx, dpu, linux, install, installation, mine]
+keywords: [vitis, xilinx, dpu, linux, mine]
 status: draft
 ---
 
@@ -25,8 +25,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
+- [[tools/linux/tmux|tmux]] — TMUX _(score 17.2)_
+- [[trace]] — Trippy _(score 17.2)_
+- [[limbo]] — Limbo _(score 5.2)_
+- [[programming/rust/tooling/tools|tools]] — coreutils _(score 5.2)_
+- [[terminals]] — Project Summary: Byobu, Mosh, Xpra _(score 5.2)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
 `#vitis` `#xilinx` `#dpu` `#linux` `#install` `#installation` `#mine`

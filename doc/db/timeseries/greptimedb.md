@@ -1,7 +1,7 @@
 ---
 title: GreptimeDB
 main_link: https://github.com/GreptimeTeam/greptimedb
-keywords: [greptimedb, time-series, db, time, series, distributed, greptimeteam]
+keywords: [greptimedb, time-series, db, time, distributed, greptimeteam]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/data/greptimedb|greptimedb]] — GreptimeDB _(score 35)_
-- [[questdb]] — QuestDB _(score 23)_
-- [[druid]] — Druid _(score 18)_
-- [[time_series_transformer]] — Time Series Transformer _(score 15)_
-- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 15)_
+- [[programming/rust/data/greptimedb|greptimedb]] — GreptimeDB _(score 37.2)_
+- [[questdb]] — QuestDB _(score 32.7)_
+- [[druid]] — Druid _(score 26.1)_
+- [[time_series_transformer]] — Time Series Transformer _(score 24.3)_
+- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 17.6)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#greptimedb` `#timeseries` `#db` `#time` `#series` `#distributed` `#greptimeteam`

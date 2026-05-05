@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rsllm]] — rsllm _(score 23)_
-- [[ollama]] — Ollama _(score 23)_
-- [[rtic]] — RTIC _(score 20)_
-- [[extensions]] — Extensions _(score 18)_
-- [[providers]] — providers _(score 18)_
+- [[rsllm]] — rsllm _(score 30.5)_
+- [[ollama]] — Ollama _(score 30.5)_
+- [[extensions]] — Extensions _(score 29.3)_
+- [[providers]] — providers _(score 29.3)_
+- [[llama_2]] — LLAMA _(score 18.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#rig` `#runtimes` `#llm` `#ml` `#rust` `#crate` `#api` `#reference`

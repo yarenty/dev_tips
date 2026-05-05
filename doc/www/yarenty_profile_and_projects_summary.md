@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[system_prompt]] — System Prompt _(score 5)_
-- [[watchexec]] — watchexec _(score 5)_
-- [[dspy]] — DSPy _(score 5)_
-- [[candle]] — Candle _(score 5)_
-- [[cuda]] — CUDA in Rust _(score 5)_
+- [[system_prompt]] — System Prompt _(score 20.9)_
+- [[watchexec]] — watchexec _(score 19.8)_
+- [[dspy]] — DSPy _(score 19.8)_
+- [[candle]] — Candle _(score 19.8)_
+- [[cuda]] — CUDA in Rust _(score 19.8)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#yarenty-profile-and-projects-summary` `#cuda` `#yarenty` `#software` `#cosmic`

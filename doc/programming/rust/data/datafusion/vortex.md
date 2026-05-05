@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[iceberg]] — Iceberg _(score 23)_
-- [[blaze]] — blaze _(score 23)_
-- [[delta]] — DeltaLake _(score 23)_
-- [[gluten]] — gluten _(score 18)_
-- [[rapids]] — Spark rapids _(score 18)_
+- [[blaze]] — blaze _(score 32.2)_
+- [[delta]] — DeltaLake _(score 32.2)_
+- [[iceberg]] — Iceberg _(score 32.2)_
+- [[gluten]] — gluten _(score 26.4)_
+- [[rapids]] — Spark rapids _(score 26.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#vortex` `#datafusion` `#data` `#rust` `#apache` `#arrow` `#encodings` `#file`

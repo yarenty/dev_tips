@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rathole]] — rathole _(score 18)_
-- [[ngrok]] — NGrok - Free Firewall Tunnel _(score 13)_
-- [[web_to_app_pake]] — Pake _(score 13)_
-- [[tools/security/pake|pake]] — Pake _(score 13)_
-- [[port_scan]] — RustScan _(score 13)_
+- [[rathole]] — rathole _(score 33.4)_
+- [[web_to_app_pake]] — Pake _(score 25.7)_
+- [[ngrok]] — NGrok - Free Firewall Tunnel _(score 25.7)_
+- [[tools/security/pake|pake]] — Pake _(score 25.7)_
+- [[port_scan]] — RustScan _(score 25.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#sniffnet` `#security` `#tools` `#gyulyvgc` `#application` `#internet` `#cross`

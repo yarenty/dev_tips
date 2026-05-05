@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[byobu]] — Byobu: Text-based Window Manager and Terminal Multiplexer _(score 5)_
-- [[terminals]] — Project Summary: Byobu, Mosh, Xpra _(score 5)_
-- [[joshuto]] — joshuto _(score 5)_
-- [[egui]] — egui _(score 5)_
-- [[mosh]] — Mosh _(score 5)_
+- [[egui]] — egui _(score 20.2)_
+- [[terminals]] — Project Summary: Byobu, Mosh, Xpra _(score 18.9)_
+- [[mosh]] — Mosh _(score 18.9)_
+- [[joshuto]] — joshuto _(score 18.9)_
+- [[byobu]] — Byobu: Text-based Window Manager and Terminal Multiplexer _(score 18.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#term` `#demo` `#presenterm` `#presentations` `#format` `#terminal`

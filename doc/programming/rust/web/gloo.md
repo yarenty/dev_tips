@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[webassembly]] — WASM _(score 33)_
-- [[rtic]] — RTIC _(score 20)_
-- [[rocket]] — Rocket _(score 18)_
-- [[yew]] — YEW _(score 18)_
-- [[tungstenite]] — Tungstenite _(score 18)_
+- [[webassembly]] — WASM _(score 33.0)_
+- [[tungstenite]] — Tungstenite _(score 24.1)_
+- [[rocket]] — Rocket _(score 24.1)_
+- [[rtic]] — RTIC _(score 14.7)_
+- [[assembly]] — Assembly _(score 13.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#gloo` `#web` `#rust` `#programming` `#apis` `#libraries` `#toolkit` `#wasm`

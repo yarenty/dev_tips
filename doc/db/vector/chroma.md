@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[llama_2]] — LLAMA _(score 15)_
-- [[memory]] — Memory _(score 15)_
-- [[qdrant]] — qdrant _(score 13)_
-- [[inspectus]] — Inspectus _(score 10)_
-- [[barman]] — Barman: PostgreSQL Backup and Recovery Manager _(score 10)_
+- [[qdrant]] — qdrant _(score 28.2)_
+- [[barman]] — Barman: PostgreSQL Backup and Recovery Manager _(score 22.0)_
+- [[inspectus]] — Inspectus _(score 21.8)_
+- [[qdrant_vector_search]] — qdrant _(score 19.8)_
+- [[postgresql]] — postgresql _(score 16.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#chroma` `#vector` `#db` `#python` `#llm` `#fully` `#open`

@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[k3s]] — K3S _(score 13)_
-- [[dokku]] — Dokku _(score 8)_
-- [[akri]] — Akri _(score 8)_
-- [[kuasar]] — Kuasar _(score 8)_
-- [[iot/mqtt|mqtt]] — IoT mqtt _(score 5)_
+- [[kuasar]] — Kuasar _(score 23.4)_
+- [[dokku]] — Dokku _(score 23.4)_
+- [[akri]] — Akri _(score 23.4)_
+- [[messaging/mqtt|mqtt]] — MQTT _(score 18.6)_
+- [[iot/mqtt|mqtt]] — IoT mqtt _(score 18.6)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#balena` `#kubernetes` `#iot` `#fleet` `#flexible` `#built`

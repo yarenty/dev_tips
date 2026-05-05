@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[mplug_owl]] — mPLUG-Owl _(score 43)_
-- [[alicemind_mplug_2_0]] — AliceMind - mplug 2.0 _(score 38)_
-- [[jetbrains_mellum]] — Test the function _(score 18)_
-- [[deepseek]] — Deepseek _(score 18)_
-- [[olmo]] — OLMo - Open Language Models _(score 18)_
+- [[mplug_owl]] — mPLUG-Owl _(score 53.5)_
+- [[alicemind_mplug_2_0]] — AliceMind - mplug 2.0 _(score 44.6)_
+- [[jetbrains_mellum]] — Test the function _(score 27.5)_
+- [[deepseek]] — Deepseek _(score 27.5)_
+- [[olmo]] — OLMo - Open Language Models _(score 27.5)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#mplug` `#models` `#llm` `#ml` `#plug` `#owl` `#alicemind` `#docowl`

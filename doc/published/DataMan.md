@@ -23,8 +23,16 @@ status: draft
 
 ## Internal links
 
-<!-- TODO: at least 2 [[wikilinks]] to related articles in this vault. -->
+<!-- internal-links-suggested by P6.3 -->
+> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
+- [[data_interpreter]] — Data Interpreter _(score 28.0)_
+- [[data_quality]] — Data Quality _(score 23.4)_
+- [[xorg]] — xorg _(score 15.2)_
+- [[articles]] — Articles _(score 15.2)_
+- [[adbc]] — ADBC ! _(score 15.2)_
+
+<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
 `#dataman` `#published` `#data` `#quality` `#criteria` `#domain`

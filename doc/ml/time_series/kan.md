@@ -1,7 +1,7 @@
 ---
 title: Kolmogorov-Arnold Networks (KANs) for Time Series Forecasting
 main_link: https://towardsdatascience.com/kolmogorov-arnold-networks-kans-for-time-series-forecasting-9d49318c3172
-keywords: [kan, time-series, ml, kolmogorov, arnold, forecasting, time]
+keywords: [kan, time-series, ml, kolmogorov, arnold, forecasting]
 status: draft
 ---
 
@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[forecasting]] — forecasting _(score 28)_
-- [[ml/bigquery/links|links]] — Links _(score 20)_
-- [[time_series_transformer]] — Time Series Transformer _(score 18)_
-- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 18)_
-- [[time_series_research_papers]] — Time series research papers _(score 18)_
+- [[forecasting]] — forecasting _(score 32.9)_
+- [[ml/time_series/papers|papers]] — Papers _(score 24.0)_
+- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 24.0)_
+- [[time_series_research_papers]] — Time series research papers _(score 24.0)_
+- [[time_series_transformer]] — Time Series Transformer _(score 24.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#kan` `#time-series` `#ml` `#kolmogorov` `#arnold` `#forecasting` `#time`

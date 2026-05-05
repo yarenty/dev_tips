@@ -1,7 +1,7 @@
 ---
 title: Github MAP
 main_link: https://anvaka.github.io/map-of-github
-keywords: [github-map, learning, rust, programming, map, anvaka]
+keywords: [github-map, learning, rust, programming, anvaka]
 status: draft
 ---
 
@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[rtic]] — RTIC _(score 20)_
-- [[_todo_ideas]] — Move blokchain from python to rust _(score 18)_
-- [[from_easy_to_advanced]] — from easier to advanced 1-by-1 _(score 18)_
-- [[scope]] — Scope _(score 18)_
-- [[xc_in_rust]] — XC in Rust _(score 18)_
+- [[xc_in_rust]] — XC in Rust _(score 23.5)_
+- [[from_easy_to_advanced]] — from easier to advanced 1-by-1 _(score 23.5)_
+- [[scope]] — Scope _(score 23.5)_
+- [[_todo_ideas]] — Move blokchain from python to rust _(score 23.5)_
+- [[rtic]] — RTIC _(score 14.7)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#github-map` `#learning` `#rust` `#programming` `#map` `#anvaka`

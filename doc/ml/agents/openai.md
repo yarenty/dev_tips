@@ -28,14 +28,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[ml/agents/response|response]] — Response _(score 23)_
-- [[hf]] — Hf _(score 18)_
-- [[emdash]] — Emdash _(score 18)_
-- [[ml/bigquery/links|links]] — Links _(score 15)_
-- [[articles]] — Articles _(score 15)_
+- [[emdash]] — Emdash _(score 31.7)_
+- [[ml/agents/response|response]] — Response _(score 23.5)_
+- [[hf]] — Hf _(score 18.6)_
+- [[ml/bigquery/links|links]] — Links _(score 14.4)_
+- [[ml/memory/response|response]] — Response _(score 14.4)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#openai` `#agents` `#ml` `#platform` `#docs` `#guides` `#function`

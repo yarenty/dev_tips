@@ -1,7 +1,7 @@
 ---
 title: HyperFS
 main_link: https://crates.io/crates/hyperfs
-keywords: [hyperfs, web, rust, programming, crates, server]
+keywords: [hyperfs, web, rust, programming, crates]
 status: draft
 ---
 
@@ -30,14 +30,13 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[http]] — Hyper _(score 33)_
-- [[rtic]] — RTIC _(score 25)_
-- [[tungstenite]] — Tungstenite _(score 23)_
-- [[html]] — kuchiki _(score 23)_
-- [[rewquest]] — Rewquest _(score 23)_
+- [[tungstenite]] — Tungstenite _(score 27.5)_
+- [[rewquest]] — Rewquest _(score 27.5)_
+- [[http]] — Hyper _(score 27.5)_
+- [[html]] — kuchiki _(score 27.5)_
+- [[rtic]] — RTIC _(score 18.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-
 ## Keywords
 
 `#hyperfs` `#web` `#rust` `#programming` `#crates` `#simple` `#server` `#files`
