@@ -1,56 +1,85 @@
 ---
-title: Approximate Continuous Querying  over Distributed Streams
-main_link: http://www.cs.rutgers.edu/~muthu/massdal-code-index.html
-keywords: [approximate-continuous-querying-over-distributed-streams, streaming-query-approximation, streaming, tracking, sketch, approximate, querying, distributed, streams]
-status: draft
+title: Approximate Continuous Querying over Distributed Streams (Cormode & Garofalakis 2008)
+main_link: https://doi.org/10.1145/1366102.1366106
+keywords: [aqp, sketches, distributed-streams, continuous-queries, cormode, garofalakis, paper-notes]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Approximate Continuous Querying over Distributed Streams (Cormode & Garofalakis 2008)
 
-# Approximate Continuous Querying  over Distributed Streams
-
-**Main link:** <http://www.cs.rutgers.edu/~muthu/massdal-code-index.html>
+**Main link:** <https://doi.org/10.1145/1366102.1366106>
+**Authors:** Graham Cormode, Minos Garofalakis
+**Venue:** ACM Transactions on Database Systems, 33(2), Article 9 (June 2008), pp. 1–39
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+A foundational 2008 paper that tackles **continuous tracking of complex
+aggregate queries** (joins, multi-joins, wavelet representations) over
+physically **distributed data streams**. The setting: many remote monitor
+sites, each seeing its own stream, with a coordinator that needs an
+up-to-date approximate answer to a global query — and the network between
+them is the precious resource.
+
+The key idea is to keep, at each remote site, both a **randomized sketch
+summary** of the local stream and a **prediction model** of how that site's
+data is expected to evolve. A site only forwards an update to the coordinator
+when its real sketch diverges from the predicted one by more than a
+configured tolerance. The result: provably bounded error on the global
+answer, with dramatically less communication than a naive "forward every
+update" baseline. Experiments on real data show the analytical worst-case
+bounds are loose and savings are typically much larger in practice.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+- **Why this paper still matters.** It's one of the canonical references for
+  the sketch + prediction-model architecture that shows up under different
+  names everywhere from network-monitoring systems to modern observability
+  pipelines. If you're designing anything where remote agents summarize a
+  stream and a central system needs a fresh aggregate, this paper is the
+  primary background read.
+- **What's clever.** Two things compose: (a) sketches are *linear* — you can
+  combine, subtract, and predict with them — and (b) the prediction model
+  lets each site stay quiet during "boring" intervals. Together they
+  decouple update *rate* from communication *rate*.
+- **Limits.** The communication bounds depend on how predictable the
+  per-site streams are. Adversarial / very bursty streams collapse back to
+  near the naive baseline. Also, sketches have fixed query classes
+  (frequency moments, joins, point queries) — exotic queries don't fit.
+- **Modern echoes.** Apache DataSketches (theta-sketches, KLL quantiles)
+  productionizes the same family of algorithms; Druid, ClickHouse, and
+  Snowflake all expose sketch aggregates today. The distributed-tracking
+  *protocol* in this paper is less commonly implemented end-to-end, but the
+  ideas surface in adaptive metric-collection systems and in some
+  Materialize/RisingWave optimizations.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[papers]] — broader AQP reading list (Das thesis, Liu encyclopedia entry,
+  Li & Li 2018 survey).
+- [[druid]] — production OLAP engine that exposes Theta / HLL / Quantiles
+  sketches as first-class aggregates.
+- [[db/streaming/streaming_query_approximation/README|streaming_query_approximation]] —
+  parent folder.
+- [[cdc]] — distinct but related: CDC ships *exact* changes; AQP ships
+  bounded-error summaries.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[db/streaming/streaming_query_approximation/papers|papers]] — Papers _(score 45.6)_
-- [[noria]] — Noria: data-flow for high-performance web applications _(score 18.4)_
-- [[streaming]] — par-stream _(score 14.7)_
-- [[trustfall]] — Trustfall _(score 8.9)_
-- [[kafka]] — Kafka _(score 8.2)_
+- [[papers]] — sibling reading list.
+- [[db/streaming/streaming_query_approximation/README|streaming_query_approximation]] —
+  parent.
+- [[db/streaming/README|streaming]] — wider section.
+- [[druid]] — practical sketch-using OLAP engine.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#approximate-continuous-querying-over-distributed-streams` `#streaming-query-approximation` `#streaming` `#db` `#tracking` `#sketch` `#distributed` `#data`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#aqp` `#sketches` `#distributed-streams` `#continuous-queries` `#paper-notes` `#cormode` `#garofalakis`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+<!-- Full paper transcription preserved verbatim below for reference. -->
 
 # Approximate Continuous Querying  over Distributed Streams
 

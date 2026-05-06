@@ -1,56 +1,83 @@
 ---
-title: Noria: data-flow for high-performance web applications
-main_link: https://github.com/mit-pdos/noria#noria-data-flow-for-high-performance-web-applications
-keywords: [noria, streaming, mysql, zookeeper, applications]
-status: draft
+title: Noria — streaming dataflow for materialized views
+main_link: https://github.com/mit-pdos/noria
+keywords: [noria, streaming, dataflow, materialized-views, mysql, mit, readyset, research]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Noria — streaming dataflow for materialized views
 
-# Noria: data-flow for high-performance web applications
-
-**Main link:** <https://github.com/mit-pdos/noria#noria-data-flow-for-high-performance-web-applications>
+**Main link:** <https://github.com/mit-pdos/noria>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Noria is an MIT/PDOS streaming-dataflow system that acts as a fast storage
+backend for read-heavy web applications. It takes a set of parameterized SQL
+queries (think prepared statements), compiles them into a partially-stateful
+dataflow graph, and **maintains the query results as live materialized
+views** so reads become O(1) lookups while writes propagate incrementally
+through the graph. It speaks the MySQL binary protocol so existing apps can
+point at it with no client changes.
+
+Noria came out of **Jon Gjengset's PhD thesis** and the OSDI'18 paper
+*"Noria: dynamic, partially-stateful data-flow for high-performance web
+applications."* It was later spun out into the commercial **ReadySet**, which
+itself pivoted in 2024.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+- **The ideas are the interesting part, not the code.** The Noria repository
+  is essentially research-quality code (nightly Rust, ZooKeeper for
+  discovery, brittle production story); the *concepts* — partially-stateful
+  dataflow, on-demand materialization, dynamic query addition — are what
+  generations of streaming-DB systems have been mining since.
+- **Don't put it in production.** Noria is effectively abandoned (last
+  meaningful commits 2020–2021), ReadySet pivoted, and the dependency stack
+  (specific nightly Rust + ZooKeeper) makes operating it painful. If you
+  want the *idea* in production today, look at **Materialize**, **RisingWave**,
+  or differential-dataflow-based systems.
+- **When the pattern fits.** Read-heavy web app with a small number of
+  hot, parameterized SQL queries (think the Lobsters/HN/Reddit shape):
+  Noria-style materialized-view caching is dramatically simpler than
+  manually managing a Redis cache with custom invalidation. When the query
+  set is open-ended or analytical, it's the wrong tool.
+- **Comparison points.** Versus [[redis]] (manual cache + manual
+  invalidation): the streaming-DV approach is correct by construction.
+  Versus a stock RDBMS: orders-of-magnitude higher read throughput on the
+  hot path, at the cost of write amplification. Versus Materialize /
+  RisingWave: same family of ideas, much more robust implementations.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[cdc]] — CDC log tailing is the standard way to feed an external
+  Noria-shaped system from an OLTP database.
+- [[redis]] — the manual-invalidation alternative for caching query
+  results.
+- [[postgresql]] — the obvious source of truth Noria-style systems sit in
+  front of.
+- [[mysql]] — Noria specifically speaks the MySQL wire protocol.
+- [[messaging/mqtt|mqtt]] / [[kafka]] — typical streaming inputs to a
+  dataflow-DB system in the wider sense.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[db/relational/mysql|mysql]] — mysql _(score 17.9)_
-- [[programming/rust/data/mysql|mysql]] — mysql _(score 17.9)_
-- [[mariadb]] — MariaDB _(score 17.9)_
-- [[cdc]] — CDC _(score 10.4)_
-- [[deskreen]] — Deskreen _(score 8.9)_
+- [[cdc]] — the change-feed input pattern.
+- [[redis]] — the manual-cache alternative.
+- [[mysql]] — wire-protocol target.
+- [[postgresql]] — likely upstream OLTP source.
+- [[kafka]] — typical streaming transport.
+- [[messaging/mqtt|mqtt]] — lighter-weight streaming input.
+- [[db/streaming/README|streaming]] — parent section.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#noria` `#streaming` `#db` `#mysql` `#server` `#zookeeper` `#data`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#noria` `#streaming` `#dataflow` `#materialized-views` `#mysql` `#mit` `#research` `#readyset`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+<!-- Original content preserved verbatim below. -->
 
 # Noria: data-flow for high-performance web applications
 

@@ -1,57 +1,116 @@
 ---
-title: Papers
-main_link: https://dl.acm.org/doi/10.1145/1366102.1366106
-keywords: [papers, streaming-query-approximation, streaming, approximate, quality, distributed, design, databases]
-status: draft
+title: AQP papers (reading list)
+main_link: https://link.springer.com/article/10.1007/s41019-018-0074-4
+keywords: [aqp, approximate-query-processing, papers, sketches, sampling, streaming, survey]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# AQP papers (reading list)
 
-# Papers
-
-**Main link:** <https://dl.acm.org/doi/10.1145/1366102.1366106>
+**Main link:** <https://link.springer.com/article/10.1007/s41019-018-0074-4>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+A small curated reading list for **Approximate Query Processing** (AQP) over
+data streams: one foundational paper on continuous tracking over distributed
+streams (Cormode & Garofalakis), a 2006 PhD thesis on one-pass algorithms
+(Das), an encyclopedia reference entry (Liu), and a 2018 survey (Li & Li)
+that pulls everything together.
+
+If you only read one of these, read the **Li & Li 2018 survey** — it's the
+shortest path from "what is AQP" to "what techniques exist" with up-to-date
+context.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+AQP papers cluster into three loose categories:
+
+1. **What summary structure?** — sketches (Count-Min, HyperLogLog, AMS,
+   Theta), uniform/stratified sampling, wavelet decompositions, histograms.
+   Each picks a different point on the (error, memory, query class) trade.
+2. **One-pass vs distributed.** Single-machine streams (Das) ask "how do I
+   summarise in one pass?" Distributed streams (Cormode & Garofalakis) add
+   "and how do I keep the *answer* fresh without flooding the network?"
+3. **System integration.** Most production AQP today (Druid, BlinkDB, Snowflake's
+   sample tables, ClickHouse `quantilesTDigest`) bundles a small subset of
+   these techniques behind SQL. The papers explain *why* the production
+   choices look the way they do.
+
+The big practical takeaway: **bounded-error answers are usually fine, and
+they are dramatically cheaper than exact ones.** Most BI dashboards and
+monitoring queries don't need the last decimal place; AQP gives you the
+99%-confidence ±1% answer in a fraction of the cost.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[approximate_continuous_querying_over_distributed_streams]] — deeper notes
+  on the Cormode & Garofalakis paper specifically.
+- [[druid]] — production OLAP engine that ships HLL / Theta / Quantiles
+  sketches as first-class aggregates.
+- Apache DataSketches — production-quality library implementing most of the
+  sketch families mentioned in these papers.
+
+## Reading list
+
+### 1. Cormode & Garofalakis (2008) — Approximate Continuous Querying over Distributed Streams
+
+- **Authors:** Graham Cormode, Minos Garofalakis
+- **Venue:** ACM Transactions on Database Systems, 33(2), Article 9, June 2008
+- **Link:** <https://dl.acm.org/doi/10.1145/1366102.1366106>
+- **DOI:** [10.1145/1366102.1366106](https://doi.org/10.1145/1366102.1366106)
+- **Takeaway:** continuously track aggregate queries (joins, multi-joins,
+  wavelet representations) over physically distributed streams using
+  randomized sketch summaries plus per-site prediction models, with provable
+  error guarantees and dramatically reduced communication cost.
+- **Deeper notes:** [[approximate_continuous_querying_over_distributed_streams]]
+
+### 2. Das (2006) — Approximate Query Answering over Data Streams
+
+- **Author:** Abhinandan Das (advisor: Johannes Gehrke), Cornell University
+- **Venue:** PhD dissertation
+- **Link:** <https://dl.acm.org/doi/book/10.5555/1124067>
+- **Takeaway:** single-pass approximation algorithms for stream queries,
+  including load shedding under bursty input rates, online summarization, and
+  set-expression tracking in a distributed setting — all with provable error
+  bounds.
+
+### 3. Liu — Approximate Query Processing (encyclopedia entry)
+
+- **Author:** Qing Liu
+- **Venue:** Encyclopedia of Database Systems (Springer)
+- **Link:** <https://link.springer.com/referenceworkentry/10.1007/978-0-387-39940-9_534>
+- **DOI:** [10.1007/978-0-387-39940-9_534](https://doi.org/10.1007/978-0-387-39940-9_534)
+- **Takeaway:** short, definitional reference entry — useful as a glossary /
+  cite when introducing AQP in a paper or talk.
+
+### 4. Li & Li (2018) — Approximate Query Processing: What is New and Where to Go?
+
+- **Authors:** Kaiyu Li, Guoliang Li
+- **Venue:** Data Science and Engineering, 3, 379–397 (Springer, 2018)
+- **Link:** <https://link.springer.com/article/10.1007/s41019-018-0074-4>
+- **PDF:** <https://link.springer.com/content/pdf/10.1007/s41019-018-0074-4.pdf>
+- **Takeaway:** modern survey covering offline-sample, online-sample, and
+  ML-based AQP approaches, with the most useful "where to go next" framing
+  of the four. Best starting point if you're new to the area.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[approximate_continuous_querying_over_distributed_streams]] — Approximate Continuous Querying  over Distributed Streams _(score 45.6)_
-- [[ml/time_series/papers|papers]] — Papers _(score 19.1)_
-- [[noria]] — Noria: data-flow for high-performance web applications _(score 18.4)_
-- [[definition]] — Definition _(score 17.9)_
-- [[spark]] — Spark UDF _(score 10.9)_
+- [[approximate_continuous_querying_over_distributed_streams]] — full notes
+  on the first paper above.
+- [[db/streaming/streaming_query_approximation/README|streaming_query_approximation]] —
+  parent folder.
+- [[db/streaming/README|streaming]] — wider section.
+- [[druid]] — production OLAP engine with built-in sketch aggregates.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#papers` `#streaming-query-approximation` `#streaming` `#db` `#approximate` `#query` `#data` `#processing`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#aqp` `#approximate-query-processing` `#papers` `#streaming` `#sketches` `#sampling` `#survey`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
+<!-- Original content preserved verbatim below. -->
 
 
 Approximate continuous querying over distributed streams

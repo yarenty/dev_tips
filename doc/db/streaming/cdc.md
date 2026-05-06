@@ -1,56 +1,84 @@
 ---
-title: CDC
-main_link: https://github.com/apache/flink-cdc
-keywords: [cdc, streaming, debezium, kafka]
-status: draft
+title: CDC (Change Data Capture)
+main_link: https://debezium.io/
+keywords: [cdc, change-data-capture, streaming, debezium, flink-cdc, scylla-cdc, chgcap, kafka]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# CDC (Change Data Capture)
 
-# CDC
-
-**Main link:** <https://github.com/apache/flink-cdc>
+**Main link:** <https://debezium.io/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Change Data Capture (CDC) is the pattern of streaming a database's row-level
+changes out as an event log — typically by tailing the transaction log
+(MySQL binlog, Postgres logical replication, Oracle redo) rather than
+polling. It lets a downstream system (analytics warehouse, search index,
+cache, ML feature store) stay incrementally in sync with an OLTP source
+without touching the source's query path.
+
+The canonical implementation is **Debezium** (Java, on top of Kafka Connect),
+with **Flink CDC** as the streaming-SQL-friendly alternative and Rust-side
+projects like **Scylla CDC Rust** and **chgcap** filling specific niches.
+Notes on each are in the raw-notes section below.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+- **CDC vs polling vs application-level events.** Polling (`SELECT … WHERE
+  updated_at > ?`) is simple but misses deletes, hard-updates, and
+  late-arriving rows. Application-level events (publish on every write) are
+  clean but require discipline across every writer. Log-based CDC is the only
+  approach that captures *every* change with no source-side coupling — at the
+  cost of operating a replication stream.
+- **Delivery semantics.** Most CDC stacks are **at-least-once** by default
+  (you must dedupe downstream by primary key + LSN/offset). At-most-once is
+  almost never what you want. Exactly-once is achievable end-to-end (Flink's
+  two-phase commit sinks, Debezium + Kafka transactional writes) but adds
+  meaningful operational cost — only pay for it when downstream truly cannot
+  dedupe.
+- **Schema evolution is the gotcha.** Adding a column is fine; renames,
+  type narrowings, and dropped columns will break consumers silently if you
+  don't have a schema registry (Avro/Confluent or Protobuf) in front of the
+  pipeline. Plan for this on day one.
+- **When to reach for it.** Replicating an OLTP DB into a warehouse for
+  analytics, hydrating a search index, building a read-heavy materialized
+  cache (see [[noria]]), feeding an event-driven domain layer, or doing
+  zero-downtime DB migrations.
+- **Modern hosted alternatives.** Estuary Flow, Materialize, RisingWave, and
+  Confluent Cloud's connectors all wrap CDC under a higher-level
+  streaming-SQL or pipeline UI; useful if you don't want to operate Kafka
+  Connect yourself.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[noria]] — uses CDC-style log tailing internally to maintain materialized
+  views as cache.
+- [[kafka]] — the usual transport for Debezium-style CDC events.
+- [[redpanda]] — Kafka-API-compatible broker often paired with Debezium.
+- [[pulsar]] — Debezium has Pulsar sink connectors as well.
+- [[postgresql]] — logical replication is the Postgres CDC source.
+- [[mysql]] — binlog is the MySQL CDC source.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[sqlflow]] — SQLFlow _(score 25.1)_
-- [[noria]] — Noria: data-flow for high-performance web applications _(score 22.4)_
-- [[pulsar]] — Pulsar _(score 18.6)_
-- [[kafka]] — Kafka _(score 18.6)_
-- [[kafka]] — Kafka _(score 18.6)_
+- [[noria]] — streaming materialized views; consumes CDC-shaped change feeds.
+- [[kafka]] — broker most CDC pipelines write into.
+- [[pulsar]] — alternative broker.
+- [[redpanda]] — Kafka-protocol broker often used in place of Kafka.
+- [[postgresql]] — Postgres logical-replication source.
+- [[mysql]] — MySQL binlog source.
+- [[db/streaming/README|streaming]] — parent section.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#cdc` `#streaming` `#db` `#debezium` `#kafka` `#data` `#mysql`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#cdc` `#change-data-capture` `#streaming` `#debezium` `#flink-cdc` `#scylla-cdc` `#chgcap` `#kafka` `#mysql` `#postgresql`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+<!-- Original content preserved verbatim below. -->
 
 # CDC
 
