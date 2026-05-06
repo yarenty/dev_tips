@@ -33,7 +33,7 @@ status: draft
 - [[paho_mqtt]] — paho MQTT _(score 32.3)_
 - [[messaging/mqtt|mqtt]] — MQTT _(score 28.3)_
 - [[grpc]] — GRPC _(score 17.1)_
-- [[iot/mqtt|mqtt]] — IoT mqtt _(score 15.2)_
+- [[messaging/mqtt|mqtt]] — MQTT _(score 15.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

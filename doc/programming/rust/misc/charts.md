@@ -31,7 +31,7 @@ status: draft
 
 - [[rtic]] — RTIC _(score 17.1)_
 - [[hound]] — Hound _(score 17.1)_
-- [[programming/rust/misc/drogue|drogue]] — Drogue _(score 17.1)_
+- [[iot/drogue|drogue]] — Drogue _(score 17.1)_
 - [[daktilo]] — Daktilo _(score 17.1)_
 - [[claxon]] — Claxon _(score 17.1)_
 

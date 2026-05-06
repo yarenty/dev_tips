@@ -33,7 +33,7 @@ status: draft
 - [[rtic]] — RTIC _(score 17.1)_
 - [[rodio]] — Rodio _(score 17.1)_
 - [[hound]] — Hound _(score 17.1)_
-- [[programming/rust/misc/drogue|drogue]] — Drogue _(score 17.1)_
+- [[iot/drogue|drogue]] — Drogue _(score 17.1)_
 - [[claxon]] — Claxon _(score 17.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->

@@ -35,7 +35,7 @@ status: draft
 - [[messaging/mqtt|mqtt]] — MQTT _(score 28.3)_
 - [[termion]] — Termion _(score 23.1)_
 - [[iocraft]] — IOCraft _(score 18.8)_
-- [[iot/mqtt|mqtt]] — IoT mqtt _(score 15.2)_
+- [[messaging/mqtt|mqtt]] — MQTT _(score 15.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

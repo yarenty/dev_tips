@@ -140,7 +140,6 @@
       - [charts](programming/rust/misc/charts.md)
       - [Claxon](programming/rust/misc/claxon.md)
       - [Daktilo](programming/rust/misc/daktilo.md)
-      - [Drogue](programming/rust/misc/drogue.md)
       - [Embassy](programming/rust/misc/embassy.md)
       - [bats](programming/rust/misc/fun.md)
       - [Hound](programming/rust/misc/hound.md)
@@ -565,8 +564,7 @@
 # IoT
 
 - [IoT](iot/README.md)
-  - [Drogue](iot/drogue.md)
-  - [IoT mqtt](iot/mqtt.md)
+  - [Drogue IoT (archived)](iot/drogue.md)
   - [Shodan](iot/shodan.md)
 
 # Messaging

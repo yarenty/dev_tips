@@ -32,7 +32,7 @@ status: draft
 - [[anmell]] — anmell _(score 6.0)_
 - [[shodan]] — Shodan _(score 6.0)_
 - [[wireguard]] — Wireguard _(score 6.0)_
-- [[programming/rust/misc/drogue|drogue]] — Drogue _(score 6.0)_
+- [[iot/drogue|drogue]] — Drogue _(score 6.0)_
 - [[sniffnet]] — sniffnet _(score 6.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
