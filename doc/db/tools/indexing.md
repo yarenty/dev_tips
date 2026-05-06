@@ -1,69 +1,84 @@
 ---
-title: Indexing
+title: SQL indexing (Use The Index, Luke)
 main_link: https://use-the-index-luke.com/
-keywords: [indexing, sql, index, luke]
-status: draft
+keywords: [indexing, sql, b-tree, performance, query-tuning, use-the-index-luke, markus-winand]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# Indexing
+# SQL indexing (Use The Index, Luke)
 
 **Main link:** <https://use-the-index-luke.com/>
 
+Book: <https://sql-performance-explained.com/>
+
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+*Use The Index, Luke* is the canonical free web book on **SQL indexing for
+developers** by Markus Winand. It deliberately ignores DBA-flavoured topics
+(storage, partitioning, statistics tuning) and focuses on the part developers
+actually own: writing queries and DDL such that the database can use indexes
+efficiently. It's the web edition of the paid book *SQL Performance
+Explained*; both cover Postgres, Oracle, SQL Server, MySQL, and DB2.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Why this is the recommended starting point:
+
+- **It's developer-shaped, not DBA-shaped.** Most "performance tuning" books
+  drown you in `EXPLAIN` flags and storage parameters. This one starts from
+  "your `WHERE` clause looks like this; here's how the index has to look."
+- **It treats ORMs honestly.** A whole chapter on Hibernate/JPA/etc. — how
+  they generate queries, where the typical anti-patterns come from, how to
+  fix them without dropping to native SQL.
+- **It's database-agnostic** in the way that matters: the B-tree mental model
+  is the same everywhere, and per-engine quirks are called out where they
+  matter.
+
+The mental model worth absorbing first:
+
+1. A B-tree index is a sorted list of `(indexed_columns, row_pointer)`.
+2. For a multi-column index `(a, b, c)`, the database can efficiently use it
+   for `WHERE a = ?`, `WHERE a = ? AND b = ?`, `WHERE a = ? AND b = ? AND c = ?`,
+   *and* for `ORDER BY a, b, c` — but **not** for `WHERE b = ?` alone.
+3. Anything that hides a column behind a function (`WHERE upper(name) = ?`,
+   `WHERE date_trunc('day', ts) = ?`) defeats the index unless you build a
+   matching expression index.
+4. Range predicates (`>`, `<`, `BETWEEN`) terminate the useful prefix — only
+   columns *before* the range in the index key can use equality matching.
+
+If you only ever read one chapter: "The Equality Operator", followed by
+"The Like Operator" (leading `%` defeats indexes; trailing `%` is fine).
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **Markus Winand's blog** — <https://winand.at/> — modern SQL features
+  (window functions, recursive CTEs, etc.) with the same developer focus.
+- **PostgreSQL `EXPLAIN (ANALYZE, BUFFERS)`** — the empirical companion to
+  the theory.
+- **`pg_stat_statements`** — find the queries that actually need indexing.
+- **DuckDB / SQLite query plans** — much simpler optimisers; useful for
+  intuition.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[quary]] — Quary _(score 20.5)_
-- [[toydb]] — toyDB _(score 16.5)_
-- [[questdb]] — QuestDB _(score 16.5)_
-- [[sql_pen_test]] — sqlmap _(score 16.0)_
-- [[sqlflow]] — SQLFlow _(score 16.0)_
+- [[db/tools/README|tools]] — section landing.
+- [[postgresql]] — the most fully-featured open-source target for what this
+  book teaches.
+- [[mysql]] — the other primary target.
+- [[db/relational/README|relational]] — engines these techniques apply to.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#indexing` `#tools` `#db` `#sql` `#index` `#luke` `#performance`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#indexing` `#sql` `#b-tree` `#performance` `#query-tuning` `#use-the-index-luke` `#postgres` `#mysql`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Free web edition: <https://use-the-index-luke.com/>
+- Paid book *SQL Performance Explained*:
+  <https://sql-performance-explained.com/>
 
-
-# Indexing 
-
-
-https://use-the-index-luke.com/
-
-
-A site explaining SQL indexing to developers—no crap about administration.
-
-SQL indexing is the most effective tuning method—yet it is often neglected during development. Use The Index, Luke explains SQL indexing from grounds up and doesn’t stop at ORM tools like Hibernate.
-
-Use The Index, Luke is the free web-edition of SQL Performance Explained. 
-
-
-https://sql-performance-explained.com/?utm_source=use-the-index-luke.com&utm_campaign=front&utm_medium=web
+> SQL indexing is the most effective tuning method — yet it is often
+> neglected during development. *Use The Index, Luke* explains SQL indexing
+> from the ground up and doesn't stop at ORM tools like Hibernate.

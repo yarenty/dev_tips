@@ -1,112 +1,110 @@
 ---
 title: Quary
 main_link: https://github.com/quarylabs/quary
-keywords: [quary, sql, cli, databases, linux, models]
-status: draft
+keywords: [quary, sql, dbt-alternative, transformation, duckdb, vscode, rust, models]
+status: reviewed
 ---
-
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
 
 # Quary
 
 **Main link:** <https://github.com/quarylabs/quary>
 
+VS Code extension: <https://marketplace.visualstudio.com/items?itemName=Quary.quary-extension>
+
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Quary is an open-source SQL transformation framework — think **dbt rewritten
+in Rust with a VS Code extension as the primary interface**. You define
+sources, models (SQL transformations), tests, and charts as code, version
+them in Git, and execute them against a target database. It ships a
+DuckDB-backed local development mode so you can `quary init` a sample
+project and have something running in seconds.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Where Quary fits in the dbt-alternatives landscape:
 
-## Similar / related topics
+- **vs dbt Core** — dbt is the incumbent, Python-based, with a vast plugin
+  ecosystem. Quary is younger, Rust-based, faster to start, and has a
+  built-in IDE story. If your team lives in dbt already, the plugin breadth
+  is a strong reason to stay; if you're greenfield and value local-first
+  + fast feedback, Quary is worth a serious look.
+- **vs SQLMesh** — SQLMesh focuses on virtual data environments and proper
+  semantic versioning of models (vs dbt's "rebuild everything"). It's the
+  more sophisticated alternative for teams hitting dbt's incremental-model
+  pain. Quary is closer to dbt in feature shape but with a different UX.
+- **vs Quary's own ambition** — the project also wants to cover charts and
+  dashboards (BI-shaped) which dbt deliberately doesn't. Whether that's a
+  strength or scope creep depends on your taste.
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+When to reach for Quary: small-to-mid teams that want SQL-as-code, prefer a
+Rust CLI to a Python one, and are happy with a tighter VS Code feedback loop
+than dbt's Python REPL. Less obvious for huge dbt-mature shops.
 
-## Internal links
+## Quick start
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+Quary is a VS Code extension (UI) backed by a Rust CLI (core). The CLI is
+required.
 
-- [[db]] — diesel _(score 21.9)_
-- [[indexing]] — Indexing _(score 20.5)_
-- [[diesel]] — diesel _(score 17.4)_
-- [[sqlflow]] — SQLFlow _(score 16.0)_
-- [[sql_pen_test]] — sqlmap _(score 16.0)_
+Install the CLI:
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-## Keywords
-
-`#quary` `#tools` `#db` `#sql` `#create` `#cli` `#database`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
-
-## References / raw notes
-
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# Quary
-
-
-https://github.com/quarylabs/quary
-
-
-## With Quary, engineers can:
-- 🔌 Connect to their Database
-- 📖 Write SQL queries to transform, organize, and document tables in a database
-- 📊 Create charts, dashboards and reports (in development)
-- 🧪 Test, collaborate & refactor iteratively through version control
-- 🚀 Deploy the organised, documented model back up to the database
-
-
-## Asset Types in Quary
-Define and manage the following asset types as code:
-
-- Sources: Define the external data sources that feed into Quary, such as database tables, flat files, or APIs (with DuckDB).
-- Models: Transform raw data from sources into analysis-ready datasets using SQL, this lets engineers split complex queries into atomic components.
-- Charts: Create visual representations of your data using SQL.
-- 🚧 Dashboards (WIP): Combine multiple charts into a single view, allowing engineers to monitor and analyze data in one place.
-- 🚧 Reports (WIP): Create detailed reports to share insights and findings with your team or stakeholders.
-
-## 🚀 Getting Started
-### Installation
-Quary is a VSCode Extension (Interface) & Rust-based CLI (Core)
-
-### Extension
-The VSCode extension can be installed here. Note that it depends on the CLI being installed.
-
-[https://marketplace.visualstudio.com/items?itemName=Quary.quary-extension](https://marketplace.visualstudio.com/items?itemName=Quary.quary-extension)
-
-### CLI
-
-Homebrew installation
-```shell
+```sh
+# Homebrew
 brew install quarylabs/quary/quary
-```
-Linux/Mac through curl
-Quary can be installed using curl on Linux/Mac using the following command:
 
-```shell
+# Linux/macOS via curl
 curl -fsSL https://raw.githubusercontent.com/quarylabs/quary/main/install.sh | bash
 ```
 
-Other installations
-Other builds are available in the releases page to download.
+Initialise and build a sample project:
 
-## Usage
-Once installed, a sample project can be created and run as follows:
-```shell
-mkdir example # create an empty project folder
-cd example
-quary init    # initialize DuckDB demo project with sample data
-quary compile # validate the project structure and model references without database
-quary build   # build and execute the model views/seeds against target database
-quary test -s   # run defined tests against target database
+```sh
+mkdir example && cd example
+quary init      # initialise a DuckDB demo project with sample data
+quary compile   # validate project structure / model references (no DB needed)
+quary build     # build views/seeds against the target database
+quary test -s   # run tests against the target database
 ```
+
+## Asset types
+
+Defined and managed as code in the project:
+
+- **Sources** — external inputs: database tables, flat files, APIs (DuckDB
+  reads many of these directly).
+- **Models** — SQL transformations that turn sources into analysis-ready
+  datasets, splittable into atomic components.
+- **Charts** — visual representations defined in SQL.
+- **Dashboards** *(WIP)* — multiple charts in one view.
+- **Reports** *(WIP)* — packaged insights to share.
+
+## Similar / related topics
+
+- **dbt Core** — the incumbent SQL-as-code framework.
+  <https://github.com/dbt-labs/dbt-core>
+- **SQLMesh** — semantic-versioning-aware dbt alternative.
+  <https://sqlmesh.com/>
+- **Dataform** — Google-acquired, BigQuery-flavoured.
+- **Lea** — minimal Python-based alternative.
+- **DuckDB** — the engine Quary's local mode runs on.
+
+## Internal links
+
+<!-- reviewed -->
+
+- [[db/tools/README|tools]] — section landing.
+- [[sqlflow]] — streaming-SQL sibling tool.
+- [[indexing]] — index design for the queries Quary generates.
+- [[db/analytics/README|analytics]] — broader analytics context.
+
+## Keywords
+
+`#quary` `#sql` `#dbt-alternative` `#transformation` `#duckdb` `#vscode` `#rust` `#models`
+
+## References / raw notes
+
+- Repo: <https://github.com/quarylabs/quary>
+- VS Code extension:
+  <https://marketplace.visualstudio.com/items?itemName=Quary.quary-extension>
+- Releases (other build targets):
+  <https://github.com/quarylabs/quary/releases>

@@ -1,96 +1,133 @@
 ---
-title: Data Quality
-main_link: https://github.com/sparkdq-community/sparkdq?utm_source=tldrdata
-keywords: [data-quality, quality, sparkdq, spark, frameworks, apache]
-status: draft
+title: Data quality (in practice)
+main_link: https://github.com/sparkdq-community/sparkdq
+keywords: [data-quality, validation, sparkdq, spark, pyspark, great-expectations, soda, lakehouse]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Data quality (in practice)
 
-# Data Quality
-
-**Main link:** <https://github.com/sparkdq-community/sparkdq?utm_source=tldrdata>
+**Main link:** <https://github.com/sparkdq-community/sparkdq>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+"Data quality" is shorthand for systematically catching the cases where data
+arrives wrong, drifts wrong, or *was always wrong but you only just noticed*.
+The folklore-standard framing splits it across six dimensions —
+**completeness, consistency, accuracy, validity, uniqueness, timeliness** —
+and the practical work is wiring those checks into ingestion, transformation,
+and serving so violations surface early instead of as a downstream BI ticket.
+Tools (Great Expectations, Soda, SparkDQ, dbt tests, Pandera, whylogs) help,
+but the real win is making quality *part of the pipeline* rather than an
+after-the-fact dashboard.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+A few honest takes:
+
+- **The six dimensions are a checklist, not a method.** They're useful as a
+  vocabulary so you know which kind of bug you're chasing (a duplicated row
+  is a *uniqueness* failure, a stale partition is a *timeliness* failure).
+  But they don't tell you *how* to enforce anything.
+- **Quality is a process, not a tool.** Picking Great Expectations vs Soda
+  vs SparkDQ is a one-day decision; getting your team to actually maintain
+  the expectation suites is the multi-quarter problem.
+- **Fail early.** Validate at ingestion (raw → bronze) and *before* writing
+  to a curated table (silver → gold). Validating after the fact in a separate
+  job is much weaker — the bad data has already shipped.
+- **Severity matters.** A good framework distinguishes "warn" from "block".
+  Without that, every check becomes either ignored or a P0.
+- **Data contracts** are the producer-side mirror of validation: the upstream
+  team commits to a schema + invariants, and the consumer runs the same
+  checks. Treat them as a coordination tool, not a vendor product.
+- **For ML data**, the standard six dimensions miss the point — see
+  [[db/quality/data_quality_problems_in_AI/README|data quality in AI]] for
+  label noise, distribution shift, prompt-data interaction.
+
+### Where SparkDQ fits
+
+SparkDQ is a **PySpark-native** validation framework — checks are first-class
+Spark operations, not a wrapper that pulls data into pandas. It's worth
+knowing about because most general-purpose tools (Great Expectations, Soda)
+still feel like they're bolted onto Spark rather than written for it. SparkDQ:
+
+- Defines checks declaratively (config) or programmatically (Python).
+- Distinguishes warning vs critical violations.
+- Supports row-level *and* aggregate-level constraints.
+- Has zero heavy dependencies — pure PySpark.
+
+Good fit for: lakehouse pipelines (Delta / Iceberg / Hudi) where you want
+checks to run in the same Spark job that produced the data, no extra cluster.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **Great Expectations** — the most widely deployed validation framework,
+  Python-first, lots of integrations.
+- **Soda Core** — YAML-defined checks, good multi-engine coverage.
+- **dbt tests** — the path of least resistance if you already use dbt.
+- **Pandera** — typed schema validation for pandas / polars / PySpark.
+- **whylogs** — profiling and drift detection; complementary to validation.
+- **OpenLineage** — capture lineage so you can trace a quality failure back
+  to its source.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[definition]] — Definition _(score 17.9)_
-- [[sqlflow]] — SQLFlow _(score 17.0)_
-- [[iceberg]] — Iceberg _(score 17.0)_
-- [[apache]] — apache _(score 17.0)_
-- [[mindsdb]] — MindsDB _(score 11.3)_
+- [[db/quality/README|quality]] — section landing.
+- [[db/quality/data_curation/README|data curation]] — the active-curation
+  cousin of validation.
+- [[db/quality/data_quality_problems_in_AI/README|data quality in AI]] — the
+  ML-specific failure modes.
+- [[db/catalogs/README|catalogs]] — where lineage and quality results
+  typically live.
+- [[db/streaming/README|streaming]] — quality enforcement on streams is its
+  own art.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#data-quality` `#quality` `#db` `#sparkdq` `#data` `#spark` `#pyspark`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#data-quality` `#quality` `#sparkdq` `#spark` `#pyspark` `#validation` `#great-expectations` `#soda` `#lakehouse`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# Data Quality
-
-## SparkDQ
-
-
-https://github.com/sparkdq-community/sparkdq?utm_source=tldrdata
-
-
 ### SparkDQ — Data Quality Validation for Apache Spark
-Most data quality frameworks weren’t designed with PySpark in mind. They aren’t Spark-native and often lack proper support for declarative pipelines. Instead of integrating seamlessly, they require you to build custom wrappers around them just to fit into production workflows. This adds complexity and makes your pipelines harder to maintain. On top of that, many frameworks only validate data after processing — so you can’t react dynamically or fail early when data issues occur.
 
-SparkDQ takes a different approach. It’s built specifically for PySpark — so you can define and run data quality checks directly inside your Spark pipelines, using Python. Whether you're validating incoming data, verifying outputs before persistence, or enforcing assumptions in your dataflow: SparkDQ helps you catch issues early, without adding complexity.
+Repo: <https://github.com/sparkdq-community/sparkdq>
 
-### Why SparkDQ?
-✅ Robust Validation Layer: Clean separation of check definition, execution, and reporting
+Most data quality frameworks weren't designed with PySpark in mind. They
+aren't Spark-native and often lack proper support for declarative pipelines.
+Instead of integrating seamlessly, they require you to build custom wrappers
+around them just to fit into production workflows. This adds complexity and
+makes pipelines harder to maintain. On top of that, many frameworks only
+validate data *after* processing — so you can't react dynamically or fail
+early when data issues occur.
 
-✅ Declarative or Programmatic: Define checks via config files or directly in Python
+SparkDQ takes a different approach. It's built specifically for PySpark — so
+you can define and run data quality checks directly inside your Spark
+pipelines, using Python. Whether you're validating incoming data, verifying
+outputs before persistence, or enforcing assumptions in your dataflow,
+SparkDQ helps catch issues early without adding complexity.
 
-✅ Severity-Aware: Built-in distinction between warning and critical violations
+#### Why SparkDQ?
 
-✅ Row & Aggregate Logic: Supports both record-level and dataset-wide constraints
+- Robust validation layer: clean separation of check definition, execution,
+  and reporting.
+- Declarative or programmatic: define checks via config files or directly in
+  Python.
+- Severity-aware: built-in distinction between warning and critical violations.
+- Row & aggregate logic: supports both record-level and dataset-wide
+  constraints.
+- Typed & tested: built with type safety, testability, and extensibility in
+  mind.
+- Zero overhead: pure PySpark, no heavy dependencies.
 
-✅ Typed & Tested: Built with type safety, testability, and extensibility in mind
+#### Typical use cases
 
-✅ Zero Overhead: Pure PySpark, no heavy dependencies
-
-### Typical Use Cases
-SparkDQ is built for modern data platforms that demand trust, transparency, and resilience. It helps teams enforce quality standards early and consistently — across ingestion, transformation, and delivery layers.
-
-Whether you're building a real-time ingestion pipeline or curating a data product for thousands of downstream users, SparkDQ lets you define and execute checks that are precise, scalable, and easy to maintain.
-
-Common Scenarios:
-
-✅ Validating raw ingestion data
-
-✅ Enforcing schema and content rules before persisting to a lakehouse (Delta, Iceberg, Hudi)
-
-✅ Asserting quality conditions before analytics or ML training jobs
-
-✅ Flagging critical violations in batch pipelines via structured summaries and alerts
-
-✅ Driving Data Contracts: Use declarative checks in CI pipelines to catch issues before deployment
+- Validating raw ingestion data.
+- Enforcing schema and content rules before persisting to a lakehouse
+  (Delta, Iceberg, Hudi).
+- Asserting quality conditions before analytics or ML training jobs.
+- Flagging critical violations in batch pipelines via structured summaries
+  and alerts.
+- Driving data contracts: declarative checks in CI to catch issues before
+  deployment.
