@@ -1,74 +1,76 @@
 ---
-title: toyDB
-main_link: https://github.com/erikgrinaker/toydb/tree/main**
-keywords: [toydb, sql, distributed, based, databases, rust]
-status: draft
+title: "toyDB — distributed SQL database in Rust, built to be read"
+main_link: https://github.com/erikgrinaker/toydb
+keywords: [toydb, rust, raft, mvcc, distributed-sql, educational, erik-grinaker]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# toyDB — distributed SQL database in Rust, built to be read
 
-# toyDB
+**Main link:** <https://github.com/erikgrinaker/toydb>
 
-**Main link:** <https://github.com/erikgrinaker/toydb/tree/main**>
+Author's blog (CockroachDB / Neon): <https://erikgrinaker.com/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+toyDB is an educational distributed SQL database written from scratch in Rust by Erik Grinaker (former CockroachDB and Neon engineer). It's designed to be **simple, complete, and correct** rather than fast — a working example of the architecture and concepts behind a real distributed SQL database. It implements Raft consensus, MVCC snapshot-isolation transactions, a pluggable storage engine (BitCask + in-memory), an iterator-based query engine with heuristic optimisation, and a SQL interface with joins, aggregates, and transactions.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+This is the best free way to learn how a database actually works. Read the source.
 
-## Similar / related topics
+The 2024 rewrite is the version to study — Erik specifically rewrote it after years of building production distributed SQL databases (CockroachDB, Neon) so the structure now reflects how those systems are actually organised, with shortcuts taken intentionally where production complexity would obscure the concept.
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+What makes it valuable as a learning resource:
 
-## Internal links
+- Each layer (storage, MVCC, raft, SQL parser, planner, executor, network) is a small focused module, well under 1000 lines each.
+- Real Raft (not a toy variant), real MVCC (not a stub), real query execution.
+- Tests are extensive and serve as additional documentation.
+- It compiles and runs; you can `cargo run` and play with a real distributed cluster on your laptop.
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+What it explicitly is not:
 
-- [[edgedb]] — edgeDB _(score 25.9)_
-- [[fauna]] — fauna _(score 21.4)_
-- [[limbo]] — Limbo _(score 17.1)_
-- [[xlite]] — XLite _(score 16.0)_
-- [[db/relational/mysql|mysql]] — mysql _(score 16.0)_
+- **Production-ready.** Performance, scalability, availability, and operational tooling are non-goals.
+- **Feature-complete vs Postgres.** No window functions, limited type system, no extensions.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-## Keywords
+If you want a more production-shaped reference, look at the [CockroachDB](https://www.cockroachlabs.com/) source, or [Neon](https://neon.tech/) for a Postgres-compatible alternative — both share architectural DNA with toyDB but with all the production complexity put back in.
 
-`#toydb` `#relational` `#db` `#sql` `#distributed` `#based` `#main`
+Other educational DB sources worth pairing with toyDB:
 
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+- *Database Internals* by Alex Petrov (book).
+- *Designing Data-Intensive Applications* by Martin Kleppmann (book).
+- The CMU Database Group lectures by Andy Pavlo (free on YouTube).
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+Headline features (from the README):
 
-# toyDB
-
-
-**https://github.com/erikgrinaker/toydb/tree/main**
-
-Distributed SQL database in Rust, built from scratch as an educational project. Main features:
-
-- Raft distributed consensus for linearizable state machine replication.
-
+- Raft distributed consensus for linearizable state-machine replication.
 - ACID transactions with MVCC-based snapshot isolation.
-
 - Pluggable storage engine with BitCask and in-memory backends.
+- Iterator-based query engine with heuristic optimisation and time-travel support.
+- SQL interface with joins, aggregates, transactions.
 
-- Iterator-based query engine with heuristic optimization and time-travel support.
+> I originally wrote toyDB in 2020 to learn more about database internals. Since then, I've spent several years building real distributed SQL databases at CockroachDB and Neon. Based on this experience, I've rewritten toyDB as a simple illustration of the architecture and concepts behind distributed SQL databases.
+>
+> toyDB is intended to be simple and understandable, and also functional and correct. Other aspects like performance, scalability, and availability are non-goals — these are major sources of complexity in production-grade databases, and obscure the basic underlying concepts. Shortcuts have been taken where possible.
 
-- SQL interface including joins, aggregates, and transactions.
+## Similar / related topics
 
-I originally wrote toyDB in 2020 to learn more about database internals. Since then, I've spent several years building real distributed SQL databases at CockroachDB and Neon. Based on this experience, I've rewritten toyDB as a simple illustration of the architecture and concepts behind distributed SQL databases.
+- [[postgresql]] — the production-grade endpoint of "actually using a SQL DB".
+- [[limbo]] — clean-room SQLite rewrite in Rust; smaller scope, also instructive reading.
+- [CockroachDB source](https://github.com/cockroachdb/cockroach) — the production-shaped equivalent.
+- [TiKV](https://tikv.org/) — distributed KV store also written in Rust, used by [[surrealdb]].
+- *Database Internals* (book) by Alex Petrov.
 
-toyDB is intended to be simple and understandable, and also functional and correct. Other aspects like performance, scalability, and availability are non-goals -- these are major sources of complexity in production-grade databases, and obscure the basic underlying concepts. Shortcuts have been taken where possible.
+## Internal links
+
+<!-- reviewed -->
+
+- [[postgresql]]
+- [[limbo]]
+- [[surrealdb]]
+
+## Keywords
+
+`#toydb` `#rust` `#raft` `#mvcc` `#distributed-sql` `#educational` `#database-internals` `#db`

@@ -1,71 +1,74 @@
 ---
-title: GreptimeDB
-main_link: https://github.com/GreptimeTeam/greptimedb
-keywords: [greptimedb, time-series, distributed, greptimeteam, platform, python]
-status: draft
+title: "GreptimeDB — Rust hybrid time-series + observability database"
+main_link: https://greptime.com/
+keywords: [greptimedb, timeseries, observability, rust, datafusion, arrow, parquet, single-binary]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# GreptimeDB — Rust hybrid time-series + observability database
 
-# GreptimeDB
+**Main link:** <https://greptime.com/>
 
-**Main link:** <https://github.com/GreptimeTeam/greptimedb>
+Repo: <https://github.com/GreptimeTeam/greptimedb> · Docs: <https://docs.greptime.com/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+GreptimeDB is an open-source distributed time-series database written in Rust on top of Apache Arrow / DataFusion / Parquet, with object-storage-first architecture (S3, GCS, Azure Blob, OSS) and a hybrid query model that aims to unify **metrics, logs, and events** in a single engine. It speaks SQL and PromQL, supports MySQL and Postgres wire protocols for queries, and ingests via Prometheus remote-write, InfluxDB line protocol, OpenTelemetry, and its own gRPC.
+
+A single binary handles standalone, distributed, and edge deployments. The project is part of the broader "Rust single-binary infra" trend that includes [[redpanda]] (Kafka-replacement) and [[openobserve]] (observability stack).
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Where GreptimeDB is interesting today:
 
-## Similar / related topics
+- **You want one engine for metrics + logs + traces** instead of Prometheus + Loki + Tempo + glue. GreptimeDB pitches itself as that engine, with a story for each.
+- **You want cheap retention via object storage.** Hot data on local disk, cold data in S3, transparent to queries.
+- **You like the "Rust + Arrow + DataFusion + Parquet" architectural school** that also produced InfluxDB 3, [[tensorbase]] (dormant), and is the backbone of much modern data infra.
+- **You want PromQL and SQL on the same data.** Useful for teams that have grown a Prometheus dialect on the SRE side and want SQL for product analytics on the same metrics.
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+Honest caveats:
 
-## Internal links
+- **Younger than the alternatives.** The 1.0 release was relatively recent; the road to "battle-tested at petabyte scale" is shorter than Prometheus + Mimir or InfluxDB.
+- **Multi-node distributed story is the strategic differentiator** but requires care to operate (metasrv + frontend + datanode roles, Etcd/PostgreSQL for metadata).
+- **vs InfluxDB 3** — very similar architectural school. Pick GreptimeDB if you want a single engine for metrics + logs and like its multi-protocol ingestion. Pick InfluxDB 3 if you want the Influx ecosystem and managed cloud product. Both are Rust + Arrow + DataFusion underneath.
+- **vs ClickHouse + VictoriaMetrics + Loki** — the unbundled stack is more mature and more flexible. GreptimeDB's bet is that the bundled stack is cheaper to operate and runs faster end-to-end.
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+## Note on the sibling article
 
-- [[programming/rust/data/greptimedb|greptimedb]] — GreptimeDB _(score 45.5)_
-- [[questdb]] — QuestDB _(score 21.5)_
-- [[druid]] — Druid _(score 21.5)_
-- [[time_series_transformer]] — Time Series Transformer _(score 17.5)_
-- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 17.5)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-## Keywords
-
-`#greptimedb` `#timeseries` `#db` `#time` `#series` `#distributed` `#greptimeteam`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+There's also `programming/rust/data/greptimedb.md` in this vault, which covers GreptimeDB from the Rust-ecosystem perspective. This article is the database-perspective one. Use the disambiguated wikilink `[[db/timeseries/greptimedb|GreptimeDB]]` when linking to it.
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+> GreptimeDB is an open-source time-series database with a special focus on scalability, analytical capabilities and efficiency. It's designed to work on infrastructure of the cloud era, and users benefit from its elasticity and commodity storage.
 
-# GreptimeDB
+Stated capabilities:
 
+- Single-binary that scales from standalone to highly-available distributed cluster, transparently to clients.
+- Optimised columnar layout for time-series data; compacted, compressed, stored on local disk or various object-storage backends.
+- Flexible index options (skipping indexes, inverted indexes for tag cardinality control).
+- Distributed, parallel query execution with elastic compute.
+- Native SQL plus Python scripting for advanced analytical scenarios.
+- Widely-adopted ingestion protocols: Prometheus remote-write, InfluxDB Line Protocol, OpenTelemetry, gRPC, MySQL/Postgres wire for queries.
+- Extensible table-engine architecture for varied workloads (metrics, logs, traces, events).
 
-https://github.com/GreptimeTeam/greptimedb
+## Similar / related topics
 
+- [[influxdb]] — InfluxDB 3 (IOx) is the closest architectural cousin (Rust + Arrow + DataFusion).
+- [[questdb]] — single-node high-write-rate alternative.
+- [[druid]] — older OLAP-on-time-bucketed-events alternative.
+- [VictoriaMetrics](https://victoriametrics.com/) — best-in-class Prometheus long-term storage; more focused.
+- [[openobserve]] — Rust observability stack with overlapping ambitions.
 
-GreptimeDB is an open-source time-series database with a special focus on scalability, analytical capabilities and efficiency. It's designed to work on infrastructure of the cloud era, and users benefit from its elasticity and commodity storage.
+## Internal links
 
-Our core developers have been building time-series data platform for years. Based on their best-practices, GreptimeDB is born to give you:
+<!-- reviewed -->
 
-A standalone binary that scales to highly-available distributed cluster, providing a transparent experience for cluster users
-Optimized columnar layout for handling time-series data; compacted, compressed, stored on various storage backends
-Flexible index options, tackling high cardinality issues down
-Distributed, parallel query execution, leveraging elastic computing resource
-Native SQL, and Python scripting for advanced analytical scenarios
-Widely adopted database protocols and APIs
-Extensible table engine architecture for extensive workloads
+- [[influxdb]]
+- [[questdb]]
+- [[druid]]
+- [[prometheus]]
+- [[openobserve]]
+
+## Keywords
+
+`#greptimedb` `#timeseries` `#observability` `#rust` `#datafusion` `#arrow` `#parquet` `#promql` `#sql` `#db`

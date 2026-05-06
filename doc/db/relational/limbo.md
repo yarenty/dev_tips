@@ -1,70 +1,68 @@
 ---
-title: Limbo
+title: "Limbo — SQLite-compatible Rust rewrite from Turso"
 main_link: https://github.com/tursodatabase/limbo
-keywords: [limbo, rust, linux, improved, vector, javascript, sqlite]
-status: draft
+keywords: [limbo, turso, sqlite, rust, embedded, io-uring, oltp]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# Limbo
+# Limbo — SQLite-compatible Rust rewrite from Turso
 
 **Main link:** <https://github.com/tursodatabase/limbo>
 
+Turso (the company): <https://turso.tech/> · Original SQLite: <https://www.sqlite.org/>
+
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Limbo is an in-process OLTP database engine written in Rust by the Turso team, designed as a from-scratch reimplementation of SQLite. It targets full SQLite compatibility for SQL dialect, on-disk file format, and the C API, while adding modern niceties: language bindings for JavaScript/Wasm, Rust, Go, Python, and Java; asynchronous I/O on Linux via `io_uring`; and a roadmap that includes `BEGIN CONCURRENT` for higher write throughput, vector indexing, and stricter schema management.
+
+Note: in 2024–2025 the project is sometimes referred to under the broader "Turso DB" umbrella as Turso has gradually absorbed/renamed it; the GitHub repo path is the canonical source of truth.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Why this exists at all: SQLite is one of the most-deployed pieces of software on Earth, and it is excellent — but it is a single-threaded C codebase with limitations that are hard to lift without changing the core (no async I/O, single writer per file, conservative defaults, test suite is famously proprietary). A clean-room Rust rewrite gets you:
 
-## Similar / related topics
+- **Memory safety** without the C maintenance burden.
+- **Async I/O** that fits the modern server / serverless story (each tenant DB is a file; you want to scale across many of them on one node).
+- **Wasm bindings** that work in browsers and edge runtimes (Cloudflare Workers, Vercel Edge, Deno Deploy).
+- **Room to add features SQLite never will**, like vector search and BEGIN CONCURRENT.
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+Honest reality check (as of late 2025):
 
-## Internal links
-
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[singlestore]] — Singlestore _(score 22.4)_
-- [[sqlite]] — sqlite _(score 20.0)_
-- [[javascript]] — Javascript _(score 18.0)_
-- [[assembly]] — Assembly _(score 17.4)_
-- [[programming/rust/data/mysql|mysql]] — mysql _(score 17.4)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-## Keywords
-
-`#limbo` `#relational` `#db` `#rust` `#linux` `#support` `#improved`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+- **Don't use Limbo as a drop-in SQLite replacement in production yet.** Compatibility is a moving target; the test surface is huge. Watch the issue tracker.
+- **For an embedded DB right now, plain SQLite is still the answer.** Use Limbo when you specifically want one of the above features, or you're betting on Turso's edge-DB platform.
+- **Compare with libSQL** — Turso's other fork, which is closer to SQLite's C codebase with selected patches. Limbo is the more aggressive long-term bet; libSQL is the production-ready stepping-stone.
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+Headline features (from the README):
 
-# Limbo
+- SQLite compatibility for SQL dialect, file format, and C API.
+- Language bindings: JavaScript/WebAssembly, Rust, Go, Python, Java.
+- Asynchronous I/O on Linux via `io_uring`.
+- OS support: Linux, macOS, Windows.
 
-https://github.com/tursodatabase/limbo
+On the roadmap:
 
-Limbo is a work-in-progress, in-process OLTP database engine library written in Rust that has:
-
-- SQLite compatibility [doc] for SQL dialect, file formats, and the C API
-- Language bindings for JavaScript/WebAssembly, Rust, Go, Python, and Java
-- Asynchronous I/O support on Linux with io_uring
-- OS support for Linux, macOS, and Windows 
-
-In the future, we will be also working on:
-
-- BEGIN CONCURRENT for improved write throughput.
+- `BEGIN CONCURRENT` for improved write throughput.
 - Indexing for vector search.
-- Improved schema management including better ALTER support and strict column types by default.
+- Improved schema management (better `ALTER` support, strict column types by default).
+
+## Similar / related topics
+
+- [SQLite](https://www.sqlite.org/) — the original; still the right default for embedded.
+- [libSQL](https://github.com/tursodatabase/libsql) — Turso's more conservative SQLite fork.
+- [[xlite]] — SQLite virtual-table extension that lets you query spreadsheets.
+- [[postgresql]] — what to use the moment you outgrow single-file embedded.
+- [DuckDB](https://duckdb.org/) — the analytical equivalent of "embedded SQLite".
+
+## Internal links
+
+<!-- reviewed -->
+
+- [[postgresql]]
+- [[xlite]]
+- [[toydb]]
+
+## Keywords
+
+`#limbo` `#turso` `#sqlite` `#rust` `#embedded` `#io-uring` `#oltp` `#db`

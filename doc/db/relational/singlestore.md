@@ -1,60 +1,58 @@
 ---
-title: Singlestore
-main_link: https://singlestore-labs.github.io/singlestore-wasm-toolkit/html/Tutorial-Impl-Rust-Split.html
-keywords: [singlestore, impl, rust, vector, programming]
-status: draft
+title: "SingleStore — distributed SQL with row+columnar HTAP"
+main_link: https://www.singlestore.com/
+keywords: [singlestore, memsql, distributed-sql, htap, columnar, vector, mysql-compatible]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# SingleStore — distributed SQL with row+columnar HTAP
 
-# Singlestore
+**Main link:** <https://www.singlestore.com/>
 
-**Main link:** <https://singlestore-labs.github.io/singlestore-wasm-toolkit/html/Tutorial-Impl-Rust-Split.html>
+Docs: <https://docs.singlestore.com/> · WASM toolkit tutorial: <https://singlestore-labs.github.io/singlestore-wasm-toolkit/html/Tutorial-Impl-Rust-Split.html>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+SingleStore (formerly **MemSQL**) is a distributed SQL database that combines an in-memory rowstore (for OLTP-shaped writes) with a disk-based columnstore (for analytics) in the same engine, and presents a MySQL-wire-compatible interface. The marketed sweet spot is **HTAP** — running transactions and analytics on the same data without ETL into a separate warehouse — plus a vector-search column type bolted on more recently.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Where SingleStore is a genuinely good fit:
 
-## Similar / related topics
+- **Real-time analytics on transactional data.** You're inserting events / orders / clicks at high rate and you want sub-second analytical queries over the same tables, without a separate Snowflake/BigQuery pipeline.
+- **You already speak MySQL.** Drivers, BI tools, ORMs all just work.
+- **You want a single engine instead of "Postgres + Clickhouse + a CDC pipeline".** That stack is fine and cheap, but operationally heavier than one cluster.
+- **Bolted-on vector search** that lives next to your operational data, instead of a separate [[qdrant]] / [[chroma]] cluster.
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+Where it's the wrong choice:
 
-## Internal links
+- **Pure OLTP at small scale** — Postgres or MySQL costs less and works fine.
+- **Pure analytics on cold data** — ClickHouse / DuckDB / Snowflake will be cheaper per-query.
+- **You don't want a commercial vendor relationship.** SingleStore is source-available with a free tier, but the production story assumes their cloud or a paid licence. Compare with [TiDB](https://www.pingcap.com/tidb/) (open-source HTAP, MySQL-compatible) or [CockroachDB](https://www.cockroachlabs.com/) (open-core, Postgres-compatible).
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[limbo]] — Limbo _(score 22.4)_
-- [[tensorbase]] — TensorBase _(score 17.1)_
-- [[db/relational/surrealdb|surrealdb]] — SurrealDB _(score 16.0)_
-- [[rtic]] — RTIC _(score 13.1)_
-- [[programming/rust/data/surrealdb|surrealdb]] — surrealDB _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-## Keywords
-
-`#singlestore` `#relational` `#db` `#tutorial` `#impl` `#rust` `#split`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+The MemSQL → SingleStore rebrand happened in 2020; older blog posts and benchmarks still use the old name. There's also the WASM-UDF angle — you can ship Rust/AssemblyScript user-defined functions into the database (the linked tutorial above), which is genuinely novel.
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- WASM toolkit tutorial (Rust UDFs): <https://singlestore-labs.github.io/singlestore-wasm-toolkit/html/Tutorial-Impl-Rust-Split.html>
+- SingleStore as a vector store: <https://docs.singlestore.com/db/v8.5/vector-data/>
 
-# Singlestore
+## Similar / related topics
 
-vector DB
+- [[postgresql]] — the boring default; pair with Citus for sharding or Timescale for time-series.
+- [[mysql]] — wire-protocol cousin (SingleStore speaks the MySQL protocol).
+- [TiDB](https://www.pingcap.com/tidb/) — open-source distributed MySQL-compatible HTAP DB.
+- [CockroachDB](https://www.cockroachlabs.com/) — distributed SQL, Postgres-wire-compatible.
+- [ClickHouse](https://clickhouse.com/) — pure analytical column store.
 
+## Internal links
 
-https://singlestore-labs.github.io/singlestore-wasm-toolkit/html/Tutorial-Impl-Rust-Split.html
+<!-- reviewed -->
+
+- [[postgresql]]
+- [[mysql]]
+- [[qdrant]]
+
+## Keywords
+
+`#singlestore` `#memsql` `#distributed-sql` `#htap` `#columnar` `#vector-search` `#mysql-compatible` `#db`

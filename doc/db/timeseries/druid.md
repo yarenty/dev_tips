@@ -1,78 +1,77 @@
 ---
-title: Druid
-main_link: https://druid.apache.org/docs/latest/tutorials/index.html
-keywords: [druid, time-series, apache]
-status: draft
+title: "Apache Druid — real-time OLAP on time-bucketed events"
+main_link: https://druid.apache.org/
+keywords: [druid, olap, timeseries, analytics, real-time, java, columnar, apache]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Apache Druid — real-time OLAP on time-bucketed events
 
-# Druid
+**Main link:** <https://druid.apache.org/>
 
-**Main link:** <https://druid.apache.org/docs/latest/tutorials/index.html>
+Quickstart tutorial: <https://druid.apache.org/docs/latest/tutorials/index.html> · Repo: <https://github.com/apache/druid>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Apache Druid is an open-source distributed analytical database built for **real-time analytics on time-bucketed event data**: clickstreams, ad serving, user behaviour, application telemetry, security events. It combines a column-oriented storage layer (segments are time-partitioned, then column-compressed), a streaming + batch ingestion model (Kafka, Kinesis, S3, HDFS), and a query engine optimised for sub-second aggregations across billions of rows. Java-based, multi-process architecture (Coordinator, Overlord, Broker, Historical, MiddleManager, Router).
+
+Originally built at Metamarkets (2011), Apache top-level project since 2018, commercially backed by Imply.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Druid's natural habitat is the "interactive dashboard over enormous event streams" job:
 
-## Similar / related topics
+- **Hundreds of millions to trillions of events**, partitioned by time.
+- **Many concurrent queries** that aggregate, filter, and group-by — typical analytics dashboards.
+- **A real-time + historical mix:** new events arriving from Kafka and immediately queryable, old events compacted into long-term segments.
+- **High concurrency** with sub-second p95 latency on aggregation queries.
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+Where Druid is the wrong tool:
 
-## Internal links
+- **Pure metrics scraping** — [[prometheus]] is the boring default.
+- **Application time-series with low-to-medium write rate** — [[influxdb]] / [[questdb]] / [[db/timeseries/greptimedb|GreptimeDB]] / TimescaleDB are simpler.
+- **General-purpose OLAP without the real-time requirement** — ClickHouse will be smaller, faster, and operationally simpler. ClickHouse has eaten significant Druid market share since 2020.
+- **Anything transactional** — Druid is append-mostly; updates and deletes are second-class.
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+The operational footprint is the main thing to weigh: Druid is a **multi-process distributed system** that wants ZooKeeper and a metadata store. It's not a single binary. For a small team, ClickHouse or [[db/timeseries/greptimedb|GreptimeDB]] is far less work to run; for a large data platform team that needs the throughput / concurrency profile, Druid still earns its keep.
 
-- [[questdb]] — QuestDB _(score 21.5)_
-- [[db/timeseries/greptimedb|greptimedb]] — GreptimeDB _(score 21.5)_
-- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 17.5)_
-- [[tutorials_2]] — Tutorials _(score 17.5)_
-- [[apache]] — apache _(score 17.0)_
+Compare also: [Apache Pinot](https://pinot.apache.org/) (very similar niche, originally from LinkedIn) and [StarRocks](https://www.starrocks.io/) (newer C++ MPP).
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-## Keywords
+## Quickstart (micro)
 
-`#druid` `#timeseries` `#db` `#start` `#apache` `#time` `#install`
+Download Druid from the project page and unpack it. Then:
 
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
-
-## References / raw notes
-
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# Druid
-
-Apache Druid is a real-time database to power modern analytics applications.
-
-## Install
-
-Download:
-https://druid.apache.org/docs/latest/tutorials/index.html
-
-
-## Start 
-
-```bash
+```sh
 ./bin/start-micro-quickstart
 ```
 
+Open the unified console:
 
+```
 http://localhost:8888/unified-console.html
+```
 
+### Cleaning up between tutorials
 
+After stopping Druid services you can start fresh by deleting the `var/` directory under the Druid root and re-running `bin/start-micro-quickstart`. Useful before working through a different ingestion tutorial that creates the same datasource (e.g. the Wikipedia example).
 
-### cleaning
+## Similar / related topics
 
-Remember that after stopping Druid services, you can start clean next time by deleting the var directory from the Druid root directory and running the bin/start-micro-quickstart script again. You will likely want to do this before taking other data ingestion tutorials, since in them you will create the same wikipedia datasource.
+- [ClickHouse](https://clickhouse.com/) — leaner column-store OLAP; usually the default-better choice for new deployments.
+- [Apache Pinot](https://pinot.apache.org/) — closest peer; very similar architecture, originally LinkedIn-built.
+- [StarRocks](https://www.starrocks.io/) — newer C++ MPP analytical DB.
+- [[db/timeseries/greptimedb|GreptimeDB]] — Rust hybrid TSDB with overlapping ambitions; lighter ops.
+- [[influxdb]] — InfluxDB 3 (IOx) overlaps for the time-series-shaped subset.
+
+## Internal links
+
+<!-- reviewed -->
+
+- [[influxdb]]
+- [[questdb]]
+- [[db/timeseries/greptimedb|GreptimeDB]]
+- [[postgresql]]
+
+## Keywords
+
+`#druid` `#olap` `#timeseries` `#real-time-analytics` `#columnar` `#apache` `#java` `#analytics` `#db`

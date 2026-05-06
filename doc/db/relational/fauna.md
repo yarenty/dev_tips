@@ -1,82 +1,65 @@
 ---
-title: fauna
-main_link: https://fauna.com/home-2
-keywords: [fauna, graphql, udf, databases, nosql]
-status: draft
+title: "Fauna — the serverless transactional DB (sunset 2025)"
+main_link: https://fauna.com/
+keywords: [fauna, serverless, distributed, calvin, fql, graphql, sunset]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Fauna — the serverless transactional DB (sunset 2025)
 
-# fauna
+**Main link:** <https://fauna.com/>
 
-**Main link:** <https://fauna.com/home-2>
+Shutdown notice: <https://fauna.com/blog/sunsetting-saas> · Open-source successor: <https://github.com/fauna/fauna-core>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Fauna was a serverless, multi-region, distributed transactional database that pitched itself as "the operational database that takes consistency seriously". Internally it implemented Daniel Abadi's Calvin protocol for deterministic transactions, exposing a JSON document data model with relational features (FK-like refs, joins, indexes, ACID multi-document transactions) and its own functional query language **FQL** (plus a GraphQL layer).
+
+**As of April 2025, Fauna sunset its hosted SaaS.** The company announced the shutdown in late 2024; existing customers were given a migration window. Some of the core engine was open-sourced.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Historical interest only as a managed product. If you're considering it today:
 
-## Similar / related topics
+- **Don't start a new project on Fauna's hosted service.** It's gone.
+- **The open-sourced core** is interesting if you want to study Calvin-style deterministic transaction protocols, but operating it yourself defeats the original "serverless, no ops" pitch.
+- **What to use instead** depends on which Fauna feature pulled you in:
+  - "Serverless multi-region with HTTP API" → CockroachDB Serverless, Neon, PlanetScale, Turso, Cloudflare D1.
+  - "Document model + ACID transactions" → MongoDB Atlas (since 4.0), [[postgresql]] with `jsonb`, [[surrealdb]].
+  - "GraphQL out of the box" → Hasura on Postgres, Supabase, Grafbase.
+  - "FQL-style functional query language" → arguably [[edgedb]]/Gel's EdgeQL fills a similar niche.
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
-
-## Internal links
-
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[diesel]] — diesel _(score 17.4)_
-- [[db]] — diesel _(score 17.4)_
-- [[db/relational/surrealdb|surrealdb]] — SurrealDB _(score 16.0)_
-- [[xlite]] — XLite _(score 16.0)_
-- [[postgresql]] — postgresql _(score 16.0)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-## Keywords
-
-`#fauna` `#relational` `#db` `#graphql` `#udfs` `#database` `#data`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+The Fauna shutdown is a useful cautionary tale: when the data layer is a single-vendor SaaS with a proprietary query language and no easy export path, vendor risk is concentrated. Postgres-on-anything has fewer fireworks.
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+Marketing copy from the original Fauna site, archived for reference:
 
-# fauna
+> The distributed serverless database. Fauna combines the flexibility of NoSQL with the relational querying capabilities and ACID consistency of SQL systems — with native GraphQL and delivered as a cloud API so you don't have to worry about operations.
 
-https://fauna.com/home-2
+Headline features as advertised:
 
+- Document-relational data model: JSON documents with FKs, views, joins.
+- User-defined functions (UDFs) written in FQL, callable from GraphQL via custom resolvers.
+- Connectionless access via HTTPS, attribute-driven security down to the document.
+- Drivers for major languages, plus direct GraphQL from the client.
 
-The distributed serverless database
-Fauna combines the flexibility of NoSQL with the relational querying capabilities and ACID consistency of SQL systems — with native GraphQL and delivered as a cloud API so you don’t have to worry about operations.
+## Similar / related topics
 
+- [[postgresql]] — Postgres + a managed provider (Neon, Supabase, RDS) covers most "serverless" needs without the lock-in.
+- [[edgedb]] — typed query language pitch, alive and well.
+- [[surrealdb]] — multi-model alternative aiming at a similar "developer-friendly DB" niche.
+- [CockroachDB](https://www.cockroachlabs.com/) — distributed SQL, also serverless tier.
+- [PlanetScale](https://planetscale.com/) — Vitess-on-MySQL, serverless tier.
 
+## Internal links
 
-Build applications faster
-- Start quickly with document-centric data model, powerful relational capabilities, and event streaming
-- Run sophisticated business logic centrally in the context of your data
-- Connectionless access via HTTPS and attribute-driven security down to the document
-- Interface directly from the client using GraphQL or with drivers for your favorite language
+<!-- reviewed -->
 
-Document-relational
-- Combine the flexibility and familiarity of JSON documents with the relationships and querying power of a traditional relational database
-- Store data as documents to write different data shapes to a collection
-- Query your database using relational features like foreign keys, views, and joins 
-- Reduce complexity in your application code by executing business logic on your data directly in your database
+- [[postgresql]]
+- [[edgedb]]
+- [[surrealdb]]
 
+## Keywords
 
-
-User defined functions (UDFs)
-- Write business logic using user-defined functions in your database with Fauna Query Language (FQL)
-- Call UDFs directly in GraphQL using custom resolvers
-- Reduce time to get started with built-in functions for common queries and build your own functions using UDFs
+`#fauna` `#serverless` `#distributed-sql` `#calvin` `#fql` `#sunset` `#vendor-lockin` `#db`

@@ -1,99 +1,70 @@
 ---
-title: Barman: PostgreSQL Backup and Recovery Manager
-main_link: https://github.com/EnterpriseDB/barman
-keywords: [barman, postgres, postgresql, recovery, distributed, python]
-status: draft
+title: "Barman — PostgreSQL Backup and Recovery Manager"
+main_link: https://pgbarman.org/
+keywords: [barman, postgresql, backup, pitr, recovery, enterprisedb, gpl, python]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Barman — PostgreSQL Backup and Recovery Manager
 
-# Barman: PostgreSQL Backup and Recovery Manager
+**Main link:** <https://pgbarman.org/>
 
-**Main link:** <https://github.com/EnterpriseDB/barman>
+Repo: <https://github.com/EnterpriseDB/barman> · Docs: <https://docs.pgbarman.org/> · Maintainer: <https://www.enterprisedb.com/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Barman ("Backup And Recovery Manager") is a Python-written, Postgres-aware tool for managing physical backups, WAL archiving, and point-in-time recovery (PITR) of one or many PostgreSQL servers from a single backup host. Maintained by EnterpriseDB and released under GPLv3, it's one of the original purpose-built backup tools for Postgres and is still in heavy use, particularly in classic on-premise / VM-shaped fleets.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Where Barman fits today (vs the alternatives):
 
-## Similar / related topics
+- **vs `pg_dump` / `pg_dumpall`** — `pg_dump` produces logical backups (a SQL script). It's fine for small DBs and migrations but useless as a serious backup strategy: no PITR, no incremental, no continuous WAL stream, restore is a full replay. Barman gives you physical base backups + WAL archiving + PITR.
+- **vs pgBackRest** — pgBackRest is the modern alternative, written in C with better parallelism, much better incremental/differential backup, and more aggressive verification. For a new fleet starting today, pgBackRest is usually the better default.
+- **vs WAL-G** — WAL-G is the "backup straight to object storage" choice (S3, GCS, Azure Blob), single-file WAL archiving, very cloud-native. Pick WAL-G if your truth is "everything goes in S3"; pick Barman if your truth is "we have a backup server in the rack".
+- **vs cloud-managed Postgres** (RDS, Aurora, Cloud SQL, Neon) — those handle backups for you. Barman is for self-managed clusters.
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+When Barman is still a good pick:
 
-## Internal links
+- You operate Postgres on dedicated hosts/VMs and want a centralised backup server that pulls from multiple primaries.
+- You're already running an EnterpriseDB-flavoured stack.
+- You want a tool with a long, conservative track record in regulated environments where "the same way we've done it for 10 years" is a feature.
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+Common operational pattern: Barman host with large disk → pulls base backups from each primary on a schedule, continuously archives WAL via `pg_receivewal` or SSH, exposes restore commands via the `barman` CLI. Cron-friendly, easy to monitor.
 
-- [[postgresql]] — postgresql _(score 28.3)_
-- [[toydb]] — toyDB _(score 17.4)_
-- [[license]] — License _(score 17.4)_
-- [[chroma]] — chroma _(score 16.6)_
-- [[python]] — PUFF _(score 12.0)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-## Keywords
-
-`#barman` `#postgres` `#relational` `#db` `#postgresql` `#recovery` `#backup` `#python`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+License caveat: GPLv3. For most users this is fine (Barman is a tool you run, not a library you link). Check before redistributing as part of a closed product.
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+Key facts:
 
----
-title: "Barman: PostgreSQL Backup and Recovery Manager"
-tags:
-  - barman
-  - postgresql
-  - backup-recovery
-  - python
-  - enterprise-db
-  - gpl
----
+- Open-source administrative tool for disaster recovery of PostgreSQL servers.
+- Enables remote physical backups of multiple PG servers.
+- Continuous WAL archiving + base backups → point-in-time recovery.
+- Written in Python.
+- Maintained by EnterpriseDB.
+- Distributed under GNU GPL v3.
 
-# Barman: PostgreSQL Backup and Recovery Manager
+Useful follow-ups:
 
-- **Source:** [github.com/EnterpriseDB/barman](https://github.com/EnterpriseDB/barman)
-- **Sources:**
-  - [pgbarman.org](http://www.pgbarman.org/)
-  - [GitHub Repository](http://github.com/EnterpriseDB/barman)
-  - [Documentation](http://www.pgbarman.org/documentation/)
-  - [Community support](http://www.pgbarman.org/support/)
-  - [EnterpriseDB](https://www.enterprisedb.com/)
-  - [GNU General Public License](http://www.gnu.org/licenses/)
+- Recommended Postgres backup strategy patterns: weekly full + daily incremental + continuous WAL.
+- Compare Barman's RPO/RTO characteristics against pgBackRest and WAL-G for your specific topology.
+- Test the restore. Untested backups are not backups.
 
-## TL;DR
-*   Barman is an open-source tool for disaster recovery of PostgreSQL servers.
-*   It allows remote backups of multiple servers in critical environments to reduce risk.
-*   It is written in Python.
-*   It is maintained by EnterpriseDB under the GNU GPL version 3 license.
-*   It assists DBAs during the PostgreSQL recovery phase.
+## Similar / related topics
 
-## Suggested vault notes
-*   [[PostgreSQL Tools]]
-*   [[PostgreSQL Backup Strategy]]
-*   [[GPL Licensing Details]]
+- [[postgresql]] — what you're backing up.
+- [pgBackRest](https://pgbackrest.org/) — modern Postgres backup tool, usually the better default for new deployments.
+- [WAL-G](https://github.com/wal-g/wal-g) — object-storage-first backup tool.
+- `pg_dump` / `pg_dumpall` — logical backups, useful for migrations, not a real backup strategy by themselves.
+- [Pigsty](https://pigsty.io/) — packaged Postgres distribution that bundles backup tooling.
 
-## Answer recap
-Barman is an open-source administration tool written in Python designed for the disaster recovery of PostgreSQL servers. Its core function is to enable remote backups of multiple servers in critical environments to minimize risk and assist Database Administrators (DBAs) during recovery. It is maintained by EnterpriseDB and distributed under the GNU General Public License (GPL) version 3.
+## Internal links
 
-## Consistency and gaps
-No material inconsistencies spotted.
+<!-- reviewed -->
 
-## Sources and follow-ups
-*   **Sources:** [pgbarman.org](http://www.pgbarman.org/), [GitHub Repository](http://github.com/EnterpriseDB/barman), [Documentation](http://www.pgbarman.org/documentation/), [Community support](http://www.pgbarman.org/support/), [EnterpriseDB](https://www.enterprisedb.com/), [GNU General Public License](http://www.gnu.org/licenses/).
-*   What are the current recommended backup and recovery strategies for PostgreSQL environments utilizing Barman?
-*   How does the Python implementation of Barman handle remote backup synchronization?
-*   What are the implications of using the GPLv3 license for commercial deployments?
+- [[postgresql]]
+
+## Keywords
+
+`#barman` `#postgresql` `#backup` `#pitr` `#wal-archiving` `#enterprisedb` `#gpl` `#dba-tools` `#db`

@@ -1,69 +1,69 @@
 ---
-title: qdrant
-main_link: https://github.com/qdrant/qdrant
-keywords: [qdrant, vector, search, api, neural, rust]
-status: draft
+title: "Qdrant — production-grade Rust vector database"
+main_link: https://qdrant.tech/
+keywords: [qdrant, vector, embedding, similarity-search, rust, ann, hnsw, rag]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Qdrant — production-grade Rust vector database
 
-# qdrant
+**Main link:** <https://qdrant.tech/>
 
-**Main link:** <https://github.com/qdrant/qdrant>
+Repo: <https://github.com/qdrant/qdrant> · Docs: <https://qdrant.tech/documentation/> · Benchmarks: <https://qdrant.tech/benchmarks/> · Cloud: <https://cloud.qdrant.io/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Qdrant (pronounced "quadrant") is a vector similarity search engine and vector database written in Rust. It stores **points** — vectors with an arbitrary JSON payload — and provides fast ANN search (HNSW under the hood) plus rich, predicate-style filtering on the payload, exposed over both REST and gRPC. It's open source (Apache 2.0), self-hosted or available as Qdrant Cloud (with a free tier), and is widely considered the production-grade choice in the open-source vector-DB space.
+
+> Note: there's a sibling article in this vault at `ml/data/qdrant_vector_search.md` that covers Qdrant from the ML / RAG application angle. This article focuses on Qdrant as a database. The two will be unified or cross-linked properly in P5.AA.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Qdrant's strengths, vs the field:
 
-## Similar / related topics
+- **Real filtering.** Most vector DBs treat metadata as an afterthought; Qdrant treats it as first-class. You can combine vector search with `must` / `should` / `must_not` predicates over arbitrary payload fields, with proper indexing on those fields. This matters a lot for multi-tenant RAG ("only my docs"), recommendation ("only items I haven't bought"), and compliance ("only documents I'm allowed to see").
+- **gRPC + REST.** Both are first-class, both fast.
+- **Quantisation** (scalar, product, binary) for memory-efficient storage of large collections.
+- **Sharding and replication** built in; no Kubernetes operator required for a small cluster.
+- **Rust** means single-binary deployment and predictable resource usage. The benchmark numbers vs Weaviate / Milvus / Elasticsearch are consistently good.
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+When to pick Qdrant vs the alternatives:
 
-## Internal links
+- **vs [[chroma]]** — Chroma is the easier on-ramp; Qdrant is the natural production graduation. Qdrant's payload filtering is significantly more powerful.
+- **vs [Weaviate](https://weaviate.io/)** — Weaviate has built-in vectoriser modules and a GraphQL API; Qdrant is leaner and has better filtering. Pick Weaviate if you want the schema + GraphQL story; pick Qdrant if you want a leaner engine you assemble around.
+- **vs [Milvus](https://milvus.io/)** — Milvus is heavier, GPU-aware, designed for very large fleets. For most apps, Qdrant is enough and easier to run.
+- **vs pgvector** — if you already run Postgres at meaningful scale and only need a few million vectors with simple filtering, just use pgvector. Qdrant pulls ahead at higher scale, with rich filtering needs, or where you want vectors decoupled from your operational DB.
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[qdrant_vector_search]] — qdrant _(score 33.3)_
-- [[chroma]] — chroma _(score 21.3)_
-- [[_todo_ideas]] — Move blokchain from python to rust _(score 18.8)_
-- [[paho_mqtt]] — paho MQTT _(score 18.8)_
-- [[rtic]] — RTIC _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-## Keywords
-
-`#qdrant` `#vector` `#db` `#search` `#api` `#makes` `#neural`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+The free tier on Qdrant Cloud (a small managed cluster) is genuinely useful for prototyping and small-scale prod.
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+> Qdrant (read: quadrant) is a vector similarity search engine and vector database. It provides a production-ready service with a convenient API to store, search, and manage points — vectors with an additional payload. Qdrant is tailored to extended filtering support. It makes it useful for all sorts of neural-network or semantic-based matching, faceted search, and other applications.
+>
+> Qdrant is written in Rust 🦀, which makes it fast and reliable even under high load.
 
-# qdrant
+Useful links:
 
+- Repo: <https://github.com/qdrant/qdrant>
+- Benchmarks (with methodology): <https://qdrant.tech/benchmarks/>
+- Qdrant Cloud (managed, free tier): <https://cloud.qdrant.io/>
 
-https://github.com/qdrant/qdrant
+## Similar / related topics
 
-Qdrant (read: quadrant) is a vector similarity search engine and vector database. It provides a production-ready service with a convenient API to store, search, and manage points—vectors with an additional payload Qdrant is tailored to extended filtering support. It makes it useful for all sorts of neural-network or semantic-based matching, faceted search, and other applications.
+- [[chroma]] — the lighter on-ramp; embedded mode for prototyping.
+- [Weaviate](https://weaviate.io/) — alternative open-source vector DB with built-in vectorisers + GraphQL.
+- [Milvus](https://milvus.io/) — heavier, GPU-friendly alternative.
+- pgvector on [[postgresql]] — when "just use Postgres" is enough.
+- [[singlestore]] — vector type bolted onto an HTAP engine, useful if you want it next to operational data.
 
-Qdrant is written in Rust 🦀, which makes it fast and reliable even under high load. See benchmarks.
+## Internal links
 
-With Qdrant, embeddings or neural network encoders can be turned into full-fledged applications for matching, searching, recommending, and much more!
+<!-- reviewed -->
 
-Qdrant is also available as a fully managed Qdrant Cloud ⛅ including a free tier.
+- [[chroma]]
+- [[postgresql]]
+- [[singlestore]]
 
+## Keywords
 
-https://qdrant.tech/benchmarks/
+`#qdrant` `#vector-db` `#similarity-search` `#rust` `#hnsw` `#rag` `#ann` `#embedding` `#db`

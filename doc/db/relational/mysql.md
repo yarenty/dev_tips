@@ -1,140 +1,110 @@
 ---
-title: mysql
-main_link: 
-keywords: [mysql, root, password, secure]
-status: draft
+title: "MySQL / MariaDB"
+main_link: https://www.mysql.com/
+keywords: [mysql, mariadb, oltp, sql, replication, aurora, root-password, brew]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# MySQL / MariaDB
 
-# mysql
+**Main link:** <https://www.mysql.com/>
+
+Docs: <https://dev.mysql.com/doc/> · MariaDB: <https://mariadb.org/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+MySQL is the second-most-deployed open-source RDBMS after [[postgresql]], originally from MySQL AB, now owned by Oracle. **MariaDB** is the community fork that most Linux distros now ship by default in place of MySQL, since the 2010 Oracle acquisition. Both speak essentially the same wire protocol and SQL dialect, with MariaDB diverging on storage engines, JSON, and a handful of features.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+For a greenfield project in 2025, the default choice should be Postgres. But MySQL/MariaDB is genuinely the better pick when:
 
-## Similar / related topics
+- **You're in the LAMP / WordPress / cPanel / Magento / phpMyAdmin world.** That entire ecosystem assumes MySQL. Fighting it is more expensive than embracing it.
+- **You're on AWS Aurora MySQL.** Aurora is a fundamentally different storage layer underneath the MySQL surface and has very good economics + replication characteristics. Aurora Postgres exists but Aurora MySQL was the original and is more mature.
+- **You want a specific replication topology** that MySQL does well: classical async primary→replicas, semi-sync, group replication, ProxySQL routing, Vitess sharding. Postgres replication is fine but the toolchain ecosystem is smaller.
+- **You're on shared hosting.** Almost all shared hosting offers MySQL, almost none offers Postgres.
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+Where Postgres beats it: stricter types and constraints, real transactional DDL, much better JSON, a dramatically richer extension ecosystem, saner default behaviour around encoding and silent data truncation. If none of the MySQL-specific reasons above apply, pick Postgres.
 
-## Internal links
+MariaDB-specific notes: not a drop-in replacement at the storage-engine level (e.g. Aria, ColumnStore vs InnoDB-only on MySQL); the JSON column is implemented as `LONGTEXT` for compatibility; password / auth plugin defaults differ.
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+## Operational notes (Homebrew, macOS)
 
-- [[programming/rust/data/mysql|mysql]] — mysql _(score 17.9)_
-- [[mariadb]] — MariaDB _(score 17.9)_
-- [[limbo]] — Limbo _(score 16.0)_
-- [[xlite]] — XLite _(score 16.0)_
-- [[toydb]] — toyDB _(score 16.0)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-## Keywords
-
-`#mysql` `#relational` `#db` `#root` `#password` `#secure` `#reset`
-
-## TODO
-
-- No `main_link` could be auto-detected. Add the canonical URL (project homepage / repo / paper) to the frontmatter.
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
-
-## References / raw notes
-
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# mysql
-We've installed your MySQL database without a root password. To secure it run:
+```sh
+# Initial install (no root password by default — secure it!)
 mysql_secure_installation
 
-MySQL is configured to only allow connections from localhost by default
-
-To connect run:
-```shell
+# Connect locally
 mysql -uroot
-```
 
-To restart mysql after an upgrade:
-```shell
+# Restart
 brew services restart mysql
-```
-Or, if you don't want/need a background service you can just run:
 
-```shell
+# Foreground
 /usr/local/opt/mysql/bin/mysqld_safe --datadir=/usr/local/var/mysql
 ```
 
+## Reset root password (MariaDB on Ubuntu)
 
-## Reset root password
-
-
-```shell
-
+```sh
 sudo systemctl stop mysql
-
 sudo systemctl set-environment MYSQLD_OPTS="--skip-grant-tables --skip-networking"
-
 sudo systemctl start mysql
-
 sudo mysql -u root
+```
 
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 32
-Server version: 10.6.16-MariaDB-0ubuntu0.22.04.1 Ubuntu 22.04
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+Then in the MariaDB shell:
 
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+```sql
+SELECT User FROM mysql.user;
+-- +-------------+
+-- | User        |
+-- +-------------+
+-- | admin       |
+-- | mariadb.sys |
+-- | root        |
+-- +-------------+
 
-MariaDB [(none)]> SELECT User FROM mysql.user;
-+-------------+
-| User        |
-+-------------+
-| admin       |
-| mariadb.sys |
-| root        |
-+-------------+
-3 rows in set (0.001 sec)
+ALTER USER 'root'@'localhost' IDENTIFIED VIA mysql_native_password;
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('pass');
+FLUSH PRIVILEGES;
+EXIT;
+```
 
+Reset the systemd environment and restart:
 
-MariaDB [(none)]> ALTER USER 'root'@'localhost' IDENTIFIED VIA mysql_native_password;
-Query OK, 0 rows affected (0.003 sec)
-
-MariaDB [(none)]> SET PASSWORD FOR 'root'@'localhost' = PASSWORD('pass');
-Query OK, 0 rows affected (0.001 sec)
-
-MariaDB [(none)]> FLUSH PRIVILEGES;
-Query OK, 0 rows affected (0.000 sec)
-
-MariaDB [(none)]> exit;
-
-
-
+```sh
 sudo systemctl set-environment MYSQLD_OPTS=""
 sudo systemctl stop mysql
 sudo systemctl start mysql
 sudo mysql -u root -p
-
 ```
 
+## Add a user / database
 
-## Add user
-
-```shell
-
-MariaDB [(none)]> create user 'todo'@localhost identified by 'pass2';
-Query OK, 0 rows affected (0.003 sec)
-
-MariaDB [(none)]> grant ALL PRIVILEGES  on todo.* to 'todo'@'localhost';
-Query OK, 0 rows affected (0.001 sec)
-
-MariaDB [(none)]> flush privileges;
-Query OK, 0 rows affected (0.000 sec)
+```sql
+CREATE USER 'todo'@'localhost' IDENTIFIED BY 'pass2';
+GRANT ALL PRIVILEGES ON todo.* TO 'todo'@'localhost';
+FLUSH PRIVILEGES;
 ```
+
+## Similar / related topics
+
+- [[postgresql]] — the canonical alternative; usually the better default for new work.
+- [MariaDB](https://mariadb.org/) — the community fork most Linux distros now ship.
+- [[singlestore]] — wire-compatible-ish with MySQL, distributed and HTAP.
+- [[limbo]] / SQLite — when you don't actually need a server.
+- [Vitess](https://vitess.io/) — horizontal sharding layer over MySQL (powers YouTube, Slack).
+
+## Internal links
+
+<!-- reviewed -->
+
+- [[postgresql]]
+- [[singlestore]]
+- [[limbo]]
+- [[barman]]
+
+## Keywords
+
+`#mysql` `#mariadb` `#relational` `#oltp` `#sql` `#aurora` `#replication` `#db`
