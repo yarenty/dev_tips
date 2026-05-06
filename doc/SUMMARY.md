@@ -589,9 +589,9 @@
 # DPU
 
 - [DPU](dpu/README.md)
-  - [Xilinx](dpu/xilinx/README.md)
-    - [Vitis](dpu/xilinx/vitis.md)
-  - [Xpu](dpu/xpu/README.md)
+  - [Xilinx (AMD Adaptive Computing)](dpu/xilinx/README.md)
+    - [AMD Vitis](dpu/xilinx/vitis.md)
+  - [XPU slide-deck collection](dpu/xpu/README.md)
 
 # Trading
 
