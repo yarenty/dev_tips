@@ -176,7 +176,7 @@ Here are some active projects using DataFusion:
 
 
 Importance:
-Provides core competiteveness - core library of tachyons.
+Foundational library for analytics-engine work.
 
 
 
@@ -211,7 +211,7 @@ Arrow is specifically designed to maximize:
 
 
 Comperative 
-Arrow is core part of Datafusion as so Tachyons solution.  There are others while, Arrow is well astablished, mature and constantly growning.
+Arrow is the in-memory format underlying Datafusion (and most modern Rust analytics engines). Well-established, mature, and constantly growing.
 
 
 Importance:
@@ -306,7 +306,7 @@ Core library to asynchronous streaming.
 
 
 Importance
-Provides core competetiveness - tachyons is streaming solution
+Foundational for any streaming-shaped solution.
 
 
 
@@ -357,16 +357,16 @@ Feature flags are used to enable support for other implementations:
 `	•	azure`: [Azure Blob Storage](https://azure.microsoft.com/en-gb/services/storage/blobs/). 
 `	•	http`: [HTTP/WebDAV Storage](https://datatracker.ietf.org/doc/html/rfc2518). 
 
-Tachyons solution extend object_store with HDFS (hdfs3_object_store)
+`object_store` can be extended with HDFS support via `hdfs3_object_store`.
 
 
 Comperative
-Access to different types of data in DAtafusion / Tachyons is done through object_store, As so is the  main part of solution.
+Access to different types of data in Datafusion is done through `object_store`, so it's the main I/O abstraction.
 
 
 
 Importance
-Provides core competetiveness - Tachyons solution extend object_store with HDFS (libhdfs3), or Druid / CarbonData 
+Foundational; extending `object_store` with HDFS (via libhdfs3) or alternative backends like Druid / CarbonData lets the same engine code talk to all of them.
 
 
 
@@ -433,4 +433,4 @@ mature and well tested - used in lots of libraries exposed in python.
 
 Importance
 
-Provides core competitevness  - expose tachyons in python language.
+Foundational — the canonical way to expose a Rust library to Python.

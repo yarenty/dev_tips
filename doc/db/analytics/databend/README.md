@@ -11,18 +11,9 @@ warehouse designed as a Snowflake alternative. It separates compute from
 storage (object storage as the source of truth), speaks SQL, and is built on
 top of Apache Arrow.
 
-This folder holds early evaluation material from when we benchmarked Databend
-against [[druid]] and SparkSQL on single-node workloads — both NCE and
-TPC-DS-style.
-
-## What's in this folder
-
-- `Databend_quick_v01.pptx` — short intro deck (architecture, SQL surface,
-  storage model).
-- `Druid, SparkSQL & Databend NCE Single-Node_translated.docx` — single-node
-  benchmark write-up against Druid and SparkSQL on an NCE workload.
-- `Druid, SparkSQL & Databend tpcds Single-Node_translated.docx` — single-node
-  TPC-DS benchmark numbers across the same three engines.
+Mostly worth knowing as one of the modern Rust-rewritten data-warehouse
+options, alongside [[db/timeseries/greptimedb|GreptimeDB]], [QuestDB](https://questdb.io/),
+and the InfluxDB 3 (IOx) lineage.
 
 ## External entry points
 
@@ -34,7 +25,7 @@ TPC-DS-style.
 
 - [[db/analytics/datafusion/README|DataFusion]] — same Arrow/Rust ecosystem;
   Databend reuses pieces of it.
-- [[db/analytics/README|analytics]] — siblings (Gluten, Tachyons, tensor query).
+- [[db/analytics/README|analytics]] — siblings (DataFusion, Gluten, tensor query).
 - [[druid]] — one of the comparison engines.
 
 ## Keywords

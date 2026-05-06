@@ -1,3 +1,5 @@
+# Build / IDE / system
+
 /.bsp/
 /.idea/
 /project/target/
@@ -7,53 +9,26 @@
 /project/project/
 /doc/.obsidian
 /doc/.obsidian/
-/doc/resources/.DS_Store
-book
+book/
+/book
 .obsidian
-*/*.pdf
-*/*/*.pdf
-*/*/*/*.pdf
-*/*/*/*/*.pdf
-*/*/*/*/*/*.pdf
-*/*/*/*/*/*/*.pdf
-*/*.pptx
-*/*/*.pptx
-*/*/*/*.pptx
-*/*/*/*/*.pptx
-*/*/*/*/*/*.pptx
-*/*/*/*/*/*/*.pptx
-*/*.ppt
-*/*/*.ppt
-*/*/*/*.ppt
-*/*/*/*/*.ppt
-*/*/*/*/*/*.ppt
-*/*/*/*/*/*/*.ppt
-*/*.docx
-*/*/*.docx
-*/*/*/*.docx
-*/*/*/*/*.docx
-*/*/*/*/*/*.docx
-*/*/*/*/*/*/*.docx
-*/*.xlsx
-*/*/*.xlsx
-*/*/*/*.xlsx
-*/*/*/*/*.xlsx
-*/*/*/*/*/*.xlsx
-*/*/*/*/*/*/*.xlsx
-*/*.zip
-*/*/*.zip
-*/*/*/*.zip
-*/*/*/*/*.zip
-*/*/*/*/*/*.zip
-*/*/*/*/*/*/*.zip
-
-
-
-# Ignore Smart Environment folder
 .smart-env
-/.DS_Store
-/*/*/.DS_Store
-/*/.DS_Store
-/*/*/*/.DS_Store
-/*/*/*/*/.DS_Store
-/*/*/*/*/*/.DS_Store
+**/.DS_Store
+
+# Binary documents — internal artefacts, never commit
+# Recursive glob covers root + every subdirectory.
+**/*.pdf
+**/*.pptx
+**/*.ppt
+**/*.doc
+**/*.docx
+**/*.xlsx
+**/*.xls
+**/*.zip
+**/*.tar.gz
+**/*.tgz
+**/*.7z
+**/*.rar
+
+# (If you ever genuinely need a single tracked binary,
+#  use `git add -f <path>` to override.)

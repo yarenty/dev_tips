@@ -1,6 +1,6 @@
 ---
 title: Analytics databases & engines
-keywords: [analytics, olap, query-engine, datafusion, databend, gluten, tachyons, tensor-query]
+keywords: [analytics, olap, query-engine, datafusion, databend, gluten, tensor-query]
 status: reviewed
 ---
 
@@ -8,22 +8,19 @@ status: reviewed
 
 Notes, decks, and papers I've collected while comparing OLAP / analytics
 engines — both production-oriented (Databend, DataFusion, Gluten) and
-research-grade (tensor query processing). Most subfolders are asset folders
-holding `.pptx` decks, benchmark spreadsheets, or PDFs from earlier evaluation
-work; the READMEs frame what's in each one.
+research-grade (tensor query processing). The READMEs frame what each
+subfolder is about, with external pointers to the canonical projects.
 
 ## What's in this section
 
 ### Engines
 
 - [[db/analytics/databend/README|Databend]] — Rust-native cloud data warehouse;
-  benchmark decks against Druid and SparkSQL.
+  benchmark notes vs Druid and SparkSQL.
 - [[db/analytics/datafusion/README|DataFusion]] — Apache Arrow's Rust query
-  engine; decks on concurrent writes, Ballista gaps, and migration plans.
+  engine; concurrent writes, Ballista gaps, migration notes.
 - [[db/analytics/gluten/README|Gluten]] — Spark SQL operator offload to native
-  engines (Velox / ClickHouse); Intel OAP project decks.
-- [[db/analytics/tachyons_distributed/README|Tachyons]] — internal/personal
-  distributed-write project; planning spreadsheets, design decks, test specs.
+  engines (Velox / ClickHouse); Intel OAP project context.
 
 ### Research
 

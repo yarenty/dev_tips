@@ -1,31 +1,21 @@
 ---
-title: "XPU (heterogeneous computing) — slide-deck collection"
-keywords: [xpu, heterogeneous-computing, accelerators, dvpp, asset-folder]
+title: "XPU (heterogeneous computing)"
+keywords: [xpu, heterogeneous-computing, accelerators, dvpp, huawei-ascend, tenstorrent]
 status: reviewed
 ---
 
-# XPU (heterogeneous computing) — slide-deck collection
+# XPU (heterogeneous computing)
 
-This subsection is **a parking spot for reference slide decks**, not a set of articles. The XPU acronym (sometimes "X-PU", standing in for *any-PU* — CPU + GPU + NPU + DPU + DSP + custom ASICs all in one heterogeneous compute model) is used loosely in the literature, often in the context of Huawei Ascend / DaVinci, Tenstorrent, or vendor-neutral software-defined-acceleration discussions.
-
-## What's actually in this folder
-
-The slides below are kept as raw reference material — open them in PowerPoint / Keynote / [LibreOffice Impress](https://www.libreoffice.org/) for the original content. None of them have been translated into Markdown articles in this vault.
-
-| File | Topic |
-|------|-------|
-| `2023 Software and hardware combination tech project Charter (English Version).pptx` | Project charter document, English translation |
-| `Computing Acceleration Software and Hardware Integration Technology.pptx` | Overview of software/hardware co-design for acceleration |
-| `DVPP.pptx` | DVPP (Digital Vision Pre-Processing) — Huawei Ascend's image / video pre-processing engine that sits in front of the AI compute units |
+The **XPU** acronym (sometimes "X-PU", standing in for *any-PU* — CPU + GPU + NPU + DPU + DSP + custom ASICs all in one heterogeneous compute model) is used loosely in the literature, often in the context of Huawei Ascend / DaVinci, Tenstorrent, or vendor-neutral software-defined-acceleration discussions.
 
 ## Where to learn more
 
 For DPUs / XPUs / heterogeneous compute generally:
 
-- [Huawei Ascend / CANN](https://www.hiascend.com/en/) — the canonical XPU + DVPP stack ecosystem.
+- [Huawei Ascend / CANN](https://www.hiascend.com/en/) — the canonical XPU stack, including DVPP (Digital Vision Pre-Processing) for image/video pipelines that sit in front of the AI compute units.
 - [NVIDIA BlueField DPU](https://www.nvidia.com/en-us/networking/products/data-processing-unit/) — different angle: SmartNIC + ARM cores + custom accelerators.
 - [Tenstorrent](https://tenstorrent.com/) — open-architecture AI accelerators (RISC-V + custom NoC).
-- [AWS Nitro System](https://aws.amazon.com/ec2/nitro/) — purpose-built DPU+hypervisor offload for AWS.
+- [AWS Nitro System](https://aws.amazon.com/ec2/nitro/) — purpose-built DPU + hypervisor offload for AWS.
 - [[vitis]] — Xilinx/AMD's FPGA-based take on the same problem space.
 
 ## Cross-section see-also
@@ -35,4 +25,4 @@ For DPUs / XPUs / heterogeneous compute generally:
 
 ## Keywords
 
-`#dpu` `#xpu` `#heterogeneous-computing` `#accelerators` `#dvpp` `#huawei-ascend` `#asset-folder`
+`#dpu` `#xpu` `#heterogeneous-computing` `#accelerators` `#dvpp` `#huawei-ascend` `#tenstorrent`

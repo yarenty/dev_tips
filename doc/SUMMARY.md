@@ -250,7 +250,6 @@
     - [Databend](db/analytics/databend/README.md)
     - [Datafusion](db/analytics/datafusion/README.md)
     - [Gluten](db/analytics/gluten/README.md)
-    - [Tachyons Distributed](db/analytics/tachyons_distributed/README.md)
     - [Tensor Query](db/analytics/tensor_query/README.md)
   - [Catalogs](db/catalogs/README.md)
     - [Unity Hive Catalog](db/catalogs/unity_hive_catalog/README.md)

@@ -25,12 +25,6 @@ The Spark / MapReduce lineage solves this with stage-level recomputation
 from materialized shuffle output; modern engines (Trino with fault-tolerant
 execution, Snowflake) have variations on the same theme.
 
-## What's in this folder
-
-- `Long-Running Queries_v1.docx` — write-up of design notes for long-running
-  query handling.
-- `LongRunning_Queries_v01.pptx` — companion deck.
-
 ## External entry points
 
 - [Trino fault-tolerant execution](https://trino.io/docs/current/admin/fault-tolerant-execution.html)
