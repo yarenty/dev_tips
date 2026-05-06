@@ -1,321 +1,184 @@
 ---
-title: K3S
+title: "K3s: lightweight Kubernetes for edge, IoT, and homelab"
 main_link: https://k3s.io/
-keywords: [k3s, kubernetes, edge, iot, raspberry-pi, lightweight, javascript]
-status: draft
+keywords: [k3s, kubernetes, lightweight, edge, iot, raspberry-pi, k3sup, arkade, arm, homelab, openfaas]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# K3S
+# K3s: lightweight Kubernetes for edge, IoT, and homelab
 
 **Main link:** <https://k3s.io/>
 
+Repo: <https://github.com/k3s-io/k3s> · CNCF: <https://landscape.cncf.io/?selected=k-3s>
+
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+[K3s](https://k3s.io/) is a CNCF-graduated, [Rancher](https://www.rancher.com/)-built distribution of Kubernetes packaged as **a single ~40 MB binary** with embedded SQLite (or external etcd / Postgres / MySQL for HA), [Traefik](https://traefik.io/) as the default ingress controller, [Flannel](https://github.com/flannel-io/flannel) for the CNI, and `containerd` for the runtime. It's API-compatible with upstream Kubernetes and CNCF-certified, but tunes everything for resource-constrained nodes (Raspberry Pi, NVIDIA Jetson, AWS A1, [Oracle Always Free Ampere](../cloud/oracle_free_tier.md)) by stripping legacy in-tree drivers, alpha features, and the cloud-controller manager. Server memory footprint is around **500 MB** vs. ~2 GB for `kubeadm`-installed upstream Kubernetes.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for K3s when:
+
+- You're running Kubernetes on **ARM hardware** (Raspberry Pi 4/5, Jetson, AWS Graviton, Oracle Ampere). Multi-arch images and binaries are first-class.
+- You want **production-grade Kubernetes on a single VPS or homelab box** without a 7-step install, an external load balancer, or a separate etcd cluster.
+- You're at the **edge** — unattended remote sites, IoT gateways, in-vehicle compute. K3s ships with auto-update support and is happy to run on flaky networks.
+
+Don't reach for K3s when:
+
+- You need every Kubernetes feature on day one. Some alpha APIs and the in-tree cloud providers are removed; for cutting-edge demos use upstream `kubeadm`.
+- You're on a managed cloud Kubernetes (EKS / GKE / AKS) — they handle the same "I don't want to babysit etcd" problem differently.
+- Your workload genuinely needs the heavyweight control plane. K3s's embedded SQLite is fine for ~100s of nodes; past that you want either external etcd (HA mode) or the "real" Kubernetes.
+
+The ecosystem worth knowing:
+
+- **[k3sup](https://k3sup.dev/)** ("ketchup") — install K3s onto a remote box over SSH with a single command. The right tool for "I just SSH'd into the Pi for the first time".
+- **[arkade](https://github.com/alexellis/arkade)** — `apt`-style installer for ~40 Kubernetes apps (cert-manager, ingress-nginx, Grafana, Loki, Postgres, Linkerd, ...) that abstracts away whether each one ships as Helm chart, raw YAML, or CLI. Far less friction than memorising helm-repo URLs.
+- **[OpenFaaS](https://www.openfaas.com/)** — serverless functions on K3s; the most-cited "look how lightweight K3s is" demo platform.
+- **[inlets](https://inlets.dev/)** — tunnel that gives a homelab K3s cluster a public IP without port-forwarding. Pairs well with cert-manager + Let's Encrypt.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [Upstream Kubernetes](https://kubernetes.io/) (`kubeadm`-installed) — what K3s is a stripped-down distribution of.
+- [k0s](https://k0sproject.io/) — Mirantis's competing single-binary distribution; similar trade-offs.
+- [MicroK8s](https://microk8s.io/) — Canonical's snap-packaged equivalent; popular on Ubuntu.
+- [[balena]] / [[akri]] — non-Kubernetes / device-discovery alternatives for the same edge problem.
+- [[dokku]] — single-host PaaS for the same "I just want to deploy my app" use case, without Kubernetes.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[balena]] — Balena _(score 29.1)_
-- [[kuasar]] — Kuasar _(score 22.9)_
-- [[akri]] — Akri _(score 22.9)_
-- [[dokku]] — Dokku _(score 22.9)_
-- [[programming/rust/misc/drogue|drogue]] — Drogue _(score 18.3)_
+- [[oracle_free_tier]] — natural target host: 4 OCPUs / 24 GB ARM is plenty for a real K3s cluster
+- [[akri]] — device discovery on the edge nodes K3s typically runs on
+- [[balena]] — non-Kubernetes alternative for the same fleet/edge problem
+- [[dokku]] — non-Kubernetes alternative for the "deploy my app" use case
+- [[observability/grafana|grafana]] + [[prometheus]] — the canonical observability stack you'll install on top
+- [[apache]] / [[ssl]] — relevant if you'll ingress with Let's Encrypt TLS
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#k3s` `#kubernetes` `#edge` `#iot` `#raspberry-pi` `#lightweight` `#openfaas`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
-- Note: a previous auto-split mistakenly treated several `# Build a local Docker image…`, `# Deploy the function…`, `# Omit sudo if you wish…`, `# Once Proxying you can navigate…`, `# Now invoke your function` lines (which were actually unfenced shell-comment lines from a tutorial) as Markdown H1s and spilled out 5 garbage articles. Those have been deleted and the original content restored. The shell blocks below have been wrapped in ``` fences so the splitter never makes that mistake again.
+`#kubernetes` `#k3s` `#lightweight` `#edge` `#iot` `#raspberry-pi` `#k3sup` `#arkade` `#arm` `#homelab` `#openfaas`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### One-liner install (single node)
 
-# K3S
-
-<https://k3s.io/>
-
-Lightweight Kubernetes. The certified Kubernetes distribution built for IoT & Edge computing.
-
-This won't take long…
-
-```bash
+```sh
 curl -sfL https://get.k3s.io | sh -
-# Check for Ready node, takes maybe 30 seconds
-k3s kubectl get node
+
+# Should be Ready within ~30 s
+sudo k3s kubectl get node
 ```
 
-## Why Use K3s
+### Add a worker node
 
-**Perfect for Edge** — K3s is a highly available, certified Kubernetes distribution designed for production workloads in unattended, resource-constrained, remote locations or inside IoT appliances.
+```sh
+# On the server, grab the join token
+sudo cat /var/lib/rancher/k3s/server/node-token
 
-**Simplified & Secure** — K3s is packaged as a single <40MB binary that reduces the dependencies and steps needed to install, run and auto-update a production Kubernetes cluster.
+# On the agent, point at the server with that token
+curl -sfL https://get.k3s.io | K3S_URL=https://<server-ip>:6443 K3S_TOKEN=<token> sh -
+```
 
-**Optimized for ARM** — Both ARM64 and ARMv7 are supported with binaries and multiarch images available for both. K3s works great from something as small as a Raspberry Pi to an AWS a1.4xlarge 32GiB server.
+Or run agent and server manually:
 
-![](../assets/img/kubernetes/how-it-works-k3s.svg)
-
-## Intro
-
-```bash
+```sh
+# Server
 sudo k3s server &
 # Kubeconfig is written to /etc/rancher/k3s/k3s.yaml
-sudo k3s kubectl get node
 
-# On a different node run the below. NODE_TOKEN comes from /var/lib/rancher/k3s/server/node-token
-# on your server
-sudo k3s agent --server https://myserver:6443 --token ${NODE_TOKEN}
+# Agent (different machine)
+sudo k3s agent --server https://<server-ip>:6443 --token <NODE_TOKEN>
 ```
 
-## Raspberry
+### Recipe: K3s on a Raspberry Pi 4 cluster (condensed from Alex Ellis's [walkthrough](https://alexellisuk.medium.com/walk-through-install-kubernetes-to-your-raspberry-pi-in-15-minutes-84a8492dc95a))
 
-<https://alexellisuk.medium.com/walk-through-install-kubernetes-to-your-raspberry-pi-in-15-minutes-84a8492dc95a>
+**Bill of materials** (per node)
 
-Here's something you can do before work, with your morning coffee, or whilst waiting for dinner to cook of an evening. And there's never been a better time to install Kubernetes to a Raspberry Pi, with the price-drop on the 2GB model — perfect for containers.
+- Raspberry Pi 4, 2 GB or 4 GB RAM (4 GB recommended if you'll run Grafana / Loki on the cluster).
+- 32 GB+ SD card. Kubernetes writes to disk a lot — prefer multiple smaller cards over one giant one (cheaper to replace when one wears out).
+- The official Raspberry Pi power supply. Don't cheap out, you'll buy twice.
+- Build images on your laptop with [Docker Buildx](https://docs.docker.com/buildx/working-with-buildx/), not on the Pi.
 
-You can buy a single RPi and still have a lot of fun, here I bought 4× 2GB nodes. I'll show you how to install Kubernetes to your Raspberry Pi in 15 minutes including monitoring and how to deploy containers.
+**Initial Pi setup**
 
-**Updates:**
-- Dec 2020 — added cmdline.txt instructions for cgroups and ssh-copy-id
-- Jan 2021 — added multi-arch `faas-cli publish` command instead of `faas-cli up` to use new templates and Docker buildx
-- Mar 2021 — Raspbian is now Raspberry Pi OS
+1. Flash Raspberry Pi OS Lite to the SD card via [balenaEtcher](https://etcher.balena.io/).
+2. Before booting, create an empty `ssh` file in the boot partition (enables SSH on first boot).
+3. Boot, find the Pi (`raspi.local` if mDNS works, otherwise `nmap -sP 192.168.0.0/24`).
+4. `passwd pi` and `sudo raspi-config` → set memory split to 16 MB so all RAM goes to Kubernetes.
+5. **Critical for K3s on Pi**: append to `/boot/cmdline.txt` (single line, no newlines):
 
-### The bill of materials
+   ```text
+   cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory
+   ```
 
-I'll keep this quite simple.
+6. Reboot.
 
-- Raspberry Pi 4, with 2GB or 4GB RAM — the 2GB is the best value, 4GB is best if you don't plan on doing clustering.
-- SD card — 32GB recommended, larger is up to you, but Kubernetes writes to disk a lot and could kill a card, so I tend to prefer buying more smaller cards.
-- Power supply — you need the official supply, I know it's expensive, but that's for a reason. Don't be cheap because you'll buy twice.
-- Docker Desktop — if you want to build your own images, you need to cross-compile them from a PC with buildx, do not install docker on your nodes.
+**Bootstrap K3s from your laptop**
 
-If you'd like some links, you can find them in my home-lab post: Kubernetes Homelab with Raspberry Pi and k3sup.
-
-### Flash the initial OS
-
-There are so many ways to install an Operating System, but I recommend Raspberry Pi OS and the Lite edition which ships without a UI.
-
-Once you download the image, you can use Etcher.io from our friends at Balena to flash it without even unzipping it. How cool is that?
-
-Before you boot up that RPi, make sure you create a file named `ssh` in the boot partition. If on a Mac you'll see that gets mounted for you as soon as you eject and re-insert the SD card.
-
-### Connect for the first boot
-
-Now connect to the Raspberry Pi over your local network, it will show up as `raspberry.local`, but if you can't connect for some reason, then install nmap and run `nmap -sP 192.168.0.0/24` to run a network scan.
-
-Change the password with `passwd pi`.
-
-Run `raspi-config` and change the memory split to 16mb, so that we have all the RAM for Kubernetes, believe me, it needs it.
-
-There's one more change that's essential for k3s. Add the following to `/boot/cmdline.txt`, but make sure that you don't add new lines.
-
-```
-cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory
-```
-
-### Copy or create an SSH key
-
-`k3sup` uses password-less login by default, so that means you can run it from a script or automation without human intervention.
-
-Copy your SSH key to the Raspberry Pi with:
-
-```bash
-ssh-copy-id pi@raspberrypi.local
-```
-
-If you have no SSH key on your local computer yet, then run `ssh-keygen`.
-
-### Get your CLI tools
-
-You do not need to log into your Raspberry Pi again. All tools will be installed on your client (i.e. your laptop) and the RPi will be accessed remotely as a server.
-
-- `arkade` — a hassle-free way to get Kubernetes apps and CLIs
-- `kubectl` — the Kubernetes CLI
-- `k3sup` — the Kubernetes (k3s) installer that uses SSH to bootstrap Kubernetes
-
-`arkade` is a portable Kubernetes marketplace which makes it easy to install around 40 apps to your cluster, without worrying about all the gory details and configuration options. `arkade` also "does the right thing" — for instance:
-
-- An app like OpenFaaS uses a helm chart
-- A tool like the Kubernetes dashboard only uses plain YAML manifests
-- Linkerd for example prefers to use a CLI
-
-`arkade` abstracts that all away from the user with around 40 apps on offer. On top of that, if an app like Istio is known not to work on your device, it will block you from doing the wrong thing.
-
-We can also use it to download `k3sup` and `kubectl`:
-
-```bash
-# Omit sudo if you wish, then move the arkade binary to /usr/local/bin/
+```sh
+# On your laptop — install arkade, then k3sup + kubectl through it
 curl -sSL https://get.arkade.dev | sudo sh
 arkade get kubectl
 arkade get k3sup
-```
 
-Did you know that you can also specify a version to `arkade get`? For example: `arkade get kubectl --version 1.19.5`.
+# Copy your SSH key to the Pi if you haven't already
+ssh-copy-id pi@raspberrypi.local
 
-`k3sup install` can be used to install k3s as a server, to begin a new single-node cluster (that's what we'll do today). If you have multiple nodes, then the `k3sup join` command lets you add in additional agents or workers to expand the capacity.
-
-### Install Kubernetes with k3sup and k3s
-
-k3s is a lightweight edition of Kubernetes made by Rancher Labs, it's suitable for production, but also perfect for small devices like our Raspberry Pi. Its memory requirements are around 500MB for a server vs. around 2GB for `kubeadm` (upstream Kubernetes).
-
-```bash
-export IP="192.168.0.1" # find from ifconfig on RPi
+# Install K3s onto the Pi from your laptop, over SSH
+export IP="192.168.0.201"     # `ifconfig` on the Pi
 k3sup install --ip $IP --user pi
-```
 
-In a few moments you'll receive a kubeconfig file into your local directory, with an instruction on how to use it.
-
-Find the node, and check if it's ready yet:
-
-```bash
-export KUBECONFIG=`pwd`/kubeconfig
+# k3sup writes a kubeconfig into the cwd
+export KUBECONFIG=$PWD/kubeconfig
 kubectl get node -o wide
 ```
 
-You can add `-w` to most kubectl commands to "watch" or "stream" the output status, so you can save on typing.
+To add more Pis, use `k3sup join --ip <new-pi-ip> --server-ip $IP --user pi`.
 
-By default k3s comes with the metrics-server, which is used for Pod autoscaling and getting memory/CPU for pods and nodes:
+**Sanity-check the cluster**
 
-```bash
-kubectl top node
+```sh
+kubectl top node                    # needs metrics-server (ships by default in K3s)
 kubectl top pod --all-namespaces
 ```
 
-Now let's install one or two apps, run `arkade install` to see what's available, but note that not all projects in the CNCF landscape work on ARM devices.
+### Installing common apps with `arkade`
 
-```text
-arkade install --help
-Available Commands:
-  argocd                  Install argocd
-  cert-manager            Install cert-manager
-  chart                   Install the specified helm chart
-  consul-connect          Install Consul Service Mesh
-  cron-connector          Install cron-connector for OpenFaaS
-  crossplane              Install Crossplane
-  docker-registry         Install a Docker registry
-  docker-registry-ingress Install registry ingress with TLS
-  gitea                   Install gitea
-  gitlab                  Install GitLab
-  grafana                 Install grafana
-  info                    Find info about a Kubernetes app
-  ingress-nginx           Install ingress-nginx
-  inlets-operator         Install inlets-operator
-  istio                   Install istio
-  jenkins                 Install jenkins
-  kafka-connector         Install kafka-connector for OpenFaaS
-  kong-ingress            Install kong-ingress for OpenFaaS
-  kube-image-prefetch     Install kube-image-prefetch
-  kube-state-metrics      Install kube-state-metrics
-  kubernetes-dashboard    Install kubernetes-dashboard
-  linkerd                 Install linkerd
-  loki                    Install Loki for monitoring and tracing
-  metrics-server          Install metrics-server
-  minio                   Install minio
-  mongodb                 Install mongodb
-  nats-connector          Install OpenFaaS connector for NATS
-  nfs-client-provisioner  Install nfs client provisioner
-  nginx-inc               Install nginx-inc for OpenFaaS
-  openfaas                Install openfaas
-  openfaas-ingress        Install openfaas ingress with TLS
-  openfaas-loki           Install Loki-OpenFaaS and Configure Loki logs provider for OpenFaaS
-  osm                     Install osm
-  portainer               Install portainer to visualise and manage containers
-  postgresql              Install postgresql
-  redis                   Install redis
-  registry-creds          Install registry-creds
-  sealed-secrets          Install sealed-secrets
-  tekton                  Install Tekton pipelines and dashboard
-  traefik2                Install traefik2
+`arkade install --help` lists ~40 apps. The ones I reach for first:
+
+```sh
+arkade install ingress-nginx          # or use the bundled Traefik
+arkade install cert-manager           # TLS via Let's Encrypt
+arkade install kubernetes-dashboard   # the official web UI
+arkade install grafana                # see [[observability/grafana|grafana]]
+arkade install loki                   # logs aggregation
+arkade install postgresql             # quick DB if you need one
+arkade install openfaas               # serverless functions on K3s
 ```
 
-Let's try the Kubernetes dashboard:
+### OpenFaaS quick-start (the canonical K3s demo)
 
-```bash
-arkade install kubernetes-dashboard
-```
-
-The installation script prints out how to use the app, and `arkade info` can show us the same information later too.
-
-```bash
-# To forward the dashboard to your local machine
-kubectl proxy
-
-# To get your Token for logging in
-kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user-token | awk '{print $1}')
-
-# Once Proxying you can navigate to the below
-# http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login
-```
-
-Paste in your token. Now enjoy the dashboard:
-
-Let's install another popular application, openfaas. OpenFaaS gives us a simple way to deploy functions and microservices to Kubernetes with built-in auto-scaling.
-
-```bash
+```sh
 arkade get faas-cli
 arkade install openfaas
-```
 
-Log in using the post-installation information. The IP of my RPi is `192.168.0.201`, so I can access OpenFaaS using a NodePort of `31112`.
-
-```bash
-PASSWORD=$(kubectl get secret -n openfaas basic-auth -o jsonpath="{.data.basic-auth-password}" | base64 --decode; echo)
-export OPENFAAS_URL=http://192.168.0.201:31112
+# Log in (URL + password are printed by the install above)
+PASSWORD=$(kubectl get secret -n openfaas basic-auth \
+  -o jsonpath="{.data.basic-auth-password}" | base64 --decode)
+export OPENFAAS_URL=http://<pi-ip>:31112
 echo -n $PASSWORD | faas-cli login --username admin --password-stdin
+
+# Deploy a stock function from the store (note the platform tag for ARM)
 faas-cli store list --platform armhf
 faas-cli store deploy figlet --platform armhf
 faas-cli list
 ```
 
-Now open the OpenFaaS UI and check your figlet function using `http://192.168.0.201:31112` or the equivalent.
-
-You can also build your own functions with Python, Go, JavaScript and many other languages.
-
-If you have a Docker Hub login, then you can try the following, but you'll need to run it on a separate Raspberry Pi, with docker installed (`curl -sSL https://get.docker.com | sudo sh`):
-
-```bash
-export USERNAME=alexellis2
-docker login -u $USERNAME
-faas-cli template store pull golang-http
-faas-cli new --lang golang-http --prefix=$USERNAME my-api
-
-# Build a local Docker image and push it to the Docker Hub
-faas-cli publish -f my-api.yml --platforms linux/arm/v7
-
-# Deploy the function using the image
-faas-cli deploy my-api
-
-# Now invoke your function
-faas-cli invoke my-api
-```
-
-**Doing multi-arch right** — If you're running 64-bit Ubuntu on your Raspberry Pi, then you'll need to use `--platforms linux/arm64` instead. You can also build for multiple platforms by adding them with a comma between each. Just run `faas-cli publish --help` to find out an example of how.
-
-You can also edit the function's code and then run `faas-cli publish` then `faas-cli deploy` again. Contents of `my-api/handler.go`:
+A minimal Go function (build-and-deploy from a separate Pi or x86 box with Docker):
 
 ```go
+// my-api/handler.go
 package function
 
 import (
@@ -331,77 +194,47 @@ func Handle(req handler.Request) (handler.Response, error) {
 }
 ```
 
-Find out more about OpenFaaS at <https://openfaas.com>.
+```sh
+faas-cli template store pull golang-http
+faas-cli new --lang golang-http --prefix=$DOCKER_USER my-api
+faas-cli publish -f my-api.yml --platforms linux/arm/v7  # or linux/arm64 for 64-bit Pi OS
+faas-cli deploy my-api
+faas-cli invoke my-api
+```
 
-You can also see your functions on the Kubernetes Dashboard.
+### Public IP without port-forwarding ([inlets-operator](https://docs.inlets.dev/reference/inlets-operator/))
 
-### Get a public IP for your cluster
+`inlets-operator` exposes K3s `Service` resources of type `LoadBalancer` as public IPs by automatically renting cheap exit-node VMs (DigitalOcean, Hetzner, AWS, ...) and tunneling back to your homelab. Pair with `cert-manager` + Let's Encrypt for free TLS on `example.com`.
 
-You can get a public IP for your cluster via a tunnel — the `inlets-operator` for Kubernetes.
+### High availability and going further
 
-The inlets-operator gives you LoadBalancers with public IPs just like on a public cloud provider. Expose your local OpenFaaS functions to the Internet. Expose your IngressController and get TLS from LetsEncrypt and cert-manager.
+- [k3sup HA mode](https://k3sup.dev/) — multiple servers behind external etcd or Postgres.
+- [Bare-metal Kubernetes with K3s (Alex Ellis)](https://blog.alexellis.io/bare-metal-kubernetes-with-k3s/)
+- [Set up your K3s Cluster for High Availability on DigitalOcean (Rancher)](https://rancher.com/blog/2020/k3s-high-availability)
+- For a homelab, consider netbooting the Pis (boot directly off the network) so you're not babysitting SD cards.
 
-### Build your own homelab cluster for self-hosting
+### GitOps on top
 
-If you'd like to build a resilient homelab, that has multiple master nodes (servers) and uses faster, more reliable network storage, checkout my new workshop available on Gumroad.
+If you'll have more than ~5 manifests in flight, switch from `kubectl apply` to GitOps:
 
-In the workshop, you'll learn how to configure a netbooting server, then boot your Raspberry Pi directly from the network, from there you can install K3s and explore different applications you can add on top. High Availability is essential for self-hosting, so that your cluster can tolerate a host failure.
+- [Argo CD](https://argo-cd.readthedocs.io/) — pull-based, dashboard-driven; the dominant pick.
+- [Flux](https://fluxcd.io/) — pull-based, more lightweight, CRD-heavy.
 
-### Wrapping up and next steps
+### Learning resources
 
-If you want to take things further, you can start adding additional nodes into the cluster, to extend its capacity and to give redundancy.
+- **CNCF Landscape** — <https://landscape.cncf.io/>
+- **Kubernetes docs + tutorials** — <https://kubernetes.io/docs/home/>, <https://kubernetes.io/docs/tutorials/>
+- **edX: Introduction to Kubernetes on Edge with K3s (LFS156x)** — <https://learning.edx.org/course/course-v1:LinuxFoundationX+LFS156x+2T2021/home>
+- **edX: Introduction to Serverless on Kubernetes (LFS157x)** — <https://www.edx.org/course/introduction-to-serverless-on-kubernetes>
+- **Linux Foundation certifications** — CKA / CKAD / CKS for the formal-credential route.
 
-- Upgrade your Raspberry Pi 4 with a NVMe boot drive
-- Five years of Raspberry Pi Clusters
-- Star or fork `k3sup` and `arkade` on GitHub ⭐️
+### Smaller cousin: faasd
 
-You can connect with the OpenFaaS community — to talk about Kubernetes, ARM, Raspberry Pi clusters and serverless. Join our Slack workspace today.
+If you want OpenFaaS without Kubernetes at all (single-host, even tinier than K3s), look at [faasd](https://github.com/openfaas/faasd) — OpenFaaS on `containerd` directly, no Kubernetes runtime. Good for very resource-constrained edge devices where K3s is still too heavy.
 
-## Introduction to Kubernetes on Edge with K3s
+### Hardware sources for Pi-cluster builders
 
-<https://learning.edx.org/course/course-v1:LinuxFoundationX+LFS156x+2T2021/home>
-
-## Pi
-
-The following are good resources to use:
-
-- **Raspberry Pi Foundation: products and hardware** — <https://www.raspberrypi.org/products/>
-- **BitScope: Cluster Blade product for industrial applications** — <https://www.bitscope.com/blog/JK/?p=JK38B>
-- **Pimoroni: sensors and add-ons for Raspberry Pi** — <https://pimoroni.com/>
-
-The following are complementary resources from Alex Ellis:
-
-- *Watch a video from KubeCon: The Past, Present, and Future of Kubernetes on Raspberry Pi* — <https://www.youtube.com/watch?v=jfUpF40--60>
-- *Follow a 15-minute guide for K3s on Raspberry Pi with applications: Walk-through — install Kubernetes to your Raspberry Pi in 15 minutes* — <https://alexellisuk.medium.com/walk-through-install-kubernetes-to-your-raspberry-pi-in-15-minutes-84a8492dc95a>
-
-## K3s in production
-
-The following are some of the resources that you can use for self-study:
-
-- **Project documentation** — <https://k3s.io/>
-- **k3sup on GitHub — install K3s over SSH** — <https://k3sup.dev/>
-- **ArgoCD** — <https://argoproj.github.io/argo-cd/>
-- **Flux** — <https://fluxcd.io/>
-
-The following are complementary resources from Alex Ellis:
-
-- *Bare-metal Kubernetes with K3s* — <https://blog.alexellis.io/bare-metal-kubernetes-with-k3s/>
-- *Set up Your K3s Cluster for High Availability on DigitalOcean* — <https://rancher.com/blog/2020/k3s-high-availability>
-
-## Functions as a Service
-
-Learn everything you need to know about Serverless on Kubernetes with the Edx course: *Introduction to Serverless on Kubernetes (LFS157x)* — <https://www.edx.org/course/introduction-to-serverless-on-kubernetes>
-
-`faasd` offers a way to run OpenFaaS without also having to manage Kubernetes, and may provide a suitable alternative, especially with resource-constrained devices.
-
-- <https://github.com/openfaas/faasd>
-- <https://www.openfaas.com/>
-
-## Kubernetes
-
-There are numerous resources to learn more about Kubernetes:
-
-- **Browse the CNCF Landscape** — <https://landscape.cncf.io/>
-- **Check out the Kubernetes documentation and tutorials** — <https://kubernetes.io/docs/home/>, <https://kubernetes.io/docs/tutorials/>
-- **Take a Kubernetes course offered by The Linux Foundation**
-- **Gain a Kubernetes certification** — Certified Kubernetes Administrator (CKA), Certified Kubernetes Application Developer (CKAD), Certified Kubernetes Security Specialist (CKS)
+- [Raspberry Pi Foundation](https://www.raspberrypi.org/products/) — the boards themselves.
+- [BitScope Cluster Blade](https://www.bitscope.com/blog/JK/?p=JK38B) — industrial-style cluster cases.
+- [Pimoroni](https://pimoroni.com/) — sensors and HATs.
+- KubeCon talk — *The Past, Present, and Future of Kubernetes on Raspberry Pi*: <https://www.youtube.com/watch?v=jfUpF40--60>

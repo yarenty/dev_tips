@@ -556,11 +556,11 @@
 # Kubernetes
 
 - [Kubernetes](kubernetes/README.md)
+  - [K3s: lightweight Kubernetes](kubernetes/k3s.md)
   - [Akri](kubernetes/akri.md)
+  - [Kuasar](kubernetes/kuasar.md)
   - [Balena](kubernetes/balena.md)
   - [Dokku](kubernetes/dokku.md)
-  - [K3S](kubernetes/k3s.md)
-  - [Kuasar](kubernetes/kuasar.md)
 
 # IoT
 
