@@ -551,7 +551,7 @@
 # Cloud
 
 - [Cloud](cloud/README.md)
-  - [Oracle Free Tier](cloud/oracle_free_tier.md)
+  - [Oracle Cloud Always Free Tier](cloud/oracle_free_tier.md)
 
 # Kubernetes
 
