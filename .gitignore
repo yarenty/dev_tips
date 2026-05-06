@@ -14,6 +14,7 @@ book/
 .obsidian
 .smart-env
 **/.DS_Store
+/inventory/
 
 # Binary documents — internal artefacts, never commit
 # Recursive glob covers root + every subdirectory.

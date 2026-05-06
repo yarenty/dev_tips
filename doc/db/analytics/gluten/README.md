@@ -14,15 +14,6 @@ plugin and rewrites supported physical operators into native calls,
 dramatically improving CPU efficiency for SQL-heavy workloads while keeping
 the Spark API surface intact.
 
-This folder holds two early Intel OAP-project decks that frame the
-architecture and motivation.
-
-## What's in this folder
-
-- `gluten_01a.pptx` — early architecture / "what is Gluten" deck.
-- `OAP_project_gluten.pptx` — Intel OAP-project framing: how Gluten fits with
-  the rest of the OAP optimization suite.
-
 ## External entry points
 
 - [gluten.apache.org](https://gluten.apache.org/)

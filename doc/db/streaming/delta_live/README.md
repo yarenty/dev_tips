@@ -12,13 +12,7 @@ and Spark Structured Streaming. You define datasets and dependencies in
 Python or SQL; DLT handles orchestration, incremental processing, retries,
 checkpointing, schema enforcement, data-quality "expectations", and lineage.
 
-This folder is essentially a **placeholder** for future DLT notes — holding
-one intro deck so far.
-
-## What's in this folder
-
-- `Delta Live Tables.pptx` — short intro deck on what DLT is and how the
-  declarative pipeline model works.
+This folder is a **placeholder** for future DLT notes.
 
 ## External entry points
 

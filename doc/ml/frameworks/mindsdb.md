@@ -82,13 +82,6 @@ AI Tables are created with simple queries inside the database or data store and 
 
 MindsDB looks and acts like a database and thus seamlessly interacts with your current database and BI tools.
 
-
-## Brochure
-
-[Brochure](../../resources/MindsDB%20Product%20Brochure%20F21.pdf)
-
-
-
 ## Use cases
 
 There is a MindsDB application for any business question you may have

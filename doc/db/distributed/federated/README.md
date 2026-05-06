@@ -17,11 +17,6 @@ on the federated-ML side, [FedML](https://fedml.ai/) and similar projects
 extend the same idea to model training over partitioned, privacy-sensitive
 data.
 
-## What's in this folder
-
-- `federated_v01.pptx` — early draft deck on federated query architecture
-  (scoping notes only).
-
 ## External entry points
 
 - [Trino docs](https://trino.io/docs/current/)

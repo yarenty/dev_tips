@@ -1,18 +1,16 @@
 ---
 title: Google scheduling papers
-keywords: [scheduling, google, borg, omega, cluster-management, papers]
+keywords: [scheduling, google, borg, omega, cluster-management]
 status: reviewed
 ---
 
 # Google scheduling papers
 
-A folder of paper PDFs from **Google Research** and Google-adjacent venues
-on cluster/job scheduling. Google's scheduling lineage runs roughly
+Notes on papers from **Google Research** and Google-adjacent venues on
+cluster/job scheduling. Google's scheduling lineage runs roughly
 **Borg → Omega → Kubernetes**, and later papers extend the same ideas into
 multi-cluster, ML-workload, and serverless territory.
 
-The PDFs are named by their ACM Digital Library citation IDs (`<conf>.<paperid>`),
-not by title; they're left as-is so they round-trip with citation tooling.
 The most well-known references in this lineage:
 
 - **Borg** (Verma et al., EuroSys 2015) — the canonical large-cluster
@@ -22,25 +20,7 @@ The most well-known references in this lineage:
 - **Borg, Omega, and Kubernetes** (Burns et al., ACM Queue / CACM) — the
   retrospective.
 - A series of follow-ups on workload mixing, oversubscription, and ML-job
-  scheduling that the rest of the PDFs cover.
-
-## What's in this folder
-
-PDF papers (filenames are ACM DL identifiers — open in a reader for the
-real titles):
-
-- `3295500.3356164.pdf`
-- `3314872.3314896.pdf`
-- `3323165.3323179.pdf`
-- `3356467.pdf`
-- `3381089.3381203.pdf`
-- `3395363.3397371.pdf`
-- `3409964.3461790.pdf`
-- `3477132.3483542.pdf`
-- `3485447.3512060.pdf`
-- `3493287.3493288.pdf`
-- `3552326.3587445.pdf`
-- `3595879.pdf`
+  scheduling extends the lineage further.
 
 ## External entry points
 
@@ -59,4 +39,4 @@ real titles):
 
 ## Keywords
 
-`#scheduling` `#google` `#borg` `#omega` `#cluster-management` `#papers`
+`#scheduling` `#google` `#borg` `#omega` `#cluster-management`

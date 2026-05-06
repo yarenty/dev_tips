@@ -19,7 +19,7 @@ The articles in this section currently focus on the **second meaning** — the F
 ## Subsections
 
 - [[dpu/xilinx/README|Xilinx (now AMD Adaptive Computing)]] — Vitis IDE, Vivado, Vitis AI, the Xilinx DPU IP. One article: [[vitis]] covers install + component picking + the libtinfo5 install gotcha.
-- [[dpu/xpu/README|XPU slide-deck collection]] — reference `.pptx` files on heterogeneous compute (Huawei Ascend, DVPP). Not Markdown articles; raw decks for reference.
+- [[dpu/xpu/README|XPU (heterogeneous computing)]] — notes on the XPU / DVPP / Huawei Ascend ecosystem and the broader heterogeneous-compute trend.
 
 ## What's deliberately not covered here
 

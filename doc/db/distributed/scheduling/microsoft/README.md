@@ -1,13 +1,13 @@
 ---
 title: Microsoft scheduling papers
-keywords: [scheduling, microsoft, msr, apollo, hydra, cluster-management, papers]
+keywords: [scheduling, microsoft, msr, apollo, hydra, cluster-management]
 status: reviewed
 ---
 
 # Microsoft scheduling papers
 
-Paper PDFs from **Microsoft Research** and Microsoft-affiliated venues on
-cluster scheduling, resource management, and workload-specific schedulers.
+Notes on papers from **Microsoft Research** and Microsoft-affiliated venues
+on cluster scheduling, resource management, and workload-specific schedulers.
 Microsoft's scheduling line includes:
 
 - **Apollo** (Boutin et al., OSDI 2014) — distributed scheduling for
@@ -16,27 +16,6 @@ Microsoft's scheduling line includes:
 - **Pollux**, **Gandiva**, and others — ML-training-focused schedulers.
 - A long tail of papers on multi-resource fairness, gang-scheduling, and
   scheduler-policy languages.
-
-The PDFs are filed by their ACM Digital Library citation IDs.
-
-## What's in this folder
-
-PDF papers (filenames are ACM DL identifiers — open in a reader for the
-real titles):
-
-- `3299869.3320239.pdf`
-- `3310435.3310530.pdf`
-- `3357223.3362724.pdf`
-- `3374888.3374897.pdf`
-- `3381089.3381258.pdf`
-- `3409964.3461786.pdf`
-- `3410220.3456278.pdf`
-- `3425879.3425886.pdf`
-- `3431920.3439304.pdf`
-- `3458064.3458240.pdf`
-- `3536221.3558175.pdf`
-- `3552326.3567499.pdf`
-- `3560905.3568511.pdf`
 
 ## External entry points
 
@@ -52,4 +31,4 @@ real titles):
 
 ## Keywords
 
-`#scheduling` `#microsoft` `#msr` `#apollo` `#hydra` `#cluster-management` `#papers`
+`#scheduling` `#microsoft` `#msr` `#apollo` `#hydra` `#cluster-management`

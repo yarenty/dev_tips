@@ -112,6 +112,3 @@ Some details of this function:
 - The function is unsafe
 - The function returns ffi:SQLITE_OK. In a few paragraphs, we will see how we can change this return code to make the extension persistent across connections.
 - The extension is loaded in the init() function, which we’ll go through right now.
-
-
-[more details](res/Extending%20SQLite%20with%20Rust.pdf)

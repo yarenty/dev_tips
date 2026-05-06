@@ -1,27 +1,15 @@
 ---
-title: Federated query execution (working notes)
-keywords: [federated-query, query-execution, trino, presto, calcite, screenshots]
+title: Federated query execution
+keywords: [federated-query, query-execution, trino, presto, calcite, dremio]
 status: reviewed
 ---
 
-# Federated query execution (working notes)
+# Federated query execution
 
-Working-notes folder for **federated query execution** architecture — i.e.
-how a federated SQL engine actually pushes work down to its backends, plans
-the cross-source join, and stitches the results back together. The folder is
-just a stash of screenshot captures (whiteboard / diagram session from
-2024-03-06); the canonical references for the topic are external.
-
-## What's in this folder
-
-- `Screenshot 2024-03-06 at 17.36.25.png`
-- `Screenshot 2024-03-06 at 17.37.11.png`
-- `Screenshot 2024-03-06 at 17.38.03.png`
-- `Screenshot 2024-03-06 at 17.38.30.png`
-- `Screenshot 2024-03-06 at 17.38.49.png`
-- `Screenshot 2024-03-06 at 17.40.28.png`
-
-(All from the same working session — diagrams and whiteboard captures.)
+Notes on **federated query execution** architecture — i.e. how a federated
+SQL engine actually pushes work down to its backends, plans the cross-source
+join, and stitches the results back together. The canonical references for
+the topic are external.
 
 ## External entry points
 
@@ -35,8 +23,7 @@ just a stash of screenshot captures (whiteboard / diagram session from
 
 ## Cross-section see-also
 
-- [[db/distributed/federated/README|federated]] — sibling folder with the
-  intro deck.
+- [[db/distributed/federated/README|federated]] — sibling notes.
 - [[db/distributed/ballista_distributed/README|ballista_distributed]] —
   related distributed-execution architecture (single-engine rather than
   federated).
@@ -44,4 +31,4 @@ just a stash of screenshot captures (whiteboard / diagram session from
 
 ## Keywords
 
-`#federated-query` `#query-execution` `#trino` `#presto` `#whiteboard-notes`
+`#federated-query` `#query-execution` `#trino` `#presto` `#calcite` `#dremio`

@@ -12,21 +12,11 @@ expressions into a physical plan over columnar Arrow batches and is used as
 the embedded engine for projects like Databend, InfluxDB 3.0, ROAPI, Comet,
 and many others.
 
-This folder holds working decks from earlier internal evaluations — gap
+This folder collects working notes from earlier internal evaluations — gap
 analysis vs Spark, concurrent-write design, migration planning, and an
-RDD-to-SQL paper. For a code-side view of DataFusion (extension hooks, blaze,
-delta, gluten, iceberg, vortex, etc.), see
+RDD-to-SQL exploration. For a code-side view of DataFusion (extension hooks,
+blaze, delta, gluten, iceberg, vortex, etc.), see
 [[programming/rust/data/datafusion/README|the DataFusion code notes folder]].
-
-## What's in this folder
-
-- `Concurrent Writes.pptx` — design notes for handling concurrent writes
-  through DataFusion / object-store backends.
-- `Datafusion and Ballista Gaps & Estimations.pptx` — feature-gap analysis
-  vs Spark, with estimation effort for closing the gaps.
-- `Migration.pptx` — migration planning deck (Spark → DataFusion / Ballista).
-- `RDD2SQL.pdf` — research/whitepaper on rewriting Spark RDD pipelines as SQL
-  to push more work into the optimizer.
 
 ## External entry points
 
@@ -39,8 +29,7 @@ delta, gluten, iceberg, vortex, etc.), see
 ## Cross-section see-also
 
 - [[db/distributed/ballista_distributed/README|Ballista]] — distributed
-  execution engine on top of DataFusion (the "gaps" deck above is largely
-  about Ballista vs Spark).
+  execution engine on top of DataFusion.
 - [[db/analytics/databend/README|Databend]] — Rust DW that reuses parts of
   DataFusion.
 - [[db/analytics/gluten/README|Gluten]] — Spark operator offload that

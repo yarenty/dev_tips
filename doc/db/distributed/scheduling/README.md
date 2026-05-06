@@ -8,8 +8,6 @@ status: reviewed
 
 Curated paper folders on **cluster scheduling** and **query / job scheduling**
 research, broken down by the institution producing the bulk of the work.
-Most assets are paper PDFs from ACM/USENIX venues, plus a handful of
-overview decks and screenshots from earlier survey work.
 
 The big themes the papers cover:
 
@@ -19,9 +17,7 @@ The big themes the papers cover:
   jobs (Apollo, Sparrow), latency-critical microservices.
 - **Multi-resource / multi-tenant fairness** — DRF and successors.
 
-## What's in this folder
-
-### Subfolders
+## Subfolders
 
 - [[db/distributed/scheduling/google/README|google]] — Google Research
   papers (Borg / Omega / multi-cluster lineage).
@@ -29,16 +25,6 @@ The big themes the papers cover:
   Research papers (Apollo / Hydra / generic cluster-scheduling).
 - [[db/distributed/scheduling/vldb/README|vldb]] — scheduling-related VLDB
   papers across institutions.
-
-### Top-level assets
-
-- `Insight_Scheduler.pptx` — internal summary deck synthesizing the papers
-  below.
-- `ericsson_patent.pptx` — companion deck for the Ericsson scheduler patent.
-- `US20210173712A1.pdf` — Ericsson scheduler patent (US patent application).
-- `s10462-018-9667-6.pdf` — Springer survey paper on scheduling techniques.
-- `Screenshot 2023-05-26 at 11.57.26.png`, `Screenshot 2023-09-05 at 17.36.33.png` —
-  whiteboard / diagram captures from working sessions.
 
 ## External entry points
 
