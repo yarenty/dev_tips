@@ -581,10 +581,10 @@
 # Observability
 
 - [Observability](observability/README.md)
-  - [grafana](observability/grafana.md)
+  - [Prometheus](observability/prometheus.md)
+  - [Grafana (operator's view)](observability/grafana.md)
   - [node_exporter](observability/node_exporter.md)
   - [OpenObserve](observability/openobserve.md)
-  - [prometheus](observability/prometheus.md)
 
 # DPU
 
