@@ -1,65 +1,65 @@
 ---
-title: Tmux AI
+title: "TmuxAI — LLM-augmented tmux"
 main_link: https://tmuxai.dev/
-keywords: [tmux-ai, linux, tmux, dev]
-status: draft
+keywords: [tmuxai, tmux, llm, ai, agent, terminal, automation, copilot]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/tools/linux/tmux.md` by `article_split.py`. Heading: **Tmux AI**.
-
-# Tmux AI
+# TmuxAI — LLM-augmented tmux
 
 **Main link:** <https://tmuxai.dev/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+TmuxAI is an "AI agent in your terminal" that runs as a sidecar pane inside a regular tmux session. It watches the contents of your other panes, lets you chat with an LLM in a dedicated chat pane, and — crucially — can *propose and (with confirmation) send keystrokes* to the panes around it. So you can say "start a MySQL container and connect to its shell" and it will type the commands for you, asking before each one.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+This is a different shape from `gh copilot suggest` or shell completion plugins: TmuxAI sees the live state of your terminal (output, errors, prompts) and can *act*, not just suggest text to copy. That makes it useful for chained tasks — "run the test suite, find the failing test, open it in `$EDITOR`" — and dangerous if you let it run unattended (it asks `[Y]es/No/Edit:` before each action, but a habit-of-yes is risky).
+
+When to reach for it:
+
+- Onboarding to an unfamiliar repo: ask it to install deps and run the test suite while you watch.
+- Repetitive multi-step ops (docker exec dance, k8s context juggling) where you'd otherwise alt-tab to a chat window and copy commands back.
+- Interactive bug reproduction where you want a record of "what was tried".
+
+When *not* to:
+
+- Anything destructive on production. Always.
+- When you want to actually learn the tool you're using — TmuxAI is a productivity tool, not a teacher.
+
+It pairs naturally with [[tools/linux/tmux|tmux]] (obviously), but it also works inside [[zellij]] if you launch tmux inside a zellij pane. You'll need an API key for whichever LLM provider you point it at.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[tools/linux/tmux|tmux]] — the multiplexer TmuxAI lives inside.
+- [GitHub Copilot CLI / `gh copilot`](https://github.com/github/gh-copilot) — text-suggestion-only counterpart.
+- [Aider](https://aider.chat/) — repo-aware AI pair programmer (operates on files, not panes).
+- [Warp AI](https://www.warp.dev/) — terminal emulator with AI baked in (GUI, not tmux-based).
+- [[helix]] — modal editor; combine TmuxAI with Helix in adjacent panes.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[tools/linux/tmux|tmux]] — TMUX _(score 26.3)_
-- [[fish]] — Fish _(score 26.3)_
-- [[tools/linux/zellij|zellij]] — Zellij _(score 26.3)_
-- [[helix]] — Helix _(score 20.3)_
-- [[tools/shell/tmux|tmux]] — Tmux _(score 18.0)_
+- [[tools/linux/tmux|tmux]]
+- [[zellij]]
+- [[helix]]
+- [[fish]]
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#tmux-ai` `#linux` `#tools` `#tmux` `#tmuxai` `#dev`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#tmuxai` `#tmux` `#llm` `#ai` `#agent` `#terminal` `#automation` `#copilot`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Source
 
-# Tmux AI
+<https://tmuxai.dev/>
 
+### Example session
 
-https://tmuxai.dev/
-
-```shell
+```text
 CHAT PANE
 TmuxAI» start docker container mysql and then connect to mysql shell.
 First I'll start the container:
@@ -72,5 +72,10 @@ TmuxAI» I'll now send the password to the mysql shell.
 TmuxAI» Sending keys: password
 TmuxAI» Sending keys: Enter
 TmuxAI» I've successfully connected to the MySQL shell.
-
 ```
+
+### Notes
+
+- Each command is gated behind a `[Y]es/No/Edit:` prompt — review carefully before pressing `y`.
+- It needs an API key for an LLM provider; do not commit this to a repo.
+- Recommended posture: dedicate one tmux window to TmuxAI's chat pane plus the worker pane(s) it controls; keep your editor in a different window so TmuxAI can't accidentally type into it.

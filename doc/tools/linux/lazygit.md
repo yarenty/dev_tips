@@ -1,57 +1,89 @@
 ---
-title: Lazygit
-main_link: 
-keywords: [lazygit, linux, magit, london, want]
-status: draft
+title: "Lazygit — terminal UI for git"
+main_link: https://github.com/jesseduffield/lazygit
+keywords: [lazygit, git, tui, magit, gitui, tig, jesseduffield, version-control]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Lazygit — terminal UI for git
 
-# Lazygit
+**Main link:** <https://github.com/jesseduffield/lazygit>
+
+Docs: <https://github.com/jesseduffield/lazygit#tutorials>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Lazygit is a fast, keyboard-driven terminal UI for git, written in Go by Jesse Duffield. It exposes most of git's day-to-day operations — staging hunks, interactive rebase, cherry-pick, stash, branch management, conflict resolution — through panes you navigate with single-letter keys. No plugin or shell integration required; one binary, runs on Linux/macOS/Windows.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The pitch: **git's full power without remembering all the flags**. Hunk-level staging is a single keypress (`space`); interactive rebase is a visual list with reorder/squash/edit on letter keys; resolving merge conflicts opens a side-by-side diff with `1` / `2` / `b` to pick. The "I'll just `git reset --hard` and start over" instinct dies after a week of Lazygit because every operation is reversible and visible.
+
+Picker:
+
+- **You live in a terminal and use plain git**: Lazygit. Best ergonomics-per-minute-learned in the space.
+- **You live in Emacs**: [Magit](https://magit.vc/) — still the gold standard, but only inside Emacs.
+- **You want lighter / read-mostly**: [tig](https://jonas.github.io/tig/) — a long-running, ncurses-flavoured browser for log/diff/blame.
+- **You want a Rust-y similar TUI**: [gitui](https://github.com/extrawurst/gitui) — faster on huge repos but with a smaller feature surface than Lazygit.
+
+It pairs especially well with [[zellij]]'s floating panes (or tmux popup windows) — bind a key to toggle Lazygit on top of your editor, and `git` essentially disappears from your CLI muscle memory.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [Magit](https://magit.vc/) — the Emacs git porcelain that started this whole genre.
+- [tig](https://jonas.github.io/tig/) — older, browser-flavoured TUI.
+- [gitui](https://github.com/extrawurst/gitui) — Rust alternative; very fast on big repos.
+- [GitHub CLI `gh`](https://cli.github.com/) — for PRs, issues, gists; complementary, not overlapping.
+- [[zellij]] — toggle Lazygit in a floating pane.
+- [[helix]] — pair editor + Lazygit for a tight TUI dev loop.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[tmux_ai]] — Tmux AI _(score 20.3)_
-- [[tools/linux/tmux|tmux]] — TMUX _(score 20.3)_
-- [[fish]] — Fish _(score 20.3)_
-- [[helix]] — Helix _(score 20.3)_
-- [[tools/linux/zellij|zellij]] — Zellij _(score 20.3)_
+- [[helix]]
+- [[zellij]]
+- [[tools/linux/tmux|tmux]]
+- [[fish]]
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#lazygit` `#linux` `#tools` `#magit` `#london` `#want` `#raving`
-
-## TODO
-
-- No `main_link` could be auto-detected. Add the canonical URL (project homepage / repo / paper) to the frontmatter.
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#lazygit` `#git` `#tui` `#magit` `#gitui` `#tig` `#version-control` `#linux`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Why
 
-# Lazygit
-After raving about Magit in London, my team showed me Lazygit and I’ve been using it ever since—it’s really good and it does exactly what you want it to do, without configuration3.
+After raving about Magit (in London), my team showed me Lazygit and I've been using it ever since — it's really good and it does exactly what you want it to do, without configuration.
 
-You can toggle different screen modes, panes adjust in size when active and pretty much everything you want to do is only a few keystrokes away.
+You can toggle different screen modes, panes adjust in size when active, and pretty much everything you want to do is only a few keystrokes away.
+
+### Install
+
+```shell
+# macOS
+brew install lazygit
+
+# Debian/Ubuntu (PPA)
+sudo add-apt-repository ppa:lazygit-team/release
+sudo apt update && sudo apt install lazygit
+
+# Arch
+sudo pacman -S lazygit
+
+# Via Go
+go install github.com/jesseduffield/lazygit@latest
+```
+
+### Cheat-sheet (most useful)
+
+| Key       | Action                                  |
+| --------- | --------------------------------------- |
+| `space`   | Stage / unstage file or hunk            |
+| `c`       | Commit                                  |
+| `A`       | Amend last commit                       |
+| `P` / `p` | Push / pull                             |
+| `s`       | Stash                                   |
+| `r`       | Rebase / interactive rebase from commit |
+| `M`       | Mark commit / move within rebase        |
+| `?`       | Show keybindings for current panel      |

@@ -1,84 +1,91 @@
 ---
-title: Valgrind
-main_link: 
-keywords: [debugger, linux, programs, bugs, university, tmux, distributed, games]
-status: draft
+title: "Debuggers and dynamic-analysis tools"
+main_link: https://valgrind.org/
+keywords: [debugger, valgrind, gdb, lldb, rr, memory, profiling, linux, dynamic-analysis]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Debuggers and dynamic-analysis tools
 
-# Valgrind
+**Main link:** <https://valgrind.org/>
+
+GDB: <https://www.sourceware.org/gdb/> · LLDB: <https://lldb.llvm.org/> · rr: <https://rr-project.org/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+A short picker for the dynamic-analysis tools that come up most often on Linux. Currently centred on Valgrind — a GPL'd suite of dynamic binary instrumentation tools (Memcheck, Helgrind, Cachegrind, Callgrind, Massif, DRD) for finding memory errors, threading bugs, cache misses, and heap profiles in unmodified binaries — but the same slot is filled by GDB/LLDB for interactive debugging, `rr` for record-and-replay, and AddressSanitizer/ThreadSanitizer at compile time.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Valgrind's killer feature is *no rebuild required*: just prefix your command with `valgrind` and Memcheck will catch use-after-free, uninitialised reads, leaks, and bad frees. The cost is a 5–100× slowdown, so it's a CI / pre-release tool, not a daily dev loop.
+
+Picker:
+
+- **Memory bugs in C/C++**: Valgrind Memcheck if you can't recompile, otherwise prefer **AddressSanitizer** (`-fsanitize=address`) — orders of magnitude faster, catches more spatial bugs, and well-integrated with clang/gcc.
+- **Data races**: Valgrind Helgrind/DRD vs **ThreadSanitizer**. TSan is faster and has fewer false positives; Valgrind wins when you can't rebuild.
+- **Interactive stepping / inspect a crash**: GDB on Linux, LLDB on macOS / clang shops.
+- **"It only fails sometimes"**: [`rr`](https://rr-project.org/) — record once, replay deterministically, run gdb backwards. Life-changing for race conditions.
+- **Cache & hotspot profiling**: Cachegrind/Callgrind (offline, deterministic) or `perf` (low-overhead sampling, kernel-level).
+
+Don't use Valgrind on a JIT-heavy or GPU-heavy workload — it doesn't model GPUs and JITs amplify its overhead.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [Valgrind](https://valgrind.org/) — Memcheck and friends.
+- [GDB](https://www.sourceware.org/gdb/) / [LLDB](https://lldb.llvm.org/) — interactive source-level debuggers.
+- [rr](https://rr-project.org/) — record-and-replay debugger; pairs with gdb for reverse execution.
+- [AddressSanitizer / ThreadSanitizer](https://github.com/google/sanitizers) — compile-time instrumentation, much faster than Valgrind.
+- [`perf`](https://perfwiki.github.io/main/) — Linux's sampling profiler.
+- [[trace]] — Trippy and other tracing-flavoured tooling for the network side.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[tmux_ai]] — Tmux AI _(score 26.3)_
-- [[tools/linux/tmux|tmux]] — TMUX _(score 26.3)_
-- [[fish]] — Fish _(score 26.3)_
-- [[tools/linux/zellij|zellij]] — Zellij _(score 26.3)_
-- [[byobu]] — Byobu: Text-based Window Manager and Terminal Multiplexer _(score 19.7)_
+- [[trace]]
+- [[helix]]
+- [[tools/linux/tmux|tmux]]
+- [[books]]
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#debugger` `#linux` `#tools` `#programs` `#bugs` `#university` `#bug`
-
-## TODO
-
-- No `main_link` could be auto-detected. Add the canonical URL (project homepage / repo / paper) to the frontmatter.
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#debugger` `#valgrind` `#gdb` `#lldb` `#rr` `#memcheck` `#sanitizers` `#profiling` `#linux`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Valgrind
 
-# Valgrind
+Valgrind is a GPL'd system for debugging and profiling Linux programs. With its tool suite you can automatically detect many memory-management and threading bugs and perform detailed profiling.
 
-Valgrind is a GPL'd system for debugging and profiling Linux programs. With Valgrind's tool suite you can automatically detect many memory management and threading bugs, avoiding hours of frustrating bug-hunting, making your programs more stable. You can also perform detailed profiling to help speed up your programs.
+#### Why use it
 
-## Why should you use Valgrind?
-- Valgrind will save you hours of debugging time. With Valgrind tools you can automatically detect many memory management and threading bugs. This gives you confidence that your programs are free of many common bugs, some of which would take hours to find manually, or never be found at all. You can find and eliminate bugs before they become a problem.
-- Valgrind can help you speed up your programs. With Valgrind tools you can also perform very detailed profiling to help find bottlenecks in your programs.
-- Valgrind is free. Free-as-in-speech: you can download it, read the source code, make modifications, and pass them on, all within the limits of the GNU GPL. And free-as-in-beer: we aren't charging for it.
-- Valgrind runs on several popular platforms, such as x86/Linux, AMD64/Linux and PPC32/Linux. Valgrind works with all the major Linux distributions, including Red Hat, SuSE, Debian, Gentoo, Slackware, Mandrake, etc.
-- Valgrind is easy to use. Valgrind uses dynamic binary instrumentation, so you don't need to modify, recompile or relink your applications. Just prefix your command line with valgrind and everything works.
-- Valgrind is not a toy. Valgrind is first and foremost a debugging and profiling system for large, complex programs. We have had feedback from users working on projects with up to 25 million lines of code. It has been used on projects of all sizes, from single-user personal projects, to projects with hundreds of programmers.
-- Valgrind is suitable for any type of software. Valgrind has been used with desktop applications, libraries, databases, games, web browsers, network servers, distributed control systems, virtual reality frameworks, transaction servers, compilers, interpreters, virtual machines, telecom applications, embedded software, medical imaging, scientific programs, signal processing programs, video/audio programs, business intelligence software, financial/banking software, operating system daemons, etc, etc. See a list of projects using Valgrind.
-- Valgrind is widely used. Valgrind has been used by thousands of programmers across the world. We have received feedback from users in over 30 countries.
-- Valgrind works with programs written in any language. Because Valgrind works directly with program binaries, it works with programs written in any programming language, be they compiled, just-in-time compiled, or interpreted. The Valgrind tools are largely aimed at programs written in C and C++, because programs written in these languages tend to have the most bugs! But it can, for example, be used to debug and profile systems written in a mixture of languages. Valgrind has been used on programs written partly or entirely in C, C++, Java, Perl, Python, assembly code, Fortran, Ada, and many others.
-- Valgrind gives 100% coverage of user-space code, even within system libraries. You can even use Valgrind on programs for which you don't have the source code.
-- Valgrind is extensible. Anyone can write powerful new tools that add arbitrary instrumentation to programs. This is much easier than writing such tools from scratch. This makes Valgrind ideal for experimenting with new kinds of program analysis tools. It has been used for research purposes by people at the following universities: Cambridge, MIT, UC Berkeley, UC Santa Barbara, Carnegie Mellon, Cornell, University of New Mexico, Australian National University, University of Melbourne, TU Muenchen (Munich) and Graz University of Technology.
-- Valgrind is actively maintained. The Valgrind developers are constantly working to fix bugs, improve Valgrind, and ensure it works as new Linux distributions and libraries come out. There are also mailing lists you can subscribe to, and contact if you're having problems.
-- So what's the catch? The main one is that programs run significantly more slowly under Valgrind. Depending on which tool you use, the slowdown factor can range from 5--100. This slowdown is similar to that of similar debugging and profiling tools. But since you don't have to use Valgrind all the time, this usually isn't too much of a problem. The hours you'll save debugging will more than make up for it.
+- Catches memory-management and threading bugs automatically — saves hours of debugging.
+- Detailed profiling tools (Cachegrind, Callgrind, Massif) help locate bottlenecks.
+- Free software (GPL) and free of charge.
+- Runs on x86/Linux, AMD64/Linux, PPC32/Linux, and most major distros.
+- Uses dynamic binary instrumentation — no source modification, recompile, or relink. Just prefix your command with `valgrind`.
+- Used on projects from single-user toys up to 25M-LOC codebases.
+- Works regardless of source language because it operates on binaries; tools are mostly aimed at C/C++ where bugs are most common, but it has been used with Java, Perl, Python, Fortran, Ada, assembly, etc.
+- Gives 100% coverage of user-space code, including system libraries; works on programs you don't have source for.
+- Extensible — anyone can write new instrumentation tools. Used in research at Cambridge, MIT, UC Berkeley, CMU, Cornell, ANU, Melbourne, TU München, Graz, and others.
+- Actively maintained.
 
-## When should you use Valgrind?
-It depends on your exact needs. Here are some examples of when people use Valgrind's bug-detecting tools.
+The catch: programs run 5–100× slower under Valgrind. Acceptable as a periodic / CI tool, painful as a daily inner loop.
 
-- All the time. For small programs with short run-times, when developing you can always run the program under a Valgrind tool (usually Memcheck), knowing that memory bugs will be found immediately.
-- In automatic testing. By using Valgrind tools in your automatic unit, integration, system, or regression test, you can be confident no code will be unchecked.
-- After big changes. To ensure new bugs haven't been introduced in the new code.
-- When a bug occurs. Get instant feedback about what the bug is, where it occurred, and why.
-- When a bug is suspected. Is your program behaving oddly? Use a Valgrind tool to discover if a bug is the cause.
-- Before a release. To give you confidence that your new release is as stable and bug-free as possible.
-- As for Valgrind's profiling tools, use those whenever you want information about how your program is spending its time, or you want to speed it up.
+#### When to use
 
-## MAC:
+- **All the time** for short-running programs during development — bugs surface immediately.
+- **In automated tests** — unit, integration, system, regression suites under Memcheck mean no code path goes unchecked.
+- **After big changes** — guard against newly-introduced memory bugs.
+- **When a bug occurs** — get instant feedback on what, where, and why.
+- **When a bug is suspected** — strange behaviour? Run it under Memcheck.
+- **Before a release** — confidence that the cut is as stable as you can make it.
+- **Profiling tools (Cachegrind, Callgrind, Massif)** — whenever you want to understand where time or memory is going.
+
+### macOS
+
+Valgrind on modern macOS is *unmaintained territory*. Prefer:
+
+- **LLDB** for interactive debugging.
+- **AddressSanitizer / ThreadSanitizer** via Apple clang.
+- **Instruments** (Xcode) for time / allocations profiling.

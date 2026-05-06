@@ -1,130 +1,149 @@
 ---
-title: Shell tools
-main_link: https://github.com/wfxr/forgit
-keywords: [shell, prompt, gum, forgit, wfxr, git]
-status: draft
+title: "Shell-script ergonomics toolkit (forgit, gum)"
+main_link: https://github.com/charmbracelet/gum
+keywords: [shell-tools, gum, forgit, charmbracelet, fzf, interactive, scripting, shell]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Shell-script ergonomics toolkit (forgit, gum)
 
-# Shell tools
+**Main link:** <https://github.com/charmbracelet/gum>
 
-**Main link:** <https://github.com/wfxr/forgit>
+A small kit of utilities that make interactive shell scripts and git work
+feel less like 1985.
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+This page collects the two most-loved tools in the "make your shell life
+prettier and more interactive" category: `forgit` (an `fzf`-driven UI on
+top of git) and `gum` (a Charm-cli toolkit for prompting, choosing,
+spinning, and styling output from any shell script). Either alone is a
+quality-of-life upgrade; together they cover most "I wish bash had a UI"
+moments.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+`forgit` is the easier sell — install it, type `ga` instead of
+`git add -p`, and you'll never go back. The fuzzy preview turns surgical
+staging from a chore into something fun.
+
+`gum` is the right answer when you find yourself reaching for `read -p`,
+ANSI [[color_codes]] strings, or copy-pasted "spinner" loops in a shell
+script. It produces real TUIs from one-line invocations and pipes
+seamlessly with the rest of the shell. The trade-off: it's an external
+binary, so anything you ship has to bundle or document the dependency.
+
+For complex multi-screen TUIs in Go, graduate from `gum` to its parent
+[Bubble Tea](https://github.com/charmbracelet/bubbletea); for Rust, use
+[`ratatui`](https://ratatui.rs/) or [[tokio]] + a TUI crate.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [`fzf`](https://github.com/junegunn/fzf) — the fuzzy finder both `forgit` and many other tools build on.
+- [[lazygit]] — full-screen git TUI; complementary to `forgit`'s inline approach.
+- [Bubble Tea](https://github.com/charmbracelet/bubbletea) — Charm's full TUI framework when `gum` outgrows you.
+- [`fx`](https://github.com/antonmedv/fx) — interactive JSON viewer in the same spirit.
+- [[must_have]] — sister page of "install on every fresh box" CLI tools.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[must_have]] — Commands to install _(score 27.5)_
-- [[sshpass]] — sshpass _(score 21.4)_
-- [[tools/shell/tmux|tmux]] — Tmux _(score 21.4)_
-- [[lynx]] — Lynx _(score 21.4)_
-- [[fish]] — Fish _(score 17.4)_
+- [[must_have]]
+- [[lazygit]]
+- [[color_codes]]
+- [[fish]]
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#tools` `#shell` `#prompt` `#gum` `#forgit` `#wfxr`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#shell-tools` `#gum` `#forgit` `#charmbracelet` `#fzf` `#interactive` `#scripting` `#shell`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### forgit — fzf-driven git UI
 
-# Shell tools 
+<https://github.com/wfxr/forgit>
 
-## forgit
+Utility tool for using git interactively. Powered by [`junegunn/fzf`](https://github.com/junegunn/fzf).
 
-https://github.com/wfxr/forgit
+Install per shell:
 
-Utility tool for using git interactively. Powered by junegunn/fzf.
-This tool is designed to help you use git more efficiently. It's lightweight and easy to use.
-
-
-### for fisher
+```shell
+# fish via fisher
 fisher install wfxr/forgit
 
-### for omf
+# fish via oh-my-fish
 omf install https://github.com/wfxr/forgit
 
+# zsh via oh-my-zsh
+git clone https://github.com/wfxr/forgit.git \
+  "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/forgit"
+# then add `forgit` to plugins=( ... ) in ~/.zshrc
 
-
-## GUM
-
-https://github.com/charmbracelet/gum
-
-
-A tool for glamorous shell scripts. Leverage the power of Bubbles and Lip Gloss in your scripts and aliases without writing any Go code!
-
-
-Start with a #!/bin/sh.
-```shell
-#!/bin/sh
+# bash
+git clone https://github.com/wfxr/forgit ~/.forgit
+echo 'source ~/.forgit/forgit.plugin.sh' >> ~/.bashrc
 ```
 
-Ask for the commit type with gum choose:
-```shell
-gum choose "fix" "feat" "docs" "style" "refactor" "test" "chore" "revert"
-```
-Tip: this command itself will print to stdout which is not all that useful. To make use of the command later on you can save the stdout to a $VARIABLE or file.txt.
+Aliases you'll use daily once installed:
 
-Prompt for an (optional) scope for the commit:
-```shell
-gum input --placeholder "scope"
-```
-Prompt for a commit message:
-```shell
-gum input --placeholder "Summary of this change"
-```
-Prompt for a detailed (multi-line) explanation of the changes:
+| alias | does                                |
+|-------|-------------------------------------|
+| `ga`  | `git add` with diff preview         |
+| `glo` | log with diff preview               |
+| `gd`  | diff browser                        |
+| `gcb` | checkout branch                     |
+| `gcf` | checkout file                       |
+| `grh` | reset HEAD                          |
+| `gss` | stash viewer                        |
 
-```shell
-gum write --placeholder "Details of this change"
-```
+### gum — glamorous shell scripts
 
-Prompt for a confirmation before committing:
+<https://github.com/charmbracelet/gum>
 
-gum confirm exits with status 0 if confirmed and status 1 if cancelled.
+A toolkit for shell scripts powered by Charm's [Bubbles](https://github.com/charmbracelet/bubbles)
+and [Lip Gloss](https://github.com/charmbracelet/lipgloss). No Go code
+required — every primitive is a one-liner CLI.
+
+Install:
 
 ```shell
-gum confirm "Commit changes?" && git commit -m "$SUMMARY" -m "$DESCRIPTION"
+brew install gum
+# or
+go install github.com/charmbracelet/gum@latest
 ```
-Putting it all together...
+
+Building blocks (each prints to stdout, exits non-zero on cancel):
+
+```shell
+# pick one option
+TYPE=$(gum choose "fix" "feat" "docs" "style" "refactor" "test" "chore" "revert")
+
+# single-line input
+SCOPE=$(gum input --placeholder "scope")
+
+# multi-line input
+DESCRIPTION=$(gum write --placeholder "Details of this change")
+
+# yes/no confirmation
+gum confirm "Commit changes?" && echo "yes"
+```
+
+Putting it all together — a Conventional-Commits commit helper:
 
 ```shell
 #!/bin/sh
 TYPE=$(gum choose "fix" "feat" "docs" "style" "refactor" "test" "chore" "revert")
 SCOPE=$(gum input --placeholder "scope")
 
-# Since the scope is optional, wrap it in parentheses if it has a value.
-[[ -n "$SCOPE" ]] && SCOPE="($SCOPE)"
+# Wrap scope in parens if non-empty
+[ -n "$SCOPE" ] && SCOPE="($SCOPE)"
 
-# Pre-populate the input with the type(scope): so that the user may change it
 SUMMARY=$(gum input --value "$TYPE$SCOPE: " --placeholder "Summary of this change")
 DESCRIPTION=$(gum write --placeholder "Details of this change")
 
-# Commit these changes
 gum confirm "Commit changes?" && git commit -m "$SUMMARY" -m "$DESCRIPTION"
-Running the ./examples/commit.sh script to commit to git
 ```
+
+Other useful primitives: `gum spin -- long-running-cmd`, `gum style`,
+`gum filter`, `gum format`, `gum table`. See the [examples directory](https://github.com/charmbracelet/gum/tree/main/examples).

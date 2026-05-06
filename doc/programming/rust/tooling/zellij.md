@@ -33,7 +33,7 @@ status: draft
 - [[tools/linux/zellij|zellij]] — Zellij _(score 26.9)_
 - [[dusk_replacement_of_du]] — dusk  - replacement of du _(score 23.4)_
 - [[tools/linux/tmux|tmux]] — TMUX _(score 18.0)_
-- [[tools/shell/tmux|tmux]] — Tmux _(score 18.0)_
+- [[tools/linux/tmux|tmux]] — Tmux _(score 18.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

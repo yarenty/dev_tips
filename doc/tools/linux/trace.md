@@ -1,86 +1,101 @@
 ---
-title: Trippy
-main_link: https://github.com/fujiapple852/trippy
-keywords: [trace, linux, see, cli, cargo]
-status: draft
+title: "Network tracing tools (Trippy, traceroute, mtr)"
+main_link: https://trippy.rs/
+keywords: [trippy, traceroute, mtr, ping, network, tracing, rust, bgp, tui]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Network tracing tools (Trippy, traceroute, mtr)
 
-# Trippy
+**Main link:** <https://trippy.rs/>
 
-**Main link:** <https://github.com/fujiapple852/trippy>
+Repo: <https://github.com/fujiapple852/trippy>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Trippy is a Rust TUI that combines `traceroute` and `ping` into one continuous, interactive view of the path to a host: hop-by-hop latency, loss, AS / GeoIP info, and history graphs. Created by Andrew Forward (`fujiapple852`). It runs on Linux, BSD, macOS, and Windows. This article also covers the wider category — when to reach for `traceroute`, `mtr`, `tcpdump`, `strace`, `dtrace`, `bpftrace`, `eBPF` — i.e. tracing-flavoured tools beyond just network paths.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+For network-path debugging, the picker is roughly:
+
+- **Quick "is the box reachable?"** — `ping`.
+- **"Where does it break?" once** — classic `traceroute` (or `tracepath` if you don't have raw-socket privs).
+- **Continuous "where is the loss happening?" while you watch** — [`mtr`](https://www.bitwizard.nl/mtr/) or **Trippy**. Trippy wins on UI: per-hop history graphs, multiple protocols (ICMP / UDP / TCP), and AS lookup baked in.
+- **DNS specifically** — `dig` / `dog` / [[dns_toys]].
+- **What's flowing on the wire** — `tcpdump` / `tshark` / Wireshark.
+
+For tracing *system calls* and *kernel events* (different problem, same word):
+
+- **A single process** — `strace` (Linux), `dtruss` (macOS), `truss` (BSD).
+- **Production-safe whole-system** — eBPF-based: [`bpftrace`](https://bpftrace.org/), [`bcc-tools`](https://github.com/iovisor/bcc), [Inspektor Gadget](https://www.inspektor-gadget.io/).
+- **macOS / Solaris**: DTrace (still alive on macOS via SIP-disabled boots).
+
+Trippy needs elevated privileges by default (raw sockets); see its privileges guide to run unprivileged via Linux capabilities (`cap_net_raw`).
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [`mtr`](https://www.bitwizard.nl/mtr/) — long-running ncurses combination of ping + traceroute; Trippy's spiritual ancestor.
+- [`traceroute`](https://traceroute.sourceforge.net/) — the classic.
+- [`tcpdump`](https://www.tcpdump.org/) / [Wireshark](https://www.wireshark.org/) — packet capture.
+- [`bpftrace`](https://bpftrace.org/) — DTrace-style eBPF scripting on Linux.
+- [[dns_toys]] — DNS-side troubleshooting toolkit.
+- [[debugger]] — once you have a packet trace, you may also need a process debugger.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[tools/linux/tmux|tmux]] — TMUX _(score 20.3)_
-- [[tools/security/pake|pake]] — Pake _(score 16.3)_
-- [[web_to_app_pake]] — Pake _(score 16.3)_
-- [[programming/rust/tooling/tools|tools]] — coreutils _(score 16.3)_
-- [[dioxus]] — Dioxus _(score 9.9)_
+- [[debugger]]
+- [[mosh]]
+- [[dns_toys]]
+- [[tools/linux/tmux|tmux]]
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#trace` `#linux` `#tools` `#see` `#install` `#bsd` `#windows`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#trippy` `#traceroute` `#mtr` `#ping` `#network` `#tracing` `#rust` `#tui` `#linux`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Trippy
 
-# Trippy
+<https://github.com/fujiapple852/trippy>
 
-https://github.com/fujiapple852/trippy
+Trippy combines the functionality of `traceroute` and `ping` and is designed to assist with the analysis of networking issues.
 
+![Trippy demo](https://raw.githubusercontent.com/fujiapple852/trippy/master/assets/0.12.0/demo.gif)
 
-Trippy combines the functionality of traceroute and ping and is designed to assist with the analysis of networking issues.
+### Install
 
-![](https://raw.githubusercontent.com/fujiapple852/trippy/master/assets/0.12.0/demo.gif)
+Trippy runs on Linux, BSD, macOS, and Windows. Install from your package manager, a precompiled binary, or source.
 
-## Install
-Trippy runs on Linux, BSD, macOS, and Windows. It can be installed from most package managers, precompiled binaries, or source.
-
-For example, to install Trippy from cargo:
 ```shell
-
+# Cargo
 cargo install trippy --locked
-```
 
-All package managers
-See the installation guide for details of how to install Trippy on your system.
-
-
-```shell
+# Homebrew (macOS, Linux)
 brew install trippy
+
+# Debian/Ubuntu (recent versions)
+sudo apt install trippy
+
+# Arch
+sudo pacman -S trippy
 ```
 
-Run
-To run a basic trace to example.com with default settings, use the following command:
+See the [installation guide](https://trippy.rs/install/) for distro-specific details.
+
+### Run
+
 ```shell
+# basic trace
 sudo trip example.com
+
+# pick the protocol
+sudo trip --protocol tcp --target-port 443 example.com
+
+# JSON report mode (for scripts / CI)
+sudo trip --mode json --report-cycles 5 example.com
 ```
-See the usage examples and CLI reference for details of how to use Trippy. To use Trippy without elevated privileges, see the privileges guide.
+
+To run Trippy without `sudo`, grant the binary `cap_net_raw` (Linux) — see Trippy's [privileges guide](https://trippy.rs/reference/privileges/).

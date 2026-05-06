@@ -1,59 +1,48 @@
 ---
-title: Books
+title: "Linux reading list"
 main_link: https://0xax.gitbooks.io/linux-insides/content/
-keywords: [books, linux, insides, xax, gitbooks]
-status: draft
+keywords: [linux, books, kernel, internals, learning, reading-list, gitbook]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# Books
+# Linux reading list
 
 **Main link:** <https://0xax.gitbooks.io/linux-insides/content/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+A small curated list of long-form material for going deeper on Linux internals. Currently anchored on *Linux Insides* by `0xAX` — a free, community-maintained book on GitBook that walks through the Linux kernel boot path, memory management, interrupts, syscalls, and other subsystems by reading the actual source.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for *Linux Insides* when a man-page or blog post isn't enough and you want to understand *why* the kernel does something, traced through real source files (with commit-pinned references). It is unfinished and uneven in places, but the boot/initialisation chapters are excellent and hard to find anywhere else for free. Pair it with the in-tree `Documentation/` and a checked-out kernel tree so you can jump to the symbols it discusses.
+
+If you only want practical sysadmin knowledge, this is the wrong book — pick *The Linux Programming Interface* (Kerrisk) or *Linux System Programming* (Love) instead.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [Linux Insides](https://0xax.gitbooks.io/linux-insides/content/) — the resource itself.
+- [The Linux Kernel documentation](https://www.kernel.org/doc/html/latest/) — canonical, exhaustive, terse.
+- [LWN.net](https://lwn.net/) — the best running commentary on kernel development.
+- [[debugger]] — once you've read about the kernel, Valgrind/gdb help you debug user-space code that talks to it.
+- [[tools/linux/tmux|tmux]] — useful for keeping reading + a kernel tree + a build pane side-by-side.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[tmux_ai]] — Tmux AI _(score 20.3)_
-- [[tools/linux/tmux|tmux]] — TMUX _(score 20.3)_
-- [[tools/linux/zellij|zellij]] — Zellij _(score 20.3)_
-- [[programming/rust/sql_engine/books|books]] — Books _(score 19.4)_
-- [[_to_learn]] — Books _(score 19.4)_
+- [[debugger]]
+- [[tools/linux/tmux|tmux]]
+- [[helix]]
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#books` `#linux` `#tools` `#insides` `#xax` `#gitbooks` `#content`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#linux` `#books` `#kernel` `#internals` `#reading-list` `#gitbook` `#learning`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Linux Insides
 
+<https://0xax.gitbooks.io/linux-insides/content/>
 
-## Linux insides
-
-
-https://0xax.gitbooks.io/linux-insides/content/
+A free book on GitBook that walks through the Linux kernel by reading the source. Maintained by `0xAX` and contributors on GitHub.

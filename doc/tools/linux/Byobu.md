@@ -1,92 +1,79 @@
 ---
-title: Byobu: Text-based Window Manager and Terminal Multiplexer
-main_link: https://github.com/dustinkirkland/byobu
-keywords: [byobu, linux, terminal, multiplexer, gplv3, text, based, distributed, tmux]
-status: draft
+title: "Byobu — text-based window manager and terminal multiplexer"
+main_link: https://www.byobu.org/
+keywords: [byobu, tmux, screen, multiplexer, ubuntu, terminal, status-bar, gplv3]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Byobu — text-based window manager and terminal multiplexer
 
-# Byobu: Text-based Window Manager and Terminal Multiplexer
+**Main link:** <https://www.byobu.org/>
 
-**Main link:** <https://github.com/dustinkirkland/byobu>
+Repo: <https://github.com/dustinkirkland/byobu>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Byobu is a configuration layer and curses-based status wrapper that sits on top of GNU Screen or tmux. It was created by Dustin Kirkland (then at Canonical) to give Ubuntu server users a friendlier multiplexer out of the box: F-key shortcuts, persistent named sessions, and a status bar showing load average, RAM, disk, IP, uptime, etc. It's licensed GPLv3 and ships in most Linux distributions.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for Byobu when you want tmux's persistence and split panes without learning the prefix-key dance, or when you're SSH'd into a server you don't own and want a sane status line in seconds (`sudo apt install byobu && byobu`). The F-key bindings (`F2` new window, `F3`/`F4` switch, `F6` detach) are easier to teach to teammates than `Ctrl-b ?`.
+
+The trade-off: it's still tmux/screen underneath, so you inherit their quirks; configuration ends up scattered across `~/.byobu/` *and* `~/.tmux.conf`. If you're already comfortable with tmux, Byobu mostly just adds a status bar — at that point [[zellij]] is the more interesting modern alternative, while purists will stay on bare [[tools/linux/tmux|tmux]].
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[tools/linux/tmux|tmux]] — what Byobu is wrapping by default since ~2011.
+- [[zellij]] — modern Rust multiplexer with a discoverable status bar and floating panes built in.
+- [[mosh]] — pairs nicely with Byobu for resilient remote sessions over flaky links.
+- [GNU Screen](https://www.gnu.org/software/screen/) — Byobu's original backend; still selectable via `byobu-select-backend`.
+- [[terminals]] — comparison of Byobu / Mosh / Xpra for remote work.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[mosh]] — Mosh _(score 43.0)_
-- [[terminals]] — Project Summary: Byobu, Mosh, Xpra _(score 34.2)_
-- [[tools/linux/tmux|tmux]] — TMUX _(score 26.3)_
-- [[debugger]] — Valgrind _(score 19.7)_
-- [[tools/shell/tmux|tmux]] — Tmux _(score 18.0)_
+- [[tools/linux/tmux|tmux]]
+- [[zellij]]
+- [[mosh]]
+- [[terminals]]
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#byobu` `#linux` `#tools` `#terminal` `#multiplexer` `#gplv3` `#window`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#byobu` `#tmux` `#screen` `#multiplexer` `#ubuntu` `#terminal` `#status-bar` `#linux`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### What it is
 
----
-title: "Byobu: Text-based Window Manager and Terminal Multiplexer"
-tags:
-  - byobu
-  - window-manager
-  - terminal-multiplexer
-  - gplv3
-  - linux
----
+- Open-source text-based window manager and terminal multiplexer.
+- Enhances GNU Screen / tmux with status notifications, F-key bindings, and named sessions.
+- Runs on most Linux, BSD, and macOS distributions.
+- License: GPLv3. Originally maintained by Dustin Kirkland.
 
-# Byobu: Text-based Window Manager and Terminal Multiplexer
+### Quick start
 
-- **Source:** [github.com/dustinkirkland/byobu](https://github.com/dustinkirkland/byobu)
+```shell
+sudo apt install byobu       # Debian/Ubuntu
+brew install byobu           # macOS
+byobu                        # start a session
+byobu-select-backend         # pick tmux or screen as the underlying engine
+byobu-enable                 # auto-launch byobu on every login shell
+```
 
-## TL;DR
-*   Byobu is an open-source, text-based window manager and terminal multiplexer.
-*   It enhances the functionality of GNU Screen for Ubuntu servers.
-*   It supports most Linux, BSD, and Mac distributions.
-*   It is distributed under the GNU General Public License (GPLv3).
+### Default key bindings
 
-## Suggested vault notes
-*   [[Byobu Installation Guide]]
-*   [[GPLv3 License Details]]
-*   [[Terminal Multiplexer Comparison]]
+| Key  | Action                          |
+| ---- | ------------------------------- |
+| `F2` | Create a new window             |
+| `F3` | Previous window                 |
+| `F4` | Next window                     |
+| `F6` | Detach from session             |
+| `F7` | Enter scrollback / copy mode    |
+| `F8` | Rename current window           |
+| `F9` | Configuration menu              |
 
-## Answer recap
-Byobu is an open-source tool that functions as a text-based window manager and terminal multiplexer, enhancing GNU Screen. It is licensed under GPLv3 and maintained by EnterpriseDB.
+### Source
 
-## Consistency and gaps
-No material inconsistencies spotted.
-
-## Sources and follow-ups
-*   **Sources:** [github.com/dustinkirkland/byobu](https://github.com/dustinkirkland/byobu)
-*   **Follow-up Questions:**
-    1. What are the specific dependencies required for installing Byobu?
-    2. How does Byobu interface with Tmux?
-    3. What are the recommended contribution paths for the project?
-    4. Where can I find the specific details regarding the GPLv3 license?
+- <https://github.com/dustinkirkland/byobu>
+- <https://www.byobu.org/>

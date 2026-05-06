@@ -1,81 +1,123 @@
 ---
-title: sshpass
-main_link: 
-keywords: [sshpass, shell, replacement]
-status: draft
+title: "sshpass: non-interactive SSH password auth (use sparingly)"
+main_link: https://sourceforge.net/projects/sshpass/
+keywords: [sshpass, ssh, scp, expect, automation, security, shell]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# sshpass: non-interactive SSH password auth (use sparingly)
 
-# sshpass
+**Main link:** <https://sourceforge.net/projects/sshpass/>
+
+Manual: <https://linux.die.net/man/1/sshpass>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`sshpass` is a tiny utility that feeds a password to `ssh` (or `scp`,
+`rsync`, anything that uses ssh under the hood) on a pseudo-terminal so the
+SSH client thinks a human typed it. It exists because OpenSSH deliberately
+refuses to read passwords from stdin or environment variables — and there
+are still situations (lab gear, embedded boards, legacy boxes) where that
+constraint hurts.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+**Use SSH keys instead.** Almost every time you reach for `sshpass` the
+right answer is `ssh-copy-id user@host` once, then never deal with passwords
+again. Keys are more secure, work with `ssh-agent`, can be rotated, and
+don't end up in shell history.
+
+When `sshpass` is genuinely the right tool:
+
+- Bootstrapping a fresh device that doesn't have your key on it yet
+  (`ssh-copy-id` itself uses sshpass-style flow internally).
+- Scripting against appliances / IoT / network gear that only allow
+  password auth and where you can't install a key.
+- One-shot test harnesses where the "password" is a known-throwaway value.
+
+Hard rules if you have to use it:
+
+- **Never** use `-p PASSWORD` on the command line — it shows up in `ps`
+  output and shell history. Use `-f passwordfile` (mode 600) or
+  `-e` with `SSHPASS` env var.
+- Treat any host where you used sshpass as compromised for the purpose of
+  that password — assume it leaked.
+- For SCP/SFTP automation, prefer `rsync` over SSH with key auth; for
+  expect-style scripted dialogues, `expect` itself (see below) is more
+  flexible.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- `ssh-copy-id` — the right answer 95% of the time; copies your public key once.
+- [`expect`](https://core.tcl-lang.org/expect/) — the general TCL-based
+  scripted-dialogue tool; more flexible, more verbose.
+- [`sshfs`](https://github.com/libfuse/sshfs) — mount a remote dir over SSH
+  instead of scripting `scp` calls.
+- [`rsync`](https://rsync.samba.org/) — almost always a better fit for
+  copying files over SSH.
+- [[mosh]] — interactive SSH replacement that survives roaming and sleep.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[tools/shell/tools|tools]] — Shell tools _(score 21.4)_
-- [[dns_toys]] — Dns Toys _(score 21.4)_
-- [[tools/shell/tmux|tmux]] — Tmux _(score 21.4)_
-- [[must_have]] — Commands to install _(score 21.4)_
-- [[lynx]] — Lynx _(score 21.4)_
+- [[mosh]]
+- [[tools/shell/tools|shell tools]]
+- [[must_have]]
+- [[dns_toys]]
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#sshpass` `#shell` `#tools` `#replacement` `#example` `#create` `#test`
-
-## TODO
-
-- No `main_link` could be auto-detected. Add the canonical URL (project homepage / repo / paper) to the frontmatter.
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#sshpass` `#ssh` `#scp` `#expect` `#automation` `#security` `#shell`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+Install:
 
-# sshpass
+```shell
+# Debian / Ubuntu
+sudo apt install sshpass
+
+# macOS via Homebrew (sshpass was removed from core; use the formula below)
+brew install hudochenkov/sshpass/sshpass
+```
+
+### One-liners (use a password file, not `-p`)
+
+Inline (NOT RECOMMENDED — leaks via `ps`):
 
 ```shell
 sshpass -p "password" scp -r user@example.com:/some/remote/path /some/local/path
 ```
 
+From a 600-mode file (preferred):
+
 ```shell
-sshpass -f "/path/to/passwordfile" scp -r user@example.com:/some/remote/path /some/local/path
+sshpass -f /path/to/passwordfile scp -r user@example.com:/some/remote/path /some/local/path
 ```
 
-
-replacement of sshpass:
-
-For example create 'test.exp' :
+From an environment variable:
 
 ```shell
+SSHPASS='secret' sshpass -e ssh user@example.com 'uname -a'
+```
+
+### Replacement using `expect`
+
+When `sshpass` isn't installed and you can't add it, `expect` does the same
+job. Save as `test.exp`:
+
+```expect
 #!/usr/bin/expect
-        spawn scp  /usr/bin/file.txt root@<ServerLocation>:/home
-        set pass "Your_Password"
-        expect {
-        password: {send "$pass\r"; exp_continue}
-                  }
+spawn scp /usr/bin/file.txt root@<ServerLocation>:/home
+set pass "Your_Password"
+expect {
+    password: { send "$pass\r"; exp_continue }
+}
 ```
-run the script
+
+Run:
 
 ```shell
-expect test.exp 
+expect test.exp
 ```

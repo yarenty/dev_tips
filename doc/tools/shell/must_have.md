@@ -1,114 +1,128 @@
 ---
-title: Commands to install
+title: "Must-have CLI tools for a fresh box"
 main_link: https://github.com/jkfran/killport
-keywords: [must-have, shell, zsh, powerlevel10k, custom, git]
-status: draft
+keywords: [must-have, cli, killport, fd, cmatrix, fortune, oh-my-zsh, powerlevel10k, shell]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# Commands to install
+# Must-have CLI tools for a fresh box
 
 **Main link:** <https://github.com/jkfran/killport>
 
+A short, opinionated list of utilities I install on every fresh
+macOS / Linux box before doing real work. None of these are essential — but
+each one removes a recurring papercut.
+
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+This is a "first hour on a new machine" recipe: kill stuck processes by
+port, find files without remembering find's flags, and make the prompt
+itself stop being ugly. Everything here installs in one line via Homebrew
+or `cargo`. None of it requires sudo on macOS once Homebrew is set up.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Two opinions worth stating up front:
+
+- **`fd`, `rg`, `bat`, `eza`** are strictly better than `find`, `grep`,
+  `cat`, `ls` for interactive use. Add them and stop fighting POSIX flags.
+  (Don't alias them over the originals — scripts depend on the old ones.)
+- **A nice prompt earns its keep**, but [`starship`](https://starship.rs/)
+  is now a much easier choice than `powerlevel10k` because it's shell-
+  agnostic (works with [[fish]] too) and zero-config.
+
+The toy entries (`cmatrix`, `sl`, `fortune`) are kept because they make
+demoing a new shell setup more fun and they're trivial to skip.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[tools/shell/tools|shell tools]] — sister page for shell-script ergonomics (`gum`, `forgit`).
+- [[fish]] — friendlier interactive shell than bash/zsh; pairs with starship.
+- [[helix]] — modern modal editor, install it the same day.
+- [`starship`](https://starship.rs/) — the prompt I use instead of powerlevel10k these days.
+- [[lazygit]] — TUI git client; fits naturally on this list.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[tools/shell/tools|tools]] — Shell tools _(score 27.5)_
-- [[sshpass]] — sshpass _(score 21.4)_
-- [[tools/shell/tmux|tmux]] — Tmux _(score 21.4)_
-- [[lynx]] — Lynx _(score 21.4)_
-- [[fish]] — Fish _(score 17.4)_
+- [[tools/shell/tools|shell tools]]
+- [[fish]]
+- [[helix]]
+- [[lazygit]]
+- [[color_codes]]
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#must-have` `#shell` `#tools` `#zsh` `#powerlevel10k` `#custom` `#commands`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#must-have` `#cli` `#killport` `#fd` `#oh-my-zsh` `#powerlevel10k` `#shell` `#starship`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### killport — kill the process holding a port
 
-# Commands to install
-
-## killport
-
-https://github.com/jkfran/killport
+<https://github.com/jkfran/killport>
 
 ```shell
 cargo install killport
+# or
+brew install killport
+
+killport 3000
 ```
 
-## fd - better find
+### fd — a friendlier `find`
 
-https://github.com/sharkdp/fd
-
-![](https://github.com/sharkdp/fd/raw/master/doc/screencast.svg)
+<https://github.com/sharkdp/fd>
 
 ```shell
 brew install fd
+# or
+cargo install fd-find
+
+fd '\.rs$'        # find Rust files in cwd
+fd -e md          # by extension
+fd -H .gitignore  # include hidden
 ```
 
-
-## cmatrix
-
-Matrix style screen saver
+### cmatrix — Matrix-style screensaver
 
 ```shell
 brew install cmatrix
-```
+
 cmatrix -s -C red
+```
 
-## sl
-
-joke - if you type sl instead ls - train is comming
-
+### sl — joke train when you mistype `ls`
 
 ```shell
 brew install sl
 ```
 
-## fortune
-
-obviously! add to path!
+### fortune — random quotes (good for MOTD)
 
 ```shell
 brew install fortune
+fortune
 ```
 
+### oh-my-zsh / oh-my-fish
 
-## oh-my
-zsh
+The community frameworks for zsh and fish. Pick one based on your shell:
 
-fish
+- zsh: <https://ohmyz.sh/>
+- fish: <https://github.com/oh-my-fish/oh-my-fish>
 
+### powerlevel10k — fast, configurable zsh prompt
 
-## powerlevel
+<https://github.com/romkatv/powerlevel10k>
 
-https://github.com/romkatv/powerlevel10k
+```shell
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
+  "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+```
 
+Then set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc` and run
+`p10k configure`.
 
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+> Modern alternative: [`starship`](https://starship.rs/) — same look, works
+> in any shell, single binary, zero config to start.

@@ -35,7 +35,7 @@ status: draft
 - [[programming/rust/tooling/bottom|bottom]] — bottom _(score 19.5)_
 - [[workmux]] — Workmux _(score 18.6)_
 - [[tools/linux/tmux|tmux]] — TMUX _(score 18.0)_
-- [[tools/shell/tmux|tmux]] — Tmux _(score 18.0)_
+- [[tools/linux/tmux|tmux]] — Tmux _(score 18.0)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

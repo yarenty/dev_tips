@@ -29,7 +29,7 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[tools/shell/tmux|tmux]] — Tmux _(score 23.4)_
+- [[tools/linux/tmux|tmux]] — Tmux _(score 23.4)_
 - [[prek]] — Prek _(score 21.4)_
 - [[cursive]] — Cursive _(score 18.6)_
 - [[tools/linux/tmux|tmux]] — TMUX _(score 18.0)_

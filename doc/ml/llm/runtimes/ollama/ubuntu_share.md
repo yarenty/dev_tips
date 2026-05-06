@@ -29,7 +29,7 @@ status: draft
 
 - [[wireguard]] — Wireguard _(score 18.0)_
 - [[applications]] — Deskreen _(score 8.9)_
-- [[tools/shell/tmux|tmux]] — Tmux _(score 8.9)_
+- [[tools/linux/tmux|tmux]] — Tmux _(score 8.9)_
 - [[iot/drogue|drogue]] — Drogue _(score 6.0)_
 - [[sniffnet]] — sniffnet _(score 6.0)_
 
