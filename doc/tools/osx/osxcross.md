@@ -1,86 +1,83 @@
 ---
-title: OSX Cross
+title: "OSXCross — cross-compile to macOS from Linux"
 main_link: https://github.com/tpoechtrager/osxcross
-keywords: [osxcross, sdk, clang, cross, linux]
-status: draft
+keywords: [osxcross, cross-compile, macos, clang, cctools, ld64, sdk, linux, ci]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# OSX Cross
+# OSXCross — cross-compile to macOS from Linux
 
 **Main link:** <https://github.com/tpoechtrager/osxcross>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+OSXCross (by Thomas Pöchtrager) is a collection of scripts that wires up a working **macOS cross-toolchain on a non-Mac host** — Linux, FreeBSD, OpenBSD, or Android (Termux). It pairs the system's Clang/LLVM with a port of Apple's `cctools` (`lipo`, `otool`, `nm`, `ar`, `ld64`) and a packaged macOS SDK to produce native Mach-O binaries for x86_64, x86_64h, i386, arm64, and arm64e targets.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for OSXCross when you need to **produce macOS artifacts without owning a Mac builder**, typically for:
+
+- **CI release pipelines** that fan out to Linux/Windows/macOS targets — running everything on Linux runners is dramatically cheaper than renting a macOS hosted runner and avoids per-minute pricing on services like GitHub Actions.
+- **Universal-binary distribution** for an open-source CLI tool where you want one Linux-based release box producing all the artifacts.
+- **Library cross-compile sanity checks** as part of a multi-platform build matrix.
+
+The big caveat is **the macOS SDK**. OSXCross does not (and legally cannot) ship Apple's SDK; you have to extract it yourself from a Command Line Tools or Xcode download obtained under your own Apple developer account. The repo includes scripts to package an SDK tarball from a Mac you own, which you then copy to the Linux host. This is the legal grey zone — fine for personal/internal CI under your own license, less fine if you redistribute the SDK tarball.
+
+Other realities:
+
+- arm64 targets need the macOS 11.0 SDK or newer; arm64e needs a recent Apple Clang.
+- Code-signing and notarization still require Apple-only tooling (`codesign`, `notarytool`) — OSXCross gets you a working binary, but distribution to end users still wants a Mac (or a third-party signing service like [rcodesign](https://github.com/indygreg/apple-platform-rs)).
+- For Rust specifically, the `cargo-zigbuild` + `zig cc` approach is often easier than maintaining an OSXCross install if you just need `x86_64-apple-darwin` / `aarch64-apple-darwin` targets.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[ios]] — the App Store side of Apple toolchains; the iOS SDK has stricter terms than macOS.
+- [[osx_tricks]] — the Gatekeeper friction your unsigned cross-built binary will hit on user machines.
+- [[utm]] — alternative path: virtualize a real macOS instance for builds (Apple Silicon hosts only, per Apple's EULA).
+- [`cargo-zigbuild`](https://github.com/rust-cross/cargo-zigbuild) — Zig-based cross-linking for Rust, simpler for Apple targets in many cases.
+- [`rcodesign`](https://github.com/indygreg/apple-platform-rs) — Rust reimplementation of Apple code-signing, runnable on Linux.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[sniffnet]] — sniffnet _(score 19.1)_
-- [[osx_tricks]] — Jail-break from not opening on OSX _(score 16.0)_
-- [[bandwhich]] — Bandwhich _(score 11.4)_
-- [[ios]] — Ios _(score 11.1)_
-- [[www/payments|payments]] — Hyperswitch _(score 8.9)_
+- [[ios]]
+- [[osx_tricks]]
+- [[utm]]
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#osxcross` `#osx` `#tools` `#sdk` `#clang` `#cross` `#macos`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#osxcross` `#cross-compile` `#macos` `#clang` `#cctools` `#ld64` `#sdk` `#ci` `#mach-o`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### What it is
 
-# OSX Cross
+> The goal of OSXCross is to provide a well working macOS cross-toolchain for Linux, FreeBSD, OpenBSD, and Android (Termux).
+>
+> OSXCross works on x86, x86_64, arm and AArch64/arm64, and is able to target arm64, arm64e, x86_64, x86_64h and i386.
+>
+> arm64 requires the macOS 11.0 SDK (or later). arm64e requires a recent Apple Clang compiler.
+>
+> There is also a ppc test branch that has recently seen some daylight.
 
-https://github.com/tpoechtrager/osxcross
+### How it works
 
+To cross-compile for macOS you need:
 
-The goal of OSXCross is to provide a well working macOS cross toolchain for
-Linux, FreeBSD, OpenBSD, and Android (Termux).
+- the Clang/LLVM compiler
+- the cctools (`lipo`, `otool`, `nm`, `ar`, …) and `ld64`
+- the macOS SDK
 
-OSXCross works on x86, x86_64, arm and AArch64/arm64,
-and is able to target arm64, arm64e, x86_64, x86_64h and i386.
+Clang/LLVM is a cross-compiler by default and is now available on nearly every Linux distribution, so the project's job is to provide a proper port of `cctools` / `ld64` and the macOS SDK. OSXCross includes a collection of scripts for preparing the SDK and building `cctools` / `ld64`.
 
-arm64 requires macOS 11.0 SDK (or later).
-arm64e requires a recent Apple clang compiler.
+It also includes scripts for optionally building:
 
-There is also a ppc test branch that has recently seen some daylight.
+- Clang itself using gcc (for distributions that don't include it),
+- an up-to-date vanilla GCC as a cross-compiler targeting macOS,
+- the `compiler-rt` runtime library, and
+- the `llvm-dsymutil` tool required for debugging.
 
-HOW DOES IT WORK?
-For cross-compiling for macOS you need
+### Repo
 
-the Clang/LLVM compiler
-the cctools (lipo, otool, nm, ar, ...) and ld64
-the macOS SDK.
-Clang/LLVM is a cross compiler by default and is now available on nearly every Linux distribution, so we just need a proper port of the cctools/ld64 and the macOS SDK.
-
-OSXCross includes a collection of scripts for preparing the SDK and building the cctools/ld64.
-
-It also includes scripts for optionally building
-
-Clang using gcc (for the case your distribution does not include it),
-an up-to-date vanilla GCC as a cross-compiler for target macOS,
-the "compiler-rt" runtime library, and
-the llvm-dsymutil tool required for debugging.
+<https://github.com/tpoechtrager/osxcross>

@@ -1,76 +1,90 @@
 ---
-title: Jail-break from not opening on OSX
-main_link: 
-keywords: [osx-tricks, jail, terminal, break]
-status: draft
+title: "macOS Gatekeeper / quarantine tricks"
+main_link: https://support.apple.com/guide/mac-help/mh40616/mac
+keywords: [macos, gatekeeper, quarantine, xattr, spctl, security, unsigned-apps, tips]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# macOS Gatekeeper / quarantine tricks
 
-# Jail-break from not opening on OSX
+**Main link:** <https://support.apple.com/guide/mac-help/mh40616/mac>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+A small grab-bag of recipes for getting around macOS's Gatekeeper / quarantine refusal to launch unsigned or non-notarized apps — the "*&lt;App&gt; cannot be opened because the developer cannot be verified*" dialog. Covers per-file `xattr` removal, the System Settings "Open Anyway" escape hatch, and the global `spctl` disable for power users.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Gatekeeper exists for good reasons (it stops trojaned downloads from auto-running), so reach for these tricks **deliberately**, not reflexively. A typical decision tree:
+
+1. **Trusted single app** (e.g. a known open-source binary you just compiled or downloaded from GitHub Releases) — strip the quarantine xattr on that one path. Cheapest and most surgical.
+2. **You forgot to do step 1 and got the dialog** — use *System Settings → Privacy & Security → Open Anyway*. This whitelists the specific binary without weakening the system globally.
+3. **You're doing serious dev work and the dialog is a constant friction** — `sudo spctl --master-disable` exposes the *Anywhere* option in Security settings. Re-enable it (`spctl --master-enable`) when you're done. Don't leave it off on a daily-driver machine.
+
+Notes:
+
+- On modern macOS (Sequoia / Sonoma) Apple has removed some right-click "Open" shortcuts; the System Settings flow is now the official path.
+- Quarantine is just an extended attribute (`com.apple.quarantine`); it's set by *the downloader* (Safari, curl with `-O` from some sources, browsers via LaunchServices), not by the file itself.
+- Homebrew casks already strip quarantine for you — these tricks are mostly for manually-downloaded `.app` bundles, DMGs, or random binaries.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[ios]] — the other side of Apple's signing world (mandatory for App Store distribution).
+- [[osxcross]] — when you cross-compile a macOS binary, this is the friction your users will hit.
+- [Apple's "Safely open apps" guide](https://support.apple.com/guide/mac-help/mh40616/mac) — official doc.
+- [`xattr(1)`](https://ss64.com/osx/xattr.html) — the underlying tool for inspecting/removing extended attributes.
+- [`spctl(8)`](https://ss64.com/osx/spctl.html) — the Gatekeeper assessment policy CLI.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[byobu]] — Byobu: Text-based Window Manager and Terminal Multiplexer _(score 17.6)_
-- [[mdfried]] — Mdfried _(score 17.6)_
-- [[osxcross]] — OSX Cross _(score 16.0)_
-- [[joshuto]] — joshuto _(score 5.6)_
-- [[patchbay]] — patchbay.pub _(score 5.6)_
+- [[ios]]
+- [[osxcross]]
+- [[utm]]
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#osx-tricks` `#osx` `#tools` `#jail` `#terminal` `#remove` `#break`
-
-## TODO
-
-- No `main_link` could be auto-detected. Add the canonical URL (project homepage / repo / paper) to the frontmatter.
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#macos` `#gatekeeper` `#quarantine` `#xattr` `#spctl` `#security` `#unsigned-apps` `#tips`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### 1. Strip the quarantine attribute from a single app
 
-# Jail-break from not opening on OSX
+After downloading, open Terminal and run:
 
-
-1. After downloading, open Terminal
-
-Remove quarantine attribute:
 ```bash
 sudo xattr -r -d com.apple.quarantine /Applications/Nuclear.app
 ```
 
-2. If still blocked:
+`-r` recurses into the bundle; `-d` deletes the named attribute. Replace the path with whatever `.app` you're trying to launch.
 
-```log
+### 2. Use the System Settings "Open Anyway" escape hatch
 
-Go to System Preferences → Security & Privacy
-Click "Open Anyway" next to Nuclear
+If the app is still blocked after a launch attempt:
+
+1. Open **System Settings → Privacy & Security**.
+2. Scroll down to the security section — there will be a message naming the blocked app.
+3. Click **Open Anyway** next to it and confirm.
+
+This adds a per-app exception without touching global Gatekeeper policy.
+
+### 3. Globally disable Gatekeeper (power-user, temporary)
+
+For persistent friction during development:
+
+```bash
+sudo spctl --master-disable
 ```
 
-3. For persistent issues:
+This exposes the *Anywhere* option under Privacy & Security. Re-enable when you're done:
 
-```bash 
-sudo spctl --master-disable
+```bash
+sudo spctl --master-enable
+```
+
+Check current status with:
+
+```bash
+spctl --status
 ```
