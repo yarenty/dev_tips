@@ -33,7 +33,7 @@ status: draft
 - [[noria]] — Noria: data-flow for high-performance web applications _(score 18.4)_
 - [[streaming]] — par-stream _(score 14.7)_
 - [[trustfall]] — Trustfall _(score 8.9)_
-- [[kafka_2]] — Kafka _(score 8.2)_
+- [[kafka]] — Kafka _(score 8.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -29,7 +29,7 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[kafka_2]] — Kafka _(score 18.6)_
+- [[kafka]] — Kafka _(score 18.6)_
 - [[kafka]] — Kafka _(score 18.6)_
 - [[articles]] — Articles _(score 16.0)_
 - [[mindsdb]] — MindsDB _(score 6.6)_

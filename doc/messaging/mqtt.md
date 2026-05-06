@@ -58,7 +58,7 @@ The four things that bite people coming from HTTP-shaped systems:
 
 - [[paho_mqtt]] — Eclipse Paho Rust binding (FFI-shaped, mature).
 - [[mq]] — `rumqtt` — pure-Rust MQTT client, often the better Rust pick.
-- [[kafka_2]] — when you need durable log + replay; MQTT bridges to Kafka are a common pattern (Kafka Connect MQTT, Confluent Sink Connector).
+- [[kafka]] — when you need durable log + replay; MQTT bridges to Kafka are a common pattern (Kafka Connect MQTT, Confluent Sink Connector).
 - [NATS](https://nats.io/) — alternative pub/sub bus; better for *intra-cluster* messaging, weaker for the long tail of IoT clients.
 - [[drogue]] — Rust IoT framework (now archived) that ingested MQTT.
 - [[shodan]] — finds your accidentally-exposed brokers on the public internet.
@@ -69,7 +69,7 @@ The four things that bite people coming from HTTP-shaped systems:
 
 - [[paho_mqtt]] — Rust FFI binding to Eclipse Paho
 - [[mq]] — `rumqtt` — pure-Rust client
-- [[kafka_2]] — long-term-log alternative; bridges well from MQTT
+- [[kafka]] — long-term-log alternative; bridges well from MQTT
 - [[drogue]] — IoT framework that consumed MQTT
 - [[shodan]] — for auditing your broker isn't on the public internet by accident
 

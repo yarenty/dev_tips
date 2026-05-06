@@ -32,7 +32,7 @@ status: draft
 - [[sqlflow]] — SQLFlow _(score 25.1)_
 - [[noria]] — Noria: data-flow for high-performance web applications _(score 22.4)_
 - [[pulsar]] — Pulsar _(score 18.6)_
-- [[kafka_2]] — Kafka _(score 18.6)_
+- [[kafka]] — Kafka _(score 18.6)_
 - [[kafka]] — Kafka _(score 18.6)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->

@@ -31,7 +31,7 @@ status: draft
 
 - [[dspy]] — DSPy _(score 21.4)_
 - [[mlcube]] — MLCube _(score 21.4)_
-- [[kafka_2]] — Kafka _(score 18.6)_
+- [[kafka]] — Kafka _(score 18.6)_
 - [[kafka]] — Kafka _(score 18.6)_
 - [[db/relational/mysql|mysql]] — mysql _(score 17.9)_
 

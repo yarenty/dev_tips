@@ -570,15 +570,13 @@
 # Messaging
 
 - [Messaging](messaging/README.md)
-  - [Kafka](messaging/kafka.md)
-  - [Kafka](messaging/kafka_2.md)
-  - [Kinesis](messaging/kinesis.md)
+  - [Apache Kafka](messaging/kafka.md)
+  - [Redpanda](messaging/redpanda.md)
+  - [Apache Pulsar](messaging/pulsar.md)
+  - [NATS](messaging/nats.md)
   - [MQTT](messaging/mqtt.md)
-  - [nats-server](messaging/nats.md)
+  - [Amazon Kinesis](messaging/kinesis.md)
   - [patchbay.pub](messaging/patchbay.md)
-  - [Pulsar](messaging/pulsar.md)
-  - [Red Panda](messaging/red_panda.md)
-  - [redpanda](messaging/redpanda.md)
 
 # Observability
 

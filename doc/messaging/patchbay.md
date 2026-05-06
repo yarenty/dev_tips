@@ -1,93 +1,93 @@
 ---
-title: patchbay.pub
-main_link: 
-keywords: [patchbay, pubsub, pub, iot, terminal, models]
-status: draft
+title: "patchbay.pub: serverless HTTP pub/sub via curl"
+main_link: https://patchbay.pub/
+keywords: [patchbay, pubsub, http, serverless, webhooks, no-auth, hobby-tools]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# patchbay.pub: serverless HTTP pub/sub via curl
 
-# patchbay.pub
+**Main link:** <https://patchbay.pub/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+[patchbay.pub](https://patchbay.pub/) is a tiny free web service that turns any URL into either a one-shot rendezvous channel (one consumer, one producer) or a pub/sub broadcast channel — accessed entirely via plain `curl` requests, with no account, no auth, and no server to run. A blocking `GET https://patchbay.pub/<channel-id>` waits until a `POST` to the same URL hands over a payload, and the payload is delivered to the GET as the response body. Use the `/pubsub/` prefix and the same channel becomes a multi-consumer broadcast where the POST is non-blocking.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for patchbay when you need to **glue two scripts together over HTTP without writing a server**:
+
+- **Cross-machine notifications** — `curl https://patchbay.pub/your-secret-id` on your phone (via Termux or Shortcuts) blocks until your laptop POSTs to it. Push notifications without Firebase.
+- **One-off file sharing** — `curl --data-binary @file.tar.gz https://patchbay.pub/abc-123` on one box, `curl https://patchbay.pub/abc-123 > file.tar.gz` on the other.
+- **Webhook dev** — point a service-under-test at a patchbay URL and `curl` it from your laptop to see what arrives.
+- **Cross-platform IPC for hacks** — bots, smart-home glue, IoT widgets where bringing in MQTT or NATS is overkill.
+
+Don't use it for anything you care about:
+
+- **No auth** — anyone who guesses or sees your channel ID can read or write to it. Use long random IDs (the homepage gives you one), but treat them as semi-public.
+- **No persistence** — messages are delivered to whoever is currently waiting. If nobody's connected, the message is gone.
+- **No SLA** — it's a single hobby service run by [Anders Pitman](https://github.com/anderspitman). If you need reliability, run your own ([source is on GitHub](https://github.com/patchbay-pub/patchbay)).
+
+For anything beyond hobby use, reach for [[messaging/mqtt|MQTT]] (sensor-shaped fan-in), [[programming/rust/net/nats|NATS]] (cluster-shaped pub/sub), or [webhook.site](https://webhook.site) (just for inspecting webhooks).
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [webhook.site](https://webhook.site/) — slicker UI for the "give me a URL to see what gets POSTed" use case; not a pub/sub bus.
+- [ngrok](https://ngrok.com/) / [Cloudflare Tunnel](https://www.cloudflare.com/products/tunnel/) — tunnel a real local server through a public URL; very different shape but similar "I just need a public endpoint" need.
+- [[messaging/mqtt|mqtt]] — proper IoT pub/sub bus when you outgrow patchbay.
+- [NATS](https://nats.io/) — proper cluster pub/sub bus for the same reason.
+- [[oracle_free_tier]] — where to host your own patchbay-style service if you don't want to depend on a third party.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[kinesis]] — Kinesis _(score 22.3)_
-- [[messaging/mqtt|mqtt]] — MQTT _(score 22.3)_
-- [[kafka_2]] — Kafka _(score 16.0)_
-- [[pulsar]] — Pulsar _(score 16.0)_
-- [[kafka]] — Kafka _(score 16.0)_
+- [[messaging/mqtt|mqtt]] — proper IoT pub/sub when you outgrow patchbay
+- [[oracle_free_tier]] — host your own equivalent for free
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#patchbay` `#messaging` `#pubsub` `#pub` `#iot` `#create`
-
-## TODO
-
-- No `main_link` could be auto-detected. Add the canonical URL (project homepage / repo / paper) to the frontmatter.
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#messaging` `#patchbay` `#pubsub` `#http` `#serverless` `#webhooks` `#no-auth` `#hobby-tools`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Pitch (paraphrased from the site)
 
-# patchbay.pub
+> patchbay.pub is a free web service you can use to implement things like static site hosting, file sharing, cross-platform notifications, webhooks handling, smart home event routing, IoT reporting, job queues, chat systems, bots, etc, all completely serverless and requiring no account creation or authentication. Most implementations need nothing but `curl` and simple bash snippets.
 
+### Trivial example: rendezvous channel (one consumer, one producer)
 
-patchbay.pub is a free web service you can use to implement things like static site hosting, file sharing, cross-platform notifications, webhooks handling, smart home event routing, IoT reporting, job queues, chat systems, bots, etc, all completely serverless and requiring no account creation or authentication. Most implementations need nothing but curl and simple bash snippets.
+In one terminal — this blocks until a producer arrives:
 
-
-
-
-patchbay.pub
-
-
-trivial example. If you run this GET to create a consumer, it will block:
-
-```shell
-
+```sh
 curl https://patchbay.pub/8ew3-s004
 ```
-Until you also run this POST in another terminal to create a producer:
 
-```shell
+In another — POST hands payload to the blocked GET:
 
+```sh
 curl https://patchbay.pub/8ew3-s004 -d "Hi there"
 ```
 
+The blocked GET unblocks and prints `Hi there`.
 
+### `/pubsub/` channel (one publisher, many subscribers, broadcast)
 
+Same channel ID under the `/pubsub/` prefix:
 
-
-If you use the /pubsub/ protocol, like this:
-
-```shell
-
+```sh
+# In N consumer terminals
 curl https://patchbay.pub/pubsub/8ew3-s004
 
-
+# In a producer terminal
 curl https://patchbay.pub/pubsub/8ew3-s004 -d "Hi there"
 ```
 
+The POST is now non-blocking and broadcasts the payload to every blocked GET.
 
-the request uses the channel in a different mode. GETs act similarly to before, but POSTs become non-blocking, and will broadcast messages to all blocked pubsub consumers, not just the first one. As the name suggest, this models the PubSub pattern.
+### Useful entry points
+
+- Site: <https://patchbay.pub/>
+- Source: <https://github.com/patchbay-pub/patchbay>
+- Author: <https://github.com/anderspitman>
+- Discussion / examples (HN): <https://news.ycombinator.com/from?site=patchbay.pub>
