@@ -1,184 +1,102 @@
 ---
-title: NGrok - Free Firewall Tunnel
-main_link: https://dashboard.ngrok.com/get-started/setup
-keywords: [ngrok, security, request, auth, basic, tunnel, internet]
-status: draft
+title: "ngrok — instant HTTPS tunnel to localhost"
+main_link: https://ngrok.com/
+keywords: [ngrok, tunnel, webhook, https, basic-auth, oauth, localhost, reverse-proxy]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# ngrok — instant HTTPS tunnel to localhost
 
-# NGrok - Free Firewall Tunnel
+**Main link:** <https://ngrok.com/>
 
-**Main link:** <https://dashboard.ngrok.com/get-started/setup>
+Docs: <https://ngrok.com/docs> · Setup: <https://dashboard.ngrok.com/get-started/setup>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+ngrok is a hosted reverse-proxy service: you run `ngrok http 8000` and it gives you back a public `https://<random>.ngrok-free.app` URL that tunnels straight into your local port. It handles TLS termination, exposes a `localhost:4040` request inspector, and adds optional auth (Basic, OAuth, OIDC, SAML) without changing your app. Originally a one-binary side project, it's now a freemium SaaS company (random subdomains on the free tier, reserved domains on paid).
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The killer use case is webhook development — you point Stripe, Twilio, GitHub, or DocuSign at an ngrok URL, see every request hit your laptop, and use **request replay** at `localhost:4040` to re-fire the same payload after each code change. That alone removes the "click button → wait for callback → realise the JSON parser blew up → repeat" loop.
+
+Gotchas and trade-offs:
+
+- **Free tier subdomains are random** and rotate every restart, so anything that needs a stable URL (a webhook registered in a third-party dashboard) effectively requires a paid plan or a workaround.
+- **TLS is fine, but you're routing all traffic through ngrok's edge** — that's a vendor and a privacy choice. Don't tunnel anything sensitive through someone else's reverse proxy without thinking about it.
+- **For long-running self-hosted exposure**, ngrok is the wrong shape. Use [[rathole]], [frp](https://github.com/fatedier/frp), [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/), or a [[wireguard]] mesh to a cheap VPS instead.
+- **Modern competitors** that often beat it for specific cases: [Tailscale Funnel](https://tailscale.com/kb/1223/funnel) (zero-config if you're already on Tailscale), [bore](https://github.com/ekzhang/bore) (tiny self-hostable Rust binary), Cloudflare Tunnel (free, no random URL), [localtunnel](https://localtunnel.github.io/www/), [serveo](https://serveo.net/).
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[rathole]] — self-hosted Rust reverse-proxy; the "I own a VPS" answer to ngrok.
+- [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) — free, persistent, runs on your domain.
+- [Tailscale Funnel](https://tailscale.com/kb/1223/funnel) — expose a tailnet node to the public internet.
+- [bore](https://github.com/ekzhang/bore) — minimal Rust tunneller; ~500 LOC, self-hosts in a minute.
+- [frp](https://github.com/fatedier/frp) — Go reverse-proxy with a huge feature surface; the older incumbent rathole was written to replace.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[sniffnet]] — sniffnet _(score 27.5)_
-- [[rathole]] — rathole _(score 27.5)_
-- [[wireguard]] — Wireguard _(score 24.4)_
-- [[web_to_app_pake]] — Pake _(score 21.5)_
-- [[tools/security/pake|pake]] — Pake _(score 21.5)_
+- [[rathole]]
+- [[wireguard]]
+- [[sniffnet]]
+- [[oracle_free_tier]]
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#ngrok` `#security` `#tools` `#request` `#auth` `#basic` `#oauth`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#ngrok` `#tunnel` `#webhook` `#reverse-proxy` `#https` `#oauth` `#localhost` `#tools`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Run
 
-# NGrok - Free Firewall Tunnel
-
-
-
-https://dashboard.ngrok.com/get-started/setup
-
-
-
-If you are hosting a server on a home network with a dynamic IP address, it can be hard or impossible to accept incoming web requests. NGrok provides local workstations with a *.ngrok.io web address for exposing local servers to the Internet. It also provides HTTPS/TLS support, which is pretty cool!
-
-Ngrok is especially useful when you want to experiment with third-party APIs that use WebHooks.
-
-
-to run:
 ```shell
 ngrok http 80
 ```
 
-
-
-## Tip 1: Auth in 5 Seconds
-Building auth into your apps is important but sometimes it gets in the way. We have a simpler mindset:
+### HTTP Basic Auth in one flag
 
 ```shell
 ngrok http 8000 --basic-auth="katelibby:rooftoppool"
 ```
 
-Whether you use HTTP Basic Auth, OAuth 2.0, OpenID Connect, or even SAML, ngrok has you covered out of the box. 
+Single username/password in front of the tunnel — fine for a one-off demo, never for production.
 
+### OAuth 2.0 (Google) with domain restriction
 
-### Using ngrok for HTTP Basic Authentication
-The simplest form of authentication is HTTP Basic Auth. In ngrok, you can set it up as easily as:
-
-```shell
-ngrok http 3001 --basic-auth="katelibby:reallyrocks"
-```
-and that gives you a simple login box:
-
-HTTP Basic Auth with ngrok
-
-Basic auth creates a single username and password in front of your ngrok tunnel. This is ideal for those one-off customer demos where you only need to protect your application for a brief period of time. Under no circumstances should you launch a production application onto the public internet with just Basic Auth.
-
-### Using ngrok for OAuth 2.0
-If we want to really launch an application with authentication, we need to get more serious. At minimum, we want individual users to have their own credentials and - ideally - we don’t want to get involved in the complexity of user and password management. Luckily, that is exactly what OAuth 2.0 is designed for.
-
-
-
-In this case, we’ll shift our command slightly to leverage Google’s login flow:
 ```shell
 ngrok http 3001 --oauth=google
+ngrok http 3001 --oauth=google --oauth-allow-domain=company.com
+ngrok http 3001 --oauth=google --oauth-allow-domain=company.com,customer.com
+ngrok http 3001 --oauth=google --oauth-allow-domain=company.com,customer.com --oauth-allow-email=first.last@contractor.com
 ```
-Now when we attempt to access our tunnel, we’ll get redirected to Google, complete the authentication flow, and get redirected back to our application. That’s all it takes to put a simple OAuth front end on your most ancient, arcane, untouchable applications. To date, we haven’t modified the application.
 
-That said, if we have the ability or need to modify the application, as part of the flow, ngrok will collect specific fields from your identity provider and pass them along as headers. Specifically, it includes:
+ngrok injects identity headers into the proxied request:
+
 ```text
 Ngrok-Auth-User-Email: keith@ngrok.com
-Ngrok-Auth-User-Id: 102528612345998048947
-Ngrok-Auth-User-Name: Keith Casey
+Ngrok-Auth-User-Id:    102528612345998048947
+Ngrok-Auth-User-Name:  Keith Casey
 Referer: https://accounts.google.com/
 ```
-Now we have the ability to use these fields for logging, profile and preference management, or even to bootstrap a more complex user/authentication object for downstream applications.
 
-But most of the time, we still don’t want anyone with a Google account logging into our application. Let’s make sure only our team can access our application:
+### OIDC (e.g. Okta)
 
-```shell
-ngrok http 3001 --oauth=google --oauth-allow-domain=company.com
-```
-While this works, we forgot our customer! Let’s make one tweak:
+In the Okta admin dashboard, create an OpenID Connect app using the Authorization Code flow and add `https://idp.ngrok.com/oauth2/callback` as the sign-in redirect URI. Then:
 
 ```shell
-ngrok http 3001 --oauth=google --oauth-allow-domain=company.com,customer.com
+ngrok http 3001 \
+  --oidc=https://mycompany.okta.com \
+  --oidc-client-id=myclientid \
+  --oidc-client-secret=myclientsecret
 ```
-And we can even let in our outside contractor who doesn’t have a company email:
-```shell
-ngrok http 3001 --oauth=google --oauth-allow-domain=company.com,customer.com –oauth-allow-email=first.last@contractor.com
-```
-Now we have all the flexibility of using OAuth for effectively zero effort, still without modifying our application.
 
-### Using ngrok for OpenID Connect
-While using a public OAuth provider is powerful, it’s likely we’ll want to connect to a corporate or internal identity provider. In that case, we can shift to a more fine-grained approach like OpenID Connect (OIDC) with a custom provider.
+### Request inspector & replay
 
-OIDC is an open protocol so we could use any provider but we’ll use Okta for simplicity. In this case, we have two steps.
+When ngrok starts it prints two URLs: the public tunnel and `http://localhost:4040`, the **Request Inspector**. Every request through the tunnel is logged with full headers and body. For each one you get:
 
-First, on the Okta side, we have to set the redirect URL where the ID token is sent after a successful login flow. Within the Okta Admin Dashboard, we create an OpenID Connect application and specify the Authorization Code flow. Once created, we copy the Client ID and Client Secret for the next step and add this as a "Sign-in redirect URI":
+- **Replay** — re-fires the exact same request into your app (does *not* spoof source IP or webhook signatures).
+- **Replay with Modifications** — same request as a template, edit method/headers/body before re-firing.
 
-https://idp.ngrok.com/oauth2/callback
-Configure Okta's OpenID Connect for ngrok
-
-Then on the command line we specify our Okta organization and the Client ID and Client Secret from the previous step:
-```shell
-ngrok http 3001 --oidc=https://mycompany.okta.com --oidc-client-id=myclientid --oidc-client-secret=myclientsecret
-```
-Now our application is protected by our corporate identity provider with marginally more effort than it took to use HTTP Basic Auth.
-
-
-
-## Debugging
-
-Testing code is a tedious task that takes a lot of time, especially if certain conditions are required – such as trigger webhooks, API requests, or web pages with specific cookies/headers/session context.
-
-Three months ago, I developed a webhook listener that updates my database anytime a user signs a contract in DocuSign. While the initial coding was easy due to DocuSign's great doc, I spent the entire day tweaking my code logic to grab various fields from the JSON payload.
-
-That happened because I spent 10+ minutes on each test cycle tweaking my code and then uploading and eSigning docs, and waiting for the webhook.
-
-That was before I joined ngrok and learned about the Request Inspector and the Replay functionality — which is one of the coolest tools to save some time ❤️:
-
-Time savings using request replays
-
-### Request Inspector
-When you launch ngrok, you can see two links: One for the tunnel to your app (it ends up in ngrok.io unless you're using custom domains) and a local URL (http://localhost:4040) for the Request Inspector.
-
-The Request Inspector shows all the requests made through your tunnel. When you click a request, you can see details of both requests and responses.
-
-Seeing requests are an excellent way for validating the data sent to and retrieved by your app via the ngrok tunnel. That alone can save you some time dissecting and logging HTTP request and response headers, methods, bodies, and response codes within your app just to confirm you are getting what you expect.
-
-Request Replays (with and without modifications)
-For each request, the dashboard also gives you a replay button with two options:
-
-You can replay your requests without any modification by just clicking Replay
-
-### Request Replay
-
-This takes the entire request - both payload and headers - and replays it directly into your application. It does not mimic requestor IP address or recreate signing information — especially important for verifying webhooks — but the payload and headers will be intact for your code to use as you need.
-
-Alternatively, you can also click the down arrow > Replay with Modifications. This allows you to use the same request as a template and make adjustments in the request method, header, and body:
-
-### Request Replay Modified
-
-Ready to get started?
-Request introspections and replays are available to any ngrok user. To get it going, launch your tunnel (i.e., ngrok http 80) and then go to your introspection address (i.e., http://localhost:4040).
+This is the single feature that makes ngrok worth tolerating for webhook work: the dev loop collapses from "trigger external event → wait → debug" to "click Replay → debug".

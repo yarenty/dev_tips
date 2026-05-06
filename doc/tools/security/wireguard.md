@@ -1,173 +1,166 @@
 ---
-title: Wireguard
+title: "WireGuard — modern in-kernel VPN"
 main_link: https://www.wireguard.com/
-keywords: [wireguard, vpn, security, networking, tunnel, nat, internet]
-status: draft
+keywords: [wireguard, vpn, kernel, tunnel, networking, cryptography, tailscale, headscale]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# Wireguard
+# WireGuard — modern in-kernel VPN
 
 **Main link:** <https://www.wireguard.com/>
 
+Quick-start: <https://www.wireguard.com/quickstart/> · `wg(8)` man page: <https://man7.org/linux/man-pages/man8/wg.8.html>
+
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+WireGuard is a modern VPN protocol designed by Jason Donenfeld. It runs in the Linux kernel (since 5.6), uses a small fixed cryptographic suite (Curve25519, ChaCha20, Poly1305, BLAKE2s, SipHash24, HKDF), and is configured via short text files instead of certificates. The codebase is famously tiny — a few thousand lines, vs hundreds of thousands for OpenVPN/IPsec — which makes it auditable in a way the older protocols simply aren't.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for raw WireGuard when you want a **point-to-point encrypted tunnel** between machines you control: laptop ↔ home server, two cloud regions, a fleet of VPSes, an IoT device behind NAT and a public box. Configuration is two key pairs and four lines of TOML-ish config per peer; performance is "just kernel networking" fast.
+
+For most humans, however, you should reach for one of the **managed control planes** built on top of WireGuard, not the raw protocol:
+
+- **[Tailscale](https://tailscale.com/)** — WireGuard data plane + a hosted coordination server. NAT traversal, ACLs, MagicDNS, SSO, all just work. Free for personal use. The right answer for "give my devices a VPN" 90% of the time.
+- **[Headscale](https://github.com/juanfont/headscale)** — open-source self-hosted reimplementation of the Tailscale control server. Same client app, your infrastructure.
+- **[Netbird](https://netbird.io/)**, **[Innernet](https://github.com/tonarino/innernet)**, **[Nebula](https://github.com/slackhq/nebula)** — other mesh-VPN systems in the same niche (Nebula isn't WireGuard, but solves the same shape of problem).
+
+Pick raw `wg` / `wg-quick` when:
+
+- You want one tunnel and don't want a control plane.
+- You're embedding it in something else (e.g., behind [[rathole]]-style port forwarding, or as the data plane of your own service).
+- You're on a constrained device where the Tailscale daemon is too heavy.
+
+vs OpenVPN / IPsec — WireGuard is dramatically simpler to set up, faster, easier to audit, and runs in-kernel. OpenVPN still wins on extreme NAT-traversal flexibility and richer auth integration; IPsec still wins on "the network team will only allow IPsec".
+
+Gotchas:
+
+- **No connection state on the wire** — `wg show` says a peer "exists" whether or not it's reachable. To tell if a tunnel is healthy, look at the last-handshake timestamp and the rx/tx counters.
+- **Peers behind NAT** must send `PersistentKeepalive = 25` (or similar) or the NAT mapping will time out and inbound packets will silently drop.
+- **Routing is your problem.** WireGuard sets up the interface and the crypto; getting traffic to actually use it requires correct `AllowedIPs`, route tables, and (for full-tunnel VPN) policy routing or `wg-quick`'s `Table = ` + fwmark trick.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [Tailscale](https://tailscale.com/) — managed mesh on top of WireGuard; the easy mode.
+- [Headscale](https://github.com/juanfont/headscale) — self-hosted Tailscale-compatible control server.
+- [OpenVPN](https://openvpn.net/) — the older, more flexible, more complex incumbent.
+- [Nebula](https://github.com/slackhq/nebula) — Slack's mesh VPN; not WireGuard, but adjacent.
+- [[rathole]] — port-forwarding alternative when you don't need a full L3 VPN.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[rathole]] — rathole _(score 35.7)_
-- [[ngrok]] — NGrok - Free Firewall Tunnel _(score 24.4)_
-- [[web_to_app_pake]] — Pake _(score 21.5)_
-- [[port_scan]] — RustScan _(score 21.5)_
-- [[port_scanner_rustscan]] — RustScan _(score 21.5)_
+- [[rathole]]
+- [[ngrok]]
+- [[oracle_free_tier]]
+- [[sniffnet]]
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#wireguard` `#vpn` `#security` `#networking` `#tunnel` `#nat` `#kernel`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
-- Note: a previous auto-split mistakenly treated the `# ip ...` / `# wg ...` shell prompts in the original as Markdown H1s and spilled out 7 garbage articles. Those have been deleted and the original content restored. The shell-prompt blocks below have been wrapped in ``` fences so the splitter never makes that mistake again.
+`#wireguard` `#vpn` `#kernel` `#tunnel` `#networking` `#cryptography` `#security` `#tools`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Quick start
 
-# Wireguard
+Read the [conceptual overview](https://www.wireguard.com/papers/wireguard.pdf) first, then install WireGuard. After that, the bring-up dance below.
 
+### Side-by-side video
 
-## Quick Start
-You'll first want to make sure you have a decent grasp of the conceptual overview, and then install WireGuard. After that, read onwards here.
+Two peers being configured simultaneously: <https://www.wireguard.com/talks/talk-demo-screencast.mp4>
 
-## Side by Side Video
-Before explaining the actual comands in detail, it may be extremely instructive to first watch them being used by two peers being configured side by side:
+A single configuration:
 
+![wg walkthrough](https://www.wireguard.com/img/walkthrough.gif)
 
-[https://www.wireguard.com/talks/talk-demo-screencast.mp4](https://www.wireguard.com/talks/talk-demo-screencast.mp4)
+### Command-line bring-up
 
-
-
-Or individually, a single configuration looks like:
-
-
-![](https://www.wireguard.com/img/walkthrough.gif)
-
-
-## Command-line Interface
-
-A new interface can be added via ip-link(8), which should automatically handle module loading:
+Add a new interface via `ip-link(8)` (auto-loads the module):
 
 ```shell
 # ip link add dev wg0 type wireguard
 ```
 
-(Non-Linux users will instead write `wireguard-go wg0`.)
+(Non-Linux users will instead run `wireguard-go wg0`.)
 
-An IP address and peer can be assigned with ifconfig(8) or ip-address(8):
+Assign an IP and (optionally) a peer with `ip-address(8)`:
 
 ```shell
 # ip address add dev wg0 192.168.2.1/24
 ```
 
-Or, if there are only two peers total, something like this might be more desirable:
+For a point-to-point pair:
 
 ```shell
 # ip address add dev wg0 192.168.2.1 peer 192.168.2.2
 ```
 
-The interface can be configured with keys and peer endpoints with the included wg(8) utility:
+Configure keys and peer endpoints with `wg(8)`:
 
 ```shell
 # wg setconf wg0 myconfig.conf
 ```
 
-or
+or imperatively:
 
 ```shell
-# wg set wg0 listen-port 51820 private-key /path/to/private-key peer ABCDEF... allowed-ips 192.168.88.0/24 endpoint 209.202.254.14:8172
+# wg set wg0 listen-port 51820 \
+    private-key /path/to/private-key \
+    peer ABCDEF... \
+    allowed-ips 192.168.88.0/24 \
+    endpoint 209.202.254.14:8172
 ```
 
-Finally, the interface can then be activated with ifconfig(8) or ip-link(8):
+Bring the link up:
 
 ```shell
 # ip link set up dev wg0
 ```
 
-There are also the `wg show` and `wg showconf` commands, for viewing the current configuration. Calling `wg` with no arguments defaults to calling `wg show` on all WireGuard interfaces.
+`wg show` and `wg showconf` display current state. `wg` with no args is `wg show` on every WireGuard interface.
 
-![](https://www.wireguard.com/img/wg-tool.png)
+![wg tool](https://www.wireguard.com/img/wg-tool.png)
 
-Consult the man page of `wg(8)` for more information.
+Most of the bring-up dance is automated by `wg-quick(8)`:
 
-Much of the routine bring-up and tear-down dance of `wg(8)` and `ip(8)` can be automated by the included `wg-quick(8)` tool:
+![wg-quick tool](https://www.wireguard.com/img/wg-quick-tool.gif)
 
-![](https://www.wireguard.com/img/wg-quick-tool.gif)
+### Key generation
 
-## Key Generation
-
-WireGuard requires base64-encoded public and private keys. These can be generated using the `wg(8)` utility:
+WireGuard uses base64 Curve25519 keys generated by `wg(8)`:
 
 ```shell
 $ umask 077
 $ wg genkey > privatekey
-```
-
-This will create `privatekey` on stdout containing a new private key.
-
-You can then derive your public key from your private key:
-
-```shell
 $ wg pubkey < privatekey > publickey
-```
 
-This will read `privatekey` from stdin and write the corresponding public key to `publickey` on stdout.
-
-Of course, you can do this all at once:
-
-```shell
+# or all at once
 $ wg genkey | tee privatekey | wg pubkey > publickey
 ```
 
-## NAT and Firewall Traversal Persistence
+### NAT and firewall traversal
 
-By default, WireGuard tries to be as silent as possible when not being used; it is not a chatty protocol. For the most part, it only transmits data when a peer wishes to send packets. When it's not being asked to send packets, it stops sending packets until it is asked again. In the majority of configurations, this works well. However, when a peer is behind NAT or a firewall, it might wish to be able to receive incoming packets even when it is not sending any packets. Because NAT and stateful firewalls keep track of "connections", if a peer behind NAT or a firewall wishes to receive incoming packets, he must keep the NAT/firewall mapping valid, by periodically sending keepalive packets. This is called persistent keepalives. When this option is enabled, a keepalive packet is sent to the server endpoint once every interval seconds. A sensible interval that works with a wide variety of firewalls is 25 seconds. Setting it to 0 turns the feature off, which is the default, since most users will not need this, and it makes WireGuard slightly more chatty. This feature may be specified by adding the `PersistentKeepalive =` field to a peer in the configuration file, or setting persistent-keepalive at the command line. If you don't need this feature, don't enable it. But if you're behind NAT or a firewall and you want to receive incoming connections long after network traffic has gone silent, this option will keep the "connection" open in the eyes of NAT.
+WireGuard is intentionally silent — it sends no packets when the application sends none. That's a problem when a peer sits behind NAT or a stateful firewall: the mapping times out and inbound packets get dropped. The fix is **persistent keepalives**: a tiny packet every N seconds to keep the NAT entry alive.
 
-## Demo Server
+A sensible interval is 25 seconds. `0` disables it (the default). Set it via `PersistentKeepalive = 25` in the peer block of the config file or `persistent-keepalive` on the command line. Don't enable it if you don't need it — it adds chatter for no benefit on direct links.
 
-After installing WireGuard, if you'd like to try sending some packets through WireGuard, you may use, for testing purposes only, the script in `contrib/ncat-client-server/client.sh`.
+### Demo server
+
+For testing only:
 
 ```shell
 $ sudo contrib/examples/ncat-client-server/client.sh
 ```
 
-This will automatically setup interface `wg0`, through a very insecure transport that is only suitable for demonstration purposes. You can then try loading the hidden website or sending pings:
+This brings up `wg0` over a deliberately insecure transport. You can then hit the hidden site or ping the gateway:
 
 ```shell
 $ chromium http://192.168.4.1
 $ ping 192.168.4.1
 ```
 
-If you'd like to redirect your internet traffic, you can run it like this:
+To route all internet traffic through the demo server:
 
 ```shell
 $ sudo contrib/examples/ncat-client-server/client.sh default-route
@@ -177,14 +170,14 @@ demo.wireguard.com
 curl/7.49.1
 ```
 
-By connecting to this server, you acknowledge that you will not use it for any abusive or illegal purposes and that your traffic may be monitored.
+The demo server is monitored — don't abuse it.
 
-## Debug Info
+### Debugging
 
-If you're using the Linux kernel module and your kernel supports dynamic debugging, you can get useful runtime output by enabling dynamic debug for the module:
+Linux kernel module with dynamic debug enabled:
 
 ```shell
 # modprobe wireguard && echo module wireguard +p > /sys/kernel/debug/dynamic_debug/control
 ```
 
-If you're using a userspace implementation, set the environment variable `export LOG_LEVEL=verbose`.
+Userspace implementation: `export LOG_LEVEL=verbose`.

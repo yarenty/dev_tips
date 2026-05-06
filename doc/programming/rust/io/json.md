@@ -33,7 +33,7 @@ status: draft
 - [[roapi]] — ROAPI _(score 19.4)_
 - [[rtic]] — RTIC _(score 13.1)_
 - [[rewquest]] — Rewquest _(score 13.1)_
-- [[port_scanner_rustscan]] — RustScan _(score 8.9)_
+- [[rustscan]] — RustScan _(score 8.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

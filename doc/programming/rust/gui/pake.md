@@ -33,7 +33,7 @@ status: draft
 - [[programming/rust/gui/tauri|tauri]] — Tauri _(score 24.2)_
 - [[cli]] — Command line _(score 22.0)_
 - [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 20.2)_
-- [[web_to_app_pake]] — Pake _(score 20.2)_
+- [[tools/security/pake|pake]] — Pake _(score 20.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

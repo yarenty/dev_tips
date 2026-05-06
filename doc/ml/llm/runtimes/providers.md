@@ -35,7 +35,7 @@ status: draft
 - [[deepseek]] — Deepseek _(score 19.8)_
 - [[extensions]] — Extensions _(score 16.0)_
 - [[ollama]] — Ollama _(score 16.0)_
-- [[web_to_app_pake]] — Pake _(score 7.8)_
+- [[tools/security/pake|pake]] — Pake _(score 7.8)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
