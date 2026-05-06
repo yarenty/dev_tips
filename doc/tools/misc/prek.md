@@ -1,327 +1,122 @@
 ---
-title: Prek
+title: "prek — fast Rust-based pre-commit replacement"
 main_link: https://github.com/j178/prek
-keywords: [prek, hooks, cargo, commit, quality, replacement, security, shell]
-status: draft
+keywords: [prek, pre-commit, hooks, rust, git, ci, lefthook, husky]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/tools/misc/rust_must.md` by `article_split.py`. Heading: **Prek**.
-
-# Prek
+# prek — fast Rust-based pre-commit replacement
 
 **Main link:** <https://github.com/j178/prek>
 
+Site: <https://prek.j178.dev/>
+
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`prek` is a single-binary, Rust-based, **drop-in replacement for the `pre-commit` framework** (`pre-commit.com`). It reads the same `.pre-commit-config.yaml`, runs the same hooks, and supports the same commands — but it's ~10× faster, uses ~⅓ the disk space, has zero Python/runtime dependency, ships shell completions, and integrates with `uv` for managing Python tool environments. Author: Jianqiu (j178).
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The original `pre-commit` is _the_ ubiquitous Git-hook framework, but it has rough edges: slow on large monorepos, sensitive to Python version drift, and weighty on disk because every hook gets its own venv. `prek` is what `pre-commit` should have been by 2024.
 
-## Similar / related topics
+Reach for it when:
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- Your `pre-commit` runs are slow enough that engineers `--no-verify` past them.
+- You're in a Rust/Go/non-Python repo and resent installing Python just for hooks.
+- You want one binary in CI without `pip install pre-commit` and a Python container.
 
-## Internal links
+It's a **drop-in** — same config, same hook IDs, same commands (`prek install`, `prek run --all-files`). Migrate by `s/pre-commit/prek/g` in your scripts and CI.
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+Comparisons:
 
-- [[rust_must]] — Bacon _(score 42.0)_
-- [[workmux]] — Workmux _(score 21.4)_
-- [[dataman]] — Dataman _(score 12.1)_
-- [[sshpass]] — sshpass _(score 11.7)_
-- [[trace]] — Trippy _(score 8.2)_
+- vs **`pre-commit`** — same UX, much faster, no Python required.
+- vs **`lefthook`** — `lefthook` (Evil Martians) is Go, also fast, but uses its own YAML config (not compatible with `pre-commit-hooks` ecosystem). Pick `prek` if you already have a `.pre-commit-config.yaml`; pick `lefthook` if you're starting fresh and prefer its layout.
+- vs **`husky`** — JS-only ecosystem; `prek` plays better in polyglot repos.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-## Keywords
+Skip-hook trick (works the same for `pre-commit` and `prek`):
 
-`#prek` `#misc` `#tools` `#hooks` `#install` `#cargo` `#commit`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
-
-## References / raw notes
-
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# Prek
-
-
-https://prek.j178.dev/
-
-## !!! IMPORTANT !!!
-
-To skip hooks for a specific commit:
 ```bash
-git commit --no-verify -m "commit message"
+git commit --no-verify -m "WIP"
 ```
 
-
-## Recommended Tool: prek
-
-**Use [prek](https://github.com/j178/prek) instead of the original pre-commit tool.**
-
-Rust-based **prek** offers significant advantages over the original pre-commit tool:
-
-- **Performance**: 10x faster execution and 1/3 the disk space usage
-- **No Dependencies**: Single binary with no Python or runtime requirements
-- **Better UX**: Built-in monorepo support, improved commands, and shell completions
-- **Compatibility**: Drop-in replacement that works with existing configurations
-- **Modern Tooling**: Integration with uv for Python environments and improved toolchain management
-
-For more details, visit the [prek GitHub repository](https://github.com/j178/prek).
-
-### Installation
-
-Install prek using one of these methods:
+## Install
 
 ```bash
 # Standalone installer (recommended)
 curl --proto '=https' --tlsv1.2 -LsSf https://github.com/j178/prek/releases/download/v0.2.0-alpha.3/prek-installer.sh | sh
 
-# Or via pip/uv
+# Or via pip / uv
 pip install prek
-# or
 uv tool install prek
 
 # Or via Homebrew
 brew install prek
 ```
 
-### Usage with prek
-
-Simply replace `pre-commit` with `prek` in all commands:
-
-```bash
-# Install hooks
-prek install
-
-# Run all hooks
-prek run --all-files
-
-# Run specific hooks
-prek run rustfmt cargo-deny
-```
-
-## Prerequisites
-
-Before using pre-commit hooks, ensure you have the following installed:
-
-1. **prek** (recommended) or **pre-commit**: Install with `pip install pre-commit`
-2. **Rust nightly toolchain**: Install with `rustup toolchain install nightly`
-3. **cargo-deny**: Install with `cargo install cargo-deny`
-4. **cargo-audit**: Install with `cargo install cargo-audit`
-
-## Installation
-
-### Using prek (Recommended)
-
-1. Install prek hooks from the project root:
-   ```bash
-   prek install
-   ```
-
-2. Install prek hooks for pre-push as well:
-   ```bash
-   prek install --hook-type pre-push
-   ```
-
-### Using pre-commit (Alternative)
-
-1. Install pre-commit hooks from the project root:
-   ```bash
-   pre-commit install
-   ```
-
-2. Install pre-commit hooks for pre-push as well:
-   ```bash
-   pre-commit install --hook-type pre-push
-   ```
-
-## Directory-Specific Behavior
-
-The pre-commit configuration is designed to run different checks based on the file location:
-
-- **All files**: Basic file quality checks (whitespace, formatting, etc.)
-- **Backend directory only**: Rust-specific checks (rustfmt, clippy, cargo-deny, etc.)
-- **Excluded directories**: `frontend/`, `docs/`, `environments/`, `tools/` are excluded from most checks
-
-## Hooks Included
-
-### File Quality Checks (All Files)
-- **trailing-whitespace**: Removes trailing whitespace
-- **end-of-file-fixer**: Ensures files end with newline
-- **check-yaml**: Validates YAML files
-- **check-toml**: Validates TOML files
-- **check-json**: Validates JSON files
-- **check-added-large-files**: Prevents large files from being committed
-- **check-merge-conflict**: Detects merge conflict markers
-- **check-case-conflict**: Detects case conflicts in filenames
-- **debug-statements**: Detects debug statements
-- **mixed-line-ending**: Ensures consistent line endings (LF)
-
-### Rust-Specific Hooks (Backend Directory Only)
-- **rustfmt**: Formats Rust code using `cargo +nightly fmt --all` // temporary off - too many fixes to apply
-- **rust-clippy**: Lints Rust code using `cargo clippy` with strict warnings
-- **cargo-deny**: Checks for security vulnerabilities and license issues
-- **cargo-audit**: Audits dependencies for known security issues
-- **cargo-check**: Ensures code compiles with `cargo check`
-
 ## Usage
 
-### Running Hooks Manually
-
-#### Using prek (Recommended)
-
-Run all hooks on all files:
-```bash
-prek run --all-files
-```
-
-Run specific hooks:
-```bash
-prek run rustfmt
-prek run rust-clippy
-prek run cargo-deny
-```
-
-Run multiple specific hooks:
-```bash
-prek run rustfmt cargo-deny rust-clippy
-```
-
-Run hooks for files in a specific directory:
-```bash
-prek run --directory backend
-```
-
-Run hooks for files changed in the last commit:
-```bash
-prek run --last-commit
-```
-
-#### Using pre-commit (Alternative)
-
-Run all hooks on all files:
-```bash
-pre-commit run --all-files
-```
-
-Run specific hook:
-```bash
-pre-commit run rustfmt
-pre-commit run rust-clippy
-pre-commit run cargo-deny
-```
-
-### Running Hooks on Changed Files Only
-
-Hooks run automatically on `git commit` and `git push`, but you can also run them manually:
+Replace `pre-commit` with `prek`:
 
 ```bash
-# Using prek
-prek run
-
-# Using pre-commit
-pre-commit run
-```
-
-### Updating Hooks
-
-Update all hooks to their latest versions:
-
-```bash
-# Using prek
-prek autoupdate
-
-# Using pre-commit
-pre-commit autoupdate
-```
-
-## Configuration
-
-The configuration is in `.pre-commit-config.yaml`. Key settings:
-
-- **fail_fast: false**: Continue running all hooks even if one fails
-- **minimum_pre_commit_version: "3.0.0"**: Requires pre-commit 3.0.0 or higher
-- **files**: Only runs on `.rs`, `.toml`, `.lock`, `.yaml`, `.yml`, `.json` files
-- **exclude**: Excludes `backend/target/`, `.git/`, `.cargo/`, `backend/Cargo.lock`, and other non-backend directories
-
-## Troubleshooting
-
-### Common Issues
-
-1. **"cargo +nightly fmt" not found**: Ensure nightly toolchain is installed
-2. **"cargo-deny" not found**: Install with `cargo install cargo-deny`
-3. **"cargo-audit" not found**: Install with `cargo install cargo-audit`
-
-### Skipping Hooks
-
-To skip hooks for a specific commit:
-```bash
-git commit --no-verify -m "commit message"
-```
-
-### Updating Hook Versions
-
-To update specific hook versions, edit `.pre-commit-config.yaml` and run:
-```bash
-pre-commit autoupdate
-```
-
-## CI Integration
-
-To run these hooks in CI, add this step to CI configuration:
-
-### Using prek (Recommended)
-
-```yaml
-- name: Run prek hooks
-  run: |
-    # Install prek
-    curl --proto '=https' --tlsv1.2 -LsSf https://github.com/j178/prek/releases/download/v0.2.0-alpha.3/prek-installer.sh | sh
-    # Run hooks
-    prek run --all-files
-```
-
-### Using pre-commit (Alternative)
-
-```yaml
-- name: Run pre-commit hooks
-  run: |
-    pip install pre-commit
-    pre-commit run --all-files
-```
-
-## Adding New Hooks
-
-To add new hooks, edit `.pre-commit-config.yaml` and add them to the appropriate repository section. Then run:
-
-```bash
-# Using prek (recommended)
 prek install
+prek install --hook-type pre-push
 prek run --all-files
-
-# Using pre-commit (alternative)
-pre-commit install
-pre-commit run --all-files
+prek run rustfmt cargo-deny
+prek run --directory backend
+prek run --last-commit
+prek autoupdate
 ```
 
+## Similar / related topics
 
+- [`pre-commit`](https://pre-commit.com/) — the Python framework `prek` is compatible with.
+- [`lefthook`](https://github.com/evilmartians/lefthook) — Go alternative with its own config.
+- [`husky`](https://typicode.github.io/husky/) — JS-only Git hooks helper.
+- [[bacon]] — pair: `prek` enforces hooks at commit time, `bacon` runs `cargo check` continuously while you code.
+- [[lazygit]] — Git TUI that shows hook output in-line.
 
-### .pre-commit-config.yaml :
+## Internal links
+
+<!-- reviewed -->
+
+- [[bacon]] — continuous Rust feedback loop alongside `prek`'s gate at commit time.
+- [[workmux]] — multi-worktree workflows where `prek` keeps each branch lint-clean.
+- [[lazygit]] — UI for the Git side.
+
+## Keywords
+
+`#prek` `#pre-commit` `#hooks` `#rust` `#git` `#ci` `#lefthook` `#husky` `#misc` `#tools`
+
+## References / raw notes
+
+> ## !!! IMPORTANT !!!
+>
+> To skip hooks for a specific commit:
+>
+> ```bash
+> git commit --no-verify -m "commit message"
+> ```
+
+### Why prek over pre-commit
+
+- **Performance**: 10× faster execution and ⅓ the disk space.
+- **No dependencies**: single binary, no Python or runtime requirement.
+- **Better UX**: built-in monorepo support, improved commands, shell completions.
+- **Compatibility**: drop-in replacement that works with existing `.pre-commit-config.yaml`.
+- **Modern tooling**: integration with `uv` for Python environments and improved toolchain management.
+
+### Typical Rust prerequisites you'll lint against
+
+1. **prek** (recommended) or **pre-commit**: `pip install pre-commit`
+2. **Rust nightly toolchain**: `rustup toolchain install nightly`
+3. **cargo-deny**: `cargo install cargo-deny`
+4. **cargo-audit**: `cargo install cargo-audit`
+
+### Hook recipe used in production
+
+A representative `.pre-commit-config.yaml` using both upstream hooks and `local` Rust hooks (the original notes were tuned for a Rust backend in a polyglot monorepo with an excluded `frontend/`):
+
 ```yaml
-
 # Pre-commit hooks for the entire project
 # See https://pre-commit.com/ for more information
 
@@ -342,7 +137,7 @@ repos:
       - id: mixed-line-ending
         args: ['--fix=lf']
 
-  # Rust formatting with nightly toolchain (backend only) - JARO: commented out since it's required a lot of changes :-(
+  # Rust formatting with nightly toolchain (backend only)
   - repo: local
     hooks:
       - id: rustfmt
@@ -366,7 +161,7 @@ repos:
         always_run: true
         stages: [pre-commit]
 
-  # Cargo deny for security and license checks (backend only)
+  # cargo-deny — security and license checks (backend only)
   - repo: local
     hooks:
       - id: cargo-deny
@@ -378,7 +173,7 @@ repos:
         always_run: true
         stages: [pre-commit]
 
-  # Cargo audit for security vulnerabilities (backend only)
+  # cargo-audit — security vulnerabilities (backend only)
   - repo: local
     hooks:
       - id: cargo-audit
@@ -390,7 +185,7 @@ repos:
         always_run: true
         stages: [pre-commit]
 
-  # Cargo check to ensure code compiles (backend only)
+  # cargo-check — ensure code compiles (backend only)
   - repo: local
     hooks:
       - id: cargo-check
@@ -402,12 +197,10 @@ repos:
         always_run: true
         stages: [pre-commit]
 
-# Configuration options
 default_install_hook_types: [pre-commit, pre-push]
 fail_fast: false
 minimum_pre_commit_version: "3.0.0"
 
-# Global file patterns
 files: \.(rs|toml|lock|yaml|yml|json)$
 exclude: |
   (?x)^(
@@ -420,54 +213,74 @@ exclude: |
     environments/.*|
     tools/.*
   )$
-
 ```
 
+### Companion `.cargo/audit.toml`
 
-
-### .cargo/audit.toml :
-
-```yaml
-
-# Example audit config file
-#
-# It may be located in the user home (`~/.cargo/audit.toml`) or in the project
-# root (`.cargo/audit.toml`).
-#
-# All of the options which can be passed via CLI arguments can also be
-# permanently specified in this file.
+```toml
+# May live in `~/.cargo/audit.toml` or in the project root `.cargo/audit.toml`.
 
 [advisories]
 ignore = [
     # ignore "Marvin Attack: potential key recovery through timing sidechannels"
-    # it;s on sqlx-mysql 0.8.3 - which we did not use directly but several dependencies depend on it.
+    # — present on sqlx-mysql 0.8.3 (transitive dependency we don't use directly).
     "RUSTSEC-2023-0071",
+]
+informational_warnings = ["unmaintained"]
+# severity_threshold = "low"
 
-] # advisory IDs to ignore e.g. ["RUSTSEC-2019-0001", ...]
-informational_warnings = ["unmaintained"] # warn for categories of informational advisories
-#severity_threshold = "low" # CVSS severity ("none", "low", "medium", "high", "critical")
-
-## Advisory Database Configuration
-#[database]
-#path = "~/.cargo/advisory-db" # Path where advisory git repo will be cloned
-#url = "https://github.com/RustSec/advisory-db.git" # URL to git repo
-#fetch = true # Perform a `git fetch` before auditing (default: true)
-#stale = false # Allow stale advisory DB (i.e. no commits for 90 days, default: false)
-
-# Output Configuration
+# Output configuration
 [output]
-#deny = ["unmaintained"] # exit on error if unmaintained dependencies are found
-format = "terminal" # "terminal" (human readable report) or "json"
-quiet = false # Only print information on error
-show_tree = true # Show inverse dependency trees along with advisories (default: true)
-
-## Target Configuration
-#[target]
-#arch = ["x86_64"] # Ignore advisories for CPU architectures other than these
-#os = ["linux", "windows"] # Ignore advisories for operating systems other than these
+format = "terminal"  # "terminal" or "json"
+quiet = false
+show_tree = true
 
 [yanked]
-enabled = true # Warn for yanked crates in Cargo.lock (default: true)
-update_index = true # Auto-update the crates.io index (default: true)
+enabled = true
+update_index = true
+```
 
+### CI integration
+
+```yaml
+- name: Run prek hooks
+  run: |
+    curl --proto '=https' --tlsv1.2 -LsSf \
+      https://github.com/j178/prek/releases/download/v0.2.0-alpha.3/prek-installer.sh | sh
+    prek run --all-files
+```
+
+Or the legacy pre-commit equivalent:
+
+```yaml
+- name: Run pre-commit hooks
+  run: |
+    pip install pre-commit
+    pre-commit run --all-files
+```
+
+### Adding a new hook
+
+```bash
+# With prek (recommended)
+prek install
+prek run --all-files
+
+# With pre-commit
+pre-commit install
+pre-commit run --all-files
+```
+
+### Troubleshooting
+
+1. **`cargo +nightly fmt` not found** → install nightly toolchain.
+2. **`cargo-deny` not found** → `cargo install cargo-deny`.
+3. **`cargo-audit` not found** → `cargo install cargo-audit`.
+
+### Updating hook versions
+
+```bash
+prek autoupdate
+# or
+pre-commit autoupdate
 ```

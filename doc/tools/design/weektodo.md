@@ -1,60 +1,56 @@
 ---
-title: WeekToDo
+title: "WeekToDo — minimalist weekly planner"
 main_link: https://weektodo.me/
-keywords: [weektodo, design]
-status: draft
+keywords: [weektodo, todo, weekly-planner, desktop-app, electron, free, privacy]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-
-> Auto-split from `doc/tools/design/applications.md` by `article_split.py`. Heading: **WeekToDo**.
-
-# WeekToDo
+# WeekToDo — minimalist weekly planner
 
 **Main link:** <https://weektodo.me/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+WeekToDo is a free, open-source minimalist weekly planner / to-do app, available as a desktop app (Electron, Windows / macOS / Linux) and as a web app. The whole interface is one screen: a column per day of the week, projects in the sidebar, drag-and-drop to reschedule, and recurring tasks. **No account, no cloud sync by default — data lives locally.**
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The pitch: most to-do apps either drown you in features (Notion, ClickUp, Todoist Premium) or are too primitive (Apple Reminders). WeekToDo lands in the middle for the specific use case of "what am I doing this week?" — a single visual board that survives the work-week.
+
+Reach for it when:
+
+- You think in **weeks**, not days or months.
+- You want a **local-first** planner that doesn't require a cloud login.
+- You hate calendar overhead but need more structure than a sticky note.
+- You want a free, no-strings-attached alternative to Sunsama / Akiflow / Routine.
+
+Caveats:
+
+- No native sync between devices — by design. If you need cross-device sync, look at Todoist or TickTick instead.
+- Electron app, so the binary is chunky.
+- The web version stores data in browser local-storage — clear your cache and it's gone.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [Todoist](https://todoist.com/) — the market default; cloud, paid for advanced features.
+- [TickTick](https://ticktick.com/) — Todoist competitor with a built-in calendar view.
+- [Sunsama](https://sunsama.com/) — daily-planner SaaS oriented around time-blocking; paid.
+- [Logseq](https://logseq.com/) / [Obsidian](https://obsidian.md/) — note-taking apps you can bend into a planner.
+- [Super Productivity](https://super-productivity.com/) — open-source Electron task tracker with Pomodoro + Jira/GitLab integration.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[applications]] — Deskreen _(score 30.4)_
-- [[fengshui]] — Cleaning disk _(score 21.5)_
-- [[ascii_generator]] — Ascii generator _(score 21.5)_
-- [[lstr]] — lstr _(score 21.5)_
-- [[gramma_harper]] — Harper _(score 21.5)_
+- [[deskreen]] — mirror your week-board to a second screen as an always-visible reference.
+- [[mdfried]] — if you'd rather plan in Markdown and just preview it.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#weektodo` `#design` `#tools` `#free` `#todo` `#list`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#weektodo` `#todo` `#weekly-planner` `#desktop-app` `#electron` `#free` `#privacy` `#design` `#tools`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# WeekToDo
-
-Free todo list 
-
-https://weektodo.me/
+> WeekToDo — Free todo list
+>
+> <https://weektodo.me/>

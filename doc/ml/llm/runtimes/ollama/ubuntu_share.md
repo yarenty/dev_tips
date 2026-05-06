@@ -28,7 +28,7 @@ status: draft
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
 - [[wireguard]] — Wireguard _(score 18.0)_
-- [[applications]] — Deskreen _(score 8.9)_
+- [[deskreen]] — Deskreen _(score 8.9)_
 - [[tools/linux/tmux|tmux]] — Tmux _(score 8.9)_
 - [[iot/drogue|drogue]] — Drogue _(score 6.0)_
 - [[sniffnet]] — sniffnet _(score 6.0)_

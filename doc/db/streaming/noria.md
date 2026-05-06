@@ -33,7 +33,7 @@ status: draft
 - [[programming/rust/data/mysql|mysql]] — mysql _(score 17.9)_
 - [[mariadb]] — MariaDB _(score 17.9)_
 - [[cdc]] — CDC _(score 10.4)_
-- [[applications]] — Deskreen _(score 8.9)_
+- [[deskreen]] — Deskreen _(score 8.9)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

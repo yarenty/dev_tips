@@ -1,75 +1,75 @@
 ---
-title: lstr
-main_link: https://github.com/bgreenwell/lstr/raw/main/assets/lstr-demo.gif
-keywords: [lstr, design, rust, programming]
-status: draft
+title: "lstr — fast minimalist Rust tree viewer"
+main_link: https://github.com/bgreenwell/lstr
+keywords: [lstr, tree, ls, rust, cli, directory-viewer, interactive-tui]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# lstr — fast minimalist Rust tree viewer
 
-# lstr
-
-**Main link:** <https://github.com/bgreenwell/lstr/raw/main/assets/lstr-demo.gif>
+**Main link:** <https://github.com/bgreenwell/lstr>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`lstr` is a blazingly fast, minimalist directory-tree viewer written in Rust by Brandon Greenwell. It does what `tree(1)` does — print a directory hierarchy with depth, filtering, and gitignore awareness — and adds an **interactive mode** (TUI) where you can navigate, expand/collapse, and act on entries with the keyboard.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+If you live in `tree`, `lstr` is the modern replacement: same mental model, faster, prettier, and the interactive mode is the killer feature. If you live in `eza` (the modern `ls`), `lstr` is the complementary tool: `eza --tree` is fine for a quick look; `lstr interactive` is what you want when you need to _explore_.
 
-## Similar / related topics
+Reach for it when:
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- You want a one-shot tree dump for a README or a bug report — pipe it.
+- You're orienting yourself in an unfamiliar codebase and `find . -type d` isn't enough.
+- You want a lightweight alternative to `broot` / `yazi` without leaving your shell prompt.
 
-## Internal links
+Comparisons:
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+- vs **`tree`** — same output, faster, gitignore-aware by default, plus interactive mode.
+- vs **`eza --tree`** — `eza` is a fuller `ls` replacement; `lstr` focuses on the tree view.
+- vs **`broot`** — `broot` is a heavier interactive file navigator with fuzzy search and previews; `lstr` is leaner.
+- vs **`fd`** — different job; `fd` finds, `lstr` displays.
 
-- [[superfile]] — superfile _(score 21.5)_
-- [[applications]] — Deskreen _(score 21.5)_
-- [[weektodo]] — WeekToDo _(score 21.5)_
-- [[gramma_harper]] — Harper _(score 21.5)_
-- [[rtic]] — RTIC _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-## Keywords
-
-`#lstr` `#design` `#tools` `#tree` `#better` `#rust` `#inspired`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
-
-## References / raw notes
-
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# lstr
-
-better ls
-or
-better tree
-
-A blazingly fast, minimalist directory tree viewer, written in Rust. Inspired by the command line program tree, with a powerful interactive mode.
-
-```shell
+```bash
 git clone https://github.com/bgreenwell/lstr.git
 cd lstr
 cargo install --path .
 
+lstr [OPTIONS] [PATH]
+lstr interactive [OPTIONS] [PATH]
+```
 
+## Similar / related topics
+
+- [`tree`](http://mama.indstate.edu/users/ice/tree/) — the original.
+- [`eza`](https://github.com/eza-community/eza) — modern `ls` (drop-in `tree` mode).
+- [`broot`](https://dystroy.org/broot/) — interactive directory navigator, same author as `bacon`.
+- [`yazi`](https://yazi-rs.github.io/) — image-previewing TUI file manager.
+- [[superfile]] — multi-panel TUI file manager.
+
+## Internal links
+
+<!-- reviewed -->
+
+- [[superfile]] — go from "look" to "do" with a real TUI file manager.
+- [[czkawka]] — find what to clean up after `lstr` shows you the shape.
+- [[bacon]] — same author/ecosystem flavour: small focused Rust CLI.
+
+## Keywords
+
+`#lstr` `#tree` `#ls` `#rust` `#cli` `#directory-viewer` `#interactive-tui` `#design` `#tools`
+
+## References / raw notes
+
+> A blazingly fast, minimalist directory tree viewer, written in Rust. Inspired by the command-line program `tree`, with a powerful interactive mode.
+
+```bash
+git clone https://github.com/bgreenwell/lstr.git
+cd lstr
+cargo install --path .
 
 lstr [OPTIONS] [PATH]
 lstr interactive [OPTIONS] [PATH]
-
 ```
 
-![](https://github.com/bgreenwell/lstr/raw/main/assets/lstr-demo.gif)
+Demo: <https://github.com/bgreenwell/lstr/raw/main/assets/lstr-demo.gif>

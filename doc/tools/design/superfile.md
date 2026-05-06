@@ -1,141 +1,117 @@
 ---
-title: superfile
-main_link: https://github.com/MHNightCat/superfile?utm_source=tldrnewsletter
-keywords: [superfile, design, file, panel, select]
-status: draft
+title: "superfile (spf) — pretty TUI multi-panel file manager"
+main_link: https://github.com/MHNightCat/superfile
+keywords: [superfile, spf, tui, file-manager, go, ranger-alternative, yazi, lf]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# superfile (spf) — pretty TUI multi-panel file manager
 
-# superfile
+**Main link:** <https://github.com/MHNightCat/superfile>
 
-**Main link:** <https://github.com/MHNightCat/superfile?utm_source=tldrnewsletter>
+Tutorial wiki: <https://github.com/MHNightCat/superfile/wiki/Tutorial>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`superfile` (binary name: `spf`) is a modern terminal file manager with a polished, multi-panel UI built on Bubble Tea. It supports pinning sidebar folders, multiple file panels, a process bar for ongoing copies/moves, a metadata panel, normal/select modes, and Nerd-Font icons throughout. Install with `brew install superfile`.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The TUI-file-manager space is crowded — ranger, lf, nnn, broot, yazi — and the differentiation matters:
+
+- vs **`ranger`** — Python, three-pane miller columns, mature; `spf` is faster and prettier but less extensible.
+- vs **`lf`** — Go like `spf`, vim-keybinding minimalist; `spf` ships more features by default (pinning, process bar, metadata pane) at the cost of more chrome.
+- vs **`nnn`** — C, ultra-minimal, plugin-driven; `spf` is the opposite vibe.
+- vs **`yazi`** — Rust, async, image previews via Kitty/Sixel; `yazi` wins on previews and speed, `spf` wins on out-of-the-box polish.
+
+Reach for `spf` when you want a TUI file manager that **looks good immediately** without spending a weekend in config files, and you have a Nerd Font installed. Skip it if you live by the principle of "boring tool, hand-crafted dotfiles" — `lf` or `ranger` will serve you better.
+
+Watch out for: requires a Nerd Font; a few keybinding quirks (`H` is shift+h, etc.); selection mode (`v`) versus normal mode is something you _will_ mash by accident the first day.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [`ranger`](https://github.com/ranger/ranger) — the Python classic.
+- [`lf`](https://github.com/gokcehan/lf) — minimalist Go file manager.
+- [`yazi`](https://yazi-rs.github.io/) — fast Rust TUI with image previews.
+- [`nnn`](https://github.com/jarun/nnn) — ultra-minimal C, plugin-driven.
+- [[lstr]] — when you just want to look, not navigate.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[weektodo]] — WeekToDo _(score 21.5)_
-- [[lstr]] — lstr _(score 21.5)_
-- [[rustdesk]] — RustDesk! _(score 9.5)_
-- [[fengshui]] — Cleaning disk _(score 9.5)_
-- [[applications]] — Deskreen _(score 9.5)_
+- [[lstr]] — quick non-interactive tree view.
+- [[czkawka]] — find duplicates / large files; `spf` to clean up.
+- [[tools/linux/tmux|tmux]] — keep `spf` in a side pane.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#superfile` `#design` `#tools` `#file` `#panel` `#select` `#mode`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#superfile` `#spf` `#tui` `#file-manager` `#go` `#bubbletea` `#design` `#tools`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+> SPF — `brew install superfile`
+>
+> Requires a Nerd Font.
 
-# superfile
+Demo & tutorial: <https://github.com/MHNightCat/superfile/wiki/Tutorial>
 
-SPF
+### Default keybindings (cheat sheet)
 
-![](https://github.com/MHNightCat/superfile/raw/main/asset/demo.png)
+**General**
 
-https://github.com/MHNightCat/superfile/wiki/Tutorial
+| Function | Key | Variable |
+|---|---|---|
+| Start SuperFile | `spf` | |
+| Reload | press any key to reload | |
+| Quit | `esc`, `q` | `quit` |
+| Open help menu | `?` | `open_help_menu` |
 
-https://github.com/MHNightCat/superfile?utm_source=tldrnewsletter
+**Panel navigation**
 
+| Function | Key | Variable |
+|---|---|---|
+| Pin / unpin folder to sidebar | `ctrl+p` | `pinned_folder` |
+| Create new file panel | `ctrl+n` | `create_new_file_panel` |
+| Close focused panel | `ctrl+w` | `close_file_panel` |
+| Next panel | `tab`, `shift+right` | `next_file_panel` |
+| Previous panel | `shift+left`, `H` | `previous_file_panel` |
+| Focus process bar | `p` | `focus_on_process_bar` |
+| Focus sidebar | `b` | `focus_on_side_bar` |
+| Focus metadata | `m` | `focus_on_metadata` |
 
-![](https://github.com/MHNightCat/superfile/raw/main/asset/demo.gif)
+**Panel movement**
 
-Installation
-Requirements
+| Function | Key | Variable |
+|---|---|---|
+| Toggle select / normal mode | `v` | `change_panel_mode` |
+| Up / down | `up`/`k`, `down`/`j` | `list_up`, `list_down` |
+| Enter folder | `enter`, `l` | `select_item` |
+| Parent folder | `h`, `backspace` | `parent_folder` |
+| Select all (select mode) | `ctrl+a` | `file_panel_select_all_item` |
+| Toggle dotfiles | `ctrl+h` | `toggle_dot_file` |
+| Toggle search | `ctrl+f` | `search_bar` |
 
-Any Nerd Font
-Homebrew
-Install homebrew and execute the following commands
+**File operations**
 
-brew install superfile
+| Function | Key | Variable |
+|---|---|---|
+| New folder | `f` | `file_panel_folder_create` |
+| New file | `c` | `file_panel_file_create` |
+| Rename | `r` | `file_panel_item_rename` |
+| Extract zip | `ctrl+e` | `extract_file` |
+| Compress to zip | `ctrl+r` | `compress_file` |
+| Delete | `ctrl+d` | `delete_item` |
+| Copy | `ctrl+c` | `copy_single_item` |
+| Cut | `ctrl+x` | `file_panel_select_mode_item_cut` |
+| Paste | `ctrl+v` | `paste_item` |
+| Open with default app | `enter`, `l` | `select_item` |
+| Open with editor | `e` | `open_file_with_editor` |
+| Open dir with editor | `E` | `current_directory_with_editor` |
 
+**Pop-up modal**
 
-
-
-
-## General
-
-| Function                   | Key                      | Variable name    |
-| -------------------------- | ------------------------ | ---------------- |
-| Start SuperFile            | `spf`                    |                  |
-| Reload                     | press any key to reload  |                  |
-| Quit                       | `esc`, `q`               | `quit`           |
-| Open help menu(hotkeylist) | `?`                      | `open_help_menu` |
-
-## Panel navigation
-
-| Function                                           | Key                        | Variable name           |
-| -------------------------------------------------- | -------------------------- | ----------------------- |
-| Pin or Unpin folder to sidebar (can be auto saved) | `ctrl+p`                   | `pinned_folder`         |
-| Create new file panel                              | `ctrl+n`                   | `create_new_file_panel` |
-| Close the focused file panel                       | `ctrl+w`                   | `close_file_panel`      |
-| Focus on the next file panel                       | `tab`, `shift+right`       | `next_file_panel`       |
-| Focus on the previous file panel                   | `shift+left`, `H`(shift+h) | `previous_file_panel`   |
-| Focus on the processbar panel                      | `p`                        | `focus_on_process_bar`  |
-| Focus on the sidebar                               | `b`                        | `focus_on_side_bar`     |
-| Focus on the metadata panel                        | `m`                        | `focus_on_metadata`     |
-
-## Panel movement
-
-| Function                                            | Key                        | Variable name                                                     |
-| --------------------------------------------------- | -------------------------- | ----------------------------------------------------------------- |
-| Change between selection mode or normal mode        | `v`                        | `change_panel_mode`                                               |
-| Up                                                  | `up`, `k`                  | `list_up`                                                         |
-| Down                                                | `down`, `j`                | `list_down`                                                       |
-| Go to folder                                        | `enter`, `l`               | `select_item`                                                     |
-| Return to parent folder                             | `h`, `backspace`           | `parent_folder`                                                   |
-| Select all items in focused file panel              | `ctrl+a`                   | `file_panel_select_all_item` (selection mode only)                |
-| Select with your course                             | `shift+up`, `K`(shift+k)   | `file_panel_select_mode_item_select_up` (selection mode only)     |
-| Select with your course                             | `shift+left`, `J`(shift+j) | `file_panel_select_mode_item_select_down` (selection mode only)   |
-| Select the item where the current cursor is located | `enter`, `l`               | `file_panel_select_mode_item_single_select` (selection mode only) |
-| Toggle dot file display                             | `ctrl+h`                   | `toggle_dot_file`                                                 |
-| Toggle active search bar                            | `ctrl+f`                   | `search_bar`                                                      |
-
-## File operations
-
-| Function                                   | Key          | Variable name                                                                         |
-| ------------------------------------------ | ------------ | ------------------------------------------------------------------------------------- |
-| Create a new folder                        | `f`          | `file_panel_folder_create`                                                            |
-| Create a new file                          | `c`          | `file_panel_file_create`                                                              |
-| Rename file or folder                      | `r`          | `file_panel_item_rename`                                                              |
-| Extract zip file                           | `ctrl+e`     | `extract_file` (normal mode)                                                          |
-| Zip file or folder to .zip file            | `ctrl+r`     | `compress_file` (normal mode)                                                         |
-| Delete file or folder (or both)            | `ctrl+d`     | `delete_item` (normal mode) <br> `file_panel_select_mode_item_delete` (select mode)   |
-| Copy file or folder (or both)              | `ctrl+c`     | `copy_single_item` (normal mode) <br> `file_panel_select_mode_item_copy` (select mode)|
-| Cut file or folder (or both)               | `ctrl+x`     | `file_panel_select_mode_item_cut`                                                     |
-| Paste all items in your clipboard          | `ctrl+v`     | `paste_item`                                                                          |
-| Open file with your default application    | `enter`, `l` | `select_item`                                                                         |
-| Open file with your default editor         | `e`          | `oepn_file_with_editor` (normal node)                                                 |
-| Open current directory with default editor | `E`(shift+e) | `current_directory_with_editor` (normal node)                                         |
-
-## Pop up modal
-
-| Function                                                                   | Key             | Variable name |
-| -------------------------------------------------------------------------- | --------------- | ------------- |
-| Confirm rename or create item or exit search bar                           | `enter`         | `confirm`     |
-| Cancel rename or create item or exit search bar and clear search bar value | `ctrl+c`, `esc` | `cancel`      |
+| Function | Key | Variable |
+|---|---|---|
+| Confirm | `enter` | `confirm` |
+| Cancel | `ctrl+c`, `esc` | `cancel` |

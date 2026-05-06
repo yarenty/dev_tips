@@ -1,60 +1,63 @@
 ---
-title: RustDesk!
+title: "RustDesk — open-source remote desktop"
 main_link: https://rustdesk.com/
-keywords: [rustdesk, design, finally]
-status: draft
+keywords: [rustdesk, remote-desktop, teamviewer-alternative, rust, self-hosted, cross-platform]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-
-> Auto-split from `doc/tools/design/applications.md` by `article_split.py`. Heading: **RustDesk!**.
-
-# RustDesk!
+# RustDesk — open-source remote desktop
 
 **Main link:** <https://rustdesk.com/>
 
+Repo: <https://github.com/rustdesk/rustdesk>
+
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+RustDesk is a Rust-based, open-source remote-desktop application that aims to be a drop-in replacement for TeamViewer / AnyDesk. It supports Windows, macOS, Linux, Android, iOS, and the web — full input control (not just mirroring), file transfer, clipboard sync, and session recording. You can use the public relay servers or **self-host the relay (`hbbs`) and rendezvous (`hbbr`) servers** for full control.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The use case that finally made me install it: a Mac at home and a Windows box at the office, no VPN, no Apple Remote Desktop license, no patience for TeamViewer's "we suspect commercial use" nag screens. RustDesk just worked.
+
+When to reach for it:
+
+- You need **bidirectional input control** — share AND drive a remote machine. (Use [[deskreen]] if you only need view-only mirroring.)
+- You want to **self-host** the relay so no session metadata leaves your network.
+- You hate TeamViewer's pricing or AnyDesk's UX and want an open-source escape hatch.
+- You're supporting a non-technical family member and need cross-platform that "just works".
+
+Comparisons:
+
+- vs **TeamViewer** — RustDesk is free, open-source, no licensing nag.
+- vs **AnyDesk** — similar latency, RustDesk wins on price (free) and openness.
+- vs **VNC** — RustDesk has NAT traversal, encryption, and modern codecs out of the box.
+- vs **Sunshine + Moonlight** — Sunshine is tuned for low-latency game streaming; RustDesk is tuned for desktop work.
+- vs **[[deskreen]]** — Deskreen is one-way mirror; RustDesk is full remote control.
+
+Caveats: the default public relay can be slow at peak times — self-host or buy a small VPS for the relay if you use it daily. Some Linux distros need a couple of clicks to grant screen-recording / accessibility permissions before it works.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [TeamViewer](https://www.teamviewer.com/) — the proprietary incumbent.
+- [AnyDesk](https://anydesk.com/) — the proprietary challenger.
+- [Sunshine](https://github.com/LizardByte/Sunshine) + [Moonlight](https://moonlight-stream.org/) — low-latency game-streaming pair.
+- [Parsec](https://parsec.app/) — closed-source low-latency desktop streaming.
+- [[deskreen]] — view-only screen-mirroring sibling.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[applications]] — Deskreen _(score 30.4)_
-- [[fengshui]] — Cleaning disk _(score 21.5)_
-- [[weektodo]] — WeekToDo _(score 21.5)_
-- [[ascii_generator]] — Ascii generator _(score 21.5)_
-- [[lstr]] — lstr _(score 21.5)_
+- [[deskreen]] — when you only need to mirror, not control.
+- [[wireguard]] — pair with WireGuard for end-to-end encrypted access without exposing the relay.
+- [[rathole]] — alternative tunneling tool to expose a self-hosted relay.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#rustdesk` `#design` `#tools` `#finally` `#connection` `#between` `#mac`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#rustdesk` `#remote-desktop` `#teamviewer-alternative` `#anydesk-alternative` `#rust` `#self-hosted` `#cross-platform` `#design` `#tools`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# RustDesk!
-
-Finally, connection between mac and win !
-
-https://rustdesk.com/
+> Finally, connection between mac and win!
+>
+> <https://rustdesk.com/>

@@ -1,57 +1,49 @@
 ---
-title: Ascii generator
+title: "ASCII art generator (convertcase.net)"
 main_link: https://convertcase.net/ascii-art-generator/
-keywords: [ascii-generator, design, ascii, generator, convertcase]
-status: draft
+keywords: [ascii-art, ascii-generator, banner, figlet, web-tool, design]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-
-# Ascii generator
+# ASCII art generator (convertcase.net)
 
 **Main link:** <https://convertcase.net/ascii-art-generator/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+A free web-based ASCII-art text generator. Pick a font (FIGlet-style — Standard, Slant, Big, Doom, Banner, etc.), type your text, copy the output. No install, no signup, just paste and ship.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+I keep this bookmarked for the same reason I keep a screenshot tool installed: it's a 5-second job that I don't want to think about. Use it for:
+
+- README banner headers.
+- CLI splash screens (`println!` of the FIGlet output).
+- Commit-message decorations when you want a colleague to laugh.
+- Slide deck section dividers in [[marp]] / Markdown decks.
+
+If you'd rather do it offline or in a script, install **`figlet`** (`brew install figlet` / `apt install figlet`) or its prettier cousin **`toilet`**, or in Rust use the `figlet-rs` / `figrs` crates. But for one-off use the website is faster than remembering which font you wanted.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [FIGlet](http://www.figlet.org/) — the original CLI; same fonts, scriptable.
+- [TOIlet](http://caca.zoy.org/wiki/toilet) — FIGlet with colours and Unicode.
+- [patorjk.com/software/taag](https://patorjk.com/software/taag/) — another browser-based generator with a much bigger font catalogue.
+- [boxes](https://boxes.thomasjensen.com/) — wraps text in ASCII boxes (good with FIGlet output).
+- [[fonts]] — when ASCII isn't enough and you need real typography.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[fengshui]] — Cleaning disk _(score 21.5)_
-- [[weektodo]] — WeekToDo _(score 21.5)_
-- [[lstr]] — lstr _(score 21.5)_
-- [[gramma_harper]] — Harper _(score 21.5)_
-- [[superfile]] — superfile _(score 21.5)_
+- [[marp]] — drop ASCII banners into Markdown slide decks.
+- [[fonts]] — for when you need real typefaces.
+- [[mdfried]] — preview the README that contains your banner.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#ascii-generator` `#design` `#tools` `#ascii` `#generator` `#convertcase` `#art`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#ascii-art` `#ascii-generator` `#banner` `#figlet` `#web-tool` `#design` `#tools`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# Ascii generator
-
-
-https://convertcase.net/ascii-art-generator/
+<https://convertcase.net/ascii-art-generator/>

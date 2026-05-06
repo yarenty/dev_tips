@@ -1,101 +1,105 @@
 ---
-title: Markitdown
-main_link: https://github.com/microsoft/markitdown?utm_source=tldrai
-keywords: [markitdown, editors, text, openai, exif, excel, python]
-status: draft
+title: "MarkItDown — convert anything into Markdown"
+main_link: https://github.com/microsoft/markitdown
+keywords: [markitdown, microsoft, markdown, llm, pdf, docx, pptx, ocr, python]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# MarkItDown — convert anything into Markdown
 
-# Markitdown
-
-**Main link:** <https://github.com/microsoft/markitdown?utm_source=tldrai>
+**Main link:** <https://github.com/microsoft/markitdown>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`markitdown` is a Microsoft-maintained Python utility (CLI + library) that converts PDFs, Office documents (Word, Excel, PowerPoint), images (with EXIF + OCR), audio (EXIF + speech transcription), HTML, CSV/JSON/XML, and even ZIP archives into Markdown. The point isn't pretty rendering — it's producing clean, token-efficient text suitable for indexing, search, and feeding into LLMs.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+This is the "stop shipping PDFs to GPT" tool. Most LLM workflows degrade fast when raw PDFs/PPTX bytes go in; `markitdown` flattens them to Markdown that survives chunking and embedding far better. It's also a solid drop-in for static-site or knowledge-base ingestion when you have a heap of legacy `.docx` lying around.
+
+Things to keep in mind:
+
+- It's a **converter**, not a renderer or editor — output quality depends on the source. Image-heavy PDFs still need an OCR pass (it can use OpenAI for image descriptions, set `llm_client=`).
+- Speech transcription needs an LLM/audio backend; not magic.
+- Pairs naturally with [[mdfried]] for terminal preview and with any LLM that takes Markdown as input.
+
+```bash
+pip install markitdown                  # or: pip install -e .
+markitdown deck.pptx > deck.md
+markitdown report.pdf -o report.md
+cat report.pdf | markitdown
+```
+
+```python
+from markitdown import MarkItDown
+md = MarkItDown()
+print(md.convert("test.xlsx").text_content)
+
+# With LLM-driven image descriptions
+from openai import OpenAI
+md = MarkItDown(llm_client=OpenAI(), llm_model="gpt-4o")
+print(md.convert("example.jpg").text_content)
+```
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [Pandoc](https://pandoc.org/) — the universal document converter; broader format matrix, more knobs, less LLM-shaped output.
+- [docling](https://github.com/DS4SD/docling) — IBM's heavier-weight PDF/document → Markdown/JSON pipeline with layout reconstruction.
+- [unstructured](https://github.com/Unstructured-IO/unstructured) — RAG-flavoured ingestion library; richer chunking primitives.
+- [[mdfried]] — preview converted Markdown in the terminal.
+- [[typst]] — go the other way: structured text → PDF.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[intellij]] — IntelliJ productivity tips _(score 22.9)_
-- [[mdfried]] — Mdfried _(score 22.9)_
-- [[void]] — VOID _(score 22.9)_
-- [[hdfs]] — libhdfs3 _(score 13.5)_
-- [[mql5]] — MQL5 _(score 11.3)_
+- [[mdfried]] — preview the resulting Markdown.
+- [[intellij]] — paste cleaned Markdown into your IDE-side LLM.
+- [[void]] — same idea, AI-editor flavour.
+- [[typst]] — typesetting from clean source instead.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#markitdown` `#editors` `#tools` `#text` `#openai` `#exif` `#install`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#markitdown` `#microsoft` `#markdown` `#llm` `#pdf` `#docx` `#pptx` `#ocr` `#python` `#editors`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+Supported inputs: PDF, PowerPoint, Word, Excel, Images (EXIF + OCR), Audio (EXIF + speech), HTML, CSV, JSON, XML, ZIP (recursive).
 
-# Markitdown
+Install:
 
+```bash
+pip install markitdown
+# or from source
+pip install -e .
+```
 
-https://github.com/microsoft/markitdown?utm_source=tldrai
+CLI:
 
-
-
-
-MarkItDown is a utility for converting various files to Markdown (e.g., for indexing, text analysis, etc). It supports:
-
-    PDF
-    PowerPoint
-    Word
-    Excel
-    Images (EXIF metadata and OCR)
-    Audio (EXIF metadata and speech transcription)
-    HTML
-    Text-based formats (CSV, JSON, XML)
-    ZIP files (iterates over contents)
-To install MarkItDown, use pip: pip install markitdown. Alternatively, you can install it from the source: pip install -e .
-
-Usage
-Command-Line
-    markitdown path-to-file.pdf > document.md
-Or use -o to specify the output file:
-
-    markitdown path-to-file.pdf -o document.md
-You can also pipe content:
-
+```bash
+markitdown path-to-file.pdf > document.md
+markitdown path-to-file.pdf -o document.md
 cat path-to-file.pdf | markitdown
-Python API
-Basic usage in Python:
-    
-    from markitdown import MarkItDown
-    
-    md = MarkItDown()
-    result = md.convert("test.xlsx")
-    print(result.text_content)
-To use Large Language Models for image descriptions, provide llm_client and llm_model:
+```
 
-    from markitdown import MarkItDown
-    from openai import OpenAI
-    
-    client = OpenAI()
-    md = MarkItDown(llm_client=client, llm_model="gpt-4o")
-    result = md.convert("example.jpg")
-    print(result.text_content)
+Python API:
+
+```python
+from markitdown import MarkItDown
+
+md = MarkItDown()
+result = md.convert("test.xlsx")
+print(result.text_content)
+```
+
+LLM-assisted image descriptions:
+
+```python
+from markitdown import MarkItDown
+from openai import OpenAI
+
+client = OpenAI()
+md = MarkItDown(llm_client=client, llm_model="gpt-4o")
+result = md.convert("example.jpg")
+print(result.text_content)
+```

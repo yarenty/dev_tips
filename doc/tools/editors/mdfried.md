@@ -1,62 +1,55 @@
 ---
-title: Mdfried
-main_link: https://github.com/benjajaja/mdfried?tab=readme-ov-file
-keywords: [mdfried, editors, markdown, terminal, bigger, tui, cli, shell, rust]
-status: draft
+title: "mdfried — terminal Markdown viewer with bigger headings"
+main_link: https://github.com/benjajaja/mdfried
+keywords: [mdfried, markdown, terminal, tui, ratatui, rust, viewer, cli]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# mdfried — terminal Markdown viewer with bigger headings
 
-# Mdfried
-
-**Main link:** <https://github.com/benjajaja/mdfried?tab=readme-ov-file>
+**Main link:** <https://github.com/benjajaja/mdfried>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`mdfried` is a small Rust TUI Markdown viewer that renders headers as **Bigger Text** (block-letter style) so the visual hierarchy of a document actually pops in a terminal pane. It's built on Ratatui and shipped as a single binary — `brew install mdfried` or `cargo install mdfried`.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Most terminal renderers (`glow`, `mdcat`, `bat -l md`) make headers slightly bolder and call it a day. `mdfried` actually scales the heading text up using block-glyph fonts, which makes it surprisingly useful for:
+
+- Reading long READMEs without leaving the terminal.
+- Previewing slide-deck-shaped Markdown before piping it through [[marp]].
+- Working over SSH where you don't want to launch a GUI.
+
+It's not trying to replace `glow` or your editor's preview — it's a single trick done well. If you want full-fat rendering with images and links, stick with `glow`; if you want the page structure to be readable from across the room, `mdfried` wins.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [glow](https://github.com/charmbracelet/glow) — Charm's polished terminal Markdown renderer.
+- [mdcat](https://github.com/swsnr/mdcat) — `cat` for Markdown, supports inline images via Kitty/iTerm protocols.
+- `bat -l md` — quick-and-dirty syntax-highlighted Markdown.
+- [[markitdown]] — produce the Markdown that `mdfried` then displays.
+- [[marp]] — turn Markdown into actual slides.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[tui]] — Ratatui _(score 25.2)_
-- [[intellij]] — IntelliJ productivity tips _(score 22.9)_
-- [[markitdown]] — Markitdown _(score 22.9)_
-- [[void]] — VOID _(score 22.9)_
-- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 18.8)_
+- [[markitdown]] — generate Markdown from PDF/DOCX/etc., then preview it here.
+- [[marp]] — Markdown → slide decks.
+- [[helix]] — terminal editor; pair `mdfried` for split-pane preview.
+- [[tools/linux/tmux|tmux]] — keep editor + `mdfried` in adjacent panes.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#mdfried` `#editors` `#tools` `#markdown` `#terminal` `#bigger` `#text`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#mdfried` `#markdown` `#terminal` `#tui` `#ratatui` `#rust` `#cli` `#editors`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+> `mdfried` is a markdown viewer for the terminal that renders headers as **Bigger Text** than the rest.
 
-https://github.com/benjajaja/mdfried?tab=readme-ov-file
+Tags from the source: `#markdown` `#tool` `#cli` `#terminal` `#rust` `#shell` `#tui` `#ratatui` `#brew`
 
-`mdfried` is a markdown viewer for the terminal that renders headers as **Bigger Text** than the rest.
+Install (Homebrew): `brew install mdfried`
 
-![](https://github.com/benjajaja/mdfried/raw/master/assets/screenshot_1.png)
-
-
-#markdown #tool #cli #terminal #rust #shell #tui #ratatui #brew brew instadd
+Screenshot: <https://github.com/benjajaja/mdfried/raw/master/assets/screenshot_1.png>
