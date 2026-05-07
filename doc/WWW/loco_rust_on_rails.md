@@ -3,6 +3,7 @@ title: Loco — Rails-style web framework for Rust
 main_link: https://loco.rs/
 keywords: [loco, rust, web-framework, rails, axum, sea-orm, full-stack]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Loco — Rails-style web framework for Rust

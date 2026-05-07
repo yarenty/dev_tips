@@ -3,6 +3,7 @@ title: Apache HTTPD on macOS — quick commands
 main_link: https://httpd.apache.org/
 keywords: [apache, apachectl, httpd, macos, web-server, localhost]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Apache HTTPD on macOS — quick commands

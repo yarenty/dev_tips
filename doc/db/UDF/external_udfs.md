@@ -3,6 +3,7 @@ title: External UDFs (DataFusion + Arrow FFI)
 main_link: https://lib.rs/crates/dlopen2
 keywords: [external-udfs, udf, ffi, arrow, datafusion, dlopen, c-abi, rust, zero-copy]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # External UDFs (DataFusion + Arrow FFI)

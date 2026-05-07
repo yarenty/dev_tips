@@ -2,6 +2,7 @@
 title: Web (WWW)
 keywords: [web, http, https, web-server, ssg, no-code, profile]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Web (WWW)

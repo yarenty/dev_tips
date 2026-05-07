@@ -3,6 +3,7 @@ title: "Byobu — text-based window manager and terminal multiplexer"
 main_link: https://www.byobu.org/
 keywords: [byobu, tmux, screen, multiplexer, ubuntu, terminal, status-bar, gplv3]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Byobu — text-based window manager and terminal multiplexer

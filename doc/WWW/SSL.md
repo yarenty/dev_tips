@@ -3,6 +3,7 @@ title: HTTPS for websites — Certbot + Apache
 main_link: https://certbot.eff.org/
 keywords: [https, ssl, tls, certbot, lets-encrypt, apache, certificates]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # HTTPS for websites — Certbot + Apache

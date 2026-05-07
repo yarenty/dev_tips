@@ -3,6 +3,7 @@ title: MCP for databases — Toolbox, postgres-mcp, and friends
 main_link: https://github.com/googleapis/genai-toolbox
 keywords: [mcp, databases, postgres, sqlite, security, prompt-injection, tools]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # MCP for databases — Toolbox, postgres-mcp, and friends

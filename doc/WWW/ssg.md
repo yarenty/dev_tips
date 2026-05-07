@@ -3,6 +3,7 @@ title: Static Site Generators (Zola, Tera)
 main_link: https://www.getzola.org/
 keywords: [ssg, zola, tera, static-site-generator, rust, sass, jinja]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Static Site Generators (Zola, Tera)

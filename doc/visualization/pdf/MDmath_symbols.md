@@ -3,6 +3,7 @@ title: Markdown / LaTeX math symbol cheat sheet
 main_link: https://katex.org/docs/supported.html
 keywords: [mdmath, latex, math, symbols, cheat-sheet, mathjax, katex]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Markdown / LaTeX math symbol cheat sheet

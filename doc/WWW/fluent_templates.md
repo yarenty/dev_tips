@@ -3,6 +3,7 @@ title: fluent-templates — Fluent i18n for Rust templates
 main_link: https://github.com/XAMPPRocky/fluent-templates
 keywords: [fluent-templates, fluent, i18n, l10n, rust, handlebars, tera, mozilla]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # fluent-templates — Fluent i18n for Rust templates

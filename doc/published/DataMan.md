@@ -3,6 +3,7 @@ title: DataMan — LLM-driven pre-training data selection (paper summary)
 main_link: https://arxiv.org/abs/2502.19178
 keywords: [dataman, paper, llm, pre-training, data-selection, data-quality, alibaba]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # DataMan — LLM-driven pre-training data selection (paper summary)

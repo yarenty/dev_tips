@@ -3,6 +3,7 @@ title: "AMD Vitis (Xilinx Vitis): unified FPGA / DPU / accelerator software plat
 main_link: https://www.xilinx.com/products/design-tools/vitis.html
 keywords: [vitis, xilinx, amd, fpga, dpu, vivado, vck5000, c1100, kv260, petalinux, install]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # AMD Vitis (Xilinx Vitis): unified FPGA / DPU / accelerator software platform

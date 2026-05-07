@@ -3,6 +3,7 @@ title: Signing 3rd-party Apache modules on macOS Big Sur+
 main_link: https://blog.phusion.nl/2020/12/22/future_of_macos_apache_modules/
 keywords: [apache, macos, code-signing, certificate-authority, big-sur, mod-passenger, keychain]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Signing 3rd-party Apache modules on macOS Big Sur+
