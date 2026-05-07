@@ -1,66 +1,68 @@
 ---
-title: Mac targets
-main_link: https://github.com/BrainiumLLC/rust-xcode-plugin
-keywords: [macos, rust, matrix, bindings]
-status: draft
+title: macOS / iOS Rust targets
+main_link: https://doc.rust-lang.org/rustc/platform-support.html
+keywords: [macos, ios, rust, rustup, targets, apple-silicon, lipo, xcode]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# macOS / iOS Rust targets
 
-# Mac targets
-
-**Main link:** <https://github.com/BrainiumLLC/rust-xcode-plugin>
+**Main link:** <https://doc.rust-lang.org/rustc/platform-support.html>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Landing page for the macOS- and iOS-flavoured Rust ecosystem in this vault. The one-liner most pages need is the `rustup target add` for Apple's five interesting triples (Apple-silicon device + simulator on Apple-silicon + intel sim + Apple-silicon mac + intel mac); from there the per-piece articles cover bindings ([[cacao]]), notifications ([[mac_notification_sys]]), build glue ([[lipo]] / [[mobile]] / [[rust_xcode_plugin]]), and the iOS Matrix client SDK ([[matrix]]).
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+In practice the only thing you *always* need is the `rustup target add` line below — everything else depends on what you're building. If you want a native macOS UI, see [[cacao]] (AppKit/UIKit wrapper) or use [[programming/rust/gui/tauri|tauri]] for a webview shell. If you want one Rust app on iOS *and* Android, see [[mobile]] (`cargo-mobile2`). If you only need notifications, [[mac_notification_sys]] is the smallest possible dependency. The `rust-xcode-plugin` Brainium-era story has largely been superseded by `cargo-mobile2` and Tauri's mobile pipeline; the [[rust_xcode_plugin]] page is kept for historical context.
+
+```shell
+# Cover all current Apple Rust targets
+rustup target add \
+    aarch64-apple-ios \
+    aarch64-apple-ios-sim \
+    x86_64-apple-ios \
+    aarch64-apple-darwin \
+    x86_64-apple-darwin
+```
+
+| Triple                     | What it's for                                  |
+| -------------------------- | ---------------------------------------------- |
+| `aarch64-apple-darwin`     | macOS on Apple Silicon (M1/M2/M3/M4).          |
+| `x86_64-apple-darwin`      | macOS on Intel Macs.                           |
+| `aarch64-apple-ios`        | iOS on real device (all modern iPhones/iPads). |
+| `aarch64-apple-ios-sim`    | iOS Simulator on an Apple-Silicon Mac.         |
+| `x86_64-apple-ios`         | iOS Simulator on an Intel Mac.                 |
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[cacao]] — Rust bindings to AppKit / UIKit.
+- [[mac_notification_sys]] — narrow `NSUserNotification` wrapper.
+- [[lipo]] — fuse multi-arch staticlibs for iOS.
+- [[mobile]] / [[rust_xcode_plugin]] — Xcode + Android Studio integration.
+- [[matrix]] — iOS bindings of the Matrix Rust SDK.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[cacao]]
+- [[mac_notification_sys]]
+- [[lipo]]
+- [[mobile]]
+- [[rust_xcode_plugin]]
+- [[matrix]]
+- [[../README]]
 
-- [[matrix]] — Matrix - rust bindings to ios version _(score 34.9)_
-- [[cacao]] — Cacao _(score 17.1)_
-- [[mac_notification_sys]] — mac-notification-sys _(score 17.1)_
-- [[lipo]] — Lipo _(score 17.1)_
-- [[rust_xcode_plugin]] — Rust xcode plugin _(score 17.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#macos` `#gui` `#rust` `#programming` `#matrix` `#mac` `#bindings` `#lipo`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#macos` `#ios` `#rust` `#rustup` `#targets` `#apple-silicon`
 
 ## References / raw notes
-<!-- auto-split by article_split.py -->
-> Auto-split: 5 additional top-level heading(s) extracted into sibling files:
-> - [Cacao](cacao.md)
-> - [Lipo](lipo.md)
-> - [Rust xcode plugin](rust_xcode_plugin.md)
-> - [Matrix - rust bindings to ios version](matrix.md)
-> - [mac-notification-sys](mac_notification_sys.md)
 
+- Rust platform support matrix: <https://doc.rust-lang.org/rustc/platform-support.html>
+- Apple-side overview: <https://developer.apple.com/xcode/>
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# Mac targets
 ```shell
 rustup target add aarch64-apple-ios aarch64-apple-ios-sim x86_64-apple-ios aarch64-apple-darwin x86_64-apple-darwin
 ```

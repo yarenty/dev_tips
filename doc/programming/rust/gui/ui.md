@@ -1,115 +1,70 @@
 ---
-title: UIs
-main_link: https://github.com/eythaann/Seelen-UI
-keywords: [ui, rust, floem, widgets, gpu]
-status: draft
+title: Rust GUI landscape
+main_link: https://www.areweguiyet.com/
+keywords: [ui, rust, gui, landscape, floem, eww, seelen, 7guis]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Rust GUI landscape
 
-# UIs
-
-**Main link:** <https://github.com/eythaann/Seelen-UI>
+**Main link:** <https://www.areweguiyet.com/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Catch-all for the broader Rust UI landscape — the "Are We GUI Yet?" picture and the smaller projects that don't yet warrant their own article: **floem** (lapce's fine-grained-reactive native UI library, Xilem/Leptos/rui-inspired), **EWW** (Elkowars Wacky Widgets — Rust + YuckLisp config for custom desktop widgets on any window manager), and **Seelen UI** (a customisable desktop environment for Windows). The canonical exercise for comparing toolkits across languages is Eugen Kiss's [7GUIs](https://eugenkiss.github.io/7guis/tasks) task list.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+If you're picking a Rust GUI toolkit for a new project, the practical short list as of 2024–2025 is: [[egui]] (immediate-mode, fastest to ship), [[slint]] (declarative, embedded sweet spot), [[ised|iced]] (Elm-architecture, type-safe), [[programming/rust/gui/tauri|tauri]] (web-tech shell), [[dioxus]] (React-shaped, cross-platform). The newer **floem** is interesting if you want signals-style fine-grained reactivity *natively* — it's the visible UI library inside the Lapce editor, so it's exercised in production. **EWW** and **Seelen UI** are end-user customisation tools, not frameworks you build *on*. For honest comparison-as-you-shop, build the same 7GUIs task (e.g. the Temperature Converter or Cells) in two candidates and see which one feels right — the canonical "GUI smoke test" Kiss originally proposed in 2014, still the best dual-test for a toolkit's ergonomics.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- "Are We GUI Yet?" (areweguiyet.com) — community-maintained landscape index.
+- 7GUIs — Eugen Kiss's seven canonical tasks for comparing toolkits.
+- floem — Lapce's native fine-grained-reactive UI library; declarative + signals.
+- EWW (Elkowars Wacky Widgets) — Rust+Yuck for custom WM widgets.
+- Seelen UI — customisable Windows desktop shell built on Tauri.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[egui]]
+- [[slint]]
+- [[ised|iced]]
+- [[programming/rust/gui/tauri|tauri]]
+- [[dioxus]]
+- [[swww]]
+- [[../README]]
 
-- [[dioxus]] — Dioxus _(score 17.1)_
-- [[egui]] — egui _(score 17.1)_
-- [[swww]] — swww _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-- [[debug]] — Debug _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#ui` `#gui` `#rust` `#programming` `#floem` `#widgets` `#transitions` `#customizable`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#rust-gui` `#landscape` `#floem` `#eww` `#7guis` `#seelen-ui`
 
 ## References / raw notes
-<!-- auto-split by article_split.py -->
-> Auto-split: 1 additional top-level heading(s) extracted into sibling files:
-> - [swww](swww.md)
 
+- Are We GUI Yet?: <https://www.areweguiyet.com/>
+- 7GUIs tasks: <https://eugenkiss.github.io/7guis/tasks>
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### floem (lapce)
 
-# UIs
+- Repo: <https://github.com/lapce/floem>
+- Editor example: <https://github.com/lapce/floem/blob/main/examples/editor/src/main.rs>
 
-7 GUI Tasks
+A native Rust UI library with fine-grained reactivity. Inspired by Xilem, Leptos, and rui. Cross-platform (Windows / macOS / Linux) with `wgpu` rendering and a `tiny-skia` CPU fallback. Reactive signals modelled on `leptos_reactive`; Flexbox + Grid layout via Taffy; a styling/theming system with class support and third-party themes; CSS-style transitions and full keyframe animations with spring easing; built-in element inspector for debugging layout. The view tree is constructed once, so accidental rebuild bottlenecks are hard to introduce.
 
-https://eugenkiss.github.io/7guis/tasks
+### EWW (Elkowars Wacky Widgets)
 
+- Repo: <https://github.com/elkowar/eww>
 
-## See [Dioxus / Freya](gui/gui.md)
+Standalone widget system written in Rust that lets you implement custom desktop widgets in any window manager, configured in the Yuck Lisp-shaped DSL. Documentation in the repo; a beginner-friendly intro by Dharmx is also linked from there.
 
+### Seelen UI
 
-## Selen - UI
+- Repo: <https://github.com/eythaann/Seelen-UI>
 
+Fully customisable desktop environment for Windows. Built on Tauri. Available in 70+ languages.
 
-https://github.com/eythaann/Seelen-UI
+### See also
 
-Fully Customizable Desktop Environment for Windows
-Available in 70+ Languages
-
-
-
-
-## floem
-
-https://github.com/lapce/floem?tab=readme-ov-file
-
-A native Rust UI library with fine-grained reactivity
-
-
-### Features
-
-Inspired by Xilem, Leptos and rui, Floem aims to be a high performance declarative UI library with a highly ergonomic API.
-
-- Cross-platform: Floem supports Windows, macOS and Linux with rendering using wgpu. In case a GPU is unavailable, a CPU renderer powered by tiny-skia will be used.
-- Fine-grained reactivity: The entire library is built around reactive primitives inspired by leptos_reactive. The reactive "signals" allow you to keep your UI up-to-date with minimal effort, all while maintaining very high performance.
-- Performance: The view tree is constructed only once, safeguarding you from accidentally creating a bottleneck in a view generation function that slows down your entire application. Floem also provides tools to help you write efficient UI code, such as a virtual list.
-- Flexbox layout: Using Taffy, the library provides the Flexbox and Grid layout systems, which can be applied to any View node.
-- Customizable widgets: Widgets are highly customizable. You can customize both the appearance and behavior of widgets using the styling API, which supports theming with classes. You can also install third-party themes.
-- Transitions and Animations: Floem supports both transitions and animations. Transitions, like css transitions, can animate any property that can be interpolated and can be applied alongside other styles, including in classes. Floem also supports full keyframe animations that build on the ergonomics of the style system. In both transitions and animations, Floem supports easing with spring functions.
-- Element inspector: Inspired by your browser's developer tools, Floem provides a diagnostic tool to debug your layout.
-
-
-https://github.com/lapce/floem/blob/main/examples/editor/src/main.rs
-
-
-
-
-## EWW
-
-
-https://github.com/elkowar/eww?tab=readme-ov-file
-
-
-Elkowars Wacky Widgets is a standalone widget system made in Rust that allows you to implement your own, custom widgets in any window manager.
-
-Documentation and instructions on how to install can be found here.
-
-Dharmx also wrote a nice, beginner friendly introductory guide for eww here.
+- See [[dioxus]] / Freya for the React-shaped path.
+- The auto-split sibling [[swww]] is the Wayland animated wallpaper daemon.

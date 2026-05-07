@@ -1,12 +1,9 @@
 ---
 title: Pake
 main_link: https://github.com/tw93/Pake
-keywords: [pake, rust, line, tauri]
-status: draft
+keywords: [pake, rust, tauri, web-to-app, webview, desktop, packaging]
+status: reviewed
 ---
-
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
 
 # Pake
 
@@ -14,119 +11,94 @@ status: draft
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Pake is a small Rust + Tauri tool that wraps any web URL into a thin native desktop app for macOS, Windows, or Linux. The output bundle is roughly 5 MB — about 20× smaller than the equivalent Electron build — because it uses the OS-native webview (WKWebView / WebView2 / WebKitGTK) instead of bundling Chromium. Maintained by `tw93`, Pake exposes a `pake-cli` (npm-installable) plus a small set of pre-packaged "popular packages" you can install directly.
+
+> **Filename ambiguity**: this article (Tauri-Pake, the wrapper tool) lives at `programming/rust/gui/pake.md`. There is a *separate* `tools/security/pake.md` about the **Pake** cryptographic protocol (Password-Authenticated Key Exchange). Always link this article as `[[programming/rust/gui/pake|pake]]` from outside `gui/`.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Pake is the right pick when you want to ship a webapp as a desktop bundle and you don't need any deep OS integration — *if* you do, jump straight to writing your own [[programming/rust/gui/tauri|tauri]] app, because Pake is essentially a curated default Tauri config plus a CLI. Compared to the JS-only competition: Electron is fatter (often 80–150 MB) but offers Node APIs in the renderer and consistent Chromium behaviour; [Wails](https://wails.io/) (Go) is the closest Pake-shaped alternative outside the Rust world; [Neutralino](https://neutralino.js.org/) is even smaller but uses the OS webview without a strong CLI ergonomics layer. Two real-world gotchas: (1) the OS webview means each platform behaves slightly differently (right-click image-save is broken on macOS WebKit), and (2) PWA install is genuinely "good enough" for a lot of cases — try that before reaching for Pake.
+
+```bash
+# Install
+npm install -g pake-cli
+
+# Wrap any URL
+pake https://weekly.tw93.fun --name Weekly --hide-title-bar
+```
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[programming/rust/gui/tauri|tauri]] — the framework underneath; reach for it when Pake is too restricted.
+- Electron — the gold-standard JS-everything alternative; much bigger bundles.
+- Wails (Go) — same shape, Go backend instead of Rust.
+- Neutralino — even thinner cross-platform webview shell.
+- PWA / "Install as App" — try first; zero install for you, browser-managed for users.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[programming/rust/gui/tauri|tauri]]
+- [[dioxus]]
+- [[../README]]
+- [[tools/security/pake|pake (crypto, different thing)]]
 
-- [[tools/security/pake|pake]] — Pake _(score 28.4)_
-- [[programming/rust/gui/tauri|tauri]] — Tauri _(score 24.2)_
-- [[cli]] — Command line _(score 22.0)_
-- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 20.2)_
-- [[tools/security/pake|pake]] — Pake _(score 20.2)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#pake` `#gui` `#rust` `#programming` `#command` `#line` `#tauri` `#mac`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#pake` `#rust` `#tauri` `#web-to-app` `#webview` `#desktop` `#packaging`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Repo: <https://github.com/tw93/Pake>
+- CLI docs: see `bin/README.md` in the repo
+- Online compilation via GitHub Actions: <https://github.com/tw93/Pake/wiki/Online-Compilation-(used-by-ordinary-users)>
+- Advanced usage: <https://github.com/tw93/Pake/wiki/Advanced-Usage-of-Pake>
 
-# Pake
+### Features
 
-https://github.com/tw93/Pake
+- ~20× smaller than an Electron package (around 5 MB)
+- Uses Tauri / WRY under the hood — lighter and faster than JS-based shells
+- Battery-included: shortcut pass-through, immersive windows, minimal customisation
+- Replaces older bundling approaches (PWA is often good enough; this is the next step up)
 
-Turn any webpage into a desktop app with Rust with ease.
-
-Pake supports Mac, Windows, and Linux. Check out README for Popular Packages, Command-Line Packaging, and Customized Development information. Feel free to share your suggestions in Discussions.
-
-
-Features
-- 🎐 Nearly 20 times smaller than an Electron package (around 5M!)
-- 🚀 With Rust Tauri, Pake is much more lightweight and faster than JS-based frameworks.
-- 📦 Battery-included package — shortcut pass-through, immersive windows, and minimalist customization.
-- 👻 Pake is just a simple tool — replace the old bundle approach with Tauri (though PWA is good enough).
-
-
-## Before starting
-
-1. **For beginners**: Play with Popular Packages to find out Pake's capabilities, or try to pack your application with [GitHub Actions](<https://github.com/tw93/Pake/wiki/Online-Compilation-(used-by-ordinary-users)>). Don't hesitate to reach for assistance at [Discussion](https://github.com/tw93/Pake/discussions)!
-2. **For developers**: “Command-Line Packaging” supports macOS fully. For Windows/Linux users, it requires some tinkering. [Configure your environment](https://tauri.app/v1/guides/getting-started/prerequisites) before getting started.
-3. **For hackers**: For people who are good at both front-end development and Rust, how about customizing your apps' function more with the following [Customized Development](#development)?
-
-## Command-Line Packaging
-
-![Pake](https://raw.githubusercontent.com/tw93/static/main/pake/pake.gif)
-
-**Pake provides a command line tool, making the flow of package customization quicker and easier. See [documentation](./bin/README.md) for more information.**
+### Quick recipes
 
 ```bash
-# Install with npm
+# Install
 npm install -g pake-cli
 
-# Command usage
+# Pack with options
 pake url [OPTIONS]...
-
-# Feel free to play with Pake! It might take a while to prepare the environment the first time you launch Pake.
 pake https://weekly.tw93.fun --name Weekly --hide-title-bar
-
 ```
 
-If you are new to the command line, you can compile packages online with _GitHub Actions_. See the [Tutorial](<https://github.com/tw93/Pake/wiki/Online-Compilation-(used-by-ordinary-users)>) for more information.
+If you don't want a local toolchain, the project provides a [GitHub Actions online compilation](https://github.com/tw93/Pake/wiki/Online-Compilation-(used-by-ordinary-users)) flow.
 
-## Development
+### Local development
 
-Prepare your environment before starting. Make sure you have Rust `>=1.63` and Node `>=16` (e.g., `16.18.1`) installed on your computer. For installation guidance, see [Tauri documentation](https://tauri.app/v1/guides/getting-started/prerequisites).
-
-If you are unfamiliar with these, it is better to try out the above tool to pack with one click.
+Requires Rust ≥ 1.63 and Node ≥ 16. See [Tauri prerequisites](https://tauri.app/v1/guides/getting-started/prerequisites).
 
 ```sh
-# Install Dependencies
+# Install dependencies
 npm i
 
-# Local development [Right-click to open debug mode.]
+# Local dev (right-click to open debug mode)
 npm run dev
 
-# Pack application
+# Pack the app
 npm run build
 ```
 
-## Advanced Usage
+### Customisation
 
-1. You can refer to the [codebase structure](https://github.com/tw93/Pake/wiki/Description-of-Pake's-code-structure) before working on Pake, which will help you much in development.
-2. Modify the `url` and `productName` fields in the `pake.json` file under the src-tauri directory, the "domain" field in the `tauri.config.json` file needs to be modified synchronously, as well as the `icon` and `identifier` fields in the `tauri.xxx.conf.json` file. You can select an `icon` from the `icons` directory or download one from [macOSicons](https://macosicons.com/#/) to match your product needs.
-3. For configurations on window properties, you can modify the `pake.json` file to change the value of `width`, `height`, `fullscreen` (or not), `resizable` (or not) of the `windows` property. To adapt to the immersive header on Mac, change `hideTitleBar` to `true`, look for the `Header` element, and add the `padding-top` property.
-4. For advanced usages such as style rewriting, advertisement removal, JS injection, container message communication, and user-defined shortcut keys, see [Advanced Usage of Pake](https://github.com/tw93/Pake/wiki/Advanced-Usage-of-Pake).
+- Modify `pake.json` and `tauri.config.json` under `src-tauri/` for `url`, `productName`, `domain`, icon, identifier, window properties (`width`, `height`, `fullscreen`, `resizable`).
+- For macOS immersive header, set `hideTitleBar: true` and add `padding-top` to the `Header` element.
+- Style rewriting, ad removal, JS injection, container messaging, and custom shortcuts: see [Advanced Usage](https://github.com/tw93/Pake/wiki/Advanced-Usage-of-Pake).
 
+### FAQ
 
+- Right-click → "Save Image" doesn't work on macOS — limitation of the system webview, not Pake.
 
-## Frequently Asked Questions
+### Codebase structure
 
-1. Right-clicking on an image element in the page to open the menu and select download image or other events does not work (common in MacOS systems). This issue is due to the MacOS built-in webview not supporting this feature.
-
-## Support
-
-1. I have two cats, TangYuan and Coke. If you think Pake delights your life, you can feed them <a href="https://miaoyan.app/cats.html?name=Pake" target="_blank">some canned food 🥩</a>.
-2. If you like Pake, you can star it on GitHub. Also, welcome to [recommend Pake](https://twitter.com/intent/tweet?url=https://github.com/tw93/Pake&text=%23Pake%20-%20A%20simple%20Rust%20packaged%20web%20pages%20to%20generate%20Mac%20App%20tool,%20compared%20to%20traditional%20Electron%20package,%20the%20size%20of%20nearly%2040%20times%20smaller,%20generally%20about%202M,%20the%20underlying%20use%20of%20Tauri,%20performance%20experience%20than%20the%20JS%20framework%20is%20much%20lighter~) to your friends.
-3. You can follow my [Twitter](https://twitter.com/HiTw93) to get the latest news of Pake or join our [Telegram](https://t.me/+GclQS9ZnxyI2ODQ1) chat group.
-4. I hope that you enjoy playing with it. Let us know if you find a website that would be great for a Mac App!
+See the [code structure description](https://github.com/tw93/Pake/wiki/Description-of-Pake's-code-structure) before contributing.

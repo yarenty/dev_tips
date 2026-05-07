@@ -35,7 +35,7 @@ status: draft
 - [[starship]] — starship _(score 17.1)_
 - [[debug]] — Debug _(score 17.1)_
 - [[rtic]] — RTIC _(score 13.1)_
-- [[programming/rust/bottom|bottom]] — bottom _(score 13.1)_
+- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

@@ -1,125 +1,84 @@
 ---
 title: Tauri
-main_link: https://github.com/tauri-apps/tauri?
-keywords: [tauri, rust, android, level]
-status: draft
+main_link: https://tauri.app/
+keywords: [tauri, rust, webview, electron-alternative, desktop, mobile, wry, tao]
+status: reviewed
 ---
-
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
 
 # Tauri
 
-**Main link:** <https://github.com/tauri-apps/tauri?>
+**Main link:** <https://tauri.app/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Tauri is a Rust framework for building small, fast desktop and mobile apps where the UI is web tech (any JS/TS framework that compiles to HTML/CSS/JS) and the backend is a Rust binary that exposes commands to the front-end via an IPC bridge. It uses the **OS-native webview** (WKWebView on macOS/iOS, WebView2 on Windows, WebKitGTK on Linux, Android System WebView on Android) instead of bundling Chromium, so a typical Tauri bundle is ~5–15 MB versus Electron's 80–150 MB. Tauri 1.x covers desktop; Tauri 2.x added iOS and Android targets (GA late 2024). Window management goes through [[tao]]; the WebView abstraction is the sibling crate `wry`.
+
+> Filename ambiguity: `tauri.md` exists both at `programming/rust/gui/tauri.md` (this file — the canonical Tauri article) and `programming/rust/tooling/tauri.md` (a much thinner stub). When linking from outside `gui/`, prefer `[[programming/rust/gui/tauri|tauri]]`.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for Tauri when (a) your team already knows web tech and you'd rather keep that productivity than learn a Rust UI toolkit, and (b) bundle size and per-platform fit matter more than a *single, identical* Chromium runtime. The latter is the main trade-off: the OS webview means each platform is *almost* the same but not quite — modern WebKit and Chromium-Edge cover most of the spec, but you'll occasionally hit a platform-specific CSS or JS quirk that Electron would have masked. Compared to alternatives: **Electron** is heavier and offers Node APIs in the renderer (Tauri keeps the Rust side strictly behind an IPC boundary, which is also a security benefit); **Wails** is the same shape with Go instead of Rust; **Neutralino** is even thinner; **[[pake]]** is essentially "default Tauri config + a CLI for wrapping URLs". For the *Sidecar* pattern (shipping a separate compiled binary your Rust side spawns at runtime — e.g. embedding `ffmpeg`, a Python interpreter, or a model server) Tauri 2 has the cleanest story of any of them.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- Electron — the JS-everything alternative; bigger bundles, identical Chromium.
+- Wails (Go) — same architectural shape, Go backend.
+- Neutralino — lighter still; uses OS webview but smaller framework footprint.
+- [[pake]] — opinionated default Tauri config + CLI for "wrap any URL".
+- [[dioxus]] / [[slint]] — alternatives if you want to avoid web tech entirely.
+- [[tao]] / `wry` — the windowing + WebView crates underneath Tauri.
+- `cargo-mobile2` (see [[mobile]]) — what Tauri 2 mobile uses internally.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[tao]]
+- [[pake]]
+- [[mobile]]
+- [[dioxus]]
+- [[slint]]
+- [[../README]]
+- [[../web/README|web]]
 
-- [[mobile]] — Mobile _(score 38.6)_
-- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 20.2)_
-- [[slint]] — Slint _(score 17.1)_
-- [[egui]] — egui _(score 17.1)_
-- [[lipo]] — Lipo _(score 17.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#tauri` `#gui` `#rust` `#programming` `#android` `#cargo` `#project` `#mobile`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#tauri` `#rust` `#webview` `#electron-alternative` `#desktop` `#mobile` `#wry`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Site: <https://tauri.app/>
+- Repo: <https://github.com/tauri-apps/tauri>
+- Architecture: <https://github.com/tauri-apps/tauri/blob/dev/ARCHITECTURE.md>
+- WebView abstraction: <https://github.com/tauri-apps/wry>
+- Window/event substrate: <https://github.com/tauri-apps/tao>
+- Mobile bootstrap: <https://github.com/tauri-apps/cargo-mobile2>
 
-# Tauri
+### How the pieces fit
 
+The UI is whatever web framework you like (React, Vue, Svelte, Solid, Lit, vanilla — anything that compiles to HTML/JS/CSS). At runtime that bundle is loaded into the OS-native WebView via `wry`, inside a window managed by [[tao]]. Your Rust side registers `#[tauri::command]` functions that the JS side invokes through a typed IPC bridge.
 
-https://github.com/tauri-apps/tauri?
+```text
+[ JS UI ] ── tauri ipc ──► [ Rust commands ]
+   ▲                              │
+   │ wry (system WebView)         │ tao (window/event loop)
+   └──────────── window ──────────┘
+```
 
+### Mobile (Tauri 2)
 
+Tauri 2 ships first-class iOS and Android targets via `cargo-mobile2`. From a Tauri 2 project root:
 
-Tauri is a framework for building tiny, blazingly fast binaries for all major desktop platforms. Developers can integrate any front-end framework that compiles to HTML, JS and CSS for building their user interface. The backend of the application is a rust-sourced binary with an API that the front-end can interact with.
+```shell
+# install Tauri 2 CLI (npm or cargo)
+cargo install tauri-cli --version "^2"
 
-The user interface in Tauri apps currently leverages tao as a window handling library on macOS, Windows, Linux, Android and iOS. To render your application, Tauri uses WRY, a library which provides a unified interface to the system webview, leveraging WKWebView on macOS & iOS, WebView2 on Windows, WebKitGTK on Linux and Android System WebView on Android.
+# bootstrap mobile targets (interactive)
+cargo tauri ios init
+cargo tauri android init
 
-To learn more about the details of how all of these pieces fit together, please consult this ARCHITECTURE.md document.
+# run on device / simulator
+cargo tauri ios dev
+cargo tauri android dev
+```
 
-
-
-## Mobile
-
-
-https://github.com/tauri-apps/cargo-mobile2?tab=readme-ov-file
-
-
-
-cargo-mobile2
-The answer to "how do I use Rust on iOS and Android?"
-
-cargo-mobile takes care of generating Xcode and Android Studio project files, building and running on device, generating project boilerplate, and a few other things!
-
-This project is a fork of cargo-mobile. Tauri uses it as a library dependency instead of using its CLI directly. For more information, please visit Tauri's mobile guide.
-
-In the meantime, cargo-mobile2 contains the template of wry, please follow wry's instruction if you want to use with it.
-
-Installation
-The build will probably take a bit, so feel free to go get a snack or something.
-
-cargo install --git https://github.com/tauri-apps/cargo-mobile2
-cargo-mobile2 is currently supported on macOS, Linux and Windows. Note that it's not possible to target iOS on platforms other than macOS! You'll still get to target Android either way.
-
-You'll need to have Xcode and the Android SDK/NDK installed. Some of this will ideally be automated in the future, or at least we'll provide a helpful guide and diagnostics.
-
-Whenever you want to update:
-
-cargo mobile update
-Usage
-To start a new project, all you need to do is make a directory with a cute name, cd into it, and then run this command:
-
-cargo mobile init
-After some straightforward prompts, you'll be asked to select a template pack. Template packs are used to generate project boilerplate, i.e. using the wry template pack gives you a wry project that runs out-of-the-box on desktop and mobile.
-
-name	info
-wry	Minimal wry project
-egui	Full egui + winit + wgpu example based on agdk-egui example
-Template pack contribution is welcomed
-
-Note
-
-For all the templates available now, currently bevy templates do not work and will encounter compile error if you try to build the project.
-
-Once you've generated your project, you can run cargo run as usual to run your app on desktop. However, now you can also do cargo apple run and cargo android run to run on connected iOS and Android devices respectively!
-
-If you prefer to work in the usual IDEs, you can use cargo apple open and cargo android open to open your project in Xcode and Android Studio respectively.
-
-For more commands, run cargo mobile, cargo apple, or cargo android to see help information.
-
-Android
-cargo android run will build, install and run the app and follows device logs emitted by the app.
-
-By default, warn and error logs are displayed. Additional logging of increasing verbosity can be shown by use of the -v or -vv options. These also provide more verbose logging for the build and install steps.
-
-For fine-grained control of logging, use the --filter (or -f) option, which takes an Android log level, such as debug. This option overrides the default device logging level set by -v or -vv.
-
-If using the android_logger crate to handle Rust log messages, trace logs from Rust are mapped to verbose logs in Android.
+Building for iOS still requires macOS + Xcode; Android can be built from any host with the Android SDK/NDK installed. See [[mobile]] for the cargo-mobile2 background.

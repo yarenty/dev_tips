@@ -31,7 +31,7 @@ status: draft
 <!-- internal-links-suggested by P6.3 -->
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
-- [[programming/rust/bottom|bottom]] — bottom _(score 36.5)_
+- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 36.5)_
 - [[bandwhich]] — Bandwhich _(score 20.6)_
 - [[mdfried]] — Mdfried _(score 18.8)_
 - [[starship]] — starship _(score 17.1)_

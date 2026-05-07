@@ -1,58 +1,81 @@
 ---
 title: wasmtime
-main_link: https://crates.io/crates/wasmtime
-keywords: [wasmtime, rust]
-status: draft
+main_link: https://wasmtime.dev/
+keywords: [wasmtime, wasm, runtime, bytecode-alliance, cranelift, wasi, component-model]
+status: reviewed
 ---
-
-<!-- auto-stubbed by article_stub.py -->
-
-> Auto-split from `doc/programming/rust/web/webassembly.md` by `article_split.py`. Heading: **wasmtime**.
 
 # wasmtime
 
-**Main link:** <https://crates.io/crates/wasmtime>
+**Main link:** <https://wasmtime.dev/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`wasmtime` is the Bytecode Alliance's reference standalone WebAssembly runtime — a fast, secure, embeddable Wasm + WASI engine written in Rust, JIT-compiled via `cranelift` (with optional AOT). It ships both as a CLI (`wasmtime run app.wasm`) and as an embedding library (`wasmtime` crate) that you link into your own Rust/C/Python/Go/.NET host. It's the canonical implementation that drives WASI standardisation and the Component Model. The headline use cases are: plugin host inside a Rust app (Zellij, Lapce, OpenObserve, Envoy/Istio Proxy-Wasm, Shopify, Fermyon Spin), edge / serverless functions, and as a CLI for running standalone `*.wasm` modules.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Pick wasmtime over alternatives when you want the most actively-developed, spec-tracking runtime with the strongest "embed me in your own app" story:
+
+- **wasmtime** — Bytecode Alliance reference; tracks WASI/Component Model first; permissive Apache-2.0; default for new projects.
+- **wasmer** — broader language SDK story (Python, Ruby, PHP wrappers), pre-compiled package format (`.wasmer`); friendlier CLI; some divergence on Component Model timing.
+- **wasmedge** — CNCF runtime; AI/edge focus, includes ML extensions and HTTP server bindings.
+- **In-browser engines** (V8/Liftoff/TurboFan, SpiderMonkey, JSC) — the Wasm runtime in any browser; not relevant for standalone use.
+
+Things to know:
+
+- **Cranelift JIT** is the default; AOT (`wasmtime compile`) produces `.cwasm` artifacts that skip compilation at startup — important for serverless cold starts.
+- **Resource limits.** `Engine::new` + `Config` lets you cap fuel (instruction count), memory, and stack — actually use these when hosting untrusted code.
+- **Component Model** (`wasmtime` 14+) is the way to compose modules with typed interfaces (`*.wit`); `wasmtime serve` lets you run a `wasi:http` component as an HTTP server.
+- **Async vs sync embed.** Pick at `Config::async_support(true)` time; can't mix per-instance.
+- **Epoch-based interruption** is the modern way to time-out a runaway guest; older `Store::set_fuel` works too but is more invasive.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **wasmer** — alternative embeddable runtime; broader host-language SDKs.
+- **wasmedge** — CNCF runtime with ML/edge extensions.
+- **WAMR** (WebAssembly Micro Runtime) — Bytecode Alliance's interpreter/AOT for embedded targets.
+- **wazero** — pure-Go embeddable runtime, no CGO.
+- **`spin` (Fermyon)** — higher-level "Wasm microservices" framework on top of wasmtime.
 
 ## Internal links
+<!-- reviewed -->
+- [[webassembly]] — section overview
+- [[observability_on_wasm]] — tracing/observability for guest modules
+- [[programming/rust/plugins/README|plugins]] — embedding wasmtime as a plugin host
+- [[programming/rust/tooling/README|tooling]] — `cargo-component`, `wit-bindgen`, `wasm-tools`
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[http]] — Hyper _(score 17.1)_
-- [[webassembly]] — WASM _(score 17.1)_
-- [[html]] — kuchiki _(score 17.1)_
-- [[tungstenite]] — Tungstenite _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#wasmtime` `#web` `#rust` `#programming` `#crates`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#wasmtime` `#wasm` `#runtime` `#bytecode-alliance` `#cranelift` `#wasi` `#component-model`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Site: <https://wasmtime.dev/>
+- Crate: <https://crates.io/crates/wasmtime>
+- Repo: <https://github.com/bytecodealliance/wasmtime>
+- Bytecode Alliance: <https://bytecodealliance.org/>
+- Component Model docs: <https://component-model.bytecodealliance.org/>
 
-# wasmtime
+CLI smoke test:
 
-https://crates.io/crates/wasmtime
+```sh
+cargo install wasmtime-cli
+wasmtime run hello.wasm
+wasmtime compile hello.wasm    # AOT to hello.cwasm
+```
+
+Minimal embedding (sync):
+
+```rust
+use wasmtime::{Engine, Module, Store, Instance};
+
+let engine = Engine::default();
+let module = Module::from_file(&engine, "add.wasm")?;
+let mut store = Store::new(&engine, ());
+let instance = Instance::new(&mut store, &module, &[])?;
+let add = instance.get_typed_func::<(i32, i32), i32>(&mut store, "add")?;
+println!("{}", add.call(&mut store, (2, 3))?);
+```
+
+Note: there's no separate sibling article on the Bytecode Alliance host stack — this article also serves that role.

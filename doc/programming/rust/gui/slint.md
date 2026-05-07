@@ -1,72 +1,25 @@
 ---
 title: Slint
-main_link: https://github.com/slint-ui/slint-rust-template
-keywords: [slint, rust, tao]
-status: draft
+main_link: https://slint.dev/
+keywords: [slint, rust, gui, declarative, retained-mode, qml, embedded]
+status: reviewed
 ---
-
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
 
 # Slint
 
-**Main link:** <https://github.com/slint-ui/slint-rust-template>
+**Main link:** <https://slint.dev/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Slint is a declarative GUI toolkit for Rust (and C++, JS/Node) where the UI is written in a separate `.slint` markup language compiled to Rust at build time. The renderer targets desktop (Windows/macOS/Linux), mobile, and microcontrollers (no_std, ~250 KB ROM). Originally launched as **SixtyFPS** in 2020 and rebranded **Slint** in 2022, it is dual-licensed: GPLv3 for open-source projects and a commercial / royalty-free embedded licence from SixtyFPS GmbH.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
-
-## Similar / related topics
-
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
-
-## Internal links
-
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[mobile]] — Mobile _(score 17.1)_
-- [[programming/rust/gui/tauri|tauri]] — Tauri _(score 17.1)_
-- [[egui]] — egui _(score 17.1)_
-- [[lipo]] — Lipo _(score 17.1)_
-- [[tao]] — Tao _(score 14.0)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-## Keywords
-
-`#slint` `#gui` `#rust` `#programming` `#tao` `#cargo` `#build` `#crate`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
-
-## References / raw notes
-<!-- auto-split by article_split.py -->
-> Auto-split: 1 additional top-level heading(s) extracted into sibling files:
-> - [Tao](tao.md)
-
-
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# Slint
-
-
-https://slint.rs/
-
-
-Declarative GUI for Rust
-
+Slint is the strongest answer in the Rust ecosystem to "I want a *designer/developer split*" — `.slint` is the equivalent of Qt's QML, and the workflow is similar (designers iterate in markup + a live-preview viewer; developers wire callbacks in Rust). Reach for it when you want a **polished, retained-mode native UI** without writing platform code, especially for **embedded HMI** (its sweet spot — the marketing focuses on industrial dashboards and IoT panels with custom MCUs, not generic desktop). Compared to alternatives: [[egui]] is faster to prototype but less designer-friendly and weaker for animation; [[dioxus]] and [[programming/rust/gui/tauri|tauri]] are web-tech (and so much heavier on memory); Qt QML is the closest "feel" but pulls in C++ Qt itself. The dual licence is the main political consideration — confirm your situation before adopting commercially.
 
 ```rust
-slint::slint!{
+// All-in-one inline syntax
+slint::slint! {
     export component HelloWorld {
         Text {
             text: "hello world";
@@ -74,51 +27,71 @@ slint::slint!{
         }
     }
 }
+
 fn main() {
     HelloWorld::new().unwrap().run().unwrap();
 }
-
 ```
 
+For non-trivial UIs split the markup into `.slint` files and compile them via a `build.rs`:
 
 ```toml
 [package]
-...
 build = "build.rs"
-edition = "2021"
 
 [dependencies]
-slint = "1.5.0"
-...
+slint = "1.5"
 
 [build-dependencies]
-slint-build = "1.5.0"
-
+slint-build = "1.5"
 ```
 
-
-Use the API of the slint-build crate in the build.rs file:
-
+```rust
+// build.rs
 fn main() {
-slint_build::compile("ui/hello.slint").unwrap();
+    slint_build::compile("ui/hello.slint").unwrap();
 }
-Finally, use the include_modules! macro in your main.rs:
 
-ⓘ
+// main.rs
 slint::include_modules!();
 fn main() {
-HelloWorld::new().unwrap().run().unwrap();
+    HelloWorld::new().unwrap().run().unwrap();
 }
-The cargo-generate tool is a great tool to up and running quickly with a new Rust project. You can use it in combination with our Template Repository to create a skeleton file hierarchy that uses this method:
+```
 
+Quick scaffold:
+
+```shell
 cargo install cargo-generate
 cargo generate --git https://github.com/slint-ui/slint-rust-template
+```
 
+## Similar / related topics
 
+- Qt QML — the conceptual ancestor; same designer/dev split, C++ underneath.
+- [[egui]] — immediate-mode alternative; less polish, faster to hack on.
+- [[dioxus]] — declarative + reactive but web-tech-leaning; heavier.
+- [[programming/rust/gui/tauri|tauri]] — webview shell; reach for it when web design tooling matters more than native fit.
+- Flutter — the cross-language equivalent of "compile a UI DSL to a native renderer".
 
-## Slint
+## Internal links
 
-https://slint.dev/releases/1.5.1/docs/rust/slint/
+<!-- reviewed -->
+- [[egui]]
+- [[dioxus]]
+- [[programming/rust/gui/tauri|tauri]]
+- [[tao]]
+- [[mobile]]
+- [[../README]]
 
+## Keywords
 
-https://slint.dev/releases/1.5.1/editor/
+`#slint` `#rust` `#gui` `#declarative` `#retained-mode` `#qml-like` `#embedded`
+
+## References / raw notes
+
+- Site: <https://slint.dev/>
+- Repo / template: <https://github.com/slint-ui/slint-rust-template>
+- Rust API docs: <https://slint.dev/releases/1.5.1/docs/rust/slint/>
+- Live editor: <https://slint.dev/releases/1.5.1/editor/>
+- History: launched as SixtyFPS, rebranded Slint in 2022; commercial backer SixtyFPS GmbH.

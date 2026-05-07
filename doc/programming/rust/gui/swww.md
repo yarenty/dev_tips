@@ -1,61 +1,49 @@
 ---
 title: swww
-main_link: https://github.com/LGFae/swww?tab=readme-ov-file
-keywords: [swww, rust, wayland, wallpaper]
-status: draft
+main_link: https://github.com/LGFae/swww
+keywords: [swww, rust, wayland, wallpaper, daemon, desktop-customisation]
+status: reviewed
 ---
-
-<!-- auto-stubbed by article_stub.py -->
-
-> Auto-split from `doc/programming/rust/gui/ui.md` by `article_split.py`. Heading: **swww**.
 
 # swww
 
-**Main link:** <https://github.com/LGFae/swww?tab=readme-ov-file>
+**Main link:** <https://github.com/LGFae/swww>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`swww` (Sway-Wallpaper-Woes Workaround) is an animated wallpaper daemon for Wayland compositors, written in Rust. It runs as a background process and exposes a small CLI (`swww img`, `swww query`, `swww kill`) for changing wallpapers — including animated GIF / WebP / APNG — at runtime with smooth transitions, without restarting the compositor.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Niche-but-loved tool in the Linux desktop-customisation crowd, especially among Sway / Hyprland / River users. Reach for it when (a) you're on Wayland, (b) `swaybg` doesn't cut it because you want animations or live changes, and (c) you don't want a full DE wallpaper manager. Compared to neighbours: `swaybg` (the Sway built-in) is static-only; `mpvpaper` uses mpv to render video as wallpaper but is heavier; `hyprpaper` is the Hyprland-native option for static images. swww's design point is "animated + IPC + cheap" — it sleeps when nothing is animating, so the cost-when-idle is essentially zero. On X11 you'd reach for `feh`, `nitrogen`, or `xwinwrap` instead; swww deliberately doesn't try to support X.
+
+```shell
+# typical use
+swww init               # start the daemon
+swww img wallpaper.gif  # set animated wallpaper
+swww img --transition-type wipe ~/Pictures/photo.png
+```
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- `swaybg` — static-image companion that ships with Sway.
+- `hyprpaper` — Hyprland's first-party wallpaper daemon.
+- `mpvpaper` — uses mpv to render video as wallpaper; heavier but more flexible.
+- `feh` / `nitrogen` — the X11 equivalents.
+- Hyprland / Sway / River — the Wayland compositors swww is most often paired with.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[ui]]
+- [[../README]]
 
-- [[mobile]] — Mobile _(score 17.1)_
-- [[egui]] — egui _(score 17.1)_
-- [[matrix]] — Matrix - rust bindings to ios version _(score 17.1)_
-- [[rust_xcode_plugin]] — Rust xcode plugin _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#swww` `#gui` `#rust` `#programming` `#wayland` `#wallpaper` `#lgfae` `#solution`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#swww` `#rust` `#wayland` `#wallpaper` `#daemon` `#linux-desktop`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Repo: <https://github.com/LGFae/swww>
 
-# swww
-
-https://github.com/LGFae/swww?tab=readme-ov-file
-
-A Solution to your Wayland Wallpaper Woes
-Efficient animated wallpaper daemon for wayland, controlled at runtime
+A solution to your Wayland Wallpaper Woes — efficient animated wallpaper daemon for Wayland, controllable at runtime via a CLI.

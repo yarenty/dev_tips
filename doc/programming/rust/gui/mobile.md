@@ -1,120 +1,73 @@
 ---
-title: Mobile
-main_link: https://github.com/BrainiumLLC/cargo-mobile/?tab=readme-ov-file
-keywords: [mobile, rust, android, level, tauri]
-status: draft
+title: cargo-mobile / cargo-mobile2
+main_link: https://github.com/tauri-apps/cargo-mobile2
+keywords: [mobile, cargo-mobile, cargo-mobile2, rust, ios, android, tauri, bevy]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# cargo-mobile / cargo-mobile2
 
-# Mobile
-
-**Main link:** <https://github.com/BrainiumLLC/cargo-mobile/?tab=readme-ov-file>
+**Main link:** <https://github.com/tauri-apps/cargo-mobile2>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`cargo-mobile2` is the Tauri team's actively-maintained fork of the original `cargo-mobile` (BrainiumLLC). It answers the question *"how do I use Rust on iOS and Android?"* by generating Xcode and Android Studio project files, building and running on a connected device or simulator, and shipping a few template packs (wry, egui, winit) so a `cargo mobile init` produces a working cross-platform skeleton in seconds. Tauri now uses cargo-mobile2 as a library dependency rather than as a separate CLI.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+For new projects, **use `cargo-mobile2`, not the original `cargo-mobile`** — the Brainium repo is no longer maintained and has known build breakage on recent Rust releases, while cargo-mobile2 supports macOS, Linux, *and* Windows (only iOS targets are still macOS-only, an Apple licensing constraint). The mental model: cargo-mobile2 is a *project bootstrapper plus build runner*, not a renderer or framework — it knits together your existing GUI choice (Tauri, wry, egui, winit + custom, Bevy) with the platform-native build pipeline (Xcode for iOS, Gradle/AGP for Android), giving you `cargo apple run` and `cargo android run` shortcuts. If you've adopted Tauri 2, you mostly *don't* invoke cargo-mobile2 directly — `tauri ios dev` / `tauri android dev` is the user-facing wrapper. The Bevy template was broken at the time of the upstream README; check current status before reaching for it.
+
+```shell
+cargo install --git https://github.com/tauri-apps/cargo-mobile2
+mkdir myapp && cd myapp
+cargo mobile init        # interactive: pick a template (wry / egui / winit)
+cargo apple run          # iOS device or simulator
+cargo android run        # Android device
+```
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[programming/rust/gui/tauri|tauri]] — Tauri 2 mobile uses cargo-mobile2 under the hood; preferred frontend.
+- [[slint]] — Slint has its own mobile support path; not via cargo-mobile2.
+- `xbuild` (`x-rs`) — independent cross-platform Rust build tool spanning iOS/Android/Linux/macOS/Windows.
+- `cargo-apk` / `ndk-build` — lower-level Android-only Rust packaging.
+- [[lipo]] — fat-binary glue if you build raw staticlibs instead of going through this.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[programming/rust/gui/tauri|tauri]]
+- [[macos]]
+- [[lipo]]
+- [[rust_xcode_plugin]]
+- [[../README]]
 
-- [[programming/rust/gui/tauri|tauri]] — Tauri _(score 38.6)_
-- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 20.2)_
-- [[slint]] — Slint _(score 17.1)_
-- [[lipo]] — Lipo _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#mobile` `#gui` `#rust` `#programming` `#android` `#cargo` `#bevy` `#project`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#cargo-mobile` `#cargo-mobile2` `#rust` `#ios` `#android` `#tauri` `#mobile`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Maintained fork: <https://github.com/tauri-apps/cargo-mobile2>
+- Original (deprecated): <https://github.com/BrainiumLLC/cargo-mobile>
+- Tauri mobile guide: <https://tauri.app/develop/#mobile>
 
-# Mobile
+### Quick-start
 
+```shell
+cargo install --git https://github.com/tauri-apps/cargo-mobile2
+cargo mobile update      # pull latest later
+cargo mobile init        # bootstrap a project
+```
 
-https://github.com/BrainiumLLC/cargo-mobile/?tab=readme-ov-file
+Template packs available at init time include `wry` (minimal Tauri webview app) and `egui` (egui + winit + wgpu, based on the agdk-egui example).
 
-The answer to "how do I use Rust on iOS and Android?"
+### Android logging
 
-cargo-mobile takes care of generating Xcode and Android Studio project files, building and running on device, generating project boilerplate, and a few other things!
+`cargo android run` builds, installs, runs, and tails device logs. Verbosity:
 
-Check out the announcement post!
+- default: `warn` + `error`
+- `-v` / `-vv`: more verbose
+- `--filter` / `-f`: an explicit Android log level (`debug`, etc.)
 
-Status
-Everything here works and is already used internally! However, this hasn't seen a lot of external use yet, so there could still be some rough edges.
-
-Building for iOS is broken on Rust 1.46.0, 1.47.0, and 1.48.0!
-
-Sorry for the inconvenience! This is resolved in Rust 1.49.0, so please update to that if you haven't already:
-
-rustup update stable
-rustup default stable
-Installation
-The build will probably take a bit, so feel free to go get a snack or something.
-
-cargo install --git https://github.com/BrainiumLLC/cargo-mobile
-cargo-mobile is currently supported on macOS and Linux. Note that it's not possible to target iOS on platforms other than macOS! You'll still get to target Android either way.
-
-A PR adding Windows support would be hugely appreciated!
-
-You'll need to have Xcode and the Android SDK/NDK installed. Some of this will ideally be automated in the future, or at least we'll provide a helpful guide and diagnostics.
-
-Whenever you want to update:
-
-cargo mobile update
-Usage
-To start a new project, all you need to do is make a directory with a cute name, cd into it, and then run this command:
-
-cargo mobile init
-After some straightforward prompts, you'll be asked to select a template pack. Template packs are used to generate project boilerplate, i.e. using the bevy template pack gives you a minimal Bevy project that runs out-of-the-box on desktop and mobile.
-
-name	info
-bevy	Minimal Bevy project derived from sprite example
-bevy-demo	Bevy breakout demo
-wgpu	Minimal wgpu project derived from hello-triangle example
-winit	Minimal winit project derived from window example
-Template pack contribution is encouraged; we'd love to have very nice template packs for Bevy, Amethyst, and whatever else people find helpful! We'll write up a guide for template pack creation soon, but in the mean time, the existing ones are a great reference point. Any template pack placed into ~./cargo-mobile/templates/apps/ will appear as an option in cargo mobile init.
-
-Once you've generated your project, you can run cargo run as usual to run your app on desktop. However, now you can also do cargo apple run and cargo android run to run on connected iOS and Android devices respectively!
-
-If you prefer to work in the usual IDEs, you can use cargo apple open and cargo android open to open your project in Xcode and Android Studio respectively.
-
-For more commands, run cargo mobile, cargo apple, or cargo android to see help information.
-
-Android
-Building for Android is broken on NDK >= 23
-
-cargo android run will build, install and run the app and follows device logs emitted by the app.
-
-By default, warn and error logs are displayed. Additional logging of increasing verbosity can be shown by use of the -v or -vv options. These also provide more verbose logging for the build and install steps.
-
-For fine-grained control of logging, use the --filter (or -f) option, which takes an Android log level, such as debug. This option overrides the default device logging level set by -v or -vv.
-
-If using the android_logger crate to handle Rust log messages, trace logs from Rust are mapped to verbose logs in Android.
-
-
-
-See - tauri - mobile2
+If you wire Rust's `log` to Android via the `android_logger` crate, Rust `trace` maps to Android `verbose`.

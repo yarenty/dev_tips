@@ -1,77 +1,75 @@
 ---
-title: Hyper
-main_link: https://github.com/tokio-rs/axum
-keywords: [rust, rocket, axum, level, design]
-status: draft
+title: hyper
+main_link: https://hyper.rs/
+keywords: [hyper, rust, http, http2, low-level, tokio]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# hyper
 
-# Hyper
-
-**Main link:** <https://github.com/tokio-rs/axum>
+**Main link:** <https://hyper.rs/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`hyper` is the foundational HTTP library for the Rust async ecosystem — a correct, performant, low-level implementation of HTTP/1, HTTP/2, and (via plugins) HTTP/3, with both client and server APIs. Maintained by Sean McArthur under the Tokio org. Almost every higher-level Rust HTTP tool — `axum`, `reqwest`, `tonic`, `warp`, `tower-http`, `rocket` (since 0.5) — is built on top of it. The 1.0 release (Nov 2023) finally stabilised the API after years on 0.14.
+
+This article serves as the section's HTTP-stack overview; sibling articles cover the higher-level frameworks/clients split out from it (see Internal links).
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Use `hyper` directly when you need to build something *underneath* a framework (custom proxies, gateways, SDKs, low-overhead servers) or when you want full control over connection management, HTTP/2 settings, or upgrade flows. For application code, almost always reach for `[[axum]]` (server) or `[[reqwest]]` (client) instead — they hide the wiring without hiding the underlying types when you need them.
+
+The wider stack to keep straight:
+
+- **`http`** — types only (`Request`, `Response`, `Method`, `StatusCode`, `HeaderMap`). No I/O. Used by everyone.
+- **`http-body`** — the streaming-body trait the rest of the ecosystem implements.
+- **`hyper`** — actual HTTP/1+2 wire implementation; client + server.
+- **`tower` / `tower-http`** — request/response middleware traits and ready-made layers (timeouts, tracing, CORS, compression).
+- **`hyper-util`** — connection pooling, executors, "bring your own runtime" helpers post-1.0.
+
+Gotchas:
+
+- The 1.0 split moved a lot of "batteries" (legacy `Client`, `Server`) out of `hyper` itself into `hyper-util`. Many older snippets won't compile against 1.x.
+- HTTP/2 "smuggling" / connection-preface concerns make picking the right TLS+ALPN setup important if you're terminating directly.
+- For HTTP/3 you need `hyper` 1.x + an `h3-quinn` adapter; not as turn-key as HTTP/2 yet.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **actix-http** — actix-web's bespoke HTTP layer.
+- **`http` crate** — type definitions every Rust HTTP tool shares.
+- **h2 / quinn / h3** — protocol-specific crates `hyper` builds on.
+- **monoio-http / glommio** — alternative low-level HTTP for thread-per-core runtimes.
+- **`ureq`** — sync, no-tokio HTTP client; small dependency footprint.
 
 ## Internal links
+<!-- reviewed -->
+- [[axum]] — the recommended high-level server
+- [[rocket]] — opinionated framework also on hyper since 0.5
+- [[reqwest]] — the high-level client
+- [[hyperfs]] — single-file static-server example built on hyper
+- [[tungstenite]] — WebSockets on top of an HTTP upgrade
+- [[tokio]] — the async runtime hyper integrates with
+- [[grpc]] — `tonic`, gRPC over HTTP/2 via hyper
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[axum]] — Axum _(score 26.0)_
-- [[rocket]] — Rocket _(score 26.0)_
-- [[tungstenite]] — Tungstenite _(score 17.1)_
-- [[hyperfs]] — HyperFS _(score 17.1)_
-- [[rewquest]] — Rewquest _(score 17.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#web` `#rust` `#programming` `#rocket` `#axum` `#crates` `#simple`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#hyper` `#http` `#http2` `#rust` `#tokio` `#low-level` `#networking`
 
 ## References / raw notes
-<!-- auto-split by article_split.py -->
-> Auto-split: 5 additional top-level heading(s) extracted into sibling files:
-> - [HyperFS](hyperfs.md)
-> - [Rewquest](rewquest.md)
-> - [Rocket](rocket.md)
-> - [Axum](axum.md)
-> - [Tungstenite](tungstenite.md)
 
+- Site: <https://hyper.rs/>
+- Crate: <https://crates.io/crates/hyper>
+- Repo: <https://github.com/hyperium/hyper>
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+From the project page:
 
-# Hyper 
+> A fast and correct HTTP implementation for Rust.
+>
+> - HTTP/1 and HTTP/2
+> - Asynchronous design
+> - Leading in performance
+> - Tested and correct
+> - Extensive production use
+> - Client and Server APIs
 
-https://crates.io/crates/hyper
-
-
-A fast and correct HTTP implementation for Rust.
-
-- HTTP/1 and HTTP/2
-- Asynchronous design
-- Leading in performance
-- Tested and correct
-- Extensive production use
-- Client and Server APIs
-
-Low level!
+Low-level — almost always consumed via a higher-level wrapper. Sibling articles split out from this one cover those wrappers: `[[axum]]`, `[[rocket]]`, `[[reqwest]]`, `[[tungstenite]]`, `[[hyperfs]]`.

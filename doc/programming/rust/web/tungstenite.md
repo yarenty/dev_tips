@@ -1,80 +1,89 @@
 ---
-title: Tungstenite
+title: tungstenite
 main_link: https://crates.io/crates/tungstenite
-keywords: [tungstenite, rust, lightweight]
-status: draft
+keywords: [tungstenite, websocket, rust, tokio, async]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/web/http.md` by `article_split.py`. Heading: **Tungstenite**.
-
-# Tungstenite
+# tungstenite
 
 **Main link:** <https://crates.io/crates/tungstenite>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`tungstenite` is the canonical WebSocket implementation for Rust — a small, blocking, stream-based RFC-6455 client/server. The async wrapper `tokio-tungstenite` is the version most code actually depends on, and it's what backs `axum`'s `WebSocketUpgrade` extractor and `reqwest`'s WebSocket support. Maintained by the snapview team; quietly does the work for most of the Rust WebSocket ecosystem.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The split is the part everyone gets wrong on first encounter:
+
+- **`tungstenite`** — sync, blocking. Useful for tiny tools, tests, or `std::thread`-per-connection servers. Almost no production server you write today should use it directly.
+- **`tokio-tungstenite`** — the async wrapper; what you actually want.
+- Most frameworks (`axum`, `warp`, `actix-web`'s `actix-ws`) ship a higher-level extractor that hides `tokio-tungstenite` behind a friendlier type — use the framework helper unless you specifically need the lower level.
+
+When to reach for `tokio-tungstenite` *directly* (vs. via Axum):
+
+- You're writing a *client* (Axum is server-side).
+- You need a standalone WebSocket server with no HTTP routing.
+- You're building a custom upgrade flow / proxy.
+
+Comparisons:
+
+- **`fastwebsockets`** (Cloudflare/Deno team) — claims much higher throughput than tungstenite, used in Deno. Worth benchmarking if you're saturating it.
+- **`tokio-websockets`** — newer pure-Tokio implementation aiming at a leaner dep tree.
+- **`ws-rs`** — older, predates tokio's stabilisation, effectively unmaintained.
+- **Browser side** — use `gloo-net::websocket` or raw `web-sys::WebSocket`; not tungstenite (it doesn't run in WASM).
+
+Gotchas:
+
+- **Backpressure isn't automatic.** A slow consumer with a fast producer will buffer messages indefinitely; cap your channels.
+- **Close-frame semantics.** RFC-6455 requires a handshake on close; check `Message::Close` and respond, don't just drop the socket.
+- **Permessage-deflate.** Off by default; enable via the `deflate` feature if your peers expect it.
+- **TLS.** Use `tokio-tungstenite` with the `native-tls`, `rustls-tls-native-roots`, or `rustls-tls-webpki-roots` features; picking the wrong cert source is the #1 wss:// footgun.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **`tokio-tungstenite`** — the async wrapper; the real default.
+- **`fastwebsockets`** — high-throughput alternative from Deno's stack.
+- **`tokio-websockets`** — leaner pure-Tokio implementation.
+- **`axum::extract::WebSocketUpgrade`** — the framework-level convenience.
+- **`gloo-net::websocket`** — browser-side WebSocket client over `web-sys`.
 
 ## Internal links
+<!-- reviewed -->
+- [[axum]] — its WebSocket extractor wraps `tokio-tungstenite`
+- [[http]] — WebSockets ride on top of an HTTP/1.1 upgrade
+- [[gloo]] — browser-side WebSocket client for WASM
+- [[tokio]] — required runtime for the async variant
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[http]] — Hyper _(score 17.1)_
-- [[webassembly]] — WASM _(score 17.1)_
-- [[html]] — kuchiki _(score 17.1)_
-- [[wasmtime]] — wasmtime _(score 17.1)_
-- [[rewquest]] — Rewquest _(score 17.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#tungstenite` `#web` `#rust` `#programming` `#crates` `#lightweight` `#websocket` `#take`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#tungstenite` `#websocket` `#rust` `#tokio` `#async` `#networking`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Crate: <https://crates.io/crates/tungstenite>
+- Async wrapper: <https://crates.io/crates/tokio-tungstenite>
+- Repo: <https://github.com/snapview/tungstenite-rs>
 
-# Tungstenite
+> Lightweight stream-based WebSocket implementation for Rust.
 
-https://crates.io/crates/tungstenite
-
-Lightweight stream-based WebSocket implementation for Rust.
+Sync echo server (small enough to keep as a teaching example):
 
 ```rust
 use std::net::TcpListener;
 use std::thread::spawn;
 use tungstenite::accept;
 
-/// A WebSocket echo server
-fn main () {
-let server = TcpListener::bind("127.0.0.1:9001").unwrap();
-for stream in server.incoming() {
-spawn (move || {
-let mut websocket = accept(stream.unwrap()).unwrap();
-loop {
-let msg = websocket.read().unwrap();
-
-                // We do not want to send back ping/pong messages.
+/// A WebSocket echo server.
+fn main() {
+    let server = TcpListener::bind("127.0.0.1:9001").unwrap();
+    for stream in server.incoming() {
+        spawn(move || {
+            let mut websocket = accept(stream.unwrap()).unwrap();
+            loop {
+                let msg = websocket.read().unwrap();
+                // Don't bounce ping/pong control frames back.
                 if msg.is_binary() || msg.is_text() {
                     websocket.send(msg).unwrap();
                 }
@@ -83,4 +92,5 @@ let msg = websocket.read().unwrap();
     }
 }
 ```
-Take a look at the examples section to see how to write a simple client/server.
+
+For anything async, the same shape using `tokio-tungstenite::accept_async` and a `tokio::spawn` per connection is the standard idiom — see the upstream `examples/` directory.

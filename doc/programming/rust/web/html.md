@@ -1,58 +1,61 @@
 ---
-title: kuchiki
+title: kuchiki (HTML/XML tree manipulation)
 main_link: https://crates.io/crates/kuchiki
-keywords: [rust, xml]
-status: draft
+keywords: [kuchiki, html, xml, scraping, css-selectors, rust, html5ever]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-
-# kuchiki
+# kuchiki (HTML/XML tree manipulation)
 
 **Main link:** <https://crates.io/crates/kuchiki>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`kuchiki` (朽木, "rotten tree") is a CSS-selector-based HTML/XML DOM-like tree library for Rust, built on top of Servo's `html5ever` parser. It exposes a `NodeRef` tree you can walk, mutate, and query with CSS selectors — the closest Rust gets to a `BeautifulSoup`/`jQuery`-style ergonomic experience. Originally by Simon Sapin (Servo team).
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Note up front: **`kuchiki` is unmaintained** (last release 2020) and most of the ecosystem has moved on to `scraper` (CSS selectors) or `kuchikiki` (a maintained kuchiki fork). Use this article as background; for new code reach for one of those.
+
+The HTML-parsing layer cake:
+
+| Layer | Crate | Use when |
+|---|---|---|
+| Raw tokeniser/parser | `html5ever` / `xml5ever` | You need every byte of standards compliance, building your own DOM. |
+| DOM-like tree + CSS selectors | `scraper` (recommended), `kuchikiki`, `kuchiki` (legacy) | Scraping, extraction, light mutation. |
+| jQuery-style chained API | `nipper`, `select` (CSS3 selectors only) | Familiarity from JS; thin wrappers over the above. |
+| Headless browser | `fantoccini`, `chromiumoxide`, `thirtyfour` | The page needs JavaScript executed first. |
+
+Gotchas:
+
+- **Selector engine quirks.** All of these use the `selectors` crate from Servo; pseudo-class support (`:has()`, `:nth-of-type`) is more complete than you'd expect, but a few niche selectors silently no-op.
+- **Encoding.** HTML in the wild is rarely UTF-8 only; pair with `encoding_rs` and the `html5ever` charset detection if you're scraping arbitrary sites.
+- **Mutation.** `kuchiki`/`scraper` trees are shared via `Rc<RefCell<...>>`; cloning a `NodeRef` shares interior state — easy to be surprised.
+- **Performance.** For large documents, `lol_html` (Cloudflare's streaming rewriter) is dramatically faster than tree-based libraries when you only need to filter/transform.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **`scraper`** — the maintained CSS-selector scraping crate; what most new code uses.
+- **`kuchikiki`** — actively-maintained fork of `kuchiki` with the same API.
+- **`html5ever`** — the underlying spec-compliant parser from Servo.
+- **`lol_html`** — Cloudflare's streaming HTML rewriter (very fast, push-based).
+- **`scraper` + `fantoccini`** — pair for JS-rendered pages via WebDriver.
 
 ## Internal links
+<!-- reviewed -->
+- [[reqwest]] — the typical fetcher you pair with an HTML parser
+- [[parsers]] — sibling parser crates in the io section
+- [[programming/rust/web/README|web README]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[http]] — Hyper _(score 17.1)_
-- [[webassembly]] — WASM _(score 17.1)_
-- [[tungstenite]] — Tungstenite _(score 17.1)_
-- [[wasmtime]] — wasmtime _(score 17.1)_
-- [[rewquest]] — Rewquest _(score 17.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#web` `#rust` `#programming` `#crates` `#xml` `#tree` `#manipulation`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#kuchiki` `#html` `#xml` `#scraping` `#css-selectors` `#rust` `#html5ever`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Crate: <https://crates.io/crates/kuchiki>
+- Repo: <https://github.com/kuchiki-rs/kuchiki> (archived; see `kuchikiki` fork)
+- Maintained fork: <https://crates.io/crates/kuchikiki>
+- Recommended modern alternative: <https://crates.io/crates/scraper>
 
-# kuchiki
-
-https://crates.io/crates/kuchiki
-
-(朽木) HTML/XML tree manipulation library
+> 朽木 — HTML/XML tree manipulation library

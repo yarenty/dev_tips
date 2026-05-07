@@ -1,69 +1,68 @@
 ---
-title: YEW
-main_link: https://github.com/yewstack/yew
-keywords: [yew, rust, javascript, frameworks]
-status: draft
+title: Yew
+main_link: https://yew.rs/
+keywords: [yew, rust, wasm, frontend, framework, react, components]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Yew
 
-> Auto-split from `doc/programming/rust/web/webassembly.md` by `article_split.py`. Heading: **YEW**.
-
-# YEW
-
-**Main link:** <https://github.com/yewstack/yew>
+**Main link:** <https://yew.rs/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Yew is a component-based Rust frontend framework that compiles to WebAssembly via `wasm-bindgen`. It uses a JSX-like `html!` macro, virtual-DOM diffing, and a Hooks/functional-component API that will feel immediately familiar to anyone who's used React. Yew has been around since ~2017 and is the longest-lived Rust frontend framework, though it now competes with several younger alternatives.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Pick Yew when you want the React mental model in pure Rust — components, props, hooks, JSX-by-macro — and you value maturity and ecosystem (`yew-router`, `yewdux`, `yew-hooks`, `gloo`-friendly) over absolute performance. The 2025 Rust frontend landscape splits roughly:
+
+| Framework | Style | Killer feature | Trade-off |
+|---|---|---|---|
+| **Yew** | React + virtual DOM | Most mature; biggest ecosystem | Bigger binaries; not the fastest |
+| **Leptos** | Solid.js / signals (fine-grained reactivity) | Fastest; SSR + islands; isomorphic Rust | Steeper learning curve, churn |
+| **Dioxus** | React + RSX | Cross-platform (web + desktop + mobile + TUI) | Per-target quirks |
+| **Sycamore** | Solid.js-like signals | Lean, no virtual DOM | Smaller community |
+
+Things to know:
+
+- **Binary size is real.** A trivial Yew app gzips to ~150-300 KB; budget for `wasm-opt -Oz` and lazy code-splitting.
+- **SSR + hydration** added in 0.21+ — works but trickier to set up than Leptos's isomorphic story.
+- **Multi-threading** uses Web Workers via `gloo-worker` or `wasm-bindgen-rayon` (needs cross-origin isolation).
+- **JS interop** works seamlessly via `wasm-bindgen` — you can `npm install` something and call it from a Yew component.
+- **Hot reload** doesn't really exist; iterate with `trunk serve` and live-reload, not HMR.
+
+When *not* to pick Yew:
+
+- For an SSR-first or SEO-critical app, Leptos has a better story.
+- For "one codebase, web + desktop + mobile", Dioxus is the explicit answer.
+- For a tiny widget you're embedding in a larger JS app, raw `wasm-bindgen` may be lighter.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **Leptos** — fine-grained reactivity, isomorphic SSR; current performance leader.
+- **Dioxus** — React-style, cross-platform (desktop / mobile / web / TUI).
+- **Sycamore** — Solid-style signals; lean, smaller community.
+- **Seed** — Elm-flavoured architecture; mostly historical interest now.
+- **Percy** — virtual-DOM library predating Yew; historical.
 
 ## Internal links
+<!-- reviewed -->
+- [[webassembly]] — section overview
+- [[gloo]] — browser-API toolkit Yew apps lean on
+- [[reqwest]] — HTTP client (works in Yew via wasm32 target)
+- [[dioxus]] — sister React-style framework with broader targets
+- [[programming/rust/gui/tauri|tauri]] — pair Yew with Tauri for a desktop app
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[webassembly]] — WASM _(score 26.0)_
-- [[javascript]] — Javascript _(score 18.0)_
-- [[tungstenite]] — Tungstenite _(score 17.1)_
-- [[gloo]] — Gloo _(score 17.1)_
-- [[rocket]] — Rocket _(score 17.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#yew` `#web` `#rust` `#programming` `#developers` `#javascript` `#framework` `#webassembly`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#yew` `#rust` `#wasm` `#frontend` `#framework` `#react` `#components`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Site: <https://yew.rs/>
+- Repo: <https://github.com/yewstack/yew>
 
-# YEW
-
-https://yew.rs/
-
-https://github.com/yewstack/yew
-
-
-
-Yew is a modern Rust framework for creating multi-threaded front-end web apps using WebAssembly.
-
-It features a component-based framework which makes it easy to create interactive UIs. Developers who have experience with frameworks like React and Elm should feel quite at home when using Yew.
-It achieves great performance by minimizing DOM API calls and by helping developers to easily offload processing to background threads using web workers.
-It supports JavaScript interoperability, allowing developers to leverage NPM packages and integrate with existing JavaScript applications.
+> Yew is a modern Rust framework for creating multi-threaded front-end web apps using WebAssembly.
+>
+> It features a component-based framework which makes it easy to create interactive UIs. Developers who have experience with frameworks like React and Elm should feel quite at home when using Yew. It achieves great performance by minimising DOM API calls and helping developers easily offload processing to background threads using web workers. It supports JavaScript interoperability, allowing developers to leverage NPM packages and integrate with existing JavaScript applications.

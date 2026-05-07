@@ -1,58 +1,46 @@
 ---
 title: Cacao
-main_link: 
-keywords: [cacao, rust, appkit, quality]
-status: draft
+main_link: https://github.com/ryanmcgrath/cacao
+keywords: [cacao, rust, appkit, uikit, macos, ios, ffi]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/gui/macos.md` by `article_split.py`. Heading: **Cacao**.
-
 # Cacao
+
+**Main link:** <https://github.com/ryanmcgrath/cacao>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Cacao provides safe(ish) Rust bindings for AppKit on macOS (beta) and UIKit on iOS / tvOS (alpha). Maintained by Ryan McGrath, it tries to feel familiar to anyone who has written Cocoa in Swift or Objective-C, while papering over the ownership-model mismatch between Rust and the Apple frameworks. Use it when you want a *native* mac/iOS UI — `NSWindow`, `NSToolbar`, real `NSTableView`, system menus — written in Rust, rather than a webview or a custom-drawn canvas.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for Cacao when "feels like a Mac app" is part of the requirement and a webview-shell (Tauri) or immediate-mode canvas (egui) is the wrong shape. The trade-off is that you are still writing AppKit/UIKit, just spelled in Rust: you need to know the framework, and the Rust safety story is necessarily best-effort because the underlying objects mutate via Objective-C runtime calls. The main competitor in the same niche is [`objc2`](https://github.com/madsmtm/objc2) + the `objc2-app-kit` / `objc2-ui-kit` crates, which are lower-level but more thoroughly maintained — Cacao gives you opinionated wrappers, objc2 gives you raw bindings you build on top of. For pure macOS notifications only, the much narrower [[mac_notification_sys]] is enough.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- objc2 — auto-generated, actively-maintained Objective-C runtime bindings; the lower-level alternative.
+- [[mac_notification_sys]] — narrow wrapper for `NSUserNotification` only.
+- [[programming/rust/gui/tauri|tauri]] — webview-shell alternative if you can tolerate HTML/JS for UI.
+- winit / [[tao]] — only handle window + event loop; no native widgets.
+- SwiftUI / Swift — the official Apple path; consider `swift-bridge` if you want Rust core + Swift UI.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[macos]]
+- [[mac_notification_sys]]
+- [[mobile]]
+- [[programming/rust/gui/tauri|tauri]]
+- [[../README]]
 
-- [[mobile]] — Mobile _(score 17.1)_
-- [[egui]] — egui _(score 17.1)_
-- [[matrix]] — Matrix - rust bindings to ios version _(score 17.1)_
-- [[swww]] — swww _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#cacao` `#gui` `#rust` `#programming` `#appkit` `#quality` `#uikit` `#swift`
-
-## TODO
-
-- No `main_link` could be auto-detected. Add the canonical URL (project homepage / repo / paper) to the frontmatter.
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#cacao` `#rust` `#appkit` `#uikit` `#macos` `#ios` `#ffi`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# Cacao
-
 This library provides safe Rust bindings for AppKit on macOS (beta quality, fairly usable) and UIKit on iOS/tvOS (alpha quality, see repo). It tries to do so in a way that, if you've done programming for the framework before (in Swift or Objective-C), will feel familiar. This is tricky in Rust due to the ownership model, but some creative coding and assumptions can get us pretty far.
+
+- Repo: <https://github.com/ryanmcgrath/cacao>
+- Lower-level alternative: <https://github.com/madsmtm/objc2>

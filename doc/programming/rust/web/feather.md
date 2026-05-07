@@ -1,76 +1,52 @@
 ---
 title: Feather
-main_link: https://github.com/BersisSe/feather?utm_source=tldrnewsletter
-keywords: [feather, rust, api, first]
-status: draft
+main_link: https://github.com/BersisSe/feather
+keywords: [feather, rust, web-framework, microframework, express]
+status: reviewed
 ---
-
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
 
 # Feather
 
-**Main link:** <https://github.com/BersisSe/feather?utm_source=tldrnewsletter>
+**Main link:** <https://github.com/BersisSe/feather>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Feather is a small, Express.js-inspired Rust web microframework — middleware-first, macro-light, with a `Context`-API for state instead of Axum-style extractors. It's a hobbyist/early-stage project (single primary author, BersisSe), aimed at developer ergonomics and a low surface area rather than at competing with Axum or actix-web on production features. Bundles a CLI for scaffolding.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for Feather only if you specifically want the Express.js mental model in Rust — every route handler and cross-cutting concern is "just middleware" — and you're comfortable with a small, young project that may not see long-term maintenance. For anything serious, the Rust ecosystem has consolidated around `[[axum]]` (similar middleware composability via `tower`), `[[rocket]]` (more opinionated), or actix-web (highest perf). Don't confuse this Feather with Apache Arrow's `feather` file format, the Minecraft-server `feather`, or the Python `feather-format` library — naming collisions are unfortunate.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **axum** — the production-grade analogue with a richer ecosystem.
+- **rocket** — also macro-driven and DX-first, but more conventions.
+- **tide** — async-std's small framework; effectively unmaintained.
+- **Express.js** (Node) — the conceptual ancestor.
+- **poem** — middleware + extractors; small and pleasant.
 
 ## Internal links
+<!-- reviewed -->
+- [[axum]] — the obvious upgrade path
+- [[rocket]] — the other DX-first option
+- [[README|web README]] — sibling frameworks at a glance
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[webassembly]] — WASM _(score 17.1)_
-- [[axum]] — Axum _(score 17.1)_
-- [[rocket]] — Rocket _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-- [[assembly]] — Assembly _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#feather` `#web` `#rust` `#programming` `#api` `#first` `#context` `#modular`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#feather` `#web` `#rust` `#microframework` `#middleware` `#express`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Repo: <https://github.com/BersisSe/feather>
 
-# Feather
+Project pitch (from the README):
 
-https://github.com/BersisSe/feather?utm_source=tldrnewsletter
+> Feather is a lightweight, DX-first web framework for Rust — inspired by the simplicity of Express.js, but designed for Rust's performance and safety.
 
+Why Feather (project's own framing):
 
-Feather is a lightweight, DX-first web framework for Rust — inspired by the simplicity of Express.js, but designed for Rust’s performance and safety.
-
-## Why Feather?
-- Middleware-First Architecture
-Everything is a middleware — route handlers, auth, logging — all composable and clean
-
-- Easy State Management Using Context
-Recently implemented the Context API that makes it very easy to manage state without the use of Extractors/Macros
-
-- Developer Experience First
-Feather’s API is minimal, ergonomic, and readable
-
-- Modular and Extensible
-Feather is designed to be Modular. Select only the features you need and use. What you don't use you don't pay for.
-
-- Great Tooling Out Of the Box
-With the use of the Feather-CLI creating API's and Web Servers becomes a Breeze.
+- **Middleware-first architecture** — every route handler, auth, logging is composable middleware.
+- **Easy state management via `Context`** — recent Context API, no extractors / no macros.
+- **DX-first** — minimal, ergonomic, readable API.
+- **Modular and extensible** — opt-in features only.
+- **Feather-CLI** — scaffolding tool for creating APIs / web servers.

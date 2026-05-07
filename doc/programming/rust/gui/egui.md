@@ -1,81 +1,49 @@
 ---
 title: egui
-main_link: https://github.com/emilk/egui
-keywords: [egui, rust, demo]
-status: draft
+main_link: https://www.egui.rs/
+keywords: [egui, rust, gui, immediate-mode, eframe, wasm]
+status: reviewed
 ---
-
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
 
 # egui
 
-**Main link:** <https://github.com/emilk/egui>
+**Main link:** <https://www.egui.rs/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`egui` is a portable immediate-mode GUI library for Rust by Emil Ernerfelt (`emilk`). The companion crate `eframe` wraps it into a runnable application that targets native (winit + wgpu/glow) and the web (WASM + WebGL/WebGPU) from the same source. Because all egui needs is the ability to draw textured triangles, it slots cleanly into game engines and custom renderers as a debug overlay or tool UI.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+egui's killer use case is *internal tools, dev panels, debug overlays, and small utilities* — anywhere "I need a working UI by tomorrow" beats "I need pixel-perfect native widgets". The immediate-mode model (the entire UI is rebuilt every frame from your state) is the same idea as Dear ImGui in C++ (Ocornut) but with idiomatic Rust ergonomics; if you grew up with retained-mode toolkits like Qt/GTK/WinUI, the lack of a persistent widget tree feels weird at first and freeing soon after. The trade-off is animation, accessibility (screen readers), and complex text layout (RTL, IME) are weaker than retained-mode frameworks like [[slint]] or native toolkits — egui has improved on all three but isn't where you go to ship a polished consumer app. For "GUI as visual REPL", web demo at <https://www.egui.rs/#demo> is the fastest way to see what it can do.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- Dear ImGui — the C++ original of immediate-mode GUI; egui is the spiritual Rust port.
+- [[slint]] — declarative, retained-mode alternative; better for polished consumer UI.
+- [[../gui/dioxus|dioxus]] — React-shaped retained-mode if you want web tech alongside native.
+- [[programming/rust/gui/tauri|tauri]] — web shell alternative when web tooling is a feature, not a cost.
+- `egui_extras`, `egui_plot`, `egui_dock` — the active companion crate ecosystem.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[slint]]
+- [[dioxus]]
+- [[programming/rust/gui/tauri|tauri]]
+- [[ui]]
+- [[../README]]
 
-- [[demo_overview]] — DEMO _(score 20.2)_
-- [[slint]] — Slint _(score 17.1)_
-- [[lipo]] — Lipo _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-- [[hound]] — Hound _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#egui` `#gui` `#rust` `#programming` `#crates` `#demo` `#extras` `#library`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#egui` `#rust` `#gui` `#immediate-mode` `#eframe` `#wasm`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Site / live demo: <https://www.egui.rs/#demo>
+- Repo: <https://github.com/emilk/egui>
+- Crate: <https://crates.io/crates/egui>
+- Docs: <https://docs.rs/egui>
+- Extras: <https://crates.io/crates/egui_extras>
 
-# egui
-
-https://crates.io/crates/egui
-
-
-egui is a simple, fast, and highly portable immediate mode GUI library for Rust. egui runs on the web, natively, and in your favorite game engine (or will soon).
-
-egui aims to be the easiest-to-use Rust GUI library, and the simplest way to make a web app in Rust.
-
-egui can be used anywhere you can draw textured triangles, which means you can easily integrate it into your game engine of choice.
-
-
-
-Demo
-
-https://www.egui.rs/#demo
-
-
-https://github.com/emilk/egui
-
-https://docs.rs/egui/0.18.1/egui/
-
-
-
-Extras:
-
-https://crates.io/crates/egui_extras
+egui is a simple, fast, and highly portable immediate-mode GUI library for Rust. It runs on the web, natively, and inside game engines. egui can be used anywhere you can draw textured triangles, which means you can easily integrate it into your game engine of choice.
