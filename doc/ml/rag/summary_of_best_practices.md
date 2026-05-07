@@ -1,80 +1,79 @@
 ---
-title: Summary Of Best Practices
-main_link: 
-keywords: [summary-of-best-practices, query, chunking, quality, vector]
-status: draft
+title: RAG production best practices — chunking, embeddings, hybrid search, reranking, eval
+main_link: https://www.anthropic.com/news/contextual-retrieval
+keywords: [rag, best-practices, chunking, embeddings, hybrid-search, reranking, evaluation, ragas]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# RAG production best practices — chunking, embeddings, hybrid search, reranking, eval
 
-# Summary Of Best Practices
+**Main link:** <https://www.anthropic.com/news/contextual-retrieval> (Anthropic, *Introducing Contextual Retrieval*, Sep 2024)
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+A field guide to the practices that have crystallised across 2023–2025 for shipping RAG to production: classifying which queries even need retrieval, picking a chunking strategy, choosing an embedding model, layering hybrid (BM25 + dense) search, adding a reranker, and closing the loop with evaluation and grounding/citations. None of these are exotic — the value is in **getting all of them roughly right at once**, since each compounds on the others. Anthropic's *Contextual Retrieval* post (Sep 2024) is the most-cited recent reference; RAGAS, ARES, and TruLens are the canonical evaluation toolkits.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The 80/20 of "RAG works in production" is a small, opinionated checklist:
+
+1. **Query classification** — not every question needs retrieval. A cheap classifier (or a small LLM call) saves both latency and grounding errors when the question is conversational or already self-contained.
+2. **Chunking** — start with `RecursiveCharacterTextSplitter` (~512–1024 tokens, ~10–20% overlap), then graduate to *semantic chunking* (split on embedding-similarity dips), *sentence-window* retrieval (small chunk for matching, larger window returned to LLM), or *small-to-big* / parent-document patterns. The "right" chunk size is workload-specific — measure.
+3. **Embedding model** — the modern open shortlist is **BGE-M3** (BAAI, multi-vector + multilingual), **E5-Mistral / E5-large-v2** (Microsoft), **Nomic Embed**, **mxbai-embed-large** (Mixedbread), and **Jina embeddings v3**. Closed: **OpenAI `text-embedding-3-large`**, **Cohere `embed-v3` / `embed-v4`**, **Voyage `voyage-3`**. Use the [MTEB leaderboard](https://huggingface.co/spaces/mteb/leaderboard) but trust your own eval set more.
+4. **Metadata** — title, section, hypothetical-questions, summaries; almost free to add and big lift on hybrid search.
+5. **Hybrid search** — BM25 + dense, fused with Reciprocal Rank Fusion (RRF) or learned weights. Almost always strictly better than pure vector search; the seminal recent demonstration is Anthropic's *Contextual Retrieval* (a one-line LLM "contextualise this chunk" prefix before embedding/BM25, claimed ~49% reduction in retrieval failures combined with reranking).
+6. **Reranking** — cross-encoder rerankers on the top-50 candidates: **Cohere Rerank v3**, **BGE Reranker v2**, **Jina Reranker v2**, **mxbai-rerank**; **ColBERT / ColBERTv2 / PLAID** for late-interaction. This is usually the single biggest quality lift after hybrid.
+7. **Generation** — return citations / spans; constrain the model to "say I don't know" when context is thin; consider Anthropic-style `<cite>` blocks or LlamaIndex `CitationQueryEngine`.
+8. **Evaluation** — **RAGAS** (faithfulness, answer relevance, context precision/recall), **ARES**, **TruLens**, **Phoenix**, **DeepEval**. A frozen "golden set" of 50–200 (query, expected-answer, expected-sources) triples beats any LLM-judged synthetic eval over time.
+
+The honest meta-lesson: most "we tried RAG and it didn't work" reports trace to skipping step 5 (BM25 fallback for keyword/code queries), step 6 (reranker), or step 8 (no eval set, so nothing's measurable). A query-preprocessing layer ([[rag_query_summarize]]) is the next thing to add when the basics are tuned and you're still missing relevant docs.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **Query preprocessing** — HyDE, multi-query, decomposition; covered in [[rag_query_summarize]].
+- **GraphRAG / KAG** — different retrieval *substrate* than vector + BM25; orthogonal to most of these practices.
+- **Agentic RAG** — adds a controller loop on top; see [[agentic_rag]].
+- **Vector DB choice** — Qdrant / Milvus / pgvector / Weaviate / LanceDB; see `[[../data/qdrant_vector_search|qdrant_vector_search]]` and `[[../../db/vector/README|db/vector]]`.
+- **LLM observability** — LangSmith / Langfuse / Arize Phoenix / OpenLLMetry; closes the loop on all of the above.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[README]] — RAG hub
+- [[rag_query_summarize]] — query rewriting / decomposition / HyDE
+- [[agentic_rag]] — when controller loops earn their cost
+- [[graph_rag]] — graph-shaped retrieval substrate
+- [[neo4j_rag]] — Neo4j-as-substrate variant
+- [[kag]] — schema-first KAG variant
+- [[../data/qdrant_vector_search|qdrant_vector_search]] — vector DB for ML / RAG
+- [[../../db/vector/README|db/vector]] — vector DB landscape (operator angle)
+- [[../llm/inspection/leaderboards|leaderboards]] — for picking generators
+- [[../frameworks/dspy|dspy]] — programmatic prompt-and-weight optimisation for RAG pipelines
 
-- [[deeplake]] — DeepLake _(score 11.2)_
-- [[caching]] — Caching _(score 11.2)_
-- [[kag]] — KAG _(score 9.3)_
-- [[datafusion]] — Datafusion SQL Query Planner _(score 8.9)_
-- [[prek]] — Prek _(score 5.9)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#summary-of-best-practices` `#rag` `#ml` `#query` `#chunking` `#retrieval` `#documents`
-
-## TODO
-
-- No `main_link` could be auto-detected. Add the canonical URL (project homepage / repo / paper) to the frontmatter.
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#rag` `#best-practices` `#chunking` `#embeddings` `#hybrid-search` `#reranking` `#evaluation` `#ragas`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Anthropic, *Introducing Contextual Retrieval* (Sep 2024): <https://www.anthropic.com/news/contextual-retrieval>
+- "Searching for Best Practices in RAG" (Wang et al. 2024) — survey-style paper that systematically benchmarks the choices below: <https://arxiv.org/abs/2407.01219>
+- MTEB leaderboard (embeddings): <https://huggingface.co/spaces/mteb/leaderboard>
+- RAGAS: <https://docs.ragas.io/>
+- ARES: <https://github.com/stanford-futuredata/ARES>
+- TruLens: <https://www.trulens.org/>
+- Cohere Rerank: <https://cohere.com/rerank>
+- BGE / FlagEmbedding: <https://github.com/FlagOpen/FlagEmbedding>
+- ColBERT / RAGatouille: <https://github.com/bclavie/RAGatouille>
 
+### Original notes (curated)
 
-First, some of the basic techniques of RAG workflow  👇
+The basic techniques of a RAG workflow:
 
-📌 Query Classification :  Classify queries to determine the necessity of retrieval. Queries requiring retrieval proceed through the RAG modules; others are handled directly by LLMs.
-
-📌 Chunking : methods: Token-level Chunking , Semantic-level Chunking , Sentence-level Chunking
-
-Chunk Size : Larger chunks provide more context, enhancing comprehension but increasing process time. Smaller chunks improve retrieval recall and reduce time but may lack sufficient context. Typical sizes are 2048, 1024, 512, 256 and 128.
-
-📌 Chunking Techniques : like small-to-big and sliding windows improve retrieval quality by organizing chunk block relationships.
-
-Embedding Model : is crucial for effective semantic matching of queries and chunk blocks.
-
-Metadata Addition : Enhancing chunk blocks with metadata like titles, keywords, and hypothetical questions can improve retrieval during hybrid search.
-
-Vector Databases : Vector DB is usually selected based on four key criteria: multiple index types, billion-scale vector support, hybrid search, and cloud-native capabilities
-
-Retrieval Methods : Given a user query, the retrieval module selects the top-k relevant documents from a pre-built corpus based on the similarity between the query and the documents . Following 3 query retrieval method is used
-• Query Rewriting: refines queries to better match relevant documents. Inspired by the
-• Query Decomposition: retrieving documents based on sub-questions derived from the original query.
-• Pseudo-documents Generation: generates a hypothetical document based on the user query and uses the embedding of hypothetical answers to retrieve similar documents e.g. HyDE
-
-Reranking Methods : enhance the relevance of the retrieved documents, ensuring that the most pertinent information appears at the top of the list.
-
-Two approaches are widely used
-• DLM Reranking: leverages deep language models (DLMs) for reranking
-• TILDE Reranking: calculates the likelihood of each query term independently by predicting token probabilities across the model’s vocabulary.
+- **Query classification** — decide whether retrieval is needed; route trivial / chat queries straight to the LLM.
+- **Chunking** — token-level / sentence-level / semantic; typical sizes 128 / 256 / 512 / 1024 / 2048; small-to-big and sliding windows improve quality by linking chunks.
+- **Embedding model** — the lever that decides retrieval ceiling; pick by MTEB + your own eval set.
+- **Metadata** — titles, keywords, hypothetical questions; cheap big lift for hybrid search.
+- **Vector DB selection criteria** — index types, billion-scale support, hybrid search, cloud-native ops.
+- **Retrieval methods** — query rewriting, query decomposition, HyDE-style hypothetical documents.
+- **Reranking** — DLM (cross-encoder) rerankers; TILDE-style token-likelihood rerankers.

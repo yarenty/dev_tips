@@ -1,91 +1,59 @@
 ---
-title: KAG
-main_link: https://github.com/OpenSPG/openspg
-keywords: [kag, logical, reasoning, vector, models]
-status: draft
+title: KAG — Knowledge Augmented Generation (OpenSPG / Ant Group)
+main_link: https://github.com/OpenSPG/KAG
+keywords: [kag, openspg, ant-group, knowledge-graph, logical-reasoning, multi-hop, rag]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# KAG — Knowledge Augmented Generation (OpenSPG / Ant Group)
 
-# KAG
-
-**Main link:** <https://github.com/OpenSPG/openspg>
+**Main link:** <https://github.com/OpenSPG/KAG>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+KAG (Knowledge Augmented Generation) is Ant Group's RAG framework, released in September 2024 on top of their **OpenSPG** (Semantic-enhanced Programmable Graph) engine. It positions itself as a deliberate alternative to both vanilla RAG (whose vector similarity it calls "ambiguous") and Microsoft-style GraphRAG (whose OpenIE-extracted graphs it calls "noisy"), built around four ideas: knowledge ⇄ chunk mutual indexing, conceptual-semantic *knowledge alignment*, schema-constrained KG construction, and **logical-form-guided** hybrid reasoning that turns a natural-language question into an executable retrieval program. The target use case is vertical-domain Q&A with multi-hop factual reasoning (medical, legal, financial).
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+KAG is best understood as a *strong-schema* counterpoint to GraphRAG's *open-schema* extraction: instead of letting the LLM invent the entity types, you supply an ontology and the system builds and queries the graph against it. That makes it appealing in regulated verticals (Ant's home turf is fintech), where knowledge engineers already curate schemas and noisy entities are unacceptable, and less appealing for "throw a folder of PDFs at it" exploratory use.
+
+Reach for KAG when you (a) have or can write a domain schema, (b) face genuinely multi-hop questions where logical decomposition matters, and (c) can tolerate a heavier stack — KAG depends on OpenSPG (a graph DB + reasoning engine) and is a noticeably bigger install than `microsoft/graphrag` or `LightRAG`. Skip it for English-first generic-knowledge Q&A where the lighter GraphRAG variants or plain hybrid search will likely match it at a fraction of the operational cost.
+
+Honest caveats: KAG is China-originated (Alibaba/Ant), so docs and community signal are split between English and Chinese (the Yuque guide is the most thorough source); benchmark claims of "significantly better than SOTA" are on author-curated evals (HotpotQA, 2WikiMultiHopQA, MuSiQue) and worth reproducing before betting a project on them.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **Microsoft GraphRAG** — open-schema, community-summary alternative; see [[graph_rag]].
+- **LightRAG** — lighter dual-level GraphRAG (HKU, 2024).
+- **HippoRAG** — Personalised-PageRank graph traversal over an extracted KG.
+- **Neo4j GraphRAG** — Neo4j-as-substrate alternative; see [[neo4j_rag]].
+- **Schema-first KG-augmented LLM** — broader research thread (KG-COT, ToG, RoG).
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[README]] — RAG hub
+- [[graph_rag]] — open-schema sibling/competitor
+- [[neo4j_rag]] — alternative graph substrate
+- [[summary_of_best_practices]] — chunking / reranking foundations still apply
+- [[../knowledge_graph/README|knowledge_graph]] — KG fundamentals
+- [[../knowledge_graph/papers|kg/papers]] — KG-augmented-LLM reading list
 
-- [[summary_of_best_practices]] — Summary Of Best Practices _(score 21.3)_
-- [[agentic_rag]] — Agentic RAG _(score 16.0)_
-- [[neo4j_rag]] — NEO4J _(score 16.0)_
-- [[candle]] — Candle _(score 9.6)_
-- [[linfa]] — Linfa _(score 9.6)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#kag` `#rag` `#ml` `#knowledge` `#logical` `#reasoning` `#openspg`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#kag` `#openspg` `#ant-group` `#knowledge-graph` `#logical-reasoning` `#multi-hop` `#rag`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- KAG repo: <https://github.com/OpenSPG/KAG>
+- OpenSPG engine repo: <https://github.com/OpenSPG/openspg>
+- KAG paper (Liang et al. 2024): <https://arxiv.org/abs/2409.13731>
+- OpenSPG / KAG guide (Yuque, Chinese-first): <https://openspg.yuque.com/ndx6g9/wc9oyq/wni2suux7g2tt6s2>
+- "KAG — Knowledge Augmented Generation: a practical guide" (AI Plain English): <https://ai.plainenglish.io/kag-knowledge-augmented-generation-a-pratical-guide-better-than-rag-eaaa1793369c>
 
-# KAG
+### Core feature highlights (from upstream README)
 
-
-
-https://ai.plainenglish.io/kag-knowledge-augmented-generation-a-pratical-guide-better-than-rag-eaaa1793369c
-
-
-KAG is a logical reasoning and Q&A framework based on the OpenSPG engine and large language models, which is used to build logical reasoning and Q&A solutions for vertical domain knowledge bases. KAG can effectively overcome the ambiguity of traditional RAG vector similarity calculation and the noise problem of GraphRAG introduced by OpenIE. KAG supports logical reasoning and multi-hop fact Q&A, etc., and is significantly better than the current SOTA method.
-
-The goal of KAG is to build a knowledge-enhanced LLM service framework in professional domains, supporting logical reasoning, factual Q&A, etc. KAG fully integrates the logical and factual characteristics of the KGs. Its core features include:
-
-Knowledge and Chunk Mutual Indexing structure to integrate more complete contextual text information
-Knowledge alignment using conceptual semantic reasoning to alleviate the noise problem caused by OpenIE
-Schema-constrained knowledge construction to support the representation and construction of domain expert knowledge
-Logical form-guided hybrid reasoning and retrieval to support logical reasoning and multi-hop reasoning Q&A
-
-
-
-## OpenPG
-
-https://github.com/OpenSPG/openspg
-
-
-### Guide
-
-https://openspg.yuque.com/ndx6g9/wc9oyq/wni2suux7g2tt6s2
-
-
-![](https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*X2TES7hf9ycAAAAAAAAAAAAADtmcAQ/original)
-
-
-
-
-## Better than RAG
-
-
-https://ai.plainenglish.io/kag-knowledge-augmented-generation-a-pratical-guide-better-than-rag-eaaa1793369c
+- Knowledge and Chunk **mutual indexing** to integrate richer contextual text.
+- **Knowledge alignment** via conceptual semantic reasoning — alleviates the noise OpenIE-extracted graphs introduce.
+- **Schema-constrained** KG construction so domain expert ontologies stay first-class.
+- **Logical-form-guided** hybrid reasoning + retrieval for multi-hop factual Q&A.
