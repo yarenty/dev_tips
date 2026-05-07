@@ -1,67 +1,48 @@
 ---
-title: WASM: for libsql
-main_link: https://github.com/libsql/libsql_generate
-keywords: [wasm-for-libsql, rust, libsql]
-status: draft
+title: WASM UDFs for libSQL
+main_link: https://bindgen.libsql.org/
+keywords: [wasm, libsql, turso, udf, sandbox, wasmtime, sqlite]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# WASM UDFs for libSQL
 
-> Auto-split from `doc/programming/rust/sql_engine/rust_libs.md` by `article_split.py`. Heading: **WASM: for libsql**.
-
-# WASM: for libsql
-
-**Main link:** <https://github.com/libsql/libsql_generate>
+**Main link:** <https://bindgen.libsql.org/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+libSQL — Turso's open-source fork of SQLite — supports a UDF model that's distinct from upstream SQLite: **WebAssembly-sandboxed user-defined functions**. You write a Rust function, compile it with `libsql_bindgen` to a WASM module that targets `libsql_wasm_abi`, register the WASM bytecode in the database, and libSQL executes it in a `wasmtime` sandbox each time the function is called from SQL. The browser-based generator at <https://bindgen.libsql.org/> lets you paste Rust source and download a ready-to-load WASM blob.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+This is the modern alternative to native loadable extensions ([[sqlite_loadable]]) for the libSQL family — and the killer feature is **safety**: a WASM UDF cannot read your filesystem, network, or memory outside its sandbox, so you can run **untrusted** user-supplied UDFs (e.g. multi-tenant SaaS, Turso's edge-database product). It also eliminates the cross-compile pain — one `.wasm` file runs on every libSQL host (x86_64 Linux, arm64 macOS, edge workers, …) instead of one `.so` per platform. Trade-offs vs `sqlite-loadable-rs`: the WASM sandbox costs single-digit-percent throughput per call (wasmtime is fast, but not free), there's no easy path to virtual tables (the WASM ABI currently exposes scalar functions, not vtab cursors), and you're locked into the libSQL fork — the same `.wasm` will not load into upstream SQLite. Reach for it when (a) your workload is multi-tenant Turso/libSQL and you want to expose a UDF surface to users without giving them a path to RCE, or (b) you want one bytecode per UDF instead of N native binaries. Otherwise stay with [[sqlite_loadable]] for performance and reach.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[sqlite_loadable]] — the native-binary alternative for SQLite/libSQL extensions.
+- **Turso / libSQL** — the SQLite fork providing this feature; modern hosted SQLite-at-the-edge.
+- [[../web/wasmtime|wasmtime]] — the WASM runtime libSQL embeds.
+- **Postgres `plrust`** — closest analogue in the Postgres world: trusted-language UDFs in Rust.
+- [[wasm_for_libsql|libsql_bindgen]] / `libsql_wasm_abi` — the build-side and runtime-side crates.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[README]]
+- [[sqlite_loadable]] — native-binary alternative.
+- [[sqlite]] — engine background.
+- [[../web/wasmtime|wasmtime]] — the WASM runtime.
+- [[../../../db/relational/limbo|Limbo]] — Turso's pure-Rust SQLite rewrite from scratch.
 
-- [[rust_libs]] — MS Server _(score 26.0)_
-- [[cratedb]] — CrateDB _(score 17.1)_
-- [[programming/rust/sql_engine/sqlparser|sqlparser]] — SQLparser _(score 17.1)_
-- [[rawsql]] — rawsql _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#wasm-for-libsql` `#sql-engine` `#rust` `#programming` `#libsql` `#crates` `#wasm` `#bindgen`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#wasm` `#libsql` `#turso` `#udf` `#sandbox` `#wasmtime` `#sqlite`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# WASM: for libsql
-https://crates.io/crates/libsql_bindgen
-https://crates.io/crates/libsql_wasm_abi
-
-
-https://bindgen.libsql.org/
-
-web to compile rust code into webassembly compatible with UDFs for libSQL
-https://github.com/libsql/libsql_generate
-
-https://libsql.org/
+- libSQL home: <https://libsql.org/>
+- Bindgen web tool: <https://bindgen.libsql.org/>
+- `libsql_bindgen` crate: <https://crates.io/crates/libsql_bindgen>
+- `libsql_wasm_abi` crate: <https://crates.io/crates/libsql_wasm_abi>
+- `libsql_generate` (the original "compile Rust to libSQL-compatible WASM" repo): <https://github.com/libsql/libsql_generate>
+- Turso (managed libSQL): <https://turso.tech/>

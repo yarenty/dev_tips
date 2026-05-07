@@ -1,64 +1,47 @@
 ---
-title: MS Server
-main_link: https://github.com/libsql/libsql_generate
-keywords: [rust-libs, rust, libsql, server, excel, udf, sql]
-status: draft
+title: SQL Server (T-SQL) — UDF angle, Rust pointers
+main_link: https://learn.microsoft.com/en-us/sql/relational-databases/user-defined-functions/create-user-defined-functions-database-engine
+keywords: [sql-server, mssql, t-sql, udf, tiberius, clr]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# SQL Server (T-SQL) — UDF angle, Rust pointers
 
-# MS Server
-
-**Main link:** <https://github.com/libsql/libsql_generate>
+**Main link:** <https://learn.microsoft.com/en-us/sql/relational-databases/user-defined-functions/create-user-defined-functions-database-engine>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Microsoft SQL Server supports user-defined functions natively as **T-SQL UDFs** (`CREATE FUNCTION … AS BEGIN … END`) in both scalar and table-valued (TVF: inline or multi-statement) flavours. For non-T-SQL logic the path is **CLR integration** — write a .NET assembly (C# / VB.NET / F#), `CREATE ASSEMBLY` it into the database, then `CREATE FUNCTION … EXTERNAL NAME …`. There is **no native Rust UDF SDK for SQL Server**; if you want to call into Rust you'd ship a Rust `cdylib` and wrap it with a thin C# CLR assembly that P/Invokes into it. For the Rust *client* side (talking to SQL Server from a Rust app), see [[../data/tiberius|Tiberius]] — that's the canonical and only realistic option.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Filed in this section for completeness — the "Rust SQL-engine" content here is mostly via the client crate. T-SQL scalar UDFs in SQL Server have a long-standing performance reputation problem (row-by-row execution, opacity to the optimizer); SQL Server 2019+ introduced **Scalar UDF Inlining** to mitigate, and inline TVFs have always been parameterized-view-shaped and well-optimised. CLR UDFs are out of fashion (the surface for Rust integration is small and fiddly: SQL Server runs CLR in a sandboxed AppDomain, P/Invoking into a Rust `cdylib` is possible but requires `EXTERNAL_ACCESS`/`UNSAFE` permission set and signed assemblies). Modern alternatives if your goal is "push compute into the DB": for OLAP, Microsoft Fabric / Synapse spark pools (Scala/Python); for OLTP, the SQL Server 2022 Azure Arc / Linked Server angle; for Rust-y workloads, drop the SQL Server requirement and use Postgres + `pgrx` instead.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[../data/tiberius|Tiberius]] — pure-Rust async TDS client; the canonical Rust-side story.
+- **`pgrx`** — Postgres extensions in Rust; the realistic alternative if SQL-Server-specific lock-in isn't a hard constraint.
+- [[udf_lib|`udf` (MariaDB/MySQL)]] — by-comparison the most polished Rust UDF story across engines.
+- **CLR UDFs (.NET)** — the only Microsoft-blessed non-T-SQL UDF path on SQL Server.
+- **SQL Server Machine Learning Services** — `sp_execute_external_script` for Python / R UDF-shaped workloads; not Rust.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[README]]
+- [[../data/tiberius|Tiberius — Rust async TDS client]]
+- [[udf_lib]] — the Rust-UDF reference point.
+- [[../../../db/relational/README|relational DBs]]
+- [[../../../db/udf/external_udfs|external UDFs survey]]
 
-- [[excel_udf_in_rust]] — Excel UDF in Rust _(score 29.9)_
-- [[wasm_for_libsql]] — WASM: for libsql _(score 26.0)_
-- [[rawsql]] — rawsql _(score 21.5)_
-- [[cratedb]] — CrateDB _(score 17.1)_
-- [[databend]] — Databend _(score 15.7)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#rust-libs` `#sql-engine` `#rust` `#programming` `#libsql` `#crates` `#server` `#user`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#sql-server` `#mssql` `#t-sql` `#udf` `#clr` `#tiberius`
 
 ## References / raw notes
-<!-- auto-split by article_split.py -->
-> Auto-split: 3 additional top-level heading(s) extracted into sibling files:
-> - [CrateDB](cratedb.md)
-> - [WASM: for libsql](wasm_for_libsql.md)
-> - [Excel UDF in Rust](excel_udf_in_rust.md)
 
+- T-SQL `CREATE FUNCTION` (the original link): <https://learn.microsoft.com/en-us/sql/relational-databases/user-defined-functions/create-user-defined-functions-database-engine?view=sql-server-ver16>
+- CLR integration: <https://learn.microsoft.com/en-us/sql/relational-databases/clr-integration/clr-integration-overview>
+- Scalar UDF inlining (2019+): <https://learn.microsoft.com/en-us/sql/relational-databases/user-defined-functions/scalar-udf-inlining>
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-
-
-# MS Server
-https://learn.microsoft.com/en-us/sql/relational-databases/user-defined-functions/create-user-defined-functions-database-engine?view=sql-server-ver16
+> Historical note: this file was originally a multi-topic dump for "Rust libs in the SQL space" with sections for CrateDB, libsql/WASM, and Excel UDFs. Those sections were split out into [[cratedb]], [[wasm_for_libsql]] and [[excel_udf_in_rust]]; this file now focuses on the SQL-Server / T-SQL angle implicit in its title ("MS Server").

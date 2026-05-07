@@ -52,7 +52,6 @@ This subsection is the Rust **code-side** view of the DataFusion ecosystem — s
 - [[../../../../db/catalogs/README|db/catalogs]] — catalog landscape (Hive, REST, Polaris, Nessie).
 - [[../ml_letsql]] — LetSQL/xorq + candle SAM UDF deep dive.
 - [[../../sql_engine/datafusion|sql_engine/datafusion]] — DataFusion SQL query planner notes.
-- [[../../projects/datafusion/README|projects/datafusion]] — DataFusion-projects parking spot (mostly empty).
 
 ## Keywords
 

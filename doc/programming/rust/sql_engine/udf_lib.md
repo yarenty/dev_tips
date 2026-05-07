@@ -1,156 +1,120 @@
 ---
-title: udf
+title: udf — MariaDB/MySQL UDFs in Rust
 main_link: https://crates.io/crates/udf
-keywords: [udf-lib, rust, sql, udf, mysql]
-status: draft
+keywords: [udf, mariadb, mysql, rust, basicudf, aggregateudf, gat, cdylib]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# udf
+# udf — MariaDB/MySQL UDFs in Rust
 
 **Main link:** <https://crates.io/crates/udf>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+The `udf` crate (by `pluots`, repo: `pluots/sql-udf`) is the canonical Rust framework for writing **MariaDB / MySQL user-defined functions**. You implement the `BasicUdf` trait (and optionally `AggregateUdf` for aggregates) on a struct, decorate the impl block with `#[udf::register]`, build as `crate-type = ["cdylib"]`, drop the resulting `.so` into the server's `plugin_dir`, and register with `CREATE FUNCTION foo … SONAME 'libfoo.so';`. As of 2024, this is **the most polished Rust UDF framework across all SQL engines** — actively maintained, full aggregate support, GAT-based ergonomic trait surface, Docker test harness.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `udf` whenever you find yourself wanting to push CPU-heavy or domain-specific logic (custom regex flavours, statistical functions, vector operations, lookups) into MariaDB/MySQL itself — instead of round-tripping rows out to Rust application code. Compared to the C UDF API the equivalence is roughly 1:1 — `udf` doesn't *expand* what you can do, it just makes it safe (no manual `init`/`deinit` lifecycle, no manual buffer-size tracking, the GATs handle borrow-checker friendliness for the per-row `process` reference). **GATs requirement**: needs Rust ≥ 1.65 (now ancient, but worth flagging). **Lifetime trick**: for string/decimal returns longer than `MYSQL_RESULT_BUFFER_SIZE` (255 bytes) the result string must live in your struct (`process` returns a reference into `&'a self`, not a fresh `String`). **Per-row, not per-batch**: the calling convention is one row at a time — no Arrow, no SIMD pipeline (the engine isn't columnar). For columnar engines, see [[../data/datafusion/README|DataFusion]] (`ScalarUDF` API) or [[sqlite_loadable]] for the per-row SQLite equivalent. **Cross-DB**: the resulting `.so` is **not** loadable into Postgres or SQL Server — for Postgres use `pgrx`; for SQL Server see [[rust_libs|the SQL Server article]]. **Generalization angle**: this article doubles as a reference for "what does a generic Rust UDF library look like?" — see also `pgrx` (Postgres) and `sqlite-loadable-rs` ([[sqlite_loadable]]) for sibling designs.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **`pgrx`** — the Postgres equivalent: write extensions (UDFs, types, hooks, BGWs) in Rust.
+- [[sqlite_loadable]] — the SQLite equivalent: loadable extensions in Rust.
+- [[mariadb]] — the engine this crate targets (and its companion article).
+- [[../data/mysql|`mysql` / `mysql_async`]] — the Rust client side; complementary, not substitute.
+- [[../../../db/udf/external_udfs|external UDFs (cross-engine)]] — the broader survey.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[README]]
+- [[mariadb]] — the engine and its loading mechanics.
+- [[sqlite_loadable]] — the SQLite sibling design.
+- [[excel_udf_in_rust]] — same-author Excel sibling (`xladd`).
+- [[../../../db/udf/external_udfs|external UDFs (cross-engine survey)]]
+- [[../data/mysql|MySQL/MariaDB Rust client]]
 
-- [[databend]] — Databend _(score 33.5)_
-- [[mariadb]] — MariaDB _(score 33.5)_
-- [[spark]] — Spark UDF _(score 27.7)_
-- [[sqlite]] — sqlite _(score 27.7)_
-- [[hive]] — Hive UDF – User Defined Function with Example _(score 23.2)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#udf-lib` `#sql-engine` `#rust` `#programming` `#sql` `#function` `#struct` `#functions`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#udf` `#mariadb` `#mysql` `#rust` `#cdylib` `#aggregate-udf`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Crate: <https://crates.io/crates/udf>
+- Source: <https://github.com/pluots/sql-udf>
+- Docs (`AggregateUdf` trait): <https://docs.rs/udf/latest/udf/trait.AggregateUdf.html>
+- Working examples: <https://github.com/pluots/sql-udf/tree/main/udf-examples>
 
-# udf
+### UDF theory
 
-https://crates.io/crates/udf
+A basic SQL UDF consists of three exposed C functions: an **init** (check arguments, allocate state), a **process** (return a row's result), and a **deinit** (clean up). Aggregate UDFs add **clear** (per-group reset), **add** (per-row accumulate), and optionally **remove** (window functions).
 
+The `udf` crate trait surface mirrors that — `BasicUdf::{init, process}` plus `AggregateUdf::{clear, add, remove}` — and the proc-macro generates the C-ABI shim symbols MariaDB looks for at `dlsym` time.
 
-https://docs.rs/udf/latest/udf/trait.AggregateUdf.html
+### Quickstart
 
-
-
-## UDF: MariaDB/MySQL User Defined Functions in Rust
-
-This crate aims to make it extremely simple to implement UDFs for SQL, in a minimally error-prone fashion.
-
-## UDF Theory
-Basic SQL UDFs consist of three exposed functions:
-
-- An initialization function where arguments are checked and memory is allocated
-- A processing function where a result is returned
-- A deinitialization function where anything on the heap is cleaned up
-This wrapper greatly simplifies the process so that you only need to worry about checking arguments and performing the task.
-
-There are also aggregate UDFs, which simply need to register two to three additional functions.
-
-## Quickstart
-A quick overview of the workflow process is:
-
-Create a new rust project (cargo new --lib my-udf), add udf as a dependency (cd my-udf; cargo add udf) and change the crate type to a cdylib by adding the following to Cargo.toml:
+```sh
+cargo new --lib my-udf
+cd my-udf
+cargo add udf
+```
 
 ```toml
+# Cargo.toml
 [lib]
 crate-type = ["cdylib"]
 ```
-Make a struct or enum that will share data between initializing and processing steps (it may be empty). The name of this struct will be the name of your function in SQL, as converted to snake case (adjustable names are planned but not yet available).
 
-Implement the BasicUdf trait on this struct
+1. Define a struct (data shared between init/process/clear/add/remove).
+2. Implement `BasicUdf` on it.
+3. (Optional) Implement `AggregateUdf` for aggregates.
+4. Decorate each impl block with `#[udf::register]`.
+5. `cargo build --release` → `target/release/libmy_udf.so`.
+6. Copy into MariaDB/MySQL `plugin_dir` (typically `/usr/lib/mysql/plugin/`).
+7. `CREATE FUNCTION my_udf RETURNS … SONAME 'libmy_udf.so';`
+8. Use it in SQL.
 
-Implement the AggregateUdf trait if you want it to be an aggregate function
-
-Add #[udf::register] to each of these impl blocks
-
-Compile the project with cargo build --release (output will be target/release/libmy_udf.so)
-
-Load the struct into MariaDB/MySql using CREATE FUNCTION ...
-
-Use the function in SQL
-
-## Detailed overview
-This section goes into the details of implementing a UDF with this library, but it is non-exhaustive. For that, see the documentation, or the udf-examples directory for well-annotated examples.
+The function name in SQL is the struct name converted to `snake_case`.
 
 ### Struct creation
-The first step is to create a struct (or enum) that will be used to share data between all relevant SQL functions. These include:
-
-* init Called once per result set. Here, you can store const data to your struct (if applicable)
-* process Called once per row (or per group for aggregate functions). This function uses data in the struct and in the current row's arguments
-* clear Aggregate only, called once per group at the beginning. Reset the struct as needed.
-* add Aggregate only, called once per row within a group. Perform needed calculations and save the data in the struct.
-* remove Window functions only, called to remove a value from a group
-
-It is quite possible, especially for simple functions, that there is no data that needs sharing. In this case, just make an empty struct and no allocation will take place.
 
 ```rust
-/// Function `sum_int` just adds all arguments as integers and needs no shared data
+/// `sum_int` — adds all arguments as integers, no shared state.
 struct SumInt;
 
-/// Function `avg` on the other hand may want to save data to perform aggregation
+/// `avg` — needs a running total across rows in a group.
 struct Avg {
-running_total: f64
+    running_total: f64,
 }
 ```
 
-There is a bit of a caveat for functions returning buffers (string & decimal functions): if there is a possibility that string length exceeds MYSQL_RESULT_BUFFER_SIZE (255), then the string to be returned must be contained within the struct (the process function will then return a reference).
+For functions returning buffers (string/decimal) where the output may exceed `MYSQL_RESULT_BUFFER_SIZE` (255 bytes), the result must be held in the struct so `process` can return a reference:
 
 ```rust
-/// Generate random lipsum that may be longer than 255 bytes
+/// Generate random lipsum that may be longer than 255 bytes.
 struct Lipsum {
-res: String
+    res: String,
 }
 ```
 
-### Trait Implementation
-The next step is to implement the BasicUdf and optionally AggregateUdf traits. See the docs for more information.
+### Trait implementation
 
-If you use rust-analyzer with your IDE, it can help you out. Just type impl BasicUdf for MyStruct {} and place your cursor between the brackets
-
-* it will offer to autofill the function skeletons.
+```rust
 use udf::prelude::*;
 
-```rust
 struct SumInt;
 
 #[register]
 impl BasicUdf for SumInt {
-type Returns<'a> = Option<i64>;
+    type Returns<'a> = Option<i64>;
 
     fn init<'a>(
-      cfg: &UdfCfg<Init>,
-      args: &'a ArgList<'a, Init>
+        cfg: &UdfCfg<Init>,
+        args: &'a ArgList<'a, Init>,
     ) -> Result<Self, String> {
-      // ...
+        // ...
+        Ok(Self)
     }
 
     fn process<'a>(
@@ -159,22 +123,37 @@ type Returns<'a> = Option<i64>;
         args: &ArgList<Process>,
         error: Option<NonZeroU8>,
     ) -> Result<Self::Returns<'a>, ProcessError> {
-      // ...
+        // ...
+        Ok(Some(0))
     }
 }
 ```
 
+Tip: with rust-analyzer, type `impl BasicUdf for MyStruct {}` and let the IDE auto-fill the function skeletons.
+
 ### Compiling
-Assuming the above has been followed, all that is needed is to produce a C dynamic library for the project. This can be done by specifying crate-type = ["cdylib"] in your Cargo.toml. After this, compiling with cargo build --release will produce a loadable .so file (located in target/release).
 
-Important version note: this crate relies on a feature called generic associated types (GATs) which are only available on rust >= 1.65. This version only just became stable (2022-11-03), so be sure to run rustup update if you run into compiler issues.
+```toml
+[lib]
+crate-type = ["cdylib"]
+```
 
-### Symbol Inspection
-If you would like to verify that the correct C-callable functions are present, you can inspect the dynamic library with nm.
+```sh
+cargo build --release
+```
+
+> **Version note**: relies on Generic Associated Types (GATs), available on Rust ≥ 1.65 (stable 2022-11-03). Run `rustup update` if you hit compiler errors.
+
+### Symbol inspection
+
+Verify the C-callable functions are present in your `.so` with `nm`:
+
+```sh
+# Output of example .so
+nm -gC --defined-only target/release/libudf_examples.so
+```
 
 ```log
-# Output of example .so
-$ nm -gC --defined-only target/release/libudf_examples.so
 00000000000081b0 T avg_cost
 0000000000008200 T avg_cost_add
 00000000000081e0 T avg_cost_clear
@@ -184,25 +163,24 @@ $ nm -gC --defined-only target/release/libudf_examples.so
 0000000000009710 T is_const_deinit
 0000000000009680 T is_const_init
 0000000000009320 T sql_sequence
-...
+…
 ```
 
-### Usage
-Once compiled, the produced object file needs to be copied to the location of the plugin_dir SQL variable - usually, this is /usr/lib/mysql/plugin/.
+### Loading and using
 
-Once that has been done, CREATE FUNCTION can be used in MariaDB/MySql to load it.
+Copy the `.so` to `plugin_dir` (usually `/usr/lib/mysql/plugin/`), then:
 
-### Docker Use
-Testing in Docker is highly recommended, so as to avoid disturbing a host SQL installation. See the udf-examples readme for instructions on how to do this.
+```sql
+CREATE FUNCTION sum_int RETURNS integer SONAME 'libmy_udf.so';
+SELECT sum_int(1, 2, 3);
+```
 
-### Examples
-The udf-examples crate contains examples of various UDFs, as well as instructions on how to compile them. See the readme there.
+Testing in Docker is recommended so you don't disturb a host SQL installation — see the `udf-examples` README for the canonical Dockerfile.
 
+### State of the art (2024)
 
-## Comment
+`udf` for MariaDB/MySQL is the most mature Rust UDF framework across all engines. Comparisons:
 
-2022/12: At this moment UDF support for MariaDB looks like most advanced one. And **it is rust support !**
-There are another growing trend in sqlite area  which.
-
-
-## TODO
+- **`pgrx`** (Postgres) — comparable maturity for a different engine; richer surface (UDFs, types, BGWs, hooks).
+- **`sqlite-loadable-rs`** (SQLite) — comparable design, different engine semantics ([[sqlite_loadable]]).
+- **No equivalent for Snowflake / BigQuery / Spark / Hive** — the JVM/cloud engines don't have a Rust UDF SDK; you bridge via JNI ([[hive]], [[spark]]) or use ADBC for client-side Arrow ([[../data/adbc|ADBC]]).

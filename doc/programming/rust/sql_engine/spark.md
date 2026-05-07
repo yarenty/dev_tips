@@ -1,436 +1,132 @@
 ---
-title: Spark UDF
-main_link: https://sparkbyexamples.com/spark/spark-sql-udf/#:~:text=In%20this%20article%2C%20you%20have,and%20SQL%20(after%20registering
-keywords: [rust, udf, sql, design, databases]
-status: draft
+title: Spark UDF (and the Rust-on-Spark angle)
+main_link: https://spark.apache.org/docs/latest/sql-ref-functions-udf-scalar.html
+keywords: [spark, udf, udaf, jvm, jni, blaze, gluten, datafusion, arrow]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Spark UDF (and the Rust-on-Spark angle)
 
-# Spark UDF
-
-**Main link:** <https://sparkbyexamples.com/spark/spark-sql-udf/#:~:text=In%20this%20article%2C%20you%20have,and%20SQL%20(after%20registering>
+**Main link:** <https://spark.apache.org/docs/latest/sql-ref-functions-udf-scalar.html>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Apache Spark's UDF mechanism lets you extend Spark SQL / DataFrame with custom row-level logic in Scala / Java / Python / R: register a function with `spark.udf().register(...)`, call it in SQL or `df.select(...)`. There are three flavours: **scalar UDF** (one row in, one value out), **UDAF** (`Aggregator[IN, BUF, OUT]` — many rows in, one value out per group), and **UDTF** ("Hive-style" tabular: one row in, many out — only via Hive interop). Spark also supports **integrating Hive UDFs/UDAFs/UDTFs** directly: register a Hive class and call it the same way. From the Rust angle, this section is mostly about (a) the JVM-bridge cost if you really want Rust UDFs in Spark, and (b) the modern alternative — replacing Spark's Java execution layer with Rust ([[../data/datafusion/blaze|Blaze]]) or C++ ([[../data/datafusion/gluten|Gluten]] + Velox) under the same Catalyst plans.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Native Spark UDFs in Rust are not a thing — Spark runs on the JVM, and the closest you get is the same JNI bridge described in [[hive]] and [[../interop/to_java]]: write a `cdylib`, expose it as a Java `native` method via `jni-rs`, register it as a Hive-style UDF, pay the per-row JVM↔native cost. That cost is real and almost always defeats the point. The modern, much better story is **don't write Rust Spark UDFs — replace the executor**: Blaze (Kwai), Gluten (Intel + community), Comet (Apple/Apache), and Photon (Databricks, closed) all do the same thing — keep Spark's Catalyst optimiser and SQL frontend, but offload physical execution to a native engine (DataFusion / Velox / ClickHouse) via Substrait or a similar IR, executing on Arrow-shaped columnar batches. That gets you Rust performance for *all* operators (joins, aggregates, expressions), not just one UDF. **Performance gotcha for any Spark UDF (JVM or otherwise)**: row-at-a-time UDFs defeat Tungsten / vectorisation; if you must, prefer Spark's **Pandas UDFs** (Python, Arrow-batched) or Catalyst expressions over hand-rolled UDFs. **Determinism**: UDFs are deterministic by default — call `.asNondeterministic()` if not (Catalyst will pessimistically refuse to push them through joins / aggregations otherwise).
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[../data/datafusion/blaze|Blaze]] — Kwai's Spark accelerator, swaps JVM execution for DataFusion (Rust).
+- [[../data/datafusion/gluten|Gluten]] — Apache incubator project, swaps JVM execution for Velox (C++) or ClickHouse via Substrait.
+- **Apache Comet** — Apple's Spark accelerator (incubating); same niche as Blaze, also DataFusion-based.
+- [[hive]] — same JVM-bridge cost; Spark integrates Hive UDFs natively.
+- [[../interop/to_java]] — `jni-rs` if you really need to call Rust from JVM directly.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[README]]
+- [[hive]] — same JVM-bridge story; Spark can also load Hive UDFs.
+- [[../interop/to_java]] — `jni-rs` mechanics.
+- [[../data/datafusion/blaze|Blaze]] / [[../data/datafusion/gluten|Gluten]] — replace JVM execution with native.
+- [[../data/datafusion/README|DataFusion landing]]
+- [[../../../db/udf/external_udfs|external UDFs survey]]
 
-- [[databend]] — Databend _(score 27.7)_
-- [[mariadb]] — MariaDB _(score 27.7)_
-- [[snowflake]] — Snowflake _(score 27.7)_
-- [[hive]] — Hive UDF – User Defined Function with Example _(score 23.2)_
-- [[datafusion]] — Datafusion SQL Query Planner _(score 21.5)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#spark` `#sql-engine` `#rust` `#programming` `#udf` `#sql` `#user` `#defined`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#spark` `#udf` `#udaf` `#jvm` `#blaze` `#gluten` `#datafusion` `#arrow`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Scalar UDF reference: <https://spark.apache.org/docs/latest/sql-ref-functions-udf-scalar.html>
+- Aggregate UDF reference: <https://spark.apache.org/docs/latest/sql-ref-functions-udf-aggregate.html>
+- Hive UDF integration: <https://spark.apache.org/docs/latest/sql-ref-functions-udf-hive.html>
+- Tutorial originally linked here: <https://sparkbyexamples.com/spark/spark-sql-udf/>
 
-# Spark UDF
-
-
-
-Spark SQL UDF (a.k.a User Defined Function) is the most useful feature of Spark SQL & DataFrame which extends the Spark build in capabilities. In this article, I will explain what is UDF? why do we need it and how to create and using it on DataFrame and SQL using Scala example.
-
-Note: UDF’s are the most expensive operations hence use them only you have no choice and when essential.
-
-What is Spark UDF?
-UDF a.k.a User Defined Function, If you are coming from SQL background, UDF’s are nothing new to you as most of the traditional RDBMS databases support User Defined Functions, and Spark UDF’s are similar to these.
-
-In Spark, you create UDF by creating a function in a language you prefer to use for Spark. For example, if you are using Spark with scala, you create a UDF in scala language and wrap it with udf() function or register it as udf to use it on DataFrame and SQL respectively.
-
-Why do we need a Spark UDF?
-UDF’s are used to extend the functions of the framework and re-use this function on several DataFrame. For example if you wanted to convert the every first letter of a word in a sentence to capital case, spark build-in features does’t have this function hence you can create it as UDF and reuse this as needed on many Data Frames. UDF’s are once created they can be re-use on several DataFrame’s and SQL expressions.
-
-Before you create any UDF, do your research to check if the similar function you wanted is already available in Spark SQL Functions. Spark SQL provides several predefined common functions and many more new functions are added with every release. hence, It is best to check before you reinventing the wheel.
-
-When you creating UDF’s you need to design them very carefully otherwise you will come across performance issues.
-
-https://sparkbyexamples.com/spark/spark-sql-udf/#:~:text=In%20this%20article%2C%20you%20have,and%20SQL%20(after%20registering)%20.
-
-
-
-
-
-
-
-
-
-https://spark.apache.org/docs/latest/sql-ref-functions-udf-scalar.html
-
-
-## Scalar User Defined Functions (UDFs)
-Description
-User-Defined Functions (UDFs) are user-programmable routines that act on one row. This documentation lists the classes that are required for creating and registering UDFs. It also contains examples that demonstrate how to define and register UDFs and invoke them in Spark SQL.
-
-UserDefinedFunction
-To define the properties of a user-defined function, the user can use some of the methods defined in this class.
-
-asNonNullable(): UserDefinedFunction
-
-Updates UserDefinedFunction to non-nullable.
-
-asNondeterministic(): UserDefinedFunction
-
-Updates UserDefinedFunction to nondeterministic.
-
-withName(name: String): UserDefinedFunction
-
-Updates UserDefinedFunction with a given name.
-
+### Scalar UDF (Java)
 
 ```java
-
 import org.apache.spark.sql.*;
 import org.apache.spark.sql.api.java.UDF1;
 import org.apache.spark.sql.expressions.UserDefinedFunction;
 import static org.apache.spark.sql.functions.udf;
 import org.apache.spark.sql.types.DataTypes;
 
-SparkSession spark = SparkSession
-  .builder()
-  .appName("Java Spark SQL UDF scalar example")
-  .getOrCreate();
+SparkSession spark = SparkSession.builder()
+  .appName("Java Spark SQL UDF scalar example").getOrCreate();
 
-// Define and register a zero-argument non-deterministic UDF
-// UDF is deterministic by default, i.e. produces the same result for the same input.
-UserDefinedFunction random = udf(
-  () -> Math.random(), DataTypes.DoubleType
-);
+// Zero-argument non-deterministic UDF
+UserDefinedFunction random = udf(() -> Math.random(), DataTypes.DoubleType);
 random.asNondeterministic();
 spark.udf().register("random", random);
 spark.sql("SELECT random()").show();
-// +-------+
-// |UDF()  |
-// +-------+
-// |xxxxxxx|
-// +-------+
 
-// Define and register a one-argument UDF
+// One-argument
 spark.udf().register("plusOne",
-  (UDF1<Integer, Integer>) x -> x + 1, DataTypes.IntegerType);
+    (UDF1<Integer, Integer>) x -> x + 1, DataTypes.IntegerType);
 spark.sql("SELECT plusOne(5)").show();
-// +----------+
-// |plusOne(5)|
-// +----------+
-// |         6|
-// +----------+
 
-// Define and register a two-argument UDF
-UserDefinedFunction strLen = udf(
-  (String s, Integer x) -> s.length() + x, DataTypes.IntegerType
-);
-spark.udf().register("strLen", strLen);
-spark.sql("SELECT strLen('test', 1)").show();
-// +------------+
-// |UDF(test, 1)|
-// +------------+
-// |           5|
-// +------------+
-
-// UDF in a WHERE clause
+// UDF in WHERE
 spark.udf().register("oneArgFilter",
-  (UDF1<Long, Boolean>) x -> x > 5, DataTypes.BooleanType);
+    (UDF1<Long, Boolean>) x -> x > 5, DataTypes.BooleanType);
 spark.range(1, 10).createOrReplaceTempView("test");
 spark.sql("SELECT * FROM test WHERE oneArgFilter(id)").show();
-// +---+
-// | id|
-// +---+
-// |  6|
-// |  7|
-// |  8|
-// |  9|
-// +---+
-
 ```
 
-
-
-## User Defined Aggregate Functions (UDAFs)
-
-
-https://spark.apache.org/docs/latest/sql-ref-functions-udf-aggregate.html
-
-
-
-Description
-User-Defined Aggregate Functions (UDAFs) are user-programmable routines that act on multiple rows at once and return a single aggregated value as a result. This documentation lists the classes that are required for creating and registering UDAFs. It also contains examples that demonstrate how to define and register UDAFs in Scala and invoke them in Spark SQL.
-
-Aggregator[-IN, BUF, OUT]
-A base class for user-defined aggregations, which can be used in Dataset operations to take all of the elements of a group and reduce them to a single value.
-
-IN - The input type for the aggregation.
-
-BUF - The type of the intermediate value of the reduction.
-
-OUT - The type of the final output result.
-
-bufferEncoder: Encoder[BUF]
-
-Specifies the Encoder for the intermediate value type.
-
-finish(reduction: BUF): OUT
-
-Transform the output of the reduction.
-
-merge(b1: BUF, b2: BUF): BUF
-
-Merge two intermediate values.
-
-outputEncoder: Encoder[OUT]
-
-Specifies the Encoder for the final output value type.
-
-reduce(b: BUF, a: IN): BUF
-
-Aggregate input value a into current intermediate value. For performance, the function may modify b and return it instead of constructing new object for b.
-
-zero: BUF
-
-The initial value of the intermediate result for this aggregation.
-
-Examples
-Type-Safe User-Defined Aggregate Functions
-User-defined aggregations for strongly typed Datasets revolve around the Aggregator abstract class. For example, a type-safe user-defined average can look like:
-
+### Type-safe UDAF via `Aggregator[IN, BUF, OUT]` (Java)
 
 ```java
-import java.io.Serializable;
-
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Encoder;
-import org.apache.spark.sql.Encoders;
-import org.apache.spark.sql.SparkSession;
-import org.apache.spark.sql.TypedColumn;
-import org.apache.spark.sql.expressions.Aggregator;
-
-public static class Employee implements Serializable {
-  private String name;
-  private long salary;
-
-  // Constructors, getters, setters...
-
-}
-
-public static class Average implements Serializable  {
-  private long sum;
-  private long count;
-
-  // Constructors, getters, setters...
-
-}
-
 public static class MyAverage extends Aggregator<Employee, Average, Double> {
-  // A zero value for this aggregation. Should satisfy the property that any b + zero = b
-  public Average zero() {
-    return new Average(0L, 0L);
-  }
-  // Combine two values to produce a new value. For performance, the function may modify `buffer`
-  // and return it instead of constructing a new object
-  public Average reduce(Average buffer, Employee employee) {
-    long newSum = buffer.getSum() + employee.getSalary();
-    long newCount = buffer.getCount() + 1;
-    buffer.setSum(newSum);
-    buffer.setCount(newCount);
-    return buffer;
-  }
-  // Merge two intermediate values
-  public Average merge(Average b1, Average b2) {
-    long mergedSum = b1.getSum() + b2.getSum();
-    long mergedCount = b1.getCount() + b2.getCount();
-    b1.setSum(mergedSum);
-    b1.setCount(mergedCount);
-    return b1;
-  }
-  // Transform the output of the reduction
-  public Double finish(Average reduction) {
-    return ((double) reduction.getSum()) / reduction.getCount();
-  }
-  // Specifies the Encoder for the intermediate value type
-  public Encoder<Average> bufferEncoder() {
-    return Encoders.bean(Average.class);
-  }
-  // Specifies the Encoder for the final output value type
-  public Encoder<Double> outputEncoder() {
-    return Encoders.DOUBLE();
-  }
+    public Average zero()                      { return new Average(0L, 0L); }
+    public Average reduce(Average b, Employee e) {
+        b.setSum(b.getSum() + e.getSalary()); b.setCount(b.getCount() + 1); return b;
+    }
+    public Average merge(Average b1, Average b2) {
+        b1.setSum(b1.getSum() + b2.getSum()); b1.setCount(b1.getCount() + b2.getCount()); return b1;
+    }
+    public Double finish(Average r)            { return ((double) r.getSum()) / r.getCount(); }
+    public Encoder<Average> bufferEncoder()    { return Encoders.bean(Average.class); }
+    public Encoder<Double>  outputEncoder()    { return Encoders.DOUBLE(); }
 }
-
-Encoder<Employee> employeeEncoder = Encoders.bean(Employee.class);
-String path = "examples/src/main/resources/employees.json";
-Dataset<Employee> ds = spark.read().json(path).as(employeeEncoder);
-ds.show();
-// +-------+------+
-// |   name|salary|
-// +-------+------+
-// |Michael|  3000|
-// |   Andy|  4500|
-// | Justin|  3500|
-// |  Berta|  4000|
-// +-------+------+
-
-MyAverage myAverage = new MyAverage();
-// Convert the function to a `TypedColumn` and give it a name
-TypedColumn<Employee, Double> averageSalary = myAverage.toColumn().name("average_salary");
-Dataset<Double> result = ds.select(averageSalary);
-result.show();
-// +--------------+
-// |average_salary|
-// +--------------+
-// |        3750.0|
-// +--------------+
-
-
 ```
 
-
-
-Untyped User-Defined Aggregate Functions
-Typed aggregations, as described above, may also be registered as untyped aggregating UDFs for use with DataFrames. For example, a user-defined average for untyped DataFrames can look like:
+Then register and call in SQL via the JAR-and-class-name route:
 
 ```sql
--- Compile and place UDAF MyAverage in a JAR file called `MyAverage.jar` in /tmp.
 CREATE FUNCTION myAverage AS 'MyAverage' USING JAR '/tmp/MyAverage.jar';
-
-SHOW USER FUNCTIONS;
-+------------------+
-|          function|
-+------------------+
-| default.myAverage|
-+------------------+
-
-CREATE TEMPORARY VIEW employees
-USING org.apache.spark.sql.json
-OPTIONS (
-    path "examples/src/main/resources/employees.json"
-);
-
-SELECT * FROM employees;
-+-------+------+
-|   name|salary|
-+-------+------+
-|Michael|  3000|
-|   Andy|  4500|
-| Justin|  3500|
-|  Berta|  4000|
-+-------+------+
-
-SELECT myAverage(salary) as average_salary FROM employees;
-+--------------+
-|average_salary|
-+--------------+
-|        3750.0|
-+--------------+
+SELECT myAverage(salary) AS average_salary FROM employees;
 ```
 
+### Hive UDF integration
 
-
-
-
-## Integration with Hive UDFs/UDAFs/UDTFs
-
-https://spark.apache.org/docs/latest/sql-ref-functions-udf-hive.html
-
-
-### Description
-Spark SQL supports integration of Hive UDFs, UDAFs and UDTFs. Similar to Spark UDFs and UDAFs, Hive UDFs work on a single row as input and generate a single row as output, while Hive UDAFs operate on multiple rows and return a single aggregated row as a result. In addition, Hive also supports UDTFs (User Defined Tabular Functions) that act on one row as input and return multiple rows as output. To use Hive UDFs/UDAFs/UTFs, the user should register them in Spark, and then use them in Spark SQL queries.
-
-### Examples
-Hive has two UDF interfaces: UDF and GenericUDF. An example below uses GenericUDFAbs derived from GenericUDF.
 ```sql
--- Register `GenericUDFAbs` and use it in Spark SQL.
--- Note that, if you use your own programmed one, you need to add a JAR containing it
--- into a classpath,
--- e.g., ADD JAR yourHiveUDF.jar;
-CREATE TEMPORARY FUNCTION testUDF AS 'org.apache.hadoop.hive.ql.udf.generic.GenericUDFAbs';
-
-SELECT * FROM t;
-+-----+
-|value|
-+-----+
-| -1.0|
-|  2.0|
-| -3.0|
-+-----+
+-- Use a stock Hive UDF from Spark SQL
+CREATE TEMPORARY FUNCTION testUDF
+  AS 'org.apache.hadoop.hive.ql.udf.generic.GenericUDFAbs';
 
 SELECT testUDF(value) FROM t;
-+--------------+
-|testUDF(value)|
-+--------------+
-|           1.0|
-|           2.0|
-|           3.0|
-+--------------+
-```
-An example below uses GenericUDTFExplode derived from GenericUDTF.
-```sql
--- Register `GenericUDTFExplode` and use it in Spark SQL
-CREATE TEMPORARY FUNCTION hiveUDTF
-AS 'org.apache.hadoop.hive.ql.udf.generic.GenericUDTFExplode';
 
-SELECT * FROM t;
-+------+
-| value|
-+------+
-|[1, 2]|
-|[3, 4]|
-+------+
+-- A UDTF
+CREATE TEMPORARY FUNCTION hiveUDTF
+  AS 'org.apache.hadoop.hive.ql.udf.generic.GenericUDTFExplode';
 
 SELECT hiveUDTF(value) FROM t;
-+---+
-|col|
-+---+
-|  1|
-|  2|
-|  3|
-|  4|
-+---+
-Hive has two UDAF interfaces: UDAF and GenericUDAFResolver. An example below uses GenericUDAFSum derived from GenericUDAFResolver.
 
--- Register `GenericUDAFSum` and use it in Spark SQL
+-- A UDAF
 CREATE TEMPORARY FUNCTION hiveUDAF
-AS 'org.apache.hadoop.hive.ql.udf.generic.GenericUDAFSum';
-
-SELECT * FROM t;
-+---+-----+
-|key|value|
-+---+-----+
-|  a|    1|
-|  a|    2|
-|  b|    3|
-+---+-----+
+  AS 'org.apache.hadoop.hive.ql.udf.generic.GenericUDAFSum';
 
 SELECT key, hiveUDAF(value) FROM t GROUP BY key;
-+---+---------------+
-|key|hiveUDAF(value)|
-+---+---------------+
-|  b|              3|
-|  a|              3|
-+---+---------------+
 ```
+
+### Why "Rust UDF in Spark" is usually wrong
+
+UDFs (in any language) are the slowest path through Spark — they break Catalyst's ability to push down predicates, defeat code-gen, and force per-row materialisation. If you are tempted to write a Rust UDF for performance, you are usually solving the wrong problem; the right answers are:
+
+1. Rewrite as a Catalyst expression / SQL — let the optimiser do its job.
+2. Use a vectorised Pandas/Arrow UDF (Python, but Arrow-batched).
+3. Move the workload off Spark to a native engine (DataFusion, Polars).
+4. Keep Spark's plan but swap execution: Blaze / Gluten / Comet.

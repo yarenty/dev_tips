@@ -1,99 +1,72 @@
 ---
-title: sql-parse
+title: sql-parse — small MariaDB-focused SQL parser
 main_link: https://crates.io/crates/sql-parse
-keywords: [sql-parse, rust, ast, sql, mysql]
-status: draft
+keywords: [sql-parse, mariadb, mysql, parser, ast, no-std, recursive-descent]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# sql-parse
+# sql-parse — small MariaDB-focused SQL parser
 
 **Main link:** <https://crates.io/crates/sql-parse>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`sql-parse` is a small Rust SQL parser by Jonas Rosendahl (used internally at his `sqlx-tips` work), focused on **MariaDB / MySQL** dialects (PostgreSQL has partial support). It is a hand-written recursive-descent parser with no dependencies, no_std + alloc compatible, `#![forbid(unsafe_code)]`, that produces a typed AST with byte-span annotations on every node — designed so errors and lint-style diagnostics can be presented with caret-style underlining at exact source positions.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+This is **not** the parser you reach for if you want broad dialect coverage or DataFusion compatibility — that's [[../data/sqlparser|sqlparser-rs]] (Apache fork at `apache/datafusion-sqlparser-rs`), which has dozens of dialects, hundreds of contributors, and is the de-facto Rust SQL parser. Reach for `sql-parse` instead when (a) you specifically need MariaDB/MySQL semantics with span-precise error reporting (linters, IDE-style diagnostics, formatters), (b) you want zero dependencies and no_std, or (c) you are doing static-analysis tooling where the recursive-descent error recovery (continues parsing past syntax errors) is more useful than sqlparser's strict parsing. Status check: the crate has had infrequent updates over the years — verify activity and bus factor on crates.io before depending on it for anything serious. The original 2021 notes here flagged this as "untouched for over a year" — the project has had subsequent activity, but the comparison still holds: sqlparser-rs is vastly more active.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[../data/sqlparser|sqlparser-rs]] — the dominant Rust SQL parser (Apache fork, used by DataFusion).
+- [[datafusion]] — DataFusion's planner sits on sqlparser-rs, not on this crate.
+- **`logos`** — fast lexer-generator; useful for the tokenisation half if you're writing your own.
+- **`pest` / `nom` / `winnow` / `chumsky`** — generic parser-combinator / PEG crates (see [[../io/parsers]]).
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[README]]
+- [[../data/sqlparser|sqlparser-rs]] — disambiguation: this is the *other* Rust SQL parser.
+- [[datafusion]] — what most people end up wanting after they realise they need a planner too.
+- [[../io/parsers|Rust parser landscape]]
+- [[mariadb]] — the dialect this crate targets best.
 
-- [[mariadb]] — MariaDB _(score 27.4)_
-- [[spark]] — Spark UDF _(score 21.5)_
-- [[snowflake]] — Snowflake _(score 21.5)_
-- [[datafusion]] — Datafusion SQL Query Planner _(score 21.5)_
-- [[rawsql]] — rawsql _(score 21.5)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#sql-parse` `#sql-engine` `#rust` `#programming` `#ast` `#code` `#sql` `#parse`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#sql-parse` `#mariadb` `#mysql` `#parser` `#ast` `#no-std` `#recursive-descent`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Crate: <https://crates.io/crates/sql-parse>
 
-# sql-parse
+### Properties
 
-https://crates.io/crates/sql-parse
+- Good error recovery — the parser continues after errors so multi-issue reports are possible.
+- All AST nodes implement `Spanned` (byte spans into the source) — useful for caret diagnostics.
+- No deps, no_std + alloc.
+- `#![forbid(unsafe_code)]`.
+- Hand-written recursive descent with O(1) shift-reduce for expression parsing.
 
-**Parse SQL into an AST**
+### Example
 
-This crate provides an lexer and parser that can parse SQL into an Abstract Syntax Tree (AST). Currently primarily focused on MariaDB/Mysql.
-
-Example code:
 ```rust
 use sql_parse::{SQLDialect, SQLArguments, ParseOptions, parse_statement};
 
 let options = ParseOptions::new()
-.dialect(SQLDialect::MariaDB)
-.arguments(SQLArguments::QuestionMark)
-.warn_unquoted_identifiers(true);
+    .dialect(SQLDialect::MariaDB)
+    .arguments(SQLArguments::QuestionMark)
+    .warn_unquoted_identifiers(true);
 
 let mut issues = Vec::new();
 
 let sql = "SELECT `monkey`,
-FROM `t1` LEFT JOIN `t2` ON `t2`.`id` = `t1.two`
-WHERE `t1`.`id` = ?";
+           FROM `t1` LEFT JOIN `t2` ON `t2`.`id` = `t1.two`
+           WHERE `t1`.`id` = ?";
 
 let ast = parse_statement(sql, &mut issues, &options);
 
-println!("Issues: {:#?}", issues);
-println!("AST: {:#?}", ast);
+println!("Issues: {issues:#?}");
+println!("AST:    {ast:#?}");
 ```
-
-
-## Features
-
-* Good error recovery: The parser implements reasonable error recovery and will continue parsing long expressions if an error is found within.
-* Code span annotations: All AST notes implements Spanned that yields a byte span within the code. This means that errors and warnings generated from the parsing can be precented to the user in a nice ways. Also users of the AST can generate more issues that can also similarly be presented nicely.
-* No dependencies: We use no-std with alloc, and has no other dependencies
-* No unsafe code: We use #![forbid(unsafe_code)] to guarantee no unsafe code.
-* Fast parsing: The parser is a hand written recursive decent parser. To speed up parser expressions are parsed using a O(1) shift reduce mechanism.
-
-
-## Comments 
-- looks like not touched for over year (17 Jun 2021)
-
-## TODO
-
-- How to create own / Datafusion dialect - currently MariaDB, PostgreSQL

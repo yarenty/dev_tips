@@ -1,60 +1,48 @@
 ---
-title: Hive UDF – User Defined Function with Example
-main_link: https://data-flair.training/blogs/hive-udf/
-keywords: [hive, rust, udf, defined, example]
-status: draft
+title: Hive UDFs (and the JVM-bridge angle)
+main_link: https://cwiki.apache.org/confluence/display/Hive/HivePlugins
+keywords: [hive, udf, jvm, jni, hadoop, rust]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Hive UDFs (and the JVM-bridge angle)
 
-# Hive UDF – User Defined Function with Example
-
-**Main link:** <https://data-flair.training/blogs/hive-udf/>
+**Main link:** <https://cwiki.apache.org/confluence/display/Hive/HivePlugins>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Apache Hive's UDF mechanism is one of the oldest "user-defined functions" stories in the big-data world: write a Java class extending `UDF` (simple) or `GenericUDF` (typed; supports `INSERT … SELECT`-shaped operators), package it in a JAR, `ADD JAR` it into the Hive session, then `CREATE FUNCTION foo AS 'com.example.MyUDF'`. Filed in this section as **the canonical "JVM-bridge UDF" reference point** — there is no native Rust Hive UDF SDK, so reaching Hive from Rust means going through the JVM via JNI, building a `.so` that Java loads, and exposing wrapper Java classes that delegate into your Rust code.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The reason this article lives in the Rust SQL-engine section at all is the **bridge pattern**: it is the same problem you face when writing [[spark|Spark UDFs in Rust]], and the same one [[../data/datafusion/blaze|Blaze]] / [[../data/datafusion/gluten|Gluten]] solve at the engine level. The minimum viable path is `jni-rs` (see [[../interop/to_java]]) → expose `extern "system"` functions matching `Java_…` JNI naming → compile to a shared library → load it from a tiny `GenericUDF` wrapper that calls into Rust via `System.loadLibrary` + `native` methods. That works but is unergonomic; if you find yourself doing this seriously, the smart move is to migrate the workload to a Rust-native engine (DataFusion, Polars) and skip Hive. **Don't** start a new Hive integration in 2025 — Hive is a legacy system; modern equivalents are: Trino / Presto for the SQL-on-anything role, Spark for the JVM batch role, Iceberg / Delta for the table format role. Use this article as a pointer for understanding the JVM-bridge cost and as a comparison anchor when reading about Spark UDFs.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[spark]] — the modern equivalent; same JVM-bridge cost, much more active ecosystem.
+- [[../interop/to_java]] — the canonical "I have a Rust crate, I want to call it from JVM" recipe.
+- **Apache Calcite** — the parser/planner library used by lots of JVM-side SQL engines (Hive, Drill, Flink); the JVM-world counterpart of [[../data/sqlparser|sqlparser-rs]].
+- **Hive UDAFs / UDTFs** — aggregate and tabular variants of the same pattern.
+- [[../../../db/udf/external_udfs|external UDFs (cross-engine survey)]] — wider context.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[README]]
+- [[spark]] — Spark UDF article, same bridge cost.
+- [[../interop/to_java]] — `jni-rs` how-to.
+- [[../data/datafusion/blaze|Blaze]] / [[../data/datafusion/gluten|Gluten]] — modern alternative: replace JVM execution with native (DataFusion/Velox) under Spark/Hive plans.
+- [[../../../db/udf/external_udfs|external UDFs (db/udf survey)]]
 
-- [[databend]] — Databend _(score 23.2)_
-- [[mariadb]] — MariaDB _(score 23.2)_
-- [[spark]] — Spark UDF _(score 23.2)_
-- [[sqlite]] — sqlite _(score 23.2)_
-- [[snowflake]] — Snowflake _(score 23.2)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#hive` `#sql-engine` `#rust` `#programming` `#udf` `#user` `#defined` `#function`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#hive` `#udf` `#jvm` `#jni` `#hadoop` `#rust-bridge`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-
-# Hive UDF – User Defined Function with Example
-
-https://data-flair.training/blogs/hive-udf/
-
-https://www.guru99.com/hive-user-defined-functions.html
+- Hive `CREATE FUNCTION` reference: <https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL>
+- HivePlugins (UDF / UDAF / UDTF): <https://cwiki.apache.org/confluence/display/Hive/HivePlugins>
+- Older tutorials originally linked here:
+  - <https://data-flair.training/blogs/hive-udf/>
+  - <https://www.guru99.com/hive-user-defined-functions.html>
+- See also Spark's documentation on integrating Hive UDFs: <https://spark.apache.org/docs/latest/sql-ref-functions-udf-hive.html>

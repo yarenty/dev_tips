@@ -1,80 +1,48 @@
 ---
-title: rawsql
+title: rawsql — load named SQL snippets from files
 main_link: https://crates.io/crates/rawsql
-keywords: [rawsql, rust, sql]
-status: draft
+keywords: [rawsql, sql, sql-files, query-loading, rust]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# rawsql
+# rawsql — load named SQL snippets from files
 
 **Main link:** <https://crates.io/crates/rawsql>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`rawsql` is a tiny Rust crate (last release 2018, more or less abandoned) that does one thing: loads a SQL file containing multiple named queries (delimited by `-- name: foo` comments and `;` terminators) into a `HashMap<String, String>` you can look up at runtime. It does **not** execute the SQL, doesn't parse it semantically, and doesn't bind parameters — it's a glorified string loader. Inspired by Python's `anosql` / Yesql, predating Rust's compile-time SQL ecosystem.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+For new code in 2025 this is **not** what you want. The modern Rust answer to "I have raw SQL, I want to keep it organised and execute it safely" is `sqlx::query!` / `query_file!` macros (compile-time-checked SQL against a real database) or [[../data/sqlparser|sqlparser-rs]] for parse-and-rewrite scenarios; both are vastly more capable. `rawsql` is interesting only as an example of the "SQL files separate from Rust code" pattern from the Diesel-versus-raw-SQL debate days, and as a pointer for legacy codebases that already use it. If you genuinely just want "named SQL snippets in files, no compile-time check, multi-DB-driver-agnostic loader" and don't want a 200kB dependency for it, write the 30 lines yourself.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **`sqlx`** with `query_file!` / `query_file_as!` — compile-time checked named SQL files; the canonical modern answer.
+- **`anosql`** (Python), **Yesql** (Clojure) — the original "SQL in `.sql` files, looked up by name" pattern this crate ports.
+- [[../data/sqlparser|sqlparser-rs]] — when you want to *parse and rewrite* the SQL, not just load strings.
+- **`include_str!`** macro — for two-or-three-query projects, `let sql = include_str!("queries.sql");` plus a hand-rolled split is genuinely simpler.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[README]]
+- [[../data/sqlparser|sqlparser-rs]] — the actual SQL-aware crate.
+- [[../data/seaquery|SeaQuery]] — dynamic query builder; the alternative if you don't want raw SQL strings at all.
+- [[datafusion]] — for building queries inside an engine.
 
-- [[spark]] — Spark UDF _(score 21.5)_
-- [[programming/rust/sql_engine/sqlparser|sqlparser]] — SQLparser _(score 21.5)_
-- [[mariadb]] — MariaDB _(score 21.5)_
-- [[snowflake]] — Snowflake _(score 21.5)_
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 17.5)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#rawsql` `#sql-engine` `#rust` `#programming` `#sql` `#crates` `#files` `#comment`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#rawsql` `#sql-files` `#query-loading` `#rust` `#legacy`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Crate: <https://crates.io/crates/rawsql>
+- Source: <https://github.com/cellularmitosis/rawsql> (last touched 2018)
 
-# rawsql
+### Format
 
-https://crates.io/crates/rawsql
-
-
-A rust library for using and reusing SQL.
-
-You can integrate rawsql into your project through the releases on crates.io:
-```toml
-# Cargo.toml
-[dependencies]
-rawsql = "0.1.1"
-```
-
-## Overview
-You need to write SQL and you need to reuse it. You don't want to duplicate the queries all over the code. This lib is for you.
-
-This lib does not execute any sql in the DB.
-
-## Usage
-The basic idea is to separate the sql part from the code and put it into its own sql files. With this approach, you gain sql powers and the ability to write sql only once that runs on your DB (your dba could modify these files too)
-
-The sql file needs to be with this format :
 ```sql
 -- name: insert-person
 INSERT INTO "person" (name, data) VALUES ($1, $2);
@@ -82,42 +50,25 @@ INSERT INTO "person" (name, data) VALUES ($1, $2);
 -- name: select-persons
 SELECT id, name, data FROM person;
 ```
-comment with the **-- name: ** , it will be the key value for getting each query.
 
-the ";" will be needed at the end of the query.
+### Usage
+
 ```rust
-
 extern crate rawsql;
-
 use rawsql::Loader;
 
-
 fn main() {
-
     let queries = Loader::get_queries_from("examples/postgre.sql").unwrap().queries;
 
-    //Insert query
     let qinsert = queries.get("insert-person").unwrap();
+    println!("{qinsert}");
 
-    println!("{}", qinsert);
-
-    //Select query
     let qselect = queries.get("select-persons").unwrap();
-    println!("{}", qselect);
-
+    println!("{qselect}");
 }
 ```
 
+### Original questions in the notes
 
-In rust there is not yet a general driver like JDBC or go's database/sql so I decide to abstract first the parser of sql files to use directly with the libs already exists for each DB.
-
-## Comment
-
-This is quite strightforward.
-Looking for comparison to snowflake UDF support - looks like almost enough.
-
-
-## TODO
-
-How to integrate with Datafusion?
-Process $1,$2 as columns of arrow ?
+- *"How to integrate with DataFusion?"* — you wouldn't; DataFusion's planner takes SQL strings directly, the loader pattern adds nothing.
+- *"Process `$1`, `$2` as columns of arrow?"* — no; that conflates positional parameters (driver-side bindings) with column references (logical plan). Use [[datafusion|`datafusion-sql`]] for the latter.

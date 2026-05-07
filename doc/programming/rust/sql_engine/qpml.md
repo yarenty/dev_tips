@@ -1,68 +1,45 @@
 ---
-title: QPML
+title: QPML — Query Plan Markup Language
 main_link: https://github.com/andygrove/qpml
-keywords: [qpml, rust, plan, markup]
-status: draft
+keywords: [qpml, query-plan, yaml, dsl, andy-grove, documentation]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# QPML
+# QPML — Query Plan Markup Language
 
 **Main link:** <https://github.com/andygrove/qpml>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+QPML (Query Plan Markup Language) is a tiny YAML-based DSL by Andy Grove for **describing tree structures — query plans, expression trees, anything tree-shaped — for the purpose of producing diagrams and textual representations** in documentation, slide decks, and presentations. It is *not* a serialisation of any executable plan; think of it as the "Mermaid for query plans" — you write YAML, the tool emits ASCII / dot / PNG.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for QPML when you're authoring docs, blog posts, conference talks or course material that walks through query-plan transformations and you want consistent, version-controllable diagrams without hand-drawing each step. It is **not** a Substrait substitute (Substrait is the engine-portable IR for actually exchanging plans across systems — different problem). The audience is small: the project is a personal tool from the author of [[../data/datafusion/README|DataFusion]] / Ballista who needs to produce a lot of these diagrams. If you don't write that kind of content, you'll never need it. If you do, the output looks better than ASCII art and is much faster to iterate on than a hand-drawn diagram.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **Substrait** — engine-portable serialised query plan IR; the *executable* counterpart, not a doc tool.
+- **Mermaid** / **Graphviz dot** / **D2** — generic tree/graph diagram DSLs you'd reach for if QPML's specific semantics aren't worth the buy-in.
+- [[datafusion]] — the engine whose plans QPML was built to document.
+- [[books|*How Query Engines Work*]] — also Andy Grove; QPML is a tool for writing more material like this.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[README]]
+- [[datafusion]]
+- [[books]]
+- [[../data/datafusion/README|DataFusion landing]]
 
-- [[programming/rust/sql_engine/books|books]] — Books _(score 17.1)_
-- [[diesel]] — diesel _(score 17.1)_
-- [[datafusion]] — Datafusion SQL Query Planner _(score 17.1)_
-- [[programming/rust/sql_engine/seaquery|seaquery]] — SeaQuery _(score 17.1)_
-- [[roapi]] — ROAPI _(score 17.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#qpml` `#sql-engine` `#rust` `#programming` `#query` `#plan` `#markup` `#language`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#qpml` `#query-plan` `#yaml` `#dsl` `#andy-grove` `#docs`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Source: <https://github.com/andygrove/qpml>
 
-# QPML
+> QPML is a YAML-based DSL for describing query plans, expression trees, or any other tree structure, for the purposes of producing diagrams and textual representations for use in documentation and presentations.
 
-Query Plan Markup Language
-
-https://github.com/andygrove/qpml
-
-
-QPML is a YAML-based DSL for describing query plans, expression trees, or any other tree structure, for the purposes of producing diagrams and textual representations for use in documentation and presentations.
-
-
-
-
-
-![](https://github.com/andygrove/qpml/raw/main/examples/minimal.png)
+![QPML minimal example](https://github.com/andygrove/qpml/raw/main/examples/minimal.png)

@@ -28,7 +28,6 @@ By far the largest section of this vault — roughly a 50:1 ratio of articles vs
 | Find a *built-in-Rust* CLI / dev tool to install (bottom, ripgrep, bat, exa, starship, …) | [[tooling/README|tooling]] |
 | Embedded / no-std / RTIC / Embassy / Raspberry Pi | [[misc/README|misc]] (audio, embedded, Windows-RS) |
 | Plugin systems for Rust hosts | [[plugins/README|plugins]] |
-| Larger Rust projects worth studying (DataFusion deep notes, …) | [[projects/README|projects]] |
 
 ## Subsections
 
@@ -48,7 +47,6 @@ By far the largest section of this vault — roughly a 50:1 ratio of articles vs
 - [[tooling/README|tooling]] — *end-user* CLIs/TUIs built in Rust: bottom, ripgrep, bat, exa, starship, zellij, mprocs, lychee, watchexec, joshuto, …
 - [[misc/README|misc]] — embedded (Embassy, RTIC, raspberry_pi), audio (CoreAudio, Symphonia, Rodio, lewton), Windows-RS, charts, algorithms.
 - [[plugins/README|plugins]] — plugin systems for Rust hosts.
-- [[projects/README|projects]] — larger working notes on individual projects (DataFusion deep notes, etc.).
 
 ## See also (cross-section)
 

@@ -1,127 +1,90 @@
 ---
-title: Datafusion SQL Query Planner
-main_link: https://github.com/apache/arrow-datafusion/tree/master/datafusion/sql
-keywords: [rust, sql, planner, query, apache]
-status: draft
+title: DataFusion SQL query planner
+main_link: https://github.com/apache/datafusion/tree/main/datafusion/sql
+keywords: [datafusion, sql, planner, logical-plan, query-engine, rust, apache]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# DataFusion SQL query planner
 
-# Datafusion SQL Query Planner
-
-**Main link:** <https://github.com/apache/arrow-datafusion/tree/master/datafusion/sql>
+**Main link:** <https://github.com/apache/datafusion/tree/main/datafusion/sql>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+The `datafusion-sql` crate is the **SQL frontend / planner** of [Apache DataFusion](../data/datafusion/README.md): it takes a SQL string, runs it through [[../data/sqlparser|sqlparser-rs]] for lexing/parsing, then translates the resulting AST into DataFusion's logical-plan tree via `SqlToRel`. This crate is intentionally separable from the rest of DataFusion — it makes no assumptions about how the logical plan will be executed (row-vs-columnar, single-node-vs-distributed), so you can reuse it as a SQL planner for your own engine without pulling in the execution side. The downstream `datafusion-optimizer` crate then rewrites the logical plan; only after that do physical planning and execution happen.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `datafusion-sql` directly when you want **just the SQL planning** — for example: building a custom engine that needs ANSI-SQL parsing without inheriting Arrow execution; pre-compiling SQL into stored logical plans for caching; implementing SQL on top of a non-Arrow data source by writing your own `TableProvider` + `SchemaProvider` and converting the resulting `LogicalPlan` yourself. The mental model is a four-stage pipeline: **`sqlparser` AST → `LogicalPlan` (this crate) → optimised `LogicalPlan` (datafusion-optimizer) → `ExecutionPlan` (datafusion-physical-plan)**. Substrait integration lives in the `datafusion-substrait` crate and operates on the optimised logical plan, so if you want cross-engine plan portability that's the layer to look at. The classic gotcha: implementing `ContextProvider` / `SchemaProvider` is more work than it looks because DataFusion expects `Arc<dyn TableProvider>` for every referenced table — the planner is small but its trait surface is wide. For "just parse SQL and inspect the AST" without any planning, drop down to [[../data/sqlparser|`sqlparser-rs`]] directly.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[../data/sqlparser|sqlparser-rs]] — the parser this crate sits on top of (Apache fork: `apache/datafusion-sqlparser-rs`).
+- [[sql_parse]] — the smaller `sql-parse` crate (MariaDB-focused); cousin not substitute.
+- **Apache Calcite** (Java) — the canonical reference for "SQL parser + planner + optimizer" as a reusable library.
+- **Substrait** — engine-agnostic logical plan IR; DataFusion can import/export.
+- [[sqlite_loadable]] — alternate "extend an engine's SQL surface" path (extension-based, not planner-based).
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[README]]
+- [[../data/datafusion/README]] — DataFusion landing (engine + adopters list).
+- [[../data/sqlparser|sqlparser-rs]] — the lexer/parser layer.
+- [[roapi]] — concrete consumer of this planner stack.
+- [[books]] — Andy Grove's *How Query Engines Work* (the conceptual book behind DataFusion's design).
+- [[../../../db/udf/README|db/udf section]]
 
-- [[roapi]] — ROAPI _(score 26.6)_
-- [[programming/rust/sql_engine/sqlparser|sqlparser]] — SQLparser _(score 21.5)_
-- [[db]] — diesel _(score 17.5)_
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 17.5)_
-- [[qpml]] — QPML _(score 17.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#datafusion` `#sql-engine` `#rust` `#programming` `#sql` `#query` `#planner` `#logical`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#datafusion` `#sql-planner` `#logical-plan` `#query-engine` `#rust` `#apache`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Crate: <https://crates.io/crates/datafusion-sql>
+- Source: <https://github.com/apache/datafusion/tree/main/datafusion/sql>
+- DataFusion docs: <https://datafusion.apache.org/>
 
-# Datafusion SQL Query Planner
+### Minimal example: SQL → LogicalPlan
 
-While what we looking for is to extend DF with possiblility to have SQL type UDFs - here I will quickly get what is there.
-
-Note: DF SQL parser is based on [sqlparser](sqlparser.md).
-
-And if we would like to have "pre-compiled" SQLs - this is part which we would probably extend!
-
-@see:
-
-https://github.com/apache/arrow-datafusion/tree/master/datafusion/sql
-
-
-
-
-
-
-## DataFusion SQL Query Planner
-This crate provides a general purpose SQL query planner that can parse SQL and translate queries into logical plans. Although this crate is used by the DataFusion query engine, it was designed to be easily usable from any project that requires a SQL query planner and does not make any assumptions about how the resulting logical plan will be translated to a physical plan. For example, there is no concept of row-based versus columnar execution in the logical plan.
-
-## Example Usage
-See the examples directory for fully working examples.
-
-Here is an example of producing a logical plan from a SQL string.
 ```rust
+use datafusion_sql::sqlparser::dialect::GenericDialect;
+use datafusion_sql::sqlparser::parser::Parser;
+use datafusion_sql::planner::SqlToRel;
+
 fn main() {
-    let sql = "SELECT \
-            c.id, c.first_name, c.last_name, \
-            COUNT(*) as num_orders, \
-            SUM(o.price) AS total_price, \
-            SUM(o.price * s.sales_tax) AS state_tax \
-        FROM customer c \
-        JOIN state s ON c.state = s.id \
-        JOIN orders o ON c.id = o.customer_id \
-        WHERE o.price > 0 \
-        AND c.last_name LIKE 'G%' \
-        GROUP BY 1, 2, 3 \
-        ORDER BY state_tax DESC";
+    let sql = "SELECT c.id, c.first_name, c.last_name, \
+               COUNT(*) AS num_orders, \
+               SUM(o.price) AS total_price \
+               FROM customer c \
+               JOIN orders o ON c.id = o.customer_id \
+               WHERE o.price > 0 \
+               GROUP BY 1, 2, 3 \
+               ORDER BY total_price DESC";
 
-    // parse the SQL
-    let dialect = GenericDialect {}; // or AnsiDialect, or your own dialect ...
+    let dialect = GenericDialect {};
     let ast = Parser::parse_sql(&dialect, sql).unwrap();
-    let statement = &ast[0];
 
-    // create a logical query plan
-    let schema_provider = MySchemaProvider::new();
+    let schema_provider = MySchemaProvider::new(); // implements ContextProvider
     let sql_to_rel = SqlToRel::new(&schema_provider);
-    let plan = sql_to_rel.sql_statement_to_plan(statement.clone()).unwrap();
+    let plan = sql_to_rel.sql_statement_to_plan(ast[0].clone()).unwrap();
 
-    // show the plan
-    println!("{:?}", plan);
+    println!("{plan:?}");
 }
 ```
 
-
-This is the logical plan that is produced from this example. Note that this is an unoptimized logical plan. The datafusion-optimizer crate provides a query optimizer that can be applied to plans produced by this crate.
-
+Unoptimised plan output:
 
 ```log
 Sort: state_tax DESC NULLS FIRST
-  Projection: c.id, c.first_name, c.last_name, COUNT(UInt8(1)) AS num_orders, SUM(o.price) AS total_price, SUM(o.price * s.sales_tax) AS state_tax
-    Aggregate: groupBy=[[c.id, c.first_name, c.last_name]], aggr=[[COUNT(UInt8(1)), SUM(o.price), SUM(o.price * s.sales_tax)]]
+  Projection: c.id, c.first_name, c.last_name, COUNT(UInt8(1)) AS num_orders, SUM(o.price) AS total_price, …
+    Aggregate: groupBy=[[c.id, c.first_name, c.last_name]], aggr=[[COUNT(UInt8(1)), SUM(o.price), …]]
       Filter: o.price > Int64(0) AND c.last_name LIKE Utf8("G%")
         Inner Join: c.id = o.customer_id
           Inner Join: c.state = s.id
             SubqueryAlias: c
               TableScan: customer
-            SubqueryAlias: s
-              TableScan: state
-          SubqueryAlias: o
-            TableScan: orders
-
+            …
 ```
+
+Run it through `datafusion-optimizer` to fold predicates / push projections / etc. before handing it to physical planning.

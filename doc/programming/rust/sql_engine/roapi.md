@@ -1,67 +1,54 @@
 ---
-title: ROAPI
-main_link: https://github.com/roapi/roapi/blob/main/columnq/src/query/graphql.rs
-keywords: [roapi, rust, arrow, design, apache, sql]
-status: draft
+title: ROAPI — read-only API server over any data source
+main_link: https://github.com/roapi/roapi
+keywords: [roapi, datafusion, arrow, sql-api, graphql-api, rest-api, columnq]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# ROAPI — read-only API server over any data source
 
-# ROAPI
-
-**Main link:** <https://github.com/roapi/roapi/blob/main/columnq/src/query/graphql.rs>
+**Main link:** <https://github.com/roapi/roapi>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+ROAPI ("Read-Only API") spins up a single-binary server that exposes any static dataset (CSV / JSON / Parquet / Delta / files on local disk / S3 / GCS / Azure / a SQL DB) as a queryable REST + GraphQL + SQL endpoint, with **zero application code**. Architecturally it is a thin wrapper over [Apache DataFusion](../data/datafusion/README.md) plus Apache Arrow: query frontends translate SQL / GraphQL / REST into DataFusion logical plans, DataFusion executes, and a response-encoding layer serialises the resulting Arrow `RecordBatch` into JSON / Arrow IPC / Parquet for the client.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The killer use case is "I have a Parquet file (or a folder of CSVs, or a Delta table on S3) and I want a real SQL+REST+GraphQL API in front of it for an internal tool, dashboard, or LLM agent" — ROAPI gets you from zero to served in one config file (TOML or YAML) declaring `tables: [...]`. Schema is auto-inferred (with optional override). Don't reach for it when: (a) you need writes (it really is read-only — there is sister project `columnq-cli` for one-shot queries, but writes are out of scope by design); (b) you need fine-grained authn/authz (it has basic-auth and JWT but no row-level policy); (c) you need to serve > tens-of-millions of rows interactively (it is single-process; for cluster scale you'd reach for Trino/Presto, Spark Thrift, or Ballista). The mental model: ROAPI is to DataFusion roughly what PostgREST is to Postgres — instant API on top of an existing data substrate. Pairs nicely with **Arrow Flight SQL** and modern Polars / Pandas Arrow-native consumers, since Arrow IPC is one of the supported response formats.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **PostgREST** — same idea but for Postgres specifically; the design ROAPI clearly echoes.
+- **Hasura / PostGraphile** — GraphQL-on-Postgres; richer but not file-source-aware.
+- **Trino / Presto** — the JVM big-cousin; cluster-scale federation.
+- **Apache Drill** — older "SQL on files" engine; same niche, less alive.
+- [[datafusion]] — the engine ROAPI sits on top of.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[README]]
+- [[datafusion]] — the planner.
+- [[../data/datafusion/README|DataFusion landing]]
+- [[../data/datafusion/delta|delta-rs]] / `iceberg-rust` — table-format sources ROAPI can read.
+- [[../net/grpc|tonic]] — Arrow Flight SQL is a tonic-shaped story if you want lower-latency than HTTP+JSON.
 
-- [[datafusion]] — Datafusion SQL Query Planner _(score 26.6)_
-- [[programming/rust/sql_engine/sqlparser|sqlparser]] — SQLparser _(score 21.5)_
-- [[_to_learn]] — Books _(score 18.6)_
-- [[db]] — diesel _(score 17.5)_
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 17.5)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#roapi` `#sql-engine` `#rust` `#programming` `#datafusion` `#arrow` `#query` `#graphql`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#roapi` `#datafusion` `#arrow` `#sql-api` `#graphql-api` `#rest-api`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Source: <https://github.com/roapi/roapi>
+- Docs: <https://roapi.github.io/docs/>
+- GraphQL implementation (the file originally linked here): <https://github.com/roapi/roapi/blob/main/columnq/src/query/graphql.rs>
 
-# ROAPI
+> ROAPI automatically spins up read-only APIs for static datasets without requiring you to write a single line of code. It builds on top of Apache Arrow and DataFusion. Core design:
+>
+> - Query frontends translate SQL, GraphQL and REST API queries into DataFusion plans.
+> - DataFusion executes the plan.
+> - A data layer loads datasets from a variety of sources and formats with automatic schema inference.
+> - A response-encoding layer serialises the intermediate Arrow record batch into the format requested by the client.
 
-ROAPI automatically spins up read-only APIs for static datasets without requiring you to write a single line of code. It builds on top of Apache Arrow and Datafusion. The core of its design can be boiled down to the following:
-
-Query frontends to translate SQL, GraphQL and REST API queries into Datafusion plans.
-Datafusion for query plan execution.
-Data layer to load datasets from a variety of sources and formats with automatic schema inference.
-Response encoding layer to serialize intermediate Arrow record batch into various formats requested by client.
-
-
-![](https://camo.githubusercontent.com/6846b7b40ddfc780fc97c2238fd7a4ea2594bde8883adf30fb0dc8086185c80d/68747470733a2f2f726f6170692e6769746875622e696f2f646f63732f696d616765732f726f6170692e706e67)
-
-https://github.com/roapi/roapi/blob/main/columnq/src/query/graphql.rs
+![ROAPI architecture](https://camo.githubusercontent.com/6846b7b40ddfc780fc97c2238fd7a4ea2594bde8883adf30fb0dc8086185c80d/68747470733a2f2f726f6170692e6769746875622e696f2f646f63732f696d616765732f726f6170692e706e67)

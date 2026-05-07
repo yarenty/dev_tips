@@ -1,114 +1,74 @@
 ---
 title: Databend
-main_link: https://github.com/datafuselabs/databend/issues/5731
-keywords: [databend, rust, udf, sql, mysql]
-status: draft
+main_link: https://databend.rs/
+keywords: [databend, rust, data-warehouse, snowflake-alternative, clickhouse-alternative, bsl, udf]
+status: reviewed
 ---
-
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
 
 # Databend
 
-**Main link:** <https://github.com/datafuselabs/databend/issues/5731>
+**Main link:** <https://databend.rs/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Databend is a Rust-built modern data warehouse, broadly Snowflake-shaped: separation of storage (S3 / object store) and compute, columnar engine, SQL frontend, with both an open-source single-binary deployment and a managed service ([Databend Cloud](https://databend.com/)). It speaks the **MySQL wire protocol** (so any MySQL client just works) and supports SQL-defined UDFs as well as Python UDFs via embedded interpreters. Licence is **Apache 2.0** for the core engine; the cloud product is the commercial story.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Databend belongs to the "Rust single-binary infra rewrite" trend (alongside Redpanda / GreptimeDB / OpenObserve / Quickwit / Parseable) — the value proposition is "we replaced the JVM-heavy mishmash of Hive/Trino/Presto with one Rust binary that scales out". Reach for it when you want a Snowflake-shaped warehouse you can self-host on cheap object storage, with SQL semantics close enough to Postgres/MySQL that BI tools work out of the box. The most realistic comparisons are: **ClickHouse** (more mature, C++, single-node killer; Databend wins on cloud-native architecture and elastic compute); **DuckDB** (single-process embedded; not the same product); **StarRocks / Doris** (also Snowflake-shaped, C++); **Snowflake** itself (managed, much more polished, vastly more expensive). The UDF model is intentionally simple: SQL lambda-style for one-liners, Python for everything else; if you want compiled-Rust UDFs in this section's sense, you're closer to [[udf_lib|MySQL UDFs]] or [[sqlite_loadable|SQLite extensions]] than to Databend's design. **Watch the licence** — Databend's source is Apache 2.0, but the company has a separate enterprise edition; the *Databend Cloud* offering does not "double licence" the core in a hostile way (unlike, say, Redis 2024), but the trajectory is worth tracking.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **ClickHouse** — the C++ OLAP DB Databend is most often compared against.
+- **StarRocks / Apache Doris** — MPP analytical SQL DBs in the same niche.
+- **Snowflake** — the commercial reference design for separation-of-storage-and-compute warehouses.
+- **DuckDB** — single-process columnar SQL; different deployment model, similar query semantics.
+- **GreptimeDB** — Rust-built; time-series-focused cousin in the same trend.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[README]]
+- [[snowflake]] — the design Databend's product shape echoes.
+- [[../data/datafusion/README|DataFusion]] — Rust columnar engine substrate; Databend has its own engine but the ecosystem overlap is heavy.
+- [[../../../db/relational/singlestore|SingleStore]] — HTAP comparison.
+- [[../../../db/distributed/README|distributed DBs]]
 
-- [[mariadb]] — MariaDB _(score 33.5)_
-- [[spark]] — Spark UDF _(score 27.7)_
-- [[snowflake]] — Snowflake _(score 27.7)_
-- [[hive]] — Hive UDF – User Defined Function with Example _(score 23.2)_
-- [[udf_lib]] — udf _(score 21.5)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#databend` `#sql-engine` `#rust` `#programming` `#udf` `#function` `#sql` `#create`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#databend` `#data-warehouse` `#rust` `#snowflake-alternative` `#clickhouse-alternative` `#udf`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Project home: <https://databend.rs/>
+- Source: <https://github.com/datafuselabs/databend>
+- Databend Cloud (managed): <https://databend.com/>
+- UDF reference: <https://databend.rs/doc/sql-commands/ddl/udf/ddl-create-function>
+- Tabular UDF (UDTF) tracking issue: <https://github.com/datafuselabs/databend/issues/5731>
 
-# Databend 
+### UDF example (SQL lambda)
 
-Supports only Scalar  - UDFs
-
-
-https://databend.rs/doc/sql-commands/ddl/udf/ddl-create-function
-
-
-## Example
-
-CREATE FUNCTION
-Creates a new UDF (user-defined function), the UDF can contain a SQL expression.
-
-
-Examples
 ```sql
 CREATE FUNCTION a_plus_3 AS (a) -> a+3;
-
 SELECT a_plus_3(2);
-+---------+
-| (2 + 3) |
-+---------+
-|       5 |
-+---------+
+-- 5
 
--- Define lambda-style UDF
+-- JSON-extract style
 CREATE FUNCTION get_v1 AS (json) -> json["v1"];
 CREATE FUNCTION get_v2 AS (json) -> json["v2"];
 
--- Create a time series table
 CREATE TABLE json_table(time TIMESTAMP, data JSON);
+INSERT INTO json_table VALUES('2022-06-01 00:00:00.00000',
+                              PARSE_JSON('{"v1":1.5, "v2":20.5}'));
 
--- Insert a time event
-INSERT INTO json_table VALUES('2022-06-01 00:00:00.00000', PARSE_JSON('{"v1":1.5, "v2":20.5}'));
-
--- Get v1 and v2 value from the event
 SELECT get_v1(data), get_v2(data) FROM json_table;
-+------------+------------+
-| data['v1'] | data['v2'] |
-+------------+------------+
-| 1.5        | 20.5       |
-+------------+------------+
+-- 1.5  20.5
 
 DROP FUNCTION get_v1;
-
 DROP FUNCTION get_v2;
-
 DROP TABLE json_table;
-
 ```
 
+### Connecting
 
-
-## Other
-
-You can access Databend using mysql client
-
-
-https://github.com/datafuselabs/databend/issues/5731
-Tabular UDF (UDTF) - PR is still open.
+Databend exposes a MySQL-compatible wire protocol — point any MySQL client (`mysql`, `mysqlsh`, `mycli`, the Rust [[../data/mysql|`mysql_async`]] crate, `sqlx` with the `mysql` feature) at the Databend `query` port.

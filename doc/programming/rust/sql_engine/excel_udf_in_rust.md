@@ -1,58 +1,46 @@
 ---
-title: Excel UDF in Rust
+title: Excel UDFs in Rust
 main_link: https://crates.io/crates/xladd-derive
-keywords: [excel-udf-in-rust, rust, excel, udf]
-status: draft
+keywords: [excel-udf, xladd, rust, xlsx, addin]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/sql_engine/rust_libs.md` by `article_split.py`. Heading: **Excel UDF in Rust**.
-
-# Excel UDF in Rust
+# Excel UDFs in Rust
 
 **Main link:** <https://crates.io/crates/xladd-derive>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`xladd` (and the proc-macro companion `xladd-derive`) is a niche Rust binding to the **Excel XLL C SDK** — the native plug-in interface that lets you ship a `.xll` shared library containing user-defined Excel functions (UDFs) callable directly from worksheet cells like `=MY_RUST_FN(A1, B1)`. The model: write a normal Rust function, slap a derive macro on it to generate the XLL marshalling, build with the Windows MSVC toolchain (Excel UDFs are Windows-only), and drop the resulting `.xll` into Excel's *Add-Ins* dialog.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+This is the only interesting "Rust → Excel" path that does not require Office Scripts or VBA. The killer use case is computationally heavy desk-quant / actuarial / risk worksheets where you currently have a giant VBA blob or a C/C++ XLL — Rust gives you both a memory-safety win and an easier build than the canonical Microsoft/Excel-DNA C++ template. Gotchas: **Windows-only** (the XLL ABI does not exist on macOS/Web Excel — for cross-platform UDFs you need Office.js or Office Scripts instead, which are JavaScript); the crate is a thin wrapper, error messages are Excel error codes (`#NUM!`, `#VALUE!`); and you need to think about Excel's calculation model (volatile vs non-volatile, threadsafe declaration). For most "bring data from Rust into Excel" tasks the saner alternatives are the [[../io/xls|`calamine` / `rust_xlsxwriter`]] crates which read/write `.xlsx` files from outside Excel — no add-in install ceremony required.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **Excel-DNA** (.NET) — by far the most-used XLL-style add-in framework; the C# / F# reference design.
+- **Office.js / Office Scripts** — Microsoft's modern cross-platform add-in path; JavaScript/TypeScript only.
+- [[../io/xls|`calamine` + `rust_xlsxwriter`]] — read/write Excel files from Rust without going through Excel itself.
+- **PyXLL** — Python equivalent of `xladd`; commercial, very polished.
+- [[udf_lib|`udf` (MariaDB/MySQL UDFs in Rust)]] — sibling crate from the same author (`pluots`), same "compile to .so/.xll, register with the host" pattern.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[README]]
+- [[../io/xls|Excel files in Rust]] — the file-IO angle if you don't need to live inside Excel.
+- [[udf_lib|MariaDB/MySQL UDFs in Rust]] — same author, sibling project.
+- [[../misc/windows|Rust on Windows]] — toolchain context.
 
-- [[spark]] — Spark UDF _(score 23.2)_
-- [[hive]] — Hive UDF – User Defined Function with Example _(score 23.2)_
-- [[databend]] — Databend _(score 23.2)_
-- [[mariadb]] — MariaDB _(score 23.2)_
-- [[snowflake]] — Snowflake _(score 23.2)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#excel-udf-in-rust` `#sql-engine` `#rust` `#programming` `#excel` `#udf` `#crates` `#xladd`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#excel-udf` `#xladd` `#xll` `#rust` `#windows` `#addin`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# Excel UDF in Rust
-https://crates.io/crates/xladd-derive
+- `xladd-derive` proc-macro: <https://crates.io/crates/xladd-derive>
+- `xladd`: <https://crates.io/crates/xladd>
+- Source: <https://github.com/cmwest/xladd>
+- Excel XLL C SDK reference (Microsoft): <https://learn.microsoft.com/en-us/office/client-developer/excel/welcome-to-the-excel-software-development-kit>
+- Excel-DNA (the .NET XLL framework worth comparing against): <https://excel-dna.net/>

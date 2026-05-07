@@ -1,89 +1,61 @@
 ---
-title: SQLIte loadable
+title: sqlite-loadable-rs — write SQLite extensions in Rust
 main_link: https://github.com/asg017/sqlite-loadable-rs
-keywords: [sqlite-loadable, rust, sqlite, loadable]
-status: draft
+keywords: [sqlite-loadable, sqlite, rust, loadable-extensions, virtual-tables, scalar-functions]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# SQLIte loadable
+# sqlite-loadable-rs — write SQLite extensions in Rust
 
 **Main link:** <https://github.com/asg017/sqlite-loadable-rs>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`sqlite-loadable-rs` is the canonical Rust framework for writing **loadable SQLite extensions** (`.so` / `.dylib` / `.dll` files that any SQLite consumer — the `sqlite3` CLI, Python, Node, Go, your Rust app — can `SELECT load_extension(...)` and immediately use). Created by Alex Garcia (asg017), inspired by `rusqlite`, `pgrx`, and Riyaz Ali's Go equivalent. Supports scalar functions, table functions ("eponymous-only virtual tables"), and full virtual tables (read-only and writeable).
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+This is the path you want for any non-trivial Rust SQLite extension. The mental model: write your function as a normal Rust fn, decorate the entry-point with `#[sqlite_entrypoint]`, register your scalar / table / virtual table inside it, build with `crate-type = ["cdylib"]`, ship the resulting `.so`. The reason this is *the* answer (rather than hand-rolling the FFI as shown in [[sqlite|sqlite.md]]) is that the framework hides the SQLite C ABI's many footguns: result-binding, value-extraction, error-propagation, virtual-table cursor lifecycle, and the `xConnect`/`xCreate`/`xBestIndex`/`xFilter` cycle for vtabs. The same author's downstream extensions (`sqlite-vec`, `sqlite-vss`, `sqlite-xsv`, `sqlite-regex`, `sqlite-base64`, `sqlite-html`, `sqlite-jsonschema`) are the production proof — these are widely used (sqlite-vec especially, in the LLM/RAG world) and all built on this framework. Comparison: **rusqlite has had multiple PRs to add loadable-extension support but none have merged**, so for "I want to compile a `.so` that anyone can `LOAD EXTENSION`", `sqlite-loadable-rs` is the only realistic Rust choice. Versus the **Go equivalent** (`riyaz-ali/sqlite`), Rust wins on binary size and runtime overhead. Versus **the modern alternative — WASM UDFs** in libSQL (see [[wasm_for_libsql]]), `sqlite-loadable` wins on performance and works with vanilla SQLite, but requires you to ship a binary per platform; WASM lets you ship one bytecode that runs anywhere.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[sqlite]] — engine background and the alternative bare-FFI path.
+- [[../data/rusqlite|rusqlite]] — the Rust SQLite client; uses application-defined functions instead of loadable extensions.
+- [[wasm_for_libsql]] — modern alternative for libSQL: WASM-sandboxed UDFs.
+- **`pgrx`** — the Postgres-extensions-in-Rust equivalent; the framework that inspired this design.
+- **sqlite-vec / sqlite-vss / sqlite-xsv / sqlite-regex** — production extensions built on this framework.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[README]]
+- [[sqlite]] — SQLite engine background.
+- [[../data/rusqlite|rusqlite client]]
+- [[wasm_for_libsql]] — WASM UDF alternative.
+- [[udf_lib]] — the MariaDB equivalent of "write UDFs in Rust".
+- [[../../../db/udf/external_udfs|external UDFs (cross-engine)]]
 
-- [[sqlite]] — sqlite _(score 24.0)_
-- [[programming/rust/sql_engine/seaquery|seaquery]] — SeaQuery _(score 24.0)_
-- [[programming/rust/data/seaquery|seaquery]] — SeaQuery _(score 20.0)_
-- [[rusqlite]] — rusqlite _(score 20.0)_
-- [[rtic]] — RTIC _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#sqlite-loadable` `#sql-engine` `#rust` `#programming` `#sqlite` `#table` `#loadable` `#virtual`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#sqlite-loadable` `#sqlite` `#rust` `#loadable-extensions` `#virtual-tables`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Source: <https://github.com/asg017/sqlite-loadable-rs>
+- Crate: <https://crates.io/crates/sqlite-loadable>
 
+> A framework for building loadable SQLite extensions in Rust. Inspired by `rusqlite`, `pgx`, and Riyaz Ali's similar SQLite Go library.
 
-# SQLIte loadable
+### Background
 
+SQLite's runtime loadable extensions allow one to add new scalar functions, table functions, virtual tables, virtual filesystems, and more to a SQLite database connection. These compiled dynamically-linked libraries can be loaded in any SQLite context, including the SQLite CLI, Python, Node.js, Rust, Go, and many other languages.
 
+> **Note** — notice the word *loadable*. Loadable extensions are these compiled dynamically-linked libraries with a suffix of `.dylib` / `.so` / `.dll`. These are different from **application-defined functions** that many language clients support (Python's `.create_function()`, Node's `.function()`, rusqlite's `create_scalar_function`).
 
-https://github.com/asg017/sqlite-loadable-rs
-
-https://crates.io/crates/sqlite-loadable
-
-
-
-
-A framework for building loadable SQLite extensions in Rust. Inspired by rusqlite, pgx, and Riyaz Ali's similar SQLite Go library.
-
-
-
-## Background
-SQLite's runtime loadable extensions allows one to add new scalar functions, table functions, virtual tables, virtual filesystems, and more to a SQLite database connection. These compiled dynamically-linked libraries can be loaded in any SQLite context, including the SQLite CLI, Python, Node.js, Rust, Go, and many other languages.
-
-Note Notice the word loadable. Loadable extensions are these compiled dynamically-linked libraries, with a suffix of .dylib or .so or .dll (depending on your operating system). These are different than application-defined functions that many language clients support (such as Python's .create_function() or Node.js's .function()).
-
-Historically, the main way one could create these loadable SQLite extensions were with C/C++, such as spatilite, the wonderful sqlean project, or SQLite's official miscellaneous extensions.
-
-But C is difficult to use safely, and integrating 3rd party libraries can be a nightmare. Riyaz Ali wrote a Go library that allows one to easily write loadable extensions in Go, but it comes with a large performance cost and binary size. For Rust, rusqlite has had a few different PRs that attempted to add loadable extension support in that library, but none have been merged.
-
-So, sqlite-loadable-rs is the first and most involved framework for writing loadable SQLite extensions in Rust!
-
-## Features
+Historically the C path (with examples like SpatiaLite, the sqlean project, SQLite's official miscellaneous extensions) was the only realistic option, with C's safety / 3rd-party-dep nightmares included. Riyaz Ali's Go library trades binary size and performance for ergonomics. For Rust, `rusqlite` has had multiple unmerged PRs for loadable-extension support; `sqlite-loadable-rs` is the answer that landed.
 
 ### Scalar functions
 
-Scalar functions are the simplest functions one can add to SQLite - take in values as inputs, and return a value as output. To implement one in sqlite-loadable-rs, you just need to call define_scalar_function on a "callback" Rust function decorated with #[sqlite_entrypoint], and you'll be able to call it from SQL!
 ```rust
 // add(a, b)
 fn add(context: *mut sqlite3_context, values: &[*mut sqlite3_value]) -> Result<()> {
@@ -93,18 +65,19 @@ fn add(context: *mut sqlite3_context, values: &[*mut sqlite3_value]) -> Result<(
     Ok(())
 }
 
-// connect(seperator, string1, string2, ...)
+// connect(separator, string1, string2, ...)
 fn connect(context: *mut sqlite3_context, values: &[*mut sqlite3_value]) -> Result<()> {
-    let seperator = api::value_text(values.get(0).expect("1st argument"))?;
-    let strings:Vec<&str> = values
+    let separator = api::value_text(values.get(0).expect("1st argument"))?;
+    let strings: Vec<&str> = values
         .get(1..)
         .expect("more than 1 argument to be given")
         .iter()
         .filter_map(|v| api::value_text(v).ok())
         .collect();
-    api::result_text(context, &strings.join(seperator))?;
+    api::result_text(context, &strings.join(separator))?;
     Ok(())
 }
+
 #[sqlite_entrypoint]
 pub fn sqlite3_extension_init(db: *mut sqlite3) -> Result<()> {
     define_scalar_function(db, "add", 2, add, FunctionFlags::DETERMINISTIC)?;
@@ -112,6 +85,7 @@ pub fn sqlite3_extension_init(db: *mut sqlite3) -> Result<()> {
     Ok(())
 }
 ```
+
 ```sql
 sqlite> select add(1, 2);
 3
@@ -119,15 +93,14 @@ sqlite> select connect('-', 'alex', 'brian', 'craig');
 alex-brian-craig
 ```
 
-### Table functions
+### Table functions ("eponymous-only virtual tables")
 
-Table functions, (aka "Eponymous-only virtual tables"), can be added to your extension with define_table_function.
-
+```rust
 define_table_function::<CharactersTable>(db, "characters", None)?;
+```
 
-Defining a table function is complicated and requires a lot of code - see the characters.rs example for a full solution.
+Defining a table function is more involved — see the framework's `characters.rs` example. Once compiled:
 
-Once compiled, you can invoke a table function like querying any other table, with any arguments that the table function supports.
 ```sql
 sqlite> .load target/debug/examples/libcharacters
 sqlite> select rowid, * from characters('alex garcia');
@@ -138,52 +111,48 @@ sqlite> select rowid, * from characters('alex garcia');
 │ 1     │ l     │
 │ 2     │ e     │
 │ 3     │ x     │
-│ 4     │       │
-│ 5     │ g     │
-│ 6     │ a     │
-│ 7     │ r     │
-│ 8     │ c     │
-│ 9     │ i     │
-│ 10    │ a     │
+…
 └───────┴───────┘
 ```
-Some real-world non-Rust examples of table functions in SQLite:
 
-- json_each / json_tree
-- generate_series
-- pragma_* functions
-- html_each
-
+Real-world non-Rust examples of table functions in SQLite: `json_each` / `json_tree`, `generate_series`, the `pragma_*` functions, `html_each`.
 
 ### Virtual tables
 
-sqlite-loadable-rs also supports more traditional virtual tables, for tables that have a dynamic schema or need insert/update support.
+For tables with a dynamic schema or insert/update support:
 
-define_virtual_table() can define a new read-only virtual table module for the given SQLite connection. define_virtual_table_writeable() is also available for tables that support INSERT/UPDATE/DELETE, but this API will probably change.
-
-define_virtual_table::<CustomVtab>(db, "custom_vtab", None)?
-These virtual tables can be created in SQL with the CREATE VIRTUAL TABLE syntax.
-
-
-create virtual table xxx using custom_vtab(arg1=...);
-
-select * from xxx;
-
-Some real-world non-Rust examples of traditional virtual tables in SQLite include the CSV virtual table, the full-text search fts5 extension, and the R-Tree extension.
-
-### Examples
-The examples/ directory has a few bare-bones examples of extensions, which you can build with:
-
-```shell
-$ cargo build --example hello
-$ sqlite3 :memory: '.load target/debug/examples/hello' 'select hello("world");'
-hello, world!
-
-# Build all the examples in release mode, with output at target/debug/release/examples/*.dylib
-$ cargo build --example --release
+```rust
+define_virtual_table::<CustomVtab>(db, "custom_vtab", None)?;
+// or, for INSERT/UPDATE/DELETE support:
+define_virtual_table_writeable::<CustomVtab>(db, "custom_vtab", None)?;
 ```
-Some real-world projects that use sqlite-loadable-rs:
 
-- sqlite-xsv - An extremely fast CSV/TSV parser in SQLite
-- sqlite-regex - An extremely fast and safe regular expression library for SQLite
-- sqlite-base64 - Fast base64 encoding and decoding in SQLite
+```sql
+create virtual table xxx using custom_vtab(arg1=...);
+select * from xxx;
+```
+
+Real-world non-Rust examples of traditional virtual tables: the CSV virtual table, the FTS5 full-text-search extension, the R-Tree extension.
+
+### Building the examples
+
+```sh
+cargo build --example hello
+sqlite3 :memory: '.load target/debug/examples/hello' 'select hello("world");'
+# hello, world!
+```
+
+```sh
+# Build all the examples in release mode (output at target/release/examples/*.dylib)
+cargo build --examples --release
+```
+
+### Real-world projects built on this framework
+
+- **sqlite-vec** — vector search in SQLite (modern alternative to `sqlite-vss`).
+- **sqlite-vss** — older Faiss-based vector search.
+- **sqlite-xsv** — extremely fast CSV/TSV parser as a SQLite virtual table.
+- **sqlite-regex** — fast and safe regex in SQLite.
+- **sqlite-base64** — base64 encoding/decoding.
+- **sqlite-html** — HTML scraping in SQL.
+- **sqlite-jsonschema** — JSON Schema validation.

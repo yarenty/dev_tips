@@ -56,7 +56,7 @@ Things to know:
 
 - [[db/distributed/ballista_distributed/README|Ballista]] — the
   distributed substrate.
-- [[programming/rust/projects/datafusion/README|DataFusion]] — the
+- [[programming/rust/data/datafusion/README|DataFusion]] — the
   single-node engine Ballista distributes.
 - [apache/datafusion-python](https://github.com/apache/datafusion-python)
   — single-node Python bindings.
@@ -74,7 +74,7 @@ Things to know:
 - [[to_python]] — the general "Rust → PyPI" recipe.
 - [[db/distributed/ballista_distributed/README|Ballista]] — Rust
   substrate.
-- [[programming/rust/projects/datafusion/README|DataFusion]] — single-node
+- [[programming/rust/data/datafusion/README|DataFusion]] — single-node
   engine.
 - [[README]] — Rust interop landing.
 
