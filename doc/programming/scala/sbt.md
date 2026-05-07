@@ -1,64 +1,75 @@
 ---
-title: SBT
-main_link: 
-keywords: [sbt, scala, rust]
-status: draft
+title: "sbt — the Scala Build Tool"
+main_link: https://www.scala-sbt.org/
+keywords: [sbt, scala, build-tool, jvm, mill, scala-cli, incremental-compilation]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# sbt — the Scala Build Tool
 
-# SBT
+**Main link:** <https://www.scala-sbt.org/>
+
+Docs: <https://www.scala-sbt.org/1.x/docs/> · Repo: <https://github.com/sbt/sbt>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+sbt is the de-facto build tool for Scala. It does what Maven and Gradle do for the wider JVM, but with a Scala-native DSL, first-class support for cross-compiling against multiple Scala versions, and tight integration with the incremental Scala compiler (Zinc). Its trademark is the interactive shell — once a project is loaded, commands like `~compile`, `~test`, and `~run` watch the filesystem and re-run on change, which makes the inner loop pleasant once you've paid the startup cost.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The honest reputation: sbt is **powerful but slow to start, hard to learn, and famously easy to misuse**. The DSL is a Scala-internal one, so a `build.sbt` looks deceptively simple until you need to do something custom and find yourself reading `sbt-plugin` source code. The startup cost of "open shell, load build, resolve dependencies" can dominate quick edit-compile-test loops if you exit the shell each time.
+
+Strategies that make sbt much more bearable:
+
+- **Stay in the shell.** Start `sbt` once and leave it running. Use `~compile` / `~test` for watch mode. Don't invoke `sbt foo` from the command line repeatedly — that pays the startup cost every time.
+- **Use [`sbt-bloop`](https://scalacenter.github.io/bloop/) or Bloop directly.** Bloop is a build server that takes sbt's project model and serves it to IDEs and CLIs much faster than sbt itself.
+- **Project structure**: keep the sub-project graph reasonable. sbt's incrementality breaks down on very large projects with many sub-projects.
+- **Scala Steward** (<https://github.com/scala-steward-org/scala-steward>) — automated dependency PRs; effectively required for any non-trivial project.
+
+The realistic alternatives in 2024-25:
+
+- **[Mill](https://mill-build.org/)** — Li Haoyi's build tool. Faster, much simpler mental model (build files are just Scala objects with methods), gaining real adoption. The strongest "would I start a new project in sbt?" challenger.
+- **[scala-cli](https://scala-cli.virtuslab.org/)** — for scripts, single-file projects, examples, learning. Massively friendlier than sbt for "I just want to try this snippet."
+- **[Bazel](https://bazel.build/) / [Pants](https://www.pantsbuild.org/)** — at large polyglot monorepo scale.
+- **Maven / Gradle** — possible but rarely used for Scala anymore; the Scala-version-cross story is awkward.
+
+When sbt is still the right answer:
+
+- Existing Scala project — sbt is the path of least resistance.
+- You depend on a plugin ecosystem (sbt-native-packager, sbt-assembly, sbt-mdoc, sbt-pgp, ...) that's most mature on sbt.
+- You need cross-compilation against multiple Scala versions and multiple platforms (JVM / Native / JS) and the corresponding cross-projects (`++3.3.x`, `+publishSigned`, etc.) plugin matters.
+
+## Configuration tips
+
+- `$SBT_OPTS` passes additional JVM options to sbt globally.
+- Per-project options go in `.sbtopts` at the repo root.
+- Global system-wide settings go in `/usr/local/etc/sbtopts` (Homebrew install) or the equivalent per platform.
+- For memory-hungry projects, bump `-Xmx` here rather than in `JAVA_OPTS` (which sbt overrides).
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [Mill](https://mill-build.org/) — the leading sbt alternative for new projects.
+- [scala-cli](https://scala-cli.virtuslab.org/) — for scripts and quick experiments.
+- [Bloop](https://scalacenter.github.io/bloop/) — build server that accelerates sbt-defined projects.
+- [Coursier](https://get-coursier.io/) — the underlying dependency resolver sbt uses.
+- [Gradle](https://gradle.org/) — closest spiritual sibling on the broader JVM side.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[rtic]] — RTIC _(score 13.1)_
-- [[programming/rust/gui/tauri|tauri]] — Tauri _(score 13.1)_
-- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 13.1)_
-- [[rust_in_jupyter]] — RUST in JUPYTER _(score 13.1)_
-- [[_todo_ideas]] — Move blokchain from python to rust _(score 13.1)_
+- [[programming/scala/README|Scala]] — parent section.
+- [[programming/java/README|Java]] — JVM context.
+- [[programming/package_managers/README|package managers]] — sbt's resolver pulls from Maven Central.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#sbt` `#scala` `#programming` `#install`
-
-## TODO
-
-- No `main_link` could be auto-detected. Add the canonical URL (project homepage / repo / paper) to the frontmatter.
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#sbt` `#scala` `#build-tool` `#jvm` `#mill` `#scala-cli` `#incremental-compilation` `#programming`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+From the project shell help:
 
-# SBT
-
-
-## Install
-
-```bash
-You can use $SBT_OPTS to pass additional JVM options to sbt.
-Project specific options should be placed in .sbtopts in the root of your project.
-Global settings should be placed in /usr/local/etc/sbtopts
-
-```
+> You can use `$SBT_OPTS` to pass additional JVM options to sbt.
+> Project-specific options should be placed in `.sbtopts` in the root of your project.
+> Global settings should be placed in `/usr/local/etc/sbtopts`.

@@ -1,82 +1,89 @@
 ---
-title: Circle
+title: "Circle — an experimental C++20 compiler with reflection and pattern matching"
 main_link: https://www.circle-lang.org/
-keywords: [circle, cpp, language, compilers, type, rust]
-status: draft
+keywords: [circle, cpp, compiler, reflection, pattern-matching, metaprogramming, sean-baxter, experimental]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# Circle
+# Circle — an experimental C++20 compiler with reflection and pattern matching
 
 **Main link:** <https://www.circle-lang.org/>
 
+Repo: <https://github.com/seanbaxter/circle> · "New Circle" notes: <https://www.circle-lang.org/site/intro/intro.html>
+
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Circle is a from-scratch C++20-compatible compiler by Sean Baxter that adds opt-in language extensions which the C++ standard has been promising for decades — full compile-time reflection, pattern matching, choice (sum) types, interfaces and impls, language-level type erasure, a saner declaration syntax (`fn`, `var`), an explicit `forward` keyword, and rich pack-manipulation traits. "New Circle" reframes those features behind a fine-grained per-translation-unit `feature` versioning mechanism, so a project can opt in à la carte while remaining 100% link-compatible with ordinary C++ code.
+
+Often quoted (in this folder originally) as "the best macro language" — because the reflection + pack traits surface lets you do at compile time what you'd reach for a code generator to do in standard C++.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Where Circle sits, honestly:
+
+- **It's not a standards-track proposal** — it's one engineer's argument-by-implementation that C++ could already have these features. Some ideas (reflection, pattern matching) are converging with WG21 work for C++26; others (choice types, language type erasure) are unique to Circle.
+- **It's not free software in the FSF sense** — the compiler is a proprietary binary you download, not source. That alone disqualifies it for many production codebases regardless of how compelling the features are.
+- **It's a single-maintainer project** — there's effectively one person behind it. That's both why it has been so prolific and why it's a real bus-factor risk.
+- **100% C++ compatibility is genuinely useful** — you can drop Circle into an existing project and only the files that opt into features change behavior. That makes it cheap to experiment without forking the codebase.
+
+When to actually reach for it:
+
+- Research / prototyping a feature you wish C++ had, before shipping it as a normal C++ library or paper.
+- Internal codegen / reflection-heavy systems where the alternative is templated horror or external code generators.
+- Teaching / writing — Circle's syntax for sum types and pattern matching is much friendlier than the equivalent `std::variant` + `std::visit` dance.
+
+When to avoid:
+
+- Anything that requires source-level toolchain auditability or a permissive license on the compiler.
+- Long-lived production code that needs guaranteed multi-vendor compiler support.
+- Codebases that integrate with build systems / IDEs that assume clang/gcc/MSVC.
+
+The realistic alternative for most of the "I want sum types and reflection in my systems language" use case is, frankly, [[programming/rust/README|Rust]]. Circle is the C++-native answer for people who can't or won't switch.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [Carbon Language](https://github.com/carbon-language/carbon-lang) — Google's "successor" attempt; explicitly bidirectional with C++.
+- [Cpp2 / cppfront (Herb Sutter)](https://github.com/hsutter/cppfront) — alternate-syntax front-end that lowers to standard C++.
+- [P2996 — Reflection for C++26](https://wg21.link/P2996) — the standards-track reflection proposal Circle has anticipated by years.
+- [P1371 — Pattern Matching](https://wg21.link/P1371) — standards-track pattern matching.
+- [[programming/rust/README|Rust]] — the obvious "we already have all this" comparison point.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[abi]] — C++ ABI _(score 26.0)_
-- [[brainfuck]] — Brainfuck _(score 15.8)_
-- [[rtic]] — RTIC _(score 13.1)_
-- [[alagorithms]] — algorithms _(score 13.1)_
-- [[reflection]] — reflect _(score 13.1)_
+- [[abi]] — sibling: any non-standard compiler raises ABI questions immediately.
+- [[programming/cpp/README|C++]] — parent section.
+- [[programming/rust/README|Rust]] — the comparison every "but C++ could have..." discussion ends at.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#circle` `#cpp` `#programming` `#language` `#compiler` `#types` `#make`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#circle` `#cpp` `#compiler` `#reflection` `#pattern-matching` `#metaprogramming` `#sean-baxter` `#experimental` `#programming`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+Originally noted in this vault as: *"Suggested as best macro language."*
 
-# Circle
+From the Circle site:
 
-_Note: Suggested as best macro language_
+> Circle is a new C++20 compiler. It's written from scratch and designed for easy extension.
+>
+> New Circle is a major transformation of the Circle compiler, intended as a response to recent successor language announcements. It focuses on a novel fine-grained versioning mechanism that allows the compiler to fix defects and make the language safer and more productive while maintaining 100% compatibility with existing code assets.
 
+Headline features advertised:
 
-https://www.circle-lang.org/
+- choice types
+- pattern matching
+- interfaces and impls
+- language type erasure
+- as-expressions for safer conversions
+- a modern declaration syntax with `fn` and `var` keywords
+- a simpler syntax for binary expressions (less operator-precedence surprise)
+- a `forward` keyword that takes the bugginess out of forwarding references
+- safer initializer lists (resolves `std::initializer_list` ambiguities)
+- lifting lambdas to pass overload sets as function arguments
+- nine kinds of template parameters
+- reflection traits over class types, enum types, function types, class specializations, etc.
+- pack traits for pack-transforming algorithms (sort, unique, count, erase, difference, intersection)
 
-Circle is a new C++20 compiler. It's written from scratch and designed for easy extension.
-
-New Circle is a major transformation of the Circle compiler, intended as a response to recent successor language announcements. It focuses on a novel fine-grained versioning mechanism that allows the compiler to fix defects and make the language safer and more productive while maintaining 100% compatibility with existing code assets.
-
-New Circle is the richest C++ compiler yet. Try out:
-
-- choice types,
-- pattern matching,
-- interfaces and impls,
-- language type erasure,
-- as-expressions for safer conversions,
-- a modern declaration syntax with fn and var keywords to make clearer, less ambiguous declarations,
-- a simpler syntax for binary expressions, greatly reducing the likelihood of bugs caused by confusing operator precedences,
-- a forward keyword to take the complexity and bugginess out of forwarding references,
-- safer initializer lists, which address ambiguities when calling std::initializerlist constructors and non-std::initializerlist constructors,
-- lifting lambdas to pass overload sets as function arguments,
-- nine kinds of template parameters to make templates far more comprehensive,
-- reflection traits to access packs of information about class types, enum types, function types, class specializations, and so on,
-- pack traits for pack-transforming algorithms, like sort, unique, count, erase, difference, intersection, and so on.
-
-New Circle describes a path for evolving C++ to meet the needs of institutional users. The versioning mechanism that accommodated the development of the features above will also accommodate research into critically important areas like memory safety. Rather than insisting on a one-size-fit's-all approach to language development, project leads can opt into collections of features that best target their projects' needs.
+The framing pitch: "rather than insisting on a one-size-fits-all approach to language development, project leads can opt into collections of features that best target their projects' needs."

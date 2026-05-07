@@ -1,56 +1,59 @@
 ---
-title: C++ ABI
+title: "C++ ABI (Itanium): name mangling, vtables, and cross-toolchain compatibility"
 main_link: https://itanium-cxx-abi.github.io/cxx-abi/abi.html
-keywords: [abi, cpp, cxx, itanium, rust]
-status: draft
+keywords: [abi, cpp, itanium-abi, name-mangling, libstdcxx, libcxx, vtable, linker]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-
-# C++ ABI
+# C++ ABI (Itanium): name mangling, vtables, and cross-toolchain compatibility
 
 **Main link:** <https://itanium-cxx-abi.github.io/cxx-abi/abi.html>
 
+Related: <https://en.wikipedia.org/wiki/Name_mangling#C++>
+
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+The "Itanium C++ ABI" is, despite the name, the de-facto C++ ABI on essentially every Unix-like platform — Linux, macOS, BSDs, and bare-metal toolchains. (Windows uses the unrelated MSVC ABI.) It defines how C++ source-level constructs — overloaded function names, namespaces, templates, vtables, RTTI, exceptions, the layout of class members and bases — are lowered into linker symbols and binary layout. It started as the ABI for HP/Intel's now-defunct Itanium architecture, was generalized, and stuck.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The ABI is mostly invisible until it's catastrophically not. Reasons it suddenly matters:
+
+- **Linker errors with `_ZN...` symbols** — those are mangled C++ names. `c++filt` (or `llvm-cxxfilt`) decodes them. Mismatch usually means an ODR violation, an inline function defined inconsistently across translation units, or a header/library version skew.
+- **Mixing libstdc++ and libc++** — same source, two different standard library implementations with different binary layouts (e.g. `std::string`, `std::list::size()`). Link a `.o` built against one with a `.so` built against the other and you get silent UB or immediate crashes.
+- **The std::string COW saga (GCC dual ABI)** — GCC ≥5 changed `std::string` to SSO/non-COW. To stay backward-binary-compatible they introduced the `_GLIBCXX_USE_CXX11_ABI` macro: `0` selects the old COW string with `std::string` mangled into the bare namespace; `1` selects the new one mangled into `std::__cxx11::`. Distros that mix old and new libraries hit this in the form of "undefined reference to `foo(std::__cxx11::string)`".
+- **C++ has no stable ABI by design** — unlike C. Adding a virtual function, reordering members, changing template default parameters, or even toggling `-D_GLIBCXX_DEBUG` can change layout. This is why most C++ libraries that care about ABI stability expose a `extern "C"` shim or use the [pImpl idiom](https://en.cppreference.com/w/cpp/language/pimpl).
+- **Inter-language FFI** — Rust, Swift, etc. interop with C++ goes via `extern "C"` or via tools like [`cxx`](https://cxx.rs/) and [`autocxx`](https://google.github.io/autocxx/) that generate the mangled symbols correctly.
+
+When to actually open the spec:
+
+- You're writing a tool that needs to mangle/demangle (a debugger, a profiler, a language binding generator).
+- You're tracking down a "this works in debug, crashes in release" mystery that smells like layout difference.
+- You're shipping a C++ library and want to *avoid* breaking ABI on minor releases — read the [KDE Policies on Binary Compatibility](https://community.kde.org/Policies/Binary_Compatibility_Issues_With_C%2B%2B) which is the most-cited practical guide.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [Itanium C++ ABI spec](https://itanium-cxx-abi.github.io/cxx-abi/abi.html) — the source of truth.
+- [KDE Binary Compatibility Issues with C++](https://community.kde.org/Policies/Binary_Compatibility_Issues_With_C%2B%2B) — the practical "what changes break ABI" cheatsheet.
+- [`cxx` (Rust ↔ C++ interop)](https://cxx.rs/) — generates the right mangled symbols on both sides.
+- [`c++filt`](https://sourceware.org/binutils/docs/binutils/c_002b_002bfilt.html) / `llvm-cxxfilt` — decoder ring for mangled names.
+- [Stable ABI in Python (PEP 384)](https://peps.python.org/pep-0384/) — interesting contrast: how a *managed* runtime carves out a stable ABI subset.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[circle]] — Circle _(score 26.0)_
-- [[rtic]] — RTIC _(score 13.1)_
-- [[programming/rust/gui/tauri|tauri]] — Tauri _(score 13.1)_
-- [[html]] — kuchiki _(score 13.1)_
-- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 13.1)_
+- [[circle]] — sibling: experimental C++ extensions; obviously diverge from the standard ABI in interesting ways.
+- [[programming/cpp/README|C++]] — parent section.
+- [[assembly]] — disassembly is the only way to confirm what a layout actually looks like.
+- [[programming/rust/README|Rust]] — Rust's own ABI is also unstable; C ABI is the lingua franca for both.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#abi` `#cpp` `#programming` `#cxx` `#itanium`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#abi` `#cpp` `#itanium-abi` `#name-mangling` `#libstdcxx` `#libcxx` `#vtable` `#linker` `#programming`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# C++ ABI
-
-https://itanium-cxx-abi.github.io/cxx-abi/abi.html
+- Spec: <https://itanium-cxx-abi.github.io/cxx-abi/abi.html>
+- Mangling on Wikipedia: <https://en.wikipedia.org/wiki/Name_mangling#C++>
+- The `_GLIBCXX_USE_CXX11_ABI` macro and dual-ABI background: <https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_dual_abi.html>
