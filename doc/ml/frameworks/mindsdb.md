@@ -1,132 +1,136 @@
 ---
-title: MindsDB
+title: MindsDB — ML as virtual tables on top of your database
 main_link: https://mindsdb.com/
-keywords: [mindsdb, frameworks, customers, mysql, quality, kafka]
-status: draft
+keywords: [mindsdb, sql-ml, in-database-ml, automl, frameworks]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# MindsDB
+# MindsDB — ML as virtual tables on top of your database
 
 **Main link:** <https://mindsdb.com/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+MindsDB is an **AI/ML "virtual database"** layer that lets you train
+and query models with plain SQL — `CREATE MODEL ... PREDICT target
+FROM ...`, then `SELECT predicted FROM model JOIN your_table`.
+Predictions appear as **AI tables** in your existing database; under
+the hood MindsDB connects to MySQL, PostgreSQL, MongoDB, Snowflake,
+BigQuery, Kafka and dozens of other data sources, and to model
+backends (its own AutoML, plus pluggable engines like Ludwig,
+HuggingFace, OpenAI). The project is open source (Python) with a
+hosted commercial offering.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The original 2017 MindsDB pitch — "ML *inside* your database, no
+data movement, no separate ML pipeline" — is now mainstream. Almost
+every major data platform has bought into the SQL-ML pattern:
+**BigQuery ML** (`CREATE MODEL`), **Snowflake Cortex**, **Databricks
+ML / AI Functions**, **DuckDB extensions**. Where MindsDB still has a
+unique angle is being **substrate-agnostic** — it sits in front of
+*your* MySQL/Postgres/Mongo and gives you the same `CREATE MODEL`
+DSL across all of them, including LLM and time-series engines. So
+the modern framing is less "magical ML" and more "the polyglot SQL-ML
+front-end for shops that don't want to lock themselves into one
+warehouse vendor".
+
+When to reach for MindsDB:
+
+- You have an OLTP database (MySQL, Postgres, Mongo) and want a few
+  predictive columns without standing up an ML team.
+- You want SQL-level access to LLMs / time-series forecasts /
+  embeddings — the same interface across providers.
+- You want federated joins between your DB and an external model.
+
+When *not* to reach for it:
+
+- You're already all-in on Snowflake, BigQuery or Databricks — use
+  their native SQL-ML; one fewer moving part.
+- You want a data-scientist workflow with notebooks, experiment
+  tracking and bespoke models — go to scikit-learn / [[h2o]] /
+  PyTorch.
+- You need real-time low-latency serving — MindsDB is fine for
+  batch and dashboard-shaped queries, less compelling as a hot-path
+  inference server.
+
+Versus the SQL-ML neighbours:
+
+| Platform               | Where it lives                                |
+|------------------------|-----------------------------------------------|
+| MindsDB                | In front of any DB, polyglot                  |
+| BigQuery ML            | Inside Google BigQuery                        |
+| Snowflake Cortex / ML  | Inside Snowflake                              |
+| Databricks AI Functions| Inside Databricks SQL warehouses              |
+| Postgres + pgvector / pg_ml | Postgres-native, embeddings + simple ML  |
+| DuckDB extensions      | In-process analytical, growing ML support     |
+
+Honest framing: the 2017 vision is now table stakes — what's
+interesting about MindsDB in 2025 is the federation layer and the
+wide library of pre-integrated model backends. Treat it as the
+lightest path from "I have a DB" to "I have predictions in that DB",
+and weigh it against the warehouse-native alternatives if you're
+already on one of them.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- BigQuery ML — Google's in-warehouse SQL ML; see
+  [[../bigquery/README|bigquery]].
+- Snowflake Cortex — Snowflake's in-warehouse ML / LLM functions.
+- Databricks AI Functions — SQL-callable models on Databricks.
+- pgvector / pg_ml / Postgres ML — Postgres-native ML extensions.
+- [[h2o]] — classic AutoML on tabular data; same problem space, very
+  different surface (Python/JVM, not SQL).
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[dspy]] — DSPy _(score 21.4)_
-- [[mlcube]] — MLCube _(score 21.4)_
-- [[kafka]] — Kafka _(score 18.6)_
-- [[kafka]] — Kafka _(score 18.6)_
-- [[db/relational/mysql|mysql]] — mysql _(score 17.9)_
+- [[README]] — frameworks landing.
+- [[h2o]] — AutoML cousin (different surface).
+- [[../bigquery/README|bigquery]] — Google's warehouse-native
+  SQL-ML, the closest direct comparison.
+- [[../../db/relational/mysql|mysql]] — common upstream substrate.
+- [[../../db/relational/postgresql|postgresql]] — same.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#mindsdb` `#frameworks` `#ml` `#machine` `#learning` `#customers` `#models`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#mindsdb` `#sql-ml` `#in-database-ml` `#automl` `#frameworks`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Site: <https://mindsdb.com/>
+- Repo: <https://github.com/mindsdb/mindsdb>
+- Docs: <https://docs.mindsdb.com/>
 
-# MindsDB
+### Project pitch (paraphrased)
 
+MindsDB is a predictive layer on top of existing databases that
+makes it easy to prototype and deploy ML models from the database
+itself. AI tables — created by simple `CREATE MODEL ...` queries —
+hold predictions generated in real time by the underlying models.
+Because MindsDB looks and acts like a database, it slots in front of
+your current BI / analytics tooling without changes.
 
-[MindsDB](https://mindsdb.com/)
+### Integrations
 
- - machine learning inside DB
- - integrates with: mysql, postgressql, kafka, cassandra, mongo , redis, oracle, sql server
- - few nice use cases, can run on docker, to be used => maybe in some production type scenario - early prevention ...
+MySQL, PostgreSQL, MongoDB, Cassandra, Redis, Oracle, SQL Server,
+Snowflake, BigQuery, Kafka, and many more — see the docs for the
+current list.
 
+### Use cases (public marketing examples)
 
-## Intro 
-
-A predictive layer for existing databases that enables rapid prototyping & deployment of ML Models from your database. Significantly reducing the time and cost of machine learning workflows.
-
-From:
-![img](../assets/img/mindsdb/ML_classic.png)
-
-To:
-
-![](../assets/img/mindsdb/ML_modern.png)
-
-
-Get the predictions you need as simple tables in your database.
-
-Use your data at the source to train & deploy Machine Learning models and get the predictions you need as tables. Query the results anytime in seconds as if they were existing tables.
-
-AI Tables are created with simple queries inside the database or data store and contain predictions generated in real-time by the models.
-
-MindsDB looks and acts like a database and thus seamlessly interacts with your current database and BI tools.
-
-## Use cases
-
-There is a MindsDB application for any business question you may have
-
-### Churn Reduction
-Acquiring a new customer can cost five times more than retaining an existing customer. Therefore, it is essential for marketing departments to make sure they keep customers satisfied and to provide them with personalized offers at the right time in order to reduce customer turnover.​
-
-### Employee Retention Management
-Keeping well trained quality employees nowadays is the primary goal in growing organisations. Our platform enables HR teams to get a holistic view of employee behavior to increase job satisfaction and to help retain them.
-
-### Credit Scoring
-Determining which customers to give credit to, is still the key challenge for most financial institutions. With accurate predictive models MindsDB helps financial institutions determine customers’ credit worthiness.
-
-### Customer Lifetime Value Optimization
-Acquiring and nurturing customers to ensure continuous revenue is a key objective for most businesses. By using advanced machine learning algorithms we help companies understand who their customers are and their value over their lifetime.
-
-### Direct Marketing
-Marketing, when done correctly, can help your business remain competitive. With MindsDB’s advanced machine learning technology, you can increase your ROI by drilling down on your marketing to better target and reach the type of customers most likely to respond to your campaigns.
-
-### Fraud Detection
-For advanced businesses it is a constant challenge to keep up with fraud techniques. Using fraud detection algorithms, MindsDB scores transactions that may seem fraudulent and automatically flag and reject them.
-
-### Fraudulent Claim Detection
-Fraudulent claims are expensive. Additionally, most insurers don’t have the resources to investigate every claim. Using MindsDB’s advanced machine learning platform, insurers can detect which claims are most likely to be fraudulent based on certain characteristic and investigate the fraudulent claims accordingly.
-
-### Inventory Management
-Accurate predictions on how much of a product or item needs to be produced has a massive impact on working capital. MindsDB’s powerful platform provides you with a robust tool that takes the guesswork out of determining product demand.
-
-### Loan Recovery
-Loans can be expensive. Loan recovery even more so. Using machine learning models MindsDB helps banks and financial institutions to identify at-risk customers, predict loan recovery dates, and organize debt collection efforts.
-
-### Patient Health Outcomes
-In healthcare time is key. Using predictive modeling helps to identify patients at risk for adverse events. MindsDB uses machine learning to empower healthcare organizations to predict patient health outcomes before they occur.
-
-### Predictive Maintenance
-Unplanned downtime can be disastrous to any organization. MindsDB uses machine learning to enable your predictive maintenance minimize equipment failure, reduce errors and lessen unplanned downtime.
-
-### Price modelling
-Optimizing pricing decision-making represents one of the largest, multi-million dollar opportunities for companies to drive incremental sales and profits. Through our platform we help make more informed pricing decisions.
-
-### Product Personalization
-Today’s customers expect highly customized experiences from retailers and e-commerce providers. Our platform uses machine learning algorithms based on historical data on sales and traffic to understand and predict individual customer preferences.
-
-### Quality Assurance
-Quality Assurance is no stranger to automation. Using AI MindsDB helps to reduce test coverage overlaps, increase predictability in testing, and both detect and prevent defects.
-
-### Risk Assessment
-An accurate prediction model is the cornerstone of todays risk assessement. MindsDB makes vast amounts of data accessible to build models that improve decision making.
+- **Churn / retention prediction** — flag at-risk customers before
+  they leave.
+- **Credit scoring & fraud detection** — score transactions or
+  applicants directly from warehouse data.
+- **Customer-lifetime-value optimisation** — segment by predicted
+  long-term revenue.
+- **Demand forecasting & inventory management** — time-series on
+  product/SKU history.
+- **Predictive maintenance** — surface equipment likely to fail.
+- **Patient health outcomes** — risk stratification from EHR data.
+- **Direct marketing & product personalisation** — propensity
+  scores joined back to campaign tables.
+- **Quality assurance & risk assessment** — anomaly scoring on
+  test/transaction streams.

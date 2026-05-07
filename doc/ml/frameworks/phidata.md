@@ -1,105 +1,148 @@
 ---
-title: PhiData
-main_link: https://github.com/phidatahq/phidata/blob/main/README.md
-keywords: [phidata, frameworks, assistant, vector]
-status: draft
+title: phidata / agno — agent + RAG framework with built-in observability
+main_link: https://github.com/agno-agi/agno
+keywords: [phidata, agno, agents, rag, llm, observability, frameworks]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# phidata / agno — agent + RAG framework with built-in observability
 
-# PhiData
-
-**Main link:** <https://github.com/phidatahq/phidata/blob/main/README.md>
+**Main link:** <https://github.com/agno-agi/agno>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+phidata is a Python framework for building LLM-backed **agents** and
+**RAG** apps with first-class memory, knowledge (vector store) and
+tool integrations, plus a built-in **playground UI** and observability
+that the project markets as "ship to production fast". The project
+**rebranded to `agno` in late 2024** (org `agno-agi/agno`) and the old
+`phidata` package now redirects there. The Agent abstraction is the
+core: an agent has a model, optional memory (DB-backed chat history),
+optional knowledge (vector DB), and a list of `Tools` it can call.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The pitch is a single coherent surface for the whole agent stack —
+model + memory + knowledge + tools + monitoring + serving — instead
+of stitching together LangChain + a vector DB + LangSmith + FastAPI
+yourself. You write a `Agent(model=..., tools=[...], knowledge=..., storage=...)`,
+hit `print_response("…")` for the dev loop, and serve the same agent
+through Streamlit / FastAPI / Django when you're ready.
+
+When to reach for phidata/agno:
+
+- You want a **batteries-included** way to build an agent / RAG app
+  without spending a week wiring components.
+- You value a built-in **playground / monitoring UI** for the dev
+  loop more than maximum flexibility.
+- You're building "team of agents" patterns and want them as plain
+  Python classes.
+
+When *not* to reach for it:
+
+- You need **stateful, cyclic, checkpointable** workflows with
+  human-in-the-loop interrupts — that's [[langgraph]]'s strength.
+- You want to **optimise prompts via metrics** — use [[dspy]];
+  agno doesn't compile prompts.
+- You need a fully provider-agnostic, vendor-neutral stack with
+  the largest integration surface — LangChain still wins on raw
+  breadth (at the cost of complexity).
+
+Versus the agent neighbourhood:
+
+| Framework         | Sweet spot                                          |
+|-------------------|-----------------------------------------------------|
+| phidata / agno    | All-in-one agent+RAG with playground & monitoring   |
+| LangChain         | Largest integration surface, most documentation     |
+| [[langgraph]]     | Stateful cyclic graphs, checkpointing, HITL         |
+| LlamaIndex        | RAG-first ingest + query engines                    |
+| CrewAI / AutoGen  | Multi-agent role-play / debate                      |
+| [[dspy]]          | Prompt + weight compilation from metrics            |
+| pydantic-ai       | Typed, code-first agents with validation focus      |
+
+Gotchas:
+
+- The **rebrand** is real — code on the public web that imports
+  `from phi.assistant import Assistant` is from the old
+  `phidata`/`phi` API; current docs use `from agno.agent import
+  Agent`. Watch the date on tutorials.
+- The "playground / monitoring" features push you toward the hosted
+  agno service for the full experience; the OSS path works but is
+  less polished.
+- Like every JS-fast-moving Python agent framework, expect API
+  churn — pin versions in production.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[langgraph]] — sibling framework for stateful, cyclic agent
+  graphs with checkpointing.
+- [[dspy]] — prompt/weight compiler that fits *inside* an agent
+  step.
+- LangChain / LlamaIndex — the broader-scope siblings.
+- CrewAI — multi-agent role-play with declarative crews.
+- pydantic-ai — typed code-first agent SDK.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[rust_ml]] — BAD ONES: _(score 14.8)_
-- [[mindsdb]] — MindsDB _(score 9.4)_
-- [[dspy]] — DSPy _(score 9.4)_
-- [[mlcube]] — MLCube _(score 9.4)_
-- [[langgraph]] — langgraph _(score 9.4)_
+- [[README]] — frameworks landing.
+- [[langgraph]] — sibling agent framework.
+- [[dspy]] — sibling prompt-compilation framework.
+- [[../agents/README|agents]] — agent-orchestration hub.
+- [[../rag/README|rag]] — RAG hub (phidata/agno is a common engine).
+- [[../llm/README|llm]] — LLM landing.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#phidata` `#frameworks` `#ml` `#assistant` `#llms` `#tools` `#llama3`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#phidata` `#agno` `#agents` `#rag` `#llm` `#observability`
+`#frameworks`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Current repo (post-rebrand): <https://github.com/agno-agi/agno>
+- Docs: <https://docs.agno.com/>
+- Original phidata repo (now redirects):
+  <https://github.com/phidatahq/phidata>
+- Discord, examples and tutorials are linked from the docs.
 
-# PhiData
+### Original (phidata-era) project pitch
 
+> *Phidata is a framework for building Autonomous Assistants
+> (Agents) using LLMs. Problem: LLMs have limited context and cannot
+> take actions. Solution: add Memory (chat history in a DB),
+> Knowledge (info in a vector DB) and Tools (functions the LLM can
+> invoke).*
+>
+> Workflow:
+>
+> 1. Create an `Assistant` (now `Agent`).
+> 2. Add Tools (functions), Knowledge (vectordb) and Storage (db).
+> 3. Serve via Streamlit / FastAPI / Django.
 
-https://github.com/phidatahq/phidata/blob/main/README.md
+### Quick-start (phidata-era API; check current agno docs)
 
-
-![](https://private-user-images.githubusercontent.com/22579644/322947450-295187f6-ac9d-41e0-abdb-38e3291ad1d1.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTU3NjI3MzgsIm5iZiI6MTcxNTc2MjQzOCwicGF0aCI6Ii8yMjU3OTY0NC8zMjI5NDc0NTAtMjk1MTg3ZjYtYWM5ZC00MWUwLWFiZGItMzhlMzI5MWFkMWQxLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA1MTUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNTE1VDA4NDAzOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTBkNzJjMDliNDcyYTI1ODY5YTU3MTI5M2JjN2EyYzliYjJlNGQxNmUwYmQ3OTg3NDUxOTQzOTRiZmI5Yjc3YjMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.eCxLbFybMxt6s6_MhlTI_-NE2JrjAop2MeM_Bzpo7Po)
-
-What is phidata?
-Phidata is a framework for building Autonomous Assistants (i.e. Agents) using LLMs.
-
-Why phidata?
-Problem: LLMs have limited context and cannot take actions.
-
-Solution: Add memory, knowledge and tools.
-
-Memory: Stores chat history in a database and enables LLMs to have long-term conversations.
-Knowledge: Stores information in a vector database and provides LLMs with business context.
-Tools: Enable LLMs to take actions like pulling data from an API, sending emails or querying a database.
-How it works
-Step 1: Create an Assistant
-Step 2: Add Tools (functions), Knowledge (vectordb) and Storage (database)
-Step 3: Serve using Streamlit, FastApi or Django to build your AI application
-Installation
+```sh
 pip install -U phidata
-Quickstart: Assistant that can search the web
-Create a file assistant.py
+pip install openai duckduckgo-search
+export OPENAI_API_KEY=sk-xxxx
+python assistant.py
+```
 
+```python
 from phi.assistant import Assistant
 from phi.tools.duckduckgo import DuckDuckGo
 
 assistant = Assistant(tools=[DuckDuckGo()], show_tool_calls=True)
-assistant.print_response("Whats happening in France?", markdown=True)
-Install libraries, export your OPENAI_API_KEY and run the Assistant
+assistant.print_response("What's happening in France?", markdown=True)
+```
 
-pip install openai duckduckgo-search
+### Example projects (from the original README)
 
-export OPENAI_API_KEY=sk-xxxx
-
-python assistant.py
-Documentation and Support
-Read the docs at docs.phidata.com
-Chat with us on discord
-Examples
-LLM OS: Using LLMs as the CPU for an emerging Operating System.
-Autonomous RAG: Gives LLMs tools to search its knowledge, web or chat history.
-Local RAG: Fully local RAG with Ollama and PgVector.
-Investment Researcher: Generate investment reports on stocks using Llama3 and Groq.
-News Articles: Write News Articles using Llama3 and Groq.
-Video Summaries: YouTube video summaries using Llama3 and Groq.
-Research Assistant: Write research reports using Llama3 and Groq.
+- **LLM OS** — using LLMs as the CPU for an emerging operating
+  system.
+- **Autonomous RAG** — agent with tools to search its knowledge,
+  the web or chat history.
+- **Local RAG** — fully local with Ollama + PgVector.
+- **Investment researcher / news writer / video summariser /
+  research assistant** — Llama-3 + Groq examples.

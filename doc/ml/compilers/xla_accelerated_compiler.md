@@ -1,91 +1,93 @@
 ---
-title: XLA
-main_link: https://github.com/openxla/xla
-keywords: [xla-accelerated-compiler, compilers, tensorflow, gpus, cpus, linear, frameworks]
-status: draft
+title: XLA — Google's Accelerated Linear Algebra compiler
+main_link: https://openxla.org/
+keywords: [xla, openxla, jax, tensorflow, pytorch, tpu, mlir, stablehlo, pjrt]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# XLA — Google's Accelerated Linear Algebra compiler
 
-# XLA
-
-**Main link:** <https://github.com/openxla/xla>
+**Main link:** <https://openxla.org/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+XLA (Accelerated Linear Algebra) is Google's domain-specific compiler for linear algebra and tensor ops, used to take a model from JAX, TensorFlow or PyTorch and lower it through StableHLO into fused, hardware-specific code for CPU, GPU, and TPU. Originally built inside TensorFlow, since 2023 it lives under the **OpenXLA** umbrella with open governance — including the related **PJRT** (uniform device runtime), **StableHLO** (stable IR for portability), and **IREE** (alternative MLIR-based runtime). It's the de-facto compiler stack underneath JAX and Google's internal TPU production workloads.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The XLA pitch is straightforward: take a tensor program, fuse adjacent ops to cut memory traffic (the dominant cost in modern accelerators), specialise to actual tensor shapes, and emit code for the device. The honest 2024-2025 picture:
+
+- **JAX uses XLA as its only backend.** If you write JAX, you are an XLA user whether you know it or not. `jit` triggers an XLA compilation.
+- **TensorFlow uses XLA as a `tf.function(jit_compile=True)` opt-in.** Default TF graph execution still goes through the older XLA-less path for many ops.
+- **PyTorch's XLA story is the `torch_xla` package**, primarily aimed at TPUs. PyTorch's main GPU compilation story moved to TorchInductor (part of `torch.compile`) which is a different codebase. `torch.export` + StableHLO is the bridge.
+- **Most non-Google-scale users see XLA as "the thing that makes JAX fast on a TPU"**. On NVIDIA GPUs, the typical comparison is XLA vs `torch.compile` vs TensorRT vs hand-rolled Triton kernels — XLA is competitive on whole-graph compilation, less competitive on hand-tuned single kernels.
+
+OpenXLA's organisational shift (2023, Linux Foundation governance, multi-vendor steering with NVIDIA, AMD, Intel, AWS, Meta) was real but the contributor mix is still very Google-heavy. StableHLO has succeeded as a portable IR (Apple's MLX, Modular's MAX, IREE all consume it).
+
+Where to reach for it:
+
+- You are training/serving on TPU — XLA is the only path.
+- You are on JAX — already done.
+- You want whole-graph compilation on GPU and your model is shape-stable — try it, but `torch.compile` may be a faster path on PyTorch.
+
+Where to skip:
+
+- Highly dynamic shapes (re-compilation cost dominates).
+- A single hot kernel where Triton or hand-tuned CUDA wins.
+- A small model where eager-mode latency already meets your budget.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **TorchInductor (`torch.compile`)** — PyTorch 2's whole-graph GPU compiler, the practical alternative on NVIDIA.
+- **TensorRT** — NVIDIA's inference-side graph optimiser, narrower scope, hand-tuned kernel library underneath.
+- **Apache TVM / Triton** — alternative tensor compilers, different sweet spots.
+- **IREE** — MLIR-based runtime under the OpenXLA umbrella; targets edge / mobile / Vulkan well.
+- **MLIR / StableHLO / PJRT** — the IR + runtime infrastructure XLA is built on.
+- **Modular MAX / Mojo** — a 2024-grade non-XLA alternative tensor stack.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[mlgo_llvm]] — Google's other ML-driven compiler effort, but at the LLVM-IR level
+- [[tiramisu]] — research-grade polyhedral compiler in the same broad space
+- [[tiny_gpu]] — the hardware end of the same stack
+- [[cuda/README|cuda]] — when XLA targets NVIDIA, this is what it eventually emits for
+- [[README|ml/compilers]] — section landing
+- [[../../programming/rust/ml/ml_in_rust|ml_in_rust]] — Rust-side ML stack overview
 
-- [[tiny_gpu]] — Tiny - GPU _(score 28.9)_
-- [[tiramisu]] — Tiramisu _(score 22.4)_
-- [[mlgo_llvm]] — MLGO _(score 22.4)_
-- [[vortex]] — Vortex (2024-10-17) _(score 12.9)_
-- [[rust_ml]] — BAD ONES: _(score 12.3)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#xla-accelerated-compiler` `#compilers` `#ml` `#tensorflow` `#gpus` `#cpus` `#pytorch`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#xla` `#openxla` `#jax` `#tensorflow` `#pytorch` `#tpu` `#mlir` `#stablehlo` `#pjrt`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Project
 
-# XLA
+- Homepage: <https://openxla.org/>
+- Repo: <https://github.com/openxla/xla>
+- StableHLO spec: <https://openxla.org/stablehlo>
+- PJRT: <https://openxla.org/pjrt>
+- IREE: <https://iree.dev/>
 
-https://github.com/openxla/xla
+### Project's pitch
 
-**XLA (Accelerated Linear Algebra)** is an open-source machine learning (ML) compiler for GPUs, CPUs, and ML accelerators.
+> **XLA (Accelerated Linear Algebra)** is an open-source machine learning (ML) compiler for GPUs, CPUs, and ML accelerators.
+>
+> The XLA compiler takes models from popular ML frameworks such as PyTorch, TensorFlow, and JAX, and optimizes them for high-performance execution across different hardware platforms including GPUs, CPUs, and ML accelerators.
 
-The XLA compiler takes models from popular ML frameworks such as PyTorch, TensorFlow, and JAX, and optimizes them for high-performance execution across different hardware platforms including GPUs, CPUs, and ML accelerators.
+### Get started — framework docs
 
-## Get started
-If you want to use XLA to compile your ML project, refer to the corresponding documentation for your ML framework:
+- JAX: <https://jax.readthedocs.io/en/latest/jit-compilation.html>
+- TensorFlow: <https://www.tensorflow.org/xla>
+- PyTorch (`torch_xla`): <https://pytorch.org/xla/>
 
-- PyTorch
-- TensorFlow
-- JAX
+### Build from source (Docker)
 
-
-
-Clone this repository:
-```shell
+```sh
 git clone https://github.com/openxla/xla && cd xla
-```
-
-We recommend using a suitable docker container to build/test XLA, such as TensorFlow's docker container:
-
-```shell
-docker run --name xla -w /xla -it -d --rm -v $PWD:/xla tensorflow/build:latest-python3.9 bash
-```
-
-Run an end to end test using an example StableHLO module:
-
-```shell
+docker run --name xla -w /xla -it -d --rm -v "$PWD":/xla tensorflow/build:latest-python3.9 bash
 docker exec xla ./configure
-
 docker exec xla bazel test xla/examples/axpy:stablehlo_compile_test --nocheck_visibility --test_output=all
 ```
 
-This will take quite a while your first time because it must build the entire stack, including MLIR, StableHLO, XLA, and more.
+The first build takes a while because it builds the entire stack (MLIR, StableHLO, XLA, etc.).
