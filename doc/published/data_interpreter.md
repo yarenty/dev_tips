@@ -29,7 +29,7 @@ status: draft
 
 - [[dataman]] — Dataman _(score 24.9)_
 - [[ml/time_series/papers|papers]] — Papers _(score 11.0)_
-- [[time_series_research_papers]] — Time series research papers _(score 11.0)_
+- [[ml/time_series/papers|papers]] — Time series research papers _(score 11.0)_
 - [[tools/security/pake|pake]] — Pake _(score 10.9)_
 - [[episodic_memory]] — Episodic Memory _(score 5.6)_
 

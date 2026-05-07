@@ -1,61 +1,81 @@
 ---
-title: Papers
-main_link: https://www.connectedpapers.com/main/dcc9308f2b9879e9fecff30108faa544d977a73c/A-Framework-for-Pattern-Mining-and-Anomaly-Detection-in-Multi%20dimensional-Time-Series-and-Event-Logs/graph
-keywords: [papers, time-series, frameworks, pattern, graph]
-status: draft
+title: Time-series research papers
+main_link: https://lirias.kuleuven.be/bitstream/123456789/642650/2/ECMLPKDD_workshop_manuscript.pdf
+keywords: [papers, time-series, anomaly-detection, pattern-mining, research, reading-list]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Time-series research papers
 
-# Papers
-
-**Main link:** <https://www.connectedpapers.com/main/dcc9308f2b9879e9fecff30108faa544d977a73c/A-Framework-for-Pattern-Mining-and-Anomaly-Detection-in-Multi%20dimensional-Time-Series-and-Event-Logs/graph>
+**Main link:** <https://lirias.kuleuven.be/bitstream/123456789/642650/2/ECMLPKDD_workshop_manuscript.pdf> (Feremans et al., *A Framework for Pattern Mining and Anomaly Detection in Multi-dimensional Time Series and Event Logs*, ECML/PKDD workshop 2019)
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+A small curated reading list for time-series research, with the *Pattern Mining and Anomaly Detection* framework (Feremans et al., KU Leuven) as the headline. The framework's value is the **integration angle** — it provides generic transformations that let you mix state-of-the-art TS representations, pattern-mining algorithms, and pattern-based anomaly detectors on a combination of continuous multi-dimensional series *and* discrete event logs, with a small interactive tool for parameter selection.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+- **Use this paper as a survey, not a recipe.** The real value is the taxonomy of representations (SAX, PAA, shapelets, Matrix Profile, ...) × pattern mining (subsequence-based, motif, episode) × anomaly detection (distance, density, classification). If you're starting fresh, read the related-work tables and pick the algorithms appropriate to your data shape.
+- **For practical anomaly detection** in 2025, prefer one of: `stumpy` (Matrix Profile, fast and clean), `pyod` (29+ outlier detection algorithms unified), `darts.AnomalyModel` (model-based), `merlion` (Salesforce, one-shot benchmark + detection), or `etna` (Tinkoff). Pure DL anomaly detectors (USAD, Anomaly-Transformer, etc.) often underperform a tuned Matrix Profile on standard benchmarks — see Wu & Keogh's *Current Time Series Anomaly Detection Benchmarks are Flawed and are Creating the Illusion of Progress* (TKDE 2021).
+- **The forecasting paper canon** (orthogonal to anomaly detection):
+  - Hyndman et al. — ETS / state-space lineage.
+  - Box & Jenkins — ARIMA, the original.
+  - Oreshkin et al. — N-BEATS (2020) and follow-ups (NHiTS, NBEATSx).
+  - Lim & Zohren — *Time Series Forecasting With Deep Learning: A Survey* (2021).
+  - Zeng et al. — *Are Transformers Effective for Time Series Forecasting?* (2022, AAAI 2023, the DLinear paper).
+  - Das et al. — TimesFM (Google, 2024); Ansari et al. — Chronos (Amazon, 2024); Rasul et al. — Lag-Llama (2024); Woo et al. — Moirai (Salesforce, 2024). The foundation-model-for-TS wave.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[forecasting]] — applied forecasting overview
+- [[time_series_transformer]] — Transformer-architecture-for-TS lineage
+- [[time_sieve]] — wavelet/information-bottleneck (TimeSieve) paper
+- [[kan]] — Kolmogorov-Arnold Networks for TS forecasting
+- [[../knowledge_graph/papers|knowledge_graph/papers]] — sister reading list, different domain
 
 ## Internal links
+<!-- reviewed -->
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+- [[forecasting]]
+- [[time_series_transformer]]
+- [[time_sieve]]
+- [[kan]]
+- [[ml/time_series/tutorials|tutorials]]
+- [[../knowledge_graph/papers|knowledge_graph/papers]]
+- [[README]]
 
-- [[time_series_research_papers]] — Time series research papers _(score 48.5)_
-- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 28.6)_
-- [[tutorials_2]] — Tutorials _(score 28.6)_
-- [[ml/knowledge_graph/papers|papers]] — Research papers _(score 24.7)_
-- [[linear_regression]] — Linear Regression With Time Series _(score 21.5)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#papers` `#time-series` `#ml` `#time` `#series` `#framework` `#pattern`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#papers` `#time-series` `#anomaly-detection` `#pattern-mining` `#research` `#reading-list` `#matrix-profile` `#nbeats` `#timesfm` `#chronos`
 
 ## References / raw notes
-<!-- auto-split by article_split.py -->
-> Auto-split: 1 additional top-level heading(s) extracted into sibling files:
-> - [Time series research papers](time_series_research_papers.md)
 
+### Headline paper — pattern mining + anomaly detection framework
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+*A Framework for Pattern Mining and Anomaly Detection in Multi-dimensional Time Series and Event Logs* — Feremans, Cule, Goethals (KU Leuven, ECML/PKDD workshop 2019).
 
-# Papers
+> In the present-day, sensor data and textual logs are generated by many devices. Analysing these time series data leads to the discovery of interesting patterns and anomalies. In recent years, numerous algorithms have been developed to discover interesting patterns in time series data as well as detect periods of anomalous behaviour. However, these algorithms are challenging to apply in real-world settings. We propose a framework, consisting of generic transformations, that allows to combine state-of-the-art time series representation, pattern mining, and pattern-based anomaly detection algorithms. Using an early- or late-integration our framework handles a mix of multi-dimensional continuous series and event logs.
 
-<!-- merged from doc/ml/timeseires/papers.md -->
+- PDF: <https://lirias.kuleuven.be/bitstream/123456789/642650/2/ECMLPKDD_workshop_manuscript.pdf>
+- Connected Papers graph: <https://www.connectedpapers.com/main/dcc9308f2b9879e9fecff30108faa544d977a73c/A-Framework-for-Pattern-Mining-and-Anomaly-Detection-in-Multi%20dimensional-Time-Series-and-Event-Logs/graph>
+
+### Forecasting reading list
+
+- Hyndman & Athanasopoulos, *Forecasting: Principles and Practice* (3rd ed., free online) — <https://otexts.com/fpp3/>
+- Box, Jenkins, Reinsel, Ljung, *Time Series Analysis: Forecasting and Control* (5th ed.).
+- Lim & Zohren, *Time Series Forecasting With Deep Learning: A Survey* (2021) — <https://arxiv.org/abs/2004.13408>
+- Zeng et al., *Are Transformers Effective for Time Series Forecasting?* (AAAI 2023) — <https://arxiv.org/abs/2205.13504>
+- Oreshkin et al., *N-BEATS* (ICLR 2020) — <https://arxiv.org/abs/1905.10437>
+- Challu et al., *N-HiTS* (AAAI 2023) — <https://arxiv.org/abs/2201.12886>
+- Das et al., *TimesFM* (Google, 2024) — <https://arxiv.org/abs/2310.10688>
+- Ansari et al., *Chronos* (Amazon, 2024) — <https://arxiv.org/abs/2403.07815>
+- Rasul et al., *Lag-Llama* (2024) — <https://arxiv.org/abs/2310.08278>
+- Woo et al., *Moirai* (Salesforce, 2024) — <https://arxiv.org/abs/2402.02592>
+
+### Anomaly-detection reading list
+
+- Yeh et al., *Matrix Profile* series (UCR, 2016+) — canonical fast subsequence/motif detector.
+- Wu & Keogh, *Current Time Series Anomaly Detection Benchmarks are Flawed* (TKDE 2021) — required cautionary read.
+- Schmidl, Wenig, Papenbrock, *Anomaly Detection in Time Series: A Comprehensive Evaluation* (VLDB 2022).
+
+(Merged from former `time_series_research_papers.md`.)

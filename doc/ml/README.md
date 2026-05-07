@@ -23,7 +23,7 @@ status: draft
 - [MCP](mcp/README.md)
 - [Memory](memory/README.md)
 - [Orchestration](orchestration/README.md)
-- [Quantum](quantum/README.md)
+- [Quantum](quantum.md)
 - [RAG](rag/README.md)
 - [Skills](skills/README.md)
 - [Time Series](time_series/README.md)

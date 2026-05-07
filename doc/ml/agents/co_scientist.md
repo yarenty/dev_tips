@@ -32,7 +32,7 @@ status: draft
 - [[futurehouse]] — FutureHouse _(score 33.8)_
 - [[anmell]] — anmell _(score 16.0)_
 - [[ml/knowledge_graph/papers|papers]] — Research papers _(score 8.2)_
-- [[time_series_research_papers]] — Time series research papers _(score 8.2)_
+- [[ml/time_series/papers|papers]] — Time series research papers _(score 8.2)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

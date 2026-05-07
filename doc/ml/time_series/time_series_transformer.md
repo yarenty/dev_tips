@@ -1,243 +1,167 @@
 ---
-title: Time Series Transformer
+title: Transformers for time series — architectures, lineage, and the DLinear caveat
 main_link: https://github.com/allen-chiang/Time-Series-Transformer
-keywords: [time-series-transformer, time-series]
-status: draft
+keywords: [transformer, time-series, informer, autoformer, fedformer, patchtst, itransformer, timesfm, chronos, dlinear]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Transformers for time series — architectures, lineage, and the DLinear caveat
 
-> Auto-split from `doc/ml/time_series/time_serie_transformer.md` by `article_split.py`. Heading: **Time Series Transformer**.
-
-# Time Series Transformer
-
-**Main link:** <https://github.com/allen-chiang/Time-Series-Transformer>
+**Main link:** <https://github.com/allen-chiang/Time-Series-Transformer> (Allen Chiang, *Time-Series-Transform* — the small Python package the original notes documented)
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Two distinct things share the name "Time Series Transformer". (1) Allen Chiang's `Time-Series-Transform` Python package — a data-engineering library for shaping multi-dimensional TS for ML pipelines (lag/lead windowing, technical-indicator wiring, multi-category aggregation, plotting). (2) The much larger **architecture lineage** that adapts the 2017 attention-based Transformer to forecasting — Informer (2021), Autoformer (2021), FEDformer (2022), PatchTST (2023), iTransformer (2024) — and the 2024 wave of TS foundation models (TimesFM, Chronos, Lag-Llama, Moirai). This article covers both, with the honest empirical caveat that pure-attention models in TS forecasting are *less* dominant than they are in NLP.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+### The architecture lineage (what people usually mean)
+
+| Year | Model | What's new |
+|------|-------|------------|
+| 2017 | vanilla Transformer | self-attention, no recurrence — but O(n²) memory bites for long horizons |
+| 2021 | **Informer** (AAAI) | ProbSparse attention, distilling, generative-style decoder for long-horizon |
+| 2021 | **Autoformer** (NeurIPS) | series decomposition + auto-correlation instead of attention |
+| 2022 | **FEDformer** (ICML) | frequency-enhanced decomposition (Fourier/wavelet) + mixture-of-experts |
+| 2022 | **DLinear / NLinear** (Zeng et al.) | "are Transformers effective?" — a tiny linear layer matches/beats them all |
+| 2023 | **PatchTST** (ICLR) | tokenise patches of the series, channel-independence — the first cleanly-better Transformer |
+| 2024 | **iTransformer** (ICLR) | invert dimensions: each *variate* is a token, not each timestep |
+| 2024 | **TimesFM** (Google) | 200M decoder-only, pretrained on 100B time-points, zero-shot |
+| 2024 | **Chronos** (Amazon) | tokenise values into a vocabulary, fine-tune T5/GPT family |
+| 2024 | **Lag-Llama** | Llama-style decoder for univariate forecasting |
+| 2024 | **Moirai** (Salesforce) | multi-variate, multi-frequency foundation model |
+
+### The honest caveat
+
+Zeng et al.'s *Are Transformers Effective for Time Series Forecasting?* (AAAI 2023) showed that **DLinear** — literally `decompose into trend + seasonal, fit a linear layer to each` — matches or beats Informer/Autoformer/FEDformer on the standard benchmarks (ETT, Weather, Electricity, Traffic, ILI). PatchTST and iTransformer recovered some ground for the Transformer family, but the lesson stuck: in TS, attention isn't the magic ingredient it is in NLP. Series are short, autocorrelated, and lack the rich token structure that makes attention shine.
+
+### When to reach for the Transformer family
+
+- **Large dataset, long horizon, many series.** PatchTST / iTransformer scale better than RNNs and (sometimes) than DLinear once you have lots of data.
+- **Cold-start, no training data.** Foundation models — TimesFM, Chronos — give surprisingly good zero-shot forecasts. Useful baseline in production before you have history.
+- **Complex multivariate dependencies.** iTransformer's "variates as tokens" view captures cross-series structure cleanly.
+
+### When NOT to reach for them
+
+- **Few series, short history.** ARIMA / ETS / Prophet wins.
+- **Tabular-ish features dominate.** GBDT (LightGBM) on lag features wins.
+- **Latency-sensitive serving.** A linear model is 1000× faster.
+
+### About the original linked package
+
+Allen Chiang's `Time-Series-Transform` (`pip install time-series-transform`) is a **data preparation library**, not a model. It provides:
+
+- `Time_Series_Transformer` — core class for arbitrary multi-dimensional TS data (slicing, lag/lead windowing, multi-category aggregation).
+- `Stock_Transformer` — sub-class with built-in extraction from Yahoo / IEX-style sources and `pandas-ta` technical-indicator wiring.
+- `make_lag` / `make_lead` / `make_lag_sequence` / `make_lead_sequence` — the four shifting helpers; the `_sequence` variants emit windowed arrays suitable as DL inputs.
+
+It hasn't seen recent activity. For modern preprocessing, prefer `darts.utils.timeseries_generation` or `nixtla/utilsforecast`.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[forecasting]] — broader Python forecasting overview
+- [[kan]] — KAN-based alternative to MLP backbones
+- [[time_sieve]] — wavelet / information-bottleneck non-Transformer architecture
+- [[ml/time_series/papers|papers]] — broader paper reading list
+- [[../llm/README|ml/llm]] — the NLP Transformer story this borrows from
 
 ## Internal links
+<!-- reviewed -->
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+- [[forecasting]]
+- [[kan]]
+- [[time_sieve]]
+- [[linear_regression]]
+- [[ml/time_series/papers|papers]]
+- [[ml/time_series/tutorials|tutorials]]
+- [[README]]
 
-- [[linear_regression]] — Linear Regression With Time Series _(score 21.5)_
-- [[time_serie_transformer]] — Transformers _(score 21.5)_
-- [[tutorials_2]] — Tutorials _(score 21.5)_
-- [[ml/time_series/papers|papers]] — Papers _(score 21.5)_
-- [[time_series_research_papers]] — Time series research papers _(score 21.5)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#time-series-transformer` `#time-series` `#ml` `#time` `#data` `#series` `#transformer`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#transformer` `#time-series` `#informer` `#autoformer` `#fedformer` `#patchtst` `#itransformer` `#dlinear` `#timesfm` `#chronos` `#lag-llama` `#moirai` `#foundation-models`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Architecture papers (lineage)
 
-# Time Series Transformer
+- Vaswani et al., *Attention Is All You Need* (NeurIPS 2017) — <https://arxiv.org/abs/1706.03762>
+- Zhou et al., *Informer* (AAAI 2021) — <https://arxiv.org/abs/2012.07436>
+- Wu et al., *Autoformer* (NeurIPS 2021) — <https://arxiv.org/abs/2106.13008>
+- Zhou et al., *FEDformer* (ICML 2022) — <https://arxiv.org/abs/2201.12740>
+- Zeng et al., *Are Transformers Effective for Time Series Forecasting?* (AAAI 2023, the **DLinear** paper) — <https://arxiv.org/abs/2205.13504>
+- Nie et al., *PatchTST* (ICLR 2023) — <https://arxiv.org/abs/2211.14730>
+- Liu et al., *iTransformer* (ICLR 2024) — <https://arxiv.org/abs/2310.06625>
 
-https://jchiang1225.medium.com/a-new-data-approach-in-time-series-analysis-2d6c97f209cd
+### Foundation models for TS (2024 wave)
 
-References:
+- Das et al., *TimesFM* (Google) — <https://arxiv.org/abs/2310.10688>
+- Ansari et al., *Chronos* (Amazon) — <https://arxiv.org/abs/2403.07815>
+- Rasul et al., *Lag-Llama* — <https://arxiv.org/abs/2310.08278>
+- Woo et al., *Moirai* (Salesforce) — <https://arxiv.org/abs/2402.02592>
 
-https://allen-chiang.github.io/Time-Series-Transformer/introduction.html
+### Implementation / library pointers
 
-https://github.com/allen-chiang/Time-Series-Transformer
+- `darts` — <https://unit8co.github.io/darts/> — Informer, Autoformer, NHiTS, TFT all in one API.
+- `neuralforecast` (Nixtla) — <https://github.com/Nixtla/neuralforecast> — N-BEATS, NHiTS, PatchTST, iTransformer, TFT, Informer, Autoformer.
+- HuggingFace `transformers` ships pretrained TimesFM, Chronos, Moirai for zero-shot use.
 
+### About `Time-Series-Transform` (the linked package)
 
+Code: <https://github.com/allen-chiang/Time-Series-Transformer>
+Docs: <https://allen-chiang.github.io/Time-Series-Transformer/introduction.html>
+Blog post: <https://jchiang1225.medium.com/a-new-data-approach-in-time-series-analysis-2d6c97f209cd>
 
-----
+Install:
 
-
-A New Data Approach in Time Series Analysis
-Empower the data structure, Enhance the data process
-
-
-Photo by Pierre Borthiry on Unsplash
-Time Series data is a sequence of data points indexed in time order. The most common example of time series data is the daily closing price of the stock market. Beside the stock market, we do encounter a lot of different time series data, for instance, the climate changes across time or the sales revenue of a company. Time series analysis helps organizations understand the underlying causes of trends or systemic patterns over time.
-
-Today, we want to dive into a fancy and powerful time series data structure engine.
-
-Time-Series-Transformer
-
-The package not only provides functionalities to process the time series data, but it shines when we need to process multi-dimensional time series data. Moreover, the submodule, Stock_Transformer, is able to extract the stock data and calculate the technical indicators in just a few lines of code.
-
-Installation
+```sh
 pip install time-series-transform
-Note: Make sure tensorflow and plotly are installed
+# requires tensorflow and plotly
+```
 
-Data
-In this example, we will use the climate time series data in Delhi from Kaggle
+Two main modules:
 
-https://www.kaggle.com/datasets/sumanthvrao/daily-climate-time-series-data?resource=download
+- `Time_Series_Transformer` — core, user-defined TS data
+- `Stock_Transformer` — stock extraction + technical indicators via `pandas-ta`
 
-Let’s get started
-When we are processing the time series data, we always need to take extra attention on the time order, and it is not easy to do so with solely numpy or even pandas. The Time_Series_Transform makes the task easier than ever.
+Quick taste — load a multi-feature series (Delhi climate dataset on Kaggle) and inspect it:
 
-There are two main modules in the package.
+```python
+from time_series_transform.transform_core_api import Time_Series_Transformer
+import pandas as pd
 
-Time_Series_Transformer: the core module and it is compatible with user defined time series data
-Stock_Transformer: helps us to extract stock data and provide operation to embed the technical indicator calculation library (pandas-ta)
-Time Series Transformer Core
-Time_Series_Transformer can helps us to format the time series data and we are able to manipulate the time series data easily.
+df = pd.read_csv('DailyDelhiClimateTrain.csv')
+tst = Time_Series_Transformer(df, timeSeriesCol='date')
 
+# Slice the first three days
+print(tst.time_series_data[:3])
+# {'date': array([...], dtype=object),
+#  'meantemp': array([10.0, 7.4, 7.17]),
+#  'humidity': array([84.5, 92.0, 87.0]),
+#  'wind_speed': array([0.0, 2.98, 4.63]),
+#  'meanpressure': array([1015.67, 1017.8, 1018.67])}
+```
 
+Lag/lead helpers — `make_lead`, `make_lag` (point shifts) and `make_lead_sequence`, `make_lag_sequence` (windowed arrays for DL):
 
-Figure 1. climate data
-From the dataset, we can see there are 4 different features, and we can load the data into our package from pandas.dataFrame. The timeSeriesCol will be the column of the time index, and the mainCategory field allows us to handle multi-dimensional data, we will talk about it later.
+```python
+tst.make_lead(['meantemp', 'wind_speed'], leadNum=3)
+tst.make_lead_sequence(['meantemp', 'meanpressure'], windowSize=3)
+```
 
+For multi-dimensional data (one series per category) set `mainCategoryCol` so all transforms run per-group rather than across the boundary.
 
-ime_Series_Transformer data
-data column
------------
-date
-meantemp
-humidity
-wind_speed
-meanpressure
-time length: 1462
-category: None
+For the stock variant:
 
+```python
+from time_series_transform.stock_transform import Stock_Transformer
 
-We can slice the data from the time_series_data as below
-{'date': array(['2013-01-01', '2013-01-02', '2013-01-03'], dtype=object),
-'meantemp': array([10.        ,  7.4       ,  7.16666667]),
-'humidity': array([84.5, 92. , 87. ]),
-'wind_speed': array([0.        , 2.98      , 4.63333333]),
-'meanpressure': array([1015.66666667, 1017.8, 1018.66666667])}
-Data Manipulation
-Most of the time, we need to preprocess the data before entering the model. In time series analysis, making lag or lead data (shifting data) is one of the most common methods. The package also provide the function to shift data.
+stock = Stock_Transformer.from_stock_engine_date(
+    symbol='AAPL', start_date='2019-01-01', end_date='2020-01-01',
+    engine='yahoo')
+stock.get_technial_indicator(['MACD', 'EMA_10', 'BBANDS'])
+```
 
-make_lead
-make_lag
-make_lead_sequence
-make_lag_sequence
-make_lead and make_lag shift the data
+Reference texts:
 
-make_lead_sequence and make_lag_sequence shift the data and return a window list data as feature. It is useful in producing Deep learning feature
-
-
-
-
-{'date': array(['2013-01-01', '2013-01-02', '2013-01-03'], dtype=object),
-'meantemp': array([10.        ,  7.4       ,  7.16666667]),
-'humidity': array([84.5, 92. , 87. ]),
-'wind_speed': array([0.        , 2.98      , 4.63333333]),
-'meanpressure': array([1015.66666667, 1017.8, 1018.66666667]),
-'meantemp_lead_3': array([8.66666667, 6.        , 7.        ]),
-'wind_speed_lead_3': array([1.23333333, 3.7       , 1.48      ]),
-'meantemp_lead_seq_3': array([[7.4       , 7.16666667, 8.66666667],
-[7.16666667, 8.66666667, 6.        ],
-[8.66666667, 6.        , 7.        ]]),
-'meanpressure_lead_seq_3': array([[1017.8, 1018.6667, 1017.1667],
-[1018.66666667, 1017.16666667, 1016.5       ],
-[1017.16666667, 1016.5       , 1018.        ]])}
-User defined function
-It is also possible to use the user defined function. We can use the transform function to customize the data process.
-
-Restriction of the customize function:
-
-the function must take an array
-output must be an array with the same size as the original data length
-Note: time_series_transform.transform_core_api.util provides some general functions as we imported at the beginning
-
-
-data column
------------
-date
-meantemp
-humidity
-wind_speed
-meanpressure
-meantemp_lead_3
-wind_speed_lead_3
-meantemp_lead_seq_3
-meanpressure_lead_seq_3
-wind_cust_10
-time length: 1462
-category: None
-Plot
-The package also provides function to draw plot and it supports several functions customize the plot.
-
-add_line
-remove_line
-update_layout
-add_marker
-
-
-Figure 2. plot function
-Multi-Dimensional Time Series Data
-Sometimes when we are doing Exploratory Data Analysis or preprocessing the time series data before entering the model, we might want to separate the data by their features. Handling multi-dimensional time series data is the strong point of the package.
-
-Time_Series_Transformer can specify the mainCategoryCol parameter to point out the main category. This class only provide one columns for main category because multiple dimensions can be aggregated into a new column as main category.
-
-From the documentation. With the mainCategoryCol, we are able to separate the data by the category and perform same data operations as we did previously.
-
-
-Next we can further apply the functionality to perform advance preprocessing. To demonstrate the capability of the Time_Series_Transformer, we can separate the data by their month and investigate the behavior of the data.
-
-
-
-
-
-Moreover, we can also use the plot function on the multi-dimension data, and it will generate several lines and we can select which month we want.
-
-
-
-Figure 3. Multi-dimension plot (option to choose category)
-Stock Transformer
-Speaking of the time series analysis, the stock market must be the interest of most people. Stock_Transformer makes our life easy and simple. Extraction of the stock data can be done in just one line of code, and we can also use the power of the data manipulation like how we did previously.
-
-Stock extraction methods:
-
-from_stock_engine_date
-from_stock_engine_period
-from_stock_engine_intraday
-
-
-To calculate the standard technical indicators, we can use the get_technial_indicator with pandas-ta.
-
-
-Date       Open       High        Low      Close     Volume  \
-25  2019-02-07  41.725962  42.098690  41.227381  41.372601  126966800   
-26  2019-02-08  41.076051  41.481974  40.937501  41.421207   95280000   
-27  2019-02-11  41.576775  41.615667  41.139252  41.183002   83973600   
-28  2019-02-12  41.345854  41.564614  41.248625  41.537876   89134000   
-29  2019-02-13  41.659413  41.924356  41.302103  41.365299   89960800
-
-    Dividends  Stock Splits  MACD_12_26_9  MACDh_12_26_9  MACDs_12_26_9  \
-25     0.0000           0.0      1.952193            NaN            NaN   
-26     0.1825           0.0      1.915505            NaN            NaN   
-27     0.0000           0.0      1.845929            NaN            NaN   
-28     0.0000           0.0      1.798691            NaN            NaN   
-29     0.0000           0.0      1.727417            NaN            NaN
-
-       EMA_10        BBL        BBM        BBU  Bandwidth   Percent  
-25  40.383502  34.842427  38.655327  42.468227  19.727684  0.856326  
-26  40.572176  34.930402  38.865177  42.799952  20.248332  0.824800  
-27  40.683235  35.136170  39.081391  43.026611  20.189764  0.766349  
-28  40.838624  35.475825  39.343060  43.210295  19.659045  0.783771  
-29  40.934383  35.746722  39.558949  43.371175  19.273650  0.736915
-
-
-Figure 4. Stock candle plot
+- Hyndman & Athanasopoulos, *Forecasting: Principles and Practice* — <https://otexts.com/fpp3/>
+- Lim & Zohren, *Time Series Forecasting With Deep Learning: A Survey* (2021) — <https://arxiv.org/abs/2004.13408>

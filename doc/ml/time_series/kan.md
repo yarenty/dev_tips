@@ -1,92 +1,55 @@
 ---
-title: Kolmogorov-Arnold Networks (KANs) for Time Series Forecasting
-main_link: https://towardsdatascience.com/kolmogorov-arnold-networks-kans-for-time-series-forecasting-9d49318c3172
-keywords: [kan, time-series, kolmogorov, arnold, forecasting, python, models]
-status: draft
+title: KANs for time-series forecasting
+main_link: https://arxiv.org/abs/2405.08790
+keywords: [kan, kolmogorov-arnold, time-series, forecasting, mlp, n-beats, nhits, tsmixer]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# KANs for time-series forecasting
 
-# Kolmogorov-Arnold Networks (KANs) for Time Series Forecasting
-
-**Main link:** <https://towardsdatascience.com/kolmogorov-arnold-networks-kans-for-time-series-forecasting-9d49318c3172>
+**Main link:** <https://arxiv.org/abs/2405.08790> (*KANs for Time Series Forecasting*, Vaca-Rubio et al., 2024)
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Kolmogorov-Arnold Networks (KANs) replace the MLP's fixed activations + learned weights with **learnable univariate functions on edges** (typically B-spline parametrised). Several 2024 papers tried KANs as drop-in MLP replacements inside time-series forecasters — KAN-only models, plus KAN-backboned variants of N-BEATS, TSMixer and similar. The empirical case is mixed: on standard ETT/Electricity/Weather benchmarks, KAN forecasters are roughly competitive with their MLP counterparts at lower parameter counts but rarely a decisive win, and they cost more per-parameter to train.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+- **Why people care for TS specifically.** TS-DL is dominated by MLP backbones (N-BEATS, NHiTS, TSMixer, DLinear, RLinear). If KANs really are "MLPs but better with fewer parameters", they should swap in cleanly — and they roughly do, which is why there was a small flood of "X-KAN" variants in mid-2024.
+- **Honest reality check.** The original KAN paper's strongest claims (interpretability, scientific discovery) don't carry over directly to noisy financial / sensor / energy forecasting tasks. On the standard long-horizon TS benchmarks, **DLinear and PatchTST already beat the Transformer family** with tiny linear models — so the "KAN beats MLP" bar moves: it has to beat a one-layer linear projection too, which is hard.
+- **Reach for it when:** you specifically want learned-activation interpretability (e.g. extracting symbolic forms via `pykan`'s symbolic regression), or you're researching architecture choices and want a non-MLP comparison point. Don't reach for it for production forecasting in 2025 — pick from the Nixtla/darts library and benchmark.
+- **Implementation note.** First-gen KAN (`pykan`) is slow because of B-spline evaluation. **FastKAN, EfficientKAN, Wav-KAN** rewrites are 5-100× faster and what you'd actually use.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[../fundamentals/kan|fundamentals/kan]] — the canonical KAN article (architecture, the Kolmogorov-Arnold representation theorem, FastKAN/EfficientKAN/Wav-KAN follow-ups)
+- [[forecasting]] — broader Python forecasting ecosystem this fits into
+- [[time_series_transformer]] — the other "fancy DL" lineage for TS
+- [[time_sieve]] — non-MLP, non-Transformer TS architecture (wavelet + information bottleneck)
 
 ## Internal links
+<!-- reviewed -->
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+- [[../fundamentals/kan|fundamentals/kan]] — canonical KAN article
+- [[forecasting]]
+- [[time_series_transformer]]
+- [[time_sieve]]
+- [[ml/time_series/papers|papers]]
+- [[README]]
 
-- [[forecasting]] — forecasting _(score 30.4)_
-- [[time_series_transformer]] — Time Series Transformer _(score 21.5)_
-- [[ml/time_series/papers|papers]] — Papers _(score 21.5)_
-- [[time_series_research_papers]] — Time series research papers _(score 21.5)_
-- [[ml/time_series/tutorials|tutorials]] — Tutorials _(score 21.5)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#kan` `#time-series` `#ml` `#kolmogorov` `#arnold` `#forecasting` `#time`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#kan` `#kolmogorov-arnold` `#time-series` `#forecasting` `#mlp` `#n-beats` `#nhits` `#tsmixer` `#deep-learning`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Vaca-Rubio, Blanco, Pereira, Caus, *KANs for Time Series Forecasting* (May 2024) — <https://arxiv.org/abs/2405.08790>
+- Liu et al., *KAN: Kolmogorov-Arnold Networks* (Apr 2024) — <https://arxiv.org/pdf/2404.19756>
+- Marco Peixeiro's TDS walkthrough — <https://towardsdatascience.com/kolmogorov-arnold-networks-kans-for-time-series-forecasting-9d49318c3172>
+- N-BEATS paper — <https://arxiv.org/abs/1905.10437>
+- NHiTS paper — <https://arxiv.org/pdf/2201.12886>
+- TSMixer (Google) — <https://towardsdatascience.com/tsmixer-the-latest-forecasting-model-by-google-2fd1e29a8ccb>
 
-# Kolmogorov-Arnold Networks (KANs) for Time Series Forecasting
+KAN replaces the MLP's `Linear(W) → fixed-σ` block with a sum of learnable univariate B-spline functions on each edge. The Kolmogorov-Arnold representation theorem guarantees that any continuous multivariate function can be written as a finite composition of continuous univariate functions plus addition — KAN parameterises that.
 
-
-
-https://arxiv.org/pdf/2404.19756
-
-
-
-Discover the Kolmogorov-Arnold Networks (KANs) and apply them for time series forecasting using Python
-Marco Peixeiro
-Towards Data Science
-Marco Peixeiro
-
-
-https://towardsdatascience.com/kolmogorov-arnold-networks-kans-for-time-series-forecasting-9d49318c3172
-
-Photo by Eduardo Bergen on Unsplash
-The multilayer perceptron (MLP) is one of the foundational structures of deep learning models. It is also the building block of many state-of-the-art forecasting models, like N-BEATS, NHiTS and TSMixer.
-
-https://towardsdatascience.com/the-easiest-way-to-forecast-time-series-using-n-beats-d778fcc2ba60
-
-https://towardsdatascience.com/all-about-n-hits-the-latest-breakthrough-in-time-series-forecasting-a8ddcb27b0d5
-
-
-
-https://arxiv.org/pdf/2201.12886
-
-
-
-https://towardsdatascience.com/tsmixer-the-latest-forecasting-model-by-google-2fd1e29a8ccb
-
-
-
-On April 30, 2024, the paper KAN: Kolmogorov-Arnold Network was published, and it has attracted the attention of many practitioners in the field of deep learning. There, the authors propose an alternative to the MLP: the Kolmogorov-Arnold Network or KAN.
-
-Instead of using weights and fixed activation functions, the KAN uses learnable functions that are parametrized as splines. The researchers suggest the KAN can thus be more accurate with less trainable parameters than MLPs.
-
-In this article, we first explore splines, as they help us understand the architecture and key elements of KAN. Then, we make a deep dive inside the inner workings of KAN. Finally, we apply KAN to time series forecasting, and evaluate its performance against the standard MLP and the N-BEATS model.
+For TS, a typical experiment swaps the MLP block inside N-BEATS or TSMixer with a KAN block, holds everything else fixed (windowing, scaling, loss), and reports MAE/MSE on ETTh1/h2/m1/m2, Electricity, Weather, Traffic. Result is usually "competitive at fewer parameters", which is interesting but not transformative.

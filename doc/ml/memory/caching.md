@@ -1,147 +1,93 @@
 ---
-title: Caching
-main_link: https://thenewstack.io/what-is-semantic-caching/?utm_source=tldrdata
-keywords: [caching, semantic, reddig, quality, vector, gpu]
-status: draft
+title: Semantic caching for LLMs and AI agents
+main_link: https://thenewstack.io/what-is-semantic-caching/
+keywords: [caching, semantic-cache, prompt-cache, kv-cache, gptcache, langcache, llm]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Semantic caching for LLMs and AI agents
 
-# Caching
-
-**Main link:** <https://thenewstack.io/what-is-semantic-caching/?utm_source=tldrdata>
+**Main link:** <https://thenewstack.io/what-is-semantic-caching/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Semantic caching is the LLM-era variant of HTTP/CDN caching: instead of matching requests by exact URL/key, you embed the prompt as a vector and serve a cached response if a previous prompt is *semantically close enough* (vector-similarity above some threshold). Used as a drop-in proxy in front of OpenAI/Anthropic/Gemini APIs, it reduces token cost and tail latency dramatically — Fastly's published benchmark shows ~9× faster server response and the canonical 2024 study reports up to ~68.8% reduction in API calls. Three layers in the cache stack are worth distinguishing: **semantic cache** (cache the *answer*; what this article is about), **prompt cache** (cache the *prefix tokenisation/KV*; an OpenAI/Anthropic 2024 feature), and **KV cache** (the model-internal one that paged-attention runtimes like vLLM manage).
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+When to reach for it: **conversational interfaces in narrow domains** (customer service, retail, repeated FAQ-shaped agent queries) where users phrase the same intent dozens of different ways. The semantic-cache hit rate climbs as the *intent space narrows*. When **not** to reach for it: open-ended creative chat, reasoning-heavy tasks where small prompt differences should produce different outputs, anything safety-critical where a near-miss false positive could matter (the cache returns *someone else's* answer, with their context).
+
+The three failure modes to watch:
+
+1. **Threshold tuning is hard.** Too tight → low hit rate, no benefit. Too loose → semantically-similar-but-actually-different prompts return wrong answers. Most teams pick a threshold per domain experimentally.
+2. **Privacy/multi-tenancy boundary.** A naive shared cache leaks information across users — *every* deployment needs partitioning by tenant/user/scope.
+3. **Invalidation.** When the underlying knowledge changes (model update, RAG corpus update, business rule change), you need to invalidate the cache or it serves stale answers — same lesson the CDN industry learned 25 years ago.
+
+The picker (2025 landscape):
+
+- **GPTCache** (Zilliz) — the original OSS project; pluggable similarity backends (Faiss/Milvus/Redis).
+- **Redis LangCache** — Redis's managed semantic cache, launched 2024, integrated with their vector type.
+- **Fastly AI Accelerator** — edge-deployed semantic cache as a managed proxy (the article above).
+- **LangChain `langchain.cache.RedisSemanticCache` / `MomentoCache`** — framework-integrated.
+- **Anthropic prompt caching** (Aug 2024) and **OpenAI prompt caching** (Oct 2024) — *prompt* (prefix) caching not semantic; orthogonal mechanism, often used together. These don't need any infrastructure on your side.
+- **vLLM PagedAttention** — KV-cache management for inference servers; orthogonal but lives in the same mental model.
+
+Note: the filename `caching.md` is shared with `programming/rust/data/cache.md` (Moka / quick_cache — *in-process* caching crates) and `programming/rust/data/compilation_cache.md` (sccache for Rust builds). Cross-link with disambiguated stems.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **GPTCache** — Zilliz's OSS semantic cache; pluggable vector backend.
+- **Redis LangCache** — Redis-managed semantic-cache product (2024).
+- **Anthropic / OpenAI prompt caching** — provider-side prefix caching (orthogonal optimisation).
+- **vLLM PagedAttention** — KV-cache management at the inference layer.
+- **Fastly AI Accelerator** — managed semantic-cache proxy at the edge.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[agentic_ai_memory]] — sibling: agent-memory landscape (caching is the *adjacent* memory-shaped optimisation).
+- [[response]] — sibling: 2024-2025 eidetic-memory survey.
+- [[episodic_memory]] — sibling: episodic recall (different problem, different solution).
+- [[202505_recents]] — sibling: May 2025 memory papers digest.
+- [[../data/qdrant_vector_search|qdrant_vector_search]] — vector search underlies most semantic-cache backends.
+- [[../rag/README|rag]] — RAG section landing (semantic cache often sits in front of a RAG pipeline).
+- [[../llm/README|llm]] — LLM section landing.
+- [[programming/rust/data/cache|rust/data/cache]] — *different* topic: Rust in-process caches (Moka / quick_cache).
 
-- [[qdrant]] — qdrant _(score 17.3)_
-- [[qdrant_vector_search]] — qdrant _(score 17.3)_
-- [[ml/memory/response|response]] — Response _(score 16.0)_
-- [[202505_recents]] — 202505 Recents _(score 16.0)_
-- [[candle]] — Candle _(score 11.6)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#caching` `#memory` `#ml` `#semantic` `#llm` `#reddig` `#fastly`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#caching` `#semantic-cache` `#prompt-cache` `#kv-cache` `#gptcache` `#langcache` `#llm`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- **Headline article**: Bill Doerrfeld, *What Is Semantic Caching?*, The New Stack, May 2025 — <https://thenewstack.io/what-is-semantic-caching/>. Interviews Randy Reddig (Fastly), Andre Zayarni (Qdrant), Archana Kannan (Salesforce/Slack). Source for the "9× faster" Fastly benchmark and the 68.8% study citation.
 
-# Caching
+### Quoted observations from the source article
 
-https://thenewstack.io/what-is-semantic-caching/?utm_source=tldrdata
+- Reddig (Fastly): *"Many requests are phrased slightly differently, but their responses should be relatively the same."* The cache value scales with how *narrow* the semantic space is — retail / customer service / online shopping are sweet spots.
+- Reddig (Fastly): semantic caching is *not much different than how a CDN or gateway already works* — the secret sauce is the engine that determines semantic sameness.
+- Zayarni (Qdrant): *"Agentic AI demands better context integration, faster feedback loops and scalable orchestration. AI agents hit bottlenecks when retrieval is slow or context updates lag behind real-time needs."*
+- Kannan (Salesforce): *"The most critical advancements will be centered around improvements in data integration, metadata management and multiagent collaboration."*
 
-What Is Semantic Caching?
-Semantic caching is poised to eliminate redundant LLM queries and improve AI agent performance.
-May 4th, 2025 1:00pm by Bill Doerrfeld
-Featued image for: What Is Semantic Caching?
-Featured image by Getty Images for Unsplash.
-API requests to AI providers can rack up quite a bill. Barclay analysts found that a single prompt to OpenAI’s o3-high model resulted in a $3,500 fee, requiring 1,000 more tokens than its predecessor model, according to Business Insider.
+### Adjacent / orthogonal mechanisms
 
-Most developers know what caching is. But semantic caching is the new thing for AI. It’s set to become more relevant as AI costs escalate and developers seek out sleeker designs to avoid pinging AI servers over and over for redundant queries.
+- **Prompt caching** — Anthropic (Aug 2024) and OpenAI (Oct 2024) ship provider-side caching of prompt prefixes (system prompt + repeated context). Reduces token cost without any infra on your side. Different layer from semantic caching; often combined.
+- **KV caching** — the model-internal key/value cache. vLLM PagedAttention is the canonical optimised implementation; SGLang / LMDeploy / TGI ship comparable mechanisms. Not user-facing but determines per-token cost.
+- **Multi-agent semantic routing** — Kannan's argument: a dispatcher agent reviews queries, finds semantically-similar prior queries, and hands off deeper reasoning to specialised downstream agents. Combines well with semantic caching since the dispatcher is doing semantic matching anyway.
 
-“Everyone’s going to be looking at their AI cost structure, latency and performance,” Randy Reddig, vice president of technology research and incubation at Fastly, told The New Stack. “OpenAI even recommends you perform some kind of caching on their output.”
+### Picker quick-look
 
-The benefits are clear: A 2024 study found that semantic embedding caching can significantly reduce latency and reduce API calls by up to 68.8% across various query categories.
+| Tool | Type | Hosting | Best for |
+|------|------|---------|----------|
+| GPTCache | OSS lib | self-hosted | Greenfield projects, max flexibility |
+| Redis LangCache | Managed | Redis Cloud | Already on Redis |
+| Fastly AI Accelerator | Managed | Fastly edge | Add-a-proxy migration; global low latency |
+| LangChain semantic cache | OSS integration | self-hosted | Already in LangChain |
+| Anthropic / OpenAI prompt cache | Provider | provider-side | Free win on long system prompts |
+| vLLM PagedAttention | OSS runtime | self-hosted | Self-hosted inference; KV-cache layer |
 
-But what exactly is semantic caching, and how do you implement it? Below, we’ll explore semantic caching in the context of large language models (LLMs) and APIs, its benefits and possible drawbacks, and how it fits into broader AI development practices.
+### Original framing notes (preserved)
 
-Semantic Caching Builds On Standard Caching
-Caching is the process of storing frequently accessed information to avoid slow load times, reduce server requests and improve user experience. Server-side and browser-side caching are fundamental strategies when designing web applications and APIs.
+> Caching layers between the client and LLM API will become the default for new AI development — like CDNs became the standard for optimising web performance.
 
-Semantic caching and your typical web caching are pretty similar. Both access stored data to reduce unnecessary calls. What’s different is that semantic caching stores and retrieves prompts and responses to AI servers, like LLMs from OpenAI, Google Gemini, Anthropic and others.
-
-TRENDING STORIES
-What Is Semantic Caching?
-Frontend's Next Evolution: AI-Powered State Management
-Q&A: How Google Itself Uses Its Gemini Large Language Model
-Claude Code and the Art of Test-Driven Development
-Docker Model Runner Brings Local LLMs to Your Desktop
-How semantic caching works:
-
-A user sends a chat to an LLM-based AI agent.
-A layer intercepts the request and performs a semantic analysis to determine if the request matches any previously made prompts.
-If the system finds a suitable prompt, it rapidly returns the cached response.
-If no similar prompt exists, it funnels the request to the AI server for processing.
-While retrieval-augmented generation (RAG) complements LLM queries with access to external data, semantic caching is unique in that it avoids further lookups altogether by pulling from a database, which could be local or externally stored.
-
-According to Fastly’s Reddig, semantic caching is not much different than how a content delivery network (CDN) or gateway already works. The secret sauce is in the engine that determines semantic sameness.
-
-“Many requests are phrased slightly differently, but their responses should be relatively the same,” says Fastly’s Reddig. For instance, he said, different users often make similar requests, such as comparing coffee types or asking for the best recommendations for a good car for a family of four.
-
-In Fastly’s case, its AI Accelerator parses new requests and compares each against Fastly’s vast vector database of LLM interactions hosted on its distributed, low-latency edge network. It then returns responses with a high confidence level to similar queries to be sent to the client application. Unmatched queries are forwarded to the LLM API.
-
-Other platforms are tackling AI caching, too. For example, Redis, the in-memory data store and caching system, recently launched LangCache for caching LLM responses, and a new data type for storing and querying vector embeddings.
-
-The Results: Lower Cost and Better Performance
-To date, AI has required massive amounts of GPU-based processing. According to McKinsey & Company, AI could triple global data center capacity demand by 2030.
-
-Reddig attributed high costs to inefficient interactions with AI models. When an LLM processes a prompt, it must tokenize the request, along with other context, such as project prompts, files and data pulled from RAG, and send it to an LLM to synthesize and generate a response. Subsequent requests then use this context in-memory and retokenize it with each request.
-
-“The aggregate cost of a prompt is related to the number of tokens, and processing those sequentially over and over ends up consuming a lot,” said Reddig. “For a very long query, or a short query with a ton of context, that’s gonna be a more expensive query to process in terms of cost, CPU, power and time.”
-
-Semantic caching can avoid initiating new LLM calls to an AI server altogether, avoiding heavy CPU demands. By calling upon more local data, you could avoid long wait times and cut round-trip calls, improving throughput.
-
-According to Fastly’s benchmarks, semantic cache setups result in 9x faster server response times compared to direct OpenAI server calls. The company says it’s a low-effort migration, too, only requiring application developers to point to a new endpoint to reroute API calls.
-
-Semantic Caching: Good for AI Agents
-Semantic caching is an emerging area, and the exact use cases are still being ironed out. That said, it performs best in use cases that are conversational or prompt-based.
-
-“Natural language input that produces natural language output is a great use case,” said Reddig. Although the same process could support other content types, like video and image, he added.
-
-Semantic caching also shows promise in ultra-specific domains. “If the semantic space is narrow and you’re seeing a lot of common questions or prompts, that’s where this could be very suitable,” he said.
-
-These factors make it a good fit for queries to user-facing AI agents in specific contexts, like retail, customer service or online shopping. In this context, real-time responses matter for customer experience, heightening the need for quality performance.
-
-Responsiveness is also vital for agents working in enterprise contexts. “Agents have a huge dependency on quality data so they can act on accurate, timely and contextually relevant information,” Archana Kannan, senior vice president of Slack product at Salesforce, told The New Stack. “The right data and context are the foundation for agents to deliver real value to employees and organizations.”
-
-Others echo that fast, reliable data access is foundational for agentic AI. “Agentic AI demands better context integration, faster feedback loops and scalable orchestration,” Andre Zayarni, co-founder and CEO of Qdrant, a vector database company, told The New Stack. “AI agents hit bottlenecks when retrieval is slow or context updates lag behind real-time needs.”
-
-Zayarni views semantic caching as a tactic to reduce redundant lookups: “If a similar query was already answered, reuse it instead of recalculating.”
-
-Part of a Broader Optimization Strategy
-Further innovation still needs to happen around semantic caching. One is refining the model to avoid erroneously connecting semantically similar prompts, said Reddig. Although, he added, there are ways to mitigate this with prompt engineering and other safeguards.
-
-Zooming out, semantic caching is just one piece of the puzzle — it alone won’t solve hallucination issues and other inefficiencies. As such, it will take a town (of savvy strategies) to optimize agentic AI.
-
-“Key advancements include GPU-accelerated index building for real-time vector ingestion, semantic caching to reduce redundant lookups and hybrid search models that blend dense vectors, sparse terms and metadata filters,” said Zayarni. He also mentioned using a multiagent system to delegate certain responsibilities to various agents.
-
-Others agree that advancements in data handling and multiagent approaches are necessary to optimize agentic AI. “The most critical advancements will be centered around improvements in data integration, metadata management and multiagent collaboration,” said Salesforce’s Kannan.
-
-“Adopting a multiagentic approach can significantly enhance optimization,” she added. “Teams of specialized ambient agents can collaborate behind the scenes, autonomously handling complex workflows, integrating disparate systems and streamlining multistep processes.”
-
-Arguably, multiagent architectures are very complementary to semantic caching, since a dedicated agent could review user queries to determine semantically similar queries, and hand off deeper elements to other agents to process. This handoff could even behave within intraquery semantic segmentation, as in breaking down parts of a user’s request and routing them separately.
-
-Lastly, there is an argument to be made that LLMs will become cheaper with future model advances and GPU efficiencies, decreasing the need for efficiency savings. But, as Moore’s Law plateaus and inference costs climb, semantic caching is emerging as a helpful method to curtail redundancy.
-
-Semantic Caching Changes the Game
-Like how CDNs became the standard practice for optimizing web performance, Reddig predicted that caching layers between the client and LLM API will become the default for new AI development.
-
-To date, high computational requirements bar small-to-medium companies from competing on a level playing field. But he hopes semantic caching will make AI development cheaper, democratizing access in the same way TSMC once did for chip designers by handling costly manufacturing.
-
-As past breakthroughs lowered the bar, semantic caching could have similar ripple effects for emerging markets. As Reddig said, “Usage that wasn’t possible with the pre-existing cost structure now becomes more possible.”
+> Lastly, there is an argument to be made that LLMs will become cheaper with future model advances and GPU efficiencies, decreasing the need for efficiency savings. But, as Moore's Law plateaus and inference costs climb, semantic caching is emerging as a helpful method to curtail redundancy.

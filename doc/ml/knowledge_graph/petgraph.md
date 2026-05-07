@@ -1,101 +1,103 @@
 ---
-title: Petgraph
-main_link: https://github.com/petgraph/petgraph/tree/master
-keywords: [petgraph, knowledge-graph, graph, graphmap, stablegraph]
-status: draft
+title: petgraph — Rust graph data-structure library
+main_link: https://github.com/petgraph/petgraph
+keywords: [petgraph, rust, graph, graphmap, stablegraph, matrixgraph, csr, dijkstra]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# petgraph — Rust graph data-structure library
 
-# Petgraph
-
-**Main link:** <https://github.com/petgraph/petgraph/tree/master>
+**Main link:** <https://github.com/petgraph/petgraph>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`petgraph` is the **canonical Rust graph data-structure crate** — adjacency-list (`Graph`, `StableGraph`), hash-backed (`GraphMap`), dense matrix (`MatrixGraph`), and sparse-CSR (`CSR`) variants, plus the standard inventory of graph algorithms (Dijkstra, Bellman-Ford, A*, BFS/DFS, Tarjan SCC, topological sort, minimum spanning tree, isomorphism). It's the substrate used by `cargo`'s dependency resolver, `cargo-deps`, `rustc-ap-graphviz` and a long tail of compilers / planners / static-analysis tools in the Rust ecosystem. Filed under `ml/knowledge_graph/` because graph data-structures are the substrate for KG / GNN work — though most ML uses Python (NetworkX / DGL / PyG) rather than petgraph.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+When to reach for it: any Rust project that needs **in-process graph data structures with algorithms attached** — compiler IRs, dependency graphs, build systems, planners, finite state machines, social-network analytics, knowledge-graph indexing layers. `petgraph` has been the default since the early Rust days (Ulrik Sverdrup / @bluss); it's stable, MSRV-conscious, no surprises.
+
+The picker among petgraph's graph types:
+
+- **`Graph<N, E, Ty, Ix>`** — adjacency-list. Default pick. Indices are `NodeIndex<u32>` so you can have ~4B nodes per graph.
+- **`StableGraph`** — same shape but indices stay valid across `remove_node`. Pay a small overhead; reach for it when you delete nodes mid-traversal.
+- **`GraphMap<N, E, Ty>`** — node IDs *are* the keys (e.g. `&str`, `String`, custom hashable type), no separate index lookup. Best when your nodes have natural identifiers.
+- **`MatrixGraph` / `CSR`** — adjacency matrix and compressed-sparse-row. Reach for these only on dense or static graphs where the matrix layout matters for cache-locality / algorithm requirements.
+
+What `petgraph` is *not*: a graph **database** (no on-disk storage, no query language), a **persistent** structure (mutations are in-place; if you want immutable persistent graphs use `im` or roll your own), or a **GraphQL** / traversal-query layer (use `[[programming/rust/data/trustfall|trustfall]]` for that, or one of the Cypher-in-Rust efforts). For *distributed* graph processing think `[[programming/rust/data/datafusion/README|datafusion]]` + Substrait, not petgraph.
+
+Comparison with the broader Rust graph ecosystem:
+
+- **`petgraph`** — in-process data structures + classical algorithms. The default.
+- **`trustfall`** — query engine over arbitrary data sources (cargo-semver-checks substrate). *Different layer*.
+- **`graphlib`** — older, less feature-complete; petgraph won.
+- **`pathfinding`** — focused on path-finding algorithms (A*, Dijkstra) over user-defined graphs without owning a graph type. Pairs nicely with petgraph or with your own representation.
+- **`gix-revwalk`** — `gitoxide`'s git-history walker; specialised, not general.
+
+For ML/AI specifically: petgraph is the *right* substrate when you need a Rust-native graph in a Rust pipeline, but most actual KG / GNN work happens in Python. If you want to do GNNs in Rust, you'd combine petgraph (data structure) with `candle` / `tch-rs` (tensor compute). The Rust GNN ecosystem is small.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **NetworkX** (Python) — the closest equivalent in scope; widely used in ML / network-science.
+- **DGL / PyG** (Python) — graph neural networks; petgraph is the data structure, these are the *learning* libraries.
+- **`pathfinding`** crate — Rust path-finding algorithms over user graphs.
+- **`trustfall`** — Rust query engine over arbitrary data; *different layer* from petgraph.
+- **PyTorch-BigGraph** (Meta) — large-scale KG embedding training (mentioned in [[meta]]).
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[README]] — section landing.
+- [[meta]] — sibling: data2vec / doc2vec embedding notes.
+- [[ml/knowledge_graph/papers|kg/papers]] — sibling: KG research reading list.
+- [[../fundamentals/graphnn|graphnn]] — Graph Neural Networks landing (PyG / DGL — the Python-side counterparts).
+- [[programming/rust/data/trustfall|trustfall]] — Rust *query engine* over arbitrary data sources; complements petgraph (different layer).
 
-- [[ml/knowledge_graph/papers|papers]] — Research papers _(score 29.8)_
-- [[meta]] — Meta / Facebook  graph articles _(score 29.8)_
-- [[ml/time_series/papers|papers]] — Papers _(score 17.6)_
-- [[graph_rag]] — Graph RAG _(score 5.6)_
-- [[data_interpreter]] — Data Interpreter _(score 5.6)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#petgraph` `#knowledge-graph` `#ml` `#graph` `#graphmap` `#stablegraph` `#rust`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#petgraph` `#rust` `#graph` `#graphmap` `#stablegraph` `#matrixgraph` `#csr`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Repo: <https://github.com/petgraph/petgraph>
+- Docs: <https://docs.rs/petgraph>
+- Crates.io: <https://crates.io/crates/petgraph>
+- Maintainer: Ulrik Sverdrup (`@bluss`) and contributors.
+- Origins: one of the oldest still-active Rust libraries; predates Rust 1.0.
+- MSRV: Rust 1.64+ (recent versions).
 
-# Petgraph
+### Crate feature flags
 
-https://github.com/petgraph/petgraph/tree/master
+- `graphmap` (default) — enables `GraphMap`.
+- `stable_graph` (default) — enables `StableGraph`.
+- `matrix_graph` (default) — enables `MatrixGraph`.
+- `serde-1` (optional) — serialization for `Graph` / `StableGraph` / `GraphMap` via serde 1.0.
+- `rayon` (optional) — parallel iterators for `GraphMap`.
 
-![petgraph](https://github.com/petgraph/petgraph/raw/master/assets/graphosaurus-512.png)
+### Graph type cheat-sheet
 
-Graph data structure library. Please read the API documentation here.
+| Type | Storage | Indices stable across removals? | When to use |
+|------|---------|-------------------------------|-------------|
+| `Graph<N, E, Ty>` | Adjacency list | No | Default; static or grow-only graphs |
+| `StableGraph<N, E, Ty>` | Adjacency list | Yes | Graphs that delete nodes mid-traversal |
+| `GraphMap<N, E, Ty>` | Adjacency list backed by HashMap | N/A (keys are node IDs) | Nodes have natural keys (strings, IDs) |
+| `MatrixGraph<N, E, Ty>` | Adjacency matrix | No | Dense graphs, fixed structure |
+| `CSR<N, E, Ty>` | Compressed sparse row | No | Read-heavy sparse graphs, cache-locality |
 
-Supports Rust 1.64 and later.
+### Generic parameters
 
-Crates.io docs.rs MSRV Discord chat build_status
+- `N` — node weight type (arbitrary; can be `&str`, `()`, custom struct).
+- `E` — edge weight type (arbitrary; algorithms requiring costs need `PartialOrd`).
+- `Ty` — `Directed` or `Undirected`.
+- `Ix` — index integer type (`u8`, `u16`, `u32` default, or `usize`).
 
-Crate feature flags:
+### Shorthand types
 
-- graphmap (default) enable GraphMap.
-- stable_graph (default) enable StableGraph.
-- matrix_graph (default) enable MatrixGraph.
-- serde-1 (optional) enable serialization for Graph, StableGraph, GraphMap using serde 1.0. Requires Rust version as required by serde.
-- rayon (optional) enable parallel iterators for the underlying data in GraphMap. Requires Rust version as required by Rayon.
+- `DiGraph<N, E>` = `Graph<N, E, Directed>`.
+- `UnGraph<N, E>` = `Graph<N, E, Undirected>`.
+- `UnMatrix<N, E>` = `MatrixGraph<N, E, Undirected>`.
+- See each module's docs for the full list.
 
+### Algorithms (non-exhaustive)
 
-
-## Graph types
-- Graph - An adjacency list graph with arbitrary associated data.
-- StableGraph - Similar to Graph, but it keeps indices stable across removals.
-- GraphMap - An adjacency list graph backed by a hash table. The node identifiers are the keys into the table.
-- MatrixGraph - An adjacency matrix graph.
-- CSR - A sparse adjacency matrix graph with arbitrary associated data.
-
-## Generic parameters
-
-Each graph type is generic over a handful of parameters. All graphs share 3 common parameters, N, E, and Ty. This is a broad overview of what those are. Each type’s documentation will have finer detail on these parameters.
-
-N & E are called weights in this implementation, and are associated with nodes and edges respectively. They can generally be of arbitrary type, and don’t have to be what you might conventionally consider weight-like. For example, using &str for N will work. Many algorithms that require costs let you provide a cost function that translates your N and E weights into costs appropriate to the algorithm. Some graph types and choices do impose bounds on N or E. min_spanning_tree for example requires edge weights that implement PartialOrd. GraphMap requires node weights that can serve as hash map keys, since that graph type does not create standalone node indices.
-
-Ty controls whether edges are Directed or Undirected.
-
-Ix appears on graph types that use indices. It is exposed so you can control the size of node and edge indices, and therefore the memory footprint of your graphs. Allowed values are u8, u16, u32, and usize, with u32 being the default.
-
-## Shorthand types
-Each graph type vends a few shorthand type definitions that name some specific generic choices. For example, DiGraph<_, _> is shorthand for Graph<_, _, Directed>. UnMatrix<_, _> is shorthand for MatrixGraph<_, _, Undirected>. Each graph type’s module documentation lists the available shorthand types.
-
-## Crate features
-serde-1 - Defaults off. Enables serialization for Graph, StableGraph, GraphMap using serde 1.0. May require a more recent version of Rust than petgraph alone.
-graphmap - Defaults on. Enables GraphMap.
-stable_graph - Defaults on. Enables StableGraph.
-matrix_graph - Defaults on. Enables MatrixGraph.
+`dijkstra`, `bellman_ford`, `astar`, `bfs`, `dfs`, `dfs_post_order`, `tarjan_scc`, `kosaraju_scc`, `toposort`, `min_spanning_tree`, `is_isomorphic`, `connected_components`, `floyd_warshall`, `johnson`, `k_shortest_path`, `page_rank`, `feedback_arc_set` — see `petgraph::algo`.
