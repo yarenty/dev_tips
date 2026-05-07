@@ -1,61 +1,75 @@
 ---
-title: Unlearning
-main_link: https://arxiv.org/abs/2502.20709?utm_source=tldrai
-keywords: [unlearning, federated, fused]
-status: draft
+title: Machine unlearning
+main_link: https://arxiv.org/abs/1912.03817
+keywords: [unlearning, gdpr, federated-unlearning, sisa, right-to-be-forgotten]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Machine unlearning
 
-# Unlearning
-
-**Main link:** <https://arxiv.org/abs/2502.20709?utm_source=tldrai>
+**Main link:** <https://arxiv.org/abs/1912.03817>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Machine unlearning is the problem of **removing the influence of specific training examples from
+an already-trained model** without retraining from scratch — driven by GDPR Article 17
+(right-to-be-forgotten), copyright takedowns, recovery from data poisoning, and evolving privacy
+regulation (EU AI Act, US state laws). The canonical paper is **Bourtoule et al. 2019,
+*Machine Unlearning*** (USENIX Security'21), which introduced the **SISA** (Sharded, Isolated,
+Sliced, Aggregated) training framework: shard the data, train an independent sub-model per shard,
+aggregate predictions; on a deletion request, only the affected shard's sub-model needs retraining.
+The field splits into **exact unlearning** (provable equivalence to retraining-from-scratch on the
+remaining data, e.g. SISA) and **approximate unlearning** (gradient-based "undo" updates, much
+cheaper but with weaker guarantees).
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Three things to keep clear:
+
+1. **Exact vs. approximate is a real distinction.** Exact unlearning gives you a defensible
+   "this model behaves *as if* the data was never seen" story for regulators. Approximate
+   methods (influence functions, gradient ascent on the forgotten examples, fine-tuning with
+   negation losses) are dramatically cheaper but don't survive a determined membership-inference
+   audit.
+2. **Federated unlearning is its own subfield.** Federated training distributes the model across
+   clients; unlearning has to coordinate across all of them without leaking which client requested
+   the deletion. Recent work (FUSED — the FUSED paper at the original auto-stub link — Knowledge
+   Overwriting via sparse adapters) targets this case with reversible adapter-only updates.
+3. **The hardest case is LLMs.** Pretraining on terabytes of web text means deletion requests
+   have a combinatorially-bad blast radius. Active research areas: localised "concept erasure"
+   in attention heads, RLHF-style "forget this" fine-tuning, and approximate-unlearning benchmarks
+   like TOFU and WMDP. None has a clean exact-unlearning story yet.
+
+For most practical work in 2025: if regulatory exposure is real, design the training pipeline for
+SISA-style sharding from the start — retrofitting unlearning onto a monolithically-trained model
+is painful. If the model is small enough to retrain in hours, **just retrain** — the operational
+simplicity beats any approximate-unlearning paper.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **Differential privacy** — adjacent: bound the influence of any single example *during training*, so the unlearning problem is smaller.
+- **Data deletion / data lineage** — the systems-side companion problem (knowing *which* examples to forget when a user asks).
+- **Model editing** (ROME, MEMIT) — surgical fact-overwriting in LLM weights; conceptually related but targets specific facts, not training examples.
+- **Membership inference attacks** — the auditor's tool; how you measure whether unlearning actually worked.
+- **Federated learning** — the distributed-training setting where federated unlearning lives.
 
 ## Internal links
+<!-- reviewed -->
+- [[../llm/README|llm]] — sibling section; LLM unlearning is the hardest open problem.
+- [[../finetuning/README|finetuning]] — adjacent: many approximate-unlearning techniques are negation-fine-tuning.
+- [[../frameworks/README|frameworks]] — what SISA-style training pipelines build on.
+- [[classification]], [[pattern_learning]] — sibling fundamentals topics.
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[courses]] — top 5 2022 couses _(score 16.0)_
-- [[graphnn]] — Graphnn _(score 16.0)_
-- [[fedsb]] — Fed-SB _(score 8.9)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#unlearning` `#fundamentals` `#ml` `#knowledge` `#federated` `#fused` `#overwriting`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#unlearning` `#gdpr` `#federated-unlearning` `#sisa` `#right-to-be-forgotten`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-
-
-
-Unlearning through Knowledge Overwriting: Reversible Federated Unlearning via Selective Sparse Adapter
-
-
-https://arxiv.org/abs/2502.20709?utm_source=tldrai
-
-Federated Learning is a promising paradigm for privacy-preserving collaborative model training. In practice, it is essential not only to continuously train the model to acquire new knowledge but also to guarantee old knowledge the right to be forgotten (i.e., federated unlearning), especially for privacy-sensitive information or harmful knowledge. However, current federated unlearning methods face several challenges, including indiscriminate unlearning of cross-client knowledge, irreversibility of unlearning, and significant unlearning costs. To this end, we propose a method named FUSED, which first identifies critical layers by analyzing each layer's sensitivity to knowledge and constructs sparse unlearning adapters for sensitive ones. Then, the adapters are trained without altering the original parameters, overwriting the unlearning knowledge with the remaining knowledge. This knowledge overwriting process enables FUSED to mitigate the effects of indiscriminate unlearning. Moreover, the introduction of independent adapters makes unlearning reversible and significantly reduces the unlearning costs. Finally, extensive experiments on three datasets across various unlearning scenarios demonstrate that FUSED's effectiveness is comparable to Retraining, surpassing all other baselines while greatly reducing unlearning costs.
+- Foundational: [Bourtoule et al. 2021, *Machine Unlearning*](https://arxiv.org/abs/1912.03817) (USENIX Security'21) — introduces SISA.
+- Federated unlearning: [*Unlearning through Knowledge Overwriting: Reversible Federated Unlearning via Selective Sparse Adapter (FUSED)*](https://arxiv.org/abs/2502.20709). Federated learning method that identifies critical layers by analysing per-layer sensitivity, builds sparse unlearning adapters for them, and overwrites unlearning knowledge with the remaining knowledge — making unlearning reversible and much cheaper than retraining.
+- Survey: [Nguyen et al. 2022, *A Survey of Machine Unlearning*](https://arxiv.org/abs/2209.02299).
+- LLM unlearning benchmarks:
+  - [TOFU (Maini et al. 2024)](https://arxiv.org/abs/2401.06121).
+  - [WMDP (Li et al. 2024)](https://arxiv.org/abs/2403.03218).
+- Regulatory context: [GDPR Article 17 — Right to erasure](https://gdpr-info.eu/art-17-gdpr/), [EU AI Act](https://artificialintelligenceact.eu/).
