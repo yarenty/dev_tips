@@ -3,6 +3,7 @@ title: DashMap — concurrent hash map
 main_link: https://crates.io/crates/dashmap
 keywords: [dashmap, concurrent, hashmap, rwlock, sharded]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # DashMap — concurrent hash map

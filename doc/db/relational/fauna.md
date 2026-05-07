@@ -3,6 +3,7 @@ title: "Fauna — the serverless transactional DB (sunset 2025)"
 main_link: https://fauna.com/
 keywords: [fauna, serverless, distributed, calvin, fql, graphql, sunset]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Fauna — the serverless transactional DB (sunset 2025)

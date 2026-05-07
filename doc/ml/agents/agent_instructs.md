@@ -3,6 +3,7 @@ title: Agent instructions — `.cursorrules` / `AGENTS.md` / `CLAUDE.md` / `.goo
 main_link: https://agents.md/
 keywords: [agent-instructions, cursorrules, agents-md, claude-md, goosehints, system-prompts]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Agent instructions — `.cursorrules` / `AGENTS.md` / `CLAUDE.md` / `.goosehints`

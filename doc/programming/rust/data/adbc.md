@@ -3,6 +3,7 @@ title: ADBC — Arrow Database Connectivity
 main_link: https://arrow.apache.org/adbc/
 keywords: [adbc, arrow, database, jdbc, odbc, columnar, flight-sql, rust]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # ADBC — Arrow Database Connectivity

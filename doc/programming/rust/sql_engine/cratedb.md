@@ -3,6 +3,7 @@ title: CrateDB
 main_link: https://crate.io/
 keywords: [cratedb, distributed-sql, postgres-wire, lucene, elasticsearch, jvm]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # CrateDB

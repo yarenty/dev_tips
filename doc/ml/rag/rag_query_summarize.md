@@ -3,6 +3,7 @@ title: Query preprocessing for RAG — HyDE, multi-query, decomposition, step-ba
 main_link: https://arxiv.org/abs/2212.10496
 keywords: [rag, query-rewriting, hyde, multi-query, query-decomposition, step-back, rag-fusion]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Query preprocessing for RAG — HyDE, multi-query, decomposition, step-back, RAG-Fusion

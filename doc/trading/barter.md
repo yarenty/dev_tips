@@ -3,6 +3,7 @@ title: Barter
 main_link: https://github.com/barter-rs/barter-rs
 keywords: [barter, rust, trading, event-driven, backtesting, engine, portfolio]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Barter

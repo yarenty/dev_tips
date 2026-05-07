@@ -3,6 +3,7 @@ title: "Circle — an experimental C++20 compiler with reflection and pattern ma
 main_link: https://www.circle-lang.org/
 keywords: [circle, cpp, compiler, reflection, pattern-matching, metaprogramming, sean-baxter, experimental]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Circle — an experimental C++20 compiler with reflection and pattern matching

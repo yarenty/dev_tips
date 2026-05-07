@@ -2,6 +2,7 @@
 title: Funny
 keywords: [funny, esolang, joke-algorithm, brainfuck, recreational-programming]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Funny

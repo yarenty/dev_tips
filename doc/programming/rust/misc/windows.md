@@ -3,6 +3,7 @@ title: windows-rs — Rust for Windows APIs
 main_link: https://github.com/microsoft/windows-rs
 keywords: [windows, rust, winrt, win32, com, microsoft, ffi]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # windows-rs — Rust for Windows APIs

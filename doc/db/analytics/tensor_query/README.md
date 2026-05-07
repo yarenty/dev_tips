@@ -2,6 +2,7 @@
 title: Tensor query processing
 keywords: [tensor-query, gpu, sql, query-processing, microsoft, polimi]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Tensor query processing

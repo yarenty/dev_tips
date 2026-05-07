@@ -3,6 +3,7 @@ title: Yew
 main_link: https://yew.rs/
 keywords: [yew, rust, wasm, frontend, framework, react, components]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Yew

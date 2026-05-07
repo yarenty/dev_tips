@@ -3,6 +3,7 @@ title: "gRPC in Rust (tonic, grpc-rs)"
 main_link: https://github.com/hyperium/tonic
 keywords: [rust, grpc, tonic, hyper, http2, protobuf, rpc, raft]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # gRPC in Rust (tonic, grpc-rs)

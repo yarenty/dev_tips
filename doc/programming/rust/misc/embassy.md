@@ -3,6 +3,7 @@ title: Embassy — async embedded Rust framework
 main_link: https://embassy.dev/
 keywords: [embassy, rust, embedded, async, no-std, executor, hal]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Embassy — async embedded Rust framework

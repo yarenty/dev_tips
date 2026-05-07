@@ -3,6 +3,7 @@ title: "Grafana (the dashboard canvas) + Mimir for long-term metrics"
 main_link: https://grafana.com/
 keywords: [grafana, mimir, prometheus, dashboards, observability-overlap]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Grafana (the dashboard canvas) + Mimir for long-term metrics

@@ -3,6 +3,7 @@ title: "C++ ABI (Itanium): name mangling, vtables, and cross-toolchain compatibi
 main_link: https://itanium-cxx-abi.github.io/cxx-abi/abi.html
 keywords: [abi, cpp, itanium-abi, name-mangling, libstdcxx, libcxx, vtable, linker]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # C++ ABI (Itanium): name mangling, vtables, and cross-toolchain compatibility

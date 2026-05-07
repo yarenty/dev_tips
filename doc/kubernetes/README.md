@@ -2,6 +2,7 @@
 title: Kubernetes (and adjacent edge / container topics)
 keywords: [kubernetes, k3s, dokku, balena, akri, kuasar, edge, iot, container-runtime]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Kubernetes (and adjacent edge / container topics)

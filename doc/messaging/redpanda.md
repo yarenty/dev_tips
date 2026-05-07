@@ -3,6 +3,7 @@ title: "Redpanda: Kafka-wire-compatible single-binary streaming platform"
 main_link: https://redpanda.com/
 keywords: [redpanda, kafka, streaming, c-plus-plus, single-binary, rpk, vectorized, no-zookeeper]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Redpanda: Kafka-wire-compatible single-binary streaming platform

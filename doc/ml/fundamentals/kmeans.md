@@ -3,6 +3,7 @@ title: k-means clustering
 main_link: https://scikit-learn.org/stable/modules/clustering.html#k-means
 keywords: [kmeans, clustering, unsupervised, lloyd, kmeans-pp]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # k-means clustering

@@ -2,6 +2,7 @@
 title: "Package managers"
 keywords: [package-managers, npm, cargo, pip, uv, go-mod, maven, gradle, composer, bun, pnpm, lockfiles]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Package managers

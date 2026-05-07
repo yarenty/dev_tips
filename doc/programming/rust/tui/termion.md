@@ -3,6 +3,7 @@ title: Termion
 main_link: https://gitlab.redox-os.org/redox-os/termion
 keywords: [termion, rust, redox, tty, terminal, ansi, low-level]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Termion

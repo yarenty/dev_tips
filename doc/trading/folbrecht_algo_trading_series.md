@@ -3,6 +3,7 @@ title: "Folbrecht: A Basic Algo Trading System in Rust (series)"
 main_link: https://github.com/Paul-Folbrecht/algo-trading
 keywords: [folbrecht-algo-trading, rust, trading, onion-architecture, backtesting, dependency-injection, mean-reversion]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Folbrecht: A Basic Algo Trading System in Rust (series)

@@ -3,6 +3,7 @@ title: MiniLLM — knowledge distillation for LLMs (Microsoft Research)
 main_link: https://github.com/microsoft/LMOps/tree/main/minillm
 keywords: [minillm, knowledge-distillation, kd, microsoft-research, reverse-kl, lmops, small-llms]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # MiniLLM — knowledge distillation for LLMs (Microsoft Research)

@@ -3,6 +3,7 @@ title: Public datasets
 main_link: https://github.com/awesomedata/awesome-public-datasets
 keywords: [datasets, public-data, awesome-list, ml-data, kaggle, hugging-face, openml]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Public datasets

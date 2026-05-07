@@ -2,6 +2,7 @@
 title: Rust web stack
 keywords: [web, rust, http, websocket, wasm, hyper, axum]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust web stack

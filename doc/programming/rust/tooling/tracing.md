@@ -3,6 +3,7 @@ title: tracing — structured spans + events for Rust
 main_link: https://github.com/tokio-rs/tracing
 keywords: [tracing, rust, tokio, observability, structured-logging, spans, opentelemetry]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # tracing — structured spans + events for Rust

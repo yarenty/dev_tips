@@ -3,6 +3,7 @@ title: "MinIO — high-performance S3-compatible object storage"
 main_link: https://min.io/
 keywords: [minio, s3, object-storage, self-hosted, distributed-storage, erasure-coding, golang]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # MinIO — high-performance S3-compatible object storage

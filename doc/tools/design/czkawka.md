@@ -3,6 +3,7 @@ title: "Czkawka — find duplicate / similar / wasted files (Krokiet GUI)"
 main_link: https://github.com/qarmin/czkawka
 keywords: [czkawka, krokiet, duplicates, disk-cleanup, rust, similar-images, gtk]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Czkawka — find duplicate / similar / wasted files

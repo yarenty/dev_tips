@@ -3,6 +3,7 @@ title: sql-parse — small MariaDB-focused SQL parser
 main_link: https://crates.io/crates/sql-parse
 keywords: [sql-parse, mariadb, mysql, parser, ast, no-std, recursive-descent]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # sql-parse — small MariaDB-focused SQL parser

@@ -3,6 +3,7 @@ title: "Browsh: Firefox in your terminal"
 main_link: https://www.brow.sh/
 keywords: [browsh, terminal-browser, firefox, headless, tui, ssh, low-bandwidth, shell]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Browsh: Firefox in your terminal

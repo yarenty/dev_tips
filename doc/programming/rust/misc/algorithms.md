@@ -3,6 +3,7 @@ title: TheAlgorithms/Rust — classic algorithm reference
 main_link: https://github.com/TheAlgorithms/Rust
 keywords: [algorithms, rust, thealgorithms, learning, reference]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # TheAlgorithms/Rust — classic algorithm reference

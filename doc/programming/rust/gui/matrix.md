@@ -3,6 +3,7 @@ title: matrix-rust-sdk (Apple bindings)
 main_link: https://github.com/matrix-org/matrix-rust-sdk/tree/main/bindings/apple
 keywords: [matrix, matrix-rust-sdk, ios, apple, bindings, chat-protocol, element]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # matrix-rust-sdk (Apple bindings)

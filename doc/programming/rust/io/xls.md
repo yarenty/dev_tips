@@ -3,6 +3,7 @@ title: "Excel / spreadsheets in Rust (calamine, rust_xlsxwriter, umya-spreadshee
 main_link: https://github.com/tafia/calamine
 keywords: [rust, excel, xlsx, ods, calamine, rust_xlsxwriter, umya-spreadsheet, spreadsheets]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Excel / spreadsheets in Rust (calamine, rust_xlsxwriter, umya-spreadsheet)

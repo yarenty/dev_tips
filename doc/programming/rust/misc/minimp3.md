@@ -3,6 +3,7 @@ title: minimp3 — Rust bindings to the C minimp3 decoder
 main_link: https://github.com/germangb/minimp3-rs
 keywords: [minimp3, rust, mp3, audio, decoder, ffi]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # minimp3 — Rust bindings to the C minimp3 decoder

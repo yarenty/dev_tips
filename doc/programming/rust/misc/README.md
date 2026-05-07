@@ -2,6 +2,7 @@
 title: Misc Rust — kitchen-sink section
 keywords: [rust, misc, audio, embedded, raspberry-pi, windows, charts, fun]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Misc Rust — kitchen-sink section

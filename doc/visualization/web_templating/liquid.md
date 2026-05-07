@@ -3,6 +3,7 @@ title: "Liquid: Shopify's safe template language"
 main_link: https://shopify.github.io/liquid/
 keywords: [liquid, shopify, templating, jekyll, safe-eval, ruby, rust]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Liquid: Shopify's safe template language

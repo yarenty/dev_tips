@@ -3,6 +3,7 @@ title: Cursive
 main_link: https://github.com/gyscos/cursive
 keywords: [cursive, rust, tui, ncurses, widgets, gyscos]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Cursive

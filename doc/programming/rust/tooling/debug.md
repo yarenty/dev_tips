@@ -3,6 +3,7 @@ title: debug — `Debug` derive helpers (`debug_stub_derive`, `derivative`)
 main_link: https://crates.io/crates/debug_stub_derive
 keywords: [debug, rust, derive, derivative, debug-impl, foreign-types, ignore-fields]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # debug — `Debug` derive helpers (`debug_stub_derive`, `derivative`)

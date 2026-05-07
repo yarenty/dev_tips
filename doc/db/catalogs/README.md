@@ -2,6 +2,7 @@
 title: Data catalogs
 keywords: [catalogs, metadata, governance, lineage, hive-metastore, unity-catalog, glue, iceberg]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Data catalogs

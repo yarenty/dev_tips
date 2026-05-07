@@ -3,6 +3,7 @@ title: tiny-gpu — a minimal GPU in 15 Verilog files
 main_link: https://github.com/adam-maj/tiny-gpu
 keywords: [tiny-gpu, gpu, verilog, education, gpgpu, hardware, rtl]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # tiny-gpu — a minimal GPU in 15 Verilog files

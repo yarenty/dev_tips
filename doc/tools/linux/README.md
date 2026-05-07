@@ -2,6 +2,7 @@
 title: Linux command-line tools
 keywords: [linux, terminal, multiplexer, shell, editor, debugger, networking, books]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Linux command-line tools

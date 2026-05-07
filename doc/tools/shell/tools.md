@@ -3,6 +3,7 @@ title: "Shell-script ergonomics toolkit (forgit, gum)"
 main_link: https://github.com/charmbracelet/gum
 keywords: [shell-tools, gum, forgit, charmbracelet, fzf, interactive, scripting, shell]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Shell-script ergonomics toolkit (forgit, gum)

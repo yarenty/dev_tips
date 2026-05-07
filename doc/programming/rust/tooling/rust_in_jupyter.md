@@ -3,6 +3,7 @@ title: rust_in_jupyter — `evcxr_jupyter` kernel for Rust notebooks
 main_link: https://github.com/evcxr/evcxr/blob/main/evcxr_jupyter/README.md
 keywords: [rust-in-jupyter, evcxr, jupyter, notebook, polars, plotters, data-science]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # rust_in_jupyter — `evcxr_jupyter` kernel for Rust notebooks

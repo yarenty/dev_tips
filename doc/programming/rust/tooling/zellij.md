@@ -3,6 +3,7 @@ title: zellij — modern terminal multiplexer (tmux replacement)
 main_link: https://zellij.dev/
 keywords: [zellij, rust, terminal-multiplexer, tmux, screen, layouts, plugins, wasm]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # zellij — modern terminal multiplexer (tmux replacement)

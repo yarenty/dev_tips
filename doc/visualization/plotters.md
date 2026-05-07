@@ -3,6 +3,7 @@ title: "Plotters: pure-Rust drawing library for charts (+ a brief tour of GTK-rs
 main_link: https://github.com/plotters-rs/plotters
 keywords: [plotters, rust, charts, cairo, gtk-rs, wasm, gui]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Plotters: pure-Rust drawing library for charts (+ a brief tour of GTK-rs)

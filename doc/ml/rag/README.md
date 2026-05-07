@@ -2,6 +2,7 @@
 title: RAG — retrieval-augmented generation
 keywords: [rag, retrieval, embeddings, hybrid-search, graph-rag, agentic-rag, knowledge-graph]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # RAG — retrieval-augmented generation

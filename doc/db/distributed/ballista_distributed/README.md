@@ -2,6 +2,7 @@
 title: Ballista (distributed DataFusion)
 keywords: [ballista, datafusion, distributed-query, arrow, rust]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Ballista (distributed DataFusion)

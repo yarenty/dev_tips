@@ -3,6 +3,7 @@ title: TabbyML — self-hosted open-source code-completion server
 main_link: https://github.com/TabbyML/tabby
 keywords: [tabby, tabbyml, copilot-alternative, self-hosted, code-completion, starcoder, deepseek-coder, qwen-coder, openapi]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # TabbyML — self-hosted open-source code-completion server

@@ -2,6 +2,7 @@
 title: Rust SQL engines, parsers, and UDF substrates
 keywords: [sql-engine, udf, sql-parser, datafusion, rust]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust SQL engines, parsers, and UDF substrates

@@ -3,6 +3,7 @@ title: Pake
 main_link: https://github.com/tw93/Pake
 keywords: [pake, rust, tauri, web-to-app, webview, desktop, packaging]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Pake

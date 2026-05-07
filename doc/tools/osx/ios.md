@@ -3,6 +3,7 @@ title: "iOS development on macOS"
 main_link: https://developer.apple.com/support/app-store-improvements/
 keywords: [ios, apple, app-store, xcode, swiftui, debugging, code-review, mobile]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # iOS development on macOS

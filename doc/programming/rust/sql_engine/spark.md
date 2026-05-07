@@ -3,6 +3,7 @@ title: Spark UDF (and the Rust-on-Spark angle)
 main_link: https://spark.apache.org/docs/latest/sql-ref-functions-udf-scalar.html
 keywords: [spark, udf, udaf, jvm, jni, blaze, gluten, datafusion, arrow]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Spark UDF (and the Rust-on-Spark angle)

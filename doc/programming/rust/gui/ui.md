@@ -3,6 +3,7 @@ title: Rust GUI landscape
 main_link: https://www.areweguiyet.com/
 keywords: [ui, rust, gui, landscape, floem, eww, seelen, 7guis]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust GUI landscape

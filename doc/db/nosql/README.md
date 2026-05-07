@@ -2,6 +2,7 @@
 title: "NoSQL databases"
 keywords: [nosql, kv, cache, redis, document, firebase, wide-column, hbase]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # NoSQL databases

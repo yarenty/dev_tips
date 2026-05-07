@@ -3,6 +3,7 @@ title: Machine unlearning
 main_link: https://arxiv.org/abs/1912.03817
 keywords: [unlearning, gdpr, federated-unlearning, sisa, right-to-be-forgotten]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Machine unlearning

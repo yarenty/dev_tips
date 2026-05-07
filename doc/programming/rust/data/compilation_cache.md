@@ -3,6 +3,7 @@ title: sccache — shared compilation cache
 main_link: https://github.com/mozilla/sccache/
 keywords: [sccache, ccache, compilation-cache, rustc, build, cuda]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # sccache — shared compilation cache

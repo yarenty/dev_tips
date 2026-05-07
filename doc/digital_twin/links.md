@@ -3,6 +3,7 @@ title: Digital twin — curated reading list
 main_link: https://www.ibm.com/topics/what-is-a-digital-twin
 keywords: [digital-twin, ibm, mathworks, reading-list, references]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Digital twin — curated reading list

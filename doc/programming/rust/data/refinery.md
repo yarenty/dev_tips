@@ -3,6 +3,7 @@ title: refinery — embedded SQL migration runner
 main_link: https://crates.io/crates/refinery
 keywords: [refinery, migration, sql, postgres, mysql, sqlite, mssql]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # refinery — embedded SQL migration runner

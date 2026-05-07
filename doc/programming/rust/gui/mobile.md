@@ -3,6 +3,7 @@ title: cargo-mobile / cargo-mobile2
 main_link: https://github.com/tauri-apps/cargo-mobile2
 keywords: [mobile, cargo-mobile, cargo-mobile2, rust, ios, android, tauri, bevy]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # cargo-mobile / cargo-mobile2

@@ -3,6 +3,7 @@ title: MLGO — ML-guided compiler optimisations for LLVM
 main_link: https://github.com/google/ml-compiler-opt
 keywords: [mlgo, llvm, compiler-optimisation, reinforcement-learning, ml-for-systems, google]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # MLGO — ML-guided compiler optimisations for LLVM

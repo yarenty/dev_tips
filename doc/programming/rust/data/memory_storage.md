@@ -3,6 +3,7 @@ title: evmap — eventually-consistent concurrent multi-map
 main_link: https://github.com/jonhoo/evmap
 keywords: [evmap, lock-free, eventually-consistent, multi-map, left-right]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # evmap — eventually-consistent concurrent multi-map

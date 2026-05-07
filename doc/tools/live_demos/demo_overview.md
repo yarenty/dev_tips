@@ -3,6 +3,7 @@ title: "demo-magic — scripted terminal demos with fake typing"
 main_link: https://github.com/paxtonhare/demo-magic
 keywords: [demo-magic, live-demo, presentation, bash, terminal, kubecon, conference, scripting]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # demo-magic — scripted terminal demos with fake typing

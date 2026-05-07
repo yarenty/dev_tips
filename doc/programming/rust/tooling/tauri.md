@@ -3,6 +3,7 @@ title: tauri (dev-tooling angle) — `cargo tauri` workflow
 main_link: https://tauri.app/
 keywords: [tauri, rust, cargo-tauri, desktop, mobile, packaging, ipc, webview]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # tauri (dev-tooling angle) — `cargo tauri` workflow

@@ -3,6 +3,7 @@ title: macOS / iOS Rust targets
 main_link: https://doc.rust-lang.org/rustc/platform-support.html
 keywords: [macos, ios, rust, rustup, targets, apple-silicon, lipo, xcode]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # macOS / iOS Rust targets

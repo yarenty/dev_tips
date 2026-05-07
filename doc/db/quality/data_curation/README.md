@@ -2,6 +2,7 @@
 title: Data curation
 keywords: [data-curation, ml, training-data, annotation, synthetic-data, active-learning, deduplication]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Data curation

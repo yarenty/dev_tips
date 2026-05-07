@@ -3,6 +3,7 @@ title: Episodic memory for LLMs and agents
 main_link: https://em-llm.github.io/
 keywords: [episodic-memory, em-llm, memorag, mamba, arigraph, ai-native-memory]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Episodic memory for LLMs and agents

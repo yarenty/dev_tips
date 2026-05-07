@@ -3,6 +3,7 @@ title: bb8 — async connection pool
 main_link: https://crates.io/crates/bb8
 keywords: [bb8, connection-pool, async, tokio, database, rust]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # bb8 — async connection pool

@@ -3,6 +3,7 @@ title: Symphonia — pure-Rust media demuxer + codec library
 main_link: https://github.com/pdeljanov/Symphonia
 keywords: [symphonia, rust, audio, codec, demuxer, flac, mp3, aac, vorbis]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Symphonia — pure-Rust media demuxer + codec library

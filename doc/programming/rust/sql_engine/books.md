@@ -3,6 +3,7 @@ title: How to build a SQL engine — reading list
 main_link: https://howqueryengineswork.com/
 keywords: [sql-engine, books, reading-list, datafusion, query-engine, andy-grove]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # How to build a SQL engine — reading list

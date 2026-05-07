@@ -3,6 +3,7 @@ title: WASM UDFs for libSQL
 main_link: https://bindgen.libsql.org/
 keywords: [wasm, libsql, turso, udf, sandbox, wasmtime, sqlite]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # WASM UDFs for libSQL

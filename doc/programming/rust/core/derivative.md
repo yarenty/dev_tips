@@ -3,6 +3,7 @@ title: derivative — better derive macros
 main_link: https://mcarton.github.io/rust-derivative/latest/index.html
 keywords: [derivative, derive, macros, debug, default, hash, rust]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # derivative — better derive macros

@@ -3,6 +3,7 @@ title: "Svelvet: node-graph editor for Svelte / web visualisations"
 main_link: https://www.svelvet.io/
 keywords: [svelvet, svelte, javascript, node-graph, visualisation, flow-editor]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Svelvet: node-graph editor for Svelte / web visualisations

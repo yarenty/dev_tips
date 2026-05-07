@@ -3,6 +3,7 @@ title: "Typst: a modern, fast LaTeX-shaped typesetting system"
 main_link: https://typst.app/
 keywords: [typst, typesetting, latex, pdf, documents, scripting]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Typst: a modern, fast LaTeX-shaped typesetting system

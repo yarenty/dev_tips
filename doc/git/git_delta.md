@@ -3,6 +3,7 @@ title: delta — pretty diff & blame pager for Git
 main_link: https://github.com/dandavison/delta
 keywords: [git, delta, git-delta, diff, pager, syntax-highlighting, dandavison]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # delta — pretty diff & blame pager for Git

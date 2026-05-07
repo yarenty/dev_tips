@@ -2,6 +2,7 @@
 title: Gluten
 keywords: [gluten, spark, velox, clickhouse, native-execution, oap, intel]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Gluten

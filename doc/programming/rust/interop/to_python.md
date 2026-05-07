@@ -3,6 +3,7 @@ title: Rust → Python (publishing recipe)
 main_link: https://pyo3.rs
 keywords: [to-python, rust, python, pyo3, maturin, datafusion, pypi]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust → Python (publishing recipe)

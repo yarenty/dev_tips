@@ -3,6 +3,7 @@ title: ink (JavaScript / React for CLIs)
 main_link: https://github.com/vadimdemedes/ink
 keywords: [ink, javascript, react, cli, tui, vadimdemedes, jsx]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # ink (JavaScript / React for CLIs)

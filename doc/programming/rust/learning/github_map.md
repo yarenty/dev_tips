@@ -3,6 +3,7 @@ title: Map of GitHub (anvaka)
 main_link: https://anvaka.github.io/map-of-github
 keywords: [github-map, anvaka, visualization, discovery, repos]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Map of GitHub (anvaka)

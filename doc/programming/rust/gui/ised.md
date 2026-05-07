@@ -3,6 +3,7 @@ title: Iced
 main_link: https://iced.rs/
 keywords: [iced, rust, gui, elm-architecture, retained-mode, wgpu]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Iced

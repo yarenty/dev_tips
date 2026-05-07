@@ -3,6 +3,7 @@ title: "Redis — the in-memory data-structure server"
 main_link: https://redis.io/
 keywords: [redis, valkey, cache, kv, pubsub, data-structures, license-drama, bsl]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Redis — the in-memory data-structure server

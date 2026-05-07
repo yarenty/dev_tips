@@ -2,6 +2,7 @@
 title: Demos & presentations
 keywords: [demo, presentations, terminal, slides]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Demos & presentations

@@ -3,6 +3,7 @@ title: dfdx — pure-Rust deep learning with compile-time tensor shapes
 main_link: https://github.com/coreylowman/dfdx
 keywords: [dfdx, rust, deep-learning, const-generics, shape-checking, autodiff, cuda]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # dfdx — pure-Rust deep learning with compile-time tensor shapes

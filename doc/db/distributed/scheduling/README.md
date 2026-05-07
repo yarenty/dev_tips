@@ -2,6 +2,7 @@
 title: Cluster & query scheduling (papers)
 keywords: [scheduling, cluster-management, query-scheduling, borg, omega, apollo]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Cluster & query scheduling (papers)

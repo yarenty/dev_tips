@@ -3,6 +3,7 @@ title: Rust ↔ JVM interop
 main_link: https://github.com/jni-rs/jni-rs
 keywords: [rust, java, jvm, jni, robusta, jnix, j4rs, duchess, ffm, questdb]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust ↔ JVM interop

@@ -2,6 +2,7 @@
 title: "Java"
 keywords: [java, jvm, kotlin, graalvm, jdk, virtual-threads, native-image]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Java

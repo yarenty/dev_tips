@@ -3,6 +3,7 @@ title: mPLUG — Alibaba's vision-language model family (mPLUG / mPLUG-2 / mPLUG
 main_link: https://github.com/X-PLUG
 keywords: [mplug, mplug-owl, mplug-docowl, alibaba, alicemind, damo, multimodal, vision-language]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # mPLUG — Alibaba's vision-language model family (mPLUG / mPLUG-2 / mPLUG-Owl)

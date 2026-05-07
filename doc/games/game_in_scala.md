@@ -3,6 +3,7 @@ title: Cross-platform game development in Scala (natively)
 main_link: https://regblanc.com/blog/cross-platform-game-development-in-scala-natively/
 keywords: [scala, scala-native, gamedev, sgl, cross-platform, regblanc]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Cross-platform game development in Scala (natively)

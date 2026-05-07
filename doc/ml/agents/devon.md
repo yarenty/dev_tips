@@ -3,6 +3,7 @@ title: Devon — entropy-research's open coding agent (not Devin!)
 main_link: https://github.com/entropy-research/Devon
 keywords: [devon, entropy-research, coding-agent, python, open-source]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Devon — entropy-research's open coding agent

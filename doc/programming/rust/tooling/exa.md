@@ -3,6 +3,7 @@ title: exa — modern `ls` (unmaintained; use `eza` fork)
 main_link: https://the.exa.website/
 keywords: [exa, eza, rust, ls, unix-replacement, file-listing, cli]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # exa — modern `ls` (unmaintained; use `eza` fork)

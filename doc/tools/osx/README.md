@@ -3,6 +3,7 @@ title: "macOS / Apple platform tooling"
 main_link: https://developer.apple.com/
 keywords: [macos, osx, apple, ios, xcode, virtualization, cross-compile, apple-silicon, utm, osxcross]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # macOS / Apple platform tooling

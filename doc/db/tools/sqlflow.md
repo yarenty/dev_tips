@@ -3,6 +3,7 @@ title: SQLFlow
 main_link: https://github.com/turbolytics/sql-flow
 keywords: [sqlflow, streaming-sql, kafka, duckdb, arrow, flink-alternative, materialize, risingwave]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # SQLFlow

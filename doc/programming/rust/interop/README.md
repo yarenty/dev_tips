@@ -2,6 +2,7 @@
 title: Rust interop (FFI / language bridges)
 keywords: [interop, ffi, python, java, dotnet, pyo3, jni, csbindgen]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust interop (FFI / language bridges)

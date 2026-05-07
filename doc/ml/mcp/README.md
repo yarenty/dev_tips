@@ -2,6 +2,7 @@
 title: MCP — Model Context Protocol
 keywords: [mcp, anthropic, agents, tools, resources, protocol]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # MCP — Model Context Protocol

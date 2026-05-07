@@ -3,6 +3,7 @@ title: "Apache Druid — real-time OLAP on time-bucketed events"
 main_link: https://druid.apache.org/
 keywords: [druid, olap, timeseries, analytics, real-time, java, columnar, apache]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Apache Druid — real-time OLAP on time-bucketed events

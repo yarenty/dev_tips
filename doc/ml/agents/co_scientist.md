@@ -3,6 +3,7 @@ title: Google AI co-scientist
 main_link: https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/
 keywords: [co-scientist, google, multi-agent, scientific-discovery, hypothesis-generation]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Google AI co-scientist

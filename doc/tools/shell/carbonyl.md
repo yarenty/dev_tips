@@ -3,6 +3,7 @@ title: "Carbonyl: Chromium that runs in your terminal"
 main_link: https://github.com/fathyb/carbonyl
 keywords: [carbonyl, terminal-browser, chromium, fathyb, tui, ansi, video-in-terminal, shell]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Carbonyl: Chromium that runs in your terminal

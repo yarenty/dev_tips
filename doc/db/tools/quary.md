@@ -3,6 +3,7 @@ title: Quary
 main_link: https://github.com/quarylabs/quary
 keywords: [quary, sql, dbt-alternative, transformation, duckdb, vscode, rust, models]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Quary

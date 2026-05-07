@@ -3,6 +3,7 @@ title: Graph Neural Networks (GNN)
 main_link: https://pytorch-geometric.readthedocs.io/
 keywords: [gnn, graph-neural-networks, pyg, dgl, gcn, gat, graphsage]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Graph Neural Networks (GNN)

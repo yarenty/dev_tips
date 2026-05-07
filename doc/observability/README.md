@@ -2,6 +2,7 @@
 title: Observability
 keywords: [observability, prometheus, grafana, node-exporter, openobserve, metrics, logs, traces]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Observability

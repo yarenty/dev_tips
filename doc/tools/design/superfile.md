@@ -3,6 +3,7 @@ title: "superfile (spf) — pretty TUI multi-panel file manager"
 main_link: https://github.com/MHNightCat/superfile
 keywords: [superfile, spf, tui, file-manager, go, ranger-alternative, yazi, lf]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # superfile (spf) — pretty TUI multi-panel file manager

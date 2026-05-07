@@ -3,6 +3,7 @@ title: "bytemuck — safe bit-cast between POD types"
 main_link: https://crates.io/crates/bytemuck
 keywords: [rust, bytemuck, bytes, zero-copy, pod, transmute, byteorder]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # bytemuck — safe bit-cast between POD types

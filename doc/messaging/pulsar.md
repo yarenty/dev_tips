@@ -3,6 +3,7 @@ title: "Apache Pulsar: cloud-native streaming with separated storage and compute
 main_link: https://pulsar.apache.org/
 keywords: [pulsar, apache, streaming, messaging, bookkeeper, geo-replication, multi-tenant, cloud-native]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Apache Pulsar: cloud-native streaming with separated storage and compute

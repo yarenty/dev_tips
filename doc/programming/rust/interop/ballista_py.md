@@ -3,6 +3,7 @@ title: Ballista (Python bindings)
 main_link: https://github.com/apache/datafusion-ballista/tree/main/python
 keywords: [ballista, datafusion, python, pyo3, distributed, arrow, big-data]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Ballista (Python bindings)

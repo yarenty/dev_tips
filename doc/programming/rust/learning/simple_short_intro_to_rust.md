@@ -3,6 +3,7 @@ title: A half hour to learn Rust (fasterthanli.me)
 main_link: https://fasterthanli.me/articles/a-half-hour-to-learn-rust
 keywords: [rust, intro, fasterthanli, amos, syntax, primer]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # A half hour to learn Rust (fasterthanli.me)

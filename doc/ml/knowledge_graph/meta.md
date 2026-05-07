@@ -3,6 +3,7 @@ title: Meta's data2vec — towards a single self-supervised model
 main_link: https://www.zdnet.com/article/metas-data2vec-is-the-next-step-toward-one-neural-network-to-rule-them-all/
 keywords: [meta, data2vec, doc2vec, self-supervised, multimodal, knowledge-graph]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Meta's data2vec — towards a single self-supervised model

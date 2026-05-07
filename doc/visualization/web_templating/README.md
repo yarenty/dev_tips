@@ -2,6 +2,7 @@
 title: Web templating
 keywords: [web-templating, liquid, jinja, handlebars, mustache, tera]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Web templating

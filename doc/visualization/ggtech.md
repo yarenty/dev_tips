@@ -3,6 +3,7 @@ title: "ggtech: ggplot2 themes for tech-company logos"
 main_link: https://github.com/ricardo-bion/ggtech
 keywords: [ggtech, ggplot2, r, charts, themes, branded-charts]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # ggtech: ggplot2 themes for tech-company logos

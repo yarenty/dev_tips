@@ -3,6 +3,7 @@ title: Agentic AI memory — landscape
 main_link: https://github.com/FoundationAgents/awesome-foundation-agents?tab=readme-ov-file#memory
 keywords: [agentic-ai-memory, memory, mem0, memgpt, letta, zep, a-mem, taxonomy]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Agentic AI memory — landscape

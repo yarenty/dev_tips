@@ -3,6 +3,7 @@ title: Inspectus — attention and activation visualisation in Jupyter
 main_link: https://github.com/labmlai/inspectus
 keywords: [inspectus, attention-visualisation, interpretability, jupyter, labml, debugging]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Inspectus — attention and activation visualisation in Jupyter

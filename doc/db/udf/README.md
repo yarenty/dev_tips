@@ -2,6 +2,7 @@
 title: User-defined functions (UDFs)
 keywords: [udf, user-defined-functions, ffi, wasm, sandbox, datafusion, postgres, spark]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # User-defined functions (UDFs)

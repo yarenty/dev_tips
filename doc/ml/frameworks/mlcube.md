@@ -3,6 +3,7 @@ title: MLCube — MLCommons' standard interface for containerised ML workloads
 main_link: https://mlcommons.github.io/mlcube/
 keywords: [mlcube, mlcommons, mlperf, containers, benchmarks, frameworks]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # MLCube — MLCommons' standard interface for containerised ML workloads

@@ -3,6 +3,7 @@ title: "MQTT: the lightweight pub/sub protocol of IoT"
 main_link: https://mqtt.org/
 keywords: [mqtt, iot, messaging, pubsub, mosquitto, hivemq, emqx, paho, oasis-standard]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # MQTT: the lightweight pub/sub protocol of IoT

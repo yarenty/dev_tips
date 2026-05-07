@@ -3,6 +3,7 @@ title: "mtr — traceroute + ping in one TUI"
 main_link: https://github.com/traviscross/mtr
 keywords: [mtr, traceroute, ping, network-diagnostics, latency, packet-loss, icmp, networking]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # mtr — traceroute + ping in one TUI

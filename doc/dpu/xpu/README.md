@@ -2,6 +2,7 @@
 title: "XPU (heterogeneous computing)"
 keywords: [xpu, heterogeneous-computing, accelerators, dvpp, huawei-ascend, tenstorrent]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # XPU (heterogeneous computing)

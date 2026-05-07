@@ -2,6 +2,7 @@
 title: "Misc — odds and ends"
 keywords: [misc, slides, marp, payments, pre-commit, bacon, tmux]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Misc

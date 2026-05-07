@@ -2,6 +2,7 @@
 title: Rust ML libraries
 keywords: [ml, rust, linfa, candle, burn, cuda, gpu]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust ML libraries

@@ -3,6 +3,7 @@ title: Tauri
 main_link: https://tauri.app/
 keywords: [tauri, rust, webview, electron-alternative, desktop, mobile, wry, tao]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Tauri

@@ -3,6 +3,7 @@ title: "Zellij — modern Rust terminal multiplexer"
 main_link: https://zellij.dev/
 keywords: [zellij, multiplexer, terminal, rust, panes, layouts, floating, plugins]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Zellij — modern Rust terminal multiplexer

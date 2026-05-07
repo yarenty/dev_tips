@@ -3,6 +3,7 @@ title: Data-viz resources — books, courses, references
 main_link: https://datavizproject.com/
 keywords: [dataviz, books, courses, tufte, knaflic, yau, chart-design, references]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Data-viz resources — books, courses, references

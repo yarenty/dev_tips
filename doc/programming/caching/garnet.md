@@ -3,6 +3,7 @@ title: "Garnet — Microsoft's RESP-compatible cache server"
 main_link: https://github.com/microsoft/garnet
 keywords: [garnet, redis, cache, microsoft, dotnet, csharp, resp, kv-store]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Garnet — Microsoft's RESP-compatible cache server

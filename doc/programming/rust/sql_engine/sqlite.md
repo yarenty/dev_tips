@@ -3,6 +3,7 @@ title: SQLite — engine design and Rust extensions
 main_link: https://www.sqlite.org/
 keywords: [sqlite, engine, virtual-tables, wal, loadable-extensions, rust]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # SQLite — engine design and Rust extensions

@@ -3,6 +3,7 @@ title: Sample data for tests
 main_link: https://scikit-learn.org/stable/datasets/toy_dataset.html
 keywords: [test-data, fixtures, sample-data, parquet, orc, avro, csv, scikit-learn]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Sample data for tests

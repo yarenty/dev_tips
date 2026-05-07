@@ -3,6 +3,7 @@ title: WebAssembly (Rust overview)
 main_link: https://rustwasm.github.io/docs/book/
 keywords: [webassembly, wasm, rust, wasm-bindgen, wasm-pack, trunk, browser]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # WebAssembly (Rust overview)

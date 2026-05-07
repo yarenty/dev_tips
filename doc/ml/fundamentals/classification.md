@@ -3,6 +3,7 @@ title: Classification — ordinal targets
 main_link: https://github.com/ayrna/dlordinal
 keywords: [classification, ordinal, dlordinal, corn, coral, pytorch]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Classification — ordinal targets

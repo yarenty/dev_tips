@@ -2,6 +2,7 @@
 title: Rust GUI
 keywords: [rust, gui, desktop, mobile, webview, tauri, slint, egui, dioxus, iced]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust GUI

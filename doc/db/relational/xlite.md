@@ -3,6 +3,7 @@ title: "XLite — query Excel / ODS spreadsheets as SQLite virtual tables"
 main_link: https://github.com/x2bool/xlite
 keywords: [xlite, sqlite, virtual-table, excel, xlsx, ods, spreadsheet, etl]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # XLite — query Excel / ODS spreadsheets as SQLite virtual tables

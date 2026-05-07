@@ -3,6 +3,7 @@ title: difftastic — syntax-aware structural diff
 main_link: https://github.com/Wilfred/difftastic
 keywords: [difftastic, rust, diff, structural, tree-sitter, git, syntax]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # difftastic — syntax-aware structural diff

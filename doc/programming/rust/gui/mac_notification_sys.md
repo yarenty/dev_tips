@@ -3,6 +3,7 @@ title: mac-notification-sys
 main_link: https://github.com/h4llow3En/mac-notification-sys
 keywords: [mac-notification-sys, rust, macos, notifications, nsusernotification]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # mac-notification-sys

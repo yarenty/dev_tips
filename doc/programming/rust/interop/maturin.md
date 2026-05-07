@@ -3,6 +3,7 @@ title: maturin
 main_link: https://github.com/PyO3/maturin
 keywords: [maturin, pyo3, python, rust, build, wheels, packaging]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # maturin

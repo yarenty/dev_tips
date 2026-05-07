@@ -3,6 +3,7 @@ title: "Helix — modal Rust editor with built-in LSP and tree-sitter"
 main_link: https://helix-editor.com/
 keywords: [helix, editor, modal, kakoune, rust, lsp, tree-sitter, multi-cursor]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Helix — modal Rust editor with built-in LSP and tree-sitter

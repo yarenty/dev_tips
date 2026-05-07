@@ -2,6 +2,7 @@
 title: Git
 keywords: [git, version-control, gitconfig, github]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Git

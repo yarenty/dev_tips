@@ -3,6 +3,7 @@ title: Rust cheat sheets (cheats.rs)
 main_link: https://cheats.rs/
 keywords: [cheats, rust, reference, cheatsheet]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust cheat sheets (cheats.rs)

@@ -3,6 +3,7 @@ title: Agent task framing — how to specify what an agent should do
 main_link: https://www.anthropic.com/engineering/building-effective-agents
 keywords: [agent-task, task-framing, prompt-engineering, scope, agent-design]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Agent task framing

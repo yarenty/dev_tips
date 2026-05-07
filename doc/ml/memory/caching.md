@@ -3,6 +3,7 @@ title: Semantic caching for LLMs and AI agents
 main_link: https://thenewstack.io/what-is-semantic-caching/
 keywords: [caching, semantic-cache, prompt-cache, kv-cache, gptcache, langcache, llm]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Semantic caching for LLMs and AI agents

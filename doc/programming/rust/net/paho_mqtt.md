@@ -3,6 +3,7 @@ title: "paho-mqtt — Eclipse Paho Rust MQTT client (FFI)"
 main_link: https://crates.io/crates/paho-mqtt
 keywords: [rust, paho-mqtt, mqtt, eclipse-paho, ffi, c-binding, iot]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # paho-mqtt — Eclipse Paho Rust MQTT client (FFI)

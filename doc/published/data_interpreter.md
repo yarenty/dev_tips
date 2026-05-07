@@ -3,6 +3,7 @@ title: Data Interpreter — LLM agent for end-to-end data science (paper summary
 main_link: https://arxiv.org/abs/2402.18679
 keywords: [data-interpreter, agents, data-science, hierarchical-graph, metagpt, paper]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Data Interpreter — LLM agent for end-to-end data science (paper summary)

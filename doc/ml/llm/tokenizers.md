@@ -3,6 +3,7 @@ title: Tokenizers — the silent layer that shapes LLM behaviour
 main_link: https://github.com/huggingface/tokenizers
 keywords: [tokenizers, bpe, sentencepiece, tiktoken, wordpiece, unigram, byte-latent, mamba]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Tokenizers — the silent layer that shapes LLM behaviour

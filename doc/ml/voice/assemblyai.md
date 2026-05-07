@@ -3,6 +3,7 @@ title: AssemblyAI — production cloud speech-to-text
 main_link: https://www.assemblyai.com/
 keywords: [assemblyai, voice, speech, stt, asr, transcription, diarization, universal-2]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # AssemblyAI — production cloud speech-to-text

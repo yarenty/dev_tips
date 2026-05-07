@@ -3,6 +3,7 @@ title: Rust ↔ .NET interop
 main_link: https://github.com/FractalFir/rustc_codegen_clr
 keywords: [rust, dotnet, clr, csharp, csbindgen, rustc-codegen-clr, ffi, interop]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust ↔ .NET interop

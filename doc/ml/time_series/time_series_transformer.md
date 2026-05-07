@@ -3,6 +3,7 @@ title: Transformers for time series — architectures, lineage, and the DLinear 
 main_link: https://github.com/allen-chiang/Time-Series-Transformer
 keywords: [transformer, time-series, informer, autoformer, fedformer, patchtst, itransformer, timesfm, chronos, dlinear]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Transformers for time series — architectures, lineage, and the DLinear caveat

@@ -3,6 +3,7 @@ title: "Firebase — Google's BaaS (Firestore, Auth, Hosting, Functions)"
 main_link: https://firebase.google.com/
 keywords: [firebase, firestore, baas, google, realtime-database, auth, vendor-lockin]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Firebase — Google's BaaS (Firestore, Auth, Hosting, Functions)

@@ -2,6 +2,7 @@
 title: Rust data — drivers, pools, engines, formats
 keywords: [rust, data, database, driver, pool, sql, cache, format]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust data — drivers, pools, engines, formats

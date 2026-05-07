@@ -3,6 +3,7 @@ title: "Helios — Drew DeVault's microkernel hobby OS"
 main_link: https://sr.ht/~sircmpwn/helios/sources
 keywords: [helios, microkernel, drew-devault, hare, message-passing, hobby-os, capabilities]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Helios — Drew DeVault's microkernel hobby OS

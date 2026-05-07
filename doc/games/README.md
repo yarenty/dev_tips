@@ -2,6 +2,7 @@
 title: Games
 keywords: [games, gamedev, emulator, retro, programming-game]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Games

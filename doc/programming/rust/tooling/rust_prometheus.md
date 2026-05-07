@@ -3,6 +3,7 @@ title: rust_prometheus — TiKV's Prometheus client crate
 main_link: https://github.com/tikv/rust-prometheus
 keywords: [rust-prometheus, tikv, prometheus, metrics, observability, exporter, rust]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # rust_prometheus — TiKV's Prometheus client crate

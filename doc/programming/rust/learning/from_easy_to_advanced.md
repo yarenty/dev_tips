@@ -3,6 +3,7 @@ title: 15 Rust practice projects (beginner → advanced)
 main_link: https://zerotomastery.io/blog/rust-practice-projects/
 keywords: [project-ideas, rust, ladder, learning, ztm, beginner, intermediate, advanced]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # 15 Rust practice projects (beginner → advanced)

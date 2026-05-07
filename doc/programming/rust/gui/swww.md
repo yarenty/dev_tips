@@ -3,6 +3,7 @@ title: swww
 main_link: https://github.com/LGFae/swww
 keywords: [swww, rust, wayland, wallpaper, daemon, desktop-customisation]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # swww

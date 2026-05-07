@@ -3,6 +3,7 @@ title: "The Pudding: data-essay journalism + open datasets"
 main_link: https://pudding.cool/
 keywords: [pudding, data-journalism, data-essays, datasets, visualisation-examples]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # The Pudding: data-essay journalism + open datasets

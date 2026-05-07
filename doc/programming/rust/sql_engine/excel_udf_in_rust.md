@@ -3,6 +3,7 @@ title: Excel UDFs in Rust
 main_link: https://crates.io/crates/xladd-derive
 keywords: [excel-udf, xladd, rust, xlsx, addin]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Excel UDFs in Rust

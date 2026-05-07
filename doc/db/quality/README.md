@@ -2,6 +2,7 @@
 title: Data quality
 keywords: [data-quality, validation, lineage, profiling, great-expectations, soda, openlineage, ml]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Data quality

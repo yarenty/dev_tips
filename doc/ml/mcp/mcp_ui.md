@@ -3,6 +3,7 @@ title: mcp-ui — interactive UI resources from MCP servers
 main_link: https://github.com/idosal/mcp-ui
 keywords: [mcp, ui, agent-ui, generative-ui, react, web-components]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # mcp-ui — interactive UI resources from MCP servers

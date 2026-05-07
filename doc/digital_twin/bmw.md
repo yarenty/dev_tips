@@ -3,6 +3,7 @@ title: BMW iFACTORY — digital-twin deployment case study
 main_link: https://www.press.bmwgroup.com/global/article/detail/T0395755EN/bmw-ifactory:-the-strategic-roadmap-for-bmw-group-vehicle-production
 keywords: [bmw, ifactory, digital-twin, manufacturing, omniverse, automotive, case-study]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # BMW iFACTORY — digital-twin deployment case study

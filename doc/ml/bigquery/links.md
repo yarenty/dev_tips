@@ -3,6 +3,7 @@ title: BigQuery ML — curated reading list
 main_link: https://cloud.google.com/bigquery-ml/docs/introduction
 keywords: [bigquery, bigquery-ml, sql-ml, dnn, arima, time-series, links]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # BigQuery ML — curated reading list

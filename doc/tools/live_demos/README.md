@@ -2,6 +2,7 @@
 title: "Live Demos — scripted terminal demos"
 keywords: [live-demos, demo, presentation, terminal, scripted]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Live Demos

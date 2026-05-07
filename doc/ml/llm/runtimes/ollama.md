@@ -3,6 +3,7 @@ title: Ollama — run LLMs locally with one command
 main_link: https://ollama.com/
 keywords: [ollama, local-llm, llama-cpp, modelfile, openai-compatible, gguf, runtime]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Ollama — run LLMs locally with one command

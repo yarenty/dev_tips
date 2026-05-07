@@ -3,6 +3,7 @@ title: bottom (`btm`) — `top`/`htop` replacement
 main_link: https://github.com/ClementTsang/bottom
 keywords: [bottom, btm, rust, top, htop, system-monitor, tui, unix-replacement]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # bottom (`btm`) — `top`/`htop` replacement

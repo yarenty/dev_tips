@@ -3,6 +3,7 @@ title: RAG production best practices — chunking, embeddings, hybrid search, re
 main_link: https://www.anthropic.com/news/contextual-retrieval
 keywords: [rag, best-practices, chunking, embeddings, hybrid-search, reranking, evaluation, ragas]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # RAG production best practices — chunking, embeddings, hybrid search, reranking, eval

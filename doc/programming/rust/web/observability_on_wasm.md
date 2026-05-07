@@ -3,6 +3,7 @@ title: Observability on Wasm (Dylibso Observe SDK)
 main_link: https://github.com/dylibso/observe-sdk
 keywords: [observability, wasm, tracing, dylibso, otel, observe-sdk, rust]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Observability on Wasm (Dylibso Observe SDK)

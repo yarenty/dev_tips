@@ -3,6 +3,7 @@ title: SeaQuery — dynamic SQL query builder
 main_link: https://crates.io/crates/sea-query
 keywords: [seaquery, sea-orm, query-builder, sql, postgres, mysql, sqlite]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # SeaQuery — dynamic SQL query builder

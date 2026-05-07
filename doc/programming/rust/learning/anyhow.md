@@ -3,6 +3,7 @@ title: anyhow
 main_link: https://crates.io/crates/anyhow
 keywords: [anyhow, rust, error-handling, dtolnay]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # anyhow

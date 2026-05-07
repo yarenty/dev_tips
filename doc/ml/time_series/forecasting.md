@@ -3,6 +3,7 @@ title: Time-series forecasting — methods, libraries, and trade-offs
 main_link: https://otexts.com/fpp3/
 keywords: [time-series, forecasting, arima, sarimax, lstm, prophet, transformer, statsmodels, sktime, darts, neuralforecast]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Time-series forecasting — methods, libraries, and trade-offs

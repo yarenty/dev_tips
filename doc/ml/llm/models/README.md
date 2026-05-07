@@ -2,6 +2,7 @@
 title: LLM models — open-weights and notable model families
 keywords: [models, llm, open-weights, llama, deepseek, olmo, mplug]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # LLM models — open-weights and notable model families

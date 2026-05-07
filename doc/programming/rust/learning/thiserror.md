@@ -3,6 +3,7 @@ title: thiserror
 main_link: https://crates.io/crates/thiserror
 keywords: [thiserror, rust, error-handling, dtolnay, derive]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # thiserror

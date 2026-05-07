@@ -3,6 +3,7 @@ title: Coding agents — landscape (Cursor / Cline / Aider / Windsurf / Codex / 
 main_link: https://www.swebench.com/
 keywords: [coding-agents, cursor, aider, cline, codex, claude-code, opencode, deepcode, amp, swe-bench]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Coding agents — landscape

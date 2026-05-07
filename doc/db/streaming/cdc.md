@@ -3,6 +3,7 @@ title: CDC (Change Data Capture)
 main_link: https://debezium.io/
 keywords: [cdc, change-data-capture, streaming, debezium, flink-cdc, scylla-cdc, chgcap, kafka]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # CDC (Change Data Capture)

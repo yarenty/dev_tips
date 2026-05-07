@@ -3,6 +3,7 @@ title: Brainfuck
 main_link: http://www.muppetlabs.com/~breadbox/bf/
 keywords: [brainfuck, esolang, turing-complete, urban-mueller, muppetlabs, minimalism]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Brainfuck

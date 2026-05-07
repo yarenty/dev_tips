@@ -3,6 +3,7 @@ title: "TmuxAI — LLM-augmented tmux"
 main_link: https://tmuxai.dev/
 keywords: [tmuxai, tmux, llm, ai, agent, terminal, automation, copilot]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # TmuxAI — LLM-augmented tmux

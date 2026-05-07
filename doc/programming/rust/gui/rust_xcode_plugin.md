@@ -3,6 +3,7 @@ title: rust-xcode-plugin
 main_link: https://github.com/BrainiumLLC/rust-xcode-plugin
 keywords: [rust-xcode-plugin, rust, xcode, ios, brainium, deprecated]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # rust-xcode-plugin

@@ -2,6 +2,7 @@
 title: "Editors — IDEs, Markdown helpers, AI editors"
 keywords: [editors, ide, markdown, ai-editor, intellij, void, vscode]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Editors

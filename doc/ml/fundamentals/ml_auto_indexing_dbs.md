@@ -3,6 +3,7 @@ title: ML for automatic database indexing & tuning
 main_link: https://arxiv.org/abs/1712.01208
 keywords: [learned-indexes, auto-tuning, query-optimisation, db, ml-for-systems]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # ML for automatic database indexing & tuning

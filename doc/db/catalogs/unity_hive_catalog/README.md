@@ -3,6 +3,7 @@ title: Unity Catalog (Databricks)
 main_link: https://docs.databricks.com/aws/en/data-governance/unity-catalog
 keywords: [unity-catalog, databricks, hive-metastore, governance, catalog, polaris, iceberg, lakehouse]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Unity Catalog (Databricks)

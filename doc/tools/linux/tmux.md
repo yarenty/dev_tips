@@ -3,6 +3,7 @@ title: "tmux — terminal multiplexer"
 main_link: https://github.com/tmux/tmux
 keywords: [tmux, multiplexer, terminal, sessions, panes, screen, linux, ssh]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # tmux — terminal multiplexer

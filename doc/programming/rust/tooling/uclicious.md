@@ -3,6 +3,7 @@ title: uclicious — UCL (libucl) config parser with derive support
 main_link: https://github.com/andoriyu/uclicious
 keywords: [uclicious, rust, ucl, libucl, config, derive, parser, nginx-style]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # uclicious — UCL (libucl) config parser with derive support

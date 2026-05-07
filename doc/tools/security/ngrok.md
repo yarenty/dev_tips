@@ -3,6 +3,7 @@ title: "ngrok — instant HTTPS tunnel to localhost"
 main_link: https://ngrok.com/
 keywords: [ngrok, tunnel, webhook, https, basic-auth, oauth, localhost, reverse-proxy]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # ngrok — instant HTTPS tunnel to localhost

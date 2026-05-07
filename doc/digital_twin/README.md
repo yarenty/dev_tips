@@ -2,6 +2,7 @@
 title: Digital Twin
 keywords: [digital-twin, cps, simulation, industry-4.0, omniverse]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Digital Twin

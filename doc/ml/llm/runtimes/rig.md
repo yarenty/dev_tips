@@ -3,6 +3,7 @@ title: rig — Rust crate for building LLM applications
 main_link: https://github.com/0xPlaygrounds/rig
 keywords: [rig, rust, llm, agents, rag, embeddings, multi-provider]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # rig — Rust crate for building LLM applications

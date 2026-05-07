@@ -3,6 +3,7 @@ title: Knowledge graph research — curated reading list
 main_link: https://github.com/totogo/awesome-knowledge-graph
 keywords: [papers, knowledge-graph, kg, embeddings, transe, rotate, gnn, graphrag, kg-llm]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Knowledge graph research — curated reading list

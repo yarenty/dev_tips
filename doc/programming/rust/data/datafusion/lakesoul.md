@@ -3,6 +3,7 @@ title: LakeSoul — unified streaming + batch lakehouse format
 main_link: https://github.com/lakesoul-io/LakeSoul
 keywords: [lakesoul, lakehouse, streaming, batch, datafusion, spark, flink, acid, china]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # LakeSoul — unified streaming + batch lakehouse format

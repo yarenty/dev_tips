@@ -3,6 +3,7 @@ title: kuchiki (HTML/XML tree manipulation)
 main_link: https://crates.io/crates/kuchiki
 keywords: [kuchiki, html, xml, scraping, css-selectors, rust, html5ever]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # kuchiki (HTML/XML tree manipulation)

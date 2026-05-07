@@ -3,6 +3,7 @@ title: loki — Grafana Loki (Rust integration notes)
 main_link: https://grafana.com/oss/loki/
 keywords: [loki, grafana, prometheus, logs, log-aggregation, rust, tracing-loki]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # loki — Grafana Loki (Rust integration notes)

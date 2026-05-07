@@ -3,6 +3,7 @@ title: Rust error handling — eyre, anyhow, thiserror
 main_link: https://crates.io/crates/eyre
 keywords: [error-handling, eyre, color-eyre, anyhow, thiserror, miette, rust]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust error handling — eyre, anyhow, thiserror

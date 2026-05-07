@@ -3,6 +3,7 @@ title: gloo
 main_link: https://gloo-rs.web.app/
 keywords: [gloo, wasm, browser, web-sys, rust, toolkit]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # gloo

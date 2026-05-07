@@ -3,6 +3,7 @@ title: Ollama — share over LAN from Ubuntu
 main_link: https://github.com/ollama/ollama/blob/main/docs/faq.md#how-do-i-configure-ollama-server
 keywords: [ollama, ubuntu, lan, systemd, ollama-host, ssh-tunnel, tailscale, wireguard]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Ollama — share over LAN from Ubuntu

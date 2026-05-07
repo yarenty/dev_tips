@@ -3,6 +3,7 @@ title: "Parsers in Rust (pest, nom, chumsky, winnow, combine)"
 main_link: https://github.com/pest-parser/awesome-pest
 keywords: [rust, parsers, pest, nom, chumsky, winnow, combine, peg, combinators]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Parsers in Rust (pest, nom, chumsky, winnow, combine)

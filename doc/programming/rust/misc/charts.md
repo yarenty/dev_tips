@@ -3,6 +3,7 @@ title: Rust charting / plotting crates
 main_link: https://github.com/plotters-rs/plotters
 keywords: [charts, rust, plotting, visualization, plotters, plotly, charming]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust charting / plotting crates

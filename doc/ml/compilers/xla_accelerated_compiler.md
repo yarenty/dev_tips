@@ -3,6 +3,7 @@ title: XLA — Google's Accelerated Linear Algebra compiler
 main_link: https://openxla.org/
 keywords: [xla, openxla, jax, tensorflow, pytorch, tpu, mlir, stablehlo, pjrt]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # XLA — Google's Accelerated Linear Algebra compiler

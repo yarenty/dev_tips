@@ -3,6 +3,7 @@ title: loggers — picker guide for the Rust `log` family
 main_link: https://docs.rs/log/
 keywords: [loggers, rust, log, env_logger, simplelog, log4rs, fern, tracing-subscriber]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # loggers — picker guide for the Rust `log` family

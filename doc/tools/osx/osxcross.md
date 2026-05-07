@@ -3,6 +3,7 @@ title: "OSXCross — cross-compile to macOS from Linux"
 main_link: https://github.com/tpoechtrager/osxcross
 keywords: [osxcross, cross-compile, macos, clang, cctools, ld64, sdk, linux, ci]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # OSXCross — cross-compile to macOS from Linux

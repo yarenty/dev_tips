@@ -3,6 +3,7 @@ title: Rust books — curated reading list
 main_link: https://doc.rust-lang.org/book/
 keywords: [books, rust, reading-list, atomics, macros, performance, design-patterns, nomicon]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust books — curated reading list

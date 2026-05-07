@@ -3,6 +3,7 @@ title: "rumqtt — pure-Rust MQTT client and broker"
 main_link: https://github.com/bytebeamio/rumqtt
 keywords: [rust, rumqtt, mqtt, rumqttc, rumqttd, broker, client, iot, bytebeam]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # rumqtt — pure-Rust MQTT client and broker

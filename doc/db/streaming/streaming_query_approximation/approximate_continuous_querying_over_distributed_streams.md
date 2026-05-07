@@ -3,6 +3,7 @@ title: Approximate Continuous Querying over Distributed Streams (Cormode & Garof
 main_link: https://doi.org/10.1145/1366102.1366106
 keywords: [aqp, sketches, distributed-streams, continuous-queries, cormode, garofalakis, paper-notes]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Approximate Continuous Querying over Distributed Streams (Cormode & Garofalakis 2008)

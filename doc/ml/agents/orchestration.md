@@ -3,6 +3,7 @@ title: Agent orchestration — LangGraph, CrewAI, AutoGen, Burr, Parlant, Camund
 main_link: https://langchain-ai.github.io/langgraph/
 keywords: [orchestration, langgraph, crewai, autogen, burr, parlant, camunda, agentic-workflow]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Agent orchestration — LangGraph, CrewAI, AutoGen, Burr, Parlant, Camunda

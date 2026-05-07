@@ -3,6 +3,7 @@ title: trade_aggregation-rs
 main_link: https://github.com/MathisWellmann/trade_aggregation-rs
 keywords: [trade-aggregation, rust, candles, ohlc, market-data, low-latency]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # trade_aggregation-rs

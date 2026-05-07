@@ -3,6 +3,7 @@ title: tungstenite
 main_link: https://crates.io/crates/tungstenite
 keywords: [tungstenite, websocket, rust, tokio, async]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # tungstenite

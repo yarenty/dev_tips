@@ -2,6 +2,7 @@
 title: Cloud
 keywords: [cloud, oci, free-tier, hobby-vps, hetzner, fly-io]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Cloud

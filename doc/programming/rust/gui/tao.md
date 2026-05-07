@@ -3,6 +3,7 @@ title: tao
 main_link: https://github.com/tauri-apps/tao
 keywords: [tao, rust, winit, fork, window, event-loop, tauri]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # tao

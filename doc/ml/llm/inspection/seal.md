@@ -3,6 +3,7 @@ title: SEAL — Scale AI's private-prompt LLM leaderboards
 main_link: https://scale.com/leaderboard
 keywords: [seal, scale-ai, leaderboard, private-evals, evaluation, contamination-resistant]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # SEAL — Scale AI's private-prompt LLM leaderboards

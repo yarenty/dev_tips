@@ -3,6 +3,7 @@ title: Blaze — Spark accelerator on DataFusion
 main_link: https://github.com/kwai/blaze
 keywords: [blaze, spark, datafusion, native, vectorized, accelerator, kuaishou, arrow]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Blaze — Spark accelerator on DataFusion

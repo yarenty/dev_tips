@@ -3,6 +3,7 @@ title: Dioxus
 main_link: https://dioxuslabs.com/
 keywords: [dioxus, rust, gui, react, signals, cross-platform, wasm]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Dioxus

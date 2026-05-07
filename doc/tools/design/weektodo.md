@@ -3,6 +3,7 @@ title: "WeekToDo — minimalist weekly planner"
 main_link: https://weektodo.me/
 keywords: [weektodo, todo, weekly-planner, desktop-app, electron, free, privacy]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # WeekToDo — minimalist weekly planner

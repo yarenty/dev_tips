@@ -3,6 +3,7 @@ title: "Must-have CLI tools for a fresh box"
 main_link: https://github.com/jkfran/killport
 keywords: [must-have, cli, killport, fd, cmatrix, fortune, oh-my-zsh, powerlevel10k, shell]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Must-have CLI tools for a fresh box

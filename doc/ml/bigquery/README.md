@@ -2,6 +2,7 @@
 title: BigQuery & BigQuery ML
 keywords: [bigquery, bigquery-ml, sql-ml, google-cloud, warehouse]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # BigQuery & BigQuery ML

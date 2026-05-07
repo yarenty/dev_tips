@@ -3,6 +3,7 @@ title: "Rerun: time-aware multimodal data viewer for robotics & embodied AI"
 main_link: https://rerun.io/
 keywords: [rerun, robotics, multimodal, time-series, sensor-fusion, point-cloud, embodied-ai]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rerun: time-aware multimodal data viewer for robotics & embodied AI

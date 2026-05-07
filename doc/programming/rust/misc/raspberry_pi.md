@@ -3,6 +3,7 @@ title: Rust on Raspberry Pi
 main_link: https://docs.rust-embedded.org/book/
 keywords: [raspberry-pi, rust, rppal, embedded, cross-compile, pico, rp2040]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust on Raspberry Pi

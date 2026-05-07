@@ -3,6 +3,7 @@ title: DSPy — declarative LLM programming with prompt-and-weight compilation
 main_link: https://dspy.ai/
 keywords: [dspy, llm, prompting, optimization, stanford, agents, rag, frameworks]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # DSPy — declarative LLM programming with prompt-and-weight compilation

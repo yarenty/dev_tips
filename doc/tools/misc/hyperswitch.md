@@ -3,6 +3,7 @@ title: "Hyperswitch — open-source payments switch (Stripe, but you control the
 main_link: https://github.com/juspay/hyperswitch
 keywords: [hyperswitch, payments, stripe-alternative, juspay, open-source, fintech, rust, payment-orchestration]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Hyperswitch — open-source payments switch

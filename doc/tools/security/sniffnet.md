@@ -3,6 +3,7 @@ title: "Sniffnet — friendly network traffic monitor"
 main_link: https://github.com/GyulyVGC/sniffnet
 keywords: [sniffnet, network-monitor, packet-capture, rust, gui, bandwidth, wireshark, tcpdump]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Sniffnet — friendly network traffic monitor

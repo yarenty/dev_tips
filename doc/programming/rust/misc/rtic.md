@@ -3,6 +3,7 @@ title: RTIC — Real-Time Interrupt-driven Concurrency
 main_link: https://rtic.rs/
 keywords: [rtic, rust, embedded, real-time, concurrency, cortex-m, scheduler]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # RTIC — Real-Time Interrupt-driven Concurrency

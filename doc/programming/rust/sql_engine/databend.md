@@ -3,6 +3,7 @@ title: Databend
 main_link: https://databend.rs/
 keywords: [databend, rust, data-warehouse, snowflake-alternative, clickhouse-alternative, bsl, udf]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Databend

@@ -2,6 +2,7 @@
 title: "Design — UI utilities, screen sharing, file managers"
 keywords: [design, utilities, screen-sharing, file-manager, grammar, disk-cleanup]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Design

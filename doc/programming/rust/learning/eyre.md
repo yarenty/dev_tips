@@ -3,6 +3,7 @@ title: eyre
 main_link: https://crates.io/crates/eyre
 keywords: [eyre, color-eyre, rust, error-handling, dtolnay, jane-lusby]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # eyre

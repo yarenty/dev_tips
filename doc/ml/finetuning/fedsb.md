@@ -3,6 +3,7 @@ title: Fed-SB — Federated Silver Bullet for LoRA fine-tuning
 main_link: https://arxiv.org/abs/2502.15436
 keywords: [federated-learning, lora, fine-tuning, peft, privacy, differential-privacy]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Fed-SB — Federated Silver Bullet for LoRA fine-tuning

@@ -2,6 +2,7 @@
 title: Apache DataFusion ecosystem (Rust)
 keywords: [datafusion, arrow, rust, query-engine, lakehouse, spark-accelerator, columnar]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Apache DataFusion ecosystem (Rust)

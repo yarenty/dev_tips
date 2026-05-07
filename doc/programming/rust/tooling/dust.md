@@ -3,6 +3,7 @@ title: dust — `du` replacement with tree visualisation
 main_link: https://github.com/bootandy/dust
 keywords: [dust, du-dust, rust, du, disk-usage, unix-replacement, cli]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # dust — `du` replacement with tree visualisation

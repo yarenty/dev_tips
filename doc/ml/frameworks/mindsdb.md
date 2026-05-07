@@ -3,6 +3,7 @@ title: MindsDB — ML as virtual tables on top of your database
 main_link: https://mindsdb.com/
 keywords: [mindsdb, sql-ml, in-database-ml, automl, frameworks]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # MindsDB — ML as virtual tables on top of your database

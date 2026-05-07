@@ -3,6 +3,7 @@ title: "Dokku: a self-hosted, single-box mini-Heroku"
 main_link: https://dokku.com/
 keywords: [dokku, paas, heroku, git-push-to-deploy, self-hosted, vps, docker, hobby-projects]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Dokku: a self-hosted, single-box mini-Heroku

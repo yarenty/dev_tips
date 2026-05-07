@@ -3,6 +3,7 @@ title: Cursor — Anysphere's AI-first IDE
 main_link: https://cursor.com/
 keywords: [cursor, anysphere, ai-ide, copilot, composer, claude, gpt, coding-agent]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Cursor — Anysphere's AI-first IDE

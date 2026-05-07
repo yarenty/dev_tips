@@ -3,6 +3,7 @@ title: clido — minimal CLI to-do list
 main_link: https://github.com/Zij-IT/clido
 keywords: [clido, rust, todo, cli, productivity]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # clido — minimal CLI to-do list

@@ -3,6 +3,7 @@ title: Rust learning scope (topics roadmap)
 main_link: https://doc.rust-lang.org/book/
 keywords: [scope, rust, roadmap, learning, syllabus, traits, lifetimes, error-handling]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust learning scope (topics roadmap)

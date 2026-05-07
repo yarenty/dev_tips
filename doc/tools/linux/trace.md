@@ -3,6 +3,7 @@ title: "Network tracing tools (Trippy, traceroute, mtr)"
 main_link: https://trippy.rs/
 keywords: [trippy, traceroute, mtr, ping, network, tracing, rust, bgp, tui]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Network tracing tools (Trippy, traceroute, mtr)

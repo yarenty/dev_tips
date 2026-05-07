@@ -3,6 +3,7 @@ title: "Prometheus: pull-based metrics + PromQL"
 main_link: https://prometheus.io/
 keywords: [prometheus, observability, metrics, promql, time-series, monitoring]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Prometheus: pull-based metrics + PromQL

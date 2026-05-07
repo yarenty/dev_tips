@@ -3,6 +3,7 @@ title: "sshpass: non-interactive SSH password auth (use sparingly)"
 main_link: https://sourceforge.net/projects/sshpass/
 keywords: [sshpass, ssh, scp, expect, automation, security, shell]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # sshpass: non-interactive SSH password auth (use sparingly)

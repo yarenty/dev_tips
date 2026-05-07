@@ -2,6 +2,7 @@
 title: Fine-tuning — adapting LLMs to your data
 keywords: [fine-tuning, lora, qlora, peft, rlhf, dpo, grpo, sft]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Fine-tuning — adapting LLMs to your data

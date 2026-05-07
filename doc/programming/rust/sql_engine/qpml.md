@@ -3,6 +3,7 @@ title: QPML — Query Plan Markup Language
 main_link: https://github.com/andygrove/qpml
 keywords: [qpml, query-plan, yaml, dsl, andy-grove, documentation]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # QPML — Query Plan Markup Language

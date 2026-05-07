@@ -3,6 +3,7 @@ title: "Lazygit — terminal UI for git"
 main_link: https://github.com/jesseduffield/lazygit
 keywords: [lazygit, git, tui, magit, gitui, tig, jesseduffield, version-control]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Lazygit — terminal UI for git

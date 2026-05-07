@@ -3,6 +3,7 @@ title: phidata / agno — agent + RAG framework with built-in observability
 main_link: https://github.com/agno-agi/agno
 keywords: [phidata, agno, agents, rag, llm, observability, frameworks]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # phidata / agno — agent + RAG framework with built-in observability

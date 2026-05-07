@@ -3,6 +3,7 @@ title: wasmtime
 main_link: https://wasmtime.dev/
 keywords: [wasmtime, wasm, runtime, bytecode-alliance, cranelift, wasi, component-model]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # wasmtime

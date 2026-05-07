@@ -2,6 +2,7 @@
 title: Agents — autonomous LLM-driven systems
 keywords: [agents, llm, orchestration, coding-agents, autonomous]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Agents — autonomous LLM-driven systems

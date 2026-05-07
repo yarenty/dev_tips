@@ -3,6 +3,7 @@ title: "node_exporter: host-level Prometheus metrics for *nix machines"
 main_link: https://github.com/prometheus/node_exporter
 keywords: [node-exporter, prometheus, observability, host-metrics, cpu, memory, disk, network, hardware]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # node_exporter: host-level Prometheus metrics for *nix machines

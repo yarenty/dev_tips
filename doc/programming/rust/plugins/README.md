@@ -2,6 +2,7 @@
 title: Rust plugin substrates
 keywords: [plugins, wasm, dynamic-loading, scripting, extism, mlua, rhai]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust plugin substrates

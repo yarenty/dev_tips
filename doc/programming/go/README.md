@@ -2,6 +2,7 @@
 title: "Go"
 keywords: [go, golang, cli, network-services, static-binary, goroutines]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Go

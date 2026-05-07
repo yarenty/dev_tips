@@ -2,6 +2,7 @@
 title: Skills — agent-skill packaging
 keywords: [skills, agent, mcp, claude-skills, procedural-knowledge]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Skills — agent-skill packaging

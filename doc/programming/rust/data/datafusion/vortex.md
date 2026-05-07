@@ -3,6 +3,7 @@ title: Vortex — modern compressed columnar file format
 main_link: https://github.com/spiraldb/vortex
 keywords: [vortex, spiral, columnar, parquet, arrow, compression, file-format, fastlanes, alp]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Vortex — modern compressed columnar file format

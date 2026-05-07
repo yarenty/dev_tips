@@ -2,6 +2,7 @@
 title: System prompts — the underrated lever for shaping LLMs
 keywords: [system-prompts, prompt-engineering, leaked-prompts, persona, refusal]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # System prompts — the underrated lever for shaping LLMs

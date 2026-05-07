@@ -3,6 +3,7 @@ title: "Amazon Kinesis: AWS-managed streaming (Data Streams + Firehose + others)
 main_link: https://aws.amazon.com/kinesis/
 keywords: [kinesis, aws, managed-streaming, firehose, kpl, kcl, data-streams, video-streams]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Amazon Kinesis: AWS-managed streaming (Data Streams + Firehose + others)

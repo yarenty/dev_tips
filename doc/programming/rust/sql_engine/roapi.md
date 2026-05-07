@@ -3,6 +3,7 @@ title: ROAPI — read-only API server over any data source
 main_link: https://github.com/roapi/roapi
 keywords: [roapi, datafusion, arrow, sql-api, graphql-api, rest-api, columnq]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # ROAPI — read-only API server over any data source

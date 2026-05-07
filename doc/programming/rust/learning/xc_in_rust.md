@@ -3,6 +3,7 @@ title: xc — Markdown-defined task runner
 main_link: https://github.com/joerdav/xc
 keywords: [xc, task-runner, markdown, joerdav, make, just]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # xc — Markdown-defined task runner

@@ -3,6 +3,7 @@ title: tools — historical "coreutils" parent (post-split index)
 main_link: 
 keywords: [tools, rust, cli, coreutils, index]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # tools — historical "coreutils" parent (post-split index)

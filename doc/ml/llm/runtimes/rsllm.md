@@ -3,6 +3,7 @@ title: rsllm — Rust AI stream analyzer & Twitch bot (Candle-based)
 main_link: https://github.com/groovybits/rsllm
 keywords: [rsllm, rust, candle, ndi, twitch, mpegts, tts, metal, niche]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # rsllm — Rust AI stream analyzer & Twitch bot (Candle-based)

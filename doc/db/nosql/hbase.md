@@ -3,6 +3,7 @@ title: "HBase — Apache wide-column store from the Hadoop era"
 main_link: https://hbase.apache.org/
 keywords: [hbase, hadoop, hdfs, wide-column, bigtable, java, legacy]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # HBase — Apache wide-column store from the Hadoop era

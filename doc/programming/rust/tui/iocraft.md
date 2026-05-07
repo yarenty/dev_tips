@@ -3,6 +3,7 @@ title: iocraft
 main_link: https://github.com/ccbrown/iocraft
 keywords: [iocraft, rust, tui, declarative, react, jsx, ccbrown]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # iocraft

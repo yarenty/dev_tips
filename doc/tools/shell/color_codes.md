@@ -3,6 +3,7 @@ title: "Shell color codes: ANSI escape cheat sheet"
 main_link: https://en.wikipedia.org/wiki/ANSI_escape_code
 keywords: [ansi, color-codes, escape-codes, terminal, shell, rust, colored, truecolor]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Shell color codes: ANSI escape cheat sheet

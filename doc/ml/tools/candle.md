@@ -3,6 +3,7 @@ title: Candle — HuggingFace's minimalist Rust ML framework
 main_link: https://github.com/huggingface/candle
 keywords: [candle, huggingface, rust, ml, inference, serverless, cuda, wasm, transformers]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Candle — HuggingFace's minimalist Rust ML framework

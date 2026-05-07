@@ -3,6 +3,7 @@ title: Agentic RAG — LLM as retrieval controller
 main_link: https://arxiv.org/abs/2310.11511
 keywords: [agentic-rag, self-rag, crag, adaptive-rag, rag, agents, react, observability]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Agentic RAG — LLM as retrieval controller

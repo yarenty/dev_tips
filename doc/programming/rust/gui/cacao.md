@@ -3,6 +3,7 @@ title: Cacao
 main_link: https://github.com/ryanmcgrath/cacao
 keywords: [cacao, rust, appkit, uikit, macos, ios, ffi]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Cacao

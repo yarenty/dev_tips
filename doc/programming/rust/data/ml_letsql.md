@@ -3,6 +3,7 @@ title: LetSQL — relational ML on Candle + DataFusion
 main_link: https://www.letsql.com/posts/candle-image-segmentation/
 keywords: [letsql, xorq, datafusion, candle, ibis, sam, ml, udf]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # LetSQL — relational ML on Candle + DataFusion

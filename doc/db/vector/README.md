@@ -2,6 +2,7 @@
 title: "Vector databases"
 keywords: [vector, embedding, similarity-search, rag, semantic-search, ann, pgvector]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Vector databases

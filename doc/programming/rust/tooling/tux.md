@@ -3,6 +3,7 @@ title: tux — miscellaneous integration-test helpers
 main_link: https://crates.io/crates/tux
 keywords: [tux, rust, testing, integration-tests, http, temp-dir, binary]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # tux — miscellaneous integration-test helpers

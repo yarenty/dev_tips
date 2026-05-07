@@ -2,6 +2,7 @@
 title: IoT
 keywords: [iot, drogue, mqtt, shodan, embedded, edge, security]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # IoT

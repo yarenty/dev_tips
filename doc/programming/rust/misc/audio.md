@@ -3,6 +3,7 @@ title: Rust audio ecosystem (overview)
 main_link: https://github.com/RustAudio
 keywords: [audio, rust, ecosystem, codec, playback, cpal, symphonia]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust audio ecosystem (overview)

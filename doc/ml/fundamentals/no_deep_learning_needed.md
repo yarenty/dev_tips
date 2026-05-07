@@ -3,6 +3,7 @@ title: When you don't need deep learning
 main_link: https://arxiv.org/abs/2110.01889
 keywords: [tabular, gbdt, xgboost, lightgbm, catboost, classical-ml, interpretability]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # When you don't need deep learning

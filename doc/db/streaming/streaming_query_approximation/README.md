@@ -2,6 +2,7 @@
 title: Streaming query approximation (AQP)
 keywords: [aqp, approximate-query-processing, sketches, sampling, wavelets, streaming]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Streaming query approximation (AQP)

@@ -3,6 +3,7 @@ title: iceberg-rust — Apache Iceberg from Rust (and DataFusion integration)
 main_link: https://github.com/apache/iceberg-rust
 keywords: [iceberg, iceberg-rust, datafusion, lakehouse, table-format, apache, parquet, snapshots]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # iceberg-rust — Apache Iceberg from Rust (and DataFusion integration)

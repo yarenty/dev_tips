@@ -3,6 +3,7 @@ title: "Manim: programmatic animation engine for math videos"
 main_link: https://www.manim.community/
 keywords: [manim, animation, math, 3blue1brown, python, explainer-videos]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Manim: programmatic animation engine for math videos

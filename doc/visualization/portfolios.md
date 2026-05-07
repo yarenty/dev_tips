@@ -3,6 +3,7 @@ title: Data-visualisation portfolios worth studying
 main_link: https://public.tableau.com/
 keywords: [portfolios, dataviz, tableau, inspiration, visualisation-examples]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Data-visualisation portfolios worth studying

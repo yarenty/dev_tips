@@ -2,6 +2,7 @@
 title: "C++"
 keywords: [cpp, c-plus-plus, abi, modules, cmake, conan, vcpkg, modern-cpp]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # C++

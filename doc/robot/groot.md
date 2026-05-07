@@ -3,6 +3,7 @@ title: NVIDIA GR00T — humanoid-robot foundation model
 main_link: https://developer.nvidia.com/isaac/gr00t
 keywords: [groot, nvidia, humanoid-robot, foundation-model, isaac, ros, robotics]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # NVIDIA GR00T — humanoid-robot foundation model

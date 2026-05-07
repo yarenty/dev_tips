@@ -2,6 +2,7 @@
 title: ML data — sources, fixtures, and ML-side vector search
 keywords: [data, datasets, ml-data, vector-search, fixtures, public-data]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # ML data — sources, fixtures, and ML-side vector search

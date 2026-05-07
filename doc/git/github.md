@@ -3,6 +3,7 @@ title: GitHub profile README
 main_link: https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme
 keywords: [git, github, profile, readme, customisation]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # GitHub profile README

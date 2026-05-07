@@ -3,6 +3,7 @@ title: Meilisearch — Rust full-text search engine
 main_link: https://www.meilisearch.com/
 keywords: [meilisearch, search, full-text, typo-tolerant, rust]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Meilisearch — Rust full-text search engine

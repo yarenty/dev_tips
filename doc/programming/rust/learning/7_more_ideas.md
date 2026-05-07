@@ -3,6 +3,7 @@ title: 7 more Rust project ideas
 main_link: https://medium.com/
 keywords: [project-ideas, rust, learning, web-scraper, blockchain, chat, game-engine]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # 7 more Rust project ideas

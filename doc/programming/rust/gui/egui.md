@@ -3,6 +3,7 @@ title: egui
 main_link: https://www.egui.rs/
 keywords: [egui, rust, gui, immediate-mode, eframe, wasm]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # egui

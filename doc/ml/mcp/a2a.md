@@ -3,6 +3,7 @@ title: A2A — Google's Agent2Agent protocol
 main_link: https://github.com/google-a2a/A2A
 keywords: [a2a, agents, google, protocol, mcp, interoperability]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # A2A — Google's Agent2Agent protocol

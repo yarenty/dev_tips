@@ -3,6 +3,7 @@ title: "Mosh — the mobile shell"
 main_link: https://mosh.org/
 keywords: [mosh, ssh, mobile, roaming, udp, predictive-echo, mit, remote]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Mosh — the mobile shell

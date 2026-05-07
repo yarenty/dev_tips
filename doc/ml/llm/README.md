@@ -2,6 +2,7 @@
 title: LLM — models, runtimes, prompting, inspection, OS-shaped agents
 keywords: [llm, models, runtimes, system-prompts, tokenizers, inspection, llm-os]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # LLM — models, runtimes, prompting, inspection, OS-shaped agents

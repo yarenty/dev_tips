@@ -3,6 +3,7 @@ title: hashbrown — the fast HashMap behind std
 main_link: https://github.com/rust-lang/hashbrown
 keywords: [hashbrown, hashmap, swisstable, rust, std, amanieu]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # hashbrown — the fast HashMap behind std

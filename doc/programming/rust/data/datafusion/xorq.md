@@ -3,6 +3,7 @@ title: xorq — multi-engine deferred ML pipelines on Ibis + DataFusion
 main_link: https://github.com/xorq-labs/xorq
 keywords: [xorq, letsql, datafusion, ibis, ml, pipelines, deferred, python]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # xorq — multi-engine deferred ML pipelines on Ibis + DataFusion

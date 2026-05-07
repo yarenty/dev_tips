@@ -3,6 +3,7 @@ title: "dns.toys: a DNS server full of useful tricks"
 main_link: https://www.dns.toys/
 keywords: [dns-toys, dns, dig, kailash-nadh, weather, currency, conversions, shell]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # dns.toys: a DNS server full of useful tricks

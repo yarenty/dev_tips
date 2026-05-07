@@ -3,6 +3,7 @@ title: mobc — generic async connection pool
 main_link: https://crates.io/crates/mobc
 keywords: [mobc, connection-pool, async, tokio, async-std, database]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # mobc — generic async connection pool

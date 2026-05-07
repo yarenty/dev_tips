@@ -3,6 +3,7 @@ title: LLM OS — Karpathy's "LLM as kernel" framing
 main_link: https://twitter.com/karpathy/status/1723140519554105733
 keywords: [llm-os, karpathy, agents, architecture, tool-use, system-design]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # LLM OS — Karpathy's "LLM as kernel" framing

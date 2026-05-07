@@ -2,6 +2,7 @@
 title: DataFusion (analytics notes)
 keywords: [datafusion, arrow, rust, query-engine, ballista, migration]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # DataFusion (analytics notes)

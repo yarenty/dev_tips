@@ -3,6 +3,7 @@ title: WooriDB — embedded temporal NoSQL DB
 main_link: https://github.com/naomijub/wooridb
 keywords: [wooridb, temporal, datalog, schemaless, experimental]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # WooriDB — embedded temporal NoSQL DB

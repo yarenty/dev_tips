@@ -3,6 +3,7 @@ title: ML libraries in Rust
 main_link: http://www.arewelearningyet.com/
 keywords: [ml, rust, linfa, candle, burn, dfdx, tch, smartcore, big-brain]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # ML libraries in Rust

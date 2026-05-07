@@ -3,6 +3,7 @@ title: Cache — Moka and quick_cache
 main_link: https://crates.io/crates/moka
 keywords: [cache, moka, quick_cache, lru, concurrent, in-memory]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Cache — Moka and quick_cache

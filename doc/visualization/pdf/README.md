@@ -2,6 +2,7 @@
 title: PDF documents
 keywords: [pdf, typst, react, latex, math, documents]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # PDF documents

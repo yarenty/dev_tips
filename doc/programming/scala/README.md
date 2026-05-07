@@ -2,6 +2,7 @@
 title: "Scala"
 keywords: [scala, scala-3, akka, pekko, zio, cats-effect, scala-native, scala-js]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Scala

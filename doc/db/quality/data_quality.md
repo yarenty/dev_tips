@@ -3,6 +3,7 @@ title: Data quality (in practice)
 main_link: https://github.com/sparkdq-community/sparkdq
 keywords: [data-quality, validation, sparkdq, spark, pyspark, great-expectations, soda, lakehouse]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Data quality (in practice)

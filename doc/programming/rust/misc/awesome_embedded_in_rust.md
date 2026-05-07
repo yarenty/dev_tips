@@ -3,6 +3,7 @@ title: awesome-embedded-rust — embedded Rust reading list
 main_link: https://github.com/rust-embedded/awesome-embedded-rust
 keywords: [awesome-embedded-rust, rust, embedded, no-std, hal, working-group]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # awesome-embedded-rust — embedded Rust reading list

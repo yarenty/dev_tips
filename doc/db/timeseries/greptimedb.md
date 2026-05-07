@@ -3,6 +3,7 @@ title: "GreptimeDB — Rust hybrid time-series + observability database"
 main_link: https://greptime.com/
 keywords: [greptimedb, timeseries, observability, rust, datafusion, arrow, parquet, single-binary]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # GreptimeDB — Rust hybrid time-series + observability database

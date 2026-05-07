@@ -2,6 +2,7 @@
 title: "Rust storage — object stores, lakehouse formats (stub)"
 keywords: [rust, storage, object-store, opendal, parquet, deltalake, iceberg, s3, hdfs]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust storage — object stores, lakehouse formats (stub)

@@ -3,6 +3,7 @@ title: rustzx — ZX Spectrum emulator in Rust
 main_link: https://github.com/rustzx/rustzx
 keywords: [zx-spectrum, emulator, rust, z80, retro, sdl2]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # rustzx — ZX Spectrum emulator in Rust

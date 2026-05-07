@@ -3,6 +3,7 @@ title: DataFusion SQL query planner
 main_link: https://github.com/apache/datafusion/tree/main/datafusion/sql
 keywords: [datafusion, sql, planner, logical-plan, query-engine, rust, apache]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # DataFusion SQL query planner

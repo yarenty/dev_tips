@@ -2,6 +2,7 @@
 title: Rust learning
 keywords: [learning, rust, error-handling, books, tutorials, project-ideas, cheatsheet]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust learning

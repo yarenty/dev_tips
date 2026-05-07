@@ -2,6 +2,7 @@
 title: "Rust I/O — formats, parsers, byte buffers, big-data filesystems"
 keywords: [rust, io, json, parsers, bytes, hdfs, excel, storage, serde]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust I/O — formats, parsers, byte buffers, big-data filesystems

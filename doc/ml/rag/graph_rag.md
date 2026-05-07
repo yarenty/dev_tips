@@ -3,6 +3,7 @@ title: GraphRAG — knowledge-graph-augmented retrieval
 main_link: https://arxiv.org/abs/2404.16130
 keywords: [graph-rag, graphrag, microsoft, knowledge-graph, community-summaries, lightrag, nano-graphrag]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # GraphRAG — knowledge-graph-augmented retrieval

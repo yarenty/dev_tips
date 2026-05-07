@@ -3,6 +3,7 @@ title: Generational indices & the slotmap crate
 main_link: https://crates.io/crates/slotmap
 keywords: [generational-index, slotmap, ecs, arena, ownership, rust, kyren]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Generational indices & the slotmap crate

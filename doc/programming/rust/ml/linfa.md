@@ -3,6 +3,7 @@ title: Linfa
 main_link: https://github.com/rust-ml/linfa
 keywords: [linfa, ml, rust, scikit-learn, classical-ml, clustering, regression]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Linfa

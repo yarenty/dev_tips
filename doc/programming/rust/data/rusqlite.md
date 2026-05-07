@@ -3,6 +3,7 @@ title: rusqlite — SQLite bindings for Rust
 main_link: https://crates.io/crates/rusqlite
 keywords: [rusqlite, sqlite, embedded, database, libsql, turso]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # rusqlite — SQLite bindings for Rust

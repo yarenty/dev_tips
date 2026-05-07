@@ -3,6 +3,7 @@ title: ripgrep — fast recursive `grep` (the defining Rust replacement)
 main_link: https://github.com/BurntSushi/ripgrep
 keywords: [ripgrep, rg, rust, grep, ag, ack, search, regex, unix-replacement]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # ripgrep — fast recursive `grep` (the defining Rust replacement)

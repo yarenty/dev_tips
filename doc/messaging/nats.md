@@ -3,6 +3,7 @@ title: "NATS: lightweight pub/sub messaging for cloud-native services"
 main_link: https://nats.io/
 keywords: [nats, messaging, pubsub, jetstream, request-reply, cloud-native, cncf, go]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # NATS: lightweight pub/sub messaging for cloud-native services

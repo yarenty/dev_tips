@@ -3,6 +3,7 @@ title: Devin (Cognition AI) & OpenDevin / OpenHands — autonomous coding agents
 main_link: https://www.cognition-labs.com/introducing-devin
 keywords: [devin, cognition, opendevin, openhands, swe-bench, autonomous-coding-agent]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Devin (Cognition AI) & OpenDevin / OpenHands

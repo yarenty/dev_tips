@@ -3,6 +3,7 @@ title: GlueSQL — embeddable SQL engine with pluggable storage
 main_link: https://github.com/gluesql/gluesql
 keywords: [gluesql, embedded, sql, sled, wasm, in-memory]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # GlueSQL — embeddable SQL engine with pluggable storage

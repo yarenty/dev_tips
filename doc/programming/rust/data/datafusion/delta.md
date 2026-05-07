@@ -3,6 +3,7 @@ title: delta-rs — Delta Lake from Rust and Python (no Spark)
 main_link: https://github.com/delta-io/delta-rs
 keywords: [delta, deltalake, delta-rs, lakehouse, acid, parquet, datafusion, rust, python]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # delta-rs — Delta Lake from Rust and Python (no Spark)

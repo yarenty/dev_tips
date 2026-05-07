@@ -3,6 +3,7 @@ title: "sbt — the Scala Build Tool"
 main_link: https://www.scala-sbt.org/
 keywords: [sbt, scala, build-tool, jvm, mill, scala-cli, incremental-compilation]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # sbt — the Scala Build Tool

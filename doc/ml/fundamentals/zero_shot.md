@@ -3,6 +3,7 @@ title: Zero-shot learning
 main_link: https://arxiv.org/abs/2103.00020
 keywords: [zero-shot, few-shot, in-context-learning, clip, llm, foundation-models]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Zero-shot learning

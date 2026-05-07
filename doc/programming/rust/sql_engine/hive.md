@@ -3,6 +3,7 @@ title: Hive UDFs (and the JVM-bridge angle)
 main_link: https://cwiki.apache.org/confluence/display/Hive/HivePlugins
 keywords: [hive, udf, jvm, jni, hadoop, rust]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Hive UDFs (and the JVM-bridge angle)

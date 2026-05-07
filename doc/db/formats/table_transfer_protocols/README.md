@@ -3,6 +3,7 @@ title: Table transfer protocols
 main_link: https://arrow.apache.org/docs/format/Flight.html
 keywords: [arrow-flight, flight-sql, adbc, jdbc, odbc, transfer, protocol, arrow]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Table transfer protocols

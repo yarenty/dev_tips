@@ -3,6 +3,7 @@ title: GreptimeDB — Rust client / embedding angle
 main_link: https://github.com/GreptimeTeam/greptimedb
 keywords: [greptimedb, time-series, rust, mysql-protocol, postgres-protocol]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # GreptimeDB — Rust client / embedding angle

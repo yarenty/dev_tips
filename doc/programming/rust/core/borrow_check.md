@@ -3,6 +3,7 @@ title: RustOWL — borrow checker visualizer
 main_link: https://github.com/cordx56/rustowl
 keywords: [rustowl, borrow-checker, ownership, lifetimes, lsp, vscode, neovim, emacs]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # RustOWL — borrow checker visualizer

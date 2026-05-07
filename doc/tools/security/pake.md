@@ -3,6 +3,7 @@ title: "Pake — turn any webpage into a tiny desktop app"
 main_link: https://github.com/tw93/Pake
 keywords: [pake, tauri, desktop-app, web-to-app, electron-alternative, cli, packaging, rust]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Pake — turn any webpage into a tiny desktop app

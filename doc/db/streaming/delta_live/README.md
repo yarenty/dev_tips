@@ -2,6 +2,7 @@
 title: Delta Live Tables
 keywords: [delta-live-tables, dlt, databricks, etl, streaming, lakehouse]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Delta Live Tables

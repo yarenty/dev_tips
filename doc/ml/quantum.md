@@ -3,6 +3,7 @@ title: Quantum machine learning — landscape and honest framing
 main_link: https://pennylane.ai/
 keywords: [quantum, qml, pennylane, qiskit, vqc, quantum-kernel, hybrid, nisq]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Quantum machine learning — landscape and honest framing

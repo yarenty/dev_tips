@@ -3,6 +3,7 @@ title: "WireGuard — modern in-kernel VPN"
 main_link: https://www.wireguard.com/
 keywords: [wireguard, vpn, kernel, tunnel, networking, cryptography, tailscale, headscale]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # WireGuard — modern in-kernel VPN

@@ -3,6 +3,7 @@ title: sqlparser-rs — ANSI/dialect SQL parser
 main_link: https://crates.io/crates/sqlparser
 keywords: [sqlparser, sql, parser, datafusion, ballista, ast]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # sqlparser-rs — ANSI/dialect SQL parser

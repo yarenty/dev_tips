@@ -3,6 +3,7 @@ title: AQP papers (reading list)
 main_link: https://link.springer.com/article/10.1007/s41019-018-0074-4
 keywords: [aqp, approximate-query-processing, papers, sketches, sampling, streaming, survey]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # AQP papers (reading list)

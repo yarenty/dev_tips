@@ -2,6 +2,7 @@
 title: Rust concurrency
 keywords: [concurrency, rust, async, threads, channels]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust concurrency

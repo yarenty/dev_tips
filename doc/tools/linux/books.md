@@ -3,6 +3,7 @@ title: "Linux reading list"
 main_link: https://0xax.gitbooks.io/linux-insides/content/
 keywords: [linux, books, kernel, internals, learning, reading-list, gitbook]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Linux reading list

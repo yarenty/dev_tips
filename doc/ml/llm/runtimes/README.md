@@ -2,6 +2,7 @@
 title: LLM runtimes — local, hosted, and Rust-side clients
 keywords: [runtimes, ollama, vllm, llama-cpp, goose, rig, providers]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # LLM runtimes — local, hosted, and Rust-side clients

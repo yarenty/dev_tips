@@ -3,6 +3,7 @@ title: SQL Server (T-SQL) — UDF angle, Rust pointers
 main_link: https://learn.microsoft.com/en-us/sql/relational-databases/user-defined-functions/create-user-defined-functions-database-engine
 keywords: [sql-server, mssql, t-sql, udf, tiberius, clr]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # SQL Server (T-SQL) — UDF angle, Rust pointers

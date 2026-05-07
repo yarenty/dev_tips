@@ -3,6 +3,7 @@ title: "Terminal emulators and remote-terminal stacks"
 main_link: https://github.com/mobile-shell/mosh
 keywords: [terminals, byobu, mosh, xpra, remote, multiplexer, comparison, linux]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Terminal emulators and remote-terminal stacks

@@ -3,6 +3,7 @@ title: System prompts — patterns, leaks, and limits
 main_link: https://github.com/jujumilk3/leaked-system-prompts
 keywords: [system-prompt, prompting, leaked-prompts, jailbreak, persona, role, prompt-engineering]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # System prompts — patterns, leaks, and limits

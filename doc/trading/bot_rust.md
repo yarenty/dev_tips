@@ -3,6 +3,7 @@ title: "tickgrinder: Building an Algorithmic Trading Platform in Rust"
 main_link: https://cprimozic.net/blog/building-an-algorithmic-trading-platform-in-rust/
 keywords: [tickgrinder, rust, trading, futures-rs, async, redis-pubsub, postgresql]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # tickgrinder: Building an Algorithmic Trading Platform in Rust

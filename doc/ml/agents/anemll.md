@@ -3,6 +3,7 @@ title: Anemll — Apple Neural Engine LLM runtime
 main_link: https://github.com/Anemll/Anemll
 keywords: [anemll, ane, apple-neural-engine, coreml, on-device, runtime]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Anemll — Apple Neural Engine LLM runtime

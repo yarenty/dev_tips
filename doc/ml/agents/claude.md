@@ -3,6 +3,7 @@ title: Building effective agents (Anthropic, Dec 2024)
 main_link: https://www.anthropic.com/engineering/building-effective-agents
 keywords: [anthropic, agents, workflows, augmented-llm, orchestrator-workers, evaluator-optimizer]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Building effective agents (Anthropic, Dec 2024)

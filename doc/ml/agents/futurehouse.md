@@ -3,6 +3,7 @@ title: FutureHouse — open scientific-research agents (PaperQA, Crow, Falcon, O
 main_link: https://www.futurehouse.org/
 keywords: [futurehouse, paperqa, crow, falcon, owl, phoenix, scientific-agents]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # FutureHouse — open scientific-research agents

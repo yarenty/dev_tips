@@ -2,6 +2,7 @@
 title: Microsoft scheduling papers
 keywords: [scheduling, microsoft, msr, apollo, hydra, cluster-management]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Microsoft scheduling papers

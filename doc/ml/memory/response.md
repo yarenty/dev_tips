@@ -3,6 +3,7 @@ title: Eidetic-style memory for agentic AI — 2024-2025 survey
 main_link: https://github.com/FoundationAgents/awesome-foundation-agents?tab=readme-ov-file#memory
 keywords: [memory, eidetic, agentic, rag, llm, survey, papers]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Eidetic-style memory for agentic AI — 2024-2025 survey

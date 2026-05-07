@@ -3,6 +3,7 @@ title: n8n — fair-source workflow automation with native AI nodes
 main_link: https://n8n.io/
 keywords: [n8n, workflow-automation, langchain, ai-agents, integromat, zapier, fair-source, self-hosted]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # n8n — fair-source workflow automation with native AI nodes

@@ -2,6 +2,7 @@
 title: VLDB scheduling papers
 keywords: [scheduling, vldb, query-scheduling, distributed]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # VLDB scheduling papers

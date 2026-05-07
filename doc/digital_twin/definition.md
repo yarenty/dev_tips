@@ -3,6 +3,7 @@ title: Digital twin — definition & taxonomy
 main_link: https://www.ibm.com/topics/what-is-a-digital-twin
 keywords: [digital-twin, iot, simulation, taxonomy, industry-4.0, mbse]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Digital twin — definition & taxonomy

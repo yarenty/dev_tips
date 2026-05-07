@@ -3,6 +3,7 @@ title: Top ML / DL learning resources
 main_link: https://karpathy.ai/zero-to-hero.html
 keywords: [courses, learning, karpathy, fast-ai, andrew-ng, reading-list]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Top ML / DL learning resources

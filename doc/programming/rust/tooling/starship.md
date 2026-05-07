@@ -3,6 +3,7 @@ title: starship — cross-shell, language-aware prompt
 main_link: https://starship.rs/
 keywords: [starship, rust, prompt, shell, zsh, bash, fish, powerline]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # starship — cross-shell, language-aware prompt

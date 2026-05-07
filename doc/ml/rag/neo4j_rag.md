@@ -3,6 +3,7 @@ title: Neo4j for RAG — vector index plus graph traversal
 main_link: https://neo4j.com/docs/neo4j-graphrag-python/current/
 keywords: [neo4j, neo4j-graphrag, graph-rag, vector-index, cypher, python]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Neo4j for RAG — vector index plus graph traversal

@@ -3,6 +3,7 @@ title: "Kuasar: Rust container runtime built on the Sandbox API"
 main_link: https://kuasar.io/
 keywords: [kuasar, container-runtime, sandbox-api, containerd, microvm, wasm, rust, openeuler]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Kuasar: Rust container runtime built on the Sandbox API

@@ -3,6 +3,7 @@ title: HalfBrown — adaptive HashMap
 main_link: https://crates.io/crates/halfbrown
 keywords: [halfbrown, hashmap, vec, hashbrown, simd-json, wayfair, rust]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # HalfBrown — adaptive HashMap

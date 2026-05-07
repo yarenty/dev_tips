@@ -3,6 +3,7 @@ title: sqlmap
 main_link: https://github.com/sqlmapproject/sqlmap
 keywords: [sqlmap, sql-injection, pentest, security, owasp, defensive, audit, ethics]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # sqlmap

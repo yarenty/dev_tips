@@ -3,6 +3,7 @@ title: "Salsa — incremental, on-demand computation framework"
 main_link: https://github.com/salsa-rs/salsa
 keywords: [salsa, rust, incremental, memoization, query-system, rust-analyzer, compiler]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Salsa — incremental, on-demand computation framework

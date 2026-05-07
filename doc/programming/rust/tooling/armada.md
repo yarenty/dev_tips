@@ -3,6 +3,7 @@ title: armada — high-performance TCP SYN scanner
 main_link: https://github.com/resyncgg/armada
 keywords: [armada, rust, tcp, syn-scan, port-scan, security, network]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # armada — high-performance TCP SYN scanner

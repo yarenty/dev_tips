@@ -3,6 +3,7 @@ title: tiberius — Microsoft SQL Server async client
 main_link: https://crates.io/crates/tiberius
 keywords: [tiberius, mssql, sqlserver, tds, async, driver]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # tiberius — Microsoft SQL Server async client

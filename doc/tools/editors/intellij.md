@@ -3,6 +3,7 @@ title: "IntelliJ IDEA — productivity tips"
 main_link: https://www.youtube.com/watch?v=cK19rE2V9UY
 keywords: [intellij, jetbrains, ide, java, kotlin, productivity, refactoring, video]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # IntelliJ IDEA — productivity tips

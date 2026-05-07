@@ -3,6 +3,7 @@ title: "EdgeDB / Gel — typed Postgres with a real query language"
 main_link: https://www.geldata.com/
 keywords: [edgedb, gel, postgresql, edgeql, schema, graph-relational, orm-replacement]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # EdgeDB / Gel — typed Postgres with a real query language

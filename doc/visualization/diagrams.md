@@ -3,6 +3,7 @@ title: "Diagrams: drawio + D2"
 main_link: https://www.drawio.com/
 keywords: [diagrams, drawio, d2lang, mermaid, plantuml, architecture-diagrams]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Diagrams: drawio + D2

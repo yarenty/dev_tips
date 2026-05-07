@@ -3,6 +3,7 @@ title: "tokio: the canonical async runtime for Rust"
 main_link: https://tokio.rs/
 keywords: [tokio, rust, async, runtime, concurrency, mio, futures]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # tokio: the canonical async runtime for Rust

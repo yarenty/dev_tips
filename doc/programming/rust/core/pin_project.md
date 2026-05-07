@@ -3,6 +3,7 @@ title: pin-project — safe pin-projection
 main_link: https://crates.io/crates/pin-project
 keywords: [pin-project, pin, async, futures, taiki-e, rust, self-referential]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # pin-project — safe pin-projection

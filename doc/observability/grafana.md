@@ -3,6 +3,7 @@ title: "Grafana (operator's view): install, run, configure"
 main_link: https://grafana.com/docs/grafana/latest/
 keywords: [grafana, observability, dashboards, install, brew, docker, datasources]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Grafana (operator's view): install, run, configure

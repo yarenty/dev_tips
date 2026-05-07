@@ -2,6 +2,7 @@
 title: Long-running query handling (placeholder)
 keywords: [long-running-query, checkpointing, fault-tolerance, restart, query-execution]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Long-running query handling (placeholder)

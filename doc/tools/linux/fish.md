@@ -3,6 +3,7 @@ title: "Fish — the friendly interactive shell"
 main_link: https://fishshell.com/
 keywords: [fish, shell, friendly, autosuggestions, syntax-highlighting, no-config, posix]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Fish — the friendly interactive shell

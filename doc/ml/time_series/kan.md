@@ -3,6 +3,7 @@ title: KANs for time-series forecasting
 main_link: https://arxiv.org/abs/2405.08790
 keywords: [kan, kolmogorov-arnold, time-series, forecasting, mlp, n-beats, nhits, tsmixer]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # KANs for time-series forecasting

@@ -3,6 +3,7 @@ title: TimeSieve — wavelet + information-bottleneck for time series
 main_link: https://arxiv.org/abs/2406.05036
 keywords: [timesieve, time-series, forecasting, wavelet, information-bottleneck, dlinear, non-transformer]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # TimeSieve — wavelet + information-bottleneck for time series

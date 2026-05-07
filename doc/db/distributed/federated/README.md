@@ -2,6 +2,7 @@
 title: Federated query (placeholder)
 keywords: [federated-query, trino, presto, calcite, fedml]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Federated query (placeholder)

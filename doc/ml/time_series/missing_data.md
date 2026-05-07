@@ -3,6 +3,7 @@ title: Handling missing data in time series
 main_link: https://towardsdatascience.com/how-to-handle-missing-data-for-time-series-680810f648ed
 keywords: [missing-data, time-series, imputation, forward-fill, interpolation, kalman, mice]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Handling missing data in time series

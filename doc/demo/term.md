@@ -3,6 +3,7 @@ title: presenterm — markdown presentations in the terminal
 main_link: https://github.com/mfontanini/presenterm
 keywords: [presenterm, presentations, terminal, markdown, slides, kitty, mfontanini]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # presenterm — markdown presentations in the terminal

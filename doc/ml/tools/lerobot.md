@@ -3,6 +3,7 @@ title: LeRobot — HuggingFace's robot-learning library
 main_link: https://github.com/huggingface/lerobot
 keywords: [lerobot, huggingface, robotics, imitation-learning, reinforcement-learning, smolvla, pi0, act, foundation-models]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # LeRobot — HuggingFace's robot-learning library

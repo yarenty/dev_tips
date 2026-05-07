@@ -3,6 +3,7 @@ title: "Bunnix — Drew DeVault's 'Unix clone in about a month' project"
 main_link: https://drewdevault.com/2024/05/24/2024-05-24-Bunnix.html
 keywords: [bunnix, unix, kernel, hare, drew-devault, monolithic-kernel, hobby-os, ext4, doom]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Bunnix — Drew DeVault's "Unix clone in about a month" project

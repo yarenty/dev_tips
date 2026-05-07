@@ -3,6 +3,7 @@ title: "Drogue IoT: Rust-based device-to-cloud framework (now retired)"
 main_link: https://book.drogue.io/
 keywords: [drogue, iot, rust, embedded, device-to-cloud, mqtt, lorawan, kubernetes, archived]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Drogue IoT: Rust-based device-to-cloud framework (now retired)

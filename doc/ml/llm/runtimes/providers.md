@@ -3,6 +3,7 @@ title: LLM providers — Goose's matrix and the broader landscape
 main_link: https://block.github.io/goose/docs/getting-started/providers
 keywords: [providers, openai, anthropic, ollama, bedrock, openrouter, litellm, groq]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # LLM providers — Goose's matrix and the broader landscape

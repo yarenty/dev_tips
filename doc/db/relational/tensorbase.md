@@ -3,6 +3,7 @@ title: "TensorBase — Rust ClickHouse-alternative for analytics (likely dormant
 main_link: https://github.com/tensorbase/tensorbase
 keywords: [tensorbase, clickhouse, rust, arrow, datafusion, analytics, columnar, dormant]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # TensorBase — Rust ClickHouse-alternative for analytics (likely dormant)

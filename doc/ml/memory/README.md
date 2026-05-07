@@ -2,6 +2,7 @@
 title: Memory — LLM and agent memory architectures
 keywords: [memory, agentic, mem0, memgpt, letta, zep, a-mem, episodic, caching, semantic-cache]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Memory — LLM and agent memory architectures

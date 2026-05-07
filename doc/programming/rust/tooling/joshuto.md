@@ -3,6 +3,7 @@ title: joshuto — Ranger-style terminal file manager
 main_link: https://github.com/kamiyaa/joshuto
 keywords: [joshuto, rust, file-manager, ranger, tui, miller-columns]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # joshuto — Ranger-style terminal file manager

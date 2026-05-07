@@ -3,6 +3,7 @@ title: KAN — Kolmogorov-Arnold Networks
 main_link: https://arxiv.org/abs/2404.19756
 keywords: [kan, kolmogorov-arnold, mlp-alternative, splines, interpretability, deep-learning]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # KAN — Kolmogorov-Arnold Networks

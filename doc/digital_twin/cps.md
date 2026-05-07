@@ -3,6 +3,7 @@ title: Cyber-Physical Systems (CPS) — academic framing
 main_link: https://www.sciencedirect.com/science/article/pii/S2351978917304067
 keywords: [cps, cyber-physical-systems, industry-4.0, manufacturing, digital-twin, smart-manufacturing]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Cyber-Physical Systems (CPS) — academic framing

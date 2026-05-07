@@ -3,6 +3,7 @@ title: Abliteration — un-aligning LLMs by orthogonalising the refusal directio
 main_link: https://huggingface.co/blog/mlabonne/abliteration
 keywords: [abliteration, refusal-direction, alignment, safety-research, activation-steering, transformerlens]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Abliteration — un-aligning LLMs by orthogonalising the refusal direction

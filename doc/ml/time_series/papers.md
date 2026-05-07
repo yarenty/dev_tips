@@ -3,6 +3,7 @@ title: Time-series research papers
 main_link: https://lirias.kuleuven.be/bitstream/123456789/642650/2/ECMLPKDD_workshop_manuscript.pdf
 keywords: [papers, time-series, anomaly-detection, pattern-mining, research, reading-list]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Time-series research papers

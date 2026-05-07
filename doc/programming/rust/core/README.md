@@ -2,6 +2,7 @@
 title: Rust core
 keywords: [rust, core, data-structures, error-handling, macros, async, pin, borrow-checker]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust core

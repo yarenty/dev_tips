@@ -3,6 +3,7 @@ title: petgraph — Rust graph data-structure library
 main_link: https://github.com/petgraph/petgraph
 keywords: [petgraph, rust, graph, graphmap, stablegraph, matrixgraph, csr, dijkstra]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # petgraph — Rust graph data-structure library

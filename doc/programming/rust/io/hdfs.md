@@ -3,6 +3,7 @@ title: "HDFS clients in Rust (libhdfs3, hdfs-native)"
 main_link: https://github.com/apache/hawq/tree/master/depends/libhdfs3
 keywords: [rust, hdfs, hadoop, libhdfs3, hdfs-native, jni, big-data, opendal, object-store]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # HDFS clients in Rust (libhdfs3, hdfs-native)

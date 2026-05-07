@@ -2,6 +2,7 @@
 title: Robotics
 keywords: [robotics, humanoid, ros, foundation-model, simulation]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Robotics

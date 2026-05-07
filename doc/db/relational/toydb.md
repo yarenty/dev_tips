@@ -3,6 +3,7 @@ title: "toyDB — distributed SQL database in Rust, built to be read"
 main_link: https://github.com/erikgrinaker/toydb
 keywords: [toydb, rust, raft, mvcc, distributed-sql, educational, erik-grinaker]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # toyDB — distributed SQL database in Rust, built to be read

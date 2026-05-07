@@ -2,6 +2,7 @@
 title: Time series — forecasting, anomaly detection, modern architectures
 keywords: [time-series, forecasting, anomaly-detection, transformer, kan, dlinear]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Time series — forecasting, anomaly detection, modern architectures

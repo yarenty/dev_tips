@@ -3,6 +3,7 @@ title: Television (tv)
 main_link: https://github.com/alexpasmantier/television
 keywords: [television, tv, rust, fuzzy, tui, ratatui, fzf, picker]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Television (`tv`)

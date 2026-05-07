@@ -3,6 +3,7 @@ title: watchexec — generic file-watch command runner
 main_link: https://github.com/watchexec/watchexec
 keywords: [watchexec, rust, file-watch, entr, fswatch, cargo-watch, nodemon]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # watchexec — generic file-watch command runner

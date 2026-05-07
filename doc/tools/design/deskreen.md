@@ -3,6 +3,7 @@ title: "Deskreen — share your screen to any device over WiFi"
 main_link: https://github.com/pavlobu/deskreen
 keywords: [deskreen, screen-sharing, wifi, electron, webrtc, second-monitor, airplay-alternative]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Deskreen — share your screen to any device over WiFi

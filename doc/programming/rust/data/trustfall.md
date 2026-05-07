@@ -3,6 +3,7 @@ title: Trustfall — query engine over arbitrary data sources
 main_link: https://github.com/obi1kenobi/trustfall
 keywords: [trustfall, query-engine, graph, graphql, adapter]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Trustfall — query engine over arbitrary data sources

@@ -3,6 +3,7 @@ title: cargo-lipo
 main_link: https://github.com/TimNN/cargo-lipo
 keywords: [lipo, cargo-lipo, rust, ios, universal-binary, fat-binary]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # cargo-lipo

@@ -3,6 +3,7 @@ title: Rodio — high-level audio playback for Rust
 main_link: https://github.com/RustAudio/rodio
 keywords: [rodio, rust, audio, playback, cpal, sound]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rodio — high-level audio playback for Rust

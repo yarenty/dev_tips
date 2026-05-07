@@ -3,6 +3,7 @@ title: indicatif
 main_link: https://github.com/console-rs/indicatif
 keywords: [indicatif, rust, cli, progress, spinners, console-rs, multiprogress]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # indicatif

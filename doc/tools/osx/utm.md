@@ -3,6 +3,7 @@ title: "UTM — virtualizer for macOS (QEMU + Apple Hypervisor)"
 main_link: https://mac.getutm.app/
 keywords: [utm, virtualization, qemu, apple-silicon, arm64, hypervisor, vm, macos, linux, windows]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # UTM — virtualizer for macOS (QEMU + Apple Hypervisor)

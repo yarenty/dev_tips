@@ -3,6 +3,7 @@ title: Hound — pure-Rust WAV reader / writer
 main_link: https://github.com/ruuda/hound
 keywords: [hound, rust, wav, audio, encoder, decoder]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Hound — pure-Rust WAV reader / writer

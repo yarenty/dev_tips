@@ -3,6 +3,7 @@ title: CUDA in Rust
 main_link: https://github.com/Rust-GPU/Rust-CUDA
 keywords: [cuda, gpu, rust, cudarc, cubecl, rust-cuda, rapids, ptx]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # CUDA in Rust

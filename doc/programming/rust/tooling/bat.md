@@ -3,6 +3,7 @@ title: bat — `cat` clone with syntax highlighting
 main_link: https://github.com/sharkdp/bat
 keywords: [bat, rust, cat, syntax-highlighting, less, pager, unix-replacement]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # bat — `cat` clone with syntax highlighting

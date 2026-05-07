@@ -3,6 +3,7 @@ title: Axum
 main_link: https://github.com/tokio-rs/axum
 keywords: [axum, rust, tokio, tower, hyper, web-framework, middleware]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Axum

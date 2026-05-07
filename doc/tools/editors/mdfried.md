@@ -3,6 +3,7 @@ title: "mdfried — terminal Markdown viewer with bigger headings"
 main_link: https://github.com/benjajaja/mdfried
 keywords: [mdfried, markdown, terminal, tui, ratatui, rust, viewer, cli]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # mdfried — terminal Markdown viewer with bigger headings

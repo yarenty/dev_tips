@@ -3,6 +3,7 @@ title: "tRPC — end-to-end typesafe APIs (TypeScript) and the Rust angle"
 main_link: https://trpc.io/
 keywords: [trpc, typescript, rpc, end-to-end-types, fullstack, react, rust]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # tRPC — end-to-end typesafe APIs (TypeScript) and the Rust angle

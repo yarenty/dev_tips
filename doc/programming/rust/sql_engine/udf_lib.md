@@ -3,6 +3,7 @@ title: udf — MariaDB/MySQL UDFs in Rust
 main_link: https://crates.io/crates/udf
 keywords: [udf, mariadb, mysql, rust, basicudf, aggregateudf, gat, cdylib]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # udf — MariaDB/MySQL UDFs in Rust

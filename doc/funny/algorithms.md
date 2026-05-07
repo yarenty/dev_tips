@@ -3,6 +3,7 @@ title: Brainfuck algorithms
 main_link: https://esolangs.org/wiki/Brainfuck_algorithms
 keywords: [brainfuck, esolang, algorithms, idioms, code-snippets, esolangs-wiki]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Brainfuck algorithms

@@ -2,6 +2,7 @@
 title: ML fundamentals
 keywords: [fundamentals, ml, classical-ml, deep-learning, learning-resources]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # ML fundamentals

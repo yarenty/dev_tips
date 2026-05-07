@@ -2,6 +2,7 @@
 title: "PHP"
 keywords: [php, composer, laravel, symfony, jit, mago, modern-php]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # PHP

@@ -3,6 +3,7 @@ title: "Some Assembly Required: an approachable intro to x86/ARM"
 main_link: https://github.com/hackclub/some-assembly-required
 keywords: [assembly, x86, arm, low-level, learning, hackclub, tutorial, computer-architecture]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Some Assembly Required: an approachable intro to x86/ARM

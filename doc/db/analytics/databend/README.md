@@ -2,6 +2,7 @@
 title: Databend
 keywords: [databend, olap, rust, data-warehouse, analytics, benchmark]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Databend

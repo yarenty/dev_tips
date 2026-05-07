@@ -3,6 +3,7 @@ title: Airtable — spreadsheet/database hybrid
 main_link: https://www.airtable.com/
 keywords: [airtable, no-code, low-code, database, spreadsheet, workflow-automation, saas]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Airtable — spreadsheet/database hybrid

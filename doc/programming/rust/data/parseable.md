@@ -3,6 +3,7 @@ title: Parseable — Rust log analytics on object storage
 main_link: https://github.com/parseablehq/parseable
 keywords: [parseable, logs, observability, arrow, parquet, s3]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Parseable — Rust log analytics on object storage

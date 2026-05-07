@@ -3,6 +3,7 @@ title: tinyvec — 100% safe small-vector types
 main_link: https://crates.io/crates/tinyvec
 keywords: [tinyvec, smallvec, arrayvec, vec, no-std, safe, lokathor, rust]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # tinyvec — 100% safe small-vector types

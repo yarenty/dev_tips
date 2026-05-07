@@ -3,6 +3,7 @@ title: Rust game engines
 main_link: https://arewegameyet.rs/
 keywords: [game-engines, rust, bevy, piston, ecs, rendering]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust game engines

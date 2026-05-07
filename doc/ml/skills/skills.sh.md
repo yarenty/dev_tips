@@ -3,6 +3,7 @@ title: skills.sh — installable agent skills
 main_link: https://skills.sh/
 keywords: [skills-sh, skills, agent, llm, mcp, prompt, planning, procedural-knowledge]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # skills.sh — installable agent skills

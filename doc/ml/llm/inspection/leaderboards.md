@@ -3,6 +3,7 @@ title: LLM leaderboards — Chatbot Arena, HF Open LLM, Aider, SWE-Bench, etc.
 main_link: https://lmarena.ai/
 keywords: [leaderboards, evaluation, chatbot-arena, lmsys, mmlu, swe-bench, aider, livecodebench, helm, artificial-analysis]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # LLM leaderboards — Chatbot Arena, HF Open LLM, Aider, SWE-Bench, etc.

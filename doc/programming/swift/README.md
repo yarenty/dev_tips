@@ -2,6 +2,7 @@
 title: "Swift"
 keywords: [swift, ios, macos, vapor, hummingbird, swift-package-manager, foundation]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Swift

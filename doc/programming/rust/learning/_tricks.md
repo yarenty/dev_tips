@@ -3,6 +3,7 @@ title: println! 5x speedup trick (capture-by-value formatter)
 main_link: https://users.rust-lang.org/
 keywords: [tricks, rust, println, format, performance, display, tczajka]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # println! 5x speedup trick (capture-by-value formatter)

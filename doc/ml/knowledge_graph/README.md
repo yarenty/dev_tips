@@ -2,6 +2,7 @@
 title: Knowledge graphs in ML
 keywords: [knowledge-graph, kg, gnn, kg-embeddings, graphrag, petgraph]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Knowledge graphs in ML

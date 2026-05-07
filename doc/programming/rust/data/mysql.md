@@ -3,6 +3,7 @@ title: mysql — pure-Rust MySQL driver
 main_link: https://crates.io/crates/mysql
 keywords: [mysql, mysql_async, driver, database, rust]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # mysql — pure-Rust MySQL driver

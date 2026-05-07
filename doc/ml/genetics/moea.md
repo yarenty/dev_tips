@@ -3,6 +3,7 @@ title: The MOEA Framework — multi-objective evolutionary algorithms in Java
 main_link: http://moeaframework.org/
 keywords: [moea, evolutionary, multi-objective, nsga-ii, nsga-iii, moea-d, java, optimization]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # The MOEA Framework — multi-objective evolutionary algorithms in Java

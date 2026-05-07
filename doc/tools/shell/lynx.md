@@ -3,6 +3,7 @@ title: "Lynx: the original text-mode web browser"
 main_link: https://lynx.invisible-island.net/
 keywords: [lynx, terminal-browser, text-browser, accessibility, scripting, ncurses, shell]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Lynx: the original text-mode web browser

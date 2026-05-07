@@ -3,6 +3,7 @@ title: "JSON in Rust (serde_json, simd-json, sonic-rs, Arrow JSON)"
 main_link: https://github.com/serde-rs/json
 keywords: [rust, json, serde, simd-json, sonic-rs, arrow, performance]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # JSON in Rust (serde_json, simd-json, sonic-rs, Arrow JSON)

@@ -3,6 +3,7 @@ title: lychee — async link checker for Markdown / HTML
 main_link: https://github.com/lycheeverse/lychee
 keywords: [lychee, rust, link-checker, markdown, html, ci, github-action]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # lychee — async link checker for Markdown / HTML

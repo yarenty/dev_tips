@@ -3,6 +3,7 @@ title: DeepSeek — open-weights MoE family (V2 / V3 / R1 / OCR)
 main_link: https://www.deepseek.com/
 keywords: [deepseek, deepseek-r1, deepseek-v3, deepseek-coder, moe, grpo, reasoning, open-weights, china]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # DeepSeek — open-weights MoE family (V2 / V3 / R1 / OCR)

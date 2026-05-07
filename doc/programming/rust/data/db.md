@@ -3,6 +3,7 @@ title: diesel — Rust ORM and query builder
 main_link: https://diesel.rs/
 keywords: [diesel, orm, query-builder, postgres, mysql, sqlite, sql]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # diesel — Rust ORM and query builder

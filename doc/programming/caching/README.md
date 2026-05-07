@@ -2,6 +2,7 @@
 title: "Caching"
 keywords: [caching, redis, garnet, in-process, cdn, eviction, cache]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Caching

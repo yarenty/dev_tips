@@ -3,6 +3,7 @@ title: Tally — free form & survey builder
 main_link: https://tally.so/
 keywords: [tally, forms, surveys, no-code, saas, typeform-alternative]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Tally — free form & survey builder

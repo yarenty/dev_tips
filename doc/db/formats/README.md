@@ -2,6 +2,7 @@
 title: Data formats
 keywords: [formats, parquet, arrow, orc, avro, iceberg, delta, hudi, nimble, arrow-flight]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Data formats

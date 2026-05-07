@@ -3,6 +3,7 @@ title: Voice-agent platforms — Vapi, Retell, LiveKit Agents, Pipecat, Vocode
 main_link: https://www.assemblyai.com/build-voice-ai
 keywords: [voice-agents, vapi, retell, livekit, pipecat, vocode, telephony, real-time, voice-ai-platform]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Voice-agent platforms — Vapi, Retell, LiveKit Agents, Pipecat, Vocode

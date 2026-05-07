@@ -3,6 +3,7 @@ title: Feather
 main_link: https://github.com/BersisSe/feather
 keywords: [feather, rust, web-framework, microframework, express]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Feather

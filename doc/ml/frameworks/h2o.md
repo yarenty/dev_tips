@@ -3,6 +3,7 @@ title: H2O.ai — open-source AutoML platform
 main_link: https://h2o.ai/
 keywords: [h2o, automl, frameworks, java, llm-studio, driverless-ai]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # H2O.ai — open-source AutoML platform

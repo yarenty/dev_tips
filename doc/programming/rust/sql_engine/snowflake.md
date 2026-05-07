@@ -3,6 +3,7 @@ title: Snowflake — UDFs, Snowpark, and the Rust client story
 main_link: https://docs.snowflake.com/en/sql-reference/udf-overview
 keywords: [snowflake, udf, sql, snowpark, data-warehouse, rust-client]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Snowflake — UDFs, Snowpark, and the Rust client story

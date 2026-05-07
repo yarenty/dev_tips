@@ -3,6 +3,7 @@ title: Scilab — open-source numerical computation
 main_link: https://www.scilab.org/
 keywords: [scilab, xcos, numerical-computation, matlab-alternative, simulation, open-source]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Scilab — open-source numerical computation

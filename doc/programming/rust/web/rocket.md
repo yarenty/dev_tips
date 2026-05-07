@@ -3,6 +3,7 @@ title: Rocket
 main_link: https://rocket.rs/
 keywords: [rocket, rust, web-framework, macros, type-safe]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rocket

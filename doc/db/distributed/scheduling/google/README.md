@@ -2,6 +2,7 @@
 title: Google scheduling papers
 keywords: [scheduling, google, borg, omega, cluster-management]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Google scheduling papers

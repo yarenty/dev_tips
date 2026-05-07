@@ -3,6 +3,7 @@ title: Cargo.toml tricks
 main_link: https://doc.rust-lang.org/cargo/reference/manifest.html
 keywords: [cargo-toml, rust, cargo, profiles, serde, manifest]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Cargo.toml tricks

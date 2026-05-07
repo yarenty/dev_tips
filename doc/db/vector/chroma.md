@@ -3,6 +3,7 @@ title: "Chroma — embedded-first vector DB for LLM apps"
 main_link: https://www.trychroma.com/
 keywords: [chroma, vector, embedding, rag, llm, langchain, llamaindex, python, embedded]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Chroma — embedded-first vector DB for LLM apps

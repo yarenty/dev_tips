@@ -3,6 +3,7 @@ title: "crossbeam: lock-free concurrency primitives for sync Rust"
 main_link: https://github.com/crossbeam-rs/crossbeam
 keywords: [crossbeam, rust, concurrency, channels, mpmc, scoped-threads, sync]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # crossbeam: lock-free concurrency primitives for sync Rust

@@ -3,6 +3,7 @@ title: "ASCII art generator (convertcase.net)"
 main_link: https://convertcase.net/ascii-art-generator/
 keywords: [ascii-art, ascii-generator, banner, figlet, web-tool, design]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # ASCII art generator (convertcase.net)

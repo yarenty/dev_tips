@@ -3,6 +3,7 @@ title: OpenAI Agents SDK & Responses API (formerly Swarm)
 main_link: https://openai.github.io/openai-agents-python/
 keywords: [openai, agents-sdk, responses-api, swarm, operator, computer-use]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # OpenAI Agents SDK & Responses API

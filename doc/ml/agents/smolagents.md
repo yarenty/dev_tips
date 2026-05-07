@@ -3,6 +3,7 @@ title: smolagents — HuggingFace's lightweight code-agents library
 main_link: https://huggingface.co/docs/smolagents/
 keywords: [smolagents, huggingface, code-agents, sandboxed, e2b, lightweight]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # smolagents — HuggingFace's lightweight code-agents library

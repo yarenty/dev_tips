@@ -3,6 +3,7 @@ title: RustCrypto — POLYVAL (and the wider ecosystem)
 main_link: https://github.com/RustCrypto
 keywords: [rustcrypto, polyval, aes, gcm, gcm-siv, mac]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # RustCrypto — POLYVAL (and the wider ecosystem)

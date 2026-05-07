@@ -3,6 +3,7 @@ title: rawsql — load named SQL snippets from files
 main_link: https://crates.io/crates/rawsql
 keywords: [rawsql, sql, sql-files, query-loading, rust]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # rawsql — load named SQL snippets from files

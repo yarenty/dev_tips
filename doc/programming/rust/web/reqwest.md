@@ -3,6 +3,7 @@ title: reqwest
 main_link: https://crates.io/crates/reqwest
 keywords: [reqwest, rust, http-client, hyper, async, json]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # reqwest

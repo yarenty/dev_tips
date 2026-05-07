@@ -3,6 +3,7 @@ title: "Shodan: search engine for internet-exposed devices"
 main_link: https://www.shodan.io/
 keywords: [shodan, iot, security, recon, internet-of-things, port-scanning, attack-surface]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Shodan: search engine for internet-exposed devices

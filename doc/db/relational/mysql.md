@@ -3,6 +3,7 @@ title: "MySQL / MariaDB"
 main_link: https://www.mysql.com/
 keywords: [mysql, mariadb, oltp, sql, replication, aurora, root-password, brew]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # MySQL / MariaDB

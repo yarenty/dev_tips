@@ -3,6 +3,7 @@ title: open_telemetry — OpenTelemetry SDK for Rust
 main_link: https://github.com/open-telemetry/opentelemetry-rust
 keywords: [open-telemetry, otel, rust, opentelemetry, tracing, opentelemetry-otlp, observability]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # open_telemetry — OpenTelemetry SDK for Rust

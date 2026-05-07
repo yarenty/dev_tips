@@ -2,6 +2,7 @@
 title: Voice AI — STT, TTS, voice agents, and speech-native models
 keywords: [voice, stt, asr, tts, voice-agents, whisper, elevenlabs, deepgram, livekit, realtime]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Voice AI — STT, TTS, voice agents, and speech-native models

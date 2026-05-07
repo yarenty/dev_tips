@@ -3,6 +3,7 @@ title: Agent memory — practitioner patterns (scratchpad / vector / episodic / 
 main_link: https://github.com/FoundationAgents/awesome-foundation-agents#memory
 keywords: [agent-memory, scratchpad, vector-memory, episodic-memory, procedural-memory, mem0, letta]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Agent memory — practitioner patterns

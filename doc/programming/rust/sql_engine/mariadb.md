@@ -3,6 +3,7 @@ title: MariaDB (and the Rust UDF angle)
 main_link: https://mariadb.org/
 keywords: [mariadb, mysql, udf, rust, sql-udf, columnstore]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # MariaDB (and the Rust UDF angle)

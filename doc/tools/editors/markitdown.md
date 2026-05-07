@@ -3,6 +3,7 @@ title: "MarkItDown — convert anything into Markdown"
 main_link: https://github.com/microsoft/markitdown
 keywords: [markitdown, microsoft, markdown, llm, pdf, docx, pptx, ocr, python]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # MarkItDown — convert anything into Markdown

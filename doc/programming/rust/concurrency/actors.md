@@ -3,6 +3,7 @@ title: "Actix and the Rust actor-model landscape"
 main_link: https://crates.io/crates/actix
 keywords: [actors, rust, actix, ractor, message-passing, concurrency, tokio]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Actix and the Rust actor-model landscape

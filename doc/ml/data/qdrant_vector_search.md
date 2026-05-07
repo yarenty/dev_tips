@@ -3,6 +3,7 @@ title: Qdrant for ML — embeddings, RAG, semantic & image search
 main_link: https://qdrant.tech/
 keywords: [qdrant, vector-search, embeddings, ann, rag, semantic-search, image-similarity]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Qdrant for ML — embeddings, RAG, semantic & image search

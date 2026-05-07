@@ -3,6 +3,7 @@ title: API access to data
 main_link: https://mixedanalytics.com/blog/list-actually-free-open-no-auth-needed-apis/
 keywords: [apis, data, public, json, rest, no-auth, ml-data]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # API access to data

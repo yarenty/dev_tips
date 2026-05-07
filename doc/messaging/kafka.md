@@ -3,6 +3,7 @@ title: "Apache Kafka: distributed log + the operations ecosystem around it"
 main_link: https://kafka.apache.org/
 keywords: [kafka, apache, streaming, log, distributed, brokers, zookeeper, kraft, rdkafka, strimzi, julie]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Apache Kafka: distributed log + the operations ecosystem around it

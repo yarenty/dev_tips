@@ -3,6 +3,7 @@ title: "Balena: container-based OS + fleet management for IoT devices"
 main_link: https://www.balena.io/
 keywords: [balena, iot, fleet-management, balenaos, balenacloud, docker, edge, raspberry-pi]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Balena: container-based OS + fleet management for IoT devices

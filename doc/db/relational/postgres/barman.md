@@ -3,6 +3,7 @@ title: "Barman — PostgreSQL Backup and Recovery Manager"
 main_link: https://pgbarman.org/
 keywords: [barman, postgresql, backup, pitr, recovery, enterprisedb, gpl, python]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Barman — PostgreSQL Backup and Recovery Manager

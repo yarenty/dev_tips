@@ -3,6 +3,7 @@ title: Goose — Block's open-source AI agent runtime
 main_link: https://block.github.io/goose/
 keywords: [goose, agent, mcp, block, cli, deepseek, extensions]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Goose — Block's open-source AI agent runtime

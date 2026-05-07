@@ -2,6 +2,7 @@
 title: Messaging
 keywords: [messaging, kafka, redpanda, pulsar, mqtt, nats, kinesis, streaming, pubsub]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Messaging

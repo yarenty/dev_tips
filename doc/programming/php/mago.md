@@ -3,6 +3,7 @@ title: "Mago — a Rust-based linter, formatter, and static analyzer for PHP"
 main_link: https://mago.carthage.software/
 keywords: [mago, php, linter, formatter, static-analyzer, rust, carthage, psr-12]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Mago — a Rust-based linter, formatter, and static analyzer for PHP

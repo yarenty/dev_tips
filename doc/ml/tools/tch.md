@@ -3,6 +3,7 @@ title: tch — Rust bindings for PyTorch's C++ API (libtorch)
 main_link: https://github.com/LaurentMazare/tch-rs
 keywords: [tch, tch-rs, libtorch, pytorch, rust, ffi, ml, deep-learning]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # tch — Rust bindings for PyTorch's C++ API (libtorch)

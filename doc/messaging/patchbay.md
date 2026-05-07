@@ -3,6 +3,7 @@ title: "patchbay.pub: serverless HTTP pub/sub via curl"
 main_link: https://patchbay.pub/
 keywords: [patchbay, pubsub, http, serverless, webhooks, no-auth, hobby-tools]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # patchbay.pub: serverless HTTP pub/sub via curl

@@ -3,6 +3,7 @@ title: Sleep sort
 main_link: https://en.wikipedia.org/wiki/Sleep_sort
 keywords: [sleepsort, sorting, async, scheduler, asyncio, joke-algorithm, 4chan]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Sleep sort

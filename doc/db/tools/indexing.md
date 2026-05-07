@@ -3,6 +3,7 @@ title: SQL indexing (Use The Index, Luke)
 main_link: https://use-the-index-luke.com/
 keywords: [indexing, sql, b-tree, performance, query-tuning, use-the-index-luke, markus-winand]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # SQL indexing (Use The Index, Luke)

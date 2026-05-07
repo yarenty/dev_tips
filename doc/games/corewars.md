@@ -3,6 +3,7 @@ title: Core War
 main_link: https://corewar.co.uk/standards.htm
 keywords: [corewar, redcode, mars, programming-game, vm, retro, simulation]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Core War

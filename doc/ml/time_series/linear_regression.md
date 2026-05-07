@@ -3,6 +3,7 @@ title: Linear regression with time-series features
 main_link: https://www.kaggle.com/code/ryanholbrook/linear-regression-with-time-series
 keywords: [linear-regression, time-series, baseline, lag-features, rolling-features, kaggle]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Linear regression with time-series features

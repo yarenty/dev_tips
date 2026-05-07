@@ -3,6 +3,7 @@ title: "RustScan — fast Rust port scanner"
 main_link: https://github.com/bee-san/RustScan
 keywords: [rustscan, port-scanner, nmap, rust, recon, security, network-discovery]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # RustScan — fast Rust port scanner

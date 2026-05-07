@@ -3,6 +3,7 @@ title: "Bacon — background Rust code checker"
 main_link: https://dystroy.org/bacon/
 keywords: [bacon, rust, cargo-watch, background-checker, dystroy, tui, watch-mode]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Bacon — background Rust code checker

@@ -3,6 +3,7 @@ title: Rust tutorials (curated)
 main_link: https://google.github.io/comprehensive-rust/
 keywords: [rust, tutorials, comprehensive-rust, macros, learning]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust tutorials (curated)

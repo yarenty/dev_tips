@@ -3,6 +3,7 @@ title: PUFF (CPython embedded in Rust)
 main_link: https://github.com/hansonkd/puff
 keywords: [puff, python, rust, embedding, runtime, axum, tokio]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # PUFF (CPython embedded in Rust)

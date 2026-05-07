@@ -3,6 +3,7 @@ title: Kevin-32B — Cognition's CUDA-kernel-writing model
 main_link: https://cognition.ai/blog/kevin-32b
 keywords: [kevin, kevin-32b, cognition-ai, cuda, kernel-generation, multi-turn-rl, kernelbench, llm-codegen]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Kevin-32B — Cognition's CUDA-kernel-writing model

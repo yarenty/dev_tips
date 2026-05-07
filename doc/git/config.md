@@ -3,6 +3,7 @@ title: Git configuration — sane defaults
 main_link: https://blog.gitbutler.com/how-git-core-devs-configure-git/
 keywords: [git, config, gitconfig, defaults, diff, rebase, push, fetch]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Git configuration — sane defaults

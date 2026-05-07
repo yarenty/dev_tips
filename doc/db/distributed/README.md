@@ -2,6 +2,7 @@
 title: Distributed databases & query execution
 keywords: [distributed, ballista, federated-query, scheduling, long-running-query]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Distributed databases & query execution

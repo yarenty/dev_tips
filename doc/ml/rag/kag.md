@@ -3,6 +3,7 @@ title: KAG — Knowledge Augmented Generation (OpenSPG / Ant Group)
 main_link: https://github.com/OpenSPG/KAG
 keywords: [kag, openspg, ant-group, knowledge-graph, logical-reasoning, multi-hop, rag]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # KAG — Knowledge Augmented Generation (OpenSPG / Ant Group)

@@ -3,6 +3,7 @@ title: "prek — fast Rust-based pre-commit replacement"
 main_link: https://github.com/j178/prek
 keywords: [prek, pre-commit, hooks, rust, git, ci, lefthook, husky]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # prek — fast Rust-based pre-commit replacement

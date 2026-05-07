@@ -3,6 +3,7 @@ title: "InfluxDB — multi-generation time-series DB (1.x / 2.x / 3.x IOx)"
 main_link: https://www.influxdata.com/products/influxdb/
 keywords: [influxdb, timeseries, metrics, iox, datafusion, flux, influxql, rust]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # InfluxDB — multi-generation time-series DB (1.x / 2.x / 3.x IOx)

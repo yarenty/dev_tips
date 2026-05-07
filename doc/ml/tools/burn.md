@@ -3,6 +3,7 @@ title: Burn — Tracel-AI's pure-Rust deep-learning framework
 main_link: https://github.com/tracel-ai/burn
 keywords: [burn, tracel, rust, deep-learning, wgpu, ndarray, libtorch, candle, autodiff, onnx]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Burn — Tracel-AI's pure-Rust deep-learning framework

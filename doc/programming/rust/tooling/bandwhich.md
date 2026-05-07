@@ -3,6 +3,7 @@ title: bandwhich — bandwidth-by-process terminal top
 main_link: https://github.com/imsnif/bandwhich
 keywords: [bandwhich, rust, network, bandwidth, top, sniff, tui, cli]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # bandwhich — bandwidth-by-process terminal top

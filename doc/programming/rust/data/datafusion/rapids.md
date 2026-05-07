@@ -3,6 +3,7 @@ title: spark-rapids — NVIDIA GPU accelerator for Apache Spark
 main_link: https://github.com/NVIDIA/spark-rapids
 keywords: [rapids, spark-rapids, nvidia, gpu, cudf, accelerator, spark, columnar]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # spark-rapids — NVIDIA GPU accelerator for Apache Spark

@@ -3,6 +3,7 @@ title: HuggingFace agent tooling — smolagents tutorials & agent course
 main_link: https://huggingface.co/docs/smolagents/tutorials/building_good_agents
 keywords: [huggingface, hf, smolagents, agents-course, tutorials]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # HuggingFace agent tooling

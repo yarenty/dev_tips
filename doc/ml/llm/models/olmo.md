@@ -3,6 +3,7 @@ title: OLMo — Allen AI's fully open language model (weights + data + training 
 main_link: https://allenai.org/olmo
 keywords: [olmo, allen-ai, ai2, fully-open, dolma, open-source-llm, pythia, oss]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # OLMo — Allen AI's fully open language model (weights + data + training code)

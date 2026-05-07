@@ -3,6 +3,7 @@ title: Rust CLI
 main_link: https://docs.rs/clap/latest/clap/
 keywords: [cli, rust, clap, command-line, dialoguer, indicatif, prompts, progress]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust CLI

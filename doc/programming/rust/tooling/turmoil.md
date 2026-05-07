@@ -3,6 +3,7 @@ title: turmoil — Tokio's deterministic distributed-system simulator
 main_link: https://github.com/tokio-rs/turmoil
 keywords: [turmoil, rust, tokio, distributed-systems, simulation, testing, deterministic]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # turmoil — Tokio's deterministic distributed-system simulator

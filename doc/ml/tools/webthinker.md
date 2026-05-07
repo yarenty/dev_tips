@@ -3,6 +3,7 @@ title: WebThinker — open-source LRM-powered deep-research agent
 main_link: https://github.com/RUC-NLPIR/WebThinker
 keywords: [webthinker, ruc, nlpir, deep-research, lrm, open-source, agent, search, dpo]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # WebThinker — open-source LRM-powered deep-research agent

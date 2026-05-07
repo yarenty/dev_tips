@@ -3,6 +3,7 @@ title: "async-nats — official Rust NATS client"
 main_link: https://github.com/nats-io/nats.rs
 keywords: [rust, nats, async-nats, jetstream, pubsub, request-reply, kv, cloud-native]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # async-nats — official Rust NATS client

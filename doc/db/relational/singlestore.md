@@ -3,6 +3,7 @@ title: "SingleStore — distributed SQL with row+columnar HTAP"
 main_link: https://www.singlestore.com/
 keywords: [singlestore, memsql, distributed-sql, htap, columnar, vector, mysql-compatible]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # SingleStore — distributed SQL with row+columnar HTAP

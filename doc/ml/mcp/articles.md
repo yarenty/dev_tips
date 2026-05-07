@@ -3,6 +3,7 @@ title: MCP — curated articles & critiques
 main_link: https://modelcontextprotocol.io/
 keywords: [mcp, anthropic, agents, security, prompt-injection, reading-list]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # MCP — curated articles & critiques

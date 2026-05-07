@@ -3,6 +3,7 @@ title: "MQL5 + Python: socket bridge and MetaTrader5 package"
 main_link: https://www.mql5.com/en/articles/5691
 keywords: [mql5, mt5, python, metatrader5, sockets, trading, forex, expert-advisor]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # MQL5 + Python: socket bridge and MetaTrader5 package

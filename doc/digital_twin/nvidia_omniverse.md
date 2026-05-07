@@ -3,6 +3,7 @@ title: NVIDIA Omniverse — physically-accurate simulation platform
 main_link: https://developer.nvidia.com/nvidia-omniverse-platform
 keywords: [nvidia, omniverse, modulus, ovx, usd, simulation, physics-informed-ml, fno, pino]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # NVIDIA Omniverse — physically-accurate simulation platform

@@ -3,6 +3,7 @@ title: "Oracle Cloud Always Free Tier (especially the Ampere A1 ARM instance)"
 main_link: https://www.oracle.com/cloud/free/
 keywords: [oracle-free-tier, oci, ampere-a1, arm, free-vps, autonomous-database, vcn]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Oracle Cloud Always Free Tier (especially the Ampere A1 ARM instance)

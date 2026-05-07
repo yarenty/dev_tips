@@ -3,6 +3,7 @@ title: UiPath Agent Builder & Maestro — RPA-vendor pivot to AI agents
 main_link: https://www.uipath.com/product/agent-builder
 keywords: [uipath, rpa, agent-builder, maestro, agentic-automation, langgraph]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # UiPath Agent Builder & Maestro

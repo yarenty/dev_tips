@@ -3,6 +3,7 @@ title: "Workmux — git worktrees + tmux windows for parallel dev (and AI agents
 main_link: https://github.com/raine/workmux
 keywords: [workmux, tmux, git-worktree, parallel-dev, ai-agents, tmuxinator-alternative]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Workmux — git worktrees + tmux windows

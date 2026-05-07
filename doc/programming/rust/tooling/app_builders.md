@@ -3,6 +3,7 @@ title: app_builders — Awesome App and the Rust desktop-packaging story
 main_link: https://awesomeapp.org/
 keywords: [app-builders, rust, awesome-app, tauri, surrealdb, packaging, desktop]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # app_builders — Awesome App and the Rust desktop-packaging story

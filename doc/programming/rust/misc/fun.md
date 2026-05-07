@@ -3,6 +3,7 @@ title: Fun / whimsical Rust crates (bats and friends)
 main_link: https://crates.io/crates/bats
 keywords: [fun, rust, whimsy, terminal, cli, crates]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Fun / whimsical Rust crates (bats and friends)

@@ -3,6 +3,7 @@ title: tract — Sonos's pure-Rust ONNX / TensorFlow / NNEF inference engine
 main_link: https://github.com/sonos/tract
 keywords: [tract, sonos, nnef, onnx, tensorflow, inference, rust, edge, ml]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # tract — Sonos's pure-Rust ONNX / TensorFlow / NNEF inference engine

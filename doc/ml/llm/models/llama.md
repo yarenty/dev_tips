@@ -3,6 +3,7 @@ title: Llama — Meta's open-weights LLM family (Llama 1/2/3/4)
 main_link: https://www.llama.com/
 keywords: [llama, meta, open-weights, llm, llama-2, llama-3, llama-4, code-llama, llama-stack]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Llama — Meta's open-weights LLM family (Llama 1/2/3/4)

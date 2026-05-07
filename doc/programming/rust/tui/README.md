@@ -3,6 +3,7 @@ title: Rust TUI
 main_link: https://ratatui.rs/
 keywords: [tui, rust, ratatui, cursive, termion, terminal, ncurses]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust TUI

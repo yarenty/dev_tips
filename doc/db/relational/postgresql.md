@@ -3,6 +3,7 @@ title: "PostgreSQL"
 main_link: https://www.postgresql.org/
 keywords: [postgresql, postgres, oltp, sql, work-mem, explain, ctes, triggers, pigsty, pgvector]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # PostgreSQL

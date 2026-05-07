@@ -3,6 +3,7 @@ title: mprocs — multi-process TUI orchestrator
 main_link: https://github.com/pvolok/mprocs
 keywords: [mprocs, rust, procfile, foreman, overmind, hivemind, tui, dev]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # mprocs — multi-process TUI orchestrator

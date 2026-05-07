@@ -3,6 +3,7 @@ title: Project idea — port a Python blockchain tutorial to Rust
 main_link: https://medium.com/coinmonks/python-tutorial-build-a-blockchain-713c706f6531
 keywords: [project-ideas, rust, blockchain, python, port, learning]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Project idea — port a Python blockchain tutorial to Rust

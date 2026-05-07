@@ -3,6 +3,7 @@ title: sqlite-loadable-rs — write SQLite extensions in Rust
 main_link: https://github.com/asg017/sqlite-loadable-rs
 keywords: [sqlite-loadable, sqlite, rust, loadable-extensions, virtual-tables, scalar-functions]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # sqlite-loadable-rs — write SQLite extensions in Rust

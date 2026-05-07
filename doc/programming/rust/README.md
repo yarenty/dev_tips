@@ -2,6 +2,7 @@
 title: Rust
 keywords: [rust, cargo, ecosystem, async, embedded, web, ml, data]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust

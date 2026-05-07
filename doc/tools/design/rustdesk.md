@@ -3,6 +3,7 @@ title: "RustDesk — open-source remote desktop"
 main_link: https://rustdesk.com/
 keywords: [rustdesk, remote-desktop, teamviewer-alternative, rust, self-hosted, cross-platform]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # RustDesk — open-source remote desktop

@@ -2,6 +2,7 @@
 title: Tools
 keywords: [tools, cli, terminal, shell, linux, macos, design, editors, networking, security]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Tools

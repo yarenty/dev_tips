@@ -2,6 +2,7 @@
 title: Streaming databases & dataflow
 keywords: [streaming, dataflow, cdc, materialized-views, aqp, delta-live]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Streaming databases & dataflow

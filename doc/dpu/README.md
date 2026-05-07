@@ -2,6 +2,7 @@
 title: "DPU — the overloaded acronym, and accelerators in general"
 keywords: [dpu, accelerators, smartnic, fpga, bluefield, vitis, ascend, xilinx, amd]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # DPU — the overloaded acronym, and accelerators in general

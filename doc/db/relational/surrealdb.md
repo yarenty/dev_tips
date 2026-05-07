@@ -3,6 +3,7 @@ title: "SurrealDB — multi-model document/graph/relational/KV in one Rust binar
 main_link: https://surrealdb.com/
 keywords: [surrealdb, multi-model, graph, document, surrealql, rust, newsql, edge]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # SurrealDB — multi-model document/graph/relational/KV in one Rust binary

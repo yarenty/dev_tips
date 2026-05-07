@@ -3,6 +3,7 @@ title: Slint
 main_link: https://slint.dev/
 keywords: [slint, rust, gui, declarative, retained-mode, qml, embedded]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Slint

@@ -3,6 +3,7 @@ title: Lance — modern columnar format for ML
 main_link: https://github.com/lancedb/lance
 keywords: [lance, columnar, parquet, vector, arrow, ml, lancedb]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Lance — modern columnar format for ML

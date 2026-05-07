@@ -3,6 +3,7 @@ title: hyper
 main_link: https://hyper.rs/
 keywords: [hyper, rust, http, http2, low-level, tokio]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # hyper

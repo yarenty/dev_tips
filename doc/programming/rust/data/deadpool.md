@@ -3,6 +3,7 @@ title: deadpool — async object pool
 main_link: https://crates.io/crates/deadpool
 keywords: [deadpool, connection-pool, async, tokio, async-std, database, redis]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # deadpool — async object pool

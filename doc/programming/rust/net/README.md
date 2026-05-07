@@ -2,6 +2,7 @@
 title: "Rust net — RPC, messaging clients, tunnels"
 keywords: [rust, net, grpc, mqtt, nats, tonic, rumqtt, paho, trpc, bore, tunnelling]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust net — RPC, messaging clients, tunnels

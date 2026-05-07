@@ -3,6 +3,7 @@ title: "Akri: expose IoT / leaf devices as Kubernetes resources"
 main_link: https://github.com/project-akri/akri
 keywords: [akri, kubernetes, iot, edge, devices, ip-cameras, usb, gpu, fpga, cncf]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Akri: expose IoT / leaf devices as Kubernetes resources

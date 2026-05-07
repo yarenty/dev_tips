@@ -3,6 +3,7 @@ title: Pattern learning — overview
 main_link: https://hastie.su.domains/ElemStatLearn/
 keywords: [pattern-learning, pattern-recognition, sequence-models, anomaly-detection, association-rules]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Pattern learning — overview

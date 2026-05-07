@@ -2,6 +2,7 @@
 title: Xilinx (now AMD Adaptive Computing)
 keywords: [xilinx, amd, fpga, dpu, vitis, vivado, alveo, versal, kria]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Xilinx (now AMD Adaptive Computing)

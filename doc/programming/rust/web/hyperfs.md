@@ -3,6 +3,7 @@ title: HyperFS
 main_link: https://crates.io/crates/hyperfs
 keywords: [hyperfs, rust, http-server, static-files, hyper]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # HyperFS

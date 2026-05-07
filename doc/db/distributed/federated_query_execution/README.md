@@ -2,6 +2,7 @@
 title: Federated query execution
 keywords: [federated-query, query-execution, trino, presto, calcite, dremio]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Federated query execution

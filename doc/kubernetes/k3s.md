@@ -3,6 +3,7 @@ title: "K3s: lightweight Kubernetes for edge, IoT, and homelab"
 main_link: https://k3s.io/
 keywords: [k3s, kubernetes, lightweight, edge, iot, raspberry-pi, k3sup, arkade, arm, homelab, openfaas]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # K3s: lightweight Kubernetes for edge, IoT, and homelab

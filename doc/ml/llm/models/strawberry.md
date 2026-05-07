@@ -3,6 +3,7 @@ title: Strawberry browser — AI-driven browser automation product
 main_link: https://strawberrybrowser.com/
 keywords: [strawberry-browser, browser-agent, computer-use, web-automation, ai-browser]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Strawberry browser — AI-driven browser automation product

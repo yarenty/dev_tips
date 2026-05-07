@@ -3,6 +3,7 @@ title: barrel — schema-builder DSL
 main_link: https://crates.io/crates/barrel
 keywords: [barrel, migration, schema, dsl, postgres, mysql, sqlite]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # barrel — schema-builder DSL

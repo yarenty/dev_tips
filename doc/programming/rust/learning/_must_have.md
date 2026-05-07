@@ -3,6 +3,7 @@ title: Awesome Rust — must-have crates and resources
 main_link: https://github.com/rust-unofficial/awesome-rust
 keywords: [must-have, rust, awesome, libraries, curated-list, crates]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Awesome Rust — must-have crates and resources

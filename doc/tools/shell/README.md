@@ -2,6 +2,7 @@
 title: "POSIX shell utilities"
 keywords: [shell, posix, terminal, browsers, ssh, dns, scripting, ansi]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # POSIX shell utilities

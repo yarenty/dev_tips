@@ -3,6 +3,7 @@ title: Noria — streaming dataflow for materialized views
 main_link: https://github.com/mit-pdos/noria
 keywords: [noria, streaming, dataflow, materialized-views, mysql, mit, readyset, research]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Noria — streaming dataflow for materialized views

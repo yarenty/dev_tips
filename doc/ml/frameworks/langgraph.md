@@ -3,6 +3,7 @@ title: LangGraph — stateful, graph-based agent orchestration
 main_link: https://langchain-ai.github.io/langgraph/
 keywords: [langgraph, langchain, agents, orchestration, state-machine, frameworks]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # LangGraph — stateful, graph-based agent orchestration

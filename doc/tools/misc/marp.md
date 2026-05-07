@@ -3,6 +3,7 @@ title: "Marp — Markdown → PDF / PPTX / HTML / images slide decks"
 main_link: https://github.com/marp-team/marp-cli
 keywords: [marp, slides, markdown, pptx, pdf, presentation, cli, node]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Marp — Markdown → PDF / PPTX / HTML / images

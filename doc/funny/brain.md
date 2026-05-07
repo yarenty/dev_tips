@@ -3,6 +3,7 @@ title: brain — Rust-flavoured language that compiles to Brainfuck
 main_link: https://github.com/brain-lang/brain
 keywords: [brain, brainfuck, esolang, compiler, rust, type-system]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # brain — Rust-flavoured language that compiles to Brainfuck

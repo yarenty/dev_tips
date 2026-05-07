@@ -3,6 +3,7 @@ title: Goose extensions, sessions, and hints
 main_link: https://block.github.io/goose/docs/getting-started/using-extensions/
 keywords: [goose, extensions, mcp, sessions, goosehints, plugins]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Goose extensions, sessions, and hints

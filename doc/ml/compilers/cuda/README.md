@@ -2,6 +2,7 @@
 title: CUDA — NVIDIA's parallel-computing platform (broader hub)
 keywords: [cuda, nvidia, gpu, gpgpu, cudnn, cublas, triton, ptx, hopper, blackwell, rocm]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # CUDA — NVIDIA's parallel-computing platform (broader hub)

@@ -3,6 +3,7 @@ title: dialoguer
 main_link: https://github.com/console-rs/dialoguer
 keywords: [dialoguer, rust, cli, prompts, console-rs, inquirer]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # dialoguer

@@ -3,6 +3,7 @@ title: "Qdrant — production-grade Rust vector database"
 main_link: https://qdrant.tech/
 keywords: [qdrant, vector, embedding, similarity-search, rust, ann, hnsw, rag]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Qdrant — production-grade Rust vector database

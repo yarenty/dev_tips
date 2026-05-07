@@ -3,6 +3,7 @@ title: AI memory — May 2025 paper digest
 main_link: https://github.com/FoundationAgents/awesome-foundation-agents
 keywords: [202505, memory, papers, digest, agentic, rag, llm, time-capsule]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # AI memory — May 2025 paper digest

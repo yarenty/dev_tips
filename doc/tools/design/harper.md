@@ -3,6 +3,7 @@ title: "Harper — open-source English grammar checker by Automattic"
 main_link: https://github.com/Automattic/harper
 keywords: [harper, grammar-checker, automattic, english, rust, lsp, privacy, writing]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Harper — open-source English grammar checker

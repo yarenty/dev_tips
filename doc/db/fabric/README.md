@@ -2,6 +2,7 @@
 title: Data fabric
 keywords: [data-fabric, governance, integration, microsoft-fabric, talend, informatica, atlan, lakehouse, data-mesh]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Data fabric

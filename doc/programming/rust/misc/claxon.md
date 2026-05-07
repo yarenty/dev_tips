@@ -3,6 +3,7 @@ title: Claxon — pure-Rust FLAC decoder
 main_link: https://github.com/ruuda/claxon
 keywords: [claxon, rust, flac, decoder, audio]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Claxon — pure-Rust FLAC decoder

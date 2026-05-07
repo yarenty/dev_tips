@@ -3,6 +3,7 @@ title: Reflection in Rust — the `reflect` crate & friends
 main_link: https://crates.io/crates/reflect
 keywords: [reflection, reflect, dtolnay, syn, quote, derive-macros, any, downcast, oso, rust]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Reflection in Rust — the `reflect` crate & friends

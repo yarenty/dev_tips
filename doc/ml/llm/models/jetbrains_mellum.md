@@ -3,6 +3,7 @@ title: JetBrains Mellum-4B-base — coding fill-in-the-middle model
 main_link: https://huggingface.co/JetBrains/Mellum-4b-base
 keywords: [jetbrains-mellum, mellum, fill-in-the-middle, fim, coding, jetbrains, ai-assistant, junie]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # JetBrains Mellum-4B-base — coding fill-in-the-middle model

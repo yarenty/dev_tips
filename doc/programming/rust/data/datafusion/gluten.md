@@ -3,6 +3,7 @@ title: Apache Gluten — Spark JVM-to-native offload (Velox / ClickHouse)
 main_link: https://gluten.apache.org/
 keywords: [gluten, spark, velox, clickhouse, substrait, native, offload, accelerator, apache]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Apache Gluten — Spark JVM-to-native offload (Velox / ClickHouse)

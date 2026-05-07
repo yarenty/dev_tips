@@ -3,6 +3,7 @@ title: "Void — open-source Cursor / Windsurf alternative"
 main_link: https://github.com/voideditor/void
 keywords: [void, editor, ai-editor, cursor, windsurf, vscode, local-llm, open-source]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Void — open-source Cursor / Windsurf alternative

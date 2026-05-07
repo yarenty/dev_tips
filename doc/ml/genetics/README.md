@@ -2,6 +2,7 @@
 title: Genetics — evolutionary computation in ML
 keywords: [genetics, evolutionary, ga, moea, neat, neuroevolution, automl]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Genetics — evolutionary computation in ML

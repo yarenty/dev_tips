@@ -3,6 +3,7 @@ title: "macOS Gatekeeper / quarantine tricks"
 main_link: https://support.apple.com/guide/mac-help/mh40616/mac
 keywords: [macos, gatekeeper, quarantine, xattr, spctl, security, unsigned-apps, tips]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # macOS Gatekeeper / quarantine tricks

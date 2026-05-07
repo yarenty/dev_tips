@@ -3,6 +3,7 @@ title: lewton — pure-Rust Vorbis decoder
 main_link: https://github.com/RustAudio/lewton
 keywords: [lewton, rust, vorbis, ogg, audio, decoder]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # lewton — pure-Rust Vorbis decoder

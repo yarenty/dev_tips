@@ -3,6 +3,7 @@ title: repl — `evcxr` and `iRust`, REPLs for Rust
 main_link: https://github.com/evcxr/evcxr
 keywords: [repl, evcxr, irust, rust, jupyter, interactive, prototyping]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # repl — `evcxr` and `iRust`, REPLs for Rust

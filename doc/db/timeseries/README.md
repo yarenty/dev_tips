@@ -2,6 +2,7 @@
 title: "Time-series databases"
 keywords: [timeseries, metrics, observability, prometheus, influxdb, questdb, druid, greptimedb]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Time-series databases

@@ -2,6 +2,7 @@
 title: LLM inspection — leaderboards, attention viz, alignment surgery
 keywords: [inspection, evaluation, leaderboards, interpretability, safety, alignment]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # LLM inspection — leaderboards, attention viz, alignment surgery

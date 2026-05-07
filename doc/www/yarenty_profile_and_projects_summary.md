@@ -3,6 +3,7 @@ title: YarentY — public profile & projects summary
 main_link: https://yarenty.com/
 keywords: [yarenty, profile, hpc, cuda, cosmic, claps, software-architect]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # YarentY — public profile & projects summary

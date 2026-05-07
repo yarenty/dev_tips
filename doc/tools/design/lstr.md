@@ -3,6 +3,7 @@ title: "lstr — fast minimalist Rust tree viewer"
 main_link: https://github.com/bgreenwell/lstr
 keywords: [lstr, tree, ls, rust, cli, directory-viewer, interactive-tui]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # lstr — fast minimalist Rust tree viewer

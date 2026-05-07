@@ -3,6 +3,7 @@ title: "bore — minimal TCP tunnel in Rust"
 main_link: https://github.com/ekzhang/bore
 keywords: [rust, bore, tunnelling, tcp, nat, ngrok-alternative, ekzhang]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # bore — minimal TCP tunnel in Rust

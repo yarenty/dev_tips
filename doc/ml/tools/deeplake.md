@@ -3,6 +3,7 @@ title: Deep Lake — Activeloop's vector + dataset store for ML
 main_link: https://github.com/activeloopai/deeplake
 keywords: [deeplake, activeloop, vector-db, dataset, lakehouse, multimodal, rag, ml]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Deep Lake — Activeloop's vector + dataset store for ML

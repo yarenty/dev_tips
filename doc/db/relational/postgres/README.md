@@ -2,6 +2,7 @@
 title: "Postgres ecosystem"
 keywords: [postgres, postgresql, ecosystem, backup, barman, pg]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Postgres ecosystem

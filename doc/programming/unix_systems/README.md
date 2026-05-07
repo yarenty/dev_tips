@@ -2,6 +2,7 @@
 title: "Unix systems (small from-scratch OS curiosities)"
 keywords: [unix, kernel, hare, microkernel, monolithic-kernel, drew-devault, hobby-os]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Unix systems (small from-scratch OS curiosities)

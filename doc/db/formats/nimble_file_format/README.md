@@ -3,6 +3,7 @@ title: Nimble file format
 main_link: https://github.com/facebookincubator/nimble
 keywords: [nimble, columnar, file-format, meta, facebook, velox, orc, parquet]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Nimble file format

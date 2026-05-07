@@ -3,6 +3,7 @@ title: SurrealDB — Rust client SDK
 main_link: https://docs.rs/surrealdb/
 keywords: [surrealdb, multi-model, client, sdk, embedded]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # SurrealDB — Rust client SDK

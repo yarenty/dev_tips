@@ -2,6 +2,7 @@
 title: Visualization
 keywords: [visualization, charts, dashboards, diagrams, animation, fonts, pdf, templating]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Visualization

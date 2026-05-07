@@ -3,6 +3,7 @@ title: "Timely Dataflow — low-latency cyclic dataflow in Rust"
 main_link: https://github.com/TimelyDataflow/timely-dataflow
 keywords: [timely, dataflow, rust, differential, naiad, materialize, mcsherry, distributed]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Timely Dataflow — low-latency cyclic dataflow in Rust

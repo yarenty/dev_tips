@@ -2,6 +2,7 @@
 title: Rust developer tooling & built-with-Rust CLIs
 keywords: [tooling, rust, cli, tui, observability, testing, replacements]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Rust developer tooling & built-with-Rust CLIs

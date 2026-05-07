@@ -3,6 +3,7 @@ title: "OpenObserve: Rust-based logs + metrics + traces in a single binary"
 main_link: https://openobserve.ai/
 keywords: [openobserve, observability, logs, metrics, traces, rust, elasticsearch-alternative, parquet, s3]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # OpenObserve: Rust-based logs + metrics + traces in a single binary

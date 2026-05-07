@@ -3,6 +3,7 @@ title: Daktilo — typewriter sound effects for your keyboard
 main_link: https://github.com/orhun/daktilo
 keywords: [daktilo, rust, typewriter, sound-effects, orhun, fun]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Daktilo — typewriter sound effects for your keyboard

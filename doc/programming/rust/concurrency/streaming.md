@@ -3,6 +3,7 @@ title: "par-stream — async streams with parallelism"
 main_link: https://github.com/jerry73204/par-stream
 keywords: [par-stream, rust, async, streams, parallelism, futures, tokio]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # par-stream — async streams with parallelism

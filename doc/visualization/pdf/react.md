@@ -3,6 +3,7 @@ title: "react-print-pdf: build PDFs as React components"
 main_link: https://github.com/OnedocLabs/react-print-pdf
 keywords: [react-print-pdf, react, pdf, components, onedoc, html-to-pdf]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # react-print-pdf: build PDFs as React components

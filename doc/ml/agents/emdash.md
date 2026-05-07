@@ -3,6 +3,7 @@ title: emdash — multi-agent worktree UI for coding-agent CLIs
 main_link: https://github.com/generalaction/emdash
 keywords: [emdash, coding-agent, worktree, multi-agent, ui]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # emdash — multi-agent worktree UI for coding-agent CLIs

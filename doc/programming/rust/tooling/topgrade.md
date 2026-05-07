@@ -3,6 +3,7 @@ title: topgrade — orchestrate updates across all your package managers
 main_link: https://github.com/topgrade-rs/topgrade
 keywords: [topgrade, rust, package-manager, update, upgrade, brew, apt, cargo]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # topgrade — orchestrate updates across all your package managers

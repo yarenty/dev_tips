@@ -3,6 +3,7 @@ title: zoxide — smarter `cd` (autojump replacement)
 main_link: https://github.com/ajeetdsouza/zoxide
 keywords: [zoxide, rust, cd, autojump, z, fasd, shell, navigation]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # zoxide — smarter `cd` (autojump replacement)

@@ -2,6 +2,7 @@
 title: "Relational databases"
 keywords: [relational, sql, postgresql, mysql, oltp, embedded, htap, newsql]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Relational databases

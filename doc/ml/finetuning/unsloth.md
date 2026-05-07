@@ -3,6 +3,7 @@ title: Unsloth — 2× faster LoRA / QLoRA fine-tuning
 main_link: https://github.com/unslothai/unsloth
 keywords: [unsloth, fine-tuning, lora, qlora, peft, triton, gpu, llm]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Unsloth — 2× faster LoRA / QLoRA fine-tuning

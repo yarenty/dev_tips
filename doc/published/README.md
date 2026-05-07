@@ -2,6 +2,7 @@
 title: Published — paper summaries and external write-ups
 keywords: [published, papers, summaries, blog]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Published — paper summaries and external write-ups

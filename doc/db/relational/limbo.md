@@ -3,6 +3,7 @@ title: "Limbo — SQLite-compatible Rust rewrite from Turso"
 main_link: https://github.com/tursodatabase/limbo
 keywords: [limbo, turso, sqlite, rust, embedded, io-uring, oltp]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Limbo — SQLite-compatible Rust rewrite from Turso

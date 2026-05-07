@@ -3,6 +3,7 @@ title: Time-series tutorials and learning resources
 main_link: https://www.kaggle.com/learn/time-series
 keywords: [tutorials, time-series, learning, kaggle, hyndman, fpp3, courses]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Time-series tutorials and learning resources

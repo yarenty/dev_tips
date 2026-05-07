@@ -3,6 +3,7 @@ title: Simulink — MathWorks block-diagram simulation
 main_link: https://www.mathworks.com/products/simulink.html
 keywords: [simulink, matlab, mathworks, block-diagram, control-systems, model-based-design, simscape]
 status: reviewed
+review_date: 2026/05/03
 ---
 
 # Simulink — MathWorks block-diagram simulation
