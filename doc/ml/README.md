@@ -22,7 +22,7 @@ status: draft
 - [LLM](llm/README.md)
 - [MCP](mcp/README.md)
 - [Memory](memory/README.md)
-- [Orchestration](orchestration/README.md)
+- [Orchestration](orchestration.md)
 - [Quantum](quantum.md)
 - [RAG](rag/README.md)
 - [Skills](skills/README.md)

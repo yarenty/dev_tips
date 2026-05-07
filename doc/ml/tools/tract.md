@@ -1,98 +1,70 @@
 ---
-title: tract
+title: tract — Sonos's pure-Rust ONNX / TensorFlow / NNEF inference engine
 main_link: https://github.com/sonos/tract
-keywords: [tract, nnef, onnx, tensorflow]
-status: draft
+keywords: [tract, sonos, nnef, onnx, tensorflow, inference, rust, edge, ml]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# tract
+# tract — Sonos's pure-Rust ONNX / TensorFlow / NNEF inference engine
 
 **Main link:** <https://github.com/sonos/tract>
 
 ## Summary
-
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`tract` is Sonos's production-tested, pure-Rust neural-network inference toolkit. It loads ONNX, TensorFlow (1.x), TensorFlow Lite, and NNEF models, optimises them, and runs them — CPU only, no GPU backend. Originally called `tfdeploy` / `Tensorflow-deploy-rust`, it powers the wake-word detectors on Sonos speakers and is one of the few Rust ML stacks that has shipped at scale on real consumer hardware.
 
 ## Insight
+Reach for `tract` when the brief is **"I trained a model in Python, I want to deploy it from a Rust binary on edge / embedded / server-side CPU without dragging in libtorch or Python"**. The sweet spot is small-to-medium models on Arm (Cortex-A and friends) and x86, where `tract`'s aggressive constant-folding, operator fusion, and pulse-mode streaming for recurrent networks can match or beat TensorFlow Lite and outperform PyTorch on the same hardware (the README's Inception-v3 numbers on Raspberry Pi Zero / Pi 2 are still illustrative).
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Key differentiators vs the neighbours:
+- **vs ONNX Runtime / [`ort`](https://github.com/pykeio/ort)** — ONNX Runtime (and the Rust `ort` wrapper) gives you GPU/CUDA/CoreML/DirectML execution providers and a wider op set; `tract` is pure-Rust, no C++ runtime, easier to cross-compile, embedded-friendly.
+- **vs [[candle]] / [[burn]]** — Candle and Burn are general-purpose DL frameworks that *can* run inference; `tract` is **inference-only and format-driven** (you bring an ONNX/NNEF/TF model, you don't write Rust model code).
+- **vs TensorFlow Lite** — TF Lite is the closest functional equivalent; `tract` wins on "pure Rust, no C dependency", TF Lite wins on Android/NNAPI integration and a much bigger model zoo.
+
+Gotchas: no GPU backend (by design — Sonos runs on CPU); ~85% ONNX-backend-test coverage with deliberate gaps around Tensor Sequences, Optional Tensors, and complex `Resize` semantics; TensorFlow 2.x is *not* directly supported (convert via ONNX); NNEF support is via `tract_nnef` plus a `tract-OPL` extension format that maintains the rule "models serialised with tract 0.x.y work with tract 0.x.z where z >= y". The CLI can convert TF/ONNX → NNEF/OPL, which is useful as a frozen, vendor-stable production format.
 
 ## Similar / related topics
-
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [ONNX Runtime](https://onnxruntime.ai/) / [`ort`](https://github.com/pykeio/ort) — Microsoft's C++ inference engine + Rust wrapper; bigger op set, GPU support, larger binary.
+- [TensorFlow Lite](https://www.tensorflow.org/lite) — Google's edge inference engine; tightly tied to Android/NNAPI/Coral.
+- [[candle]] — pure-Rust DL framework; more general (can train), reimplements ops directly.
+- [[burn]] — backend-agnostic Rust DL; can import ONNX via `burn-import` for a similar deploy story.
+- [[../compilers/xla_accelerated_compiler|XLA]] — Google's accelerated linear-algebra compiler; the JAX-side counterpart (very different architecture).
 
 ## Internal links
+<!-- reviewed -->
+- [[candle]]
+- [[burn]]
+- [[tch]]
+- [[../compilers/xla_accelerated_compiler|compilers/xla]]
+- [[../../programming/rust/ml/ml_in_rust|programming/rust/ml/ml_in_rust]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[license]] — License _(score 16.0)_
-- [[license_2]] — License _(score 16.0)_
-- [[xla_accelerated_compiler]] — XLA _(score 8.9)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
-
-`#tract` `#tools` `#ml` `#nnef` `#onnx` `#tensorflow` `#operators`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#tract` `#sonos` `#onnx` `#nnef` `#tensorflow` `#inference` `#rust` `#edge` `#ml`
 
 ## References / raw notes
-<!-- auto-split by article_split.py -->
-> Auto-split: 1 additional top-level heading(s) extracted into sibling files:
-> - [License](license_2.md)
 
+Sonos' Neural Network inference engine. _This project used to be called tfdeploy, or Tensorflow-deploy-rust._
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### What is it?
 
-# tract
+`tract` is a Neural Network inference toolkit. It can read ONNX or NNEF, optimise them and run them.
 
-https://github.com/sonos/tract
+### Quick start, examples
 
+- MobileNet v2 with ONNX
+- BERT (`pytorch-albert-v2`)
+- MobileNet v2 with TensorFlow
+- Keras / TF2 → tract
+- ResNet with PyTorch
 
+See the repo's `examples/` directory and the [Sonos tech blog post on optimising a neural network for inference](https://tech-blog.sonos.com/posts/optimising-a-neural-network-for-inference/).
 
-![tract-logo](assets/tract-logo/PNG/tract-horizontal-blue.png)
+### Tract in the landscape
 
+#### ONNX
 
+As of today, `tract` passes about 85% of ONNX backend tests. All "real-life" integration tests in the ONNX test suite pass: `bvlc_alexnet`, `densenet121`, `inception_v1`, `inception_v2`, `resnet50`, `shufflenet`, `squeezenet`, `vgg19`, `zfnet512`.
 
-
-Sonos' Neural Network inference engine.
-
-_This project used to be called tfdeploy, or Tensorflow-deploy-rust._
-
-## What ?
-
-`tract` is a Neural Network inference toolkit. It can read ONNX or NNEF, optimize them and run them.
-
-## Quick start, examples
-
-* [MobileNet v2 with ONNX](examples/onnx-mobilenet-v2)
-* [BERT example with ONNX](examples/pytorch-albert-v2)
-* [MobileNet v2 with TensorFlow](examples/tensorflow-mobilenet-v2)
-* [From Keras and TensorFlow 2 to tract](examples/keras-tract-tf2)
-* [ResNet with PyTorch](examples/pytorch-resnet)
-
-There is also [some technical documentation](doc/) and [blog](https://tech-blog.sonos.com/posts/optimising-a-neural-network-for-inference/) posts.
-
-## Tract in the landscape
-
-### ONNX
-
-As of today, `tract` passes successfully about 85% of ONNX backends
-tests. All "real life" integration tests in ONNX test suite are passing:
-bvlc_alexnet, densenet121, inception_v1, inception_v2, resnet50, shufflenet,
-squeezenet, vgg19, zfnet512.
-
-Notable missing parts are operators dealing with Tensor Sequences and Optional Tensors : tract /really/ wants to flow Tensors and nothing else.
+Notable gaps: operators dealing with Tensor Sequences and Optional Tensors — `tract` *really* wants to flow Tensors and nothing else.
 This is structural. Changing it would be pretty difficult, and it's unclear whether it can be done without impairing performance or maintainability.
 We are not convinced these features have shown their interest in the wild yet, so we prefer to leave them aside.
 
@@ -103,14 +75,14 @@ The following operators are implemented and tested.
 
 Abs, Acos, Acosh, Add, And, ArgMax, ArgMin, ArrayFeatureExtractor, Asin, Asinh, Atan, Atanh, AveragePool, BatchNormalization, BitShift, BitwiseAnd, BitwiseNot, BitwiseOr, BitwiseXor, BlackmanWindow, Cast, CastLike, CategoryMapper, Ceil, Clip, Compress, Concat, Constant, ConstantLike, ConstantOfShape, Conv, ConvInteger, ConvTranspose, Cos, Cosh, CumSum, DFT, DepthToSpace, DequantizeLinear, Div, Dropout, DynamicQuantizeLinear, Einsum, Elu, Equal, Erf, Exp, Expand, EyeLike, Flatten, Floor, GRU, Gather, GatherElements, GatherND, Gemm, GlobalAveragePool, GlobalLpPool, GlobalMaxPool, Greater, GreaterOrEqual, HammingWindow, HannWindow, HardSigmoid, Hardmax, Identity, If, InstanceNormalization, IsInf, IsNaN, LRN, LSTM, LeakyRelu, Less, LessOrEqual, Log, LogSoftmax, MatMul, MatMulInteger, Max, MaxPool, Mean, MelWeightMatrix, Min, Mod, Mul, Multinomial, Neg, NonMaxSuppression, NonZero, Not, OneHot, Or, PRelu, Pad, ParametricSoftplus, Pow, QLinearConv, QLinearMatMul, QuantizeLinear, RNN, RandomNormal, RandomNormalLike, RandomUniform, RandomUniformLike, Range, Reciprocal, ReduceL1, ReduceL2, ReduceLogSum, ReduceLogSumExp, ReduceMax, ReduceMean, ReduceMin, ReduceProd, ReduceSum, ReduceSumSquare, Relu, Reshape, Resize, Round, Rsqrt, STFT, ScaledTanh, Scan, Scatter, ScatterElements, ScatterND, Selu, Shape, Shrink, Sigmoid, Sign, Sin, Sinh, Size, Slice, Softmax, Softplus, Softsign, SpaceToDepth, Split, Sqrt, Squeeze, Sub, Sum, Tan, Tanh, ThresholdedRelu, Tile, Transpose, TreeEnsembleClassifier, Unsqueeze, Where, Xor
 
-We test these operators against from ONNX 1.4.1 (operator set 9), up to ONNX 1.13.0 (operator set 18).
+Operators are tested against ONNX 1.4.1 (operator set 9) through ONNX 1.13.0 (operator set 18).
 
 We are using ONNX test suite, but it does not cover everything.
 We also deliberately ignore some tests, or restricting their scope depending on what we feel is realistic.
 Sometimes these decisions are just wrong, and sometimes they become wrong as time goes by and the fields moves in unexpected directions.
 So if you are puzzled by an ONNX model that does not work in tract, we are happy to take a look.
 
-### NNEF
+#### NNEF
 
 Long story short, TensorFlow and ONNX formats are good for designing and
 training networks. They need to move fast to follow the research field, tend to
@@ -136,7 +108,7 @@ Tract supports NNEF:
   tract should be serializable to tract-OPL. This is a work in progress.
 * tract command line can translate networks from TensorFlow or ONNX to NNEF/OPL.
 
-### tract-opl version compatibility
+#### tract-opl version compatibility
 
 A remainder: NNEF is not expressive enough to represent all ONNX. tract-OPL extends
 NNEF using proprietary to support what is missing. Notable extensions are pulse
@@ -165,7 +137,7 @@ A softer version tag exists as `tract_nnef_format_version`. pre-0.17.0 version s
 `alpha1`, post-0.17.0 set it `beta1`. Don't put too much emphasis into the "alpha-ness" naming
 of versions here.
 
-### Note: support for TensorFlow 1.x
+#### TensorFlow 1.x support
 
 Even if `tract` is very far from supporting any arbitrary model, it can run
 Google Inception v3 and Snips wake word models. Missing operators are relatively
@@ -180,14 +152,11 @@ Additionally, the complexity of TensorFlow 2 make it very unlikely that a direct
 support will ever exist in tract. But many TensorFlow 2 models can be
 converted to ONNX and then loaded in tract.
 
-## Example of supported networks
+### Example supported networks
 
-These models among others, are used to track tract performance evolution as
-part of the Continuous Integration jobs. See [.travis/README.md](readme) and
-[.travis/bundle-entrypoint.sh](.travis/bundle-entrypoint.sh) for more
-information.
+These models, among others, track tract performance evolution as part of the CI jobs.
 
-### Keyword spotting on Arm Cortex-M Microcontrollers
+#### Keyword spotting on Arm Cortex-M microcontrollers
 
 https://github.com/ARM-software/ML-KWS-for-MCU
 
@@ -199,7 +168,7 @@ TensorFlow models.
 For instance, on a Raspberry Pi Zero, the "CNN M" model runs in about 70
 micro-seconds, and 11 micro-seconds on a Raspberry Pi 3.
 
-### Snips wake word models
+#### Snips wake-word models
 
 https://arxiv.org/abs/1811.07684
 
@@ -208,7 +177,7 @@ class-based and did not require any special treatment, `tract` pulsing
 capabilities made it possible to run WaveNet models efficiently enough for a
 Raspberry Pi Zero.
 
-### Inception v3
+#### Inception v3
 
 |      Device         |      Family    |  TensorFlow-lite  |  tract  |
 |---------------------|----------------|-------------------|---------|

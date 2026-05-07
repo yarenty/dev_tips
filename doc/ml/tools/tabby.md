@@ -1,89 +1,83 @@
 ---
-title: TabbyML
+title: TabbyML — self-hosted open-source code-completion server
 main_link: https://github.com/TabbyML/tabby
-keywords: [tabby, ide, self, gpus, cuda]
-status: draft
+keywords: [tabby, tabbyml, copilot-alternative, self-hosted, code-completion, starcoder, deepseek-coder, qwen-coder, openapi]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# TabbyML
+# TabbyML — self-hosted open-source code-completion server
 
 **Main link:** <https://github.com/TabbyML/tabby>
 
 ## Summary
-
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Tabby (TabbyML) is a self-hosted, Apache-2.0-licensed AI coding assistant — an open, on-premises alternative to GitHub Copilot. The Rust-based server is **self-contained** (no DBMS / no cloud dependency), exposes an **OpenAPI-compatible HTTP interface** for IDE integration, and runs your choice of open-weights coding model (StarCoder / StarCoder2, Code Llama, DeepSeek-Coder, Qwen2.5-Coder, CodeGemma, CodeQwen, …) on consumer-grade GPUs. IDE/editor extensions exist for VS Code, JetBrains, Vim/Neovim, IntelliJ, and others; team-wide analytics ("Reports tab" since v0.10.0, April 2024) and locally-relevant snippet retrieval (LSP declarations + recently-modified code) round out the offering.
 
 ## Insight
+Reach for Tabby when **privacy, vendor independence, or air-gapped operation** are real constraints — regulated industries (finance, defence, healthcare), source code that can't legally leave the building, or simply teams that don't want to ship every keystroke to an external API. The "self-contained, OpenAPI-compatible" design choice is what makes Tabby easy to drop into existing infrastructure: spin up a Docker container on a GPU box, point your IDE plugin at it, done. The project also publishes an OpenAI-compatible chat endpoint for chat-style use beyond raw completion.
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Vs the neighbours:
+- **vs GitHub Copilot** — Copilot is closed, hosted, and the polished default; Tabby is the self-hosted answer when you can't or don't want to use it.
+- **vs [[cursor]]** — Cursor is an IDE, not a server; orthogonal. Tabby could in principle back a Cursor-style frontend (and the Tabby team's "Tabby Chat" is moving in that direction).
+- **vs [Continue.dev](https://www.continue.dev/)** — Continue is more flexible (BYO any model API) and lives entirely as IDE extensions; Tabby is the *server*-side counterpart that Continue can talk to. Many teams run both: Continue as the IDE plugin, Tabby as the on-prem inference server.
+- **vs [Sourcegraph Cody](https://sourcegraph.com/cody)** — Cody combines code search + AI with strong codebase context (via Sourcegraph indexing); heavier, more enterprise-shaped.
+- **vs [TabbyML's own competitors] [Refact](https://refact.ai/)** — Refact is the closest direct competitor on "self-hosted FIM completion server with open models"; pick on model-zoo support and IDE-extension polish.
+
+The privacy story is the differentiator that doesn't bit-rot. Run-in-1-minute via Docker:
+
+```sh
+docker run -it \
+  --gpus all -p 8080:8080 -v $HOME/.tabby:/data \
+  tabbyml/tabby \
+  serve --model TabbyML/StarCoder-1B --device cuda
+```
+
+Honest caveats: open coding models still trail the closed frontier on raw quality (Claude / GPT-5 are stronger at multi-file reasoning); GPU sizing matters (a 1B–7B model fits a single consumer GPU; bigger needs more); the Reports analytics dashboard is useful but the multi-team / RBAC story has historically lagged Copilot Business.
 
 ## Similar / related topics
-
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [Continue.dev](https://www.continue.dev/) — open IDE extension; pairs naturally with Tabby as the inference backend.
+- [Sourcegraph Cody](https://sourcegraph.com/cody) — code-search-anchored AI assistant; stronger on multi-repo context.
+- [Refact](https://refact.ai/) — direct self-hosted competitor.
+- [[cursor]] — closed AI-IDE; opposite end of the privacy / convenience trade-off.
+- [[../llm/runtimes/ollama|ollama]] — local LLM runtime; complementary if you want to run Tabby's chat backend off an Ollama endpoint.
 
 ## Internal links
+<!-- reviewed -->
+- [[cursor]]
+- [[../agents/coding_agents|coding_agents]]
+- [[../llm/runtimes/ollama|ollama]]
+- [[../llm/models/jetbrains_mellum|jetbrains_mellum]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[tract]] — tract _(score 16.0)_
-- [[unsloth]] — unsloth _(score 13.3)_
-- [[candle]] — Candle _(score 10.9)_
-- [[deeplake]] — DeepLake _(score 10.4)_
-- [[compilation_cache]] — sccache - Shared Compilation Cache _(score 6.9)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
-
-`#tabby` `#tools` `#ml` `#ide` `#self` `#open` `#cloud`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#tabby` `#tabbyml` `#self-hosted` `#code-completion` `#openapi` `#copilot-alternative` `#privacy`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+Tabby is a self-hosted AI coding assistant — an open-source, on-premises alternative to GitHub Copilot.
 
-# TabbyML
+### Key features
 
-https://github.com/TabbyML/tabby
+- Self-contained: no external DBMS or cloud service required.
+- OpenAPI interface; easy to integrate into existing infrastructure (e.g. cloud IDEs).
+- Supports consumer-grade GPUs.
+- Chat playground built in.
 
+### Notable recent updates (excerpted from the upstream changelog)
 
-Tabby is a self-hosted AI coding assistant, offering an open-source and on-premises alternative to GitHub Copilot. It boasts several key features:
+- **v0.10.0 (2024-04-22)** — new Reports tab with team-wide Tabby usage analytics.
+- **2024-04-19** — code completion now incorporates locally relevant snippets (declarations from local LSP and recently-modified code).
+- **2024-04-17** — CodeGemma and CodeQwen model series added to the official registry.
 
-Self-contained, with no need for a DBMS or cloud service.
-OpenAPI interface, easy to integrate with existing infrastructure (e.g Cloud IDE).
-Supports consumer-grade GPUs.
-Open in Playground
+### Getting started
 
-Demo
+Documentation: <https://tabby.tabbyml.com/docs/welcome/>
 
-🔥 What's New
-04/22/2024 v0.10.0 released, featuring the latest Reports tab with team-wise analytics for Tabby usage.
-04/19/2024 📣 Tabby now incorporates locally relevant snippets(declarations from local LSP, and recently modified code) for code completion!
-04/17/2024 CodeGemma and CodeQwen model series have now been added to the official registry!
-Archived
-👋 Getting Started
-You can find our documentation here.
+Run Tabby in 1 minute via Docker:
 
-📚 Installation
-💻 IDE/Editor Extensions
-⚙️ Configuration
-Run Tabby in 1 Minute
-The easiest way to start a Tabby server is by using the following Docker command:
-
+```sh
 docker run -it \
---gpus all -p 8080:8080 -v $HOME/.tabby:/data \
-tabbyml/tabby \
-serve --model TabbyML/StarCoder-1B --device cuda
-For additional options (e.g inference type, parallelism), please refer to the documentation page.
+  --gpus all -p 8080:8080 -v $HOME/.tabby:/data \
+  tabbyml/tabby \
+  serve --model TabbyML/StarCoder-1B --device cuda
+```
 
-🤝 Contributing
+For inference type, parallelism, and other options, refer to the documentation. IDE/editor extensions are available for the major editors.
