@@ -34,7 +34,6 @@ Termion is still useful if you want a tiny pure-Rust, Unix-only dependency, or y
 - [[cursive]] — high-level toolkit; can use Termion as a backend.
 
 ## Internal links
-<!-- reviewed -->
 - [[../tui/README|Rust TUI]]
 - [[cursive]]
 - [[iocraft]]

@@ -25,7 +25,6 @@ status: reviewed
 - Go `database/sql` — direct API inspiration.
 
 ## Internal links
-<!-- reviewed -->
 - [[deadpool]]
 - [[bb8]]
 - [[r2d2]]

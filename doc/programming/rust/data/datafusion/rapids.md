@@ -43,8 +43,6 @@ The relationship to the broader RAPIDS family: cuDF (GPU dataframes) ↔ cuML (G
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — DataFusion ecosystem landing.
 - [[gluten]] — sibling Spark accelerator (CPU-native).
 - [[blaze]] — sibling Spark accelerator (CPU-native, DataFusion).

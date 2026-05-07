@@ -35,8 +35,6 @@ A planned C API and WASM API are on the roadmap (per the project's stated goals)
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[audio]] — Rust audio ecosystem overview / decision tree.
 - [[rodio]] — playback layer that wires Symphonia + cpal.
 - [[claxon]] / [[hound]] / [[lewton]] / [[minimp3]] — the narrower single-format crates Symphonia subsumes.

@@ -32,7 +32,6 @@ The third-party-views story is unusually rich for a Rust TUI lib: `cursive_table
 - [`tview`](https://github.com/rivo/tview) — same shape, but in Go.
 
 ## Internal links
-<!-- reviewed -->
 - [[../tui/README|Rust TUI]]
 - [[termion]]
 - [[iocraft]]

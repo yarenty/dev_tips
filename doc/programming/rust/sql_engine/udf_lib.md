@@ -27,7 +27,6 @@ Reach for `udf` whenever you find yourself wanting to push CPU-heavy or domain-s
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]]
 - [[mariadb]] — the engine and its loading mechanics.
 - [[sqlite_loadable]] — the SQLite sibling design.

@@ -40,8 +40,6 @@ Gotchas: licensing changes (per-user subscription, free non-commercial tier intr
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[void]] — open-source AI editor as the lighter alternative.
 - [[markitdown]] — convert proprietary docs to Markdown to feed an IDE-side LLM.
 - [[mdfried]] — read project Markdown in a nicer terminal preview.

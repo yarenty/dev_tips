@@ -37,7 +37,6 @@ pake https://weekly.tw93.fun --name Weekly --hide-title-bar
 
 ## Internal links
 
-<!-- reviewed -->
 - [[programming/rust/gui/tauri|tauri]]
 - [[dioxus]]
 - [[../README]]

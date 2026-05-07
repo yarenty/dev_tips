@@ -44,8 +44,6 @@ sink.sleep_until_end();
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[audio]] — Rust audio ecosystem overview / decision tree.
 - [[symphonia]] — default decoder backend.
 - [[hound]] — WAV backend.

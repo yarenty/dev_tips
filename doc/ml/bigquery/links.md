@@ -63,8 +63,6 @@ the substrate-agnostic SQL-ML cousin.
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — bigquery section landing.
 - [[../frameworks/mindsdb|mindsdb]] — the substrate-agnostic
   SQL-ML cousin.

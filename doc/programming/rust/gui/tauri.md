@@ -31,7 +31,6 @@ Reach for Tauri when (a) your team already knows web tech and you'd rather keep 
 
 ## Internal links
 
-<!-- reviewed -->
 - [[tao]]
 - [[pake]]
 - [[mobile]]

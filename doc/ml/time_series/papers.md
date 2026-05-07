@@ -34,7 +34,6 @@ A small curated reading list for time-series research, with the *Pattern Mining 
 - [[../knowledge_graph/papers|knowledge_graph/papers]] — sister reading list, different domain
 
 ## Internal links
-<!-- reviewed -->
 
 - [[forecasting]]
 - [[time_series_transformer]]

@@ -27,7 +27,6 @@ egui's killer use case is *internal tools, dev panels, debug overlays, and small
 
 ## Internal links
 
-<!-- reviewed -->
 - [[slint]]
 - [[dioxus]]
 - [[programming/rust/gui/tauri|tauri]]

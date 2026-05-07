@@ -26,7 +26,6 @@ This is **not** the parser you reach for if you want broad dialect coverage or D
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]]
 - [[../data/sqlparser|sqlparser-rs]] — disambiguation: this is the *other* Rust SQL parser.
 - [[datafusion]] — what most people end up wanting after they realise they need a planner too.

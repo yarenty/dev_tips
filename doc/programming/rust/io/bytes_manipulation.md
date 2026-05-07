@@ -40,8 +40,6 @@ Gotchas:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[programming/rust/io/README|Rust I/O]] — section landing page.
 - [[programming/rust/io/parsers|parsers]] — when you need *structured* parsing instead of raw bit-cast.
 - [[programming/rust/io/json|json]] — schema-driven (de)serialization counterpart to bit-cast.

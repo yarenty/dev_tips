@@ -45,7 +45,6 @@ severity scoring, medical-imaging staging.
 - **Multi-class classification** — the wider family this is a refinement of.
 
 ## Internal links
-<!-- reviewed -->
 - [[../frameworks/README|frameworks]] — PyTorch is what `dlordinal` builds on.
 - [[no_deep_learning_needed]] — sibling: ordinal logistic regression / GBDTs often win on tabular data.
 - [[zero_shot]] — counterpoint: when you have no labels at all.

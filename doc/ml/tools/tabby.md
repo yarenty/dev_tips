@@ -41,7 +41,6 @@ Honest caveats: open coding models still trail the closed frontier on raw qualit
 - [[../llm/runtimes/ollama|ollama]] — local LLM runtime; complementary if you want to run Tabby's chat backend off an Ollama endpoint.
 
 ## Internal links
-<!-- reviewed -->
 - [[cursor]]
 - [[../agents/coding_agents|coding_agents]]
 - [[../llm/runtimes/ollama|ollama]]

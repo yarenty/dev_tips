@@ -37,8 +37,6 @@ Migration risk: Oracle has historically been more willing than AWS/GCP to suspen
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[apache]] — Apache + `apachectl` cheat-sheet referenced from the install recipe below
 - [[k3s]] — lightweight Kubernetes; pairs well with the 4-OCPU/24-GB ARM instance
 - [[ssl]] — TLS / Let's Encrypt for whatever you put on port 80

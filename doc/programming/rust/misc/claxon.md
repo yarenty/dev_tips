@@ -42,8 +42,6 @@ See `examples/decode_simple.rs` (Claxon + Hound → WAV) and `examples/decode.rs
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[audio]] — Rust audio ecosystem overview / decision tree.
 - [[symphonia]] — modern unified replacement.
 - [[hound]] — WAV companion crate by the same author.

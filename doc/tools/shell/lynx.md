@@ -46,8 +46,6 @@ or [[carbonyl]], or just `curl` plus a headless Chrome.
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[browsh]]
 - [[carbonyl]]
 - [[must_have]]

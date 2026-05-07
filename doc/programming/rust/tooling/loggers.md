@@ -73,8 +73,6 @@ fn main() {
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[tracing]] — the structured-logging successor; cross-reference.
 - [[loki]] — log-aggregation backend.

@@ -26,7 +26,6 @@ The rule of thumb in the Rust ecosystem is: **`thiserror` for libraries, [[anyho
 - `miette` — diagnostics-oriented crate for compiler-style error reports.
 
 ## Internal links
-<!-- reviewed -->
 - [[anyhow]]
 - [[eyre]]
 - [[../core/error|core/error]]

@@ -45,7 +45,6 @@ A few things the literature keeps re-discovering:
 - [[../../trading/folbrecht_algo_trading_series|trading: forecasting for algo-trading]] — applied context
 
 ## Internal links
-<!-- reviewed -->
 
 - [[time_series_transformer]]
 - [[kan]]

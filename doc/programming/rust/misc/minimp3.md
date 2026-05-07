@@ -29,8 +29,6 @@ For [[rodio]], MP3 decoding now defaults to Symphonia even though the `minimp3` 
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[audio]] — Rust audio ecosystem overview / decision tree.
 - [[symphonia]] — modern recommended replacement.
 - [[rodio]] — uses Symphonia by default for MP3, with minimp3 as a fallback feature.

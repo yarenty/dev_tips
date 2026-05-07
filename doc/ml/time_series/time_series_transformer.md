@@ -66,7 +66,6 @@ It hasn't seen recent activity. For modern preprocessing, prefer `darts.utils.ti
 - [[../llm/README|ml/llm]] — the NLP Transformer story this borrows from
 
 ## Internal links
-<!-- reviewed -->
 
 - [[forecasting]]
 - [[kan]]

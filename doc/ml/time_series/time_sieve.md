@@ -30,7 +30,6 @@ TimeSieve is a 2024 non-Transformer architecture for time-series forecasting. It
 - N-BEATS / NHiTS — MLP-residual stacks; the "boring DL" baselines that stay competitive
 
 ## Internal links
-<!-- reviewed -->
 
 - [[forecasting]]
 - [[time_series_transformer]]

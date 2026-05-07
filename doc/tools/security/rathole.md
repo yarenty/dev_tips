@@ -36,8 +36,6 @@ Gotcha: TLS termination is on you. Either run rathole in TLS mode with a cert on
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[ngrok]]
 - [[wireguard]]
 - [[oracle_free_tier]]

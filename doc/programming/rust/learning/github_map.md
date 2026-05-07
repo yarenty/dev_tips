@@ -26,7 +26,6 @@ Reach for it when you want to *discover adjacent crates* in an area you only kno
 - [GitHub Topics](https://github.com/topics) — official tag-based discovery.
 
 ## Internal links
-<!-- reviewed -->
 - [[_must_have]]
 - [[_to_learn]]
 - [[README]]

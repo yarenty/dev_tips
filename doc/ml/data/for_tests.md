@@ -29,7 +29,6 @@ Modern alternative: Hugging Face `datasets` ships small dev splits (`split="trai
 
 ## Internal links
 
-<!-- reviewed -->
 - [[apis]] — public no-auth APIs (a different kind of "free data for demos")
 - [[public]] — bigger curated public-dataset list when toys won't cut it
 - [[../../db/formats/README|db/formats]] — for the file-format side (Parquet, ORC, Arrow, Avro)

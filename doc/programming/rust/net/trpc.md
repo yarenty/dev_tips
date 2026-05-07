@@ -57,8 +57,6 @@ Tradeoffs that come up:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[programming/rust/net/README|Rust net]] — section landing page.
 - [[grpc|tonic / gRPC]] — the cross-language sibling.
 - [[programming/rust/web/README|Rust web]] — sibling section for HTTP / REST APIs.

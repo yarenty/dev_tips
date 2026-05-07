@@ -27,7 +27,6 @@ The killer use case is "I have a Parquet file (or a folder of CSVs, or a Delta t
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]]
 - [[datafusion]] — the planner.
 - [[../data/datafusion/README|DataFusion landing]]

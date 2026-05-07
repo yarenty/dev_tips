@@ -74,8 +74,6 @@ Ecosystem realities to budget for:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[pyo3|PyO3]] — Python equivalent.
 - [[to_net]] — .NET equivalent.
 - [[README]] — Rust interop landing.

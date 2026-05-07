@@ -26,7 +26,6 @@ For new code, **`sqlx` is the modern default** for talking to MySQL/MariaDB from
 - [[db/relational/mysql|MySQL (server side)]] — operational/server article.
 
 ## Internal links
-<!-- reviewed -->
 - [[db/relational/mysql|MySQL]]
 - [[r2d2]] — `r2d2-mysql`
 - [[deadpool]] / [[bb8]] / [[mobc]]

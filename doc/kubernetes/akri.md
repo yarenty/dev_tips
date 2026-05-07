@@ -44,8 +44,6 @@ The companion universe (also worth knowing): [[balena]] for the OS/fleet layer u
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[k3s]] — typical Kubernetes substrate for Akri at the edge
 - [[balena]] — complementary fleet-management OS layer
 - [[messaging/mqtt|mqtt]] — telemetry transport often used alongside

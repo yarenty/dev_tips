@@ -28,7 +28,6 @@ The trade-off is **transparency**: you can't reproduce SEAL's numbers yourself o
 - Artificial Analysis — cost/latency/quality aggregator across many providers.
 
 ## Internal links
-<!-- reviewed -->
 - [[README|llm/inspection]]
 - [[../README|llm]]
 - [[leaderboards]] — broader leaderboard landscape.

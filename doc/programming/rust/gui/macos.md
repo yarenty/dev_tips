@@ -45,7 +45,6 @@ rustup target add \
 
 ## Internal links
 
-<!-- reviewed -->
 - [[cacao]]
 - [[mac_notification_sys]]
 - [[lipo]]

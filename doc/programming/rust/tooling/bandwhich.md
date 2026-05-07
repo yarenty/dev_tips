@@ -38,8 +38,6 @@ Compared to siblings: **`iftop`** shows IP-level traffic only (no process); **`n
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[bottom]] — general top; bandwhich complements its network panel.
 - [[../../../tools/security/sniffnet|sniffnet]] — for deeper per-packet inspection.

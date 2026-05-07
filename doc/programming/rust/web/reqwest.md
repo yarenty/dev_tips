@@ -41,7 +41,6 @@ Gotchas:
 - **`gloo-net`** — friendlier `fetch` wrapper for browser-side WASM; see `[[gloo]]`.
 
 ## Internal links
-<!-- reviewed -->
 - [[http]] — the underlying `hyper` HTTP layer
 - [[axum]] — natural server pairing
 - [[gloo]] — browser-side `fetch` wrapper for WASM targets

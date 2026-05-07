@@ -36,7 +36,6 @@ The most-cited modern alternative is **[`inquire`](https://crates.io/crates/inqu
 - [`clap`](https://docs.rs/clap/) — for non-interactive flags; the right answer when `dialoguer` would force scripts to hang.
 
 ## Internal links
-<!-- reviewed -->
 - [[../cli/README|Rust CLI]]
 - [[indicatif]]
 - [[../tui/README|Rust TUI]] — when prompts aren't enough.

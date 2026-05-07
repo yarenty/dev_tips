@@ -28,7 +28,6 @@ That said, in 2025 you would rarely deploy MiniLLM-as-released; you'd take its *
 - TRL / OpenRLHF / trlX — modern Hugging Face / community libraries where you'd implement MiniLLM-style training today.
 
 ## Internal links
-<!-- reviewed -->
 - [[README|llm/models]]
 - [[../README|llm]]
 - [[deepseek]]

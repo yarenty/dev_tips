@@ -58,8 +58,6 @@ Useful links:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[chroma]]
 - [[postgresql]]
 - [[singlestore]]

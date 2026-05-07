@@ -62,8 +62,6 @@ df
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[repl]] — sibling `evcxr` REPL article.
 - [[../../../visualization/plotters|visualization/plotters]] — Rust drawing library used inline in evcxr notebooks.

@@ -37,7 +37,6 @@ Cross-link to the agentic-research neighbours covered in this vault: [[../agents
 - [Stanford STORM](https://github.com/stanford-oval/storm) — academic precursor for Wikipedia-style article generation.
 
 ## Internal links
-<!-- reviewed -->
 - [[../agents/co_scientist|co_scientist]]
 - [[../agents/futurehouse|futurehouse]]
 - [[../agents/README|agents]]

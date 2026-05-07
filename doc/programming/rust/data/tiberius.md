@@ -25,7 +25,6 @@ status: reviewed
 - .NET `Microsoft.Data.SqlClient` — the reference implementation tiberius mirrors.
 
 ## Internal links
-<!-- reviewed -->
 - [[bb8]]
 - [[deadpool]]
 - [[mobc]]

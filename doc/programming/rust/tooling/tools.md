@@ -29,8 +29,6 @@ For the actual section index — which tool to reach for in which situation — 
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — the curated thematic index for this section.
 - [[bat]] / [[exa]] / [[dust]] / [[ripgrep]] / [[bottom]] — Unix-replacement siblings.
 - [[zellij]] / [[mprocs]] — multiplexers.

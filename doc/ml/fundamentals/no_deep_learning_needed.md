@@ -49,7 +49,6 @@ where representation learning *is* the point.
 - **Symbolic regression** — when you want a *formula*, not a model.
 
 ## Internal links
-<!-- reviewed -->
 - [[../tools/README|ml/tools]] — the tooling that wraps these classical libraries.
 - [[../frameworks/README|frameworks]] — DL frameworks (the alternatives this article argues against in many cases).
 - [[classification]] — sibling on the niche of ordinal classification.

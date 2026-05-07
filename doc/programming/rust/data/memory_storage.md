@@ -26,7 +26,6 @@ Reach for `evmap` when (a) you have many more readers than writers, (b) reads mu
 - `flurry` / `papaya` — modern concurrent-map alternatives.
 
 ## Internal links
-<!-- reviewed -->
 - [[map_cache_storage]] — DashMap (sibling concurrent map).
 - [[cache]] — moka / quick_cache (cache-shaped use cases).
 - [[../concurrency/README|Rust concurrency]]

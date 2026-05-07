@@ -46,8 +46,6 @@ Comparisons:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[helix]] — pair with `bacon-ls` for inline diagnostics in Helix.
 - [[tools/linux/tmux|tmux]] — keep Bacon in a persistent side pane.
 - [[lazygit]] — Git side of the same dev loop.

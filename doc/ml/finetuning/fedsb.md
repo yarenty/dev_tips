@@ -54,7 +54,6 @@ client-shared — is the cleanest answer to date for the **fully-homogeneous** c
 - **FATE-LLM** / **FederatedScope-LLM** / **Flower** — production-ish FL frameworks that can carry methods like Fed-SB.
 
 ## Internal links
-<!-- reviewed -->
 - [[README]] — section landing.
 - [[unsloth]] — single-machine LoRA / QLoRA fine-tuning (the non-federated default).
 - [[unlearning]] — sibling privacy-flavoured topic (FUSED is federated unlearning).

@@ -33,7 +33,6 @@ cargo lipo --release
 
 ## Internal links
 
-<!-- reviewed -->
 - [[macos]]
 - [[mobile]]
 - [[cacao]]

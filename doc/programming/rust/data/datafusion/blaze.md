@@ -39,8 +39,6 @@ Gotchas: any Spark plugin lives or dies by **operator coverage** — anything un
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — DataFusion ecosystem landing.
 - [[gluten]] — sibling Spark accelerator (Velox / ClickHouse backends).
 - [[rapids]] — GPU-side Spark accelerator.

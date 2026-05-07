@@ -42,8 +42,6 @@ The strategic interest is what Kuasar represents: it's the first runtime that tr
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[k3s]] — typical Kubernetes the underlying containerd is part of
 - [[balena]] — different angle on container infra (single-host edge OS)
 

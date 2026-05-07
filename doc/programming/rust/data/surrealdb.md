@@ -25,7 +25,6 @@ The Rust SDK is unusually **flexible for an "official client"** — the same cra
 - `gluesql` — much smaller embedded SQL engine.
 
 ## Internal links
-<!-- reviewed -->
 - [[db/relational/surrealdb|SurrealDB (substrate)]]
 - [[gluesql]]
 - [[wooridb]]

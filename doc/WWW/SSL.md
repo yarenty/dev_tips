@@ -34,8 +34,6 @@ Gotcha: certs are valid 90 days; if your renewal cron breaks, sites go down. `ce
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[apache]] — Apache HTTPD cheat-sheet.
 - [[signing_mac_libs]] — Different "certificate" topic but adjacent (code signing vs TLS).
 

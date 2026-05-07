@@ -47,8 +47,6 @@ The MemSQL → SingleStore rebrand happened in 2020; older blog posts and benchm
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[postgresql]]
 - [[mysql]]
 - [[qdrant]]

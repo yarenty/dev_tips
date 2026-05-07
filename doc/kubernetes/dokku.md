@@ -48,8 +48,6 @@ The catch nobody mentions until you hit it: Dokku's "deploy" is `git push`, whic
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[k3s]] — Kubernetes-based alternative for the same "deploy my app" problem
 - [[oracle_free_tier]] — natural target host: 4 OCPUs / 24 GB free is plenty for a Dokku box
 - [[ssl]] — Dokku has a `letsencrypt` plugin but understanding the underlying flow helps

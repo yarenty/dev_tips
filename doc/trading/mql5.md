@@ -40,8 +40,6 @@ A tactical warning about the article's code: most of the embedded Python and MQL
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[barter]] — Rust trading engine alternative
 - [[hummingbot_python]] — Python framework for crypto exchanges
 - [[folbrecht_algo_trading_series]] — Rust + Tradier instead of MQL5 + MT5
@@ -68,7 +66,6 @@ import socket
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
-
 class socketserver:
     def __init__(self, address='', port=9090):
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -94,7 +91,6 @@ class socketserver:
     def __del__(self):
         self.sock.close()
 
-
 def calcregr(msg=''):
     chartdata = np.fromstring(msg, dtype=float, sep=' ')
     Y = np.array(chartdata).reshape(-1, 1)
@@ -106,7 +102,6 @@ def calcregr(msg=''):
     P = Y_pred.astype(str).item(-1) + ' ' + Y_pred.astype(str).item(0)
     print(P)
     return str(P)
-
 
 serv = socketserver('127.0.0.1', 9090)
 while True:

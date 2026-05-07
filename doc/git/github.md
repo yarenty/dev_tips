@@ -27,8 +27,6 @@ Worth doing once: it's a one-shot setup that improves how strangers first see yo
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[yarenty_profile_and_projects_summary]] — Personal profile copy used in the public README.
 - [[config]], [[git_delta]] — Other Git tooling notes in this section.
 

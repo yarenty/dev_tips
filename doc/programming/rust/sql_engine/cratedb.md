@@ -27,7 +27,6 @@ Reach for CrateDB when (a) you genuinely want SQL on top of a Lucene-shaped inve
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]]
 - [[databend]] — the Rust-built Snowflake-shaped warehouse in this section.
 - [[snowflake]] — managed warehouse comparison.

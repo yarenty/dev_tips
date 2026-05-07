@@ -29,8 +29,6 @@ Two real-world limitations to call out: (1) precision of `sleep` clamps it to ~1
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[brainfuck]] — Other "joke / educational" content in this section.
 - [[algorithms]] — Brainfuck algorithm catalogue (sibling esoteric-programming entry).
 

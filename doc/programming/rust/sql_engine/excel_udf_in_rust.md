@@ -27,7 +27,6 @@ This is the only interesting "Rust → Excel" path that does not require Office 
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]]
 - [[../io/xls|Excel files in Rust]] — the file-IO angle if you don't need to live inside Excel.
 - [[udf_lib|MariaDB/MySQL UDFs in Rust]] — same author, sibling project.

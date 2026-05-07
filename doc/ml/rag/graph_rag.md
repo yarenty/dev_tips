@@ -37,7 +37,6 @@ Two pragmatic patterns worth knowing: (1) **don't extract a graph if you already
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — RAG hub
 - [[neo4j_rag]] — Neo4j-backed GraphRAG implementation
 - [[kag]] — Ant Group's KAG: schema-constrained alternative

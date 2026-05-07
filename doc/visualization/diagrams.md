@@ -37,8 +37,6 @@ The thing to avoid is reaching for [PlantUML](https://plantuml.com/) for new wor
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[manim]] — when you need an animation, not a static diagram
 - [[rerun]] — multimodal time-aware visualisation (robotics)
 - [[plotters]] — Rust crate for generating chart images programmatically

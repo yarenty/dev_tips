@@ -94,8 +94,6 @@ A typical 2.x startup looks like:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[db/timeseries/greptimedb|GreptimeDB]]
 - [[questdb]]
 - [[druid]]

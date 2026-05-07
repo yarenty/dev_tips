@@ -28,7 +28,6 @@ For most real interpretability work in 2024-2025 the heavier-weight stack wins: 
 - `transformer-debugger` (OpenAI) — GPT-2-specific interactive debugger.
 
 ## Internal links
-<!-- reviewed -->
 - [[README|llm/inspection]]
 - [[../README|llm]]
 - [[../../tools/README|ml/tools]]

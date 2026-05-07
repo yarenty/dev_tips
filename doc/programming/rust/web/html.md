@@ -42,7 +42,6 @@ Gotchas:
 - **`scraper` + `fantoccini`** — pair for JS-rendered pages via WebDriver.
 
 ## Internal links
-<!-- reviewed -->
 - [[reqwest]] — the typical fetcher you pair with an HTML parser
 - [[parsers]] — sibling parser crates in the io section
 - [[programming/rust/web/README|web README]]

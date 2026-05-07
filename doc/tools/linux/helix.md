@@ -48,8 +48,6 @@ Picker:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[fish]]
 - [[lazygit]]
 - [[tools/linux/tmux|tmux]]

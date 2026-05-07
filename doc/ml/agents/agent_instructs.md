@@ -38,7 +38,6 @@ The genuine insight is that **the system prompt is a per-product surface, but th
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — agents section landing.
 - [[claude]] — Anthropic's *Building effective agents* (the broader design background).
 - [[../llm/system_prompts/system_prompt|system_prompt]] (P5.AD) — system-prompt patterns and leaks (the per-product surface).

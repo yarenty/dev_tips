@@ -54,7 +54,6 @@ Code agents win on **expressiveness** for tasks that involve multi-step composit
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — agents section landing.
 - [[hf]] — HuggingFace agent docs / course (on-ramp).
 - [[claude]] — Anthropic's *Building effective agents* (the workflow patterns smolagents implements).

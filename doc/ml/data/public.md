@@ -34,7 +34,6 @@ Trade-offs to be aware of:
 
 ## Internal links
 
-<!-- reviewed -->
 - [[apis]] — for "I want a JSON endpoint, not a download" data
 - [[for_tests]] — when you only need tiny fixtures
 - [[../llm/README|ml/llm]] — for LLM-pretraining-corpus-scale dataset discussion

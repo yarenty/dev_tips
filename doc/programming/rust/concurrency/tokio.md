@@ -37,8 +37,6 @@ The runtime ships in two flavours: **multi-threaded** (default for `#[tokio::mai
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[crossbeam]] — sync-world counterpart for channels and threading primitives
 - [[barter]] — production codebase built on Tokio
 - [[folbrecht_algo_trading_series]] — explicitly avoids Tokio; useful contrast on when async is and isn't justified

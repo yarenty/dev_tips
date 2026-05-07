@@ -57,8 +57,6 @@ On the roadmap:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[postgresql]]
 - [[xlite]]
 - [[toydb]]

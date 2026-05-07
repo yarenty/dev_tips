@@ -43,8 +43,6 @@ Gotchas:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[programming/rust/net/README|Rust net]] — section landing page.
 - [[programming/rust/net/trpc|tRPC]] — sibling article — *not* a gRPC alternative, despite the name; clarification lives there.
 - [[programming/rust/concurrency/tokio|tokio]] — the runtime tonic builds on.

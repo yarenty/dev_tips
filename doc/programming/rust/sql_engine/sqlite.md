@@ -34,7 +34,6 @@ The Rust *rewrites* of SQLite to keep an eye on: **libSQL** (Turso) is a fork th
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]]
 - [[../data/rusqlite|rusqlite — Rust client]]
 - [[sqlite_loadable]] — extensions in Rust.

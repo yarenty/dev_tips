@@ -45,8 +45,6 @@ For deep dissection, switch to Wireshark or `tcpdump`/`tshark`. For long-term th
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[mtr]]
 - [[rustscan]]
 - [[wireguard]]

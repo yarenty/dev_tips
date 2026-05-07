@@ -26,7 +26,6 @@ These are the "level 2" reads — assume you've finished [The Rust Book](https:/
 - [Zero To Production In Rust](https://www.zero2prod.com/) — Luca Palmieri, project-based web-service walkthrough.
 
 ## Internal links
-<!-- reviewed -->
 - [[scope]]
 - [[tutorials]]
 - [[simple_short_intro_to_rust]]

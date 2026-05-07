@@ -31,8 +31,6 @@ The trade-off: it's still tmux/screen underneath, so you inherit their quirks; c
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[tools/linux/tmux|tmux]]
 - [[zellij]]
 - [[mosh]]

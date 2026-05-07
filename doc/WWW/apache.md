@@ -29,8 +29,6 @@ The default doc-root on macOS is `/Library/WebServer/Documents/`. The default co
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[signing_mac_libs]] — Companion: signing 3rd-party Apache modules so macOS lets them load.
 - [[ssl]] — Adding HTTPS via Certbot.
 

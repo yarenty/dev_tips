@@ -68,8 +68,6 @@ otherwise the de-facto standard.
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[pyo3|PyO3]] — the FFI binding layer.
 - [[to_python]] — Rust → PyPI recipe.
 - [[ballista_py]] — example PyO3+maturin Python package.

@@ -42,7 +42,6 @@ This maps closely onto Anthropic's *evaluator-optimizer* and *orchestrator-worke
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — agents section landing.
 - [[futurehouse]] — open-source cousin (PaperQA & friends).
 - [[claude]] — evaluator-optimizer and orchestrator-workers patterns this maps onto.

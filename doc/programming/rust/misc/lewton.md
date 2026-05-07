@@ -33,8 +33,6 @@ cargo run --example player /path/to/your/audio_file.ogg
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[audio]] — Rust audio ecosystem overview / decision tree.
 - [[symphonia]] — modern unified replacement.
 - [[rodio]] — uses lewton as its default Vorbis backend.

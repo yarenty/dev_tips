@@ -26,7 +26,6 @@ Reach for `barrel` when you want to write your schema once in Rust and target mu
 - `atlas` (Go) — language-agnostic schema-as-code, popular alongside Rust services.
 
 ## Internal links
-<!-- reviewed -->
 - [[refinery]]
 - [[seaquery]]
 - [[programming/rust/sql_engine/diesel|diesel]]

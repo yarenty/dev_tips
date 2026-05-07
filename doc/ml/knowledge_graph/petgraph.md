@@ -46,7 +46,6 @@ For ML/AI specifically: petgraph is the *right* substrate when you need a Rust-n
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — section landing.
 - [[meta]] — sibling: data2vec / doc2vec embedding notes.
 - [[ml/knowledge_graph/papers|kg/papers]] — sibling: KG research reading list.

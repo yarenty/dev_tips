@@ -59,7 +59,6 @@ The four practical-patterns mental model:
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — agents section landing.
 - [[claude]] — augmented LLM = LLM + tools + **memory**; this is the memory side.
 - [[orchestration]] — orchestration frameworks usually own the scratchpad.

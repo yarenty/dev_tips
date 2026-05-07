@@ -26,7 +26,6 @@ Pick `bb8` when you want a thin, opinionated, Tokio-only pool with the same ment
 - `tokio-postgres` — the canonical bb8 backend.
 
 ## Internal links
-<!-- reviewed -->
 - [[deadpool]]
 - [[mobc]]
 - [[r2d2]]

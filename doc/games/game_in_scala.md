@@ -27,8 +27,6 @@ Niche but interesting if you already love Scala. The win is using the Scala type
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[engines]] — Rust counterpart (Bevy / Piston).
 - Scala notes — see `programming/scala/README.md` in the vault.
 

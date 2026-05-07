@@ -71,8 +71,6 @@ For *metrics* specifically, the Rust OTel-metrics API is workable but not yet as
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[tracing]] — instrumentation API.
 - [[rust_prometheus]] — metrics alternative / complementary.

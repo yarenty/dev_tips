@@ -42,8 +42,6 @@ The under-rated NATS feature: **subjects with wildcards** (`orders.*.created`, `
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[kafka]] — durable-log alternative for the heavy end
 - [[redpanda]] — same as Kafka note
 - [[messaging/mqtt|mqtt]] — sensor-fan-in alternative

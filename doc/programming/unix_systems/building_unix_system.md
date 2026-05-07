@@ -64,8 +64,6 @@ DOOM keybindings are weird: WASD to move, right-Shift to shoot, Space to open do
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[helios]] — sibling project, microkernel design.
 - [[programming/unix_systems/README|unix systems]] — parent section.
 - [[assembly]] — pairs naturally; you'll read a lot of disassembly when working on a kernel.

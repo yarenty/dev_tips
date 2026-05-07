@@ -41,8 +41,6 @@ The "Onedoc" piece in the name refers to [OnedocLabs](https://www.onedoclabs.com
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[typst]] — alternative when you want a typesetting language instead of HTML/CSS
 - [[mdmath_symbols]] — math-symbol cheat sheet (LaTeX/MathJax/KaTeX, also embeddable in HTML PDFs)
 

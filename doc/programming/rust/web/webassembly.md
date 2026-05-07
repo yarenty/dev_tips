@@ -67,7 +67,6 @@ Gotchas:
 - **PyScript / Pyodide** — Python-on-Wasm; orthogonal but adjacent.
 
 ## Internal links
-<!-- reviewed -->
 - [[wasmtime]] — the standalone Wasm runtime
 - [[yew]] — frontend framework on wasm-bindgen
 - [[gloo]] — higher-level browser bindings

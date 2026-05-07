@@ -42,7 +42,6 @@ Gotchas:
 - **`ureq`** — sync, no-tokio HTTP client; small dependency footprint.
 
 ## Internal links
-<!-- reviewed -->
 - [[axum]] — the recommended high-level server
 - [[rocket]] — opinionated framework also on hyper since 0.5
 - [[reqwest]] — the high-level client

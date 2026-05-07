@@ -40,8 +40,6 @@ The library's strength is the `derive` ergonomics — see the example in raw not
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[../io/json|io/json]] — JSON / serialisation in Rust.
 

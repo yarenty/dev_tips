@@ -60,7 +60,6 @@ roadmap as aspirational. Maintenance pace is single-author.
 - StreamElements / Streamlabs — the non-AI Twitch-bot incumbents.
 
 ## Internal links
-<!-- reviewed -->
 - [[rig]] — the more general Rust LLM client framework.
 - [[ollama]] — alternative for "just serve a model locally."
 - [[programming/rust/ml/ml_in_rust|ml_in_rust]] — broader Rust ML landscape (incl. Candle/burn).

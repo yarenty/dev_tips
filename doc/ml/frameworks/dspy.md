@@ -83,8 +83,6 @@ Gotchas:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — frameworks landing.
 - [[langgraph]] — sibling framework for stateful agents.
 - [[phidata]] — agent/RAG framework with built-in observability.

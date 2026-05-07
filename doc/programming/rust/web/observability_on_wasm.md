@@ -44,7 +44,6 @@ This article was previously duplicated as `programming/rust/tooling/observabilit
 - **Proxy-Wasm + Envoy stats** — built-in metrics for the Envoy filter use case.
 
 ## Internal links
-<!-- reviewed -->
 - [[wasmtime]] — typical host runtime for the modules being observed
 - [[webassembly]] — section overview
 - [[observability/README|observability]] — broader observability landing page

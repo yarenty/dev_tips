@@ -35,7 +35,6 @@ When this matters: medical / legal / scientific QA where multi-hop reasoning is 
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — section landing.
 - [[meta]] — sibling: Meta's data2vec / doc2vec embedding-side notes.
 - [[petgraph]] — sibling: Rust graph data-structure library.

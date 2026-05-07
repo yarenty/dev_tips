@@ -62,7 +62,6 @@ Key wins:
 - **bitsandbytes** — the 4-bit / 8-bit quantisation Unsloth depends on.
 
 ## Internal links
-<!-- reviewed -->
 - [[README]] — section landing.
 - [[fedsb]] — federated cousin (LoRA across clients).
 - [[../llm/models/llama|llama]] — the canonical fine-tuneable base; Llama 3.x notebooks are the headline use case.
@@ -80,7 +79,6 @@ Key wins:
 # unsloth
 
 https://github.com/unslothai/unsloth
-
 
 ## ✨ Finetune for Free
 
@@ -110,7 +108,6 @@ Notebooks are beginner friendly. Read our [guide](https://docs.unsloth.ai/get-st
 pip install unsloth
 ```
 For Windows install instructions, see [here](https://docs.unsloth.ai/get-started/installing-+-updating/windows-installation).
-
 
 ## 🔗 Links and Resources
 | Type                            | Links                               |

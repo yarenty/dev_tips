@@ -73,8 +73,6 @@ External locations on AWS (S3 bucket → external location → managed by UC):
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[db/catalogs/README|catalogs]] — section landing.
 - [[db/formats/README|formats]] — Iceberg/Delta/Parquet are what UC catalogs.
 - [[db/analytics/README|analytics]] — lakehouse engines that consume UC.

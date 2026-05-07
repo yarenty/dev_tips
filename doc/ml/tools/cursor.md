@@ -32,7 +32,6 @@ The 2024–2025 pricing reality matters: Cursor Pro at $20/mo, with cap-based ra
 - [Codeium / Windsurf](https://codeium.com/windsurf) — direct competitor; same VS-Code-fork-with-agent shape.
 
 ## Internal links
-<!-- reviewed -->
 - [[../agents/coding_agents|coding_agents]]
 - [[../agents/agent_instructs|agent_instructs]]
 - [[../agents/claude|claude]]

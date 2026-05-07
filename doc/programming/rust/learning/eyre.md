@@ -26,7 +26,6 @@ Reach for `eyre` (specifically `color-eyre`) when you want **prettier panics and
 - `miette` — alternative diagnostics-style report crate (fancy LSP-like reports).
 
 ## Internal links
-<!-- reviewed -->
 - [[anyhow]]
 - [[thiserror]]
 - [[../core/error|core/error]]

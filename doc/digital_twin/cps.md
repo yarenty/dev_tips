@@ -27,8 +27,6 @@ Treat **CPS** and [[definition|digital twin]] as the *same underlying concept se
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[definition]] — Industrial framing of the same concept.
 - [[isc2022]] — Concrete industrial deployment realising CPS ideas at scale.
 - [[bmw]] — BMW iFACTORY case study.

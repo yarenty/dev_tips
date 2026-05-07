@@ -46,8 +46,6 @@ A few sharp edges worth knowing:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[symphonia]] — modern unified pure-Rust codec / demuxer.
 - [[rodio]] — high-level "play this file" library.
 - [[hound]] — WAV-only.

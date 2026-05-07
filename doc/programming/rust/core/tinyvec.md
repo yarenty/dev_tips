@@ -49,7 +49,6 @@ Gotchas:
 - [[hashbrown]] — the "heavy" backend halfbrown switches to, for context.
 
 ## Internal links
-<!-- reviewed -->
 - [[README]]
 - [[halfbrown]]
 - [[hashbrown]]

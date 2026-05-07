@@ -26,7 +26,6 @@ Reach for `anyhow` in **applications** where you mostly want to bubble errors up
 - Standard `Box<dyn Error + Send + Sync>` — what `anyhow::Error` essentially is, with ergonomics added.
 
 ## Internal links
-<!-- reviewed -->
 - [[thiserror]]
 - [[eyre]]
 - [[../core/error|core/error]]

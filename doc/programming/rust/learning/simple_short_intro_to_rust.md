@@ -26,7 +26,6 @@ Reach for this when you already know one C-family + one ML-family language and j
 - [[cheats]] — single-page reference once you've internalised the syntax.
 
 ## Internal links
-<!-- reviewed -->
 - [[cheats]]
 - [[tutorials]]
 - [[scope]]

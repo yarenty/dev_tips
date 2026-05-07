@@ -29,7 +29,6 @@ Gotcha pattern: many of these return CORS-restricted responses when called from 
 
 ## Internal links
 
-<!-- reviewed -->
 - [[public]] — broader curated list of ML/research-grade public datasets
 - [[for_tests]] — tiny built-in datasets for unit tests / CI
 - [[../../db/relational/postgresql|postgresql]] — when you've outgrown the API and want to ingest

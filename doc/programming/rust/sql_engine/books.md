@@ -27,7 +27,6 @@ Read this first if you want to understand DataFusion's internals, or if you want
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — the rest of this section: real engines, parsers, UDFs.
 - [[../data/datafusion/README]] — the engine the headline book teaches you the bones of.
 - [[datafusion]] — DataFusion's SQL planner specifically (the chapter the book ends at).

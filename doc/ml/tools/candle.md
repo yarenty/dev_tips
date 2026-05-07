@@ -34,7 +34,6 @@ Gotchas: WSL model loads from `/mnt/c` are pathologically slow (use `~`); MKL/Ac
 - [[../../programming/rust/data/datafusion/xorq|xorq]] — DataFusion-based engine that embeds Candle for in-process inference.
 
 ## Internal links
-<!-- reviewed -->
 - [[burn]]
 - [[tch]]
 - [[dfdx]]

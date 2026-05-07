@@ -46,8 +46,6 @@ When to *not* reach for it:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[redis]] — the protocol Garnet implements; benchmarks here are against Redis.
 - [[programming/caching/README|caching]] — parent section.
 - [[postgresql]] — Garnet is often used as a hot cache *in front of* a relational store.

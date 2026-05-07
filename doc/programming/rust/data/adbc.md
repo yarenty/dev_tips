@@ -25,7 +25,6 @@ Reach for ADBC when the bottleneck of an existing JDBC/ODBC pipe is the row-by-r
 - DuckDB / DataFusion — both ship native Arrow result sets; ADBC is the standard way to consume them from a generic client.
 
 ## Internal links
-<!-- reviewed -->
 - [[db/formats/table_transfer_protocols/README|Table transfer protocols (Arrow Flight / ADBC)]]
 - [[datafusion/README|DataFusion family]]
 - [[lance_data_format]] — Arrow-friendly columnar format

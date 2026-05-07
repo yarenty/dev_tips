@@ -34,8 +34,6 @@ The team writes openly about their process; if you want to develop your own tast
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[portfolios]] — practitioner portfolios for studying chart-design taste
 - [[dataviz_resources]] — books and courses on the craft
 

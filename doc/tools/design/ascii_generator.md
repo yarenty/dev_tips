@@ -34,8 +34,6 @@ If you'd rather do it offline or in a script, install **`figlet`** (`brew instal
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[marp]] — drop ASCII banners into Markdown slide decks.
 - [[fonts]] — for when you need real typefaces.
 - [[mdfried]] — preview the README that contains your banner.

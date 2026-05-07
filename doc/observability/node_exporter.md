@@ -40,8 +40,6 @@ For containers you usually want **[cAdvisor](https://github.com/google/cadvisor)
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[prometheus]] — the server that scrapes node_exporter
 - [[observability/grafana|grafana]] — Grafana dashboards on top
 - [[openobserve]] — alternative observability stack that also ingests node_exporter metrics

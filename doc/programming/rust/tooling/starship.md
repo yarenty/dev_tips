@@ -38,8 +38,6 @@ Pair with [[zoxide]] (smarter cd) for a complete shell-productivity setup; both 
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[zoxide]] — pairs naturally as part of a shell-productivity setup.
 - [[../../../tools/shell/must_have|must_have]] — fresh-box bundle.

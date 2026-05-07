@@ -35,7 +35,6 @@ multi-turn conversations); it's kept below as a tangentially-relevant pointer.
 - LangChain / LangGraph — the orchestration layer most MCP tutorials wrap around (see [[langgraph]]).
 
 ## Internal links
-<!-- reviewed -->
 - [[README]] — section landing.
 - [[a2a]] — Google's agent-to-agent counterpart.
 - [[mcp4db]] — MCP for databases.

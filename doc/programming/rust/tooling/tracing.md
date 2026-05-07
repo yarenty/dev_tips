@@ -66,8 +66,6 @@ async fn handle_request(db: &Database, user_id: u64) -> Result<User> {
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[loggers]] — sibling article on the `log` family.
 - [[open_telemetry]] — pair via `tracing-opentelemetry`.

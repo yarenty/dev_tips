@@ -69,8 +69,6 @@ fn user_service_returns_name() {
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[tux]] — sibling integration-test helpers.
 - [[turmoil]] — deterministic distributed-system tests.

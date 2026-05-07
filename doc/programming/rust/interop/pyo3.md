@@ -64,8 +64,6 @@ A few things worth knowing before adopting it:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[maturin]] — companion build tool.
 - [[to_python]] — Rust→Python publishing recipe.
 - [[programming/rust/interop/python|interop/python]] — PUFF (CPython

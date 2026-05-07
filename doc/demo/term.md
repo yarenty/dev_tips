@@ -29,8 +29,6 @@ Caveats: live-coding inside slides is not the goal (use `asciinema` / `vhs` for 
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[live_demos/README|live_demos]] — Sibling section on terminal recording / demo tooling.
 - [[markitdown]] — Markdown-tooling note (unrelated input direction, same ecosystem).
 

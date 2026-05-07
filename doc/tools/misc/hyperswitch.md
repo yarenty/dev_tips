@@ -43,8 +43,6 @@ Caveats: it's still a relatively young open-source project; the hosted version i
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[oracle_free_tier]] — cheap place to host a self-hosted Hyperswitch instance.
 - [[k3s]] — lightweight Kubernetes target for the deployment.
 - [[prometheus]] — scrape Hyperswitch metrics for routing/success-rate dashboards.

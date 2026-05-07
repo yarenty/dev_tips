@@ -34,7 +34,6 @@ The honest cost caveat: agentic RAG can be **5–10× more expensive in tokens a
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — RAG hub
 - [[rag_query_summarize]] — query preprocessing (cheaper alternative or complement)
 - [[graph_rag]] — graph-shaped retrieval (composable with agentic loops)

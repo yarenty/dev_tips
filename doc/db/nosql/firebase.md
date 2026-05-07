@@ -65,8 +65,6 @@ That's not a public page — it's the Analytics integration settings inside the 
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[redis]]
 - [[postgresql]]
 - [[fauna]]

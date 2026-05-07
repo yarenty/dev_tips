@@ -33,8 +33,6 @@ If you want a Rust *productivity* TUI rather than a CLI list, look at [[../../..
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[../../../tools/misc/weektodo|weektodo]] — desktop GUI sibling.
 

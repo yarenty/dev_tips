@@ -27,7 +27,6 @@ Databend belongs to the "Rust single-binary infra rewrite" trend (alongside Redp
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]]
 - [[snowflake]] — the design Databend's product shape echoes.
 - [[../data/datafusion/README|DataFusion]] — Rust columnar engine substrate; Databend has its own engine but the ecosystem overlap is heavy.

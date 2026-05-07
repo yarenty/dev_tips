@@ -35,7 +35,6 @@ Gotcha: the `hashbrown` crate's default hasher (`ahash`) is *not* the same as `s
 - [SwissTable design talk](https://www.youtube.com/watch?v=ncHmEUmJZf4) — Matt Kulukundis, CppCon 2017.
 
 ## Internal links
-<!-- reviewed -->
 - [[README]]
 - [[halfbrown]]
 - [[tinyvec]]

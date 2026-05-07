@@ -27,7 +27,6 @@ If you're picking a Rust GUI toolkit for a new project, the practical short list
 
 ## Internal links
 
-<!-- reviewed -->
 - [[egui]]
 - [[slint]]
 - [[ised|iced]]

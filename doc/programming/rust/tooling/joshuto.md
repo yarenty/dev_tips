@@ -39,8 +39,6 @@ If you're picking *today* with no inertia: try `yazi` first. Use `joshuto` if yo
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[../../../tools/misc/superfile|superfile]] — sibling file-manager article.
 - [[../../../tools/design/lstr|lstr]] — fast `tree` viewer (overlapping interactive niche).

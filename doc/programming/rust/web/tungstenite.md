@@ -50,7 +50,6 @@ Gotchas:
 - **`gloo-net::websocket`** — browser-side WebSocket client over `web-sys`.
 
 ## Internal links
-<!-- reviewed -->
 - [[axum]] — its WebSocket extractor wraps `tokio-tungstenite`
 - [[http]] — WebSockets ride on top of an HTTP/1.1 upgrade
 - [[gloo]] — browser-side WebSocket client for WASM

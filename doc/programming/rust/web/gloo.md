@@ -46,7 +46,6 @@ Status note: `gloo` is "low-priority maintenance" by its own admission — relea
 - **`yew-hooks` / `leptos-use`** — framework-specific equivalents bundled with each frontend framework.
 
 ## Internal links
-<!-- reviewed -->
 - [[webassembly]] — section overview
 - [[yew]] — frontend framework that pairs naturally with gloo
 - [[reqwest]] — alternative for HTTP in WASM

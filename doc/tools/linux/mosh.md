@@ -43,8 +43,6 @@ The canonical setup for a remote dev box is `mosh user@host -- tmux attach`.
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[tools/linux/tmux|tmux]]
 - [[zellij]]
 - [[byobu]]

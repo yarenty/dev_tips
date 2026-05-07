@@ -56,8 +56,6 @@ watchexec --print-events -- ./on-change.sh
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[mprocs]] — pair to auto-restart processes inside an mprocs setup.
 - [[../../../tools/misc/bacon|bacon]] — Rust-specific watch-mode for cargo + diagnostics.

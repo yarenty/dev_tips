@@ -45,7 +45,6 @@ half-broken APIs or post-fork upstreams. Cross-check anything you actually try t
 - **Hugging Face course** — the right next step after Karpathy if you'll be working with pretrained Transformers.
 
 ## Internal links
-<!-- reviewed -->
 - [[../README|ml]] — section landing.
 - [[../frameworks/README|frameworks]] — what these courses teach you to use (PyTorch, JAX, TF).
 - [[../llm/README|llm]] — sibling section; Karpathy's later lectures lead directly here.

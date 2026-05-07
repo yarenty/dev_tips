@@ -47,7 +47,6 @@ Pick AssemblyAI when you want **production-grade accuracy + extras + a polished 
 
 ## Internal links
 
-<!-- reviewed -->
 - [[voice/README|voice]] — STT/TTS/voice-agent landscape parent
 - [[build_voice_ai_with_one_api]] — voice-agent-as-a-service platforms (the layer above raw STT)
 - [[../llm/README|llm]] — the LLM that consumes the transcript

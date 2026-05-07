@@ -42,8 +42,6 @@ The performance gap vs. `std::sync::mpsc` has narrowed — the standard library 
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[tokio]] — async-world alternative
 - [[folbrecht_algo_trading_series]] — example of choosing crossbeam over Tokio in production
 

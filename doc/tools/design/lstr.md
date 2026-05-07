@@ -49,8 +49,6 @@ lstr interactive [OPTIONS] [PATH]
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[superfile]] — go from "look" to "do" with a real TUI file manager.
 - [[czkawka]] — find what to clean up after `lstr` shows you the shape.
 - [[bacon]] — same author/ecosystem flavour: small focused Rust CLI.

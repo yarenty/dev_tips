@@ -27,8 +27,6 @@ If you're updating Yarenty's profile material, update this file once and the res
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[github]] — How to publish this content as a GitHub profile README.
 
 ## Keywords

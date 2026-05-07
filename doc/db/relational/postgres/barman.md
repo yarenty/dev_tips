@@ -61,8 +61,6 @@ Useful follow-ups:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[postgresql]]
 
 ## Keywords

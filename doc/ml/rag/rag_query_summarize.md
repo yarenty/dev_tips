@@ -36,7 +36,6 @@ The unifying trade-off is **extra LLM cost vs retrieval quality**. A multi-query
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — RAG hub
 - [[summary_of_best_practices]] — chunking / hybrid / reranking / eval foundations
 - [[agentic_rag]] — controller-loop generalisation

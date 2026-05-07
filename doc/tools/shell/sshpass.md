@@ -59,8 +59,6 @@ Hard rules if you have to use it:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[mosh]]
 - [[tools/shell/tools|shell tools]]
 - [[must_have]]

@@ -69,8 +69,6 @@ Ballista's pyo3-based Python bindings as a worked example, see
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[pyo3|PyO3]] — FFI layer.
 - [[maturin]] — build & publish.
 - [[programming/rust/interop/python|interop/python]] — the inverse

@@ -56,8 +56,6 @@ When sbt is still the right answer:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[programming/scala/README|Scala]] — parent section.
 - [[programming/java/README|Java]] — JVM context.
 - [[programming/package_managers/README|package managers]] — sbt's resolver pulls from Maven Central.

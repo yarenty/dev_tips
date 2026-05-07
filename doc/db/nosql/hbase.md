@@ -69,8 +69,6 @@ The `PermSize` flags are JVM 7 vintage; modern JVMs (8+) ignore them. Treat the 
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[redis]]
 - [[postgresql]]
 - [[db/timeseries/greptimedb|GreptimeDB]]

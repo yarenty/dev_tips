@@ -84,8 +84,6 @@ Gotchas:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — frameworks landing.
 - [[langgraph]] — sibling agent framework.
 - [[dspy]] — sibling prompt-compilation framework.

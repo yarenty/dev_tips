@@ -46,8 +46,6 @@ Caveats: the default public relay can be slow at peak times — self-host or buy
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[deskreen]] — when you only need to mirror, not control.
 - [[wireguard]] — pair with WireGuard for end-to-end encrypted access without exposing the relay.
 - [[rathole]] — alternative tunneling tool to expose a self-hosted relay.

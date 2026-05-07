@@ -26,7 +26,6 @@ Reach for sccache when you have **either** a slow Rust build (large workspace, m
 - `mold` / `lld` — link-time speedups; pair well with sccache.
 
 ## Internal links
-<!-- reviewed -->
 - [[../tooling/README|Rust tooling]] — broader build/dev-tools landing.
 - [[cache]] — in-process caches (very different scope).
 

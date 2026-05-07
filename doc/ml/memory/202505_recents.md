@@ -38,7 +38,6 @@ For an *up-to-date* version of the same list, prefer:
 
 ## Internal links
 
-<!-- reviewed -->
 - [[agentic_ai_memory]] — parent landscape article (memory operations + representation taxonomy).
 - [[response]] — sibling: focused 2024-2025 eidetic-memory survey.
 - [[episodic_memory]] — sibling: episodic-memory thread (EM-LLM / MemoRAG / Mamba / AriGraph).

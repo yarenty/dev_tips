@@ -37,7 +37,6 @@ This is a category of tool that didn't exist 18 months ago and is suddenly usefu
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — agents section landing.
 - [[coding_agents]] — landscape of the CLIs emdash wraps.
 - [[agent_instructs]] — `AGENTS.md` / `CLAUDE.md` / `.cursorrules` (what each subordinate agent reads).

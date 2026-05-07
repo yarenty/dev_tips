@@ -40,8 +40,6 @@ Gotchas:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[tokio]] — runtime par-stream's workers spawn onto.
 - [[timely]] — heavyweight alternative when streams + combinators stop being enough.
 - [[concurrency/README|Rust concurrency]] — landing page; par-stream lives in the dataflow / streaming row.

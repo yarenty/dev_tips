@@ -46,8 +46,6 @@ When to reach for it (today, late 2024 / 2025): you're **building a new system**
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — DataFusion ecosystem landing.
 - [[../lance_data_format|lance]] — sibling modern columnar format (ML-first).
 - [[delta]] — table-format layer above (uses Parquet today).

@@ -26,7 +26,6 @@ Default to `DashMap` whenever you'd otherwise reach for `Arc<RwLock<HashMap<K, V
 - `papaya` — newer single-shard concurrent map; benchmarks well.
 
 ## Internal links
-<!-- reviewed -->
 - [[cache]] — moka and quick_cache (cache-shaped DashMap usage).
 - [[memory_storage]] — evmap (eventually-consistent alternative).
 - [[../core/hashbrown|hashbrown]] — the SwissTable hash-map under DashMap and std.

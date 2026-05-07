@@ -42,8 +42,6 @@ A few notes:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[../../../visualization/plotters|plotters]] — canonical Rust plotting crate (covered in P5.I).
 - [[../../../visualization/README|visualization]] — vault-wide viz section.
 - [[../gui/egui|egui]] — for embedding plots in immediate-mode GUIs.

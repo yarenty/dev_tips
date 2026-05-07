@@ -45,8 +45,6 @@ Gotchas:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[programming/rust/io/README|Rust I/O]] — section landing page.
 - [[programming/rust/io/parsers|parsers]] — when JSON isn't enough and you need a real grammar.
 - [[programming/rust/io/bytes_manipulation|bytemuck]] — sibling article for fixed-layout binary, the opposite end of the (de)serialization space.

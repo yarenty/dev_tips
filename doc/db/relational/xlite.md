@@ -48,8 +48,6 @@ Repo: <https://github.com/x2bool/xlite>
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[limbo]]
 - [[postgresql]]
 

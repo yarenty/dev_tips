@@ -46,7 +46,6 @@ The core/learning split: this article is the **deeper "what crate solves what pr
 - [tracing-error](https://crates.io/crates/tracing-error) — captures `tracing` spans into eyre/anyhow reports.
 
 ## Internal links
-<!-- reviewed -->
 - [[README]]
 - [[../learning/anyhow|anyhow]]
 - [[../learning/thiserror|thiserror]]

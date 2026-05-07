@@ -44,7 +44,6 @@ Gotchas:
 - *Async Rust* by Maxwell Flitton & Caroline Morton — has the clearest narrative explanation of pinning I've read.
 
 ## Internal links
-<!-- reviewed -->
 - [[README]]
 - [[../concurrency/README|concurrency]]
 

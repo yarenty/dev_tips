@@ -43,7 +43,6 @@ publish A2A-shaped Agent Cards for their hosted agents.
 - **FIPA-ACL** (1990s multi-agent systems) — historical precursor; A2A is the modern HTTP-native take.
 
 ## Internal links
-<!-- reviewed -->
 - [[README]] — section landing.
 - [[articles]] — broader MCP reading list (incl. A2A vs MCP vs ACP cheat sheet).
 - [[mcp4db]] — sibling MCP-side article.

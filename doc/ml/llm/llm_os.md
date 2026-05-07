@@ -28,7 +28,6 @@ The framing has competition: **LangChain's chain abstraction** (composable runna
 - Voyager / Generative Agents / Stanford Smallville — earlier research demos that prefigured the LLM-OS pattern.
 
 ## Internal links
-<!-- reviewed -->
 - [[README|llm]]
 - [[../mcp/README|mcp]]
 - [[../agents/README|agents]]

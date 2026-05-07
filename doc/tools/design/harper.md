@@ -42,8 +42,6 @@ Caveats: English-only (deliberately), still a young project, and the rule set is
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[markitdown]] — get text into Markdown so Harper / Vale can lint it.
 - [[mdfried]] — preview the cleaned-up Markdown in the terminal.
 - [[helix]] — Harper has a Helix LSP integration.

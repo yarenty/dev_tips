@@ -47,8 +47,6 @@ For everything else (architecture, IPC, alternatives, Sidecar pattern, security 
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[../gui/tauri|gui/tauri]] — canonical framework article (read this for architecture).
 - [[app_builders]] — broader desktop-packaging context.

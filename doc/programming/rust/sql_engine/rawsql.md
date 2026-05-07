@@ -26,7 +26,6 @@ For new code in 2025 this is **not** what you want. The modern Rust answer to "I
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]]
 - [[../data/sqlparser|sqlparser-rs]] — the actual SQL-aware crate.
 - [[../data/seaquery|SeaQuery]] — dynamic query builder; the alternative if you don't want raw SQL strings at all.

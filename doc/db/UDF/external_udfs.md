@@ -119,8 +119,6 @@ helper macro can take care of translating between FFI Arrow arrays and native
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[db/udf/README|UDF]] — section landing.
 - [[db/formats/table_transfer_protocols/README|Table transfer protocols]] —
   Arrow Flight is the over-the-wire counterpart to Arrow C Data Interface.

@@ -633,6 +633,6 @@
 
 # Published
 
-- [Published](published/README.md)
-  - [Data Interpreter](published/data_interpreter.md)
-  - [Dataman](published/dataman.md)
+- [Published — paper summaries and external write-ups](published/README.md)
+  - [Data Interpreter — LLM agent for end-to-end data science](published/data_interpreter.md)
+  - [DataMan — LLM-driven pre-training data selection](published/dataman.md)

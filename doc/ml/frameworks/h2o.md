@@ -89,8 +89,6 @@ Gotchas:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — frameworks landing.
 - [[mindsdb]] — adjacent SQL-ML angle on the same "ML for tabular
   business data" problem.

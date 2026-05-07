@@ -41,8 +41,6 @@ Gotchas worth knowing:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[tokio]] — the runtime under every actor crate; "actors" is a pattern *on top of* this.
 - [[crossbeam]] — sync-world counterpart; for thread-based message passing without async.
 - [[concurrency/README|Rust concurrency]] — landing page with the workload-→-tool decision table.

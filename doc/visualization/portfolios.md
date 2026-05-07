@@ -31,8 +31,6 @@ Looking at finished portfolios is a much faster way to develop taste than readin
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[pudding]] — *The Pudding* — interactive data essays
 - [[dataviz_resources]] — books, courses
 - [[ggtech]] — branded chart styling

@@ -41,8 +41,6 @@ Gotchas:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[programming/rust/io/README|Rust I/O]] — section landing page.
 - [[programming/rust/io/storage/README|storage]] — sibling section for object-store / OpenDAL / lakehouse formats.
 - [[db/formats/README|db/formats]] — Parquet / ORC / Iceberg formats commonly stored on HDFS or S3.

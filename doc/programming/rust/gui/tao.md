@@ -27,7 +27,6 @@ Reach for tao when you're building a Rust *application* (not a game) directly on
 
 ## Internal links
 
-<!-- reviewed -->
 - [[programming/rust/gui/tauri|tauri]]
 - [[slint]]
 - [[egui]]

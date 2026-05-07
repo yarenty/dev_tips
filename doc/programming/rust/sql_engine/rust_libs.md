@@ -27,7 +27,6 @@ Filed in this section for completeness — the "Rust SQL-engine" content here is
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]]
 - [[../data/tiberius|Tiberius — Rust async TDS client]]
 - [[udf_lib]] — the Rust-UDF reference point.

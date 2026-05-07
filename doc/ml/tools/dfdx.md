@@ -30,7 +30,6 @@ Honest caveats: **less actively maintained than Burn or Candle as of 2024-2025**
 - [JAX](https://github.com/google/jax) — Python's spiritual cousin for typed (via `jaxtyping` + tools like `beartype`) functional autodiff.
 
 ## Internal links
-<!-- reviewed -->
 - [[burn]]
 - [[candle]]
 - [[tch]]

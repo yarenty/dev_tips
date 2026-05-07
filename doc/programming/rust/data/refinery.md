@@ -26,7 +26,6 @@ Reach for `refinery` when you want a thin, no-drama, Flyway-style migration runn
 - Flyway / Liquibase / Alembic / Atlas — non-Rust prior art.
 
 ## Internal links
-<!-- reviewed -->
 - [[barrel]]
 - [[programming/rust/sql_engine/diesel|diesel]]
 - [[rusqlite]]

@@ -31,8 +31,6 @@ Landing page for time-series-shaped data stores. Three different shapes of "time
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[influxdb]]
 - [[questdb]]
 - [[db/timeseries/greptimedb|GreptimeDB]]

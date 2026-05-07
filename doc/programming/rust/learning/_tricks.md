@@ -26,7 +26,6 @@ This is a real but **highly situational** speedup — it only matters in the rar
 - [`std::fmt`](https://doc.rust-lang.org/std/fmt/) — the `Display` / `Debug` machinery being optimised here.
 
 ## Internal links
-<!-- reviewed -->
 - [[cargo_toml]]
 - [[cheats]]
 - [[README]]

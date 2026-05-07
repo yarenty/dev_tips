@@ -51,8 +51,6 @@ print(md.convert("example.jpg").text_content)
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[mdfried]] — preview the resulting Markdown.
 - [[intellij]] — paste cleaned Markdown into your IDE-side LLM.
 - [[void]] — same idea, AI-editor flavour.

@@ -47,7 +47,6 @@ When *not* to pick Yew:
 - **Percy** — virtual-DOM library predating Yew; historical.
 
 ## Internal links
-<!-- reviewed -->
 - [[webassembly]] — section overview
 - [[gloo]] — browser-API toolkit Yew apps lean on
 - [[reqwest]] — HTTP client (works in Yew via wasm32 target)

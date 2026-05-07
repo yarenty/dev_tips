@@ -84,8 +84,6 @@ already on one of them.
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — frameworks landing.
 - [[h2o]] — AutoML cousin (different surface).
 - [[../bigquery/README|bigquery]] — Google's warehouse-native

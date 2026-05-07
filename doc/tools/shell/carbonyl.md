@@ -46,8 +46,6 @@ DevTools protocol is what you actually want.
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[browsh]]
 - [[lynx]]
 - [[terminals]]

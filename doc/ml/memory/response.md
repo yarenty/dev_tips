@@ -35,7 +35,6 @@ When this matters in practice: agent products that need cross-session continuity
 
 ## Internal links
 
-<!-- reviewed -->
 - [[agentic_ai_memory]] — parent landscape article (memory operations + representation taxonomy).
 - [[episodic_memory]] — sibling on EM-LLM / MemoRAG / Mamba / AriGraph specifically.
 - [[202505_recents]] — sibling chronological digest of May 2025 memory papers.

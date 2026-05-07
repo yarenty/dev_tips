@@ -61,7 +61,6 @@ Comparison sketch:
 - ollama-rs — Rust client for the Ollama HTTP API.
 
 ## Internal links
-<!-- reviewed -->
 - [[ollama_ubuntu_share]] — share an Ollama instance over LAN from Ubuntu.
 - [[providers]] — Ollama as one of Goose's LLM providers.
 - [[rig]] — Rust LLM-app framework with an Ollama backend.

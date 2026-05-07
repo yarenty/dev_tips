@@ -38,8 +38,6 @@ Gotchas to know: **concurrent-write semantics** are non-trivial — Delta uses o
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — DataFusion ecosystem landing.
 - [[iceberg]] — sibling open-table format article.
 - [[lakesoul]] — streaming-batch lakehouse format.

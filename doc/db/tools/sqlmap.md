@@ -85,8 +85,6 @@ Runs on Python 2.6+, 2.7, and 3.x on any platform.
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[db/tools/README|tools]] — section landing.
 - [[db/relational/README|relational]] — engines whose query parsers sqlmap
   exercises.

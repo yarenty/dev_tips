@@ -41,8 +41,6 @@ Compared to siblings: **`diff(1)`** / **`git diff`** are the line-based original
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[bat]] — `cat` clone with syntax highlighting (related-niche Rust tool).
 - [[../../../git/git_delta|git_delta]] — the `delta` pager article (line-diff pretty-printer).

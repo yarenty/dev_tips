@@ -35,8 +35,6 @@ For the `tree`-only niche, see [[../../../tools/design/lstr|lstr]] (lighter, int
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[bat]] / [[ripgrep]] / [[dust]] — siblings in the "Rust replaces a Unix tool" family.
 - [[../../../tools/shell/must_have|must_have]] — the "fresh box" CLI bundle.

@@ -64,7 +64,6 @@ Cross-cutting concerns when picking a provider:
 - LangChain `chat_models` — Python multi-provider abstraction.
 
 ## Internal links
-<!-- reviewed -->
 - [[goose]] — the agent runtime that consumes this provider list.
 - [[ollama]] — the most common local provider in the Goose stack.
 - [[extensions]] — sister concept; tool plugin shape.

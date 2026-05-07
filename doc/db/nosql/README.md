@@ -30,8 +30,6 @@ Landing page for non-relational data stores. The "NoSQL" label is overloaded —
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[redis]]
 - [[firebase]]
 - [[hbase]]

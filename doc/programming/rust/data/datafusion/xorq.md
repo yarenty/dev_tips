@@ -31,8 +31,6 @@ Caveats: xorq is **experimental and small**; the rebrand from LetSQL was disrupt
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[ml_letsql]] — the SAM-on-candle deep dive (xorq's flagship demo, written under the old name).
 - [[README]] — DataFusion ecosystem landing.
 - [[../README|rust/data]] — wider Rust data section.

@@ -45,8 +45,6 @@ writer.finalize()?;
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[audio]] — Rust audio ecosystem overview / decision tree.
 - [[claxon]] — companion FLAC decoder by the same author.
 - [[symphonia]] — modern read-only multi-format alternative.

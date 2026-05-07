@@ -30,7 +30,6 @@ Gotchas: no GPU backend (by design — Sonos runs on CPU); ~85% ONNX-backend-tes
 - [[../compilers/xla_accelerated_compiler|XLA]] — Google's accelerated linear-algebra compiler; the JAX-side counterpart (very different architecture).
 
 ## Internal links
-<!-- reviewed -->
 - [[candle]]
 - [[burn]]
 - [[tch]]

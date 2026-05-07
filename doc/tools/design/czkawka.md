@@ -43,8 +43,6 @@ Watch out for:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[lstr]] — see the tree before you start deleting.
 - [[superfile]] — TUI file-manager to follow up on findings.
 - [[deskreen]] — mirror Krokiet to a second screen during long scans.

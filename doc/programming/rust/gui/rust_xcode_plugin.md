@@ -26,7 +26,6 @@ Treat this as a historical pointer rather than something to install into a fresh
 
 ## Internal links
 
-<!-- reviewed -->
 - [[mobile]]
 - [[lipo]]
 - [[macos]]

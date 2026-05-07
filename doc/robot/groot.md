@@ -29,8 +29,6 @@ Caveat: Isaac stack assumes NVIDIA hardware end-to-end (Jetson on the robot, RTX
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[nvidia_omniverse]] — Companion NVIDIA simulation platform; GR00T training pipelines run on it.
 - [[lerobot]] — Hugging Face's open robot-learning framework (related space, different vendor).
 

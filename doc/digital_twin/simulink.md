@@ -31,8 +31,6 @@ In this folder, Simulink fits the **engineering / plant-model** niche of the dig
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[scilab]] — Open-source counterpart in this folder.
 - [[definition]] — Conceptual digital-twin background.
 - [[links]] — MathWorks's digital-twin training course is in the curated list.

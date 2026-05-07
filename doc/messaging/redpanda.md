@@ -41,8 +41,6 @@ The licensing matters: Redpanda Community Edition uses [BSL 1.1](https://github.
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[kafka]] — the protocol Redpanda is wire-compatible with; same governance/ops tooling section
 - [[pulsar]] — alternative "modern Kafka" with different design choices
 - [[messaging/mqtt|mqtt]] — sensor-fan-in that often bridges into Redpanda

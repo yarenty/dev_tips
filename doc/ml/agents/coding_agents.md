@@ -51,7 +51,6 @@ The picker question is **how much of the loop you want to keep**:
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — agents section landing.
 - [[devin]] — Devin (Cognition) + OpenHands consolidated article.
 - [[devon]] — Phorm/Devon (separate project).

@@ -47,8 +47,6 @@ Reach for one of the alternatives when:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[diagrams]] — for when "templating" is really an architecture-diagram problem
 - [[plotters]] — for charts that should land in templated reports
 

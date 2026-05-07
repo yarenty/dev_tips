@@ -64,8 +64,6 @@ high throughput across many nodes, or persistent materialised views.
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[db/tools/README|tools]] — section landing.
 - [[db/streaming/README|streaming]] — broader streaming context.
 - [[kafka]] — primary input source.

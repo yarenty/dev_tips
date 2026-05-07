@@ -27,8 +27,6 @@ If you're starting a new Rust game in 2026, reach for **Bevy** unless you have a
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[zxspectrum]] — Other Rust gamedev work (Z80 emulator).
 - [[corewars]] — Same "build a tiny VM/sim in Rust" lineage.
 

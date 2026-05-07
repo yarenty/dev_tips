@@ -26,7 +26,6 @@ Reach for Feather only if you specifically want the Express.js mental model in R
 - **poem** — middleware + extractors; small and pleasant.
 
 ## Internal links
-<!-- reviewed -->
 - [[axum]] — the obvious upgrade path
 - [[rocket]] — the other DX-first option
 - [[README|web README]] — sibling frameworks at a glance

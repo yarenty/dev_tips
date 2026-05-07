@@ -39,8 +39,6 @@ The recommended plugin manager is [tpm](https://github.com/tmux-plugins/tpm); th
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[zellij]]
 - [[byobu]]
 - [[tmux_ai]]

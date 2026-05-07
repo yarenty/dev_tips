@@ -42,8 +42,6 @@ For a personal CV, a thesis from scratch, a one-off report, technical notes — 
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[react]] — alternative when "PDF" is really "HTML, but printed"
 - [[mdmath_symbols]] — math-symbol cheat sheet usable in either LaTeX or Typst's math mode
 

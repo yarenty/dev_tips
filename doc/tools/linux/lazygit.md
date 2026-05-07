@@ -39,8 +39,6 @@ It pairs especially well with [[zellij]]'s floating panes (or tmux popup windows
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[helix]]
 - [[zellij]]
 - [[tools/linux/tmux|tmux]]

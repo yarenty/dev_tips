@@ -31,8 +31,6 @@ Caveat: it's a story told by the vendors and the customer; independent measureme
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[isc2022]] — The keynote presenting the case study.
 - [[nvidia_omniverse]] — Tooling stack underneath.
 - [[definition]] — Conceptual framing.

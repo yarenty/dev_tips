@@ -79,8 +79,6 @@ Things to know:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[ml_in_rust]] — sibling ML overview.
 - [[linfa]] — sibling on the CPU classical-ML side.
 - [[README]] — Rust ML section landing.

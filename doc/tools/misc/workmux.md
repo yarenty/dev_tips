@@ -44,8 +44,6 @@ Caveats: tmux-only by design (so no joy if you live in [[zellij]]); strong opini
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[tools/linux/tmux|tmux]] — the substrate Workmux drives.
 - [[bacon]] — drop a bacon pane into your worktree's tmux layout for free Rust feedback.
 - [[prek]] — keep each parallel worktree lint-clean at commit time.

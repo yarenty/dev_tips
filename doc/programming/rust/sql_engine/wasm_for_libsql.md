@@ -27,7 +27,6 @@ This is the modern alternative to native loadable extensions ([[sqlite_loadable]
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]]
 - [[sqlite_loadable]] — native-binary alternative.
 - [[sqlite]] — engine background.

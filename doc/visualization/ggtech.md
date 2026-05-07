@@ -32,8 +32,6 @@ For most actual analysis the default `theme_minimal()` or [hrbrthemes](https://g
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[plotters]] — Rust chart library
 - [[dataviz_resources]] — books / courses on what makes a chart good in the first place
 

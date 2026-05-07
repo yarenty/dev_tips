@@ -35,8 +35,6 @@ Reach for `armada` when you need to scan a large IP range for open ports and `nm
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[../../../tools/security/rustscan|rustscan]] — sibling Rust scanner article.
 - [[../../../tools/security/README|tools/security/]] — broader defensive / offensive tools landing.

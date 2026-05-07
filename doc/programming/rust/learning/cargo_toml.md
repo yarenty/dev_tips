@@ -26,7 +26,6 @@ Most Rust projects share the same first 5–10 lines of dependencies (`tokio`, `
 - [[cheats]] — broader cheat-sheet site (cheats.rs).
 
 ## Internal links
-<!-- reviewed -->
 - [[cheats]]
 - [[_must_have]]
 - [[README]]

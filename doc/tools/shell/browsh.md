@@ -44,8 +44,6 @@ JS-only site refuses to render in anything else.
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[carbonyl]]
 - [[lynx]]
 - [[mosh]]

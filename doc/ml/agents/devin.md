@@ -45,7 +45,6 @@ When to reach for which:
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — agents section landing.
 - [[coding_agents]] — full coding-agent landscape (Cursor / Aider / Cline / etc.).
 - [[devon]] — Devon (Phorm/entropy-research, separate project).

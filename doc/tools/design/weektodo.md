@@ -40,8 +40,6 @@ Caveats:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[deskreen]] — mirror your week-board to a second screen as an always-visible reference.
 - [[mdfried]] — if you'd rather plan in Markdown and just preview it.
 

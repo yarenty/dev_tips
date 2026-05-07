@@ -65,8 +65,6 @@ Headline features (from the README):
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[postgresql]]
 - [[limbo]]
 - [[surrealdb]]

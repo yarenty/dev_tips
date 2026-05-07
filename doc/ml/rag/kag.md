@@ -31,7 +31,6 @@ Honest caveats: KAG is China-originated (Alibaba/Ant), so docs and community sig
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — RAG hub
 - [[graph_rag]] — open-schema sibling/competitor
 - [[neo4j_rag]] — alternative graph substrate

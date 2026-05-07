@@ -33,8 +33,6 @@ The hard part isn't the visualisation; it's the **continuous sync** — sensor t
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[cps]] — Academic CPS framing of the same concept.
 - [[isc2022]] — Supercomputing-scale digital-twin keynote (NVIDIA + BMW, ISC 2022).
 - [[bmw]] — Real-world deployment study.

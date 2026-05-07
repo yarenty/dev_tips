@@ -46,8 +46,6 @@ Gotchas:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[programming/rust/net/README|Rust net]] — section landing page.
 - [[paho_mqtt]] — sibling article for the Paho FFI binding.
 - [[programming/rust/net/nats|NATS Rust client]] — sibling article for the next-most-common pub/sub.

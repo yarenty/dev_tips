@@ -38,8 +38,6 @@ Caveats: Electron means a chunky binary, framerate depends on your LAN, and WebR
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[rustdesk]] — when you also need remote control, not just mirroring.
 - [[weektodo]] — pair on a second screen for a permanent to-do view.
 - [[superfile]] — TUI file-manager you might want mirrored to a side display.

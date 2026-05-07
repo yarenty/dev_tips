@@ -40,8 +40,6 @@ Pick by framework first; the feature sets are roughly comparable. Svelvet specif
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[diagrams]] — for static node-graph drawings (drawio / D2)
 - [[plotters]] — Rust-side chart rendering
 

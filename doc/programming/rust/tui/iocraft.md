@@ -36,7 +36,6 @@ Trade-offs:
 - [`ratatui-eventful`](https://docs.rs/ratatui-eventful/latest/) / `tui-realm` — declarative-ish wrappers *on top of* Ratatui for users who want the best of both.
 
 ## Internal links
-<!-- reviewed -->
 - [[../tui/README|Rust TUI]]
 - [[ink]]
 - [[cursive]]

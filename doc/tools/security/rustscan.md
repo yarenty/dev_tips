@@ -40,8 +40,6 @@ Gotchas:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[sniffnet]]
 - [[shodan]]
 - [[mtr]]

@@ -32,7 +32,6 @@ Reasonable when to pick: training pipelines where the dataset is genuinely multi
 - [DVC](https://dvc.org/) — git-for-ML-datasets; complementary, not a replacement.
 
 ## Internal links
-<!-- reviewed -->
 - [[../../programming/rust/data/lance_data_format|lance_data_format]]
 - [[../data/qdrant_vector_search|qdrant_vector_search]]
 - [[../rag/summary_of_best_practices|rag/summary_of_best_practices]]

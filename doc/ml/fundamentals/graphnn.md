@@ -46,7 +46,6 @@ ClusterGCN); naive PyG/DGL won't fit.
 - **Graph databases** (Neo4j, ArangoDB, Memgraph) — where the graphs you'd feed a GNN often live.
 
 ## Internal links
-<!-- reviewed -->
 - [[../knowledge_graph/README|knowledge_graph]] — sibling section: graph-structured knowledge representation.
 - [[../frameworks/README|frameworks]] — DL frameworks (PyG/DGL build on PyTorch).
 - [[pattern_learning]] — sibling parent topic; GNNs are pattern-learning over graphs.

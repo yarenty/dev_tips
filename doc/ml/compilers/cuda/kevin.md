@@ -42,7 +42,6 @@ The bigger trend Kevin sits inside: **LLMs that write and improve kernels in a l
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README|cuda]] — broader CUDA hub (toolchain, libraries, ecosystem)
 - [[../README|ml/compilers]] — broader ML-compilers section
 - [[../xla_accelerated_compiler|xla_accelerated_compiler]] — what compiles to CUDA when you don't write the kernels

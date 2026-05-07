@@ -47,7 +47,6 @@ The pieces and how they fit:
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — agents section landing.
 - [[claude]] — Anthropic's *Building effective agents* (the design framing).
 - [[orchestration]] — orchestration patterns and frameworks.

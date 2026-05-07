@@ -43,8 +43,6 @@ The **fallback mechanism** is the whole game — Gluten is a *partial* offload, 
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — DataFusion ecosystem landing.
 - [[blaze]] — sibling Spark accelerator, DataFusion backend.
 - [[rapids]] — GPU-side Spark accelerator.

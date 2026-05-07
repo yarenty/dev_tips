@@ -31,7 +31,6 @@ Caveats: it's a `proc-macro` so it costs compile time; the syntax (`#[derivative
 - [[../learning/_must_have|_must_have]] — companion crates index.
 
 ## Internal links
-<!-- reviewed -->
 - [[README]]
 - [[reflection]]
 

@@ -37,7 +37,6 @@ What makes FutureHouse interesting is the combination of **non-profit funding mo
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — agents section landing.
 - [[co_scientist]] — Google AI co-scientist (closed counterpart).
 - [[claude]] — Anthropic's *Building effective agents* (the orchestrator-workers pattern this uses).

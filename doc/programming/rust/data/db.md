@@ -29,7 +29,6 @@ Reach for diesel when (a) you want **maximum compile-time safety** in your DB co
 - [[refinery]] / [[barrel]] — migrations (also `diesel-migrations` built into Diesel).
 
 ## Internal links
-<!-- reviewed -->
 - [[programming/rust/sql_engine/diesel|diesel (sql_engine view)]]
 - [[seaquery]]
 - [[mysql]]

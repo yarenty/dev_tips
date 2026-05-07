@@ -41,8 +41,6 @@ When to actually open the spec:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[circle]] — sibling: experimental C++ extensions; obviously diverge from the standard ABI in interesting ways.
 - [[programming/cpp/README|C++]] — parent section.
 - [[assembly]] — disassembly is the only way to confirm what a layout actually looks like.

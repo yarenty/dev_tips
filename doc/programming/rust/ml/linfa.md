@@ -70,8 +70,6 @@ A few practical notes:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[ml_in_rust]] — sibling overview.
 - [[cuda|cuda (Rust)]] — sibling on the GPU side.
 - [[README]] — Rust ML section landing.

@@ -26,7 +26,6 @@ For "I want a real database in my Rust program with zero ops", `rusqlite` is the
 - `r2d2-sqlite` — pooling adapter.
 
 ## Internal links
-<!-- reviewed -->
 - [[r2d2]]
 - [[programming/rust/sql_engine/diesel|diesel]]
 - [[barrel]] — schema migrations

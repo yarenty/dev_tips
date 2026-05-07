@@ -28,7 +28,6 @@ The practical picks: **DeepSeek-V3** is the default open-weights chat model wher
 - OpenAI o1 / o3 — the closed-source reasoning lineage that R1 caught up to.
 
 ## Internal links
-<!-- reviewed -->
 - [[README|llm/models]]
 - [[../README|llm]]
 - [[../runtimes/README|llm/runtimes]] — vLLM / SGLang / Ollama all support DeepSeek.

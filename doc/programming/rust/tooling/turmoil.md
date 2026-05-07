@@ -60,8 +60,6 @@ sim.run()?;                                  // step the sim until clients retur
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[tests]] — broader Rust testing landscape.
 - [[../concurrency/tokio|concurrency/tokio]] — the runtime turmoil simulates.

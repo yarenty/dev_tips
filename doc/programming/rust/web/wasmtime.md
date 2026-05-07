@@ -39,7 +39,6 @@ Things to know:
 - **`spin` (Fermyon)** — higher-level "Wasm microservices" framework on top of wasmtime.
 
 ## Internal links
-<!-- reviewed -->
 - [[webassembly]] — section overview
 - [[observability_on_wasm]] — tracing/observability for guest modules
 - [[programming/rust/plugins/README|plugins]] — embedding wasmtime as a plugin host

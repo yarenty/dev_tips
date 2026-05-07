@@ -50,8 +50,6 @@ Reach for Nimble awareness, not adoption (yet):
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[db/formats/README|formats]] — section landing.
 - [[db/formats/table_transfer_protocols/README|Table transfer protocols]] —
   the wire-format counterpart.

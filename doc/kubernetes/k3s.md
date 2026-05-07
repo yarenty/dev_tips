@@ -46,8 +46,6 @@ The ecosystem worth knowing:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[oracle_free_tier]] — natural target host: 4 OCPUs / 24 GB ARM is plenty for a real K3s cluster
 - [[akri]] — device discovery on the edge nodes K3s typically runs on
 - [[balena]] — non-Kubernetes alternative for the same fleet/edge problem

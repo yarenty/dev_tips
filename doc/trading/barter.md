@@ -31,8 +31,6 @@ It is *not* the right tool if you want to learn how a trading system is put toge
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[folbrecht_algo_trading_series]] — sync, hand-rolled Rust counterpart
 - [[bot_rust]] — futures-rs based predecessor-style platform
 - [[trade_aggregation_rust_candles]] — candle aggregation primitives

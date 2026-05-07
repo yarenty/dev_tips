@@ -62,8 +62,6 @@ backends. JDBC/ODBC are fine and the tooling is overwhelming.
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[db/formats/README|formats]] — section landing.
 - [[db/formats/nimble_file_format/README|Nimble]] — file-format counterpart.
 - [[db/analytics/README|analytics]] — primary consumers of Flight SQL.

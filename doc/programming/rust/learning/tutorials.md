@@ -26,7 +26,6 @@ A small curated list of long-form Rust tutorials worth the time, headlined by Go
 - [The Little Book of Rust Macros](https://veykril.github.io/tlborm/) — definitive macro reference.
 
 ## Internal links
-<!-- reviewed -->
 - [[simple_short_intro_to_rust]]
 - [[from_easy_to_advanced]]
 - [[_to_learn]]

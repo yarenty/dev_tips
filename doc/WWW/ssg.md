@@ -34,8 +34,6 @@ In the Rust ecosystem, Zola's main competition is `mdBook` (which is what *this*
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[loco_rust_on_rails]] — Server-rendered counterpart; Zola is the "static" half of the same web-dev decision tree.
 - [[fluent_templates]] — i18n layer that pairs naturally with Tera (Zola's template engine).
 

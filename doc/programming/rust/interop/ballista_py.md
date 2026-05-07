@@ -67,8 +67,6 @@ Things to know:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[pyo3|PyO3]] — the FFI binding crate underneath.
 - [[maturin]] — wheel build & publish tool.
 - [[to_python]] — the general "Rust → PyPI" recipe.

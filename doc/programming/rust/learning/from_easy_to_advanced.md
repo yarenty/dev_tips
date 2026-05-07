@@ -26,7 +26,6 @@ The pedagogy is deliberate: the linked references for beginner projects are crut
 - [Rustlings](https://github.com/rust-lang/rustlings) — fix-the-compiler-error exercises for fundamentals.
 
 ## Internal links
-<!-- reviewed -->
 - [[7_more_ideas]]
 - [[_todo_ideas]]
 - [[scope]]

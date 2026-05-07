@@ -35,7 +35,6 @@ cargo android run        # Android device
 
 ## Internal links
 
-<!-- reviewed -->
 - [[programming/rust/gui/tauri|tauri]]
 - [[macos]]
 - [[lipo]]

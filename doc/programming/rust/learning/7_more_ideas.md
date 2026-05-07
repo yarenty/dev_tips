@@ -26,7 +26,6 @@ Project-driven learning beats theory once you've read the basics; the trick is p
 - [crates.io categories](https://crates.io/categories) — find the right crate for each project.
 
 ## Internal links
-<!-- reviewed -->
 - [[from_easy_to_advanced]]
 - [[_todo_ideas]]
 - [[scope]]

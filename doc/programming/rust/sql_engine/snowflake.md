@@ -27,7 +27,6 @@ Snowflake's UDF surface is wider than most warehouses but narrower than Postgres
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]]
 - [[databend]] — Rust open-source equivalent.
 - [[../data/adbc|ADBC]] — modern Arrow-native client path.

@@ -66,8 +66,6 @@ Rough comparison vs the other interop directions:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[pyo3|PyO3]] — Python interop equivalent.
 - [[to_java]] — JVM interop equivalent.
 - [[README]] — Rust interop landing.

@@ -88,8 +88,6 @@ Useful flags (from `minio server --help`):
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[programming/unix_systems/README|unix systems]] — parent (despite this article being about an object store, not a Unix system).
 - [[programming/go/README|Go]] — MinIO is written in Go.
 - [[postgresql]] — common pairing: Postgres for relational data, MinIO for blobs.

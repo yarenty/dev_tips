@@ -25,7 +25,6 @@ Reach for Trustfall when you have **structured data scattered across heterogeneo
 - `cargo-semver-checks` — flagship Trustfall application worth studying.
 
 ## Internal links
-<!-- reviewed -->
 - [[meilisearch]]
 - [[gluesql]]
 - [[sqlparser]]

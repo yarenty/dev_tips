@@ -25,7 +25,6 @@ The Rust SQL-API spectrum has three poles: **`diesel`** (full ORM with compile-t
 - `welds` — async ORM with its own expression layer.
 
 ## Internal links
-<!-- reviewed -->
 - [[programming/rust/sql_engine/diesel|diesel]]
 - [[programming/rust/sql_engine/seaquery|sea-query (sql_engine view)]]
 - [[barrel]] / [[refinery]] — schema migrations

@@ -29,8 +29,6 @@ The trade-offs to know: (1) it's the **opposite of static-site generators** like
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[ssg]] — Static-site-generation alternative (when you don't need a server).
 - [[fluent_templates]] — i18n layer that pairs well with Loco's view layer.
 - [[apache]] / [[ssl]] — Possible deployment substrates.

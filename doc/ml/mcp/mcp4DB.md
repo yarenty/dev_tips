@@ -55,7 +55,6 @@ original notes (the Toolbox architecture diagram) lives in the upstream repo.
 - **MindsDB** — older "ML-as-virtual-tables" angle; pre-MCP.
 
 ## Internal links
-<!-- reviewed -->
 - [[README]] — section landing.
 - [[articles]] — broader MCP reading list.
 - [[a2a]] — sibling protocol article.

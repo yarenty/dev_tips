@@ -65,8 +65,6 @@ bounds are loose and savings are typically much larger in practice.
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[papers]] — sibling reading list.
 - [[db/streaming/streaming_query_approximation/README|streaming_query_approximation]] —
   parent.
@@ -79,13 +77,9 @@ bounds are loose and savings are typically much larger in practice.
 
 ## References / raw notes
 
-<!-- Full paper transcription preserved verbatim below for reference. -->
-
 # Approximate Continuous Querying  over Distributed Streams
 
 Authors: GRAHAM CORMODE  & MINOS GAROFALAKIS
-
-
 
 While traditional database systems optimize for performance on one-shot query processing, emerging
 large-scale monitoring applications require continuous tracking of complex data-analysis
@@ -103,8 +97,6 @@ complex analysis queries (including distributed join and multi-join aggregates, 
 wavelet representations), thus giving the first known low-overhead tracking solution for
 such queries in the distributed-streams model. Experiments with real data validate our approach,
 revealing significant savings over naive solutions as well as our analytical worst-case guarantees.
-
-
 
 1. INTRODUCTION
 
@@ -333,10 +325,6 @@ Traditional data-management applications typically require database support
    site to process many hundreds of thousands of updates per second, matching
    even the highest-speed data streams.
 
-
-
-
-
 2. PRELIMINARIES
 
    In this section, we describe the key elements of our distributed streamprocessing
@@ -412,8 +400,6 @@ Traditional data-management applications typically require database support
    θ Bound on local deviation of L2 norm from prediction
    g( , θ) Overall error as a function of   and θ
 
-
-
    distributed system). The unqualified notation fi, j typically refers to the current
    state of the frequency vector. Table I summarizes some of the key notational conventions
    used in this paper; additional notation is introduced when necessary.
@@ -426,9 +412,6 @@ Traditional data-management applications typically require database support
    architecture, where the underlying communication network is structured as a
    multilevel tree hierarchy (such as the routing trees typically built over sensornet
    deployments [Madden et al. 2003]).
-
-
-
 
 2.2 Problem Formulation
 
@@ -507,7 +490,6 @@ Traditional data-management applications typically require database support
    count-distinct or clusterings of data, which require other approaches in order
    to monitor accurately.
 
-
    Approximate Query Answering. The distributed nature of the local streams
    comprising the global frequency distributions { fi} raises difficult algorithmic
    challenges for our approximate query tracking problems. Na¨ıve schemes that
@@ -524,8 +506,6 @@ Traditional data-management applications typically require database support
    quantitative manner; in other words, larger error tolerances for the approximate
    answers at the coordinator imply smaller communication overheads to
    ensure continuous approximate tracking.
-
-
 
 2.3 Randomized Sketching of Streams
 
@@ -620,9 +600,6 @@ THEOREM 2.1 ([ALON ET AL. 1999; ALON ET AL. 1996]). Let sk( f1) and sk( f2)
    fi  of the true multi-join result size. The full development
    can be found in Dobra et al. [2002].
 
-
-
-
 3. OUR QUERY-TRACKING SOLUTION
 
    The goal of our tracking algorithms is to ensure strong error guarantees for
@@ -630,7 +607,6 @@ THEOREM 2.1 ([ALON ET AL. 1999; ALON ET AL. 1996]). Let sk( f1) and sk( f2)
    . . . , s} at the coordinator, while minimizing the amount of communication with
    the remote sites. We can also identify other important design desiderata that
    our solution should strive for:
-
 
    (1) Minimal global information exchanges—schemes in which the coordinator
    distributes information on the global streams to remote sites would typically
@@ -647,7 +623,6 @@ THEOREM 2.1 ([ALON ET AL. 1999; ALON ET AL. 1996]). Let sk( f1) and sk( f2)
    of the local streams at remote sites remains reasonably stable (or,
    predictable), there is no need for communication between the remote sites
    and the coordinator.
-
 
    Our solution avoids global information exchange entirely by each individual
    remote site j continuously monitoring only the L2 norms of its local update
@@ -721,7 +696,6 @@ THEOREM 2.1 ([ALON ET AL. 1999; ALON ET AL. 1996]). Let sk( f1) and sk( f2)
    in allowing remote sites to track their local constraints over massive, rapid-rate
    streams in guaranteed small time per update. 
    
-
 
 3.1 The Basic Tracking Scheme
 
@@ -826,7 +800,6 @@ the adaptation of our tracking result for the special case of a self-join query
 Q( f1) =   f1 2 =
 v( f1[v])2 (the proof follows from Theorem 3.1 with f1 = f2).
 
-
 COROLLARY 3.2. Assume local-stream sketches of size O( 1
 2 log(1/δ)), and let
 ˆs1 =
@@ -844,9 +817,6 @@ simply monitoring the L2-norm deviations of local-stream sketches is sufficient
 to guarantee error bounds for the predicted-sketch estimates at the coordinator
 that are very similar to the corresponding bounds for the simple, centralized
 case (see Section 2).
-
-
-
 
 THEOREM 3.3. Assume parallel local-stream sketches of size O( 1
 2 log(1/δ)),
@@ -867,11 +837,6 @@ i=1
 fi .
 The result follows easily from the previous expression and a simple application
 of the union bound [Motwani and Raghavan 1995].
-
-
-
-
-
 
 3.2 Sketch-Prediction Models
 
@@ -898,11 +863,7 @@ ferences between local “clocks” at sites are sufficiently small to be ignore
 we will see, the linearity properties of sketches play a crucial role in the design
 of space-, time-, and communication-efficient sketch-prediction models.
 
-
-
-
 3.2.1 Static Model. 
-
 
 Our simplest prediction model is the static model,
 which essentially assumes that the local-stream distribution fi, j remains static
@@ -914,16 +875,11 @@ i, j (t) = fi, j (tprev). This implies that the predicted sketch skp( fi, j (t))
 employed at both the coordinator and remote site j is exactly the sketch last
 shipped from site j ; that is,
 
-
 Such a prediction model is trivial to implement, essentially requiring no additional
 information to be exchanged between the coordinator and remote sites
 (besides the sites’ local sketches that are sent when dermined by condition (*)).
 
-
-
 3.2.2 Linear-Growth Model. 
-
-
 
 Due to its simplistic nature, the static model
 can only achieve stability in very “easy” and somewhat unrealistic scenarios,
@@ -947,11 +903,7 @@ a linear scaling of the most recent local sketch of fi, j shipped to the coordin
 (and no additional information need be exchanged between sites and the
 coordinator).
 
-
-
-
 3.2.3 Velocity/Acceleration Model. 
-
 
 Although intuitive, our linear-growth
 model suffers from at least two important shortcomings. First, it predicts the
@@ -1009,27 +961,19 @@ found that both these variants performed less well in terms of total communicati
 than the instantiation outlined above, so we focus on this version from
 now on.
 
-
-
-
 Table II summarizes the key points for each of our three sketch-prediction
 models (namely, the model information exchanged between the sites and the
 coordinator, and the corresponding predicted sketches).
 
-
-
 3.2.4 Analysis.
-
 
 We analyze the worst-case communication cost of our
 inner-product tracking scheme as a function of the overall approximation error
 at the coordinator under some simplifying assumptions.
 
-
 ![tab2](img/tab2.png)
 
 Table II. Parameters of Different Prediction Schemes
-
 
 THEOREM 3.4. Assume our static prediction model for an inner-product query
 Q( f1, f2) = f1 · f2 (with  , δ, θ, and ki as defined earlier), and let ψ = gQ( , θ) ≈
@@ -1041,7 +985,6 @@ cost for a remote site j processing Nj local updates to stream fi, j is
 O( ki
 ψ4 log( ki
 δ ) log Nj ).
-
 
 PROOF. Firstly, we assume that all updates are insertions, i.e. of the form
 i, v, +1 . In the static model, the worst case effect of each such update is to
@@ -1065,8 +1008,6 @@ ki
    models is more complex; instead, we experimentally evaluate different strategies
    for setting   and θ to minimize worst-case communication over real-life
    streams in Section 5.
-
-
 
 3.3 Time-Efficient Tracking: The Fast-AGMS Sketch
 
@@ -1113,7 +1054,6 @@ ki
    [U] generated randomly (through the hl () hash functions). As the following
    theorem shows, this results in essentially identical space/accuracy tradeoffs
    as basic AGMS sketching, while requiring only O(d) = O(log(1/δ)) processing
-
 
 ![fig4](img/fig4.png)
 
@@ -1234,8 +1174,6 @@ for the tracking procedure is presented in Figure 5.
 
 Fig. 5. Fast procedure for tracking updates at remote sites.
 
-
-
 3.4 Handling Other Query Classes
 
 We outline how our results apply to the other query classes introduced in
@@ -1249,9 +1187,6 @@ Range Queries, Point Queries, and Heavy Hitters. A given range query
 R( fi , a, b) can be reposed as an inner product with a vector e[a,b] where
 e[a,b][v] = 1 if a ≤ v ≤ b, and 0 otherwise. This implies the following
 theorem.
-
-
-
 
 THEOREM 3.7. Assume local-stream sketches of size O( 1
 2 log(1/δ)) and let
@@ -1278,11 +1213,6 @@ error of the best B-bucket multi-dimensional histogram.5 Combining our results
 with Theorem 3 of [Thaper et al. 2002], we have a scheme for tracking a
 1+ Bg( , θ) approximation to the best B-bucket multi-dimensional histogram.
 
-
-
-
-
-
 4. EXTENSIONS
    We have so far considered the case where queries are to be answered on the
    whole history of updates. In many applications, only recent updates are relevant
@@ -1294,9 +1224,7 @@ with Theorem 3 of [Thaper et al. 2002], we have a scheme for tracking a
    different communication-cost objectives. Lastly, we consider alternate sketch
    prediction models.
 
-
 4.1 Sliding Windows and Exponential Decay
-
 
    In the sliding window case, the current distribution fi is limited to only those
    updates occurring within the last tw time units, for some fixed value of tw.
@@ -1358,14 +1286,11 @@ with Theorem 3 of [Thaper et al. 2002], we have a scheme for tracking a
   and set the time of last modification to t. From this, we have
   
 
-
 THEOREM 4.1. The sketch tracking condition (*) can be tracked in time
   O(log(1/δ)) per update in both the sliding window and the exponential decay
   streaming models.
 
-
 4.2 Approximate Hierarchical Query Tracking
-
 
   Consider a more complex distributed-tracking scenario where the communication
   network is arranged as a tree-structured hierarchy of nodes (i.e., sites)—
@@ -1458,7 +1383,6 @@ settings.
 Aggregate Communication Cost Minimization Problem. Determine θl ’s that
 minimize the sum
 
-
 THEOREM 4.3. The optimal θl values for minimizing the (worst-case) aggregate
 communication cost over a (regular) multi-level tracking hierarchy are given 
 
@@ -1475,11 +1399,6 @@ Note that the left-hand side of this inequality is precisely our optimization
 objective, whereas the right-hand side is constant. Thus, the optimal (i.e., minimum)
 value for our objective occurs when equality holds in this instance of
 H¨older’s inequality, or, equivalently, if θ
-
-
-
-
-
 
 4.3 Alternate Sketch-Prediction Models
 
@@ -1529,10 +1448,6 @@ the applicability and potential benefits of such sketch-skimming approaches
 for our distributed query-tracking problem is an interesting direction for future
 work in this area.
 
-
-
-
-
 5. EXPERIMENTAL STUDY
 
    We conducted an experimental study on the proposed tracking algorithms, to
@@ -1543,9 +1458,6 @@ work in this area.
    the coordinator site. We also tested the overall accuracy of our approximate
    methods by comparing to the exact answer for various queries, and looked at
    the time benefits of using the fast update techniques we have introduced.
-
-
-
 
 5.1 Testbed and Methodology
 
@@ -1599,8 +1511,6 @@ work in this area.
    true , which gives a fraction, 0% being perfect accuracy; again, our goal is to
    see this error as low as possible.
 
-
-
 5.2 Experimental Results
 
    Setting Parameters and Tradeoffs. First, we investigated the tradeoff between
@@ -1613,16 +1523,12 @@ work in this area.
    communication cost is minimized for   roughly equal to 0.55–0.6ψ. Our analysis
    in Section 3.2 showed that for a worst case distribution under the static model,
 
-
 ![fig6](img/fig6.png)
 
    Fig. 6. Tradeoff between the parameters   and θ.
 
-
 ![fig7](img/fig7.png)
    Fig. 7. Effect of varying the window size used to estimate the “velocity” sketch.
-
-
 
    should be around ψ/2. In practice, it seems that a slightly different balance gives
    the lowest cost, although the trade-off curve is very flat-bottomed, and setting
@@ -1686,14 +1592,12 @@ work in this area.
 ![fig9](img/fig9.png)
    Fig. 9. Experiments evaluating the quality of the returned results.
 
-
 ![fig10](img/fig10.png)
    Fig. 10. Timing cost, comparing fast tracking methods to performing sketch estimation every step,
    for static and acceleration models.
 
    not expect to see any overall trend as   varies, beyond that the total error is
    within the global guarantee.
-
 
    In Figure 9(b), we attempt to separate the sketch error from the tracking
    error, by computing the approximation we would get if the remote site sent the
@@ -1708,7 +1612,6 @@ work in this area.
    errors can partially cancel out. For the static case, we more clearly see the trend
    for the tracking error to decrease as θ decreases to zero, thus guaranteeing that
    it meets the error bound.
-
 
    Timing Results. 
    
@@ -1750,8 +1653,6 @@ Lastly, we consider the time cost of our tracking methods.
    involved algorithm that tries several values of W in parallel and eventually
    settles on the one that minimizes communication). Failing this, linear growth
    provides adequate results, and requires no extra parameters to be set.
-
-
 
 6. CONCLUSIONS
 

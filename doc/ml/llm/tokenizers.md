@@ -28,7 +28,6 @@ Choose the implementation by the workflow: **HF `tokenizers`** for anything HF-H
 - Tokenizer visualisation tools — OpenAI's [tokenizer playground](https://platform.openai.com/tokenizer), `tiktokenizer.vercel.app`.
 
 ## Internal links
-<!-- reviewed -->
 - [[README|llm]]
 - [[llm_os]]
 - [[models/llama]] — paired with a SentencePiece BPE tokenizer (32k → 128k for Llama 3).

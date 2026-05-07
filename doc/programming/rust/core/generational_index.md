@@ -40,7 +40,6 @@ Gotchas:
 - Catherine West, [*Using Rust For Game Development*](https://kyren.github.io/2018/09/14/rustconf-talk.html) — the canonical introduction.
 
 ## Internal links
-<!-- reviewed -->
 - [[README]]
 - [[../learning/_must_have|_must_have]]
 

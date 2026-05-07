@@ -37,8 +37,6 @@ It's also useful outside robotics — anywhere you have spatial+temporal data: A
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[visualization/grafana|grafana]] — for scalar metrics; pairs with Rerun for the multimodal side
 - [[manim]] — for prepared explainer animations
 - [[diagrams]] — for static architecture / scene diagrams

@@ -95,8 +95,6 @@ Gotchas:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — frameworks landing.
 - [[dspy]] — sibling framework, complementary (prompt compilation).
 - [[phidata]] — sibling agent/RAG framework with built-in

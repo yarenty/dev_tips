@@ -37,7 +37,6 @@ A classic time-series-on-rails recipe: build a feature matrix from the past — 
 - Ryan Holbrook's *Time Series* Kaggle Learn course (5 lessons, free) — the canonical hands-on intro
 
 ## Internal links
-<!-- reviewed -->
 
 - [[forecasting]]
 - [[time_series_transformer]]

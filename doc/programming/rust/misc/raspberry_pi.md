@@ -38,8 +38,6 @@ Some practical guidance distilled from common Pi-Rust footguns:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[awesome_embedded_in_rust]] — Rust Embedded WG curated list (covers Pico via `rp-rs`, etc.).
 - [[embassy]] — async embedded framework; Pico support via `embassy-rp`.
 - [[rtic]] — interrupt-priority alternative; Pico via `rp2040-hal`.

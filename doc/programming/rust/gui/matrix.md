@@ -27,7 +27,6 @@ This is filed under `gui/` because it's the closest the vault has to "real iOS a
 
 ## Internal links
 
-<!-- reviewed -->
 - [[macos]]
 - [[mobile]]
 - [[cacao]]

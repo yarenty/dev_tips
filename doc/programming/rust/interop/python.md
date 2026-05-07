@@ -60,8 +60,6 @@ sub-articles are now [[pyo3|PyO3]], [[maturin]], [[ballista_py]], and
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[pyo3|PyO3]] — canonical Rust↔CPython binding.
 - [[maturin]] — build tool for the inverse direction.
 - [[to_python]] — Rust→PyPI recipe.

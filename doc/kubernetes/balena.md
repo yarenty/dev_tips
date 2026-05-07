@@ -41,8 +41,6 @@ The big design choice that separates Balena from "just put Docker on it" is **at
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[k3s]] — Kubernetes-shaped alternative for edge orchestration
 - [[akri]] — complementary device-discovery layer
 - [[messaging/mqtt|mqtt]] — typical telemetry transport from Balena fleets

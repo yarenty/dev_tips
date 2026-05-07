@@ -54,8 +54,6 @@ Gotchas:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[programming/rust/net/README|Rust net]] — section landing page.
 - [[tools/networking/ngrok|ngrok]] — the SaaS comparison point.
 - [[tools/networking/rathole|rathole]] — the more-featured Rust alternative.

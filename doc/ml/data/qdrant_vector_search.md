@@ -42,7 +42,6 @@ Common gotchas:
 
 ## Internal links
 
-<!-- reviewed -->
 - [[../../db/vector/qdrant|db/vector/qdrant]] — operator-side: install, config, scaling, cluster
 - [[../../db/vector/README|db/vector]] — broader vector-DB landscape and "do I need one?" decision matrix
 - [[../rag/README|ml/rag]] — where Qdrant is the canonical retrieval backend

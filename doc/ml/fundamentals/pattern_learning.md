@@ -41,7 +41,6 @@ pattern mining / DTW) still wins on small datasets, interpretability, and explai
 - **Graph pattern mining / motif discovery** — patterns in graph topology, adjacent to `graphnn` for the learned-representation version.
 
 ## Internal links
-<!-- reviewed -->
 - [[../time_series/README|time_series]] — sub-area: patterns over time.
 - [[../knowledge_graph/README|knowledge_graph]] — sub-area: patterns in graph-structured knowledge.
 - [[../genetics/README|genetics]] — sibling: sequence-pattern discovery in DNA/RNA.

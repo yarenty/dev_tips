@@ -36,7 +36,6 @@ If you want the library article, go to [[smolagents]]. If you're starting from z
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — agents section landing.
 - [[smolagents]] — the actively-maintained HF agent library.
 - [[claude]] — Anthropic's design framing (the conceptual sibling).

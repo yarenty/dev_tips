@@ -29,8 +29,6 @@ The eight-instruction core maps cleanly to C, which is why it's a great first co
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[brain]] — High-level language that targets Brainfuck.
 - [[algorithms]] — Catalogue of Brainfuck idioms (input parsing, multiplication, branching).
 

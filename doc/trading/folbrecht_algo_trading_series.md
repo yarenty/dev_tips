@@ -41,8 +41,6 @@ The Part IV backtester result (alpha vs. NASDAQ on a stupid-simple Bollinger str
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[barter]] — Rust trading engine framework
 - [[bot_rust]] — tickgrinder, an earlier futures-based Rust trading platform
 - [[trade_aggregation_rust_candles]] — candle aggregation primitives

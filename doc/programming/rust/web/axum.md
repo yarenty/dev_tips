@@ -33,7 +33,6 @@ Gotchas worth knowing up front:
 - **salvo** — newer entrant aiming at simplicity + middleware-as-handler ergonomics.
 
 ## Internal links
-<!-- reviewed -->
 - [[http]] — the `hyper` crate that Axum sits on top of
 - [[rocket]] — the opinionated alternative
 - [[tungstenite]] — Axum's WebSocket extractor delegates to `tokio-tungstenite`

@@ -36,8 +36,6 @@ If a renderer rejects a symbol, check whether it's KaTeX-specific or MathJax-spe
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[typst]] — alternative rendering target that also speaks LaTeX-shaped math
 - [[react]] — embed math in HTML-shaped PDFs
 

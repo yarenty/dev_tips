@@ -44,8 +44,6 @@ demoing a new shell setup more fun and they're trivial to skip.
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[tools/shell/tools|shell tools]]
 - [[fish]]
 - [[helix]]

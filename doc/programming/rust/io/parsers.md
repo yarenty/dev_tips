@@ -54,8 +54,6 @@ Gotchas:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[programming/rust/io/README|Rust I/O]] — section landing page.
 - [[programming/rust/io/json|json]] — JSON has its own dedicated stack; don't reach for a general parser for it.
 - [[programming/rust/sql_engine/sqlparser|sqlparser]] — SQL-specific hand-rolled parser, the canonical "parse a real language" example in the vault.

@@ -58,8 +58,6 @@ marp --images jpeg slide-deck.md             # one .jpeg per slide
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[mdfried]] — preview the Markdown source before exporting.
 - [[markitdown]] — pull existing PPTX content into Markdown to migrate decks.
 - [[typst]] — when you outgrow Marp's CSS theming.

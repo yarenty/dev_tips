@@ -65,8 +65,6 @@ After stopping Druid services you can start fresh by deleting the `var/` directo
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[influxdb]]
 - [[questdb]]
 - [[db/timeseries/greptimedb|GreptimeDB]]

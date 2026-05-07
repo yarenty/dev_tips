@@ -43,8 +43,6 @@ For *new* projects today, look at:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[messaging/mqtt|mqtt]] — primary device-to-cloud transport
 - [[shodan]] — IoT security / discovery angle (sister article in this section)
 - [[balena]] — alternative IoT stack layer

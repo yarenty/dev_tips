@@ -72,8 +72,6 @@ checks to run in the same Spark job that produced the data, no extra cluster.
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[db/quality/README|quality]] — section landing.
 - [[db/quality/data_curation/README|data curation]] — the active-curation
   cousin of validation.

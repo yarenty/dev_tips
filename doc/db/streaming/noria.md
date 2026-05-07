@@ -61,8 +61,6 @@ itself pivoted in 2024.
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[cdc]] — the change-feed input pattern.
 - [[redis]] — the manual-cache alternative.
 - [[mysql]] — wire-protocol target.
@@ -77,17 +75,11 @@ itself pivoted in 2024.
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. -->
-
 # Noria: data-flow for high-performance web applications
-
 
 https://github.com/mit-pdos/noria#noria-data-flow-for-high-performance-web-applications
 
-
 Noria is a new streaming data-flow system designed to act as a fast storage backend for read-heavy web applications based on Jon Gjengset's PhD thesis, as well as the OSDI'18 paper [*Noria: dynamic, partially-stateful data-flow for high-performance web applications*](https://www.usenix.org/conference/osdi18/presentation/gjengset). It acts like a database, but precomputes and caches relational query results so that reads are blazingly fast. Noria automatically keeps cached results up-to-date as the underlying data, stored in persistent base tables, change. Noria uses partially-stateful data-flow to reduce memory overhead, and supports dynamic, runtime data-flow and query change.
-
-
 
 Noria comes with a MySQL adapter that implements the binary MySQL protocol. This lets any application that currently talks to MySQL or MariaDB switch to Noria with minimal effort. For example, running a Lobsters-like workload that issues the equivalent SQL queries to the real Lobsters website, Noria improves throughput supported by 5x:
 
@@ -145,6 +137,5 @@ The sub-crates each serve a distinct role:
 - dataflow/: the code that implements the internals of the data-flow graph. This includes implementations of the different operators (ops/), "special" operators like leaf views and sharders (node/special/), implementations of view storage (state/), and the code that coordinates execution of control, data, and backfill messages within a thread domain (domain/).
 - mir/: the code that implements Noria's SQL-to-dataflow mapping. This includes resolving columns and keys, creating dataflow operators, and detecting reuse opportunities, and triggering migrations to make changes after new SQL queries have been added. @ms705 is the primary author of this particular subcrate, and it builds largely upon nom-sql.
 - common/: data-structures that are shared between the various server sub-crates.
-
 
 [more](https://github.com/mit-pdos/noria#noria-data-flow-for-high-performance-web-applications)

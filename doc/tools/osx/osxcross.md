@@ -39,8 +39,6 @@ Other realities:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[ios]]
 - [[osx_tricks]]
 - [[utm]]

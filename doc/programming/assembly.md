@@ -41,8 +41,6 @@ Honest gotchas:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[programming/rust/README|Rust]] — Rust's `cargo asm` / `cargo show-asm` workflow makes "what does this compile to?" a one-liner.
 - [[programming/cpp/README|C++]] — sibling section; ABI/name-mangling notes that complement low-level reading.
 - [[programming/unix_systems/README|unix systems]] — once you can read assembly, OS-from-scratch material becomes much less intimidating.

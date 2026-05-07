@@ -33,8 +33,6 @@ The Keychain Access workflow is finicky and easy to get wrong; follow the steps 
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[apache]] — System Apache cheat-sheet you'll need alongside this.
 - [[ssl]] — Companion HTTPS-on-Apache note.
 

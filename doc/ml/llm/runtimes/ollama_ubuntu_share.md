@@ -56,7 +56,6 @@ multi-tenant ChatGPT clone.
 - vLLM / TGI — production servers if you outgrow Ollama's single-request model.
 
 ## Internal links
-<!-- reviewed -->
 - [[ollama]] — canonical Ollama article.
 - [[providers]] — using a remote Ollama as a Goose provider.
 - [[tools/security/wireguard|wireguard]] — VPN alternative to opening the port.

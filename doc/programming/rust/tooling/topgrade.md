@@ -39,8 +39,6 @@ Compared to siblings: there's no real direct competitor — every alternative is
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[../../../tools/shell/must_have|must_have]] — fresh-box CLI bundle.
 - [[starship]] / [[zoxide]] / [[bat]] — siblings in a healthy CLI stack that topgrade keeps current.

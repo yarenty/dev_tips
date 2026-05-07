@@ -38,7 +38,6 @@ fn app() -> Element {
 
 ## Internal links
 
-<!-- reviewed -->
 - [[programming/rust/gui/tauri|tauri]]
 - [[slint]]
 - [[egui]]

@@ -35,7 +35,6 @@ So `hyperfs` is mostly interesting as a small *example* of a hyper-based server 
 - **`caddy`** — production single-binary server with auto-TLS.
 
 ## Internal links
-<!-- reviewed -->
 - [[http]] — the `hyper` library this is built on
 - [[axum]] — for non-trivial servers, mount `tower-http::ServeDir` in Axum instead
 - [[tools/shell/README|shell tools]] — sibling small CLIs

@@ -48,8 +48,6 @@ Two gotchas that catch people every time:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[tools/shell/tools|shell tools]]
 - [[must_have]]
 - [[fish]]

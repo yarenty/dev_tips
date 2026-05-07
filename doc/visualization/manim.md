@@ -41,8 +41,6 @@ The two-step process is always the same: write `class MyScene(Scene): def constr
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[diagrams]] — static-diagram alternative
 - [[rerun]] — for live data, not for explainers
 

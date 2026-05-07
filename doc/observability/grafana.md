@@ -35,8 +35,6 @@ The default admin password (`admin/admin`) is a foot-gun if Grafana is exposed p
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[prometheus]] — primary metrics datasource
 - [[visualization/grafana|grafana]] — dashboard-design framing of the same product
 

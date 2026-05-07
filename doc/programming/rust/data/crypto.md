@@ -27,7 +27,6 @@ The Rust crypto landscape today has three layers: (1) **algorithms** — the Rus
 - `sodiumoxide` — libsodium FFI (deprecated as of 2023).
 
 ## Internal links
-<!-- reviewed -->
 - [[../net/README|Rust net]] — TLS/QUIC live there.
 - [[../core/README|Rust core]]
 

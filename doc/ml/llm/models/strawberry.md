@@ -30,7 +30,6 @@ If you arrived here looking for **OpenAI's o1 / o3** (codenamed *Strawberry* dur
 - `browser-use` / Playwright + LLM — developer-facing recipes for building your own.
 
 ## Internal links
-<!-- reviewed -->
 - [[README|llm/models]]
 - [[../README|llm]]
 - [[../../agents/README|agents]]

@@ -33,7 +33,6 @@ It's filed under `tui/` here because the *implementation* uses Ratatui, but as a
 - [[../tui/README|Ratatui]] — the framework `tv` is built on.
 
 ## Internal links
-<!-- reviewed -->
 - [[../tui/README|Rust TUI]]
 - [[../tooling/README|Rust tooling]] — sibling section for end-user CLIs/TUIs.
 - [[../tooling/ripgrep|ripgrep]] — common pairing for "find files by content, then pick".

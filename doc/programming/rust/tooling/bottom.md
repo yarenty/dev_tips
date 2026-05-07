@@ -29,8 +29,6 @@ Reach for `btm` when you want one tool that gives you `top` + `iotop` + a memory
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[bandwhich]] — sibling network-only top.
 - [[bat]] / [[ripgrep]] / [[exa]] — siblings in the "Rust replaces a Unix tool" family.

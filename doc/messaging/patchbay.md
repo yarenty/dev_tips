@@ -40,8 +40,6 @@ For anything beyond hobby use, reach for [[messaging/mqtt|MQTT]] (sensor-shaped 
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[messaging/mqtt|mqtt]] — proper IoT pub/sub when you outgrow patchbay
 - [[oracle_free_tier]] — host your own equivalent for free
 

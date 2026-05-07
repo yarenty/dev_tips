@@ -44,8 +44,6 @@ Trippy needs elevated privileges by default (raw sockets); see its privileges gu
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[debugger]]
 - [[mosh]]
 - [[dns_toys]]

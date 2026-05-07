@@ -40,8 +40,6 @@ Honest gotchas: any site that aggressively relies on Chromium-only APIs may misb
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[fonts]]
 - [[react]]
 - [[ios]]

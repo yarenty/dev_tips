@@ -90,8 +90,6 @@ Defined and managed as code in the project:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[db/tools/README|tools]] — section landing.
 - [[sqlflow]] — streaming-SQL sibling tool.
 - [[indexing]] — index design for the queries Quary generates.

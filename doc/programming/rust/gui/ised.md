@@ -58,7 +58,6 @@ fn main() -> iced::Result {
 
 ## Internal links
 
-<!-- reviewed -->
 - [[egui]]
 - [[slint]]
 - [[dioxus]]

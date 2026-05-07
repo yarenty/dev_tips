@@ -40,8 +40,6 @@ It pairs naturally with [[tools/linux/tmux|tmux]] (obviously), but it also works
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[tools/linux/tmux|tmux]]
 - [[zellij]]
 - [[helix]]

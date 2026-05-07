@@ -58,8 +58,6 @@ Stated features:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[postgresql]]
 - [[db/timeseries/greptimedb|GreptimeDB]]
 - [[druid]]

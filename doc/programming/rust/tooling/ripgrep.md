@@ -41,8 +41,6 @@ Compared to siblings: **`grep`** is universal and POSIX; **`ag`** (the silver se
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[bat]] / [[exa]] / [[dust]] / [[bottom]] — siblings in the "Rust replaces a Unix tool" family.
 - [[../../../tools/shell/must_have|must_have]] — fresh-box CLI bundle.

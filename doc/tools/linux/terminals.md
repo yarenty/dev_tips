@@ -39,8 +39,6 @@ For modern terminal *emulators* (Alacritty, Kitty, WezTerm, Ghostty), this artic
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[byobu]]
 - [[mosh]]
 - [[tools/linux/tmux|tmux]]

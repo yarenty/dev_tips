@@ -47,8 +47,6 @@ For complex multi-screen TUIs in Go, graduate from `gum` to its parent
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[must_have]]
 - [[lazygit]]
 - [[color_codes]]

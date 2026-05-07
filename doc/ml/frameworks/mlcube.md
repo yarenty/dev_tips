@@ -78,8 +78,6 @@ Gotchas:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — frameworks landing.
 - [[h2o]] — different angle on packaging (POJO/MOJO model export).
 - [[../../kubernetes/README|kubernetes]] — common runner target.

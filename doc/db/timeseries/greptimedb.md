@@ -61,8 +61,6 @@ Stated capabilities:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[influxdb]]
 - [[questdb]]
 - [[druid]]

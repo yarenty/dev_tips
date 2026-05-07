@@ -32,7 +32,6 @@ Things to know:
 - **Loco** — "Rails for Rust" built on top of Axum; even more opinionated than Rocket.
 
 ## Internal links
-<!-- reviewed -->
 - [[axum]] — the modern alternative most new projects pick
 - [[http]] — the underlying `hyper` HTTP layer
 - [[reqwest]] — natural HTTP-client pairing for testing Rocket services

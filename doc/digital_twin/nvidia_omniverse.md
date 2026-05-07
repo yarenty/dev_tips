@@ -33,8 +33,6 @@ For deeper looks: [[isc2022]] (the strategic narrative), [[bmw]] (a concrete dep
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[isc2022]] — Strategic-narrative talk introducing Omniverse + the digital-twin "superpowers".
 - [[bmw]] — Concrete deployment example.
 - [[definition]] — Conceptual background.

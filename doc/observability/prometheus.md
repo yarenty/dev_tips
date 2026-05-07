@@ -35,8 +35,6 @@ PromQL has four metric types — counter (only-goes-up; use `rate()` to read it)
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[observability/grafana|grafana]] — paired dashboard frontend
 - [[visualization/grafana|grafana]] — Mimir long-term-storage discussion
 

@@ -33,8 +33,6 @@ Reach for `windows-rs` whenever you'd otherwise reach for a Win32 / COM / WinRT 
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[../gui/macos|Apple Rust targets]] — sibling story for Apple platforms (windows-rs ↔ objc2 / cacao).
 - [[../gui/tauri|tauri]] — cross-platform GUI; uses windows-rs internally on Windows.
 - [[../gui/slint|slint]] — retained-mode GUI that targets Windows.

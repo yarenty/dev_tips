@@ -60,7 +60,6 @@ on-chain agents prominently), but the library itself is general-purpose.
 - `ollama-rs` — single-vendor Rust client for Ollama specifically.
 
 ## Internal links
-<!-- reviewed -->
 - [[ollama]] — common backend; Rig has an `ollama` provider.
 - [[providers]] — broader LLM provider landscape.
 - [[rsllm]] — niche Rust LLM streaming tool (very different scope).

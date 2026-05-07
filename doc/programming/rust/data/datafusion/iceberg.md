@@ -35,8 +35,6 @@ Gotchas: `iceberg-rust` is **incubating** — feature parity with the Java refer
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — DataFusion ecosystem landing.
 - [[delta]] — sibling open-table format.
 - [[lakesoul]] — newer lakehouse format.

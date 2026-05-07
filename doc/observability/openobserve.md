@@ -42,8 +42,6 @@ The interesting trend OpenObserve is part of: a generation of **Rust-rewritten d
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[prometheus]] + [[observability/grafana|grafana]] — the stack OpenObserve competes against
 - [[node_exporter]] — host metrics; works against OpenObserve via the Prometheus-remote-write endpoint
 - [[redpanda]] — same "Rust single-binary infra rewrite" trend, different problem space

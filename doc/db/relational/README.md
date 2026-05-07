@@ -56,8 +56,6 @@ A rough decision tree:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[postgresql]] — start here for any new project.
 - [[mysql]] — the other one.
 - [[surrealdb]] — multi-model curiosity.

@@ -48,8 +48,6 @@ The toolchain is the same; the docs and downloads have moved. Always check both 
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[nvidia_omniverse]] — NVIDIA's accelerator stack as comparison
 - [[k3s]] — what you'd run on Kria SoMs once PetaLinux boots if you want a Kubernetes substrate
 

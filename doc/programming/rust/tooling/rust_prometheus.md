@@ -67,8 +67,6 @@ For the Prometheus *server* (PromQL, retention, alertmanager, federation), see [
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[../../../observability/prometheus|observability/prometheus]] — Prometheus server / PromQL.
 - [[tracing]] / [[open_telemetry]] — sibling observability primitives.

@@ -29,8 +29,6 @@ For actual play, fine — load any `.tap` from <https://worldofspectrum.org> and
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[engines]] — Other Rust gamedev work (engines rather than emulators).
 - [[corewars]] — Sibling tiny-VM article.
 

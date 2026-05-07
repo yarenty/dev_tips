@@ -39,7 +39,6 @@ Pitfalls to avoid in any tutorial:
 - [[../fundamentals/courses|fundamentals/courses]] — broader ML learning resources
 
 ## Internal links
-<!-- reviewed -->
 
 - [[forecasting]]
 - [[linear_regression]]

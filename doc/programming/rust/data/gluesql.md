@@ -26,7 +26,6 @@ Reach for GlueSQL when you want **SQL semantics without committing to a specific
 - `surrealdb` — multi-model embedded DB; bigger surface area than GlueSQL.
 
 ## Internal links
-<!-- reviewed -->
 - [[sqlparser]] — frontend GlueSQL is built on
 - [[surrealdb]]
 - [[wooridb]]

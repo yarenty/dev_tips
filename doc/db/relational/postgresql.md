@@ -181,8 +181,6 @@ brew services restart postgresql@14
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[mysql]]
 - [[barman]]
 - [[edgedb]]

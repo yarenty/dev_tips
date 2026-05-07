@@ -38,7 +38,6 @@ Honest caveats: real-robot ML is brittle even with great tooling — calibration
 - [MuJoCo Menagerie](https://github.com/google-deepmind/mujoco_menagerie) — curated MJCF robot models for sim.
 
 ## Internal links
-<!-- reviewed -->
 - [[../../robot/README|robot]]
 - [[../../robot/groot|groot]]
 - [[../llm/README|llm]]

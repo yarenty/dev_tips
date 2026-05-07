@@ -51,7 +51,6 @@ manifolds.
 - **Spectral clustering** — graph-Laplacian-based; handles non-convex clusters cheaper than HDBSCAN on small data.
 
 ## Internal links
-<!-- reviewed -->
 - [[programming/rust/ml/linfa|linfa]] — the canonical Rust ML crate; ships a k-means implementation.
 - [[../tools/README|ml/tools]] — tooling that wraps clustering pipelines.
 - [[no_deep_learning_needed]] — sibling: classical-ML-still-wins page (k-means is exhibit A).

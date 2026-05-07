@@ -46,8 +46,6 @@ Gotchas:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[programming/rust/net/README|Rust net]] — section landing page.
 - [[mq|rumqtt]] — the pure-Rust sibling; usually the better default.
 - [[messaging/mqtt|messaging/mqtt]] — substrate-side companion article.

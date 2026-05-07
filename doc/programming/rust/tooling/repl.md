@@ -38,8 +38,6 @@ Rust's compile-and-run model means REPLs aren't the day-to-day workflow they are
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[rust_in_jupyter]] — Jupyter kernel built on evcxr.
 - [[../learning/_must_have|learning/_must_have]] — broader "what to install when learning Rust".

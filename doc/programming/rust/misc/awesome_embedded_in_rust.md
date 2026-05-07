@@ -36,8 +36,6 @@ The list itself is a directory page, not a tutorial — once you've found the cr
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[raspberry_pi]] — Rust on Raspberry Pi specifically.
 - [[embassy]] — async-first embedded executor.
 - [[rtic]] — interrupt-priority-based real-time scheduler.

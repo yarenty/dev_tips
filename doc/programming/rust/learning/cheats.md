@@ -26,7 +26,6 @@ Reach for cheats.rs when you've used Rust before but the syntax has half-faded â
 - [[tutorials]] â€” long-form tutorials curated in this vault.
 
 ## Internal links
-<!-- reviewed -->
 - [[simple_short_intro_to_rust]]
 - [[tutorials]]
 - [[from_easy_to_advanced]]

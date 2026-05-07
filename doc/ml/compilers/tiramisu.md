@@ -36,7 +36,6 @@ What it isn't: a 2024-grade ML-tensor compiler. The active production action liv
 
 ## Internal links
 
-<!-- reviewed -->
 - [[xla_accelerated_compiler]] — Google's tensor compiler, the production-grade analogue
 - [[mlgo_llvm]] — ML-driven heuristics for LLVM, complementary technique
 - [[tiny_gpu]] — the hardware end of the same conversation

@@ -29,8 +29,6 @@ Other "Rust + sound for fun" projects in similar territory: [`bongo-cat-rs`](htt
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[audio]] — Rust audio ecosystem overview (Daktilo lives at the playback layer).
 - [[rodio]] — direct dependency for playing sound samples.
 - [[fun]] — sibling whimsy entry in this section.

@@ -196,8 +196,6 @@ Available (or close to it): JavaScript, Deno, Golang, Rust (async), WebAssembly,
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[postgresql]]
 - [[edgedb]]
 - [[fauna]]

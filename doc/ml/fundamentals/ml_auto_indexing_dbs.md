@@ -43,7 +43,6 @@ inside an already-complex system. Watch the area, but don't bet your OLTP indexe
 - **Cost-based optimisers** — what learned cardinality estimators (Neo, Bao) are trying to replace.
 
 ## Internal links
-<!-- reviewed -->
 - [[../../db/README|db]] — the database section this work targets.
 - [[../../db/relational/README|db/relational]] — where B-tree-replacement matters most.
 - [[../../db/vector/README|db/vector]] — sibling area where learned structure is already mainstream.

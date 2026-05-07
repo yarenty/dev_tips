@@ -27,7 +27,6 @@ Reach for Cacao when "feels like a Mac app" is part of the requirement and a web
 
 ## Internal links
 
-<!-- reviewed -->
 - [[macos]]
 - [[mac_notification_sys]]
 - [[mobile]]

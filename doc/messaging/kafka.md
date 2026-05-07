@@ -57,8 +57,6 @@ The four things that bite people coming from a queue-shaped system:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[redpanda]] — Kafka-compatible single-binary alternative
 - [[pulsar]] — Apache Pulsar — different architecture, similar problem space
 - [[messaging/mqtt|mqtt]] — IoT fan-in often bridged into Kafka downstream

@@ -57,8 +57,6 @@ wait
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[term]] — `presenterm` for Markdown-driven terminal slide decks; pair with `demo-magic` for the live-shell sections.
 - [[tools/linux/tmux|tmux]] — split panes for multi-shell demos.
 - [[zellij]] — modern multiplexer alternative if `tmux` isn't your style.

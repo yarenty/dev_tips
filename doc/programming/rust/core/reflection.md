@@ -42,7 +42,6 @@ The two approaches solve different problems and you almost never combine them:
 - [[derivative]] — derive helpers for the standard traits (different problem, same neighbourhood).
 
 ## Internal links
-<!-- reviewed -->
 - [[README]]
 - [[derivative]]
 

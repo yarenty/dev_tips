@@ -50,8 +50,6 @@ The realistic alternative for most of the "I want sum types and reflection in my
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[abi]] — sibling: any non-standard compiler raises ABI questions immediately.
 - [[programming/cpp/README|C++]] — parent section.
 - [[programming/rust/README|Rust]] — the comparison every "but C++ could have..." discussion ends at.

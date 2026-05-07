@@ -46,8 +46,6 @@ The core unit of schema is the **object type**, analogous to a SQL table. Object
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[postgresql]]
 - [[surrealdb]]
 - [[fauna]]

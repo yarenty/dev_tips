@@ -47,7 +47,6 @@ Where to skip:
 
 ## Internal links
 
-<!-- reviewed -->
 - [[mlgo_llvm]] — Google's other ML-driven compiler effort, but at the LLVM-IR level
 - [[tiramisu]] — research-grade polyhedral compiler in the same broad space
 - [[tiny_gpu]] — the hardware end of the same stack

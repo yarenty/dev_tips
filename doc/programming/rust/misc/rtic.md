@@ -33,8 +33,6 @@ RTIC is the natural choice when you have a small, well-defined set of recurrent 
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[embassy]] — sibling, the async-first alternative.
 - [[awesome_embedded_in_rust]] — entry-point reading list.
 - [[raspberry_pi]] — Raspberry Pi Pico (RP2040) is supported via `cortex-m-rtic` + `rp2040-hal`.

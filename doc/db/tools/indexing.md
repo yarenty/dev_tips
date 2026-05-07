@@ -61,8 +61,6 @@ If you only ever read one chapter: "The Equality Operator", followed by
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[db/tools/README|tools]] — section landing.
 - [[postgresql]] — the most fully-featured open-source target for what this
   book teaches.

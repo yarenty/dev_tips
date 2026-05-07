@@ -43,8 +43,6 @@ Practical notes:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[osxcross]]
 - [[ios]]
 - [[osx_tricks]]

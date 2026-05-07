@@ -38,7 +38,6 @@ The honest meta-lesson: most "we tried RAG and it didn't work" reports trace to 
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — RAG hub
 - [[rag_query_summarize]] — query rewriting / decomposition / HyDE
 - [[agentic_rag]] — when controller loops earn their cost

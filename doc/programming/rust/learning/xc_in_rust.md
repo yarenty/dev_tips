@@ -26,7 +26,6 @@ The pitch is "kill the README/Makefile drift": instead of a `README` that lists 
 - [`cargo-make`](https://github.com/sagiegurari/cargo-make) — Rust-ecosystem task runner with TOML config.
 
 ## Internal links
-<!-- reviewed -->
 - [[_todo_ideas]]
 - [[from_easy_to_advanced]]
 - [[README]]

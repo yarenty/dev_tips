@@ -31,8 +31,6 @@ If you want a Rust counterpart, [[barter]] is the closest analogue but with a mu
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[barter]] — Rust counterpart, smaller connector zoo
 - [[folbrecht_algo_trading_series]] — DIY Rust trading framework
 - [[bot_rust]] — older Rust platform

@@ -21,8 +21,6 @@ Subfolder for PostgreSQL-adjacent tooling — backups, ops, extensions, and othe
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[postgresql]]
 - [[barman]]
 

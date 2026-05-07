@@ -30,7 +30,6 @@ Gotchas worth knowing: kernel fusion currently lives in the WGPU/Cubecl backends
 - [PyTorch](https://pytorch.org/) — the Python framework Burn is most often compared against; Burn imports its weights and ONNX exports.
 
 ## Internal links
-<!-- reviewed -->
 - [[candle]]
 - [[tch]]
 - [[dfdx]]

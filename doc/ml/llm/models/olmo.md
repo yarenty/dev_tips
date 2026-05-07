@@ -28,7 +28,6 @@ For everyday use OLMo 2 7B/13B are competitive with Llama 3.1 8B and Mistral-Nem
 - Tülu — Allen AI's open instruction-tuning recipes; usually paired with OLMo bases.
 
 ## Internal links
-<!-- reviewed -->
 - [[README|llm/models]]
 - [[../README|llm]]
 - [[llama]]

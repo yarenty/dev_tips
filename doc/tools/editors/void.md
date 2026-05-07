@@ -43,8 +43,6 @@ Practical comparison points: **Cursor** for the most polished UX, **Zed** if you
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[intellij]] — heavyweight IDE alternative when refactoring matters more than AI.
 - [[markitdown]] — feed proprietary docs to your in-editor LLM.
 - [[helix]] — terminal modal editor for the opposite end of the UX spectrum.

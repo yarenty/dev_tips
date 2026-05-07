@@ -41,8 +41,6 @@ If yes, the field is crowded:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[chroma]]
 - [[db/vector/qdrant|Qdrant]]
 - [[postgresql]]

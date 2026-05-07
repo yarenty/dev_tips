@@ -26,7 +26,6 @@ Honest framing: **WooriDB is a low-activity hobby project**, not production-read
 - [[surrealdb]] — multi-model embedded DB.
 
 ## Internal links
-<!-- reviewed -->
 - [[gluesql]]
 - [[surrealdb]]
 - [[greptimedb]]

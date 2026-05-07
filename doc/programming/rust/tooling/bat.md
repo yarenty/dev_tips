@@ -29,8 +29,6 @@ Compared to siblings: **`pygmentize` / `ccat`** are the older Python/Go equivale
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[ripgrep]] — the `grep` sibling.
 - [[exa]] — the `ls` sibling.

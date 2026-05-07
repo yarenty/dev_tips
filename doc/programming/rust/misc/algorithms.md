@@ -27,8 +27,6 @@ Reach for this when you want to *read* an idiomatic Rust implementation of a wel
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[../learning/README|Rust learning]] — adjacent reading list / pedagogy hub.
 - [[funny/algorithms|Brainfuck algorithms]] — the same idea but for the Brainfuck esolang.
 - [[../core/README|Rust core]] — for std-level data-structure choices once you've picked an algorithm.

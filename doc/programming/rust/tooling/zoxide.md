@@ -38,8 +38,6 @@ zoxide remove ~/old    # forget a path
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[starship]] — pairs naturally as part of a shell-productivity stack.
 - [[../../../tools/shell/must_have|must_have]] — fresh-box CLI bundle that includes zoxide.

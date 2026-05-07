@@ -38,7 +38,6 @@ The honest gap: **none of these match the *associative + adaptive-forgetting* qu
 
 ## Internal links
 
-<!-- reviewed -->
 - [[agentic_ai_memory]] — parent landscape article (memory operations + representation taxonomy).
 - [[response]] — sibling: 2024-2025 eidetic-memory survey (broader citation list).
 - [[202505_recents]] — sibling: chronological digest of May 2025 memory papers.

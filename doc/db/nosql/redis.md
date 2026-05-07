@@ -74,8 +74,6 @@ Tags this connects to: `#cache` `#java` `#distributed` `#cross-platform`.
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[postgresql]]
 - [[surrealdb]]
 - [[firebase]]

@@ -38,7 +38,6 @@ For users coming from Python's `tqdm`, [`kdam`](https://crates.io/crates/kdam) i
 - [`tracing-indicatif`](https://crates.io/crates/tracing-indicatif) — bridge between `tracing` spans and progress bars.
 
 ## Internal links
-<!-- reviewed -->
 - [[../cli/README|Rust CLI]]
 - [[dialoguer]]
 - [[../concurrency/tokio|tokio]] — common for parallel jobs that drive `MultiProgress`.

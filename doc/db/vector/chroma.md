@@ -61,8 +61,6 @@ Canonical "Chat your data" pattern:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[db/vector/qdrant|Qdrant]]
 - [[postgresql]]
 

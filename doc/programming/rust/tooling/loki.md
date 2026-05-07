@@ -41,8 +41,6 @@ Operator's view of Loki itself (single-binary mode, microservices mode, retentio
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[tracing]] — pair via `tracing-loki` subscriber.
 - [[../../../observability/grafana|observability/grafana]] — the dashboards over the top.

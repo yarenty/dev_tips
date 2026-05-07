@@ -48,8 +48,6 @@ Gotchas:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[programming/rust/net/README|Rust net]] — section landing page.
 - [[messaging/nats|messaging/nats]] — substrate-side companion article (broker, ops, when-to-use).
 - [[mq|rumqtt]] — sibling Rust client article for MQTT.

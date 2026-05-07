@@ -44,7 +44,6 @@ Note: the filename `caching.md` is shared with `programming/rust/data/cache.md` 
 
 ## Internal links
 
-<!-- reviewed -->
 - [[agentic_ai_memory]] — sibling: agent-memory landscape (caching is the *adjacent* memory-shaped optimisation).
 - [[response]] — sibling: 2024-2025 eidetic-memory survey.
 - [[episodic_memory]] — sibling: episodic recall (different problem, different solution).

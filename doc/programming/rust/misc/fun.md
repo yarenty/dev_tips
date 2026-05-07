@@ -37,8 +37,6 @@ Reach for these when you want a small, finishable Rust project to learn from, wh
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[daktilo]] — sibling whimsy entry in this section.
 - [[../../../funny/README|funny]] — vault-wide fun / esoteric programming section.
 - [[../../../funny/algorithms|Brainfuck algorithms]] — adjacent whimsy reading.

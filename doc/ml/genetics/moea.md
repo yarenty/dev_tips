@@ -38,7 +38,6 @@ The honest framing: MOEAs are a *niche but durable* corner of optimisation. The 
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — section landing.
 - [[../fundamentals/no_deep_learning_needed|no_deep_learning_needed]] — sibling argument: there's a lot of optimisation that doesn't need deep learning.
 - [[../fundamentals/pattern_learning|pattern_learning]] — meta-topic landing under which evolutionary computation sits.

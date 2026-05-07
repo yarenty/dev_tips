@@ -51,8 +51,6 @@ Gotchas:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[trace]]
 - [[sniffnet]]
 - [[wireguard]]

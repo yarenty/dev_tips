@@ -27,8 +27,6 @@ Bookmark this whenever you write Brainfuck *or* a Brainfuck compiler. Even simpl
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[brainfuck]] — The language whose minimalism makes these patterns necessary.
 - [[brain]] — A compiler that *emits* these patterns from higher-level source.
 

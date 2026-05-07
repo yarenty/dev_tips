@@ -44,7 +44,6 @@ host-side support.
 - **MCP elicitation** (in-spec) — the lighter-weight "ask the user a structured question" primitive in the MCP spec itself.
 
 ## Internal links
-<!-- reviewed -->
 - [[README]] — section landing.
 - [[articles]] — broader MCP reading list.
 - [[a2a]] — sibling protocol; A2A's `parts` overlap conceptually.

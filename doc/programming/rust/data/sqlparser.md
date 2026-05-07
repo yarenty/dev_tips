@@ -26,7 +26,6 @@ Reach for `sqlparser-rs` whenever you need to **inspect, rewrite, or route SQL**
 - `pg_query` (libpg_query bindings) — when you need 100% Postgres-grammar fidelity.
 
 ## Internal links
-<!-- reviewed -->
 - [[gluesql]]
 - [[programming/rust/sql_engine/sqlparser|sqlparser (sql_engine view)]]
 - [[datafusion/README|DataFusion]]

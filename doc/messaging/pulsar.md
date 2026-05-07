@@ -42,8 +42,6 @@ The most underrated Pulsar feature: **tiered storage** to S3 / GCS / Azure Blob.
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[kafka]] — primary competitor, simpler architecture
 - [[redpanda]] — single-binary Kafka-compatible alternative
 - [[messaging/mqtt|mqtt]] — IoT ingest that bridges in via Pulsar's connectors

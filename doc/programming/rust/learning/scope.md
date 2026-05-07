@@ -26,7 +26,6 @@ The list is roughly the demarcation point between "I can write a working CLI" an
 - [[from_easy_to_advanced]] — project-based variant of the same idea.
 
 ## Internal links
-<!-- reviewed -->
 - [[tutorials]]
 - [[simple_short_intro_to_rust]]
 - [[from_easy_to_advanced]]

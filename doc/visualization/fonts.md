@@ -33,8 +33,6 @@ For long sessions my preference is **Iosevka** (variable-width, dense, hyper-cus
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[diagrams]] — when you want a font for *labelling* diagrams, not for code
 - [[plotters]] — chart text rendering also depends on font choices
 

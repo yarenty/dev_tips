@@ -44,7 +44,6 @@ post-MLP era it was initially marketed as.
 - **Physics-informed neural networks (PINNs)** — adjacent application area where KAN has shown promise on PDEs.
 
 ## Internal links
-<!-- reviewed -->
 - [[../frameworks/README|frameworks]] — DL framework landing (PyTorch, JAX — what `pykan` builds on).
 - [[no_deep_learning_needed]] — sibling on the "do you actually need a neural net?" question.
 - [[pattern_learning]] — sibling meta-topic on learning structure from data.

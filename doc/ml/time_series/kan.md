@@ -28,7 +28,6 @@ Kolmogorov-Arnold Networks (KANs) replace the MLP's fixed activations + learned 
 - [[time_sieve]] — non-MLP, non-Transformer TS architecture (wavelet + information bottleneck)
 
 ## Internal links
-<!-- reviewed -->
 
 - [[../fundamentals/kan|fundamentals/kan]] — canonical KAN article
 - [[forecasting]]

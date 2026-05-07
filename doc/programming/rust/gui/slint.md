@@ -76,7 +76,6 @@ cargo generate --git https://github.com/slint-ui/slint-rust-template
 
 ## Internal links
 
-<!-- reviewed -->
 - [[egui]]
 - [[dioxus]]
 - [[programming/rust/gui/tauri|tauri]]

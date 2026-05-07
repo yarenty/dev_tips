@@ -27,8 +27,6 @@ A delightful 5-instruction-VM teaching tool: it strips computing down to opcode 
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[zxspectrum]] — Sibling retro-emulation project (Z80 / Spectrum 48K).
 - [[brainfuck]] — Same "minimal VM for fun" lineage.
 

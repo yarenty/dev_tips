@@ -39,7 +39,6 @@ For genuinely uncontaminated signal, the current best practices are: **Chatbot A
 - Vellum / OpenRouter rankings — usage-driven popularity rankings; useful for "what are people actually paying for?".
 
 ## Internal links
-<!-- reviewed -->
 - [[README|llm/inspection]]
 - [[../README|llm]]
 - [[seal]] — private-prompt sibling.

@@ -27,7 +27,6 @@ The reason this article exists in the Rust section is `pluots/sql-udf` (better k
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]]
 - [[udf_lib]] — the actually-Rust part of this story.
 - [[../data/mysql|MySQL/MariaDB Rust client]]

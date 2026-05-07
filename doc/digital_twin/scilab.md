@@ -29,8 +29,6 @@ For real digital-twin operations at industrial scale, Scilab is undersized — s
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[simulink]] — Commercial counterpart in this folder.
 - [[definition]] — Conceptual background on digital twins.
 - [[nvidia_omniverse]] — Industrial-scale alternative tooling stack.

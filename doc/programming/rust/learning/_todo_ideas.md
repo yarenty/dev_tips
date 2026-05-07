@@ -26,7 +26,6 @@ Porting a known-good tutorial is one of the highest-leverage Rust learning patte
 - [`serde_json`](https://crates.io/crates/serde_json) — for serialising/deserialising blocks.
 
 ## Internal links
-<!-- reviewed -->
 - [[7_more_ideas]]
 - [[from_easy_to_advanced]]
 - [[xc_in_rust]]

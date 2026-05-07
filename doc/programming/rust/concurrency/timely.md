@@ -49,8 +49,6 @@ Caveats:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[noria]] — sibling streaming-dataflow research project (MIT/PDOS) for SQL materialised views.
 - [[streaming]] — lighter-weight async parallelism; the right tool when you don't need full dataflow.
 - [[salsa]] — demand-driven counterpart to push-based dataflow.

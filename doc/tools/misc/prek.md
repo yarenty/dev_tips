@@ -77,8 +77,6 @@ prek autoupdate
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[bacon]] — continuous Rust feedback loop alongside `prek`'s gate at commit time.
 - [[workmux]] — multi-worktree workflows where `prek` keeps each branch lint-clean.
 - [[lazygit]] — UI for the Git side.

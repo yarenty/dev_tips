@@ -63,8 +63,6 @@ VS Code: see <https://mago.carthage.software/recipes/vscode>.
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[programming/php/README|PHP]] — parent section.
 - [[programming/rust/README|Rust]] — Mago is one of many examples of Rust eating language tooling.
 - [[programming/package_managers/README|package managers]] — adjacent: Composer is where you'll typically wire Mago into a project.

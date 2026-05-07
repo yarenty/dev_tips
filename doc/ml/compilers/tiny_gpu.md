@@ -36,7 +36,6 @@ Where it sits in the space of "build-it-yourself hardware" projects: `tiny-gpu` 
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README|ml/compilers]] — the broader ML-compilers section
 - [[cuda/README|cuda]] — the production GPU side of the same conversation
 - [[xla_accelerated_compiler]] — what runs *on* a GPU when you don't write the kernels yourself

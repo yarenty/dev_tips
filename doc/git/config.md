@@ -27,8 +27,6 @@ Reach for this whenever you set up a fresh machine or onboard a junior. The bigg
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[git_delta]] — Companion: better diff/blame rendering, configured exactly via the `core.pager` line in this config.
 - [[github]] — Other Git tooling tip in this section.
 

@@ -29,8 +29,6 @@ Pricing is the gotcha: looks cheap, becomes expensive once you add seats and scr
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[../ml/tools/n8n|n8n]] — Workflow-automation engine that integrates well with Airtable.
 - [[tools|tally]] — Sibling form / no-code tool article in this section.
 

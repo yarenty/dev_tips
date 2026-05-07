@@ -33,8 +33,6 @@ It's not trying to replace `glow` or your editor's preview — it's a single tri
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[markitdown]] — generate Markdown from PDF/DOCX/etc., then preview it here.
 - [[marp]] — Markdown → slide decks.
 - [[helix]] — terminal editor; pair `mdfried` for split-pane preview.

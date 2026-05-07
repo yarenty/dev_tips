@@ -98,8 +98,6 @@ FLUSH PRIVILEGES;
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[postgresql]]
 - [[singlestore]]
 - [[limbo]]

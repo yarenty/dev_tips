@@ -32,8 +32,6 @@ When **not** to reach for Tally:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[airtable]] — Often paired (Tally → Airtable).
 - [[../ml/tools/n8n|n8n]] — Workflow trigger for processing submissions.
 

@@ -37,8 +37,6 @@ The README links into a small constellation of GTK-rs demos (Czkawka, Solanum, W
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[visualization/grafana|grafana]] — when you want a live dashboard, not a one-shot PNG
 - [[svelvet]] — JS-side alternative for interactive node-graph style visualisations
 - [[diagrams]] — for static architecture diagrams (different problem)

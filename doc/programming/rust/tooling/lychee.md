@@ -47,8 +47,6 @@ Compared to siblings: **`markdown-link-check`** (Node) is the most-cited alterna
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 
 ## Keywords

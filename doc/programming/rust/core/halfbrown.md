@@ -39,7 +39,6 @@ Gotchas: the sentinel "we just switched backends" allocation is a hidden cost â€
 - [simd-json](https://github.com/simd-lite/simd-json) â€” the JSON parser whose benchmarks drove halfbrown's design.
 
 ## Internal links
-<!-- reviewed -->
 - [[README]]
 - [[hashbrown]]
 - [[tinyvec]]

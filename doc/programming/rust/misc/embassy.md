@@ -32,8 +32,6 @@ Embassy is the modern alternative to a traditional RTOS for Cortex-M (and increa
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[rtic]] — sibling, the interrupt-priority alternative.
 - [[awesome_embedded_in_rust]] — entry-point reading list.
 - [[raspberry_pi]] — Embassy supports the Raspberry Pi Pico (RP2040) via `embassy-rp`.

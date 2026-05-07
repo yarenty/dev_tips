@@ -36,8 +36,6 @@ If you don't *have* a Mac and want to do CI-style cross-builds (e.g. for a Rust 
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[osxcross]]
 - [[utm]]
 - [[osx_tricks]]

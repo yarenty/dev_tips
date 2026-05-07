@@ -53,7 +53,6 @@ The decision-shortcut question is **what's your control-flow shape**:
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — agents section landing.
 - [[claude]] — Anthropic's *Building effective agents* (the workflow-patterns vocabulary).
 - [[memory]] — agent-memory side; the state inside the orchestrator.
@@ -87,7 +86,6 @@ This is the canonical *parallelisation* workflow: three LLM calls fan out from `
 from typing import TypedDict
 from langgraph.graph import StateGraph, START, END
 
-
 # Graph state
 class State(TypedDict):
     topic: str
@@ -96,25 +94,21 @@ class State(TypedDict):
     poem: str
     combined_output: str
 
-
 # Nodes
 def call_llm_1(state: State):
     """First LLM call to generate initial joke."""
     msg = llm.invoke(f"Write a joke about {state['topic']}")
     return {"joke": msg.content}
 
-
 def call_llm_2(state: State):
     """Second LLM call to generate story."""
     msg = llm.invoke(f"Write a story about {state['topic']}")
     return {"story": msg.content}
 
-
 def call_llm_3(state: State):
     """Third LLM call to generate poem."""
     msg = llm.invoke(f"Write a poem about {state['topic']}")
     return {"poem": msg.content}
-
 
 def aggregator(state: State):
     """Combine the joke, story, and poem into a single output."""
@@ -123,7 +117,6 @@ def aggregator(state: State):
     combined += f"JOKE:\n{state['joke']}\n\n"
     combined += f"POEM:\n{state['poem']}"
     return {"combined_output": combined}
-
 
 # Build workflow
 parallel_builder = StateGraph(State)

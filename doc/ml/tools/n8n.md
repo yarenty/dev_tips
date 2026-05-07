@@ -36,7 +36,6 @@ Honest caveats: the "fair-source" Sustainable Use License is **not OSI-approved 
 - [[../frameworks/langgraph|langgraph]] — code-first stateful agent graphs; the LangChain ecosystem n8n's AI nodes share lineage with.
 
 ## Internal links
-<!-- reviewed -->
 - [[../frameworks/langgraph|langgraph]]
 - [[../frameworks/README|frameworks]]
 - [[../agents/orchestration|agents/orchestration]]

@@ -56,7 +56,6 @@ These platforms exist because building a "good" voice agent is harder than gluin
 
 ## Internal links
 
-<!-- reviewed -->
 - [[voice/README|voice]] — STT/TTS/voice landscape parent
 - [[assemblyai]] — the STT layer most of these platforms call into
 - [[../agents/README|agents]] — the broader agent-orchestration story (text-side counterpart)

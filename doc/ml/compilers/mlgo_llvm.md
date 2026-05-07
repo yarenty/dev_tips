@@ -40,7 +40,6 @@ The real impact has been intellectual: MLGO normalised the idea that compiler he
 
 ## Internal links
 
-<!-- reviewed -->
 - [[xla_accelerated_compiler]] — Google's other ML-driven compiler effort, but at the tensor-graph level
 - [[tiramisu]] — polyhedral compiler in the same broad "compile better with smarter search" space
 - [[tiny_gpu]] — the hardware end of the same stack; useful contrast

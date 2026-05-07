@@ -31,7 +31,6 @@ The honest framing: this article is a stub-ish landing pointing at two specific 
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — section landing.
 - [[ml/knowledge_graph/papers|kg/papers]] — sibling: KG research reading list (TransE / RotatE / R-GCN / GraphRAG).
 - [[petgraph]] — sibling: Rust graph data-structure library.

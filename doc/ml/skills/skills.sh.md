@@ -34,7 +34,6 @@ The relationship to MCP: **MCP defines the protocol** (how an agent talks to an 
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — section landing.
 - [[../mcp/README|mcp]] — Model Context Protocol section landing (the *tool* side of agent extensibility).
 - [[../agents/README|agents]] — agentic AI section (where the skills get used).

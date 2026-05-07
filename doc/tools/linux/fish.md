@@ -37,8 +37,6 @@ Pair fish with [starship](https://starship.rs/) (no config), [`z`](https://githu
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[helix]]
 - [[tools/linux/tmux|tmux]]
 - [[zellij]]

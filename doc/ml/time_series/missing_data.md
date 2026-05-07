@@ -41,7 +41,6 @@ Panel/multi-series gotchas:
 - *Statistical Analysis with Missing Data* (Little & Rubin) — the canonical text on MCAR/MAR/MNAR
 
 ## Internal links
-<!-- reviewed -->
 
 - [[forecasting]]
 - [[linear_regression]]

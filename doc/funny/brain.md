@@ -33,8 +33,6 @@ Don't reach for it expecting performance or a stable ecosystem.
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[brainfuck]] — The minimalist target language and its 8-instruction ISA.
 - [[algorithms]] — Patterns the compiler relies on (e.g. multiplication, conditional execution).
 

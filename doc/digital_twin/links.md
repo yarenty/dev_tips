@@ -27,8 +27,6 @@ Use this as a **launch pad**, not a destination. The IBM links are the cleanest 
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[definition]] — Start here.
 - [[nvidia_omniverse]] — NVIDIA-stack alternative reading path.
 - [[isc2022]] — Supercomputing-scale framing.

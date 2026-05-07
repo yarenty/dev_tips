@@ -27,7 +27,6 @@ Native Spark UDFs in Rust are not a thing — Spark runs on the JVM, and the clo
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]]
 - [[hive]] — same JVM-bridge story; Spark can also load Hive UDFs.
 - [[../interop/to_java]] — `jni-rs` mechanics.

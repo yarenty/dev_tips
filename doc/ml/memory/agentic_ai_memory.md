@@ -41,7 +41,6 @@ The headline 2024-2025 projects:
 
 ## Internal links
 
-<!-- reviewed -->
 - [[response]] — sibling: 2024-2025 eidetic-memory survey + curated reading list.
 - [[episodic_memory]] — sibling: EM-LLM / MemoRAG / Mamba / AriGraph (episodic-memory thread).
 - [[202505_recents]] — sibling: chronological digest of May 2025 memory papers.

@@ -39,7 +39,6 @@ The DSPy ([[../frameworks/dspy|dspy]]) abstraction of **Signatures** (`question,
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — agents section landing.
 - [[memory]] — sibling article preserving the original raw question.
 - [[claude]] — orchestrator-workers and evaluator-optimizer patterns.

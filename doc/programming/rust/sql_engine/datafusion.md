@@ -27,7 +27,6 @@ Reach for `datafusion-sql` directly when you want **just the SQL planning** — 
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]]
 - [[../data/datafusion/README]] — DataFusion landing (engine + adopters list).
 - [[../data/sqlparser|sqlparser-rs]] — the lexer/parser layer.

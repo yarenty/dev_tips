@@ -49,8 +49,6 @@ Gotchas:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[rathole]]
 - [[ngrok]]
 - [[oracle_free_tier]]

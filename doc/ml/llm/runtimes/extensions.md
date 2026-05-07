@@ -50,7 +50,6 @@ not "patch Goose."
 - LangChain Tools / function-calling — the pre-MCP plugin shape.
 
 ## Internal links
-<!-- reviewed -->
 - [[goose]] — the agent runtime these features extend.
 - [[providers]] — sister concept; LLM provider plugin shape.
 - [[../../mcp/README|mcp]] — Model Context Protocol; how extensions are spoken.

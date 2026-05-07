@@ -77,8 +77,6 @@ Things to know:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[linfa]] — sibling article on the classical-ML toolkit.
 - [[cuda|cuda (Rust)]] — sibling article on Rust GPU compute.
 - [[README]] — Rust ML section landing.

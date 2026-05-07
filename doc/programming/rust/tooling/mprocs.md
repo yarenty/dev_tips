@@ -60,8 +60,6 @@ Pick `mprocs` when (a) you want a TUI and (b) you don't already have tmux muscle
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[zellij]] — sibling but general-purpose multiplexer.
 - [[../../../tools/linux/tmux|tools/linux/tmux]] — tmux article (overmind's substrate).

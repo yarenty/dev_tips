@@ -26,7 +26,6 @@ For a Rust app needing a time-series store, the easiest on-ramp is to point your
 - TimescaleDB — Postgres extension comparison point.
 
 ## Internal links
-<!-- reviewed -->
 - [[db/timeseries/greptimedb|GreptimeDB (substrate)]]
 - [[parseable]]
 - [[datafusion/README|DataFusion]]

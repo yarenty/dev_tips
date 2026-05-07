@@ -26,7 +26,6 @@ The Rust standard library is intentionally minimal — by design, common-but-not
 - [Awesome Rust Cryptography](https://github.com/The-EWG/awesome-rust-cryptography), [Awesome Embedded Rust](https://github.com/rust-embedded/awesome-embedded-rust) — vertical sub-lists.
 
 ## Internal links
-<!-- reviewed -->
 
 The "must-have" list this page used to inline has been split into focused articles:
 

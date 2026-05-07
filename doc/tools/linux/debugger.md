@@ -40,8 +40,6 @@ Don't use Valgrind on a JIT-heavy or GPU-heavy workload — it doesn't model GPU
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[trace]]
 - [[helix]]
 - [[tools/linux/tmux|tmux]]

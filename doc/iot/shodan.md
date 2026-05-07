@@ -37,8 +37,6 @@ The IoT angle (why this article lives in `doc/iot/`): Shodan's specialty is the 
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[drogue]] — IoT framework that benefits from a Shodan check on the deployed fleet
 - [[messaging/mqtt|mqtt]] — *the* IoT protocol; lots of exposed brokers visible to Shodan
 

@@ -37,8 +37,6 @@ For storage past Prometheus's default ~15-day local retention, **Mimir** is the 
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[observability/grafana|grafana]] — operator's view (under `observability/`)
 - [[prometheus]] — primary metrics source
 - [[plotters]] — for ad-hoc programmatic plots when a Grafana dashboard is overkill

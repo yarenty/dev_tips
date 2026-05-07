@@ -31,7 +31,6 @@ The killer-app pattern: ephemeral, non-fullscreen output (a checklist that ticks
 - [`oclif`](https://oclif.io/) — Salesforce's Node CLI framework; often used alongside ink for the rendering layer.
 
 ## Internal links
-<!-- reviewed -->
 - [[iocraft]] — the Rust take.
 - [[../tui/README|Rust TUI]] — section landing.
 - [[../cli/README|Rust CLI]] — for the equivalent prompt/progress story in Rust.

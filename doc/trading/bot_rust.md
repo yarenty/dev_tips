@@ -31,8 +31,6 @@ The architectural choices are worth contrasting with [[folbrecht_algo_trading_se
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[folbrecht_algo_trading_series]] — sync, channels-only counterpart
 - [[barter]] — modern async Rust trading framework
 - [[db/nosql/redis|Redis]] — pub/sub used as the message bus

@@ -26,7 +26,6 @@ Parseable is squarely in the **"Rust single-binary infra rewrite"** trend (along
 - Elasticsearch / OpenSearch — the JVM incumbents.
 
 ## Internal links
-<!-- reviewed -->
 - [[../../../observability/openobserve|OpenObserve]]
 - [[../../../observability/grafana|Grafana]]
 - [[lance_data_format]] — Arrow-native columnar format

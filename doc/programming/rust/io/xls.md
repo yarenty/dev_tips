@@ -48,8 +48,6 @@ Gotchas:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[programming/rust/io/README|Rust I/O]] — section landing page.
 - [[programming/rust/io/json|json]] — sibling format article; same "exchange data with non-Rust people" use case.
 - [[excel_udf_in_rust]] — companion article on writing native Excel UDFs from Rust.

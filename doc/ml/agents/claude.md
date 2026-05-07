@@ -40,7 +40,6 @@ The article's most durable contribution is a **vocabulary** that the rest of the
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — agents section landing.
 - [[agent_instructs]] — per-repo instruction conventions (`.cursorrules` / `AGENTS.md` / `CLAUDE.md`).
 - [[orchestration]] — the workflow patterns from this article, in framework form.

@@ -27,7 +27,6 @@ A few practical gotchas: incremental rebuilds of `torch-sys` can be slow if rust
 - [PyTorch](https://pytorch.org/) — the upstream Python framework whose libtorch this binds to.
 
 ## Internal links
-<!-- reviewed -->
 - [[candle]]
 - [[burn]]
 - [[dfdx]]

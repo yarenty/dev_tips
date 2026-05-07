@@ -29,8 +29,6 @@ If you only want practical sysadmin knowledge, this is the wrong book — pick *
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[debugger]]
 - [[tools/linux/tmux|tmux]]
 - [[helix]]

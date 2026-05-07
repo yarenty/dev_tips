@@ -49,7 +49,6 @@ fn main() {
 
 ## Internal links
 
-<!-- reviewed -->
 - [[macos]]
 - [[cacao]]
 - [[../README]]

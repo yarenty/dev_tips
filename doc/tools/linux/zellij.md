@@ -43,8 +43,6 @@ For a fresh local setup, Zellij is the easier sell. Pair with [[helix]] and [[la
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[tools/linux/tmux|tmux]]
 - [[byobu]]
 - [[helix]]

@@ -27,7 +27,6 @@ This is the path you want for any non-trivial Rust SQLite extension. The mental 
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]]
 - [[sqlite]] — SQLite engine background.
 - [[../data/rusqlite|rusqlite client]]

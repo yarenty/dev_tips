@@ -27,7 +27,6 @@ Meilisearch is to **Algolia** what Mastodon is to Twitter: similar UX, self-host
 - Typesense — comparable open-source typo-tolerant search engine in C++.
 
 ## Internal links
-<!-- reviewed -->
 - [[trustfall]] — query-engine-on-anything; different niche.
 - [[parseable]] — log analytics in Rust; complementary, not replacement.
 - [[lance_data_format]] — vector search alternative for ML/embedding workloads.

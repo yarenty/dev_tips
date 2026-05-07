@@ -27,8 +27,6 @@ Use it the moment you start reading more diffs than you write. The default `git 
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[config]] — Global Git config that should pair with delta (`core.pager`, `interactive.diffFilter`, `delta.navigate`).
 - [[github]] — Other Git tooling note in this section.
 

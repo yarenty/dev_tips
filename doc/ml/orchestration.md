@@ -95,7 +95,6 @@ The orchestrator is the **scheduler + dependency graph + observability layer**, 
 
 ## Internal links
 
-<!-- reviewed -->
 - [[agents/orchestration|agents/orchestration]] — the *agent-control-flow* sense of "orchestration" (LangGraph & friends); same word, very different shape.
 - [[frameworks/README|frameworks]] — ML frameworks (DSPy, LangGraph, phidata, MindsDB, H2O) that often run *inside* an orchestrated pipeline.
 - [[../db/streaming/cdc|cdc]] — Change Data Capture, the streaming-side counterpart that often feeds these batch pipelines.

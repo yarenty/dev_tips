@@ -34,7 +34,6 @@ swww img --transition-type wipe ~/Pictures/photo.png
 
 ## Internal links
 
-<!-- reviewed -->
 - [[ui]]
 - [[../README]]
 

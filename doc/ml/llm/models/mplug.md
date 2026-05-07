@@ -28,7 +28,6 @@ Naming gotcha: "mPLUG" alone is ambiguous — it can mean the original 2022 pape
 - Donut / Nougat / Marker — competing OCR-free document-understanding pipelines (smaller, single-purpose).
 
 ## Internal links
-<!-- reviewed -->
 - [[README|llm/models]]
 - [[../README|llm]]
 - [[llama]]

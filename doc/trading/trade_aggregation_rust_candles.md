@@ -30,8 +30,6 @@ It pairs naturally with [[barter]]'s `MarketGenerator` (or with the live websock
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[barter]] — pairs naturally as upstream of `MarketGenerator`
 - [[folbrecht_algo_trading_series]] — has a hand-rolled equivalent inline
 - [Polars](https://pola.rs/) — batch-style alternative when latency is not a concern

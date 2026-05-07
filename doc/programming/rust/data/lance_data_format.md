@@ -27,7 +27,6 @@ Reach for Lance when (a) you need **random access into ML datasets** (training l
 - [[adbc]] — generic Arrow-native consumption story for Lance datasets.
 
 ## Internal links
-<!-- reviewed -->
 - [[../../../db/formats/README|DB formats landing]]
 - [[adbc]]
 - [[datafusion/README|DataFusion]]

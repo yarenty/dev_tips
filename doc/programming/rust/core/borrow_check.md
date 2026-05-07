@@ -27,7 +27,6 @@ Gotchas: the analysis runs on save and adds a second or two of latency on big cr
 - [Aquascope](https://cognitive-engineering-lab.github.io/aquascope/) — another borrow/ownership visualiser, from the *Rust Book Experiment* team; complementary, browser-embedded.
 
 ## Internal links
-<!-- reviewed -->
 - [[README]]
 - [[../learning/README|learning]]
 

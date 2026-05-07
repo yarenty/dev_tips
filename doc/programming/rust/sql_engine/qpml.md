@@ -26,7 +26,6 @@ Reach for QPML when you're authoring docs, blog posts, conference talks or cours
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]]
 - [[datafusion]]
 - [[books]]

@@ -65,8 +65,6 @@ The four things that bite people coming from HTTP-shaped systems:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[paho_mqtt]] — Rust FFI binding to Eclipse Paho
 - [[mq]] — `rumqtt` — pure-Rust client
 - [[kafka]] — long-term-log alternative; bridges well from MQTT

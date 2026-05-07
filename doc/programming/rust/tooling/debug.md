@@ -98,8 +98,6 @@ fn fmt_redacted(_: &String, f: &mut std::fmt::Formatter) -> std::fmt::Result {
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[../core/derivative|core/derivative]] — canonical Rust-core article on derivative.
 - [[tracing]] — pair `console-subscriber` for runtime task introspection.

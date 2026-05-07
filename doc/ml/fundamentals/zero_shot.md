@@ -47,7 +47,6 @@ afford to label a few hundred examples.
 - **Retrieval-augmented generation (RAG)** — adjacent: rather than zero-shot from priors, retrieve relevant context and condition on it.
 
 ## Internal links
-<!-- reviewed -->
 - [[../llm/README|llm]] — the LLM section where modern zero-shot lives.
 - [[../rag/README|rag]] — sibling: when zero-shot isn't enough, retrieve context.
 - [[../frameworks/README|frameworks]] — frameworks that ship CLIP / SigLIP / similar models.

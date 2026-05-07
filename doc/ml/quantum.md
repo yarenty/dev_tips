@@ -62,7 +62,6 @@ Plus the cloud-vendor SDKs: **Amazon Braket** (multi-vendor backends), **Azure Q
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README|ml]] — ML section landing.
 - [[fundamentals/no_deep_learning_needed|no_deep_learning_needed]] — adjacent in spirit: "what's the simplest method that works?". For QML in 2025, that's almost always a classical baseline.
 - [[fundamentals/pattern_learning|pattern_learning]] — meta-topic landing.

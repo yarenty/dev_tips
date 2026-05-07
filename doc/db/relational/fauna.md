@@ -54,8 +54,6 @@ Headline features as advertised:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[postgresql]]
 - [[edgedb]]
 - [[surrealdb]]

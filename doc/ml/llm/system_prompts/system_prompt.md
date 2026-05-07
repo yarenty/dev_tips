@@ -70,7 +70,6 @@ them load into the system prompt automatically.
 - "Prompt injection" defences — distinct but related: protecting system prompts from user-supplied content.
 
 ## Internal links
-<!-- reviewed -->
 - [[../runtimes/extensions|extensions]] — `.goosehints` is a per-repo system-prompt override.
 - [[../runtimes/goose|goose]] — agent CLI that consumes a system prompt + hints.
 - [[../README|llm]] — parent LLM hub.

@@ -28,7 +28,6 @@ Watch out for licence drift: "Llama Community License" is **not** OSI-open — i
 - OLMo — fully-open (weights + data + training code) alternative from Allen AI. See [[olmo]].
 
 ## Internal links
-<!-- reviewed -->
 - [[README|llm/models]]
 - [[../README|llm]]
 - [[../runtimes/README|llm/runtimes]] — `llama.cpp`, Ollama, vLLM, etc.

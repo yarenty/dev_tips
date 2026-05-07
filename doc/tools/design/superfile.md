@@ -38,8 +38,6 @@ Watch out for: requires a Nerd Font; a few keybinding quirks (`H` is shift+h, et
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[lstr]] — quick non-interactive tree view.
 - [[czkawka]] — find duplicates / large files; `spf` to clean up.
 - [[tools/linux/tmux|tmux]] — keep `spf` in a side pane.

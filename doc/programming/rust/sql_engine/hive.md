@@ -27,7 +27,6 @@ The reason this article lives in the Rust SQL-engine section at all is the **bri
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]]
 - [[spark]] — Spark UDF article, same bridge cost.
 - [[../interop/to_java]] — `jni-rs` how-to.

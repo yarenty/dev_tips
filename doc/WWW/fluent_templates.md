@@ -29,8 +29,6 @@ If you're not committed to Fluent yet, evaluate the trade-off first: GNU gettext
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[loco_rust_on_rails]] — Rails-ish web framework where this slots in as the i18n layer.
 - [[ssg]] — Static-site generators (Zola also uses Tera and could benefit from Fluent).
 

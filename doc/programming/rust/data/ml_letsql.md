@@ -31,7 +31,6 @@ Caveats: LetSQL is **experimental** and small (rebranded to xorq); the SAM model
 - Polars — adjacent Rust dataframe; experimenting with ML UDFs.
 
 ## Internal links
-<!-- reviewed -->
 - [[../../../ml/tools/candle|candle]]
 - [[datafusion/README|DataFusion family]]
 - [[lance_data_format]] — Lance's `pa.binary` / image-tensor types are the natural extension Apple/LanceDB explored.
@@ -89,7 +88,6 @@ import pandas as pd
 from PIL import Image
 from segment_anything import sam_model_registry, SamPredictor
 
-
 def pandas_sam_predict(model, paths, seed):
     masks = []
     for path in paths:
@@ -113,7 +111,6 @@ def pandas_sam_predict(model, paths, seed):
         masks.append({"mask": mask[iou_score.argmax()], "iou_score": iou_score.max()})
 
     return masks
-
 
 images_folder = pathlib.Path.cwd() / "assets"
 
@@ -163,7 +160,6 @@ from letsql import _
 
 IMAGE_FORMAT = "JPEG"
 
-
 @udf.scalar.builtin
 def sam_udf(
     path: str,
@@ -172,13 +168,11 @@ def sam_udf(
 ) -> dt.Struct({"mask": dt.Array[float], "iou_score": float}):
     """Run Segment Anything in a Binary Column"""
 
-
 def get_blob(path):
     image = Image.open(path)
     output = io.BytesIO()
     image.save(output, format=IMAGE_FORMAT)
     return output.getvalue()
-
 
 images_folder = pathlib.Path.cwd() / "assets"
 

@@ -42,8 +42,6 @@ Things to know:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[timely]] — streaming dataflow contrast (push vs. pull / on-change vs. on-demand).
 - [[concurrency/README|Rust concurrency]] — landing page; Salsa lives in the "incremental memoisation" row of the workload table.
 

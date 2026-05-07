@@ -27,7 +27,6 @@ This article covers the two leading **in-process** Rust cache crates: `moka` (th
 - Memcached / Redis — out-of-process equivalents.
 
 ## Internal links
-<!-- reviewed -->
 - [[map_cache_storage]] — DashMap (concurrent map)
 - [[memory_storage]] — evmap (eventually-consistent multi-map)
 - [[compilation_cache]] — sccache (build cache; very different scope)

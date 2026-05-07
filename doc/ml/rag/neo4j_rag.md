@@ -36,7 +36,6 @@ For Rust callers there's a community async driver (`robsdedude/neo4j-rust-driver
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — RAG hub
 - [[graph_rag]] — broader GraphRAG pattern
 - [[kag]] — schema-first alternative on OpenSPG

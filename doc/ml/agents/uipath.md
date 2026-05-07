@@ -43,7 +43,6 @@ Two ways to read this category:
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — agents section landing.
 - [[orchestration]] — agent-orchestration framework landscape (UiPath ↔ LangGraph integration).
 - [[claude]] — Anthropic's design framing.

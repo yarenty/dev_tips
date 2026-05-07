@@ -43,8 +43,6 @@ For a new project starting today, the more conventional Rust path is `tempfile` 
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[tests]] — broader Rust testing landscape (mockall + the picker table).
 - [[turmoil]] — deterministic distributed-system tests.

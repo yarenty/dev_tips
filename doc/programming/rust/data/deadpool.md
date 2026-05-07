@@ -26,7 +26,6 @@ Default to `deadpool` when starting a new async-Rust project that needs DB/Redis
 - `tokio-postgres` — most common deadpool backend.
 
 ## Internal links
-<!-- reviewed -->
 - [[bb8]]
 - [[mobc]]
 - [[r2d2]]

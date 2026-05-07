@@ -40,8 +40,6 @@ Reach for `zellij` if `tmux` has always felt user-hostile (the leader key, no on
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[mprocs]] — sibling process-orchestration tool (different niche).
 - [[../../../tools/linux/tmux|tools/linux/tmux]] — tmux deep-dive (the thing zellij replaces).

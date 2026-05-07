@@ -33,7 +33,6 @@ The real research significance is what abliteration **demonstrates**: alignment 
 - Anthropic's Sparse Autoencoders — the "scaling monosemanticity" line of work, finding interpretable features without orthogonalising them away.
 
 ## Internal links
-<!-- reviewed -->
 - [[README|llm/inspection]]
 - [[../README|llm]]
 - [[../models/llama]] — common abliteration target.

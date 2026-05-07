@@ -54,7 +54,6 @@ simplicity beats any approximate-unlearning paper.
 - **Federated learning** — the distributed-training setting where federated unlearning lives.
 
 ## Internal links
-<!-- reviewed -->
 - [[../llm/README|llm]] — sibling section; LLM unlearning is the hardest open problem.
 - [[../finetuning/README|finetuning]] — adjacent: many approximate-unlearning techniques are negation-fine-tuning.
 - [[../frameworks/README|frameworks]] — what SISA-style training pipelines build on.

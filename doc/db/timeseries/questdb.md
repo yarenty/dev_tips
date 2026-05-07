@@ -59,8 +59,6 @@ The "Java but designed like C" implementation choices make QuestDB an interestin
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[influxdb]]
 - [[db/timeseries/greptimedb|GreptimeDB]]
 - [[druid]]

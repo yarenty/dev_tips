@@ -47,8 +47,6 @@ The pricing model deserves a special mention: Kinesis Data Streams charges per s
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[kafka]] — open-source self-hosted alternative
 - [[redpanda]] — Kafka-compatible self-hosted alternative
 - [[pulsar]] — Apache Pulsar alternative

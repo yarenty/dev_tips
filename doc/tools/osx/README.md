@@ -40,8 +40,6 @@ What's deliberately *not* here: anything Homebrew-installable that's identical o
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[tools/linux/books|books]]
 - [[tools/linux/terminals|terminals]]
 - [[tools/linux/tmux|tmux]]

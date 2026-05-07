@@ -36,8 +36,6 @@ The competitive landscape is unforgiving: Iceberg has the multi-engine catalog s
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — DataFusion ecosystem landing.
 - [[delta]] — Delta Lake comparison.
 - [[iceberg]] — Iceberg comparison.

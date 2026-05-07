@@ -36,8 +36,6 @@ Gotchas and trade-offs:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[rathole]]
 - [[wireguard]]
 - [[sniffnet]]

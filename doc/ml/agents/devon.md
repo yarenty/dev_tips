@@ -33,7 +33,6 @@ The honest story:
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — agents section landing.
 - [[devin]] — Devin (Cognition AI) + OpenHands; the namesake to keep distinct.
 - [[coding_agents]] — coding-agent landscape (where to look instead).

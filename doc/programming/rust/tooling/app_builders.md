@@ -48,8 +48,6 @@ For packaging — the actual subject of "app builders" — the pieces are:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[tauri]] — the dev-tooling angle on Tauri.
 - [[../gui/tauri|gui/tauri]] — canonical Tauri framework article.

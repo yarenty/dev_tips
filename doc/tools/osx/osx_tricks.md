@@ -37,8 +37,6 @@ Notes:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[ios]]
 - [[osxcross]]
 - [[utm]]

@@ -44,8 +44,6 @@ When to look elsewhere:
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[building_unix_system]] — companion project; the Bunnix article quotes this one extensively.
 - [[programming/unix_systems/README|unix systems]] — parent section.
 - [[assembly]] — kernel work demands fluency reading low-level output.

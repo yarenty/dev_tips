@@ -28,7 +28,6 @@ The strategic story is JetBrains hedging: they ship AI Assistant (cloud, multi-p
 - TabbyML — self-hosted coding-completion server; can serve Mellum / StarCoder2 / DeepSeek-Coder.
 
 ## Internal links
-<!-- reviewed -->
 - [[README|llm/models]]
 - [[../README|llm]]
 - [[../runtimes/README|llm/runtimes]] — Ollama / vLLM / TabbyML for serving.

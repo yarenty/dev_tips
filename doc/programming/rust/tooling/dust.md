@@ -29,8 +29,6 @@ Compared to siblings: **`du`** is universal but you always have to compose it wi
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[README]] — tooling section landing.
 - [[bat]] / [[exa]] / [[ripgrep]] / [[bottom]] — siblings in the "Rust replaces a Unix tool" family.
 - [[../../../tools/shell/must_have|must_have]] — the broader CLI-bundle reference.

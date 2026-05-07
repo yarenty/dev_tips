@@ -55,7 +55,6 @@ the demo videos use.
 - Devin (Cognition) — fully autonomous SWE agent; closed, hosted.
 
 ## Internal links
-<!-- reviewed -->
 - [[extensions]] — Goose's plugin/extension system.
 - [[providers]] — supported LLM providers (Ollama, Anthropic, OpenAI, …).
 - [[ollama]] — the most common local backend.

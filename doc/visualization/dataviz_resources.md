@@ -29,8 +29,6 @@ If you only have time for one thing: read **Storytelling with Data** (Knaflic) �
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[portfolios]] — finished portfolios to study
 - [[pudding]] — best-in-class interactive data journalism
 - [[ggtech]] — examples of branded "good defaults"

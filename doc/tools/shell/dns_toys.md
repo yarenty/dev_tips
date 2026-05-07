@@ -43,8 +43,6 @@ you stop pretending it's only for hostnames.
 
 ## Internal links
 
-<!-- reviewed -->
-
 - [[fish]]
 - [[must_have]]
 - [[tools/shell/tools|shell tools]]

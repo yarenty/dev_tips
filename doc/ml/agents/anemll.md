@@ -35,7 +35,6 @@ If you're building an *agent* and ended up here looking for an Apple-on-device L
 
 ## Internal links
 
-<!-- reviewed -->
 - [[README]] — agents section landing (this article is misfiled here).
 - [[../llm/runtimes/README|llm/runtimes]] (P5.AD) — **canonical home in spirit**: section on local desktop and on-device LLM runtimes.
 - [[../llm/runtimes/ollama|ollama]] (P5.AD) — cross-platform local-LLM runtime for comparison.
