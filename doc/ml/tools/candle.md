@@ -30,7 +30,7 @@ status: draft
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
 - [[dfdx_shape_checked_deep_learning_in_rust]] — dfdx: shape checked deep learning in rust _(score 22.3)_
-- [[llama_2]] — LLAMA _(score 16.3)_
+- [[llama]] — LLAMA _(score 16.3)_
 - [[dfdx]] — dfdx _(score 16.0)_
 - [[burn]] — burn _(score 16.0)_
 - [[tch_rs]] — tch-rs _(score 16.0)_

@@ -1,78 +1,74 @@
 ---
-title: LLM_OS
-main_link: https://github.com/phidatahq/phidata/tree/main/cookbook/llm_os
-keywords: [llm-os, generate, cookbook, tweet, internet]
-status: draft
+title: LLM OS — Karpathy's "LLM as kernel" framing
+main_link: https://twitter.com/karpathy/status/1723140519554105733
+keywords: [llm-os, karpathy, agents, architecture, tool-use, system-design]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# LLM OS — Karpathy's "LLM as kernel" framing
 
-# LLM_OS
-
-**Main link:** <https://github.com/phidatahq/phidata/tree/main/cookbook/llm_os>
+**Main link:** <https://twitter.com/karpathy/status/1723140519554105733>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+"LLM OS" is Andrej Karpathy's framing — popularised in a Nov 2023 tweet and the *Intro to LLMs* / *State of GPT* talks — that puts the LLM in the role of a CPU/kernel inside an emerging operating-system architecture. Around the kernel sit "syscalls": tools (calculator, code interpreter, browser), memory (context window + RAG + persistent stores), peripherals (vision, audio, video I/O), other LLMs (multi-agent), and a "system 2" deliberation loop. The phidata/agno team published a [reference cookbook implementation](https://github.com/agno-agi/agno) of the idea so you can play with the pattern concretely. The framing has since become the implicit architecture for most production agent systems.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The LLM-OS framing is most useful as a **mental model** for designing agent systems: when you're stuck deciding "should this be a tool, a sub-agent, a piece of context, or memory?" the OS analogy gives you a vocabulary. The kernel/syscall split also predicts where the bottlenecks land — the kernel (model) is slow and stateless, so amortise its cost via caching (KV / prompt / semantic — see [[../memory/caching|memory/caching]]), batch the syscalls, and push as much logic as possible into deterministic tools rather than back into model tokens.
+
+The framing has competition: **LangChain's chain abstraction** (composable runnables; weaker on agency), **AutoGen's multi-agent conversation** (model-as-actor in a society), **DSPy's "language-model program"** (compiled prompts/weights, see [[../frameworks/dspy|dspy]]), and Anthropic's recent **"computer use" + skills** angle. None of these are mutually exclusive — the LLM-OS view is the most architectural; the others are programming-model takes that fit inside it. In 2025 the convergence is clear: MCP (see [[../mcp/README|mcp]]) is becoming the standard "syscall ABI", and agent frameworks (LangGraph, agno/phidata, smolagents) are the userland.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- Andrej Karpathy's *Intro to LLMs* talk (Nov 2023) and *State of GPT* (May 2023) — the talks that crystallised the framing.
+- LangGraph — graph-based stateful agent orchestration; the practical "userland" for LLM-OS-shaped systems. See [[../frameworks/langgraph|langgraph]].
+- agno (formerly phidata) — agent + RAG framework; ships the original LLM-OS cookbook. See [[../frameworks/phidata|phidata]].
+- MCP (Model Context Protocol) — the de-facto "syscall ABI" for LLMs to talk to tools/resources. See [[../mcp/README|mcp]].
+- Voyager / Generative Agents / Stanford Smallville — earlier research demos that prefigured the LLM-OS pattern.
 
 ## Internal links
+<!-- reviewed -->
+- [[README|llm]]
+- [[../mcp/README|mcp]]
+- [[../agents/README|agents]]
+- [[../memory/README|memory]]
+- [[../rag/README|rag]]
+- [[../frameworks/langgraph|frameworks/langgraph]]
+- [[../frameworks/phidata|frameworks/phidata]]
+- [[../frameworks/dspy|frameworks/dspy]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[anmell]] — anmell _(score 6.0)_
-- [[shodan]] — Shodan _(score 6.0)_
-- [[wireguard]] — Wireguard _(score 6.0)_
-- [[iot/drogue|drogue]] — Drogue _(score 6.0)_
-- [[sniffnet]] — sniffnet _(score 6.0)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#llm-os` `#llm` `#ml` `#llms` `#generate` `#cookbook` `#tweet`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#llm-os` `#karpathy` `#agents` `#architecture` `#tool-use` `#system-design`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Karpathy's framing
 
-# LLM_OS
+The seed tweet: <https://twitter.com/karpathy/status/1723140519554105733>. Re-explored in:
 
-https://github.com/phidatahq/phidata/tree/main/cookbook/llm_os
+- *Intro to Large Language Models* (Nov 2023): <https://www.youtube.com/watch?v=zjkBMFhNj_g>
+- *State of GPT* (May 2023, Microsoft Build): <https://www.youtube.com/watch?v=bZQun8Y4L2A>
 
+### The LLM OS philosophy
 
-This cookbook contains an initial implementation of the LLM OS proposed by karpathy. He talks about it in this tweet, this tweet and this video
+- LLMs are the **kernel process** of an emerging operating system.
+- This kernel solves problems by coordinating other resources (memory, tools, peripherals, other LLMs).
+- The vision (Karpathy's checklist):
+  - [x] Read/generate text.
+  - [x] Has more knowledge than any single human about most subjects.
+  - [x] Can browse the internet.
+  - [~] Can use existing software infrastructure (calculator, Python, mouse/keyboard) — partial in 2024, mainstream by 2025 via tool use + computer-use APIs.
+  - [~] Can see and generate images and video — partial via multimodal models (GPT-4o, Claude 3.5 Sonnet, Gemini 1.5/2.0).
+  - [~] Can hear and speak, generate music — partial (Whisper, OpenAI Realtime, Suno).
+  - [~] Can think for a long time using a "system 2" — emerging via o1/o3, DeepSeek-R1, QwQ test-time compute.
+  - [ ] Can self-improve in domains.
+  - [ ] Can be customized and fine-tuned for specific tasks — possible in principle ([[../finetuning/README|finetuning]]) but not "OS-level".
+  - [x] Can communicate with other LLMs.
 
-## The LLM OS philosophy
-- LLMs are the kernel process of an emerging operating system.
-- This process (LLM) will solve problems by coordinating other resources (like memory or computation tools).
-- The LLM OS Vision:
+### Reference implementation — agno (formerly phidata) cookbook
 
-- [x] It can read/generate text
-- [x] It has more knowledge than any single human about all subjects
-- [x] It can browse the internet
-- [ ] It can use existing software infra (calculator, python, mouse/keyboard)
-- [ ] It can see and generate images and video
-- [ ] It can hear and speak, and generate music
-- [ ] It can think for a long time using a system 2
-- [ ] It can “self-improve” in domains
-- [ ] It can be customized and fine-tuned for specific tasks
-- [x] It can communicate with other LLMs
+<https://github.com/agno-agi/agno> (the rebranded phidata) — the LLM-OS cookbook lives in the same repo and gives a concrete implementation of the pattern: an LLM kernel orchestrating web search, calculator, Python interpreter, file system, and other LLM "agents".
 
-[x] indicates functionality that is implemented in the LLM OS app
+Originally at <https://github.com/phidatahq/phidata/tree/main/cookbook/llm_os>; the org rebranded in late 2024.

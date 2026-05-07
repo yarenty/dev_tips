@@ -1,72 +1,68 @@
 ---
-title: OLMo - Open Language Models
-main_link: https://github.com/allenai/OLMo?tab=readme-ov-file
-keywords: [olmo, models, mix, dolmino, language]
-status: draft
+title: OLMo — Allen AI's fully open language model (weights + data + training code)
+main_link: https://allenai.org/olmo
+keywords: [olmo, allen-ai, ai2, fully-open, dolma, open-source-llm, pythia, oss]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# OLMo — Allen AI's fully open language model (weights + data + training code)
 
-# OLMo - Open Language Models
-
-**Main link:** <https://github.com/allenai/OLMo?tab=readme-ov-file>
+**Main link:** <https://allenai.org/olmo>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+OLMo (Open Language Model) is the Allen Institute for AI's flagship "**fully open**" LLM family — meaning the weights, the training corpus (Dolma), the training code (OLMo-core), all intermediate checkpoints, the data-mix recipes, and the evaluation harness are all public. The lineage runs **OLMo 1** (Feb 2024, 1B / 7B, the initial release on the Dolma corpus) → **OLMo 1.7** (Apr 2024, recipe refinements) → **OLMo 2** (Nov 2024, 7B / 13B with substantially improved performance via OLMo-mix-1124 pretraining + Dolmino-mix-1124 mid-training) → **OLMo 2 1B** (the smallest member of the OLMo 2 family). The companion **Tülu** project provides the open instruction-tuning recipes layered on top.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+OLMo's importance is *political and scientific*, not commercial: it's the existence proof that you can ship a frontier-grade open-weights model with **everything** that produced it, allowing actually-reproducible science. Compare to Llama (weights only — you can't audit the data), DeepSeek (weights + papers — recipe is described but corpus is closed), Mistral (weights with apache licence but corpus closed). The Open Source Initiative's 2024 *Open Source AI Definition* debate was largely about whether weights-only counts as "open source"; OLMo represents the maximalist position that says no.
+
+For everyday use OLMo 2 7B/13B are competitive with Llama 3.1 8B and Mistral-Nemo at the same size — fine if you want a "100% open" stack but not state of the art. The **real value** of OLMo is the surrounding artefacts: Dolma is the cleanest large-scale public pretraining corpus available, the intermediate checkpoints are gold for studying training dynamics (a research niche basically only Pythia previously occupied), and the OLMo-core training stack is probably the cleanest reference codebase for "how do you actually train an LLM end-to-end" outside megacorp labs. Pythia (EleutherAI, 2023) is the spiritual predecessor — same "release everything" ethos at a smaller scale.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- Pythia (EleutherAI) — the earlier "fully open" reference family with intermediate checkpoints; still the canonical training-dynamics dataset.
+- BLOOM / BLOOMZ (BigScience) — the multilingual fully-open precursor (176B); historically important, weaker by 2025 standards.
+- LLM360 (Petuum / MBZUAI) — competing "fully open" effort (Amber, CrystalCoder, K2).
+- DCLM-Pool / FineWeb — competing high-quality public pretraining corpora to Dolma.
+- Tülu — Allen AI's open instruction-tuning recipes; usually paired with OLMo bases.
 
 ## Internal links
+<!-- reviewed -->
+- [[README|llm/models]]
+- [[../README|llm]]
+- [[llama]]
+- [[deepseek]]
+- [[mplug]]
+- [[../../finetuning/README|finetuning]] — Tülu post-training recipes.
+- [[../../data/public|ml/data/public]] — public datasets including Dolma, FineWeb, RedPajama.
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[llama_2]] — LLAMA _(score 20.3)_
-- [[jetbrains_mellum]] — Test the function _(score 20.3)_
-- [[mplug]] — mPLUG _(score 20.3)_
-- [[deepseek]] — Deepseek _(score 20.3)_
-- [[alicemind_mplug_2_0]] — AliceMind - mplug 2.0 _(score 20.3)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#olmo` `#models` `#llm` `#ml` `#language` `#open` `#mix` `#dolmino`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#olmo` `#allen-ai` `#ai2` `#fully-open` `#dolma` `#open-source-llm` `#pythia` `#oss`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Canonical entry points
 
-# OLMo - Open Language Models
+- Project home (Allen AI): <https://allenai.org/olmo>
+- GitHub: <https://github.com/allenai/OLMo>
+- Allen AI on Hugging Face: <https://huggingface.co/allenai>
 
+### OLMo 2 (current — Nov 2024 / Apr 2025)
 
-We introduce OLMo 2 1B, the smallest model in the OLMo 2 family. OLMo 2 was pre-trained on OLMo-mix-1124 and uses Dolmino-mix-1124 for mid-training.
+> We introduce OLMo 2 1B, the smallest model in the OLMo 2 family. OLMo 2 was pre-trained on OLMo-mix-1124 and uses Dolmino-mix-1124 for mid-training. OLMo 2 is the latest in a series of Open Language Models designed to enable the science of language models. We have released all code, checkpoints, logs, and associated training details on GitHub.
 
-OLMo 2 is the latest in a series of Open Language Models designed to enable the science of language models. We have released all code, checkpoints, logs, and associated training details on GitHub.
+- OLMo 2 1B: <https://huggingface.co/allenai/OLMo-2-0425-1B>
+- OLMo 2 7B / 13B: see <https://huggingface.co/allenai>
 
+### Pretraining data
 
-https://huggingface.co/allenai/OLMo-2-0425-1B?utm_source=tldrai
+- Dolma corpus: <https://huggingface.co/datasets/allenai/dolma>
+- Dolmino-mix-1124 (mid-training data): <https://huggingface.co/datasets/allenai/dolmino-mix-1124>
 
+### Companion projects
 
-## Github
-
-https://github.com/allenai/OLMo?tab=readme-ov-file
-
-
-## DATA
-https://huggingface.co/datasets/allenai/dolmino-mix-1124
+- **Tülu** (post-training / instruction-tuning recipes): <https://github.com/allenai/open-instruct>
+- **Paloma** (perplexity-eval suite for OLMo training).
+- **OLMo-core** (training framework that produced the OLMo 2 series).

@@ -1,59 +1,51 @@
 ---
-title: Strawberry
+title: Strawberry browser — AI-driven browser automation product
 main_link: https://strawberrybrowser.com/
-keywords: [strawberry, models, strawberrybrowser, self]
-status: draft
+keywords: [strawberry-browser, browser-agent, computer-use, web-automation, ai-browser]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-
-# Strawberry
+# Strawberry browser — AI-driven browser automation product
 
 **Main link:** <https://strawberrybrowser.com/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Strawberry is a "self-driving browser" — a consumer/prosumer product that wraps a browser engine with an LLM-driven agent loop so it can run multi-step web workflows (research, form-filling, data scraping, repetitive tasks) on your behalf. It's *not* the OpenAI codename "Strawberry" that became o1 (a frequent confusion since both names landed in 2024); this is a separate, named-after-the-fruit consumer product in the broader **AI browser / browser-agent** category.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Strawberry sits in the rapidly-crowding "agentic browser" space alongside **Arc Search / Browser Company's Dia**, **Perplexity Comet**, **The Browser Company's Dia**, **Brave Leo**, plus the more general **computer-use** APIs (Anthropic's *Computer Use*, OpenAI's *Operator*, Google's *Project Mariner*) that automate browsers from outside. The category is moving fast and the product set will look different in 6 months — treat any specific recommendation as time-stamped.
+
+When picking a browser-automation approach, the practical axis is **trust boundary**: a consumer browser like Strawberry runs in your normal session with your cookies and credentials (convenient, but the agent has full access to logged-in services); the API-based computer-use approach runs in an isolated VM (slower, you re-auth, but the blast radius is contained). For developer-side scripted automation rather than consumer use, Playwright + LLM (or the `browser-use` library) usually beats whatever consumer browser is hot this quarter.
+
+If you arrived here looking for **OpenAI's o1 / o3** (codenamed *Strawberry* during development, *Q\** earlier still), see [[deepseek]] and [[../inspection/leaderboards|leaderboards]] for the reasoning-model landscape — there is no dedicated article in this vault since the product is just "ChatGPT with a 'thinking' toggle".
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- Anthropic *Computer Use* — API-level browser/desktop automation in an isolated VM.
+- OpenAI *Operator* — agent-as-a-service that drives a remote browser.
+- Perplexity *Comet* — Perplexity's own browser-agent product.
+- The Browser Company *Dia* — Arc successor with built-in AI workflows.
+- `browser-use` / Playwright + LLM — developer-facing recipes for building your own.
 
 ## Internal links
+<!-- reviewed -->
+- [[README|llm/models]]
+- [[../README|llm]]
+- [[../../agents/README|agents]]
+- [[llm_os|llm/llm_os]] — the LLM-OS framing puts browser-as-syscall.
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[llama_2]] — LLAMA _(score 20.3)_
-- [[jetbrains_mellum]] — Test the function _(score 20.3)_
-- [[mplug]] — mPLUG _(score 20.3)_
-- [[olmo]] — OLMo - Open Language Models _(score 20.3)_
-- [[deepseek]] — Deepseek _(score 20.3)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#strawberry` `#models` `#llm` `#ml` `#strawberrybrowser` `#self` `#driving` `#browser`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#strawberry-browser` `#browser-agent` `#computer-use` `#web-automation` `#ai-browser`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Project home: <https://strawberrybrowser.com/>
 
+> The self-driving browser. Strawberry brings intuitive AI automation to your existing workflows.
 
-https://strawberrybrowser.com/
+### Naming-collision note
 
-
-The self-driving browser
-Strawberry brings intuitive AI automation to your existing workflows
+The codename **"Strawberry"** was widely reported (Reuters, *The Information*, etc., mid-2024) as OpenAI's internal name for what shipped as **o1** in September 2024. That model is unrelated to this product despite sharing the name; this article is about the browser only.

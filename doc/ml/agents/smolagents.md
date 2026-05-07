@@ -30,7 +30,7 @@ status: draft
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
 - [[anmell]] — anmell _(score 20.3)_
-- [[llama_2]] — LLAMA _(score 16.3)_
+- [[llama]] — LLAMA _(score 16.3)_
 - [[ollama]] — Ollama _(score 16.3)_
 - [[hf]] — Hf _(score 12.9)_
 - [[devin_2]] — Devin _(score 8.3)_

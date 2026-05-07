@@ -1,66 +1,50 @@
 ---
-title: seal
+title: SEAL — Scale AI's private-prompt LLM leaderboards
 main_link: https://scale.com/leaderboard
-keywords: [seal, inspection, scale, leaderboard]
-status: draft
+keywords: [seal, scale-ai, leaderboard, private-evals, evaluation, contamination-resistant]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-
-> Auto-split from `doc/ml/llm/inspection/leaderboards.md` by `article_split.py`. Heading: **seal**.
-
-# seal
+# SEAL — Scale AI's private-prompt LLM leaderboards
 
 **Main link:** <https://scale.com/leaderboard>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+SEAL ("Safety, Evaluations, and Alignment Lab") is Scale AI's family of LLM leaderboards built around **private** prompt sets that the model providers don't see. The boards cover coding, instruction-following, math, multilinguality, adversarial robustness, agentic tool-use, and several other domains, with both frontier closed models (GPT-4/4o/o1, Claude 3.5 Sonnet, Gemini 1.5/2.0) and top open-weights models. The headline value proposition is **contamination resistance**: by keeping the eval prompts behind Scale's wall and rotating them, SEAL produces numbers that public benchmarks like MMLU or HumanEval no longer can.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+SEAL's role in the leaderboard ecosystem (see [[leaderboards]] for the broader map) is to be the **independent referee** the public benchmarks can no longer be. If a model claims a number on MMLU or MATH, it's plausibly partly memorised; if it claims a number on a SEAL board, the prompt set is private and curated by Scale's expert annotators, so the result is much closer to a real out-of-distribution capability measurement.
+
+The trade-off is **transparency**: you can't reproduce SEAL's numbers yourself or audit the exact prompt distribution; you have to trust Scale's methodology and (implicitly) their commercial neutrality given that Scale also sells data-labelling services to most of the same model providers. In practice the boards correlate well with Chatbot Arena and with practitioner consensus, so the trust seems earned for now. Use SEAL alongside — not instead of — Chatbot Arena, Aider polyglot, LiveCodeBench, and your own private eval; the more independent signals agree, the more believable the ranking.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- LMSYS Chatbot Arena — human-preference Elo on private user prompts; the other big "hard to game" board.
+- LiveBench (Abacus AI) — rotates problems monthly to dodge contamination.
+- LiveCodeBench — same idea, scoped to competitive-programming problems with post-cutoff dates.
+- Vellum LLM leaderboard — pragmatic enterprise-flavoured aggregator.
+- Artificial Analysis — cost/latency/quality aggregator across many providers.
 
 ## Internal links
+<!-- reviewed -->
+- [[README|llm/inspection]]
+- [[../README|llm]]
+- [[leaderboards]] — broader leaderboard landscape.
+- [[../models/README|llm/models]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[leaderboards]] — marena _(score 41.2)_
-- [[abliteration]] — Removing refusals with transformers _(score 23.4)_
-- [[inspectus]] — Inspectus _(score 23.4)_
-- [[airtable]] — airtable _(score 8.9)_
-- [[dataman]] — Dataman _(score 7.4)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#seal` `#inspection` `#llm` `#ml` `#scale` `#leaderboard` `#info` `#infoshare2024`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#seal` `#scale-ai` `#leaderboard` `#private-evals` `#evaluation` `#contamination-resistant`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- SEAL home + active boards: <https://scale.com/leaderboard>
+- Scale AI: <https://scale.com/>
+- Methodology blurbs and per-board prompt-set descriptions are linked from each individual board page.
 
-# seal
+### Talks / context
 
-https://scale.com/leaderboard
-
-
-
-info:
-
-https://infoshare2024.crd.co/
-
-https://mrugalski.pl/
+- Infoshare 2024 — Scale presentation slot: <https://infoshare2024.crd.co/>
+- Niko Mrugalski (Infoshare 2024 speaker page; tangential context, not SEAL-specific): <https://mrugalski.pl/>

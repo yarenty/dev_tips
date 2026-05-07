@@ -1,182 +1,181 @@
 ---
-title: rsllm
+title: rsllm — Rust AI stream analyzer & Twitch bot (Candle-based)
 main_link: https://github.com/groovybits/rsllm
-keywords: [rsllm, ndi, tts]
-status: draft
+keywords: [rsllm, rust, candle, ndi, twitch, mpegts, tts, metal, niche]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# rsllm
+# rsllm — Rust AI stream analyzer & Twitch bot (Candle-based)
 
 **Main link:** <https://github.com/groovybits/rsllm>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`rsllm` (RsLLM) is a niche, hobby/research Rust pipeline by Chris
+Kennedy (Feb 2024) that wires a Candle-based local LLM (Mistral or
+Gemma) to Twitch chat, NDI video/audio output, Stable Diffusion
+image generation, and TTS (MetaVoice / OpenAI TTS / Mimic3) — with
+the explicit goal of running an "automated AI Twitch streamer" or
+analysing MPEG-TS streams and OS stats on Apple Silicon. It also
+supports an OpenAI-compatible backend (e.g. `llama.cpp` server)
+when local-Candle isn't enough.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Honest framing: `rsllm` is an **opinionated demo / personal toolkit**
+in the broadcasting/video-AI niche, not a general-purpose Rust LLM
+runtime. Reach for it only if your problem actually intersects its
+sweet spot:
+
+- You want a **Twitch chatbot that also generates images and TTS
+  speech and broadcasts via NDI** — there's nothing else in Rust
+  packaged this way.
+- You're on **Apple Silicon (M1/M2/M3)** — the project is
+  Metal-first; CUDA/Nvidia paths are explicitly listed as
+  "needs someone to fix it up."
+- You want to study **a real Candle integration** with multiple
+  modalities (text, image, audio) wired together.
+
+For anything else, the Rust LLM landscape has better-fitting tools:
+
+| You want                                  | Use this instead                |
+|-------------------------------------------|---------------------------------|
+| LLM-app framework (agents/RAG/tools)      | [[rig]]                         |
+| Run an inference server locally           | [[ollama]] (or `llama.cpp` directly) |
+| Embed Candle without the Twitch bits      | `candle` directly (HF)          |
+| Higher-level Rust LLM toolkit + UI        | `kalosm`                        |
+| Pure-Rust Mistral/Llama inference engine  | `mistral.rs`                    |
+
+Other caveats: features like Whisper voice input, RAG over Chroma,
+SCTE-35 ad-break detection, ZeroMQ daemon mode are listed on the
+roadmap but were WIP at the time the README was written; treat the
+roadmap as aspirational. Maintenance pace is single-author.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[rig]] — general-purpose Rust LLM-app framework (different scope).
+- `candle` — HuggingFace's Rust inference framework that rsllm wraps.
+- `mistral.rs` — production-shaped pure-Rust inference engine.
+- AUTOMATIC1111 / ComfyUI — the SD UI server rsllm can call out to.
+- StreamElements / Streamlabs — the non-AI Twitch-bot incumbents.
 
 ## Internal links
+<!-- reviewed -->
+- [[rig]] — the more general Rust LLM client framework.
+- [[ollama]] — alternative for "just serve a model locally."
+- [[programming/rust/ml/ml_in_rust|ml_in_rust]] — broader Rust ML landscape (incl. Candle/burn).
+- [[../README|llm]] — parent LLM hub.
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[ollama]] — Ollama _(score 16.0)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#rsllm` `#runtimes` `#llm` `#ml` `#ndi` `#tts` `#candle` `#rust`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#rsllm` `#rust` `#candle` `#ndi` `#twitch` `#mpegts` `#tts` `#metal` `#niche`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Repo: <https://github.com/groovybits/rsllm>
+- Author: Chris Kennedy (Feb 2024).
+- Licence: MIT.
 
-# rsllm
+### What it is (from upstream)
 
+> Rust AI Stream Analyzer Twitch Bot. RsLLM is an AI pipeline 100% in
+> Rust for Transformer/Tensor code that leverages the Candle framework
+> from HuggingFace. […] Designed for developers and researchers
+> aiming to integrate local LLMs with Rust, bypassing the need for
+> external dependencies and Python code for chatbots and other AI
+> programs.
 
-https://github.com/groovybits/rsllm
+### Key features
 
-Rust AI Stream Analyzer Twitch Bot
+- **Local LLM** via Candle (Mistral, Gemma); Apple Metal optimised.
+- **AI analyzer** processing inputs and generating outputs across
+  text, voice, speech and images (WIP).
+- **Voice / speech** — planned Whisper integration for voice-driven
+  interaction.
+- **Image generation + NDI output** — Stable Diffusion via Candle or
+  AUTOMATIC1111; NDI (Network Device Interface) for broadcast-grade
+  streaming over IP.
+- **TTS** — MetaVoice (default, WIP), OpenAI TTS API (paid,
+  high-quality), Mimic3 (local, free).
+- **Twitch chat integration** — real-time AI replies in Twitch chat.
+- **MPEG-TS analysis** and OS-stats prompt-injection patterns.
 
-RsLLM is AI pipeline 100% in Rust for Transformer/Tensor code that is leveraging the Candle framework from Huggingface. It represents a systems programming language approach to AI model interaction and stream analysis. It can run locally on GPUs, it is focused on support of MacOS devices equipped with M1/M2/M3 ARM GPUs. This AI pipeline is designed for developers and researchers aiming to integrate local large language models (LLMs) with Rust, bypassing the need for external dependencies and Python code for chatbots and other AI programs. At its core, RsLLM emphasizes the utilization of local LLMs for generating text, images, and speech within a Rust environment, offering a robust suite of features for real-time data stream analysis and AI-driven content creation. RsLLM can run a Twitch channell chat bot and NDI video/audio with generated Stable Diffusion images and TTS Speech output through software compatible with NDI. You can setup OBS to take the NDI feed and setup your Twitch channel then have a full chatting and speaking/image generating customizable Twitch channel. Fully AI driven, you can automate a Twitch Streamer somewhat. Also you can analyze MpegTS streams or OS System stats too, if desired you can combine the two and have chat users comment and query the stream analyzing it effectively.
+### Components
 
-Key Features
-Local LLM: Utilizes Candle's Rust-based LLMs, Mistral and Gemma, for direct and efficient AI interactions, prioritizing local execution to harness the full power of MacOS Metal GPUs.
-Comprehensive AI Analyzer: Embeds a sophisticated AI analyzer capable of processing inputs and generating outputs across text, voice, speech, and images, facilitating a seamless flow of AI-generated content. (Work in Progress)
-Voice and Speech Integration: Plans to incorporate Whisper for voice-driven interactions, akin to Alexa, allowing users to communicate with the toolkit using voice commands and receive streaming text inputs in response. (Planned Feature)
-Image Generation and NDI Output: Supports generating images from text descriptions and outputting through NDI for a wide range of applications, including real-time content creation and broadcasting. (In Beta Testing)
-TTS Support: Candle implements TTS using MetaVoice (default, WIP), OpenAI TTS API (high-quality, real-time), and Mimic3 TTS API (local, free). MetaVoice is being optimized for Metal GPUs, while OpenAI TTS API generates premium speech at a cost. Mimic3 TTS API requires running the mimic3-server but offers a good alternative to OpenAI TTS API. Mimic3 GitHub
-Twitch Chat Interactive AI: Integrated Twitch chat for real-time AI interactions, enabling users to engage with the toolkit through chat commands and receive AI-generated responses.
-Stable Diffusion Image Generation: Supports either Candle stable diffusion or the AUTOMATIC111111 API server. https://github.com/AUTOMATIC1111/stable-diffusion-webui/
+- **Candle integration** — Rust-native LLMs (Mistral, Gemma)
+  optimised for Metal on macOS.
+- **OpenAI-API-compatible backend** for `llama.cpp` server, so
+  external/custom models can be plugged in.
+- **Real-time analysis & content generation** — text, image, speech.
 
+### Setup
 
+Prerequisites:
 
+- Rust + Cargo.
+- Ideally an Apple Silicon Mac (M1/M2/M3).
+- NDI library (only if you want NDI output for OBS).
 
-Core Components
-Candle Framework Integration
-Candle, a project by Huggingface, offers Rust-native LLMs like Mistral and Gemma, optimized for Metal GPUs on MacOS. This integration facilitates local execution of LLMs, ensuring high performance and low latency in AI model interactions.
-
-OpenAI API Support for llama.cpp LLM server backend
-While RsLLM's primary focus is on running local LLMs, it also provides support for the OpenAI API, enabling users to leverage external AI models when necessary. This feature ensures versatility and broad applicability in various AI-driven projects using custom models.
-
-Real-time AI Analysis and Content Generation
-RsLLM excels in analyzing real-time data streams and generating AI-driven content, including text, images, and speech. It aims to create a dynamic interaction model where voice inputs can be converted into text commands for the LLM, and the generated outputs can be streamed back as voice or visual content.
-
-Installation and Configuration
-Prerequisites
-Ensure Rust and Cargo are installed. Rust Installation Guide.
-Ideally a MacOS system with an M1/M2/M3 ARM GPU. Nvidia may work, need someone to fix it up since I do not have Nvidia GPUs.
-NDI Library for OBS NDI streaming output. This is optional.
-Setup Guide
-Clone the Repository:
-
+```sh
 git clone https://github.com/groovybits/rsllm.git
-Navigate to the Project Directory:
-
 cd rsllm
-Compile with Metal GPU Support and NDI SDK support:
+./scripts/compile.sh    # handles NDI SDK + DYLD_LIBRARY_PATH
+cp .env.example .env    # set OpenAI key if desired
+```
 
-./scripts/compile.sh # Script handles NDI SDK dependency and DYLD_LIBRARY_PATH
-Configuration
-Copy .env.example to .env and customize the settings, including the OpenAI API key if intending to use external AI models.
-Usage
-RsLLM is designed to facilitate a wide range of AI-driven operations, from generating text-based content to analyzing network streams and processing visual and audio inputs. Advanced features like NDI audio output and voice-to-text input processing are in development, aiming to enhance the interactive capabilities of the toolkit.
+### Example commands
 
-Example Commands
-Use the scripts in the ./scripts directory.
+```sh
+./scripts/compile.sh           # build
+./scripts/twitch.sh            # full Twitch-bot example
+./scripts/mpeg_analyzer.sh     # experimental MpegTS analyzer (WIP)
+./scripts/mpeg_poetry.sh       # MPEG-TS prompt-injection poetry demo
+./scripts/system_health.sh     # OS-stats prompt injection
+```
 
-./scripts/compile.sh # Build RsLLM
-./scripts/twitch.sh  # Full command line shown for most features
-./scripts/mpeg_analyzer.sh # Experimental MpegTS Analyzer mode (WIP)
-./scripts/mpeg_poetry.sh   # Fun poetry about MpegTS Broadcasting with stream input prompt injection
-./scripts/system_health.sh # System health status from OS Stats prompt injection
-Running with Candle and OS Stats for AI System Analysis:
+Running with Candle + OS-stats prompt injection:
 
+```sh
 cargo run --release --features fonts,ndi,mps,metavoice,audioplayer -- \
---candle_llm gemma \
---model-id "2b-it" \
---max-tokens 800 \
---temperature 0.8 \
---ai-os-stats \
---sd-image \
---ndi-images \
---ndi-audio \
---system-prompt "You create image prompts from OS system stats health state." \
---query "How is my system doing? Create a report on the system health as visual image descriptions."
-Enhanced Output Capabilities and Upcoming Features
-NDI Output for Images and TTS Speech Audio
-RsLLM is enhancing its output capabilities to include NDI (Network Device Interface) support for images and TTS (Text-to-Speech) audio, facilitating high-quality, low-latency video streaming over IP networks.
+  --candle_llm gemma \
+  --model-id "2b-it" \
+  --max-tokens 800 \
+  --temperature 0.8 \
+  --ai-os-stats \
+  --sd-image \
+  --ndi-images \
+  --ndi-audio \
+  --system-prompt "You create image prompts from OS system stats health state." \
+  --query "How is my system doing? Create a report on the system health as visual image descriptions."
+```
 
-(OPTIONAL) NDI SDK Installation: The compile.sh script will download the libndi.dylib for you. If desired, you can download and install the NDI SDK from here. This SDK is useful for viewing the NDI output and exploring other tools.
-Configuration Steps:
-Add --features ndi to the Cargo build command to include NDI support in your build.
-Run scripts/compile.sh, which will retrieve the libndi.dylib that works best for MacOS.
-To ensure the library is correctly recognized when building with cargo --features=ndi, set the DYLD_LIBRARY_PATH environment variable:
-export DYLD_LIBRARY_PATH=`pwd`:$DYLD_LIBRARY_PATH
-Additional Configuration: Logging into the Huggingface Hub via the CLI can resolve some potential warnings. Execute huggingface-cli login to authenticate.
-MetaVoice TTS Text to Speech (WIP)
-Candle, our core Rust framework for LLM interaction, now includes MetaVoice, a groundbreaking Text-to-Speech (TTS) technology. As this feature improves, it will enable pure Rust-based LLM, TTI (Text-to-Image), and TTS functionalities, seamlessly integrated with Metal GPU optimizations for MacOS.
+### NDI specifics
 
-Development Status: The MetaVoice integration is done and being optimized in Candle to match the quality of the reference implementation.
-Anticipated Benefits: Once fully optimized, MetaVoice will significantly enhance the toolkit's ability to generate lifelike speech from text without cost and with low latency on a local LLM. It will also provide the ability to one-shot learn a voice from a small clip and generate speech from it. For now, you may want to use OpenAI for quality/real-time generation of speech audio.
-RsLLM's mission is to research and explore the implementation of a versatile, high-performance toolkit for AI-driven content creation and analysis on MacOS, leveraging the full potential of Metal GPUs and Rust's efficiency.
+- Add `--features ndi` to the Cargo build.
+- `scripts/compile.sh` retrieves `libndi.dylib` automatically.
+- Set `DYLD_LIBRARY_PATH` so the linker finds it:
 
-Roadmap
-Priority:
-Preserve history using a local database (e.g., SQLite or MongoDB) and feed it into a Chroma DB for RAG.
-MpegTS Chat for freeform analysis over current and historical MPEG-TS stream data.
-Improve Image/TTS latency and async coordination of output. Use an NDI pre-queue for images and audio to ensure synchronization and minimize latency.
-Implement RAG (Retrieval Augmented Generation) using Chromium for document caching and embeddings, providing augmented documentation-based LLM context.
-Merge MetaVoice fixes from Candle as they become available (WIP).
-Implement Perceptual Hashes (DCT64-based) for frame fingerprinting to detect changes in video frames, recognize and learn repeating content sequences, verify commercial breaks, and detect ad insertions. Integrate SCTE-35 and maintain a database of fingerprinted content for various quality checks, break/logo fidelity confirmation, and presence detection.
-Enable daemon mode to run and listen for requests via ZeroMQ input and pass to output.
-Expand options for LLMs and the OpenAI API.
-Future Enhancements:
-Utilize ffmpeg-next-sys to process video and audio in real-time for generating frames, audio, and text-to-video, as well as transforming video and creating mood videos or themed stories. Explore the possibilities of combining an LLM with FFmpeg.
-Enhance MpegTS Analyzer for real-time analysis of MPEG-TS streams, reporting, and AI-driven issue detection.
-Improve network and system analyzers.
-Utilize Chroma DB for RAG with documents to augment prompts with relevant information.
-Implement Cap'n Proto for serialization, deserialization, and modular ZeroMQ protocol communication.
-Integrate MetaMusic for mood-based music generation based on results.
-Develop talking head video generation with consistent frame context, ensuring objects remain the same within frames.
-Implement speech-to-text using Whisper Candle for audio input, LLM ingestion, and video subtitling.
-Allow freeform input options for the LLM to interpret user intentions.
-Explore dynamic code generation in Python for new tasks like video processing (consider risks).
-Implement iterative and multi-generational output with outlines leading to multiple passes until a final result is reached.
-Utilize Speech to Text with Whisper Candle for audio input, enabling voice commands to the LLM for conversational AI.
-Contributing
-Contributions are warmly welcomed, especially in areas such as feature development, performance optimization, and documentation. Your expertise can significantly enhance the toolkit's capabilities and user experience.
+  ```sh
+  export DYLD_LIBRARY_PATH=$PWD:$DYLD_LIBRARY_PATH
+  ```
 
-License
-This project is licensed under the MIT License. See the LICENSE file for detailed information.
+- Optional: log into HuggingFace Hub via `huggingface-cli login` to
+  silence some warnings.
 
-Acknowledgments
-Candle Rust Transformers/Tensors by Huggingface: Candle
-OpenAI for API Specifications: OpenAI
-OpenAI for TTS Integration: OpenAI
-MetaVoice for TTS Integration: MetaVoice
-Mimic3 for TTS Integration: Mimic3
-Whisper for Speech to Text: Whisper
-Google Gemini LLM: Gemini
-Mistral LLM: Mistral
-Author
-Chris Kennedy, leading the development of innovative AI solutions with the MacOS Metal GPU Rust LLM Toolkit. February 2024.
+### Roadmap (aspirational, as of upstream README)
 
-We are committed to pushing the boundaries of AI integration with Video Technology and Multimodal input/output on MacOS Arm CPUs in pure Rust, ensuring media developers and researchers have access to powerful, efficient, and versatile tools for their AI-driven projects.
+- Local DB (SQLite/MongoDB) → Chroma DB for RAG over chat history.
+- MPEG-TS chat (freeform analysis over current and historical streams).
+- Image/TTS latency improvements + NDI pre-queue for sync.
+- Perceptual hashing (DCT64) for ad-break / commercial detection;
+  SCTE-35 integration.
+- Daemon mode over ZeroMQ.
+- Whisper Candle for speech-to-text.
+- `ffmpeg-next-sys` for real-time video transformation.
+- Cap'n Proto for protocol serialisation.
+- MetaMusic (mood-based music generation).
+
+### Acknowledgments (upstream)
+
+Candle (HuggingFace), OpenAI (API + TTS), MetaVoice, Mimic3, Whisper,
+Google Gemini, Mistral.

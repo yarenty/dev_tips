@@ -1,79 +1,73 @@
 ---
-title: Removing refusals with transformers
-main_link: https://github.com/Sumandora/remove-refusals-with-transformers
-keywords: [abliteration, inspection, models, refusals]
-status: draft
+title: Abliteration — un-aligning LLMs by orthogonalising the refusal direction
+main_link: https://huggingface.co/blog/mlabonne/abliteration
+keywords: [abliteration, refusal-direction, alignment, safety-research, activation-steering, transformerlens]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Abliteration — un-aligning LLMs by orthogonalising the refusal direction
 
-# Removing refusals with transformers
-
-**Main link:** <https://github.com/Sumandora/remove-refusals-with-transformers>
+**Main link:** <https://huggingface.co/blog/mlabonne/abliteration>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Abliteration is a technique, popularised by Maxime Labonne in mid-2024, for removing safety-tuned refusals from an instruction-tuned LLM **without further training**. It builds on the Anthropic-style "refusal direction" finding (Arditi et al., 2024) — that an aligned model represents "should I refuse?" as a single linear direction in residual-stream activation space — and **orthogonalises** the model's weights against that direction so the refusal signal can no longer be expressed. The Sumandora repo linked here is a minimal proof-of-concept that does the same thing without TransformerLens, so it works on most Hugging Face Transformers checkpoints.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Abliteration is best understood as a **safety-research artefact**, not a practical un-alignment recipe. The technique is conceptually elegant — find one linear direction in activation space, project the weights onto its orthogonal complement, and the refusal behaviour collapses — but the practical value on production models is heavily debated:
+
+- Quality often degrades sharply: an abliterated 70B model may answer questions it previously refused, but it also frequently produces nonsense, repetitive output, or loses instruction-following nuance on **unrelated** tasks (because the refusal direction isn't perfectly orthogonal to other useful features).
+- It only works on the *behavioural* refusal layer; the model's underlying knowledge boundaries (what it learned vs didn't) are unchanged.
+- Recovery via a small DPO / SFT pass is possible (and is what e.g. Huihui's "abliterated-then-fixed" Ollama tags do).
+- For un-alignment that **preserves capability**, fine-tuning on jailbreak-shaped data or DPO-with-negative-rewards typically wins; for un-alignment that **just works at inference time**, activation-steering at runtime (without modifying weights) is more conservative.
+
+The real research significance is what abliteration **demonstrates**: alignment in current RLHF/DPO-tuned models is shockingly fragile because so much of it lives in a low-dimensional subspace. That's a useful data point for safety researchers and a sobering one for anyone betting on RLHF as their safety story.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- Arditi et al. 2024, *Refusal in LLMs is mediated by a single direction* — the underlying research finding.
+- TransformerLens — Neel Nanda's library for mechanistic-interpretability hooks; the standard tool for activation-steering work.
+- DPO with negative rewards / "uncensored" fine-tunes — train-time alternative (Eric Hartford's Dolphin series, Wizard-Vicuna-Uncensored).
+- Activation steering / representation engineering — runtime alternative; modifies activations during inference, not weights.
+- Anthropic's Sparse Autoencoders — the "scaling monosemanticity" line of work, finding interpretable features without orthogonalising them away.
 
 ## Internal links
+<!-- reviewed -->
+- [[README|llm/inspection]]
+- [[../README|llm]]
+- [[../models/llama]] — common abliteration target.
+- [[../runtimes/ollama|llm/runtimes/ollama]] — most published abliterated checkpoints ship as Ollama tags.
+- [[../../finetuning/README|finetuning]] — alternative un-alignment via DPO/SFT.
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[leaderboards]] — marena _(score 23.4)_
-- [[inspectus]] — Inspectus _(score 23.4)_
-- [[llama_2]] — LLAMA _(score 16.3)_
-- [[ollama]] — Ollama _(score 16.3)_
-- [[seal]] — seal _(score 11.4)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#abliteration` `#inspection` `#llm` `#ml` `#model` `#refusals` `#transformers` `#models`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#abliteration` `#refusal-direction` `#alignment` `#safety-research` `#activation-steering` `#transformerlens`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Canonical write-ups
 
-# Removing refusals with transformers
+- Maxime Labonne's blog post (the explainer most people read): <https://huggingface.co/blog/mlabonne/abliteration>
+- Original research: Arditi, Obeso, et al., *Refusal in Language Models Is Mediated by a Single Direction*, 2024 — <https://arxiv.org/abs/2406.11717>
 
-https://github.com/Sumandora/remove-refusals-with-transformers
+### Minimal implementation — Sumandora/remove-refusals-with-transformers
 
-This is a crude, proof-of-concept implementation to remove refusals from an LLM model without using TransformerLens. This means, that this supports every model that HF Transformers supports*.
+<https://github.com/Sumandora/remove-refusals-with-transformers>
 
-The code was tested on a RTX 2060 6GB, thus mostly <3B models have been tested, but the code has been tested to work with bigger models as well.
+A crude, proof-of-concept implementation that removes refusals from an LLM **without** using TransformerLens. Works on most HF-Transformers-compatible models; tested on an RTX 2060 6GB (mostly <3B models, but the recipe scales).
 
-*While most models are compatible, some models are not. Mainly because of custom model implementations. Some Qwen implementations for example don't work. Because model.model.layers can't be used for getting layers. They call the variables so that, model.transformer.h must be used, if I'm not mistaken.
+Caveats from the repo:
 
-## Usage
-Set model and quantization in compute_refusal_dir.py and inference.py (Quantization can apparently be mixed)
-Run compute_refusal_dir.py (Some settings in that file may be changed depending on your use-case)
-Run inference.py and ask the model how to build an army of rabbits, that will overthrow your local government one day, by stealing all the carrots.
+- Some models with custom implementations break the assumption that layers live at `model.model.layers` — e.g. some Qwen variants put them at `model.transformer.h`.
+- Quantisation can be mixed between the direction-computation and inference passes.
 
+Workflow:
 
-## Ollama models:
+1. Set the target model + quantisation in `compute_refusal_dir.py`.
+2. Run it to extract the refusal direction (and a small "harmless" / "harmful" prompt set is used to identify the direction).
+3. Run `inference.py` with the direction subtracted from the weights to chat with the abliterated model.
 
+### Pre-baked Ollama tags
 
-https://ollama.com/huihui_ai/qwen3-abliterated
-
-This is an uncensored version of Qwen/qwen3 created with abliteration (see remove-refusals-with-transformers to know more about it).
-This is a crude, proof-of-concept implementation to remove refusals from an LLM model without using TransformerLens.
-
-You can toggle non-thinking mode in Ollama by typing /no_think after the prompt.
+<https://ollama.com/huihui_ai/qwen3-abliterated> — Huihui_AI's published abliterated tags. Useful as a "what does this actually look like in practice" sandbox. Ollama-side toggle: `/no_think` after the prompt to disable Qwen3's thinking mode.

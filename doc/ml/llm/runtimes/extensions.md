@@ -1,72 +1,75 @@
 ---
-title: Extensions
+title: Goose extensions, sessions, and hints
 main_link: https://block.github.io/goose/docs/getting-started/using-extensions/
-keywords: [extensions, goose, block]
-status: draft
+keywords: [goose, extensions, mcp, sessions, goosehints, plugins]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/ml/llm/runtimes/goose.md` by `article_split.py`. Heading: **Extensions**.
-
-# Extensions
+# Goose extensions, sessions, and hints
 
 **Main link:** <https://block.github.io/goose/docs/getting-started/using-extensions/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+How to extend a Goose agent: extensions (the plugin shape — built-in
+ones plus arbitrary MCP servers), sessions (persistent multi-turn
+conversations you can resume by name), and `.goosehints` (per-repo
+or per-project system-prompt overrides). The extension model is
+MCP-first, so any of the growing MCP-server ecosystem (filesystem,
+GitHub, Postgres, Slack, browser-use, etc.) drops in without
+Goose-specific glue.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+This is the surface area you actually *use* day-to-day. Three
+patterns to know:
+
+- **Extensions = MCP servers + a small bundled set.** The Goose
+  built-ins (developer, computer-use, JetBrains, GitHub, memory)
+  are the ones you'll enable first; everything else is "add an MCP
+  server URL or stdio command." That makes Goose's plugin story
+  identical to Claude Desktop's and Cursor's, by design.
+- **Sessions are named, resumable, and cheap to fork.** Use
+  `goose session --name <task>` so you can `goose session resume`
+  later; great for multi-day refactors. Watch token cost on long
+  sessions with closed-provider models.
+- **`.goosehints` is the agent equivalent of `.cursorrules` / `AGENTS.md` /
+  `CLAUDE.md`.** Drop a markdown file in your repo with house style,
+  build commands, "don't touch these directories" — Goose loads it
+  into the system prompt automatically.
+
+When something feels missing (Linear, Jira, Sentry, your internal
+service) the answer is almost always "find or write an MCP server,"
+not "patch Goose."
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- Claude Desktop / Cursor MCP — the same plugin shape from other vendors.
+- VS Code Extensions API — the IDE-extension predecessor, much heavier.
+- `.cursorrules` / `AGENTS.md` / `CLAUDE.md` — sibling per-repo prompt overrides.
+- LangChain Tools / function-calling — the pre-MCP plugin shape.
 
 ## Internal links
+<!-- reviewed -->
+- [[goose]] — the agent runtime these features extend.
+- [[providers]] — sister concept; LLM provider plugin shape.
+- [[../../mcp/README|mcp]] — Model Context Protocol; how extensions are spoken.
+- [[../system_prompts/system_prompt|system_prompt]] — `.goosehints` is a system-prompt override.
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[goose]] — Goose _(score 24.9)_
-- [[rsllm]] — rsllm _(score 16.0)_
-- [[providers]] — providers _(score 16.0)_
-- [[ollama]] — Ollama _(score 16.0)_
-- [[sqlite]] — sqlite _(score 8.9)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#extensions` `#runtimes` `#llm` `#ml` `#goose` `#block` `#docs` `#sessions`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#goose` `#extensions` `#mcp` `#sessions` `#goosehints` `#plugins`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Extensions
 
-# Extensions
+- <https://block.github.io/goose/docs/getting-started/using-extensions/>
 
-https://block.github.io/goose/docs/getting-started/using-extensions/
+### Managing sessions
 
+- <https://block.github.io/goose/docs/guides/managing-goose-sessions/>
 
+### Hints / `.goosehints`
 
-
-## Manage Goose Sessions
-https://block.github.io/goose/docs/guides/managing-goose-sessions/ 
-
-
-
-## Hints - tips
-
-
-https://block.github.io/goose/docs/guides/using-goosehints
+- <https://block.github.io/goose/docs/guides/using-goosehints>

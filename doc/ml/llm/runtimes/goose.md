@@ -1,82 +1,92 @@
 ---
-title: Goose
-main_link: https://github.com/block/goose
-keywords: [goose, deepseek]
-status: draft
+title: Goose — Block's open-source AI agent runtime
+main_link: https://block.github.io/goose/
+keywords: [goose, agent, mcp, block, cli, deepseek, extensions]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Goose — Block's open-source AI agent runtime
 
-# Goose
-
-**Main link:** <https://github.com/block/goose>
+**Main link:** <https://block.github.io/goose/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Goose is an open-source, extensible AI agent built and sponsored by
+Block (Square/Cash App), distributed as a CLI plus desktop app. It
+runs locally, plugs into any LLM provider (OpenAI, Anthropic, Ollama,
+Bedrock, Google, etc.), and gains capabilities by attaching MCP servers
+or built-in extensions (developer tools, computer-use, GitHub, JetBrains,
+shell). Recipes/sessions/hints give it persistence and reproducibility.
+The agent's loop is the standard plan-act-observe-tool-call cycle —
+the differentiator is the open architecture and the Block-backed
+contributor base.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Position Goose as the **open, vendor-neutral alternative to the
+closed agent CLIs**: Claude Code, Cursor, OpenAI Codex CLI, GitHub
+Copilot Workspace, Devin. It's closer in spirit to Aider and Cline
+(open-source, BYO-model) than to Cursor (proprietary, model-lock).
+What you actually get over those:
+
+- **MCP-first.** Goose was an early adopter of the Model Context
+  Protocol, so it composes cleanly with the growing MCP-server
+  ecosystem rather than inventing a private plugin shape.
+- **Provider-agnostic.** Switch between Claude, GPT-4o, DeepSeek-R1,
+  and a local Ollama model without changing the agent. See
+  [[providers]] for the supported list.
+- **Extensions, recipes, hints.** [[extensions]] for tool plugins,
+  recipes for parameterised replayable workflows, `.goosehints` for
+  per-repo system-prompt overrides.
+
+The honest gotchas: it's still rougher around the edges than Claude
+Code or Cursor; sessions can be expensive on closed providers; for
+real autonomy on long tasks you want a strong reasoning model
+(R1, Claude Sonnet 4, GPT-5-class) rather than the local 8B that
+the demo videos use.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- Claude Code — Anthropic's official terminal coding agent (closed).
+- Cursor — IDE-shaped AI coding agent (closed, model-multiplexed).
+- Cline / Continue.dev — open-source IDE-side agents.
+- Aider — git-aware terminal coding agent; predates the MCP wave.
+- OpenAI Codex CLI — OpenAI's agent CLI; tighter coupling to GPT-5.
+- Devin (Cognition) — fully autonomous SWE agent; closed, hosted.
 
 ## Internal links
+<!-- reviewed -->
+- [[extensions]] — Goose's plugin/extension system.
+- [[providers]] — supported LLM providers (Ollama, Anthropic, OpenAI, …).
+- [[ollama]] — the most common local backend.
+- [[../models/deepseek|models/deepseek]] — DeepSeek-R1 (the `michaelneale/deepseek-r1-goose` tool-calling variant).
+- [[../../mcp/README|mcp]] — Model Context Protocol; how Goose talks to tools.
+- [[../../agents/README|agents]] — broader agent-framework landscape.
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[extensions]] — Extensions _(score 24.9)_
-- [[providers]] — providers _(score 23.8)_
-- [[deepseek]] — Deepseek _(score 19.8)_
-- [[ollama]] — Ollama _(score 16.0)_
-- [[tools/security/pake|pake]] — Pake _(score 7.8)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#goose` `#runtimes` `#llm` `#ml` `#deepseek` `#ollama` `#block` `#model`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#goose` `#agent` `#mcp` `#block` `#cli` `#deepseek` `#extensions`
 
 ## References / raw notes
-<!-- auto-split by article_split.py -->
-> Auto-split: 2 additional top-level heading(s) extracted into sibling files:
-> - [providers](providers.md)
-> - [Extensions](extensions.md)
 
+- Site: <https://block.github.io/goose/>
+- Repo: <https://github.com/block/goose>
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Pitch (from the site)
 
-# Goose
+- **Open source** — built with transparency and collaboration in mind;
+  contributors can customise and innovate freely.
+- **Runs locally** — executes tasks on your machine, keeping control
+  in your hands.
+- **Extensible** — pair with any LLM and connect to any external MCP
+  server or API.
+- **Autonomous** — can independently handle multi-step tasks
+  (debugging, deployment, refactors).
 
-https://block.github.io/goose/
+> An open-source, extensible AI agent that goes beyond code suggestions —
+> install, execute, edit, and test with any LLM.
 
-- Open Source
-Built with transparency and collaboration in mind, goose empowers developers to contribute, customize, and innovate freely.
+### Sub-articles auto-split from this file
 
-- Runs Locally
-Goose runs locally to execute tasks efficiently, keeping control in your hands.
-
-- Extensible
-Customize goose with your preferred LLM and enhance its capabilities by connecting it to any external MCP server or API.
-
-- Autonomous
-Goose independently handles complex tasks, from debugging to deployment, freeing you to focus on what matters most.
-
-
-
-https://github.com/block/goose
-
-
-an open-source, extensible **AI agent** that goes beyond code suggestions
-install, execute, edit, and test with any LLM
+- [[providers]] — supported LLM providers.
+- [[extensions]] — extensions / plugins.
