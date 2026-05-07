@@ -1,72 +1,56 @@
 ---
-title: tiberius
+title: tiberius — Microsoft SQL Server async client
 main_link: https://crates.io/crates/tiberius
-keywords: [tiberius, rust, tds, goals, sql, linux]
-status: draft
+keywords: [tiberius, mssql, sqlserver, tds, async, driver]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/data/db.md` by `article_split.py`. Heading: **tiberius**.
-
-# tiberius
+# tiberius — Microsoft SQL Server async client
 
 **Main link:** <https://crates.io/crates/tiberius>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`tiberius` is a native Microsoft SQL Server (TDS) client for Rust, originally extracted from `prisma-engines`. It implements the TDS wire protocol asynchronously (works over any `AsyncRead + AsyncWrite` — Tokio, async-std, smol), with TLS via `native-tls` or `rustls`, BCP, named-instance discovery via SQL Browser, and Windows-Authentication on Windows hosts. It is intentionally protocol-only: no connection pool, no query builder, no ORM — pair with `bb8-tiberius`/`deadpool-tiberius`/`mobc-tiberius` for pooling.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+`tiberius` is essentially **the** Rust story for talking to MSSQL. The alternatives are wrapping ODBC (via `odbc-api` or `r2d2-odbc`) which is platform-painful (driver install, version skew, Unicode issues), or going through a sidecar. Tiberius's headline feature is being **runtime-agnostic**: most async DB drivers are tied to Tokio, but tiberius accepts any AsyncRead/Write socket, so it works in Lambda, edge, or async-std code without contortions. Gotchas: Kerberos / Windows Authentication is only fully supported on Windows hosts (Linux needs `kinit` + GSSAPI feature flag); Azure SQL / managed-identity auth requires the optional `aad` feature; the lack of a built-in pool surprises newcomers — you really do need `bb8-tiberius` (the most common adapter). Compared to .NET's `SqlClient`, tiberius is solid for OLTP but lighter on bulk-copy and Service-Broker support.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- `odbc-api` — generic ODBC client; the pre-tiberius Rust→MSSQL escape hatch.
+- [[bb8]] + `bb8-tiberius` — recommended pool combo.
+- `prisma-engines` — original home of tiberius.
+- .NET `Microsoft.Data.SqlClient` — the reference implementation tiberius mirrors.
 
 ## Internal links
+<!-- reviewed -->
+- [[bb8]]
+- [[deadpool]]
+- [[mobc]]
+- [[../concurrency/tokio|tokio]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[mobc]] — mobc _(score 21.5)_
-- [[r2d2]] — r2d2 _(score 17.1)_
-- [[deadpool]] — deadpool _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-- [[cache]] — Cache _(score 9.5)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#tiberius` `#data` `#rust` `#programming` `#tds` `#goals` `#asynchronous` `#connection`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#tiberius` `#mssql` `#sqlserver` `#tds` `#async`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# tiberius
-
-https://crates.io/crates/tiberius
-
+- Crate: <https://crates.io/crates/tiberius>
+- Repo: <https://github.com/prisma/tiberius>
 
 A native Microsoft SQL Server (TDS) client for Rust.
 
-## Goals
-- A perfect implementation of the TDS protocol.
+**Goals**
+
+- A correct implementation of the TDS protocol.
 - Asynchronous network IO.
-- Independent of the network protocol.
-- Support for latest versions of Linux, Windows and macOS.
-## Non-goals
-- Connection pooling (use bb8, mobc, deadpool or any of the other asynchronous connection pools)
-- Query building
-- Object-relational mapping
+- Independent of the network protocol (works on Tokio / async-std / smol).
+- Support for current Linux, Windows, and macOS releases.
+
+**Non-goals**
+
+- Connection pooling — use `bb8`, `mobc`, `deadpool` (or any other async pool).
+- Query building.
+- Object-relational mapping.

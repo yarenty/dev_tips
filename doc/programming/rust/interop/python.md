@@ -1,80 +1,102 @@
 ---
-title: PUFF
+title: PUFF (CPython embedded in Rust)
 main_link: https://github.com/hansonkd/puff
-keywords: [python, rust, level, graphql, postgres]
-status: draft
+keywords: [puff, python, rust, embedding, runtime, axum, tokio]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# PUFF
+# PUFF (CPython embedded in Rust)
 
 **Main link:** <https://github.com/hansonkd/puff>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+[Puff](https://github.com/hansonkd/puff) is an experimental Rust runtime
+that embeds CPython in-process and exposes a batteries-included high-level
+API to it — HTTP (Axum), GraphQL, Postgres pools, Redis pools, pub/sub,
+and WebSockets — so a Python program can lean on Rust performance without
+explicit FFI per call. Architecturally it inverts the [[pyo3|PyO3]]
+recipe: instead of *exporting* a small Rust library to Python, it
+*hosts* Python inside a Rust runtime and provides Greenlets that are
+backed by Tokio tasks. Think "WSGI/ASGI server + standard library
+upgrades, written in Rust, exposed back to Python".
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Puff is the most ambitious of the Rust-hosts-Python projects, but it is a
+single-author research-grade experiment — last meaningful activity is
+years old at the time of writing, no PyPI release, no production users I'm
+aware of. File it under "interesting prior art", not "production choice".
+
+If you want this *kind* of architecture today, your real options are:
+
+- **[[pyo3|PyO3]] embedding mode** — the same import-the-interpreter API,
+  without Puff's batteries. You wire your own Tokio bridge.
+- **[Robyn](https://github.com/sparckles/robyn)** — actively maintained
+  PyO3-based async web framework that exposes Python handlers to a Rust
+  Hyper server. Closest to Puff in spirit and shape.
+- **[Granian](https://github.com/emmett-framework/granian)** — Rust ASGI
+  server for existing Django/Starlette/FastAPI apps. Less ambitious than
+  Puff but works today.
+- **[uvloop](https://github.com/MagicStack/uvloop)** — when all you wanted
+  was "asyncio but faster".
+
+For the inverse direction (write a Rust crate, expose to Python) see
+[[pyo3|PyO3]] + [[maturin]] + [[to_python]].
+
+This page also serves as the historical "Python interop overview" parent
+that the auto-splitter pulled siblings out of — the canonical
+sub-articles are now [[pyo3|PyO3]], [[maturin]], [[ballista_py]], and
+[[to_python]].
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[pyo3|PyO3]] — embedding the interpreter without the framework layer.
+- Robyn — actively maintained PyO3-based async web framework.
+- Granian — Rust ASGI server for existing Python frameworks.
+- uvloop — drop-in fast asyncio loop (libuv-based, not Rust).
+- [[ballista_py]] — Apache Ballista's Python bindings (the
+  external-process inverse pattern).
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[to_python]] — Rust - Python interactions _(score 21.7)_
-- [[maturin]] — maturin _(score 21.7)_
-- [[pyo3]] — pyo3 _(score 17.1)_
-- [[ballista_py]] — ballista py _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
+- [[pyo3|PyO3]] — canonical Rust↔CPython binding.
+- [[maturin]] — build tool for the inverse direction.
+- [[to_python]] — Rust→PyPI recipe.
+- [[ballista_py]] — Python bindings for distributed DataFusion.
+- [[README]] — Rust interop landing.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#python` `#interop` `#rust` `#programming` `#high` `#level` `#build` `#graphql`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#puff` `#python` `#rust` `#embedding` `#runtime` `#axum` `#tokio`
 
 ## References / raw notes
-<!-- auto-split by article_split.py -->
-> Auto-split: 3 additional top-level heading(s) extracted into sibling files:
-> - [pyo3](pyo3.md)
-> - [ballista py](ballista_py.md)
-> - [maturin](maturin.md)
 
+- [GitHub — hansonkd/puff](https://github.com/hansonkd/puff)
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+Original blurb (Kyle Hanson):
 
-# PUFF
+> It's an experiment to minimize the barrier between Python and Rust to
+> unlock the full potential of high level languages. Build your own
+> Runtime using standard CPython and extend it with Rust. Imagine if
+> GraphQL, Postgres, Redis and PubSub were part of the standard library.
+> That's Puff.
 
-
-https://github.com/hansonkd/puff
-
-It's an experiment to minimize the barrier between Python and Rust to unlock the full potential of high level languages. Build your own Runtime using standard CPython and extend it with Rust. Imagine if GraphQL, Postgres, Redis and PubSub were part of the standard library. That's Puff.
-
-High level overview is that Puff gives Python
+What Puff promises Python:
 
 - Greenlets on Rust's Tokio.
-- High performance HTTP Server - combine Axum with Python WSGI apps (Flask, Django, etc.)
-- Rust / Python natively in the same process, no sockets or serialization.
-- AsyncIO / uvloop / ASGI integration with Rust
-- An easy-to-use GraphQL service
-- Multi-node pub-sub
-- Rust level Redis Pool
-- Rust level Postgres Pool
-- Websockets
-- semi-compatible with Psycopg2 (hopefully good enough for most of Django)
-- A safe convenient way to drop into rust for maximum performance
+- High performance HTTP server — combine Axum with Python WSGI apps
+  (Flask, Django, etc.).
+- Rust / Python natively in the same process — no sockets, no
+  serialization.
+- AsyncIO / uvloop / ASGI integration with Rust.
+- An easy-to-use GraphQL service.
+- Multi-node pub/sub.
+- Rust-level Redis pool.
+- Rust-level Postgres pool.
+- WebSockets.
+- Semi-compatible with Psycopg2 (hopefully good enough for most of
+  Django).
+- A safe, convenient way to drop into Rust for maximum performance.

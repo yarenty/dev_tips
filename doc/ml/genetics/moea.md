@@ -28,7 +28,7 @@ status: draft
 > Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
 
 - [[algorithms]] — Algorithms _(score 20.2)_
-- [[alagorithms]] — algorithms _(score 20.2)_
+- [[algorithms]] — algorithms _(score 20.2)_
 - [[lstr]] — lstr _(score 10.7)_
 - [[rustdesk]] — RustDesk! _(score 5.5)_
 - [[episodic_memory]] — Episodic Memory _(score 5.5)_

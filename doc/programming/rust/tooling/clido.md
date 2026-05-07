@@ -1,61 +1,48 @@
 ---
-title: clido
+title: clido — minimal CLI to-do list
 main_link: https://github.com/Zij-IT/clido
-keywords: [clido, rust, zij, cli]
-status: draft
+keywords: [clido, rust, todo, cli, productivity]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **clido**.
-
-# clido
+# clido — minimal CLI to-do list
 
 **Main link:** <https://github.com/Zij-IT/clido>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`clido` is a small Rust CLI to-do list by Zij-IT. It's a hobby-grade single-binary alternative to `taskwarrior`/`todo.txt-cli`, suitable for "I need three commands to add, list, complete TODOs from the shell". Storage is a local file; commands are typical (`clido add`, `clido list`, `clido done`).
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `clido` only if you specifically want a minimal Rust binary for shell-driven TODOs and don't want to set up Taskwarrior. For anything beyond that — recurrence, contexts, sync, mobile — pick one of the established players:
+
+- **[Taskwarrior](https://taskwarrior.org/)** (`task`, C++) — the canonical CLI to-do list; rich filtering, contexts, recurrence, server sync. The right answer for serious shell-TODO use.
+- **[`todo.txt-cli`](https://github.com/todotxt/todo.txt-cli)** — the spec + reference implementation around the famously simple `todo.txt` plain-text format.
+- **`org-mode`** — if you live in Emacs.
+- **[[../../../tools/misc/weektodo|weektodo]]** — desktop GUI for week-shaped planning.
+
+If you want a Rust *productivity* TUI rather than a CLI list, look at [[../../../tools/misc/superfile|superfile]] (file mgmt) or `taskwarrior-tui`. `clido` is a fine 80-line example to learn `clap`/serde from but not what to invest a multi-year TODO history into.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [Taskwarrior](https://taskwarrior.org/) — the established CLI to-do list.
+- [`todo.txt-cli`](https://github.com/todotxt/todo.txt-cli) — plain-text format + CLI.
+- [[../../../tools/misc/weektodo|weektodo]] — desktop GUI alternative.
+- `org-mode` — Emacs-native equivalent.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[bandwhich]] — Bandwhich _(score 22.7)_
-- [[starship]] — starship _(score 17.1)_
-- [[loki]] — Loki _(score 17.1)_
-- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
+- [[README]] — tooling section landing.
+- [[../../../tools/misc/weektodo|weektodo]] — desktop GUI sibling.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#clido` `#tooling` `#rust` `#programming` `#zij` `#todo` `#cli` `#list`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#clido` `#rust` `#todo` `#cli` `#productivity`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# clido
-
-https://github.com/Zij-IT/clido
-
-TODO list in CLI
+- Repo: <https://github.com/Zij-IT/clido>
+- A small TODO list in CLI by Zij-IT.

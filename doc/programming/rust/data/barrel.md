@@ -1,66 +1,47 @@
 ---
-title: barrel
+title: barrel — schema-builder DSL
 main_link: https://crates.io/crates/barrel
-keywords: [barrel, rust, sql]
-status: draft
+keywords: [barrel, migration, schema, dsl, postgres, mysql, sqlite]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/data/db.md` by `article_split.py`. Heading: **barrel**.
-
-# barrel
+# barrel — schema-builder DSL
 
 **Main link:** <https://crates.io/crates/barrel>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`barrel` is a small Rust DSL for writing database schema definitions (CREATE TABLE / ALTER / DROP / indexes / foreign keys) and rendering them to backend-specific SQL via per-dialect codegen (`Pg`, `Sqlite`, `MySql`, `MsSql`). It is not a migration runner — it produces SQL strings, which you then execute via your driver of choice or feed into a runner like `refinery` or `diesel-migrations`.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `barrel` when you want to write your schema once in Rust and target multiple backends, or when you want to compose schema fragments programmatically (think: generating per-tenant tables in a multi-tenant SaaS). For most apps the simpler choice is **`refinery`** (raw `.sql` files + a runner) or **`diesel-migrations`** (the runner married to Diesel's macro-checked schema), or **`sea-orm-migration`** (the SeaQL equivalent — also DSL-flavoured but tighter integration with SeaORM). Gotchas: barrel's last 1.x release is from 2021 — it's stable but feature-frozen; non-trivial DDL (CHECK constraints, CREATE EXTENSION, partial indexes, generated columns, partitioning) generally falls back to inline raw SQL strings.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[refinery]] — embedded migration runner; raw `.sql` files.
+- `diesel-migrations` — Diesel's bundled migration tool (raw SQL or Rust).
+- `sea-orm-migration` — SeaQL's migration runner with a builder DSL.
+- `sqlx-cli migrate` — sqlx's bundled file-based migration runner.
+- `atlas` (Go) — language-agnostic schema-as-code, popular alongside Rust services.
 
 ## Internal links
+<!-- reviewed -->
+- [[refinery]]
+- [[seaquery]]
+- [[programming/rust/sql_engine/diesel|diesel]]
+- [[rusqlite]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[mobc]] — mobc _(score 21.5)_
-- [[gluesql]] — GlueSQL _(score 21.5)_
-- [[db]] — diesel _(score 21.5)_
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 21.5)_
-- [[programming/rust/sql_engine/sqlparser|sqlparser]] — SQLparser _(score 17.5)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#barrel` `#data` `#rust` `#programming` `#sql` `#crates` `#database` `#builder`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#barrel` `#migration` `#schema` `#dsl` `#postgres` `#mysql` `#sqlite`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Crate: <https://crates.io/crates/barrel>
+- Repo: <https://git.irde.st/spacekookie/barrel>
 
-# barrel
-
-https://crates.io/crates/barrel
-
-A powerful database schema builder, that lets you write your SQL migrations in Rust!
-
-barrel offers callback-style builder functions for SQL migrations and is designed to be flexible, portable and fun to use. It provides you with a common interface over SQL, with additional database-specific builders.
+> A powerful database schema builder, that lets you write your SQL migrations in Rust!
 
 ```rust
 use barrel::{types, Migration};

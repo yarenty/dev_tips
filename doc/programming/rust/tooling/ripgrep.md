@@ -1,66 +1,59 @@
 ---
-title: ripgrep
-main_link: https://crates.io/crates/ripgrep
-keywords: [ripgrep, rust, search, linux]
-status: draft
+title: ripgrep — fast recursive `grep` (the defining Rust replacement)
+main_link: https://github.com/BurntSushi/ripgrep
+keywords: [ripgrep, rg, rust, grep, ag, ack, search, regex, unix-replacement]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# ripgrep — fast recursive `grep` (the defining Rust replacement)
 
-> Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **ripgrep**.
-
-# ripgrep
-
-**Main link:** <https://crates.io/crates/ripgrep>
+**Main link:** <https://github.com/BurntSushi/ripgrep>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`ripgrep` (binary `rg`) is Andrew Gallant's (BurntSushi) line-oriented regex search tool — recursive by default, gitignore-aware by default, multi-threaded, and built on his own `regex` and `memchr` crates. It is the canonical and defining article in the "Rust replaces a Unix tool" trend: Andrew's original blog post [*ripgrep is faster than {grep, ag, git grep, ucg, pt, sift}*](https://blog.burntsushi.net/ripgrep/) (2016) is required reading for anyone interested in either Rust performance or text-search engineering.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `rg` whenever you'd reach for `grep -r` in a source tree. The defaults are the killer feature: it skips `.git/`, respects `.gitignore` and `.ignore`, skips binaries (set `--binary` to override), and uses parallelism without you asking. **Common patterns**:
+
+```sh
+rg 'TODO|FIXME'                      # extended regex, two patterns
+rg -t rust 'unsafe'                  # only Rust files
+rg -g '!*.lock' 'serde'              # exclude glob
+rg -l 'pub fn'                       # filenames only
+rg -A 3 -B 1 'panic!'                # context lines
+rg --json 'foo' | jq                 # structured output for tooling
+rg -P '(?<=\bfn\s)\w+'               # PCRE2 lookbehinds (built with --features pcre2)
+```
+
+**Gotchas**: `rg` defaults to *Rust regex* syntax (no lookarounds, no backrefs); use `-P` for PCRE2 if compiled in, or `-F` for fixed-string. Binary detection uses a heuristic — minified JS sometimes triggers it (override with `-a`/`--text`). Editor integrations (VS Code, Helix, Neovim's telescope/`fzf-lua`) all default to `rg` for project search.
+
+Compared to siblings: **`grep`** is universal and POSIX; **`ag`** (the silver searcher, C) was the first "fast" recursive `grep` but is no longer faster than `rg`; **`ack`** (Perl) is the readable but slow ancestor; **`ugrep`** (C++) is the closest competitor on benchmarks. For *replace* (not just search), see [`sd`](https://github.com/chmln/sd) (Rust, sed-shaped).
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- `grep`(1) / `egrep` / `fgrep` — the POSIX originals.
+- `ag` (the silver searcher) / `ack` — the previous "fast grep" generation.
+- [`ugrep`](https://github.com/Genivia/ugrep) — C++ competitor, close on speed.
+- [`sd`](https://github.com/chmln/sd) — Rust `sed` replacement (the natural pairing).
+- [`fd`](https://github.com/sharkdp/fd) — Rust `find` replacement (also by sharkdp).
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[programming/rust/tooling/tools|tools]] — coreutils _(score 21.4)_
-- [[starship]] — starship _(score 17.1)_
-- [[debug]] — Debug _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-- [[cursive]] — Cursive _(score 13.1)_
+- [[README]] — tooling section landing.
+- [[bat]] / [[exa]] / [[dust]] / [[bottom]] — siblings in the "Rust replaces a Unix tool" family.
+- [[../../../tools/shell/must_have|must_have]] — fresh-box CLI bundle.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#ripgrep` `#tooling` `#rust` `#programming` `#crates` `#search` `#files` `#binary`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#ripgrep` `#rg` `#rust` `#grep` `#search` `#regex` `#unix-replacement` `#cli`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# ripgrep
-
-https://crates.io/crates/ripgrep
-
-
-ripgrep is a line-oriented search tool that recursively searches the current directory for a regex pattern. By default, ripgrep will respect gitignore rules and automatically skip hidden files/directories and binary files. ripgrep has first class support on Windows, macOS and Linux, with binary downloads available for every release. ripgrep is similar to other popular search tools like The Silver Searcher, ack and grep.
-
-cargo install ripgrep
-
-rg test
+- Repo: <https://github.com/BurntSushi/ripgrep>
+- Crate: <https://crates.io/crates/ripgrep>
+- Andrew Gallant's design post: <https://blog.burntsushi.net/ripgrep/> — canonical reading.
+- Install: `cargo install ripgrep` or `brew install ripgrep` / `apt install ripgrep`.

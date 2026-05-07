@@ -1,102 +1,46 @@
 ---
-title: Meilisearch
-main_link: https://github.com/meilisearch/Meilisearch
-keywords: [meilisearch, rust, search, typo]
-status: draft
+title: Meilisearch — Rust full-text search engine
+main_link: https://www.meilisearch.com/
+keywords: [meilisearch, search, full-text, typo-tolerant, rust]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Meilisearch — Rust full-text search engine
 
-# Meilisearch
-
-**Main link:** <https://github.com/meilisearch/Meilisearch>
+**Main link:** <https://www.meilisearch.com/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Meilisearch is an open-source, Rust-built search engine focused on **search-as-you-type** (≤50 ms latency on small-to-mid corpora), **typo tolerance**, **simple JSON ingest** with no schema definition, and zero-configuration relevance defaults. It ships as a single binary, exposes a REST/JSON API, and offers official client SDKs in JS/TS, Python, Ruby, Go, Java, Swift, Dart, Rust, PHP, and .NET. Maintained as a commercial open-source project by Meili (the company), with a generous self-hosted free tier and a managed Meilisearch Cloud offering.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Meilisearch is to **Algolia** what Mastodon is to Twitter: similar UX, self-hostable, much smaller. Pick Meilisearch when (a) your corpus fits comfortably on one box (low millions of documents — past that you should look at Elasticsearch / OpenSearch / Quickwit), (b) you want sane defaults rather than relevance tuning, (c) you'd rather not run a JVM stack. The killer differentiators vs Elasticsearch are: out-of-the-box typo tolerance and synonyms, no `analyzer`/`tokenizer` config, instant search on small indexes. Differentiators vs **Tantivy** (the Rust search-engine library Meilisearch and Quickwit both build on): Meilisearch is a packaged server, Tantivy is the library — pick Tantivy when you want to embed search inside your Rust app. **Quickwit** is the log-search/cloud-storage Rust competitor; **Sonic** is the lightweight C/Rust alternative for small footprints.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- Tantivy — the Rust search-engine *library* underneath Meilisearch and Quickwit.
+- Quickwit — Rust log-search engine optimised for object storage.
+- Algolia — closest commercial cousin; managed, paid, very fast.
+- Elasticsearch / OpenSearch — heavyweight Java/Lucene incumbents.
+- Sonic — minimalist C/Rust search engine for small-footprint deployments.
+- Typesense — comparable open-source typo-tolerant search engine in C++.
 
 ## Internal links
+<!-- reviewed -->
+- [[trustfall]] — query-engine-on-anything; different niche.
+- [[parseable]] — log analytics in Rust; complementary, not replacement.
+- [[lance_data_format]] — vector search alternative for ML/embedding workloads.
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[lance_data_format]] — Lance _(score 23.1)_
-- [[qdrant_vector_search]] — qdrant _(score 19.1)_
-- [[qdrant]] — qdrant _(score 19.1)_
-- [[trustfall]] — Trustfall _(score 17.1)_
-- [[adbc]] — ADBC ! _(score 17.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#meilisearch` `#data` `#rust` `#programming` `#search` `#typo` `#engine` `#lightning`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#meilisearch` `#search` `#full-text` `#typo-tolerant` `#rust`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Site: <https://www.meilisearch.com/>
+- Docs: <https://docs.meilisearch.com/>
+- Repo: <https://github.com/meilisearch/Meilisearch>
+- Rust SDK: <https://crates.io/crates/meilisearch-sdk>
 
-
-
-https://www.meilisearch.com/
-
-
-WHY MEILISEARCH?
-
-The next generation of search
-Meilisearch is a flexible and powerful user-focused search engine that can be added to any website or application.
-
-
-
-Lightning fast
-
-Search-as-you-type returns answers in less than 50 milliseconds. That's faster than the blink of an eye!
-
-
-
-Plug ‘n play
-
-Deploy in a matter of minutes. Smart presets let you start searching through your data with zero configuration.
-
-
-
-Flexible
-
-Send data to Meilisearch however you want—no need to match a schema or convert your dataset to a compatible format.
-
-
-
-Typo tolerant
-
-Everyone makes mistakes! If typos break your search experience, many users will leave thinking what they were looking for just wasn't there.
-
-
-
-
-
-https://docs.meilisearch.com/
-
-
-
-https://github.com/meilisearch/Meilisearch
-
-
-⚡ Lightning Fast, Ultra Relevant, and Typo-Tolerant Search Engine 🔍
-
-Meilisearch is a powerful, fast, open-source, easy to use and deploy search engine. Both searching and indexing are highly customizable. Features such as typo-tolerance, filters, and synonyms are provided out-of-the-box. For more information about features go to our documentation.
+> Meilisearch is a flexible and powerful user-focused search engine that can be added to any website or application. Lightning-fast (search-as-you-type, sub-50 ms), plug-and-play, schema-less ingest, typo-tolerant.

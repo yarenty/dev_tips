@@ -1,72 +1,47 @@
 ---
-title: DashMap
-main_link: https://github.com/jonhoo/evmap
-keywords: [map-cache-storage, rust, moka, cache, self, replacement]
-status: draft
+title: DashMap — concurrent hash map
+main_link: https://crates.io/crates/dashmap
+keywords: [dashmap, concurrent, hashmap, rwlock, sharded]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# DashMap — concurrent hash map
 
-# DashMap
-
-**Main link:** <https://github.com/jonhoo/evmap>
+**Main link:** <https://crates.io/crates/dashmap>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`DashMap` is a fast concurrent hash-map for Rust — a near drop-in replacement for `RwLock<HashMap<K, V>>` that uses internal sharding so reads and writes can proceed in parallel without taking a single global lock. All mutating methods take `&self` (not `&mut self`), so a `DashMap` lives happily inside an `Arc<T>` shared across threads.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Default to `DashMap` whenever you'd otherwise reach for `Arc<RwLock<HashMap<K, V>>>` and your access pattern is read-heavy or write-distributed. The sharding (default 4× CPU count) means contention only happens when two threads hit the same shard, which is rare for well-distributed keys. Gotchas: holding a `Ref`/`RefMut` keeps a shard locked — never `.await` while holding one, and never call back into the same `DashMap` from a closure that already holds a guard (deadlock!). For caches with eviction policies use `moka` instead — DashMap is unbounded by design. For lock-free *eventually-consistent* reads see `evmap`/[[memory_storage|evmap]]. For single-threaded hot paths a plain `HashMap` is still faster — the sharding overhead is a real cost.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- `std::sync::RwLock<HashMap<...>>` — the simpler alternative; one global lock.
+- [[cache|moka]] — DashMap-shaped but with TTL and bounded eviction.
+- [[memory_storage|evmap]] — lock-free reads, eventually consistent (different trade).
+- `flurry` — Rust port of Java's ConcurrentHashMap; another option.
+- `papaya` — newer single-shard concurrent map; benchmarks well.
 
 ## Internal links
+<!-- reviewed -->
+- [[cache]] — moka and quick_cache (cache-shaped DashMap usage).
+- [[memory_storage]] — evmap (eventually-consistent alternative).
+- [[../core/hashbrown|hashbrown]] — the SwissTable hash-map under DashMap and std.
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[cache]] — Cache _(score 38.5)_
-- [[memory_storage]] — Memory storage _(score 17.1)_
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 17.1)_
-- [[barrel]] — barrel _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#map-cache-storage` `#data` `#rust` `#programming` `#moka` `#cache` `#crates` `#concurrent`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#dashmap` `#concurrent` `#hashmap` `#sharded`
 
 ## References / raw notes
-<!-- auto-split by article_split.py -->
-> Auto-split: 2 additional top-level heading(s) extracted into sibling files:
-> - [Memory storage](memory_storage.md)
-> - [Cache](cache.md)
 
+- Crate: <https://crates.io/crates/dashmap>
+- Repo: <https://github.com/xacrimon/dashmap>
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+> Blazingly fast concurrent map in Rust. DashMap is an implementation of a concurrent associative array/hashmap.
+>
+> DashMap tries to implement an easy-to-use API similar to `std::collections::HashMap` with slight changes for concurrency: all methods take `&self` so a DashMap can live in an `Arc<T>` shared across threads.
 
-# DashMap
-
-https://crates.io/crates/dashmap
-
-Blazingly fast concurrent map in Rust.
-
-DashMap is an implementation of a concurrent associative array/hashmap in Rust.
-
-DashMap tries to implement an easy to use API similar to std::collections::HashMap with some slight changes to handle concurrency.
-
-DashMap tries to be very simple to use and to be a direct replacement for RwLock<HashMap<K, V>>. To accomplish these goals, all methods take &self instead of modifying methods taking &mut self. This allows you to put a DashMap in an Arc<T> and share it between threads while still being able to modify it.
-
-DashMap puts great effort into performance and aims to be as fast as possible. If you have any suggestions or tips do not hesitate to open an issue or a PR.
+The original auto-detected `main_link` (`github.com/jonhoo/evmap`) was incorrect — that's the evmap repo, not DashMap. Corrected to crates.io/dashmap.

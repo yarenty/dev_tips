@@ -1,81 +1,58 @@
 ---
-title: mysql
+title: mysql — pure-Rust MySQL driver
 main_link: https://crates.io/crates/mysql
-keywords: [mysql, rust, pool, cache, linux]
-status: draft
+keywords: [mysql, mysql_async, driver, database, rust]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/data/db.md` by `article_split.py`. Heading: **mysql**.
-
-# mysql
+# mysql — pure-Rust MySQL driver
 
 **Main link:** <https://crates.io/crates/mysql>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+The `mysql` crate is a **pure-Rust** synchronous driver for MySQL/MariaDB, with a sibling `mysql_async` crate providing the async/Tokio variant. Both are maintained by `blackbeam` and are the canonical "I need to talk to MySQL from Rust without going through ODBC or sqlx" crates. They support the full MySQL text + binary protocols, prepared statements, named parameters, custom `LOCAL INFILE` handlers, protocol compression, TLS via either `native-tls` or `rustls`, Unix sockets and Windows named pipes, and the `caching_sha2_password` auth plugin used by MySQL 8+.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+For new code, **`sqlx` is the modern default** for talking to MySQL/MariaDB from async Rust — it gives you compile-time-checked queries, a built-in pool, and database-agnostic code. Reach for the `mysql`/`mysql_async` crates instead when you need (a) a sync API in non-Tokio code (`mysql`), (b) protocol features sqlx doesn't expose (multi-result-sets, custom LOCAL INFILE handlers, MySQL-specific buffer pools), or (c) maximum throughput on a hot loop where sqlx's overhead matters. Pair `mysql`/`mysql_async` with `r2d2`/`bb8`/`deadpool` for pooling — `mysql_async` ships its own `Pool` too. For Diesel users, the official `diesel` MySQL backend uses `mysqlclient-sys` (the C library), not these pure-Rust crates. MariaDB works for the most common queries but has divergence around JSON, sequences, and replication — test on the actual server you'll deploy against.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- `sqlx` — modern default for async MySQL/MariaDB; compile-time query checking.
+- `diesel` — sync ORM with MySQL backend (uses C `mysqlclient`).
+- `mysql_async` — async sibling of `mysql`.
+- `mysqlclient-sys` — FFI wrapper around the official C client.
+- [[db/relational/mysql|MySQL (server side)]] — operational/server article.
 
 ## Internal links
+<!-- reviewed -->
+- [[db/relational/mysql|MySQL]]
+- [[r2d2]] — `r2d2-mysql`
+- [[deadpool]] / [[bb8]] / [[mobc]]
+- [[programming/rust/sql_engine/diesel|diesel]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[deadpool]] — deadpool _(score 26.0)_
-- [[cache]] — Cache _(score 23.4)_
-- [[db]] — diesel _(score 23.0)_
-- [[diesel]] — diesel _(score 19.0)_
-- [[db/relational/mysql|mysql]] — mysql _(score 17.9)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#mysql` `#data` `#rust` `#programming` `#support` `#pool` `#windows` `#see`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#mysql` `#driver` `#database` `#sqlx-alternative` `#tls`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Crate (sync): <https://crates.io/crates/mysql>
+- Crate (async): <https://crates.io/crates/mysql_async>
+- Repo: <https://github.com/blackbeam/rust-mysql-simple>
 
-# mysql 
-https://crates.io/crates/mysql
+Features (sync `mysql` crate):
 
-This crate offers:
-
-- MySql database driver in pure rust;
-- connection pool.
-
-## Features:
-
-- macOS, Windows and Linux support;
-- TLS support via nativetls or rustls (see the SSL Support section);
-- MySql text protocol support, i.e. support of simple text queries and text result sets;
-- MySql binary protocol support, i.e. support of prepared statements and binary result sets;
-- support of multi-result sets;
-- support of named parameters for prepared statements (see the Named Parameters section);
-- optional per-connection cache of prepared statements (see the Statement Cache section);
-- buffer pool (see the Buffer Pool section);
-- support of MySql packets larger than 2^24;
-- support of Unix sockets and Windows named pipes;
-- support of custom LOCAL INFILE handlers;
-- support of MySql protocol compression;
-- support of auth plugins:
-  - mysql_native_password - for MySql prior to v8;
-  - caching_sha2_password - for MySql v8 and higher.
+- macOS, Windows and Linux support
+- TLS via `native-tls` or `rustls`
+- MySQL text & binary protocols (simple queries + prepared statements)
+- Multi-result sets
+- Named parameters for prepared statements
+- Optional per-connection prepared-statement cache
+- Buffer pool
+- Packets larger than 2^24
+- Unix sockets and Windows named pipes
+- Custom `LOCAL INFILE` handlers
+- Protocol compression
+- Auth plugins: `mysql_native_password` (pre-v8) + `caching_sha2_password` (v8+)

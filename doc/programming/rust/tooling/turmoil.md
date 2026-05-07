@@ -1,65 +1,78 @@
 ---
-title: turmoil
-main_link: https://crates.io/crates/turmoil
-keywords: [turmoil, rust, tokio, distributed]
-status: draft
+title: turmoil — Tokio's deterministic distributed-system simulator
+main_link: https://github.com/tokio-rs/turmoil
+keywords: [turmoil, rust, tokio, distributed-systems, simulation, testing, deterministic]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# turmoil — Tokio's deterministic distributed-system simulator
 
-> Auto-split from `doc/programming/rust/tooling/tests.md` by `article_split.py`. Heading: **turmoil**.
-
-# turmoil
-
-**Main link:** <https://crates.io/crates/turmoil>
+**Main link:** <https://github.com/tokio-rs/turmoil>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`turmoil` is a Rust framework by the Tokio team for testing distributed systems with **deterministic execution**. It runs multiple "hosts" as concurrent tasks within a single thread, intercepts their network I/O, and lets your test introduce hardship — partitions, delays, drops, packet reordering — either deterministically (seeded RNG) or with explicit `partition`/`hold`/`release` calls. The whole simulation is single-threaded so an entire failure scenario is reproducible from a seed.
+
+Announcement: <https://tokio.rs/blog/2023-01-03-announcing-turmoil>.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `turmoil` when you're building anything that talks to peers over the network and you want to test "what happens if node B sees C's messages before A's?" without standing up a real cluster. Standard pattern:
+
+```rust
+use turmoil::Builder;
+
+let mut sim = Builder::new().build();
+
+sim.client("client", async {
+    // makes "outgoing" connections via turmoil's tokio shim
+    let mut sock = turmoil::net::TcpStream::connect("server:80").await?;
+    // ...
+    Ok(())
+});
+
+sim.host("server", || async {
+    let listener = turmoil::net::TcpListener::bind("0.0.0.0:80").await?;
+    // ...
+    Ok(())
+});
+
+// Now interrogate / disrupt the network:
+sim.partition("client", "server");          // drop all packets between the two
+sim.run()?;                                  // step the sim until clients return
+```
+
+**Critical caveat**: turmoil only sees network I/O that goes through its own `turmoil::net::*` shims (TCP, UDP). You have to write your code against those types or behind a trait that you swap in tests. Library code that hardcodes `tokio::net::TcpStream` cannot be turmoil-tested without modification — this is the equivalent of "all I/O must be injected" you'd do anyway for unit testability.
+
+**Compared to siblings**:
+
+- **[`madsim`](https://github.com/madsim-rs/madsim)** — broader scope: simulates the whole tokio runtime + filesystem + RNG; used by RisingWave team. More invasive setup but more thorough.
+- **[`shuttle`](https://github.com/awslabs/shuttle)** — AWS-Labs randomised tester for concurrent code; covers data races, not network partitions.
+- **[`loom`](https://github.com/tokio-rs/loom)** — exhaustively explores interleavings of *atomics and locks* in a small concurrent test (different niche; unsafe-correctness, not network).
+- **`jepsen`** (Clojure) — the famous test framework that tortures real distributed systems from outside; orthogonal — turmoil tests *your code's logic* in-process, jepsen tests *the deployed system*.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [`madsim`](https://github.com/madsim-rs/madsim) — broader simulator (whole runtime).
+- [`shuttle`](https://github.com/awslabs/shuttle) — concurrency randomiser (AWS Labs).
+- [`loom`](https://github.com/tokio-rs/loom) — atomics/locks model checker.
+- `jepsen` — black-box external distributed-system tester.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[tests]] — mockall _(score 17.1)_
-- [[starship]] — starship _(score 17.1)_
-- [[bandwhich]] — Bandwhich _(score 17.1)_
-- [[debug]] — Debug _(score 17.1)_
-- [[tracing]] — Tracing _(score 17.1)_
+- [[README]] — tooling section landing.
+- [[tests]] — broader Rust testing landscape.
+- [[../concurrency/tokio|concurrency/tokio]] — the runtime turmoil simulates.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#turmoil` `#tooling` `#rust` `#programming` `#crates` `#tokio` `#network` `#written`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#turmoil` `#rust` `#tokio` `#distributed-systems` `#simulation` `#testing` `#deterministic`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# turmoil
-
-https://crates.io/crates/turmoil
-
-written by tokio team
-https://tokio.rs/blog/2023-01-03-announcing-turmoil
-
-
-Turmoil is a framework for testing distributed systems. It provides deterministic execution by running multiple concurrent hosts within a single thread. It introduces "hardship" into the system via changes in the simulated network. The network can be controlled manually or with a seeded rng.
+- Repo: <https://github.com/tokio-rs/turmoil>
+- Crate: <https://crates.io/crates/turmoil>
+- Announcement: <https://tokio.rs/blog/2023-01-03-announcing-turmoil>
+- Single-threaded sim of multiple hosts; controllable network; seedable RNG for reproducibility.

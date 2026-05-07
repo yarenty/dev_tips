@@ -1,63 +1,48 @@
 ---
-title: BAT
-main_link: https://crates.io/crates/bat
-keywords: [bat, rust, cat]
-status: draft
+title: bat — `cat` clone with syntax highlighting
+main_link: https://github.com/sharkdp/bat
+keywords: [bat, rust, cat, syntax-highlighting, less, pager, unix-replacement]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# bat — `cat` clone with syntax highlighting
 
-> Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **BAT**.
-
-# BAT
-
-**Main link:** <https://crates.io/crates/bat>
+**Main link:** <https://github.com/sharkdp/bat>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`bat` is a `cat(1)` clone written in Rust by David Peter (sharkdp) that adds syntax highlighting (via the `syntect` crate / Sublime Text grammars), git-diff gutter markers, automatic paging, line numbers, and non-printable-character display. It auto-detects whether output is a TTY and falls back to plain `cat` semantics when piped, so you can drop it in as an alias without breaking scripts. Themes and grammars are pluggable via `~/.config/bat/`, and `bat --diff` integrates with `git`.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `bat` whenever you'd `cat` a source file or config — the highlighting alone earns it. The auto-paging is the second killer feature: `bat src/main.rs` paginates if the file is bigger than the terminal, plain-prints otherwise. **Don't alias `cat=bat`** — scripts and pipes that depend on POSIX `cat` semantics will silently break (it's mostly compatible, but not 100%, especially around escape sequences and trailing newlines). Common pairing: `MANPAGER="sh -c 'col -bx | bat -l man -p'"` to colourise man pages; `git config --global core.pager "bat --paging=always"` for coloured `git show` / `git log -p`.
+
+Compared to siblings: **`pygmentize` / `ccat`** are the older Python/Go equivalents, slower and uglier; **`riff`** (also Rust) does syntax-aware *diff* highlighting (closer to `[[difftastic]]`) and isn't a `cat` replacement; **`bat-extras`** ships convenience wrappers (`batgrep`, `batman`, `prettybat`).
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- `cat`(1) — the POSIX original; bat falls back to it when piped.
+- `pygmentize` (Python) / `ccat` (Go) — older syntax-highlighting `cat`s.
+- [[difftastic]] / `riff` — syntax-aware diff tools (related but different niche).
+- [`delta`](https://github.com/dandavison/delta) — Rust pager for `git diff` specifically; pairs nicely with bat as the `core.pager`.
+- [[ripgrep]], [[exa]], [[dust]] — siblings in the "Rust replaces a Unix tool" family.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[starship]] — starship _(score 17.1)_
-- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 17.1)_
-- [[debug]] — Debug _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 13.1)_
+- [[README]] — tooling section landing.
+- [[ripgrep]] — the `grep` sibling.
+- [[exa]] — the `ls` sibling.
+- [[difftastic]] — syntax-aware diff (different niche).
+- [[../../../tools/shell/must_have|must_have]] — the "fresh box" CLI bundle that includes `bat`.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#bat` `#tooling` `#rust` `#programming` `#cat` `#crates` `#syntax` `#highlights`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#bat` `#rust` `#cat` `#syntax-highlighting` `#pager` `#unix-replacement` `#cli`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# BAT
-
-Like cat but with syntax highlights of displaying unvisibles
-
-https://crates.io/crates/bat
-
-A cat(1) clone with wings.
+- Repo: <https://github.com/sharkdp/bat>
+- Crate: <https://crates.io/crates/bat>
+- A `cat(1)` clone with wings — syntax highlighting, git diff integration, automatic paging.

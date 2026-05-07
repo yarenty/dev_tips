@@ -1,63 +1,57 @@
 ---
-title: Lake soul
+title: LakeSoul — unified streaming + batch lakehouse format
 main_link: https://github.com/lakesoul-io/LakeSoul
-keywords: [lakesoul, rust, lake, lakehouse, streaming]
-status: draft
+keywords: [lakesoul, lakehouse, streaming, batch, datafusion, spark, flink, acid, china]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# Lake soul
+# LakeSoul — unified streaming + batch lakehouse format
 
 **Main link:** <https://github.com/lakesoul-io/LakeSoul>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+**LakeSoul** is a cloud-native lakehouse framework (originally from DMetaSoul, China) that pitches itself as a unified streaming-and-batch table format with scalable metadata management, ACID transactions, efficient upserts, schema evolution, and unified streaming + batch processing. The compute story is multi-engine — Spark, Flink, Presto, PyTorch — and storage runs on HDFS or S3. The native I/O layer is written in Rust (the `lakesoul-io` crate) and integrates with DataFusion; the catalog and writer paths run on the JVM.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+LakeSoul slots into the **open table format** category alongside [[delta|Delta Lake]], [[iceberg|Apache Iceberg]], and Apache Hudi — but it's the least famous of the four, with mostly Chinese-language documentation and a much smaller English-speaking community. The honest framing for English-language readers in 2024-2025 is **watch, don't adopt**: the technical pitch (streaming + batch unification, AI-aware MPP support, PyTorch loader) is interesting and partly differentiated, but production references outside China are scarce and the lakehouse-format space is consolidating around Iceberg + Delta. Reach for it only if you already have a Chinese-ecosystem dependency or a specific feature gap that nothing else fills.
+
+The differentiating bullet points worth knowing about:
+
+- **Native (Rust) I/O layer** — the `lakesoul-io` crate uses Apache Arrow + DataFusion under the hood, which makes it cheaper than Delta/Iceberg to embed in non-JVM Rust services (in principle).
+- **MPP + AI compute mode** — explicit support for PyTorch dataloaders alongside Spark/Flink/Presto SQL, framed as a lakehouse for ML training data.
+- **Upsert-first design** — like Hudi, optimised for record-level upserts rather than overwrite-the-partition.
+- **CDC-style streaming ingest** — primary use case in DMetaSoul deployments.
+
+The competitive landscape is unforgiving: Iceberg has the multi-engine catalog story, Delta has Databricks' marketing weight, Hudi has the streaming/upsert lineage, and LakeSoul is competing with all three on overlapping axes with a fraction of the engineering bandwidth.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[delta]] — Delta Lake / `delta-rs`, the Databricks-lineage table format.
+- [[iceberg]] — Apache Iceberg + `iceberg-rust`, the broadest-adoption table format.
+- **Apache Hudi** — the streaming/upsert-first table format LakeSoul most resembles.
+- [[vortex]] — file-format layer (one level below table format).
+- [[../README|rust/data]] — Rust data landing.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[delta]] — DeltaLake _(score 24.9)_
-- [[vortex]] — Vortex (2024-10-17) _(score 17.1)_
-- [[gluten]] — gluten _(score 17.1)_
-- [[rapids]] — Spark rapids _(score 17.1)_
-- [[iceberg]] — Iceberg _(score 17.1)_
+- [[README]] — DataFusion ecosystem landing.
+- [[delta]] — Delta Lake comparison.
+- [[iceberg]] — Iceberg comparison.
+- [[../../../../db/formats/README|db/formats]] — broader format landing.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#lakesoul` `#datafusion` `#data` `#rust` `#supports` `#lake` `#lakehouse` `#acid`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#lakesoul` `#lakehouse` `#streaming` `#batch` `#datafusion` `#spark` `#flink` `#acid` `#china`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Repo: <https://github.com/lakesoul-io/LakeSoul>
+- Project background (in part): DMetaSoul (Chinese-ecosystem big-data vendor).
 
-
-# Lake soul
-
-
-https://github.com/lakesoul-io/LakeSoul
-
-LakeSoul is a cloud-native Lakehouse framework that supports scalable metadata management, ACID transactions, efficient and flexible upsert operation, schema evolution, and unified streaming & batch processing.
-
-LakeSoul supports multiple computing engines to read and write lake warehouse table data, including Spark, Flink, Presto, and PyTorch, and supports multiple computing modes such as batch, stream, MPP, and AI. LakeSoul supports storage systems such as HDFS and S3.
+> LakeSoul is a cloud-native Lakehouse framework that supports scalable metadata management, ACID transactions, efficient and flexible upsert operation, schema evolution, and unified streaming & batch processing.
+>
+> LakeSoul supports multiple computing engines to read and write lake warehouse table data, including Spark, Flink, Presto, and PyTorch, and supports multiple computing modes such as batch, stream, MPP, and AI. LakeSoul supports storage systems such as HDFS and S3.

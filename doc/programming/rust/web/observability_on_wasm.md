@@ -34,7 +34,7 @@ Alternatives / adjacent tools:
 - **OpenTelemetry SDK in the guest** — works if you control the guest source.
 - **`wasm-tools profile` / `wasi-cli` instrumentation hooks** — newer, spec-track approaches via the Component Model.
 
-This article disambiguates from the duplicate `programming/rust/tooling/observability_on_wasm.md` (same content, different parent split). The web/ copy is the canonical home for this topic since it's tightly tied to the Wasm runtime story.
+This article was previously duplicated as `programming/rust/tooling/observability_on_wasm.md` (an auto-split sibling of `tracing.md`); that stub was deleted during the P5.Y review since this `web/` copy is the canonical home (tightly tied to the Wasm runtime story).
 
 ## Similar / related topics
 
@@ -48,7 +48,7 @@ This article disambiguates from the duplicate `programming/rust/tooling/observab
 - [[wasmtime]] — typical host runtime for the modules being observed
 - [[webassembly]] — section overview
 - [[observability/README|observability]] — broader observability landing page
-- [[programming/rust/tooling/observability_on_wasm|tooling/observability_on_wasm]] — the duplicate stub, kept for cross-link compatibility
+- [[programming/rust/tooling/tracing|tooling/tracing]] — the Rust observability primitive that pairs with this on the host side
 
 ## Keywords
 

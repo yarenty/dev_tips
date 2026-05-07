@@ -1,71 +1,59 @@
 ---
-title: tux
+title: tux — miscellaneous integration-test helpers
 main_link: https://crates.io/crates/tux
-keywords: [tux, rust]
-status: draft
+keywords: [tux, rust, testing, integration-tests, http, temp-dir, binary]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/tooling/tests.md` by `article_split.py`. Heading: **tux**.
-
-# tux
+# tux — miscellaneous integration-test helpers
 
 **Main link:** <https://crates.io/crates/tux>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`tux` is a small Rust dev-dependency that bundles miscellaneous helpers for integration tests — temp directories, temp files, ephemeral local HTTP servers, and helpers for running compiled binaries and asserting on their output. It deliberately has *no particular scope* — it just collects the kinds of utilities you end up rewriting in every project's `tests/common/` mod.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `tux` when you keep finding yourself writing the same `tempdir()` + `serve a static blob over HTTP for ten seconds` + `spawn the binary and assert on stdout` boilerplate across projects. It's not the most popular crate in the niche (the broader Rust test ecosystem has a separate best-of-breed for each piece — see below), but as a single-import "give me the basics" it's pleasant.
+
+```toml
+[dev-dependencies]
+tux = "0.2"
+```
+
+**Compared to siblings** (single-purpose crates that, taken together, cover the same ground better):
+
+- **`tempfile`** — the canonical Rust temp-files crate; nearly every test in the ecosystem uses it.
+- **[`assert_cmd`](https://crates.io/crates/assert_cmd)** + **[`predicates`](https://crates.io/crates/predicates)** — the standard pair for spawning binaries from tests and asserting on stdout/stderr/exit.
+- **[`assert_fs`](https://crates.io/crates/assert_fs)** — temp-dir + content assertions; pairs with assert_cmd.
+- **[`wiremock`](https://crates.io/crates/wiremock)** — the canonical async HTTP-mock server; pair with reqwest/hyper.
+- **[`mockito`](https://crates.io/crates/mockito)** — older sync HTTP-mock server.
+- **[`testcontainers-rs`](https://crates.io/crates/testcontainers)** — Docker-backed test fixtures (real Postgres / Redis / etc. for integration tests).
+
+For a new project starting today, the more conventional Rust path is `tempfile` + `assert_cmd` + `assert_fs` + `wiremock` rather than `tux` — those are the most-cited and best-maintained. Use `tux` if its single-import shape genuinely saves you time.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [`tempfile`](https://crates.io/crates/tempfile) — temp dirs/files; the de-facto standard.
+- [`assert_cmd`](https://crates.io/crates/assert_cmd) + [`predicates`](https://crates.io/crates/predicates) — the canonical CLI-test pairing.
+- [`assert_fs`](https://crates.io/crates/assert_fs) — file-system assertions for tests.
+- [`wiremock`](https://crates.io/crates/wiremock) — async HTTP mock server.
+- [`testcontainers-rs`](https://crates.io/crates/testcontainers) — Docker fixtures for integration tests.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[tests]] — mockall _(score 17.1)_
-- [[starship]] — starship _(score 17.1)_
-- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 17.1)_
-- [[debug]] — Debug _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
+- [[README]] — tooling section landing.
+- [[tests]] — broader Rust testing landscape (mockall + the picker table).
+- [[turmoil]] — deterministic distributed-system tests.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#tux` `#tooling` `#rust` `#programming` `#test` `#crates` `#miscellaneous` `#utilities`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#tux` `#rust` `#testing` `#integration-tests` `#http` `#temp-dir` `#dev-dependencies`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# tux
-
-https://crates.io/crates/tux
-
-
-Miscellaneous test utilities for unit and integration tests in Rust.
-
-[dev-dependencies]
-tux = { version = "0.2" }
-The goal of this project is to support a variety of test scenarios that may be tricky to test, such as HTTP requests, executing binaries, testing complex output, etc.
-
-There is no particular scope with the code utilities provided, other than being generally useful in a unit or integration test scenario.
-
-
-HAS!!! temp dirs / files  and HTTP requests
+- Crate: <https://crates.io/crates/tux>
+- Provides temp dirs / files and HTTP-request test helpers; intended for unit + integration tests.

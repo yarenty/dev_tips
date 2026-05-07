@@ -1,64 +1,58 @@
 ---
-title: Bandwhich
-main_link: https://crates.io/crates/bandwhich
-keywords: [bandwhich, rust, cli, cross, terminal, linux]
-status: draft
+title: bandwhich — bandwidth-by-process terminal top
+main_link: https://github.com/imsnif/bandwhich
+keywords: [bandwhich, rust, network, bandwidth, top, sniff, tui, cli]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# bandwhich — bandwidth-by-process terminal top
 
-> Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **Bandwhich**.
-
-# Bandwhich
-
-**Main link:** <https://crates.io/crates/bandwhich>
+**Main link:** <https://github.com/imsnif/bandwhich>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`bandwhich` is a CLI by Aram Drevekenin (also of [[zellij]]) that displays current network utilisation by process, connection, and remote host. It sniffs a network interface (libpcap), then cross-references each packet against `/proc` (Linux), `lsof` (macOS), or the Windows API to attribute bytes to the originating process. Reverse-DNS resolution runs in the background on a best-effort basis. It needs root / `cap_net_raw` to sniff the interface.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `bandwhich` when *something on this machine is using bandwidth* and you need to know what. The killer feature is the **per-process attribution** — `iftop` shows you which IPs are talking, `nethogs` shows you per-process totals on Linux only, but `bandwhich` shows you both, on every OS, in one TUI. Common invocations:
+
+```sh
+sudo bandwhich                       # default; auto-pick interface
+sudo bandwhich -i en0                # specific interface
+sudo bandwhich --raw                 # plain log output (no TUI)
+sudo bandwhich -n                    # no DNS resolution (faster)
+```
+
+**Gotchas**: needs root (or `setcap cap_net_raw,cap_net_admin+ep $(which bandwhich)` on Linux); WireGuard and VPN tunnels show up as the tunnel interface, not the underlying physical link; Wi-Fi monitor mode is not supported (this is not Wireshark). For pcap-style packet capture and protocol inspection, use [[../../../tools/security/sniffnet|sniffnet]] (Rust) or Wireshark.
+
+Compared to siblings: **`iftop`** shows IP-level traffic only (no process); **`nethogs`** is the closest direct competitor but Linux-only and TUI-spartan; **`bmon`** focuses on per-interface bandwidth charts; **`nload`** is a per-interface gauge.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- `iftop` — IP-level bandwidth top, no process attribution.
+- `nethogs` — per-process net top, Linux-only.
+- `bmon` / `nload` — per-interface bandwidth gauges.
+- [[../../../tools/security/sniffnet|sniffnet]] — friendlier-than-Wireshark Rust packet inspector.
+- [[bottom]] — general system top; includes a network panel but no per-process attribution.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[clido]] — clido _(score 22.7)_
-- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 20.6)_
-- [[turmoil]] — turmoil _(score 17.1)_
-- [[starship]] — starship _(score 17.1)_
-- [[debug]] — Debug _(score 17.1)_
+- [[README]] — tooling section landing.
+- [[bottom]] — general top; bandwhich complements its network panel.
+- [[../../../tools/security/sniffnet|sniffnet]] — for deeper per-packet inspection.
+- [[../../../tools/security/wireguard|wireguard]] — VPN-traffic gotcha source.
+- [[../../../observability/node_exporter|node_exporter]] — for long-term per-host network metrics.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#bandwhich` `#tooling` `#rust` `#programming` `#crates` `#cli` `#displaying` `#network`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#bandwhich` `#rust` `#network` `#bandwidth` `#top` `#tui` `#cli` `#sniff`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# Bandwhich
-
-https://crates.io/crates/bandwhich
-
-This is a CLI utility for displaying current network utilization by process, connection and remote IP/hostname
-
-How does it work?
-bandwhich sniffs a given network interface and records IP packet size, cross referencing it with the /proc filesystem on linux, lsof on macOS, or using WinApi on windows. It is responsive to the terminal window size, displaying less info if there is no room for it. It will also attempt to resolve ips to their host name in the background using reverse DNS on a best effort basis.
+- Repo: <https://github.com/imsnif/bandwhich>
+- Crate: <https://crates.io/crates/bandwhich>
+- Sniffs the chosen interface, attributes bytes to processes via `/proc` (Linux), `lsof` (macOS), or WinAPI; resolves IPs to hostnames in the background.
+- Install: `cargo install bandwhich` or via Homebrew/apt.

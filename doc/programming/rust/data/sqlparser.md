@@ -1,65 +1,47 @@
 ---
-title: sqlparser
+title: sqlparser-rs — ANSI/dialect SQL parser
 main_link: https://crates.io/crates/sqlparser
-keywords: [sqlparser, rust, sql, databases]
-status: draft
+keywords: [sqlparser, sql, parser, datafusion, ballista, ast]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/data/db.md` by `article_split.py`. Heading: **sqlparser**.
-
-# sqlparser
+# sqlparser-rs — ANSI/dialect SQL parser
 
 **Main link:** <https://crates.io/crates/sqlparser>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`sqlparser-rs` is the canonical Rust crate for lexing and parsing SQL into an AST. Originally authored by Andy Grove (DataFusion / Ballista lineage), it follows the ANSI/ISO SQL standard while exposing a `Dialect` trait so vendor-specific extensions (Postgres `::` casts, MySQL backticks, MSSQL bracketed identifiers, Snowflake/BigQuery/Hive/Redshift/Databricks specifics) can be plugged in. It is the SQL frontend used by Apache DataFusion, LocustDB, Ballista, and historically GlueSQL — making it effectively the de-facto "Rust SQL parser."
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `sqlparser-rs` whenever you need to **inspect, rewrite, or route SQL** without executing it: query rewriting in a proxy/router, lint rules, schema-diff tools, dialect translators, code-mod from one warehouse to another, query-redaction for logs, etc. It is *only* a parser — it intentionally does no semantic validation, so `CREATE TABLE(x int, x int)` happily round-trips through it. Pair with DataFusion's `LogicalPlanBuilder` or your own analyzer when you actually need name resolution. Important fork note: in **2024 Apache DataFusion forked the crate** to `apache-datafusion-sqlparser-rs` (still on crates.io as `sqlparser`, but the canonical home moved to apache/datafusion-sqlparser-rs). The original `andygrove/sqlparser-rs` is the same project pre-fork; the Apache-hosted fork is the one to track for new dialects.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- Apache DataFusion — primary downstream user of the parser.
+- Ballista — distributed DataFusion sibling, also uses sqlparser.
+- GlueSQL — uses sqlparser as its frontend.
+- `sqlparser` (Python, via `sqlglot`) — comparable Python project; sqlglot is more aggressive about cross-dialect transpiling.
+- `pg_query` (libpg_query bindings) — when you need 100% Postgres-grammar fidelity.
 
 ## Internal links
+<!-- reviewed -->
+- [[gluesql]]
+- [[programming/rust/sql_engine/sqlparser|sqlparser (sql_engine view)]]
+- [[datafusion/README|DataFusion]]
+- [[seaquery]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[gluesql]] — GlueSQL _(score 27.0)_
-- [[programming/rust/sql_engine/sqlparser|sqlparser]] — SQLparser _(score 26.4)_
-- [[mobc]] — mobc _(score 21.5)_
-- [[barrel]] — barrel _(score 21.5)_
-- [[refinery]] — refinery _(score 21.5)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#sqlparser` `#data` `#rust` `#programming` `#sql` `#parser` `#crate` `#specific`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#sqlparser` `#sql` `#parser` `#ast` `#datafusion`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Crate: <https://crates.io/crates/sqlparser>
+- Original repo: <https://github.com/sqlparser-rs/sqlparser-rs>
+- Apache fork (2024): <https://github.com/apache/datafusion-sqlparser-rs>
 
-# sqlparser
+The goal of this project is to build a SQL lexer and parser capable of parsing SQL that conforms to the ANSI/ISO SQL standard while making it easy to support custom dialects so that the crate can be used as a foundation for vendor-specific parsers. Currently used by DataFusion, LocustDB, Ballista, GlueSQL, and many more.
 
-https://crates.io/crates/sqlparser
-
-The goal of this project is to build a SQL lexer and parser capable of parsing SQL that conforms with the ANSI/ISO SQL standard while also making it easy to support custom dialects so that this crate can be used as a foundation for vendor-specific parsers.
-
-This parser is currently being used by the DataFusion query engine, LocustDB, Ballista and GlueSQL.
-
-This crate provides only a syntax parser, and tries to avoid applying any SQL semantics, and accepts queries that specific databases would reject, even when using that Database's specific Dialect. For example, CREATE TABLE(x int, x int) is accepted by this crate, even though most SQL engines will reject this statement due to the repeated column name x.
+This crate provides only a syntax parser — it does not apply SQL semantics, and accepts queries that specific databases would reject. For example, `CREATE TABLE(x int, x int)` is accepted even though most engines reject duplicate column names.

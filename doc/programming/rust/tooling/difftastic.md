@@ -1,61 +1,59 @@
 ---
-title: difftastic
-main_link: https://crates.io/crates/difftastic
-keywords: [difftastic, rust, structural]
-status: draft
+title: difftastic — syntax-aware structural diff
+main_link: https://github.com/Wilfred/difftastic
+keywords: [difftastic, rust, diff, structural, tree-sitter, git, syntax]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# difftastic — syntax-aware structural diff
 
-> Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **difftastic**.
-
-# difftastic
-
-**Main link:** <https://crates.io/crates/difftastic>
+**Main link:** <https://github.com/Wilfred/difftastic>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`difftastic` (binary `difft`) is a structural diff tool by Wilfred Hughes that compares files based on their *syntax tree* rather than their lines. It uses [tree-sitter](https://tree-sitter.github.io/) parsers for ~50 languages, walks the resulting trees, and shows you what *expressions* changed instead of what lines changed. The classic example: a multi-line refactor that adds an `if` wrapper around a block reads as "added an if-statement", not "every line of the block changed".
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `difft` when reading a diff that line-based tools mangle: refactors that re-indent code, JSON/YAML re-orderings, multi-line strings, big merges, format-on-save churn. Wire it into git globally:
+
+```sh
+git config --global diff.external difft
+git config --global diff.tool difftastic
+git config --global difftool.difftastic.cmd 'difft "$LOCAL" "$REMOTE"'
+
+# then:
+GIT_EXTERNAL_DIFF=difft git diff
+git difftool          # interactive
+```
+
+**Gotchas**: it is *slower* than `git diff` on huge diffs (parsing trees costs more than splitting lines); not ideal in CI where you want fast machine-readable output (use `git diff` for CI, `difft` for humans). It produces *coloured side-by-side* output, not a patch — you can't `git apply` its output. For unsupported languages it falls back to text diff.
+
+Compared to siblings: **`diff(1)`** / **`git diff`** are the line-based originals; **[`delta`](https://github.com/dandavison/delta)** is a Rust *pretty-printer* for line-based diffs (different niche — pair with bat for syntax highlighting but still line-based); **[`riff`](https://github.com/walles/riff)** does intra-line refinement on top of line diffs. `difft` is the only one in this group that's actually syntax-aware. The original `tree-sitter-graph` and Semantic (GitHub's old Haskell tool) attempted similar but neither is in everyday use.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- `diff(1)` / `git diff` — POSIX line-based originals.
+- [`delta`](https://github.com/dandavison/delta) — pretty-printer for line diffs.
+- [`riff`](https://github.com/walles/riff) — intra-line refinement on line diffs.
+- [GitHub Semantic](https://github.com/github/semantic) — abandoned Haskell tool with the same goal.
+- [tree-sitter](https://tree-sitter.github.io/) — the parser library difft is built on.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[programming/rust/tooling/tools|tools]] — coreutils _(score 17.1)_
-- [[topgrade]] — topgrade _(score 17.1)_
-- [[starship]] — starship _(score 17.1)_
-- [[debug]] — Debug _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
+- [[README]] — tooling section landing.
+- [[bat]] — `cat` clone with syntax highlighting (related-niche Rust tool).
+- [[../../../git/git_delta|git_delta]] — the `delta` pager article (line-diff pretty-printer).
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#difftastic` `#tooling` `#rust` `#programming` `#crates` `#structural` `#diff` `#tool`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#difftastic` `#difft` `#rust` `#diff` `#structural` `#tree-sitter` `#syntax` `#git`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# difftastic
-
-https://crates.io/crates/difftastic
-
-Difftastic is a structural diff tool that compares files based on their syntax.
+- Repo: <https://github.com/Wilfred/difftastic>
+- Crate: <https://crates.io/crates/difftastic>
+- Docs: <https://difftastic.wilfred.me.uk/>
+- Install: `cargo install --locked difftastic` or `brew install difftastic`.

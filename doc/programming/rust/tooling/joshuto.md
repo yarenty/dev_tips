@@ -1,64 +1,56 @@
 ---
-title: joshuto
+title: joshuto — Ranger-style terminal file manager
 main_link: https://github.com/kamiyaa/joshuto
-keywords: [joshuto, rust, terminal]
-status: draft
+keywords: [joshuto, rust, file-manager, ranger, tui, miller-columns]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **joshuto**.
-
-# joshuto
+# joshuto — Ranger-style terminal file manager
 
 **Main link:** <https://github.com/kamiyaa/joshuto>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`joshuto` is a Rust terminal file manager by Jeff Zhao (kamiyaa) inspired by [Ranger](https://github.com/ranger/ranger) (Python): three-pane Miller columns showing parent / current / preview, vim-style keybindings, configurable via TOML, with image previews via `ueberzug` / Kitty / iTerm protocols when supported. The aim is "Ranger but fast and not Python".
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `joshuto` if you live in Ranger but want startup that doesn't cost a second of Python interpreter, or if you're on a small box where you don't want to install Python at all. The keybindings are deliberately Ranger-compatible (hjkl to move between columns, `gg/G/yy/dd/pp`), so muscle memory carries over. Configuration in `~/.config/joshuto/{joshuto,keymap,mimetype}.toml`.
+
+**Compared to siblings** (the Rust TUI file-manager landscape is crowded):
+
+- **`yazi`** — currently the most active and best-defaults; async architecture; image preview "just works"; the recommended starting point for new users.
+- **`xplr`** — Lua-scriptable; smaller core, more flexible, steeper config curve.
+- **`superfile`** (`spf`, Go) — modern aesthetic, file-tabs metaphor; covered at [[../../../tools/misc/superfile|superfile]].
+- **`broot`** — not really a file manager but worth knowing; tree-view + fuzzy navigator.
+- **`lf`** (Go) — Ranger-shaped, single binary, very fast.
+- **`nnn`** (C) — minimal, plugin-driven.
+- **`mc`** (C) — Midnight Commander; the venerable Norton-Commander-style two-panel.
+
+If you're picking *today* with no inertia: try `yazi` first. Use `joshuto` if you specifically want Ranger semantics in Rust.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [Ranger](https://github.com/ranger/ranger) — the Python original this clones.
+- [`yazi`](https://github.com/sxyazi/yazi) — currently the most-recommended Rust TUI file manager.
+- [`xplr`](https://github.com/sayanarijit/xplr) — Lua-scriptable Rust file manager.
+- [`lf`](https://github.com/gokcehan/lf) — Go file manager, Ranger-shaped.
+- [[../../../tools/misc/superfile|superfile]] — modern Go file manager (different vibe).
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 22.7)_
-- [[starship]] — starship _(score 17.1)_
-- [[debug]] — Debug _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 13.1)_
+- [[README]] — tooling section landing.
+- [[../../../tools/misc/superfile|superfile]] — sibling file-manager article.
+- [[../../../tools/design/lstr|lstr]] — fast `tree` viewer (overlapping interactive niche).
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#joshuto` `#tooling` `#rust` `#programming` `#crates` `#terminal` `#file` `#manager`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#joshuto` `#rust` `#file-manager` `#ranger` `#tui` `#miller-columns` `#cli`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# joshuto
-
-https://crates.io/crates/joshuto
-
-Terminal file manager inspired by ranger
-
-
-https://github.com/kamiyaa/joshuto
+- Repo: <https://github.com/kamiyaa/joshuto>
+- Inspired by Ranger; vim-style keybindings; TOML configuration.
+- Install: `cargo install joshuto` or `brew install joshuto`.

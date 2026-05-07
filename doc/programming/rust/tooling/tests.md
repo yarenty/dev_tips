@@ -1,66 +1,87 @@
 ---
-title: mockall
+title: tests — `mockall` and the Rust testing-tools landscape
 main_link: https://crates.io/crates/mockall
-keywords: [rust, mock]
-status: draft
+keywords: [tests, mockall, rust, testing, mocks, nextest, criterion, proptest]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# mockall
+# tests — `mockall` and the Rust testing-tools landscape
 
 **Main link:** <https://crates.io/crates/mockall>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`mockall` is the canonical Rust mock-object library by Alan Somers — a `#[automock]` proc-macro that derives a `MockMyTrait` for any trait, plus a builder API for setting expectations. Mocking statically-typed Rust is harder than mocking duck-typed Python, and `mockall` is the most ergonomic answer in the ecosystem. This article also serves as the **Rust testing-tools landscape** index, since the auto-split previously left this as the parent of [[tux]] and [[turmoil]].
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `mockall` when you need to **inject a mock implementation of a trait** in a unit test — typically to replace a database, HTTP client, or message bus with a scripted set of responses. Standard pattern:
+
+```rust
+use mockall::*;
+
+#[automock]
+trait Database {
+    fn get_user(&self, id: u64) -> Option<String>;
+}
+
+#[test]
+fn user_service_returns_name() {
+    let mut db = MockDatabase::new();
+    db.expect_get_user()
+        .with(predicate::eq(42))
+        .times(1)
+        .returning(|_| Some("Alice".into()));
+
+    let svc = UserService::new(Box::new(db));
+    assert_eq!(svc.greet(42), "Hello, Alice");
+}
+```
+
+**Gotchas**: requires `dev-dependencies = { mockall = "..." }` and you typically gate the `automock` attribute behind `#[cfg(test)]` to avoid leaking the mock type into production builds; trait must be object-safe if you'll use `Box<dyn Trait>`; closures-as-return-values can be tricky to mock. For *external HTTP* mocking specifically, prefer `[wiremock](https://crates.io/crates/wiremock)` over rolling your own `MockHttpClient`.
+
+### The broader Rust testing landscape
+
+| Need | Reach for |
+|---|---|
+| **Test runner** with parallelism / retries / per-test timeout | [`cargo-nextest`](https://nexte.st/) — modern replacement for the built-in test runner |
+| **Mock objects** for traits | `mockall` (this article) |
+| **HTTP mocking / fakes** | [`wiremock`](https://crates.io/crates/wiremock), [`mockito`](https://crates.io/crates/mockito), [`httpmock`](https://crates.io/crates/httpmock) |
+| **Property-based testing** | [`proptest`](https://crates.io/crates/proptest), [`quickcheck`](https://crates.io/crates/quickcheck) |
+| **Fuzzing** | `cargo-fuzz` (libFuzzer), [`afl.rs`](https://github.com/rust-fuzz/afl.rs) |
+| **Snapshot testing** | [`insta`](https://crates.io/crates/insta) — the canonical snapshot crate |
+| **Microbenchmarks** | [`criterion`](https://crates.io/crates/criterion) — the standard; `divan` is the modern challenger |
+| **Coverage** | [`cargo-tarpaulin`](https://github.com/xd009642/tarpaulin) (Linux), `cargo-llvm-cov` (cross-platform) |
+| **Integration tests against HTTP / temp dirs / binaries** | [[tux]] |
+| **Distributed-system tests** | [[turmoil]] (Tokio team's deterministic simulator) |
+| **Concurrency model checking** | `loom` — explores all interleavings of an async/atomics test |
+| **Async coloring** in tests | `tokio::test`, `async-std::test` |
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[tux]] — integration-test helpers (HTTP, temp dirs, binary execution).
+- [[turmoil]] — deterministic distributed-system simulation.
+- [`cargo-nextest`](https://nexte.st/) — better test runner.
+- [`insta`](https://crates.io/crates/insta) — snapshot testing.
+- [`criterion`](https://crates.io/crates/criterion) — microbenchmarks.
+- [`proptest`](https://crates.io/crates/proptest) / [`quickcheck`](https://crates.io/crates/quickcheck) — property-based.
+- [`wiremock`](https://crates.io/crates/wiremock) — HTTP mocking.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[turmoil]] — turmoil _(score 17.1)_
-- [[starship]] — starship _(score 17.1)_
-- [[debug]] — Debug _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-- [[exa]] — EXA _(score 5.1)_
+- [[README]] — tooling section landing.
+- [[tux]] — sibling integration-test helpers.
+- [[turmoil]] — deterministic distributed-system tests.
+- [[../core/error|core/error]] — error-handling overview that pairs with test design.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#tests` `#tooling` `#rust` `#programming` `#crates` `#test` `#mock` `#turmoil`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#tests` `#mockall` `#rust` `#testing` `#mocks` `#nextest` `#criterion` `#proptest`
 
 ## References / raw notes
-<!-- auto-split by article_split.py -->
-> Auto-split: 2 additional top-level heading(s) extracted into sibling files:
-> - [tux](tux.md)
-> - [turmoil](turmoil.md)
 
-
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# mockall
-
-https://crates.io/crates/mockall
-
-Mock objects are a powerful technique for unit testing software. A mock object is an object with the same interface as a real object, but whose responses are all manually controlled by test code. They can be used to test the upper and middle layers of an application without instantiating the lower ones, or to inject edge and error cases that would be difficult or impossible to create when using the full stack.
-
-Statically typed languages are inherently more difficult to mock than dynamically typed languages. Since Rust is a statically typed language, previous attempts at creating a mock object library have had mixed results. Mockall incorporates the best elements of previous designs, resulting in it having a rich feature set with a terse and ergonomic interface. Mockall is written in 100% safe and stable Rust.
+- Crate: <https://crates.io/crates/mockall>
+- Docs: <https://docs.rs/mockall/>
+- Mockall is 100% safe stable Rust; supports static and `dyn` traits; multi-thread-safe expectations.

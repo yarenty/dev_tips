@@ -1,86 +1,54 @@
 ---
-title: Lance
+title: Lance — modern columnar format for ML
 main_link: https://github.com/lancedb/lance
-keywords: [lance-data-format, rust, format, parquet, vector, arrow, search, apache]
-status: draft
+keywords: [lance, columnar, parquet, vector, arrow, ml, lancedb]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# Lance
+# Lance — modern columnar format for ML
 
 **Main link:** <https://github.com/lancedb/lance>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Lance is a modern columnar data format developed by **LanceDB** as an open-source alternative to Apache Parquet, specifically optimised for ML workflows: 100× faster random access than Parquet, native vector index for ANN search, automatic data versioning (zero-copy "git for data"), and ecosystem integration with Apache Arrow, pandas, Polars, DuckDB, and PyArrow. Conversion from Parquet is a two-line operation. Lance is also the on-disk format for the LanceDB vector database.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for Lance when (a) you need **random access into ML datasets** (training loops, feature stores, image/video lookup) where Parquet's row-group seek model is too coarse, (b) you want vector search collocated with the columnar data instead of in a separate vector DB, or (c) you want zero-copy versioning of huge datasets without a `dvc`/git-LFS overlay. Position vs Parquet: Parquet is still the right answer for batch analytics on cold S3 data; Lance wins when access pattern is "single-row-or-small-batch random reads at training time". Position vs LanceDB: LanceDB *uses* Lance as its file format and adds a database layer (table management, transactions, the LanceDB SaaS) on top — you can use Lance the format without LanceDB the database. Gotchas: file format is still pre-1.0 (forwards-compat is a moving target); the "100× faster than Parquet" claim is for random access only — sequential scans are competitive but not a step-change; ecosystem support outside Python/Rust is thin compared to Parquet.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- Apache Parquet — the incumbent columnar format Lance directly challenges.
+- Apache Arrow — in-memory format Lance interoperates with.
+- LanceDB — vector DB built on Lance the format.
+- Nimble — Meta's experimental columnar format (Velox-side).
+- DuckDB — popular consumer of Lance via its Arrow integration.
+- [[adbc]] — generic Arrow-native consumption story for Lance datasets.
 
 ## Internal links
+<!-- reviewed -->
+- [[../../../db/formats/README|DB formats landing]]
+- [[adbc]]
+- [[datafusion/README|DataFusion]]
+- [[../../../db/vector/README|Vector databases]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[adbc]] — ADBC ! _(score 23.4)_
-- [[memory_storage]] — Memory storage _(score 17.1)_
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 17.1)_
-- [[barrel]] — barrel _(score 17.1)_
-- [[apache]] — apache _(score 17.0)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#lance-data-format` `#data` `#rust` `#programming` `#format` `#parquet` `#vector` `#duckdb`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#lance` `#columnar` `#parquet` `#vector` `#arrow` `#ml`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Repo: <https://github.com/lancedb/lance>
+- Format spec: <https://lancedb.github.io/lance/format.html>
+- LanceDB (database built on Lance): <https://lancedb.com/>
 
-# Lance
+> Modern columnar data format for ML. Convert from Parquet in 2 lines of code for 100× faster random access, a vector index, data versioning, and more. Compatible with pandas, DuckDB, Polars, and pyarrow.
 
-https://github.com/lancedb/lance
+Lance is perfect for:
 
+- Building search engines and feature stores.
+- Large-scale ML training requiring high-performance IO and shuffles.
+- Storing, querying, and inspecting deeply nested data for robotics or large blobs (images, point clouds, video frames).
 
-
-
-Modern columnar data format for ML. Convert from Parquet in 2-lines of code for 100x faster random access, a vector index, data versioning, and more.
-Compatible with pandas, DuckDB, Polars, and pyarrow with more integrations on the way.
-
-
-Lance is a modern columnar data format that is optimized for ML workflows and datasets. Lance is perfect for:
-
-Building search engines and feature stores.
-Large-scale ML training requiring high performance IO and shuffles.
-Storing, querying, and inspecting deeply nested data for robotics or large blobs like images, point clouds, and more.
-The key features of Lance include:
-
-High-performance random access: 100x faster than Parquet without sacrificing scan performance.
-
-Vector search: find nearest neighbors in milliseconds and combine OLAP-queries with vector search.
-
-Zero-copy, automatic versioning: manage versions of your data without needing extra infrastructure.
-
-Ecosystem integrations: Apache Arrow, Pandas, Polars, DuckDB and more on the way.
-
-
-
-## format
-
-
-https://lancedb.github.io/lance/format.html
+Key features: high-performance random access, vector search (combine OLAP queries with kNN), zero-copy automatic versioning, integrations with the Arrow ecosystem.

@@ -1,60 +1,44 @@
 ---
-title: rusqlite
+title: rusqlite — SQLite bindings for Rust
 main_link: https://crates.io/crates/rusqlite
-keywords: [rusqlite, rust, sqlite]
-status: draft
+keywords: [rusqlite, sqlite, embedded, database, libsql, turso]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-
-> Auto-split from `doc/programming/rust/data/db.md` by `article_split.py`. Heading: **rusqlite**.
-
-# rusqlite
+# rusqlite — SQLite bindings for Rust
 
 **Main link:** <https://crates.io/crates/rusqlite>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`rusqlite` is the canonical Rust binding for SQLite. It wraps the C library (vendored by default via the `bundled` feature, no system SQLite required) with an ergonomic safe API: prepared statements, parameter binding by name or index, row mappers, transactions, blob-IO, virtual tables, custom functions, FTS5, R-Tree. It is **synchronous** by design — SQLite itself is process-local, so async wrappers don't help latency, only ergonomic composition with Tokio.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+For "I want a real database in my Rust program with zero ops", `rusqlite` is the answer 90% of the time. Combine with `r2d2-sqlite` for connection pooling (SQLite pools matter even though SQLite is in-process — to avoid lock contention with many threads writing). The popular alternatives are: **`libsql`** (Turso's open fork, adds replication, embedded HTTP, vector indexing — wire-compatible with SQLite), **`sqlite3-rs`** (a pure-Rust re-implementation, niche), and **`sqlx` with the SQLite backend** (compile-time-checked queries, but uses libsqlite3 underneath too). Gotchas: enable `bundled` to avoid version-skew bugs against system SQLite, especially on macOS where the system version lags; remember SQLite's "one writer at a time" rule (use WAL mode); the `chrono`/`time`/`uuid`/`serde_json` features are opt-in and gate the corresponding type adapters.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- `libsql` — Turso's open SQLite fork with replication, vector index, server mode.
+- `sqlx` (sqlite backend) — compile-time-checked queries on top of libsqlite3.
+- `sqlite3-rs` — pure-Rust SQLite reimplementation (experimental).
+- `diesel` (sqlite backend) — sync ORM.
+- `r2d2-sqlite` — pooling adapter.
 
 ## Internal links
+<!-- reviewed -->
+- [[r2d2]]
+- [[programming/rust/sql_engine/diesel|diesel]]
+- [[barrel]] — schema migrations
+- [[refinery]] — raw-SQL migrations
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[sqlite]] — sqlite _(score 20.0)_
-- [[compilation_cache]] — sccache - Shared Compilation Cache _(score 17.1)_
-- [[barrel]] — barrel _(score 17.1)_
-- [[cache]] — Cache _(score 17.1)_
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 17.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#rusqlite` `#data` `#rust` `#programming` `#crates` `#sqlite` `#ergonomic` `#wrapper`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#rusqlite` `#sqlite` `#embedded` `#database` `#libsql`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Crate: <https://crates.io/crates/rusqlite>
+- Repo: <https://github.com/rusqlite/rusqlite>
 
-# rusqlite
-
-https://crates.io/crates/rusqlite
-
-Rusqlite is an ergonomic wrapper for using SQLite from Rust.
+> Rusqlite is an ergonomic wrapper for using SQLite from Rust.

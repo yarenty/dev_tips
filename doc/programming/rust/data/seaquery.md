@@ -1,153 +1,74 @@
 ---
-title: SeaQuery
+title: SeaQuery — dynamic SQL query builder
 main_link: https://crates.io/crates/sea-query
-keywords: [seaquery, rust, postgres, mysql, sqlite, sql]
-status: draft
+keywords: [seaquery, sea-orm, query-builder, sql, postgres, mysql, sqlite]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/data/db.md` by `article_split.py`. Heading: **SeaQuery**.
-
-# SeaQuery
+# SeaQuery — dynamic SQL query builder
 
 **Main link:** <https://crates.io/crates/sea-query>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`sea-query` is a dynamic SQL query builder for MySQL, PostgreSQL, and SQLite, part of the SeaQL family. You construct queries (selects, inserts, updates, deletes, schema DDL, foreign keys, indexes) as ASTs and `.build()` them against a per-backend `QueryBuilder` to get parameterised SQL + values. It integrates with `sqlx`, `postgres`, and `rusqlite` for execution. It is the foundation of `sea-orm` (the SeaQL async ORM) but is perfectly usable on its own.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The Rust SQL-API spectrum has three poles: **`diesel`** (full ORM with compile-time-checked schema via macros — the most type-safe, the most opinionated), **`sqlx`** (raw SQL strings + compile-time check against a live DB — minimal abstraction), and the **builder** group (`sea-query`, `welds`'s expression layer, hand-rolled `format!`). `sea-query` is the canonical builder: pick it when you need to construct queries dynamically (admin UIs, generic filters, SaaS multi-tenancy where the WHERE clauses depend on user input) and you don't want to either (a) write a stringly-typed `format!` template (injection risk) or (b) bring in a full ORM. Pair with `sqlx` for execution and you get the best of both worlds: dynamic builder + compile-time-checked execution. Gotchas: `sea-query`'s `Iden` enum boilerplate gets verbose (use the `derive` feature); migrations are owned by `sea-schema`/`sea-orm-migration`, not `sea-query` itself.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- `diesel` — full ORM with macro-generated schema; type-safest of the three poles.
+- `sqlx` — raw SQL + compile-time check; lowest abstraction.
+- `sea-orm` — SeaQL's async ORM, built on top of `sea-query`.
+- `welds` — async ORM with its own expression layer.
 
 ## Internal links
+<!-- reviewed -->
+- [[programming/rust/sql_engine/diesel|diesel]]
+- [[programming/rust/sql_engine/seaquery|sea-query (sql_engine view)]]
+- [[barrel]] / [[refinery]] — schema migrations
+- [[sqlparser]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[programming/rust/sql_engine/seaquery|seaquery]] — SeaQuery _(score 46.5)_
-- [[db]] — diesel _(score 27.4)_
-- [[sqlite]] — sqlite _(score 24.4)_
-- [[rusqlite]] — rusqlite _(score 24.0)_
-- [[programming/rust/data/mysql|mysql]] — mysql _(score 23.0)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#seaquery` `#data` `#rust` `#programming` `#query` `#table` `#postgres` `#dynamic`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#seaquery` `#sea-orm` `#query-builder` `#sql` `#postgres` `#mysql` `#sqlite`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Crate: <https://crates.io/crates/sea-query>
+- Repo: <https://github.com/SeaQL/sea-query>
 
-# SeaQuery
+Backend support: MySQL, PostgreSQL, SQLite. Execution integrations: `sqlx`, `postgres`, `rusqlite`.
 
-https://crates.io/crates/sea-query
+Feature flags worth knowing:
 
-🔱 A dynamic query builder for MySQL, Postgres and SQLite
+- `derive` — `#[derive(Iden)]` to skip the manual enum boilerplate.
+- `backend-mysql` / `backend-postgres` / `backend-sqlite` — pick your dialects.
+- `with-chrono` / `with-time` / `with-uuid` / `with-json` / `with-rust_decimal` / `with-bigdecimal` / `with-ipnetwork` / `with-mac_address` / `postgres-array` / `postgres-interval` — type-mapping adapters.
 
-
-SeaQuery is a query builder to help you construct dynamic SQL queries in Rust. You can construct expressions, queries and schema as abstract syntax trees using an ergonomic API. We support MySQL, Postgres and SQLite behind a common interface that aligns their behaviour where appropriate.
-
-We provide integration for SQLx, postgres and rusqlite. See examples for usage.
-
-SeaQuery is the foundation of SeaORM, an async & dynamic ORM for Rust.
-
-
-SeaQuery is very lightweight, all dependencies are optional.
-
-## Feature flags
-- Macro: derive attr
-- Async support: thread-safe (use Arc inplace of Rc)
-- SQL engine: backend-mysql, backend-postgres, backend-sqlite
-- Type support: with-chrono, with-time, with-json, with-rust_decimal, with-bigdecimal, with-uuid, with-ipnetwork, with-mac_address, postgres-array, postgres-interval
-
-## Usage
-
-- Basics
-  - Iden
-  - Expression
-  - Condition
-  - Statement Builders
-- Query Statement
-  - Query Select
-  - Query Insert
-  - Query Update
-  - Query Delete
-- Advanced
-  - Aggregate Functions
-  - Casting
-  - Custom Function
-- Schema Statement
-  - Table Create
-  - Table Alter
-  - Table Drop
-  - Table Rename
-  - Table Truncate
-  - Foreign Key Create
-  - Foreign Key Drop
-  - Index Create
-  - Index Drop
-
-## Motivation
-Why would you want to use a dynamic query builder?
-
-### Parameter bindings
-One of the headaches when using raw SQL is parameter binding. With SeaQuery you can:
+Two example use cases that justify the builder over raw SQL:
 
 ```rust
-assert_eq!(
-    Query::select()
-        .column(Glyph::Image)
-        .from(Glyph::Table)
-        .and_where(Expr::col(Glyph::Image).like("A"))
-        .and_where(Expr::col(Glyph::Id).is_in([1, 2, 3]))
-        .build(PostgresQueryBuilder),
-    (
-        r#"SELECT "image" FROM "glyph" WHERE "image" LIKE $1 AND "id" IN ($2, $3, $4)"#
-            .to_owned(),
-        Values(vec![
-            Value::String(Some(Box::new("A".to_owned()))),
-            Value::Int(Some(1)),
-            Value::Int(Some(2)),
-            Value::Int(Some(3))
-        ])
-    )
-);
+// 1. Parameterised IN clause without manually counting placeholders.
+let (sql, values) = Query::select()
+    .column(Glyph::Image)
+    .from(Glyph::Table)
+    .and_where(Expr::col(Glyph::Image).like("A"))
+    .and_where(Expr::col(Glyph::Id).is_in([1, 2, 3]))
+    .build(PostgresQueryBuilder);
+// SELECT "image" FROM "glyph" WHERE "image" LIKE $1 AND "id" IN ($2, $3, $4)
 
-```
-
-### Dynamic query
-You can construct the query at runtime based on user inputs:
-```rust
+// 2. Conditionally added clauses.
 Query::select()
     .column(Char::Character)
     .from(Char::Table)
     .conditions(
-        // some runtime condition
-        true,
-        // if condition is true then add the following condition
-        |q| {
-            q.and_where(Expr::col(Char::Id).eq(1));
-        },
-        // otherwise leave it as is
-        |q| {},
+        user_filter_active,
+        |q| { q.and_where(Expr::col(Char::Id).eq(1)); },
+        |_| {},
     );
 ```
 
-
-[more](https://crates.io/crates/sea-query)
+Capabilities: SELECT/INSERT/UPDATE/DELETE, aggregates, casting, custom functions, CTEs; schema DDL: `Table::create/alter/drop/rename/truncate`, `ForeignKey::create/drop`, `Index::create/drop`.

@@ -1,90 +1,62 @@
 ---
-title: UCLicious
+title: uclicious — UCL (libucl) config parser with derive support
 main_link: https://github.com/andoriyu/uclicious
-keywords: [uclicious, rust, type, level]
-status: draft
+keywords: [uclicious, rust, ucl, libucl, config, derive, parser, nginx-style]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# UCLicious
+# uclicious — UCL (libucl) config parser with derive support
 
 **Main link:** <https://github.com/andoriyu/uclicious>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`uclicious` is a Rust binding + derive macro for [libUCL](https://github.com/vstakhov/libucl), the **Universal Configuration Library** behind FreeBSD's `pkgng`, rspamd, and a handful of other BSD-world projects. UCL syntax is a nginx-style superset of JSON: implicit arrays, sections without commas, units (`1KB`, `10ms`), `include`s, and macros. `uclicious` lets you derive a typed Rust builder from a `#[derive(Uclicious)]` struct, mapping UCL keys to fields with optional defaults, validators, and type-mapping.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `uclicious` only if you specifically need to read UCL — i.e. you're talking to one of the projects above, or you're personally fond of nginx-shaped configs. For a new project, the conventional Rust paths are:
+
+- **TOML** via [`serde` + `toml`](https://crates.io/crates/toml) — the default for Cargo and most Rust apps.
+- **YAML** via [`serde-yaml`](https://crates.io/crates/serde-yaml) (now `serde_yaml` deprecated; consider `serde_yml`) for K8s-shaped configs.
+- **JSON** via [`serde_json`](https://crates.io/crates/serde_json) for machine consumption.
+- **[`config`](https://crates.io/crates/config)** crate as a layered loader (file + env + CLI overrides).
+- **[`figment`](https://crates.io/crates/figment)** as a more flexible layered config story (used by Rocket).
+
+UCL's killer features over JSON are **comments, units, implicit arrays, includes, and macros** — all useful, none unique. TOML covers comments + types; YAML covers all of UCL's surface (and more, painfully); HCL (Terraform) covers the nginx-shaped block syntax with broader tooling. The closest pure equivalent in Rust-land is probably **JSONNet** (via the `jrsonnet` crate) for templated configs.
+
+The library's strength is the `derive` ergonomics — see the example in raw notes below — which work nicely once you've decided UCL is the right format. Validators, type-mapping (`from`/`try_from`/`from_str`/`map`), default values, and per-field path attributes are all there. License is BSD-2-Clause.
+
+**When to pick `uclicious`**: integrating with an existing UCL-emitting tool (rspamd, FreeBSD package configs); you want nginx-shaped configs without writing a parser. **Otherwise**: pick TOML + serde.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [TOML](https://toml.io/) + [`serde`](https://serde.rs/) — the Rust default config format.
+- [YAML](https://yaml.org/) + `serde_yml` — for K8s-shaped configs.
+- [HCL](https://github.com/hashicorp/hcl) — HashiCorp's nginx-shaped DSL; closer to UCL.
+- [`config`](https://crates.io/crates/config) — layered config loader (file + env + CLI).
+- [`figment`](https://crates.io/crates/figment) — Rocket's flexible config layered loader.
+- [`jrsonnet`](https://crates.io/crates/jrsonnet) — Rust JSONNet (templated configs).
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[armada]] — armada _(score 17.1)_
-- [[debug]] — Debug _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-- [[scope]] — Scope _(score 13.1)_
-- [[json]] — JSON _(score 13.1)_
+- [[README]] — tooling section landing.
+- [[../io/json|io/json]] — JSON / serialisation in Rust.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#uclicious` `#tooling` `#rust` `#programming` `#type` `#parser` `#optional` `#derive`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#uclicious` `#rust` `#ucl` `#libucl` `#config` `#derive` `#parser`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Repo: <https://github.com/andoriyu/uclicious>
+- Built on top of [libucl](https://github.com/vstakhov/libucl) (the FreeBSD/rspamd config library).
+- Internal parser supports both nginx-like and JSON-like formats; every JSON file is a valid UCL file (but not vice versa).
 
-# UCLicious
+### Raw API example
 
-
-https://github.com/andoriyu/uclicious
-
-
-* [What is Uclicious](#what-is-uclicious)
-* [Usage](#usage)
-    + [Raw API](#raw-api)
-    + [Derive-driven](#derive-driven)
-        - [Validators](#validators)
-        - [Type Mapping](#type-mapping)
-    + [Supported attributes (`#[ucl(..)]`)](#supported-attributes-%23ucl)
-        - [Structure level](#structure-level)
-        - [Field level](#field-level)
-    + [Additional notes](#additional-notes)
-* [Contributing](#contributing)
-    - [Particular Contributions of Interest](#particular-contributions-of-interest)
-* [Goals](#goals)
-    + [Not Goals](#not-goals)
-* [Special thanks](#special-thanks)
-* [LICENSE](#license)
-## What is Uclicious
-
-Uclicious is a flexible reduced boilerplate configuration framework.
-
-Uclicious is built on top of [libucl](https://github.com/vstakhov/libucl). If you ever wrote an nginx configurtion and though "Damn, I wish all configuration files were like this" this is the library for you. Internal parser supports both: nginx-like and json-like formats. JSON parser is a little bit more permissive than - every json file is a valid UCL file, but not other way around.
-It is much more complex than json or TOML, so I recommend reading documentaiton about it. Author of UCL did a great job documenting it. This library provides both: derive-driven and raw-api driven usage patterns.
-
-## Usage
-### Raw API
-
-Raw API involves interacting with `libucl` parser via safe api:
 ```rust
 use uclicious::*;
 let mut parser = Parser::default();
@@ -99,45 +71,15 @@ interval = 1s
 parser.add_chunk_full(input, Priority::default(), DEFAULT_DUPLICATE_STRATEGY).unwrap();
 let result = parser.get_object().unwrap();
 
-let lookup_result = result.lookup("test_string").unwrap().as_string().unwrap();
-assert_eq!(lookup_result.as_str(), "no scope");
-
-let lookup_result = result.lookup("a_float").unwrap().as_f64().unwrap();
-assert_eq!(lookup_result, 3.14f64);
-
-let lookup_result = result.lookup("an_integer").unwrap().as_i64().unwrap();
-assert_eq!(lookup_result, 69420i64);
-
-let lookup_result = result.lookup("is_it_good").unwrap().as_bool().unwrap();
-assert_eq!(lookup_result, true);
-
-let lookup_result = result.lookup("buffer_size").unwrap().as_i64().unwrap();
-assert_eq!(lookup_result, 1024);
-let lookup_result = result.lookup("interval").unwrap().as_time().unwrap();
-assert_eq!(lookup_result, 1.0f64);
+assert_eq!(result.lookup("test_string").unwrap().as_string().unwrap(), "no scope");
+assert_eq!(result.lookup("a_float").unwrap().as_f64().unwrap(), 3.14);
+assert_eq!(result.lookup("an_integer").unwrap().as_i64().unwrap(), 69420);
+assert_eq!(result.lookup("is_it_good").unwrap().as_bool().unwrap(), true);
+assert_eq!(result.lookup("buffer_size").unwrap().as_i64().unwrap(), 1024);
 ```
 
-In order to get around rust rules library implemets its own trait FromObject for some basic types:
-```rust
-use uclicious::*;
-let mut parser = Parser::default();
-let input = r#"
-test_string = "no scope"
-a_float = 3.14
-an_integer = 69420
-is_it_good = yes
-buffer_size = 1KB
-"#;
-parser.add_chunk_full(input, Priority::default(), DEFAULT_DUPLICATE_STRATEGY).unwrap();
-let result = parser.get_object().unwrap();
+### Derive example (excerpt)
 
-let lookup_result = result.lookup("is_it_good").unwrap();
-let maybe: Option<bool> = FromObject::try_from(lookup_result).unwrap();
-assert_eq!(Some(true), maybe);
-```
-### Derive-driven
-
-On top of "raw" interface to libUCL, Uclicious provides an easy way to derive constructor for strucs:
 ```rust
 use uclicious::*;
 use std::path::PathBuf;
@@ -145,291 +87,36 @@ use std::net::SocketAddr;
 use std::collections::HashMap;
 use std::time::Duration;
 
-#[derive(Debug,Uclicious)]
+#[derive(Debug, Uclicious)]
 #[ucl(var(name = "test", value = "works"))]
 struct Connection {
-   #[ucl(default)]
-   enabled: bool,
-   host: String,
-   #[ucl(default = "420")]
-   port: i64,
-   buffer: u64,
-   #[ucl(path = "type")]
-   kind: String,
-   locations: Vec<PathBuf>,
-   addr: SocketAddr,
-   extra: Extra,
-   #[ucl(path = "subsection.host")]
-   hosts: Vec<String>,
-   #[ucl(default)]
-   option: Option<String>,
-   gates: HashMap<String, bool>,
-   interval: Duration,
+    #[ucl(default)]
+    enabled: bool,
+    host: String,
+    #[ucl(default = "420")]
+    port: i64,
+    buffer: u64,
+    #[ucl(path = "type")]
+    kind: String,
+    locations: Vec<PathBuf>,
+    addr: SocketAddr,
+    extra: Extra,
+    #[ucl(path = "subsection.host")]
+    hosts: Vec<String>,
+    #[ucl(default)]
+    option: Option<String>,
+    gates: HashMap<String, bool>,
+    interval: Duration,
 }
-
-#[derive(Debug,Uclicious)]
-#[ucl(skip_builder)]
-struct Extra {
-   enabled: bool
-}
-let mut builder = Connection::builder().unwrap();
-
-let input = r#"
-    enabled = yes
-    host = "some.fake.url"
-    buffer = 1mb
-    type = $test
-    locations = "/etc/"
-    addr = "127.0.0.1:80"
-    extra = {
-       enabled = on
-   }
-    subsection {
-       host = [host1, host2]
-   }
-   interval = 10ms
-   gates {
-        feature_1 = on
-        feature_2 = off
-        feature_3 = on
-   }"#;
-
-builder.add_chunk_full(input, Priority::default(), DEFAULT_DUPLICATE_STRATEGY).unwrap();
-let connection: Connection = builder.build().unwrap();
 ```
 
-If you choose to derive builder then `::builder()` method will be added to target struct.
+### Supported field-level attributes (summary)
 
-#### Validators
+- `default` / `default = expression` — fallback value.
+- `path = "..."` — UCL key (defaults to field name; dot notation supported).
+- `validate = path::to_method` — `Fn(key, value) -> Result<(), ObjectError>`.
+- `from = Type` / `try_from = Type` / `from_str` — type conversion via `From` / `TryFrom` / `FromStr`.
+- `map = path::to_method` — custom `Fn(ObjectRef) -> Result<T, ObjectError>` for everything else.
+- `skip_builder` (struct level) — disable builder method generation.
 
-Library supports running optional validators on values before building the resulting struct:
-
-```rust
-use uclicious::*;
-mod validators {
-   use uclicious::ObjectError;
-    pub fn is_positive(lookup_path: &str, value: &i64) -> Result<(), ObjectError> {
-        if *value > 0 {
-            Ok(())
-        } else {
-            Err(ObjectError::other(format!("{} is not a positive number", lookup_path)))
-        }
-    }
-}
-#[derive(Debug,Uclicious)]
-struct Validated {
-   #[ucl(default, validate="validators::is_positive")]
-    number: i64
-}
-let mut builder = Validated::builder().unwrap();
-
-let input = "number = -1";
-builder.add_chunk_full(input, Priority::default(), DEFAULT_DUPLICATE_STRATEGY).unwrap();
-assert!(builder.build().is_err())
-```
-#### Type Mapping
-
-If your target structure has types that don't implement `FromObject` you can use `From` or `TryFrom`
-via intermediate that does:
-
-```rust
-use uclicious::*;
-use std::convert::{From,TryFrom};
-
-#[derive(Debug, Eq, PartialEq)]
-enum Mode {
-    On,
-    Off,
-}
-
-impl TryFrom<String> for Mode {
-    type Error = ObjectError;
-    fn try_from(src: String) -> Result<Mode, ObjectError> {
-        match src.to_lowercase().as_str() {
-            "on" => Ok(Mode::On),
-            "off" => Ok(Mode::Off),
-            _   => Err(ObjectError::other(format!("{} is not supported value", src)))
-        }
-    }
-}
-
-#[derive(Debug, Eq, PartialEq)]
-struct WrappedInt(i64);
-
-impl From<i64> for WrappedInt {
-    fn from(src: i64) -> WrappedInt {
-        WrappedInt(src)
-    }
-}
-
-#[derive(Debug,Uclicious, Eq, PartialEq)]
-struct Mapped {
-   #[ucl(from="i64")]
-    number: WrappedInt,
-   #[ucl(try_from="String")]
-    mode: Mode
-}
-let mut builder = Mapped::builder().unwrap();
-
-let input = r#"
-    number = -1,
-    mode = "on"
-"#;
-builder.add_chunk_full(input, Priority::default(), DEFAULT_DUPLICATE_STRATEGY).unwrap();
-let actual = builder.build().unwrap();
-let expected = Mapped {
-number: WrappedInt(-1),
-mode: Mode::On
-};
-assert_eq!(expected, actual);
-```
-
-Additionally you can provide mapping to your type from ObjectRef:
-```rust
-use uclicious::*;
-
-#[derive(Debug, Eq, PartialEq)]
-pub enum Mode {
-    On,
-    Off,
-}
-
-pub fn map_bool(src: ObjectRef) -> Result<Mode, ObjectError> {
-    let bool: bool = src.try_into()?;
-    if bool {
-        Ok(Mode::On)
-    } else {
-        Ok(Mode::Off)
-    }
-}
-#[derive(Debug,Uclicious, Eq, PartialEq)]
-struct Mapped {
-   #[ucl(map="map_bool")]
-    mode: Mode
-}
-let mut builder = Mapped::builder().unwrap();
-
-let input = r#"
-    mode = on
-"#;
-builder.add_chunk_full(input, Priority::default(), DEFAULT_DUPLICATE_STRATEGY).unwrap();
-let actual = builder.build().unwrap();
-let expected = Mapped {
-    mode: Mode::On
-};
-```
-### Supported attributes (`#[ucl(..)]`)
-
-#### Structure level
-
-- `skip_builder`
-    - if set, then builder and builder methods won't be generated.
-- `parser(..)`
-    - Optional attribute to configure inner parser.
-    - Has following nested attributes:
-        - `flags`
-            - a path to function that returns flags.
-        - `filevars(..)`
-            - call `set_filevars` on a parser.
-            - Has following nested attributes:
-                - `path`
-                    - a string representation of filepath.
-                - `expand`
-                    - (optional) if set, then variables would be expanded to absolute.
-- `pre_source_hook(...)`
-    - Optional attribute to run a function before sources are added
-    - Can be used to register vars handler
-    - Must take `&mut Parser` as argument and return `Result<(), Into<UclError>>`
-- `var(..)`
-    - Optional attribute to register string variables with the parser.
-    - Has following nested attributes:
-        - `name`
-            - A name of the variable without `$` part.
-        - `value`
-            - A string values for the variable.
-            - Onlt string variables are supported by libUCL.
-- `include(..)`
-    - Used to add files into the parser.
-    - If file doesn't exist or failed to parse, then error will be returned in a constructor.
-    - Must specify exactly one of following sources: `path`, `chunk` or `chunk_static`
-    - Has following nested attirbutes:
-        - (semi-optional) `path = string`
-            - File path. Can be absolute or relative to CWD.
-        - (semi-optional) `chunk = string`
-            - A string that will be added to parser as a chunk.
-        - (semi-optional) `chunk_static = string`
-            - A path to a file that will be included into binary with [`include_str!()`](https://doc.rust-lang.org/std/macro.include_str.html)
-        - (optional) `priority = u32`
-            - 0-15 priority for the source. Consult the libUCL documentation for more information.
-        - (optional) `strategy = uclicious::DuplicateStrategy`
-            - Strategy to use for duplicate keys. Consult the libUCL documentation for more information.
-
-#### Field level
-All field level options are optional.
-
-- `default`
-    - Use Default::default if key not found in object.
-- `default = expression`
-    - Use this _expression_ as value if key not found.
-    - Could be a value or a function call.
-- `path = string`
-    - By default field name is used as path.
-    - If set that would be used as a key.
-    - dot notation for key is supported.
-- `validate = path::to_method`
-    - `Fn(key: &str, value: &T) -> Result<(), E>`
-    - Error needs to be convertable into `ObjectError`
-- `from = Type`
-    - Try to convert `ObjectRef` to `Type` and then use `std::convert::From` to convert into target type
-- `try_from = Type`
-    - Try to convert `ObjectRef` to `Type` and then use `std::convert::TryFrom` to convert into target type
-    - Error will be converted into `ObjectError::Other`
-- `from_str`
-    - Try to convert `ObjectRef` to `String` and then use `std::str::FromStr` to convert into target type
-    - Error will be converted into `ObjectError::Other`
-- `map = path::to_method`
-    - `Fn(src: ObjectRef) -> Result<T, E>`
-    - A way to map foreign objects that can't implement `From` or `TryFrom` or when error is not convertable into `ObjectError`
-
-### Additional notes
-- If target type is an array, but key is a single value — an implicit list is created.
-- Automatic derive on enums is not supported, but you can implement it yourself.
-- I have a few more features I want to implement before publishing this crate:
-    - Ability to add variables.
-    - Ability to add macross handlers.
-    - (maybe) configure parser that us used for derived builder with atrributes.
-    - (done) add sources to parser with attributes.
-
-## Contributing
-
-PRs, feature requests, bug reports are welcome. I won't be adding CoC  — be civilized.
-
-#### Particular Contributions of Interest
-
-- Optimize derive code.
-- Improve documentation — I often write late and night and some it might look like a word soup.
-- Better tests
-- Glob support in derive parser section
-- Variable handler
-
-
-## Goals
-- Provider safe and convient configuration library
-- Automatic derive, so you don't have to think about parser object
-
-### Not Goals
-- Providing UCL Object generation tools is not a goal for this project
-- 1:1 interface to libUCL
-- sugar inside `raw` module
-
-## Special thanks
-- [draft6](https://github.com/draft6) and [hauleth](https://github.com/hauleth)
-    - libucl-rs was a good starting point
-    - Type wrappers pretty much copied from there
-- [colin-kiegel](https://github.com/colin-kiegel)
-    - Rust-derive-builder was used as a starting point for uclicious-derive
-    - Very well documented proc_macro crate, do recommend
-
-## LICENSE
-
-[BSD-2-Clause](https://github.com/andoriyu/uclicious/blob/master/LICENSE).
+For the full attribute reference (parser flags, var, include, pre_source_hook, etc.) see the upstream README.

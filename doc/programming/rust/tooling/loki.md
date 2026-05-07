@@ -1,60 +1,62 @@
 ---
-title: Loki
-main_link: 
-keywords: [loki, rust, prometeus]
-status: draft
+title: loki — Grafana Loki (Rust integration notes)
+main_link: https://grafana.com/oss/loki/
+keywords: [loki, grafana, prometheus, logs, log-aggregation, rust, tracing-loki]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
+# loki — Grafana Loki (Rust integration notes)
 
-> Auto-split from `doc/programming/rust/tooling/tracing.md` by `article_split.py`. Heading: **Loki**.
-
-# Loki
+**Main link:** <https://grafana.com/oss/loki/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+[Grafana Loki](https://grafana.com/oss/loki/) is a horizontally-scalable, multi-tenant **log aggregation system** by Grafana Labs, deliberately modelled on [Prometheus](https://prometheus.io/) — same labels, same architecture, same operator mental model — but for logs instead of metrics. Loki indexes only metadata (labels), not log content, which keeps storage cheap. This article focuses on the **Rust-side integration**: how to ship log lines from a Rust service into a Loki instance.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The Rust integration story for Loki is small but useful:
+
+- **[`tracing-loki`](https://crates.io/crates/tracing-loki)** — a [[tracing]] subscriber layer that pushes spans/events to Loki's HTTP API. The most idiomatic path if you've already standardised on tracing.
+- **Promtail / Vector / Fluent Bit sidecar** — log to stdout/stderr or a file, let an agent ship it. This is the *recommended* shape for production: keep the application simple, let the log-pipeline tool handle batching, retries, and label enrichment. **Vector** in particular is itself a Rust project and pairs cleanly here.
+- **Direct HTTP push** — Loki's [push API](https://grafana.com/docs/loki/latest/reference/loki-http-api/#ingest-logs) is a JSON POST to `/loki/api/v1/push`; trivial to call from `reqwest`. Use only for special cases (one-off scripts, CI uploaders).
+
+Operator's view of Loki itself (single-binary mode, microservices mode, retention, S3 backend, the Mimir/Tempo/Loki "LGTM" stack) lives at the broader observability article — see [[../../../observability/README|observability/]] and pair with [[../../../observability/grafana|grafana]].
+
+**Compared to siblings**:
+
+- **ELK / Elasticsearch + Kibana** — the older incumbent; rich full-text search but expensive to operate.
+- **OpenSearch** — Amazon's Elasticsearch fork; same shape, fewer license headaches.
+- **[[../../../observability/openobserve|OpenObserve]]** — the modern Rust single-binary alternative; covers logs + metrics + traces with much less ops.
+- **CloudWatch / Stackdriver / Azure Monitor** — managed cloud equivalents.
+
+**When to pick Loki**: you already run Grafana for dashboards, your log volume is "moderate" (TB/day, not PB/day), and the *labels* are how you'd actually search (e.g. `{app="payments", env="prod", level="error"}`) rather than full-text content. **Skip Loki** if your search pattern is "find the line containing `userid=12345 amount=$54.32`" — Loki will work but slowly compared to ES or OpenObserve.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[../../../observability/openobserve|openobserve]] — modern Rust single-binary alternative covering logs + metrics + traces.
+- ELK / OpenSearch — the older full-text incumbents.
+- [Vector](https://vector.dev/) — Rust observability data router; the recommended log-shipping sidecar.
+- [Promtail](https://grafana.com/docs/loki/latest/clients/promtail/) — Loki's own log-shipping agent.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[zoxide]] — zoxide _(score 17.1)_
-- [[starship]] — starship _(score 17.1)_
-- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 17.1)_
-- [[tracing]] — Tracing _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
+- [[README]] — tooling section landing.
+- [[tracing]] — pair via `tracing-loki` subscriber.
+- [[../../../observability/grafana|observability/grafana]] — the dashboards over the top.
+- [[../../../observability/README|observability/]] — broader observability stack.
+- [[../../../observability/openobserve|observability/openobserve]] — modern alternative covering all three pillars.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#loki` `#tooling` `#rust` `#programming` `#inspired` `#prometeus` `#interesting`
-
-## TODO
-
-- No `main_link` could be auto-detected. Add the canonical URL (project homepage / repo / paper) to the frontmatter.
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#loki` `#grafana` `#prometheus` `#logs` `#log-aggregation` `#rust` `#tracing-loki` `#observability`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# Loki
-
-
-inspired by prometeus
-
-quite interesting
+- Site: <https://grafana.com/oss/loki/>
+- Repo: <https://github.com/grafana/loki>
+- Rust client crate: `tracing-loki` (<https://crates.io/crates/tracing-loki>).
+- Loki HTTP push API: <https://grafana.com/docs/loki/latest/reference/loki-http-api/>
+- Inspired by Prometheus (same label model, same operator mental model).

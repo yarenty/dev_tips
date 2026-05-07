@@ -1,63 +1,52 @@
 ---
-title: armada
+title: armada — high-performance TCP SYN scanner
 main_link: https://github.com/resyncgg/armada
-keywords: [armada, rust, tcp, scanner]
-status: draft
+keywords: [armada, rust, tcp, syn-scan, port-scan, security, network]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **armada**.
-
-# armada
+# armada — high-performance TCP SYN scanner
 
 **Main link:** <https://github.com/resyncgg/armada>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`armada` is a high-performance TCP SYN scanner by Resync (resyncgg) — equivalent to `nmap -sS`, focused tightly on answering "is this port open?" at scale. It does not do service / OS fingerprinting; it just scans (very) fast and gets out of the way, leaving deeper inspection to whatever tooling you point at the open ports it found. Filed here as a built-with-Rust CLI; the broader port-scanner article in the security tools section covers RustScan (a different tool with similar goals).
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `armada` when you need to scan a large IP range for open ports and `nmap -sS` is too slow. The trade-off is honest: armada is *only* a scanner — no NSE scripts, no version-detection probes, no OS guessing. The expected workflow is **armada to find open ports, then nmap / your-favourite-tool to enumerate**.
+
+**Compared to siblings**:
+
+- **`nmap`** — the universal default; slower at scale but does everything (service detection, scripts, OS fingerprint).
+- **[[../../../tools/security/rustscan|rustscan]]** — the Rust scanner most people reach for first; pipes results into nmap by default. Generally a better starting point than armada unless you have very specific scale needs.
+- **`masscan`** (C) — the long-standing fast-scanner predecessor; can scan the entire IPv4 space in minutes given enough bandwidth.
+- **`zmap`** — even faster, single-port internet-wide scanner; the academic / research tool.
+
+**Ethics note**: SYN scanning *is* port scanning, and unsolicited port scans against networks you don't own can violate computer-misuse laws in most jurisdictions, regardless of whether you "do anything" with the results. Limit use to networks you own, networks where you have explicit written authorisation, or recognised public-research scopes.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- `nmap` — the universal port scanner.
+- [[../../../tools/security/rustscan|rustscan]] — Rust scanner, pipes into nmap; the more common starting point.
+- `masscan` (C) — fast internet-scale scanner.
+- `zmap` — single-port internet-scale scanner.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[uclicious]] — UCLicious _(score 17.1)_
-- [[loki]] — Loki _(score 17.1)_
-- [[starship]] — starship _(score 17.1)_
-- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
+- [[README]] — tooling section landing.
+- [[../../../tools/security/rustscan|rustscan]] — sibling Rust scanner article.
+- [[../../../tools/security/README|tools/security/]] — broader defensive / offensive tools landing.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#armada` `#tooling` `#rust` `#programming` `#tcp` `#scanner` `#syn` `#type`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#armada` `#rust` `#tcp` `#syn-scan` `#port-scan` `#network` `#security` `#cli`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# armada
-
-TCP scanner
-
-https://github.com/resyncgg/armada
-
-Armada is a high performance TCP SYN scanner. This is equivalent to the type of scanning that nmap might perform when you use the -sS scan type. Armada's main goal is to answer the basic question "Is this port open?". It is then up to you, or your tooling, to dig further to identify what an open port is for.
+- Repo: <https://github.com/resyncgg/armada>
+- TCP SYN scanner; equivalent to `nmap -sS`.
+- Goal: answer "is this port open?" at scale; leave service identification to other tooling.

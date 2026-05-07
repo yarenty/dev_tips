@@ -1,63 +1,79 @@
 ---
-title: RUST in JUPYTER
-main_link: 
-keywords: [rust-in-jupyter, rust, jupyter]
-status: draft
+title: rust_in_jupyter — `evcxr_jupyter` kernel for Rust notebooks
+main_link: https://github.com/evcxr/evcxr/blob/main/evcxr_jupyter/README.md
+keywords: [rust-in-jupyter, evcxr, jupyter, notebook, polars, plotters, data-science]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# rust_in_jupyter — `evcxr_jupyter` kernel for Rust notebooks
 
-> Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **RUST in JUPYTER**.
-
-# RUST in JUPYTER
+**Main link:** <https://github.com/evcxr/evcxr/blob/main/evcxr_jupyter/README.md>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`evcxr_jupyter` is a Jupyter kernel that lets you run Rust code in a notebook cell, install crates with `:dep`, and render charts and tables inline. It's built on the same [[repl|`evcxr`]] evaluation engine as the terminal Rust REPL. Install with `cargo install --locked evcxr_jupyter && evcxr_jupyter --install`; thereafter "Rust" appears in the Jupyter / JupyterLab / VS Code notebook kernel picker.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The killer use case is **data exploration in Rust** — pair `evcxr_jupyter` with:
+
+- **[`polars`](https://github.com/pola-rs/polars)** — fast Rust DataFrame library; the same library you'd use in production (Rust crate or Python `polars` package). Notebooks let you iterate on the query *and* keep the production-ready Rust types.
+- **[`plotters`](https://github.com/plotters-rs/plotters)** — Rust drawing library with a `evcxr` integration; renders SVG/PNG inline.
+- **[`ndarray`](https://github.com/rust-ndarray/ndarray)** — for numerics; pairs with `linfa` for ML.
+- **[`tract`](https://github.com/sonos/tract)** / **[`burn`](https://github.com/tracel-ai/burn)** — for inference / model development; iterating in a notebook keeps you fast.
+
+```sh
+cargo install --locked evcxr_jupyter
+evcxr_jupyter --install
+jupyter notebook       # or jupyter lab / VS Code
+```
+
+In a notebook cell:
+
+```rust
+:dep polars = { version = "0.40", features = ["lazy", "csv"] }
+:dep plotters = { version = "0.3", default-features = false, features = ["evcxr", "all_series"] }
+
+use polars::prelude::*;
+let df = LazyCsvReader::new("sales.csv").finish()?
+    .group_by([col("region")])
+    .agg([col("amount").sum()])
+    .collect()?;
+df
+```
+
+**When it shines**: prototyping a data pipeline you'll later extract into a binary; teaching Rust with cells you can iterate on; demos at meetups; reproducible analysis where you want the same crate versions in notebook and prod.
+
+**When it doesn't**: tight async / GUI / native-deps work — the REPL workspace doesn't always cope cleanly with crates that need build scripts. Heavy crates (`tokio` with `full`, `polars` with all features) take 30–60s to compile on first `:dep`. State is per-kernel; restart kernel ⇒ rebuild dependencies.
+
+**Compared to siblings**:
+
+- [Python's Jupyter] — vastly more ecosystem; the natural choice if you don't specifically need Rust types.
+- **[Pluto.jl](https://plutojl.org/)** for Julia — reactive notebooks; different paradigm.
+- **[`marimo`](https://marimo.io/)** for Python — reactive Python notebooks; closer to Pluto's model.
+- **[`Quarto`](https://quarto.org/)** with the Rust engine — closer to literate-programming output.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[repl]] — the underlying `evcxr` engine; terminal REPL.
+- [`polars`](https://github.com/pola-rs/polars) — DataFrame library; the natural pairing.
+- [`plotters`](https://github.com/plotters-rs/plotters) — drawing library with evcxr integration. See also [[../../../visualization/plotters|visualization/plotters]].
+- [Jupyter](https://jupyter.org/) — the notebook host.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[loki]] — Loki _(score 17.1)_
-- [[starship]] — starship _(score 17.1)_
-- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 17.1)_
-- [[dusk_replacement_of_du]] — dusk  - replacement of du _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
+- [[README]] — tooling section landing.
+- [[repl]] — sibling `evcxr` REPL article.
+- [[../../../visualization/plotters|visualization/plotters]] — Rust drawing library used inline in evcxr notebooks.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#rust-in-jupyter` `#tooling` `#rust` `#programming` `#jupyter` `#cargo` `#install` `#evcxr`
-
-## TODO
-
-- No `main_link` could be auto-detected. Add the canonical URL (project homepage / repo / paper) to the frontmatter.
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#rust-in-jupyter` `#evcxr` `#jupyter` `#notebook` `#polars` `#plotters` `#data-science`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# RUST in JUPYTER
-
-cargo install evcxr_jupyter
-
-and just: jupyter notebook
-
-
-----
+- evcxr repo: <https://github.com/evcxr/evcxr>
+- Jupyter kernel install: `cargo install --locked evcxr_jupyter && evcxr_jupyter --install`.
+- After install, launch with `jupyter notebook` (or lab) and pick the "Rust" kernel.

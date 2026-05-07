@@ -1,68 +1,63 @@
 ---
-title: lychee
-main_link: https://github.com/lycheeverse/lychee/tree/master
-keywords: [lychee, rust, checker]
-status: draft
+title: lychee — async link checker for Markdown / HTML
+main_link: https://github.com/lycheeverse/lychee
+keywords: [lychee, rust, link-checker, markdown, html, ci, github-action]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# lychee — async link checker for Markdown / HTML
 
-> Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **lychee**.
-
-# lychee
-
-**Main link:** <https://github.com/lycheeverse/lychee/tree/master>
+**Main link:** <https://github.com/lycheeverse/lychee>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`lychee` is a fast, async, stream-based link checker by Matthias Endler. It scans Markdown, HTML, reStructuredText, source files (extracts URLs from comments), or whole websites, and reports broken hyperlinks and email addresses. It's available as a CLI binary, a Rust library, and an [official GitHub Action](https://github.com/lycheeverse/lychee-action) — the GitHub Action is how most teams use it.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `lychee` whenever you have a content site / docs / vault and want CI to fail when an external link 404s. Common patterns:
+
+```sh
+# Check all markdown in current dir, recursive
+lychee './**/*.md'
+
+# Treat HTTP 429 as success (rate-limited but reachable)
+lychee --accept '200,429' ./README.md
+
+# Skip private / known-flaky hosts
+lychee --exclude 'localhost|example\.com' ./docs/
+
+# Cache results to avoid re-hitting the same URLs
+lychee --cache --max-cache-age 1d ./README.md
+```
+
+Configuration lives at `lychee.toml` next to your sources; the GitHub Action posts a Markdown summary table and (optionally) auto-files an issue.
+
+**Gotchas**: by default lychee follows redirects and will hammer your CI minutes if the target site rate-limits — set `--cache` and `--max-concurrency` to be polite. It does not understand JavaScript-rendered pages (no headless browser); if your site is SPA-only, point lychee at the *built* HTML, not the source. For internal-link-only checking inside an mdBook/Hugo/Jekyll site, the built-in tools (`mdbook-linkcheck`, `htmltest`) are usually faster — use lychee for the *external* sweep.
+
+Compared to siblings: **`markdown-link-check`** (Node) is the most-cited alternative but is single-threaded and slow; **`linkchecker`** (Python) is comprehensive but heavyweight; **`htmltest`** (Go) is fast for static-site outputs; **`mdbook-linkcheck`** is the natural pairing for mdBook projects. Pick `lychee` for cross-project Markdown CI; pick `htmltest` if you only need to check built HTML.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [`markdown-link-check`](https://github.com/tcort/markdown-link-check) — Node, single-threaded, widely used.
+- [`linkchecker`](https://linkchecker.github.io/linkchecker/) — Python, full-website crawler.
+- [`htmltest`](https://github.com/wjdp/htmltest) — Go, fast for built static-site HTML.
+- [`mdbook-linkcheck`](https://github.com/Michael-F-Bryan/mdbook-linkcheck) — mdBook-specific, internal-link focus.
+- [`lychee-action`](https://github.com/lycheeverse/lychee-action) — official GitHub Action wrapper.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[loki]] — Loki _(score 17.1)_
-- [[starship]] — starship _(score 17.1)_
-- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-- [[http]] — Hyper _(score 13.1)_
+- [[README]] — tooling section landing.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#lychee` `#tooling` `#rust` `#programming` `#link` `#checker` `#finds` `#markdown`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#lychee` `#rust` `#link-checker` `#markdown` `#html` `#ci` `#github-action` `#docs`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# lychee
-
-Link checker
- 
-https://github.com/lycheeverse/lychee/tree/master
-
-
-
-⚡ A fast, async, stream-based link checker written in Rust.
-Finds broken hyperlinks and mail addresses inside Markdown, HTML, reStructuredText, or any other text file or website!
-
-Available as a command-line utility, a library and a GitHub Action.
+- Repo: <https://github.com/lycheeverse/lychee>
+- Crate: <https://crates.io/crates/lychee>
+- GitHub Action: <https://github.com/lycheeverse/lychee-action>
+- Install: `cargo install lychee` or `brew install lychee`.

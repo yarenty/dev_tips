@@ -1,72 +1,63 @@
 ---
-title: DeltaLake
+title: delta-rs — Delta Lake from Rust and Python (no Spark)
 main_link: https://github.com/delta-io/delta-rs
-keywords: [delta, rust, lake, level]
-status: draft
+keywords: [delta, deltalake, delta-rs, lakehouse, acid, parquet, datafusion, rust, python]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# DeltaLake
+# delta-rs — Delta Lake from Rust and Python (no Spark)
 
 **Main link:** <https://github.com/delta-io/delta-rs>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+**`delta-rs`** is the Rust (and Python, via PyO3) implementation of the [Delta Lake](https://delta.io/) table format — the open-source storage layer originally built by Databricks that adds ACID transactions, schema enforcement, time-travel, and `MERGE` semantics on top of Parquet files. The project's reason to exist is that Delta Lake's reference implementation is JVM-only (Spark + Delta Standalone); `delta-rs` lets non-Spark applications — Rust services, Pandas / Polars / DuckDB pipelines, ad-hoc Python notebooks — read and write Delta tables without dragging in a JVM. It exposes both a low-level Rust API for integrators and a high-level Python `deltalake` package for everyday data work.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The project answers the very common practical question: *"my company writes Delta tables from Spark, how do I read them from a Rust API server / a Python script / DuckDB without standing up a Spark cluster?"* The answer is `delta-rs` (Rust) or `pip install deltalake` (Python). The Rust side is also the integration point for engines that want native Delta support: **DataFusion** can register a `DeltaTable` as a table provider, and several Rust analytics tools (Daft, polars-delta) use `delta-rs` under the hood.
+
+How it compares to the alternatives in the open-table-format space:
+
+| Format | Reference impl | Rust SDK | Distinguishing trait |
+|---|---|---|---|
+| **Delta Lake** | Spark + Delta core | **`delta-rs`** | Best-supported Databricks lineage; JSON commit log |
+| **Apache Iceberg** | Java | **`iceberg-rust`** | Hidden partitioning, time-travel by snapshot ID, broader engine support (Trino/Flink/Snowflake) |
+| **Apache Hudi** | Spark | (early `hudi-rs`) | Streaming-first, record-level upserts, Uber lineage |
+| **LakeSoul** | Rust + Spark/Flink | (project-native) | Newer, China-origin, niche |
+
+Gotchas to know: **concurrent-write semantics** are non-trivial — Delta uses optimistic concurrency on the JSON commit log, and `delta-rs` has had bug-fix history around multi-writer scenarios (see the linked PRs); **protocol version** matters — tables written with newer Delta protocol features (column mapping, deletion vectors, V2 checkpoints) may be partly unsupported by older `delta-rs` releases (see the project's [Protocol Support Level matrix](https://github.com/delta-io/delta-rs?tab=readme-ov-file#protocol-support-level)); the **Python package is the production focus** — the Rust crate's API has churned more than the Python one.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[iceberg]] — Apache Iceberg + `iceberg-rust`, the main alternative open-table format.
+- [[lakesoul]] — LakeSoul, a newer streaming-first lakehouse format.
+- [[vortex]] — a Parquet-replacement file format (different layer: file vs table).
+- [[../lance_data_format|lance]] — Lance, columnar format optimised for ML use cases.
+- **Apache Hudi** — the third major open table format (record-level upserts, streaming bias).
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[lakesoul]] — Lake soul _(score 24.9)_
-- [[gluten]] — gluten _(score 22.6)_
-- [[git_delta]] — delta _(score 20.9)_
-- [[vortex]] — Vortex (2024-10-17) _(score 17.1)_
-- [[blaze]] — blaze _(score 17.1)_
+- [[README]] — DataFusion ecosystem landing.
+- [[iceberg]] — sibling open-table format article.
+- [[lakesoul]] — streaming-batch lakehouse format.
+- [[../README|rust/data]] — Rust data section.
+- [[../../../../db/formats/README|db/formats]] — broader format landing.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#delta` `#datafusion` `#data` `#rust` `#lake` `#level` `#processing` `#apache`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#delta` `#deltalake` `#delta-rs` `#lakehouse` `#acid` `#parquet` `#datafusion` `#rust` `#python`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Repo: <https://github.com/delta-io/delta-rs>
+- Delta Lake project umbrella: <https://github.com/delta-io>
+- Protocol support matrix: <https://github.com/delta-io/delta-rs?tab=readme-ov-file#protocol-support-level>
+- Concurrent-write PRs (history): <https://github.com/delta-io/delta-rs/pulls?q=concurrent+write>
 
-# DeltaLake
-
-https://github.com/delta-io
-
-
-https://github.com/delta-io/delta-rs
-
-Delta Lake is an open-source storage format that runs on top of existing data lakes. Delta Lake is compatible with processing engines like Apache Spark and provides benefits such as ACID transaction guarantees, schema enforcement, and scalable data handling.
-The Delta Lake project aims to unlock the power of the Deltalake for as many users and projects as possible by providing native low-level APIs aimed at developers and integrators, as well as a high-level operations API that lets you query, inspect, and operate your Delta Lake with ease.
-
-
-https://github.com/delta-io/delta-rs?tab=readme-ov-file#protocol-support-level
-
-
-The deltalake library aims to adopt patterns from other libraries in data processing, so getting started should look familiar.
+### Python quickstart (from the repo)
 
 ```python
 from deltalake import DeltaTable, write_deltalake
@@ -76,20 +67,22 @@ import pandas as pd
 df = pd.DataFrame({"id": [1, 2], "value": ["foo", "boo"]})
 write_deltalake("./data/delta", df)
 
-# Load data from the delta table
+# load data from the delta table
 dt = DeltaTable("./data/delta")
 df2 = dt.to_pandas()
 
 assert df.equals(df2)
 ```
-The same table can also be loaded using the core Rust crate:
+
+### Rust equivalent
+
 ```rust
 use deltalake::{open_table, DeltaTableError};
 
 #[tokio::main]
 async fn main() -> Result<(), DeltaTableError> {
-// open the table written in python
-let table = open_table("./data/delta").await?;
+    // open the table written from Python
+    let table = open_table("./data/delta").await?;
 
     // show all active files in the table
     let files: Vec<_> = table.get_file_uris()?.collect();
@@ -98,5 +91,3 @@ let table = open_table("./data/delta").await?;
     Ok(())
 }
 ```
-
-https://github.com/delta-io/delta-rs/pulls?q=concurrent+write

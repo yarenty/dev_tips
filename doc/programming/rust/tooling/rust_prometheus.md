@@ -1,78 +1,92 @@
 ---
-title: rust-prometheus form tikv
+title: rust_prometheus — TiKV's Prometheus client crate
 main_link: https://github.com/tikv/rust-prometheus
-keywords: [rust-prometheus-form-tikv, rust, enable, metric, prometheus]
-status: draft
+keywords: [rust-prometheus, tikv, prometheus, metrics, observability, exporter, rust]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/tooling/tracing.md` by `article_split.py`. Heading: **rust-prometheus form tikv**.
-
-# rust-prometheus form tikv
+# rust_prometheus — TiKV's Prometheus client crate
 
 **Main link:** <https://github.com/tikv/rust-prometheus>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+[`prometheus`](https://crates.io/crates/prometheus) is the canonical Rust Prometheus client library, originally extracted from [TiKV](https://github.com/tikv/tikv) and now maintained at <https://github.com/tikv/rust-prometheus>. It provides counters, gauges, histograms, summaries, and a `TextEncoder` that produces the standard `/metrics` Prometheus exposition format. The companion crate [`prometheus-static-metric`](https://crates.io/crates/prometheus-static-metric) reduces the per-call overhead of `MetricVec` lookups when the label values are known at compile time.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for the `prometheus` crate when you want your Rust service to expose a `/metrics` endpoint that a Prometheus server (or [[../../../observability/openobserve|OpenObserve]] / Grafana Mimir / VictoriaMetrics / Datadog Agent) scrapes. The standard pattern:
+
+```rust
+use prometheus::{IntCounter, register_int_counter, TextEncoder, Encoder};
+
+lazy_static::lazy_static! {
+    static ref REQUESTS: IntCounter =
+        register_int_counter!("http_requests_total", "Total HTTP requests").unwrap();
+}
+
+async fn handle_metrics() -> impl axum::response::IntoResponse {
+    let mut buf = Vec::new();
+    TextEncoder::new()
+        .encode(&prometheus::gather(), &mut buf)
+        .unwrap();
+    (
+        [(axum::http::header::CONTENT_TYPE, "text/plain; version=0.0.4")],
+        buf,
+    )
+}
+
+// In your handler:
+REQUESTS.inc();
+```
+
+**Crate features**:
+
+- `gen` — regenerate protobuf bindings from a fresh protoc.
+- `nightly` — nightly-only optimisations (specialisation).
+- `process` — adds `process_*` metrics (CPU, RSS, fds) automatically.
+- `push` — Pushgateway client (only useful for short-lived batch jobs).
+
+**Compared to siblings**:
+
+- **[`metrics`](https://crates.io/crates/metrics) + `metrics-exporter-prometheus`** — the more idiomatic *facade* pattern (akin to `log` ↔ `env_logger`). Library code calls `metrics::counter!(...)`; the application chooses the exporter. **For a new project starting today this is usually the better choice** — it lets you switch backends without re-instrumenting.
+- **[`opentelemetry-prometheus`](https://crates.io/crates/opentelemetry-prometheus)** — bridge from the OTel Meter API to a Prometheus scrape endpoint. Use when you want OTel for traces and Prometheus for metrics in the same pipeline.
+- **`prometheus-client`** — the official Prometheus-Rust client (separate from this TiKV-derived one); aimed at OpenMetrics; smaller, cleaner API but less battle-tested.
+
+**When to pick which**: TiKV's `prometheus` is the most-deployed and the safest pick if you want maximum ecosystem compatibility (many crates' `prometheus` features integrate with it directly). `metrics` + exporter is the more flexible *facade* pick. `prometheus-client` is the standards-aligned newcomer.
+
+For the Prometheus *server* (PromQL, retention, alertmanager, federation), see [[../../../observability/prometheus|observability/prometheus]].
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [`metrics`](https://crates.io/crates/metrics) + [`metrics-exporter-prometheus`](https://crates.io/crates/metrics-exporter-prometheus) — facade pattern; often the better starting point.
+- [`prometheus-client`](https://crates.io/crates/prometheus-client) — official client; OpenMetrics-aligned.
+- [`opentelemetry-prometheus`](https://crates.io/crates/opentelemetry-prometheus) — OTel-Meter bridge.
+- [[../../../observability/prometheus|prometheus]] — the server-side article.
+- [[tracing]] / [[open_telemetry]] — for spans/traces; pair with metrics.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[tracing]] — Tracing _(score 41.7)_
-- [[prometheus]] — prometheus _(score 18.9)_
-- [[loki]] — Loki _(score 17.1)_
-- [[starship]] — starship _(score 17.1)_
-- [[programming/rust/tooling/tauri|tauri]] — TAURI _(score 17.1)_
+- [[README]] — tooling section landing.
+- [[../../../observability/prometheus|observability/prometheus]] — Prometheus server / PromQL.
+- [[tracing]] / [[open_telemetry]] — sibling observability primitives.
+- [[loki]] — log-side analogue.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#rust-prometheus-form-tikv` `#tooling` `#rust` `#programming` `#enable` `#metric` `#prometheus` `#static`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#rust-prometheus` `#tikv` `#prometheus` `#metrics` `#observability` `#exporter` `#rust`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# rust-prometheus form tikv
-
-https://github.com/tikv/rust-prometheus
-
-
-Find the latest documentation at https://docs.rs/prometheus.
-
-## Crate features
-This crate provides several optional components which can be enabled via Cargo [features]:
-
-- gen: To generate protobuf client with the latest protobuf version instead of using the pre-generated client.
-
-- nightly: Enable nightly only features.
-
-- process: Enable process metrics support.
-
-- push: Enable push metrics support.
-
-Static Metric
-When using a MetricVec with label values known at compile time prometheus-static-metric reduces the overhead of retrieving the concrete Metric from a MetricVec.
-
-See static-metric directory for details.
+- Repo: <https://github.com/tikv/rust-prometheus>
+- Crate: <https://crates.io/crates/prometheus>
+- Docs: <https://docs.rs/prometheus>
+- Static-metric companion: <https://crates.io/crates/prometheus-static-metric>
+- Crate features:
+  - `gen` — regenerate protobuf client with the latest protoc.
+  - `nightly` — nightly-only optimisations.
+  - `process` — process metrics (CPU/RSS/fds).
+  - `push` — Pushgateway support.
+- Static metric: when label values are known at compile time, `prometheus-static-metric` reduces overhead of looking up the concrete `Metric` from a `MetricVec` (see `static-metric/` in the repo).

@@ -1,81 +1,45 @@
 ---
-title: ADBC !
-main_link: https://github.com/apache/arrow-adbc/tree/main
-keywords: [adbc, rust, arrow, api, sql, retrieval, databases]
-status: draft
+title: ADBC — Arrow Database Connectivity
+main_link: https://arrow.apache.org/adbc/
+keywords: [adbc, arrow, database, jdbc, odbc, columnar, flight-sql, rust]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# ADBC — Arrow Database Connectivity
 
-> Auto-split from `doc/programming/rust/data/db.md` by `article_split.py`. Heading: **ADBC !**.
-
-# ADBC !
-
-**Main link:** <https://github.com/apache/arrow-adbc/tree/main>
+**Main link:** <https://arrow.apache.org/adbc/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+ADBC (Arrow Database Connectivity) is an Apache-Arrow-curated API standard for database access libraries (drivers) in C, Go, Java, Python, and Rust that uses Arrow record batches as the wire format for both result sets and bound parameters. Like JDBC/ODBC it is a generic client-side abstraction with a driver-manager that dynamically loads per-database drivers, but unlike JDBC/ODBC it is built specifically for **bulk columnar data movement** — no per-row marshalling, no Java/C struct conversions. The Rust implementation lives in [`arrow-adbc/rust`](https://github.com/apache/arrow-adbc/tree/main/rust).
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for ADBC when the bottleneck of an existing JDBC/ODBC pipe is the row-by-row marshalling cost (typical when piping a Postgres/Snowflake/DuckDB result set into a Polars/pandas/Arrow-native consumer). The mental model: ODBC was built when "row" was the unit of transfer; ADBC is built when "RecordBatch" is. ADBC and Apache Arrow Flight SQL are complementary — Flight SQL defines a **wire protocol** (gRPC) that databases implement on the server side, while ADBC defines a **client API** that wraps any underlying protocol (Flight SQL, native PG, native MySQL, ...). Together they form an end-to-end Arrow-native stack. Gotchas: the Rust crate is still pre-1.0 and the driver coverage is thinner than JDBC's (the canonical drivers as of 2024 are PostgreSQL, SQLite, Snowflake, DuckDB, BigQuery, Flight SQL).
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- Arrow Flight SQL — Arrow-native server-side wire protocol; ADBC drivers can wrap it.
+- JDBC / ODBC — the row-oriented predecessors; ADBC is explicitly *complementary*, not a replacement for transactional workloads.
+- `tokio-postgres` / `sqlx` — row-oriented Rust drivers; switch when you need Arrow output.
+- DuckDB / DataFusion — both ship native Arrow result sets; ADBC is the standard way to consume them from a generic client.
 
 ## Internal links
+<!-- reviewed -->
+- [[db/formats/table_transfer_protocols/README|Table transfer protocols (Arrow Flight / ADBC)]]
+- [[datafusion/README|DataFusion family]]
+- [[lance_data_format]] — Arrow-friendly columnar format
+- [[programming/rust/io/parsers|Rust parsers]] — adjacent column-oriented IO
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[gluesql]] — GlueSQL _(score 27.0)_
-- [[db]] — diesel _(score 27.0)_
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 27.0)_
-- [[mobc]] — mobc _(score 21.5)_
-- [[barrel]] — barrel _(score 21.5)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#adbc` `#data` `#rust` `#programming` `#arrow` `#api` `#flight` `#sql`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#adbc` `#arrow` `#columnar` `#jdbc` `#odbc` `#flight-sql`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Project site: <https://arrow.apache.org/adbc/>
+- Repo: <https://github.com/apache/arrow-adbc/tree/main>
+- Rust crate: <https://github.com/apache/arrow-adbc/blob/main/rust/src/lib.rs>
+- Introductory blog post: [Introducing ADBC: Database Access for Apache Arrow](https://arrow.apache.org/blog/2023/01/05/introducing-arrow-adbc/)
 
-# ADBC !
-
-
-https://github.com/apache/arrow-adbc/tree/main
-
-
-
-https://github.com/apache/arrow-adbc/blob/main/rust/src/lib.rs
-
-ADBC: Arrow Database Connectivity
-
-ADBC is an API standard (version 1.0.0) for database access libraries ("drivers") in C, Go, and Java that uses Arrow for result sets and query parameters. Instead of writing code to convert to and from Arrow data for each individual database, applications can build against the ADBC APIs, and link against drivers that implement the standard. Additionally, a JDBC/ODBC-style driver manager is provided. This also implements the ADBC APIs, but dynamically loads drivers and dispatches calls to them.
-
-Like JDBC/ODBC, the goal is to provide a generic API for multiple databases. ADBC, however, is focused on bulk columnar data retrieval and ingestion through an Arrow-based API rather than attempting to replace JDBC/ODBC in all use cases. Hence, ADBC is complementary to those existing standards.
-
-Like Arrow Flight SQL, ADBC is an Arrow-based way to work with databases. However, Flight SQL is a protocol defining a wire format and network transport as opposed to an API specification. Flight SQL requires a database to specifically implement support for it, while ADBC is a client API specification for wrapping existing database protocols which could be Arrow-native or not. Together, ADBC and Flight SQL offer a fully Arrow-native solution for clients and database vendors.
-
-For more about ADBC, see the introductory blog post.
-
-Status
-ADBC versions the API standard and the implementing libraries separately.
-
-The API standard (version 1.0.0) is considered stable, but enhancements may be made.
-
-Libraries are under development. For more details, see the documentation.
+ADBC versions the API standard and the implementing libraries separately; the API standard (1.0.0) is considered stable, while individual driver crates are pre-1.0 and under active development.

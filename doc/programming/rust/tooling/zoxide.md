@@ -1,64 +1,56 @@
 ---
-title: zoxide
-main_link: https://crates.io/crates/zoxide
-keywords: [zoxide, rust, smarter]
-status: draft
+title: zoxide — smarter `cd` (autojump replacement)
+main_link: https://github.com/ajeetdsouza/zoxide
+keywords: [zoxide, rust, cd, autojump, z, fasd, shell, navigation]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# zoxide — smarter `cd` (autojump replacement)
 
-> Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **zoxide**.
-
-# zoxide
-
-**Main link:** <https://crates.io/crates/zoxide>
+**Main link:** <https://github.com/ajeetdsouza/zoxide>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`zoxide` is a smarter `cd` command by Ajeet D'Souza, inspired by `z` and `autojump`. It tracks directories you `cd` into and ranks them by [frecency](https://en.wikipedia.org/wiki/Frecency) (frequency × recency), so `z proj` jumps straight to `~/work/projects/awesome-thing` after a few uses. It works on any shell (bash / zsh / fish / nushell / pwsh / xonsh) via a one-liner shell init, and the binary is fast (Rust + sqlite-free flat-file db at `~/.local/share/zoxide/`).
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `zoxide` if you spend half your terminal life typing `cd ~/work/clients/foo/bar/cmd/some-svc/internal`. After the first manual `cd` the path is in the database; thereafter `z svc` is enough. The killer addition is `zi` — interactive fuzzy pick across the database (uses `fzf` if installed). Common patterns:
+
+```sh
+z foo                  # jump by partial name match (frecency-ranked)
+z foo bar              # match dirs containing both substrings
+z -                    # like cd -
+zi                     # interactive picker (needs fzf)
+zoxide query foo       # show what z would jump to
+zoxide remove ~/old    # forget a path
+```
+
+**Setup gotcha**: the `init` line goes in your shell rc *after* anything else that wraps `cd` (e.g. nvm). It re-aliases `cd` to `z` by default — use `--cmd cd` if you want, or pick a different alias if you don't want to override `cd`. **Compared to siblings**: **`autojump`** (Python) and **`z.sh`** (bash) are the originals; both still work but are slower and platform-fussier; **`fasd`** is dead (last commit 2017) but covered the file-jump use case too. Pair with `[[../../../tools/shell/must_have|must_have]]` and `[[starship]]` for a complete fresh-box shell setup.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- `cd`(1) — the POSIX original.
+- [`autojump`](https://github.com/wting/autojump) — Python predecessor; similar ranking idea.
+- [`z.sh`](https://github.com/rupa/z) — original bash implementation; lighter but slower.
+- [`fasd`](https://github.com/clvv/fasd) — file-and-dir jumper; unmaintained.
+- [`fzf`](https://github.com/junegunn/fzf) — pairs with `zi` for fuzzy interactive jumping.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[topgrade]] — topgrade _(score 17.1)_
-- [[loki]] — Loki _(score 17.1)_
-- [[starship]] — starship _(score 17.1)_
-- [[debug]] — Debug _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
+- [[README]] — tooling section landing.
+- [[starship]] — pairs naturally as part of a shell-productivity stack.
+- [[../../../tools/shell/must_have|must_have]] — fresh-box CLI bundle that includes zoxide.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#zoxide` `#tooling` `#rust` `#programming` `#crates` `#smarter` `#command` `#inspired`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#zoxide` `#rust` `#cd` `#shell` `#navigation` `#autojump` `#frecency` `#cli`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# zoxide
-
-https://crates.io/crates/zoxide
-
-zoxide is a smarter cd command, inspired by z and autojump.
-
-It remembers which directories you use most frequently, so you can "jump" to them in just a few keystrokes.
-zoxide works on all major shells.
+- Repo: <https://github.com/ajeetdsouza/zoxide>
+- Crate: <https://crates.io/crates/zoxide>
+- Install: `cargo install zoxide`, `brew install zoxide`, or `apt install zoxide`.
+- Shell init (bash example): `eval "$(zoxide init bash)"`.

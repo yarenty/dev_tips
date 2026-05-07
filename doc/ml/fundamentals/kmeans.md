@@ -33,7 +33,7 @@ status: draft
 - [[programming/rust/sql_engine/books|books]] — Books _(score 20.5)_
 - [[tools/linux/books|books]] — Books _(score 19.4)_
 - [[rtic]] — RTIC _(score 13.1)_
-- [[alagorithms]] — algorithms _(score 13.1)_
+- [[algorithms]] — algorithms _(score 13.1)_
 
 <!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords

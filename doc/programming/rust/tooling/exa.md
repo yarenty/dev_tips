@@ -1,66 +1,54 @@
 ---
-title: EXA
-main_link: https://crates.io/crates/exa
-keywords: [exa, rust, unix, replacement, git, linux]
-status: draft
+title: exa — modern `ls` (unmaintained; use `eza` fork)
+main_link: https://the.exa.website/
+keywords: [exa, eza, rust, ls, unix-replacement, file-listing, cli]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# exa — modern `ls` (unmaintained; use `eza` fork)
 
-> Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **EXA**.
-
-# EXA
-
-**Main link:** <https://crates.io/crates/exa>
+**Main link:** <https://the.exa.website/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`exa` is a Rust replacement for `ls(1)` by Benjamin Sago that adds colour-coding by file type, git-status columns, extended-attribute display, tree mode, and friendlier defaults than POSIX `ls` flags. **As of 2023 the upstream `exa` repo is unmaintained** (Benjamin stopped responding, no releases since 2022); the active community fork is [`eza`](https://github.com/eza-community/eza) at <https://github.com/eza-community/eza>. `eza` is a near-drop-in replacement, available in most package managers, and is what you should actually install in 2024+.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `eza` (not `exa`) when you want a friendlier `ls` for interactive use — colour by file type and git status are the killer features. The flag set is also more sensible (`-l --git --header --classify` instead of cryptic short letters). **Don't alias `ls=eza`** in scripts: column output and option parsing differ enough that `awk`-pipe consumers will break. Common interactive aliases:
+
+```sh
+alias l='eza --icons --git'
+alias ll='eza -l --icons --git --header'
+alias lt='eza --tree --level=2 --icons'
+```
+
+For the `tree`-only niche, see [[../../../tools/design/lstr|lstr]] (lighter, interactive). For broader replace-the-coreutils background, see [[ripgrep]], [[bat]], [[dust]].
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [`eza`](https://github.com/eza-community/eza) — **the active fork**; what to actually install.
+- `ls(1)` — the POSIX original.
+- [`lsd`](https://github.com/lsd-rs/lsd) — Rust competitor, more icon-heavy by default.
+- [[../../../tools/design/lstr|lstr]] — fast minimalist Rust `tree` viewer with interactive mode.
+- [`broot`](https://dystroy.org/broot/) — interactive directory navigator (heavier than tree-mode `eza`).
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[programming/rust/tooling/tools|tools]] — coreutils _(score 27.7)_
-- [[starship]] — starship _(score 17.1)_
-- [[topgrade]] — topgrade _(score 17.1)_
-- [[debug]] — Debug _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
+- [[README]] — tooling section landing.
+- [[bat]] / [[ripgrep]] / [[dust]] — siblings in the "Rust replaces a Unix tool" family.
+- [[../../../tools/shell/must_have|must_have]] — the "fresh box" CLI bundle.
+- [[../../../tools/design/lstr|lstr]] — Rust tree viewer with overlapping niche.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#exa` `#tooling` `#rust` `#programming` `#crates` `#file` `#unix` `#linux`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#exa` `#eza` `#rust` `#ls` `#unix-replacement` `#cli` `#file-listing`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# EXA
-
-new ls
-
-
-https://crates.io/crates/exa
-
-exa is a modern replacement for the venerable file-listing command-line program ls that ships with Unix and Linux operating systems, giving it more features and better defaults. It uses colours to distinguish file types and metadata. It knows about symlinks, extended attributes, and Git. And it’s small, fast, and just one single binary.
-
-By deliberately making some decisions differently, exa attempts to be a more featureful, more user-friendly version of ls. For more information, see exa’s website.
+- Original (unmaintained) site: <https://the.exa.website/>
+- Original repo: <https://github.com/ogham/exa> (no commits since 2022)
+- **Active fork:** <https://github.com/eza-community/eza>
+- Crate (legacy): <https://crates.io/crates/exa>

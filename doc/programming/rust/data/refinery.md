@@ -1,61 +1,63 @@
 ---
-title: refinery
+title: refinery — embedded SQL migration runner
 main_link: https://crates.io/crates/refinery
-keywords: [refinery, rust, powerful, sql]
-status: draft
+keywords: [refinery, migration, sql, postgres, mysql, sqlite, mssql]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/data/db.md` by `article_split.py`. Heading: **refinery**.
-
-# refinery
+# refinery — embedded SQL migration runner
 
 **Main link:** <https://crates.io/crates/refinery>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`refinery` is an embedded SQL migration runner inspired by Java's Flyway. You write `V<n>__<name>.sql` files (or Rust `Migration::unapplied` programs), point refinery at a connection, and it tracks applied versions in a `refinery_schema_history` table. Driver coverage is good: PostgreSQL (`tokio-postgres`, `postgres`), MySQL (`mysql`, `mysql_async`), SQLite (`rusqlite`), and MSSQL (`tiberius`). Async + sync flavours are both supported via feature flags.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `refinery` when you want a thin, no-drama, Flyway-style migration runner that doesn't require a particular ORM. The decision tree: **`diesel-migrations`** if your app is built on Diesel; **`sea-orm-migration`** if it's built on SeaORM; **`sqlx-cli migrate`** if it's built on sqlx (and you don't mind the binary on the deploy host); **`refinery`** for everything else. Refinery's killer feature is being **embedded** — your CLI/server can run pending migrations on startup with a few lines, no separate `migrate` binary needed. Gotchas: rollback ("undo") is intentionally not supported (Flyway parity, considered an antipattern); the `embed_migrations!` macro reads files at compile time so the binary ships its migrations baked in (this is usually what you want); be careful with backend-specific dialect — refinery does not abstract SQL.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[barrel]] — Rust DSL for *generating* schema SQL; pair with refinery to run it.
+- `diesel-migrations` — Diesel's bundled runner.
+- `sea-orm-migration` — SeaQL's runner with a builder DSL.
+- `sqlx-cli migrate` — sqlx's runner; comparable feature set.
+- Flyway / Liquibase / Alembic / Atlas — non-Rust prior art.
 
 ## Internal links
+<!-- reviewed -->
+- [[barrel]]
+- [[programming/rust/sql_engine/diesel|diesel]]
+- [[rusqlite]]
+- [[mysql]]
+- [[tiberius]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[mobc]] — mobc _(score 21.5)_
-- [[gluesql]] — GlueSQL _(score 21.5)_
-- [[barrel]] — barrel _(score 21.5)_
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 21.5)_
-- [[programming/rust/sql_engine/sqlparser|sqlparser]] — SQLparser _(score 17.5)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#refinery` `#data` `#rust` `#programming` `#crates` `#powerful` `#sql` `#migration`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#refinery` `#migration` `#sql` `#postgres` `#sqlite` `#mssql`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Crate: <https://crates.io/crates/refinery>
+- Repo: <https://github.com/rust-db/refinery>
 
-# refinery 
+> Powerful SQL migration toolkit for Rust.
 
-https://crates.io/crates/refinery
+Supported drivers (feature-gated): `tokio-postgres`, `postgres`, `mysql`, `mysql_async`, `rusqlite`, `tiberius`.
 
-Powerful SQL migration toolkit for Rust
+Typical workflow:
+
+```rust
+use refinery::embed_migrations;
+
+embed_migrations!("./migrations");
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let mut conn = postgres::Client::connect("...", postgres::NoTls)?;
+    migrations::runner().run(&mut conn)?;
+    Ok(())
+}
+```
+
+Migration files in `./migrations/V1__init.sql`, `V2__add_users.sql`, etc.

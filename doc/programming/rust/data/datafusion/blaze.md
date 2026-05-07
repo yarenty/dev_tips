@@ -1,77 +1,76 @@
 ---
-title: blaze
-main_link: 
-keywords: [blaze, rust, apache, distributed]
-status: draft
+title: Blaze — Spark accelerator on DataFusion
+main_link: https://github.com/kwai/blaze
+keywords: [blaze, spark, datafusion, native, vectorized, accelerator, kuaishou, arrow]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Blaze — Spark accelerator on DataFusion
 
-# blaze
+**Main link:** <https://github.com/kwai/blaze>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+**Blaze** is a Spark plugin (originally open-sourced by Kuaishou / Kwai) that takes a fully optimised Spark physical plan and rewrites it into a DataFusion execution plan, then runs the compute-intensive operators inside Spark executors as native Rust code via JNI. The data path is Apache Arrow throughout, so Blaze returns `ArrowColumnarBatch` to the JVM with no row materialisation. The pitch is the usual columnar / vectorised / native trifecta — Spark's distributed control plane + DataFusion's single-node speed — sold mainly through TPC-DS benchmark numbers.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Blaze sits in the **"native Spark accelerator"** category that has become crowded since 2022. The nearest neighbours are:
+
+| Project | Vendor | Native engine | Status |
+|---|---|---|---|
+| **Blaze** | Kuaishou (independent) | DataFusion (Rust) | Active, no Apache governance |
+| **Apache Gluten** | Intel + community → Apache Incubator | Velox or ClickHouse (C++) | Most "official" of the bunch |
+| **Apache Comet** | Apple → Apache Incubator | DataFusion (Rust) | Newer, the more idiomatic DataFusion path |
+| **Photon** | Databricks | C++, proprietary | Closed source, only on Databricks runtimes |
+| **Velox** | Meta | — (it's the engine) | A library, not a Spark plugin |
+
+For a Rust-on-DataFusion accelerator the modern recommendation is **Comet** (Apache governance, Apple-backed, larger contributor base); Blaze remains the older, single-vendor incumbent on the same architectural slot. The mental model is identical to Comet: ScalaSpark plan → Substrait/protobuf → DataFusion plan → native execution → Arrow back to the JVM.
+
+Gotchas: any Spark plugin lives or dies by **operator coverage** — anything unsupported falls back to vanilla Spark with a `RowToColumnar`/`ColumnarToRow` round-trip that can erase the speed-up; the JNI / off-heap memory dance interacts with `spark.memory.offHeap.size`; and you're locking your cluster to whichever Spark minor versions the project's shim layer supports.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[gluten]] — Apache Gluten, the Velox/ClickHouse-backed sibling.
+- **Apache Comet** — the more "official" DataFusion-backed Spark plugin (Apache Incubator).
+- **Photon** — Databricks' proprietary C++ accelerator with the same pitch.
+- **Velox (Meta)** — the C++ vectorised engine Gluten and Presto-on-Velox use.
+- [[rapids]] — NVIDIA's GPU-side Spark accelerator (different axis: GPU vs CPU-native).
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[gluten]] — gluten _(score 22.5)_
-- [[vortex]] — Vortex (2024-10-17) _(score 22.1)_
-- [[iceberg]] — Iceberg _(score 22.1)_
-- [[rapids]] — Spark rapids _(score 17.1)_
-- [[delta]] — DeltaLake _(score 17.1)_
+- [[README]] — DataFusion ecosystem landing.
+- [[gluten]] — sibling Spark accelerator (Velox / ClickHouse backends).
+- [[rapids]] — GPU-side Spark accelerator.
+- [[../README|rust/data]] — Rust data landing.
+- [[../../../../db/analytics/datafusion/README|db/analytics/datafusion]] — DataFusion analytics-side notes.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#blaze` `#datafusion` `#data` `#rust` `#spark` `#native` `#apache` `#plan`
-
-## TODO
-
-- No `main_link` could be auto-detected. Add the canonical URL (project homepage / repo / paper) to the frontmatter.
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#blaze` `#spark` `#datafusion` `#native` `#vectorized` `#accelerator` `#kuaishou` `#arrow`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Repo: <https://github.com/kwai/blaze>
+- Apache Comet (the modern DataFusion-on-Spark sibling): <https://datafusion.apache.org/comet/>
 
-# blaze
+### Architecture, per the project README
 
-BLAZE
-TPC-DS master-ce7-builds
+> Blaze takes a fully optimized physical plan from Spark, mapping it into DataFusion's execution plan, and performs native plan computation in Spark executors.
 
-The Blaze accelerator for Apache Spark leverages native vectorized execution to accelerate query processing. It combines the power of the Apache Arrow-DataFusion library and the scale of the Spark distributed computing framework.
+High-level components:
 
-Blaze takes a fully optimized physical plan from Spark, mapping it into DataFusion's execution plan, and performs native plan computation in Spark executors.
+- **Spark Extension** — hooks the accelerator into Spark's execution lifetime.
+- **Spark Shims** — version-specific glue per Spark minor.
+- **Native Engine** (Rust) — `ExecutionPlan` protobuf spec, JNI gateway, custom operators / expressions / functions.
 
-Blaze is composed of the following high-level components:
+Extension axes (inherited from DataFusion's pluggability):
 
-Spark Extension: hooks the whole accelerator into Spark execution lifetime.
-Spark Shims: specialized codes for different versions of spark.
-Native Engine: implements the native engine in rust, including:
-ExecutionPlan protobuf specification
-JNI gateway
-Customized operators, expressions, functions
-Based on the inherent well-defined extensibility of DataFusion, Blaze can be easily extended to support:
+- Object stores
+- Operators
+- Scalar and aggregate functions
+- File formats
 
-Various object stores.
-Operators.
-Simple and Aggregate functions.
-File formats.
-We encourage you to extend DataFusion capability directly and add the supports in Blaze with simple modifications in plan-serde and extension translation.
+The maintainers' guidance is to extend DataFusion upstream first, then wire the new capability into Blaze with small `plan-serde` + extension-translation tweaks.

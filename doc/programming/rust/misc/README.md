@@ -10,7 +10,7 @@ status: draft
 
 ## Articles
 
-- [algorithms](alagorithms.md)
+- [algorithms](algorithms.md)
 - [Coreaudio](audio.md)
 - [Awesome embedded in rust](awesome_embedded_in_rust.md)
 - [charts](charts.md)

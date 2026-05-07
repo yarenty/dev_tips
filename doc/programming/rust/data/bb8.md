@@ -1,79 +1,57 @@
 ---
-title: bb8
+title: bb8 — async connection pool
 main_link: https://crates.io/crates/bb8
-keywords: [bb8, rust, databases]
-status: draft
+keywords: [bb8, connection-pool, async, tokio, database, rust]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/data/db.md` by `article_split.py`. Heading: **bb8**.
-
-# bb8
+# bb8 — async connection pool
 
 **Main link:** <https://crates.io/crates/bb8>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`bb8` is a full-featured async connection pool for Tokio, originally a port of `r2d2`'s API to async-await. It is backend-agnostic: any type implementing the `ManageConnection` trait can be pooled (Postgres, Redis, Bolt/Neo4j, Tiberius/MSSQL, Diesel, lapin/AMQP, …). Compared to `deadpool` and `mobc`, `bb8` has the smallest API surface and stays closest to the historical `r2d2` shape, which makes it the easiest pool to learn if you already know `r2d2`.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Pick `bb8` when you want a thin, opinionated, Tokio-only pool with the same mental model as `r2d2` — connections are acquired with `pool.get().await` and returned via `Drop`. The trait you implement is small (`connect`, `is_valid`, `has_broken`) which makes wrapping a new driver straightforward. Gotchas: bb8 is **Tokio-only** (no `async-std`/`smol` runtime support), the `bb8-postgres`/`bb8-redis` adapters lag the upstream crate by a release or two, and there is no built-in metrics/event hooks (compare `deadpool`'s richer state). For most new code in 2024+, `deadpool` has more momentum and a wider adapter ecosystem; `bb8` survives because it's tiny and stable.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[deadpool]] — the most-popular async pool today, multi-runtime, richer hook surface.
+- [[mobc]] — async pool inspired by Go's `database/sql` pool; less popular than the above two.
+- [[r2d2]] — the synchronous predecessor; same mental model, blocking API.
+- `sqlx` — has its own built-in pool, no `bb8`/`deadpool` needed.
+- `tokio-postgres` — the canonical bb8 backend.
 
 ## Internal links
+<!-- reviewed -->
+- [[deadpool]]
+- [[mobc]]
+- [[r2d2]]
+- [[tiberius]] — uses `bb8-tiberius` for MSSQL pooling
+- [[../concurrency/tokio|tokio]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[r2d2]] — r2d2 _(score 22.5)_
-- [[db]] — diesel _(score 22.5)_
-- [[diesel]] — diesel _(score 18.5)_
-- [[tiberius]] — tiberius _(score 17.1)_
-- [[barrel]] — barrel _(score 17.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#bb8` `#data` `#rust` `#programming` `#connection` `#connections` `#database` `#crates`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#bb8` `#connection-pool` `#async` `#tokio` `#database`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Crate: <https://crates.io/crates/bb8>
+- Repo: <https://github.com/djc/bb8>
 
-# bb8
+Adapter crates (most live in-tree under the `bb8` repo):
 
-https://crates.io/crates/bb8
-
-full-featured connection pool, designed for asynchronous connections (using tokio). Originally based on r2d2.
-
-Opening a new database connection every time one is needed is both inefficient and can lead to resource exhaustion under high traffic conditions. A connection pool maintains a set of open connections to a database, handing them out for repeated use.
-
-bb8 is agnostic to the connection type it is managing. Implementors of the ManageConnection trait provide the database-specific logic to create and check the health of connections.
-
-A (possibly not exhaustive) list of adapters for different backends:
-
-| Backend |	Adapter Crate |
-|-----|-----|
-| tokio-postgres	| bb8-postgres (in-tree)
-| redis	| bb8-redis (in-tree)
-| rsmq	| rsmq_async
-| bolt-client	| bb8-bolt
-| diesel	| bb8-diesel
-| tiberius	| bb8-tiberius
-| nebula-client	| bb8-nebula
-| memcache-async	| bb8-memcached
-| lapin	| bb8-lapin
+| Backend | Adapter |
+|---|---|
+| `tokio-postgres` | `bb8-postgres` |
+| `redis` | `bb8-redis` |
+| `rsmq` | `rsmq_async` |
+| `bolt-client` | `bb8-bolt` |
+| `diesel` | `bb8-diesel` |
+| `tiberius` | `bb8-tiberius` |
+| `nebula-client` | `bb8-nebula` |
+| `memcache-async` | `bb8-memcached` |
+| `lapin` | `bb8-lapin` |

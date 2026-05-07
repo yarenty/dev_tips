@@ -1,63 +1,43 @@
 ---
-title: mobc
+title: mobc — generic async connection pool
 main_link: https://crates.io/crates/mobc
-keywords: [mobc, rust, sql]
-status: draft
+keywords: [mobc, connection-pool, async, tokio, async-std, database]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/data/db.md` by `article_split.py`. Heading: **mobc**.
-
-# mobc
+# mobc — generic async connection pool
 
 **Main link:** <https://crates.io/crates/mobc>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`mobc` is a generic async connection pool inspired by `r2d2` and Go's `database/sql` package. It supports both Tokio and async-std runtimes via feature flags and offers the standard `ConnectionManager` trait for plugging in any backend (`mobc-postgres`, `mobc-redis`, `mobc-reql`, `mobc-arangors`, `mobc-lapin`, …).
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+`mobc` exists in roughly the same niche as `bb8` and `deadpool` and works fine, but it has noticeably less mindshare than either today — fewer maintained adapters, slower release cadence, fewer downstream production users. Reach for it if (a) you specifically want the Go-`sql.DB`-style API (max idle / max open / lifetime knobs that match Go semantics one-for-one), or (b) you need an adapter that only ships as `mobc-<backend>`. Otherwise the modern default is `deadpool`. Gotchas: the runtime feature flags (`tokio`, `async-std`) are not additive — pick one; metrics support requires the `prometheus` feature.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[deadpool]] — the modern default async pool.
+- [[bb8]] — Tokio-only, smaller API; the other historical choice.
+- [[r2d2]] — synchronous predecessor.
+- Go `database/sql` — direct API inspiration.
 
 ## Internal links
+<!-- reviewed -->
+- [[deadpool]]
+- [[bb8]]
+- [[r2d2]]
+- [[../concurrency/tokio|tokio]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[gluesql]] — GlueSQL _(score 21.5)_
-- [[barrel]] — barrel _(score 21.5)_
-- [[refinery]] — refinery _(score 21.5)_
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 21.5)_
-- [[programming/rust/sql_engine/sqlparser|sqlparser]] — SQLparser _(score 17.5)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#mobc` `#data` `#rust` `#programming` `#crates` `#inspired` `#golang` `#sql`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#mobc` `#connection-pool` `#async` `#tokio` `#database`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Crate: <https://crates.io/crates/mobc>
+- Repo: <https://github.com/importcjj/mobc>
 
-# mobc
-
-https://crates.io/crates/mobc
-
-A generic connection pool with async/await support.
-
-Inspired by r2d2 and Golang SQL package.
+> A generic connection pool with async/await support. Inspired by r2d2 and Go's `database/sql` package.

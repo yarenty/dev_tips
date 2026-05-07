@@ -1,68 +1,57 @@
 ---
-title: starship
-main_link: https://crates.io/crates/starship
-keywords: [starship, rust, customizable, shell]
-status: draft
+title: starship — cross-shell, language-aware prompt
+main_link: https://starship.rs/
+keywords: [starship, rust, prompt, shell, zsh, bash, fish, powerline]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# starship — cross-shell, language-aware prompt
 
-> Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **starship**.
-
-# starship
-
-**Main link:** <https://crates.io/crates/starship>
+**Main link:** <https://starship.rs/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`starship` is a fast, minimal, infinitely customisable prompt for any shell, written in Rust. It works on bash, zsh, fish, PowerShell, ion, elvish, tcsh, nushell, xonsh, and cmd; activated with a single `eval "$(starship init <shell>)"` line. The prompt auto-detects context (git repo + branch + status, language toolchain version for ~30 languages, container/k8s context, AWS profile, battery, command duration, exit status) and shows only what's relevant.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `starship` if you want a prompt that *just works* — sane defaults, no shell-specific config, configured by a single `~/.config/starship.toml`. The killer feature is the **toml config that's the same on every shell and machine**: dotfile sync once, prompt ready everywhere. Compared to:
+
+- **`oh-my-zsh` themes / `agnoster` / `powerline-shell`** (Python) — older, slower, zsh-only or shell-specific.
+- **`pure` / `lean` / `spaceship`** (zsh) — fast and minimal but zsh-only.
+- **`p10k` (powerlevel10k)** — zsh-only; arguably faster than starship at the extreme but with much heavier config; instant-prompt mode is the killer feature p10k still does better.
+- **Plain `PS1=…`** — fastest, infinite work to get the same features.
+
+Pick `starship` if you switch shells / have multiple OSes; pick `p10k` if you live in zsh and want maximal speed.
+
+**Gotchas**: the prompt *does* spawn the language-version detector for every prompt redraw (e.g. `node --version` in a node repo). On slow boxes or NFS this adds up; the `~/.config/starship.toml` lets you `disabled = true` on modules you don't need (`[python] disabled = true`). Nerd Font is required for the icon glyphs to render; install one of [nerdfonts.com](https://www.nerdfonts.com/) and set your terminal to use it.
+
+Pair with [[zoxide]] (smarter cd) for a complete shell-productivity setup; both are typically on `must_have` lists for a fresh box.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- `oh-my-zsh` themes — older, zsh-only, slower.
+- `pure` / `lean` (Sindre Sorhus) — minimal zsh prompts.
+- `powerlevel10k` — zsh-only; very fast with instant-prompt.
+- `powerline-shell` — Python; slower; older niche.
+- [[zoxide]] / [[bat]] — natural pairings in a CLI productivity stack.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[repl]] — iRust _(score 17.1)_
-- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 17.1)_
-- [[debug]] — Debug _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-- [[lance_data_format]] — Lance _(score 13.1)_
+- [[README]] — tooling section landing.
+- [[zoxide]] — pairs naturally as part of a shell-productivity setup.
+- [[../../../tools/shell/must_have|must_have]] — fresh-box bundle.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#starship` `#tooling` `#rust` `#programming` `#fast` `#customizable` `#crates` `#prompt`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#starship` `#rust` `#prompt` `#shell` `#zsh` `#bash` `#fish` `#cross-shell`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# starship
-
-https://crates.io/crates/starship
-
-The minimal, blazing-fast, and infinitely customizable prompt for any shell!
-
-Fast: it's fast – really really fast! 🚀
-Customizable: configure every aspect of your prompt.
-Universal: works on any shell, on any operating system.
-Intelligent: shows relevant information at a glance.
-Feature rich: support for all your favorite tools.
-Easy: quick to install – start using it in minutes.
+- Site: <https://starship.rs/>
+- Repo: <https://github.com/starship/starship>
+- Install: `curl -sS https://starship.rs/install.sh | sh` or `brew install starship` or `cargo install starship --locked`.
+- Activate: `eval "$(starship init bash)"` (or zsh / fish / etc.) in your shell rc.
+- Config: `~/.config/starship.toml`.

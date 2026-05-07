@@ -1,73 +1,50 @@
 ---
-title: deadpool
+title: deadpool — async object pool
 main_link: https://crates.io/crates/deadpool
-keywords: [deadpool, rust, pool, objects]
-status: draft
+keywords: [deadpool, connection-pool, async, tokio, async-std, database, redis]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/data/db.md` by `article_split.py`. Heading: **deadpool**.
-
-# deadpool
+# deadpool — async object pool
 
 **Main link:** <https://crates.io/crates/deadpool>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`deadpool` is "a dead simple async pool for connections and objects of any type" — and in 2024 it's the most popular async pool in the Rust ecosystem, with first-party adapter crates for nearly every common backend (`deadpool-postgres`, `deadpool-redis`, `deadpool-lapin`, `deadpool-sqlite`, `deadpool-r2d2`, `deadpool-diesel`). The core crate offers two pools: a **managed** pool that creates/recycles objects on demand (`Manager` trait), and an **unmanaged** pool for objects you build yourself.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Default to `deadpool` when starting a new async-Rust project that needs DB/Redis/AMQP pooling and doesn't already use `sqlx` (which has its own built-in pool). Why deadpool over `bb8` or `mobc`: (a) the largest official adapter set, (b) supports both Tokio and async-std runtimes via feature flags, (c) richer hooks (post-create/pre-recycle callbacks, timeouts split per-acquire/per-create/per-recycle, status struct exposing live counts). Gotchas: the per-backend adapter crates version independently from `deadpool` core — pin them carefully; `deadpool-postgres` wraps `tokio-postgres` (not `sqlx`), so if you're on `sqlx` you don't need it. The "managed" vs "unmanaged" distinction often confuses newcomers — managed is what 99% of users want.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[bb8]] — Tokio-only async pool, smaller API surface, the historical alternative.
+- [[mobc]] — Go-`database/sql`-inspired async pool; less popular today.
+- [[r2d2]] — synchronous predecessor; still the right pick for blocking drivers like classic `diesel`.
+- `sqlx::Pool` — built into `sqlx`; don't add deadpool on top.
+- `tokio-postgres` — most common deadpool backend.
 
 ## Internal links
+<!-- reviewed -->
+- [[bb8]]
+- [[mobc]]
+- [[r2d2]]
+- [[../concurrency/tokio|tokio]]
+- [[../net/README|Rust net]] — `deadpool-redis`, `deadpool-lapin` etc. live there in spirit
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[programming/rust/data/mysql|mysql]] — mysql _(score 26.0)_
-- [[r2d2]] — r2d2 _(score 17.1)_
-- [[adbc]] — ADBC ! _(score 17.1)_
-- [[cargo_toml]] — Cargo.toml _(score 13.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#deadpool` `#data` `#rust` `#programming` `#pool` `#objects` `#managed` `#enabled`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#deadpool` `#connection-pool` `#async` `#tokio` `#postgres` `#redis`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Crate: <https://crates.io/crates/deadpool>
+- Repo: <https://github.com/bikeshedder/deadpool>
 
-# deadpool
+Two pool flavours:
 
-https://crates.io/crates/deadpool
+- **Managed** (`deadpool::managed::Pool`) — implement the `Manager` trait (`create`, `recycle`); pool calls them as needed. Enabled via the `managed` feature. Use this for connection pools.
+- **Unmanaged** (`deadpool::unmanaged::Pool`) — you push pre-built objects in; pool just hands them out. Enabled via `unmanaged`.
 
-Deadpool is a dead simple async pool for connections and objects of any type.
-
-This crate provides two implementations:
-
-Managed pool (deadpool::managed::Pool)
-
-Creates and recycles objects as needed
-Useful for database connection pools
-Enabled via the managed feature in your Cargo.toml
-Unmanaged pool (deadpool::unmanaged::Pool)
-
-All objects either need to be created by the user and added to the pool manually. It is also possible to create a pool from an existing collection of objects.
-Enabled via the unmanaged feature in your Cargo.toml
+First-party adapters: `deadpool-postgres`, `deadpool-redis`, `deadpool-sqlite`, `deadpool-lapin`, `deadpool-diesel`, `deadpool-r2d2`, `deadpool-amqprs`, `deadpool-redis-cluster`, `deadpool-runtime`, …

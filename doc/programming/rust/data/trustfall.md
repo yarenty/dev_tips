@@ -1,69 +1,45 @@
 ---
-title: Trustfall
+title: Trustfall — query engine over arbitrary data sources
 main_link: https://github.com/obi1kenobi/trustfall
-keywords: [trustfall, rust, querying, graph, databases, models]
-status: draft
+keywords: [trustfall, query-engine, graph, graphql, adapter]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# Trustfall
+# Trustfall — query engine over arbitrary data sources
 
 **Main link:** <https://github.com/obi1kenobi/trustfall>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Trustfall is a query engine for **any kind of data source** — APIs, databases, files on disk, GitHub repos, RSS feeds, even AI models — created by Predrag Gruevski (also the author of `cargo-semver-checks`, which is itself built on Trustfall). You write GraphQL-like queries with extra constructs (filters, recursion, type coercions), implement an `Adapter` trait that yields an iterator of vertices and edges from your data source, and Trustfall handles the rest. The model is closer to a **GraphQL-over-anything** layer than to a SQL or graph DB.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for Trustfall when you have **structured data scattered across heterogeneous sources** and want a single query language that joins across them — the canonical demo is `cargo-semver-checks`, which queries Rust crate ASTs to find breaking-change patterns; other adapters in the wild query HackerNews APIs, Wikipedia, RSS feeds, file-system trees, and crates.io metadata. Compared to GraphQL: Trustfall queries can recurse, filter on edges, and traverse arbitrary depth. Compared to graph databases (Neo4j / SurrealDB): Trustfall has no storage layer of its own — it's a *query engine*, you bring the data adapter. Compared to SQL: it's column-traversal-style rather than relational-algebra-style. Gotchas: adapter performance is entirely your responsibility (no automatic pushdown to the source); the query language has a learning curve even for SQL/GraphQL veterans; the project is small and one-maintainer. Try it in the browser at <https://play.predr.ag/>.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- GraphQL — closest mainstream cousin; Trustfall is GraphQL-shaped but more powerful.
+- Cypher / Gremlin — graph query languages; Trustfall is similarly traversal-based but adapter-driven.
+- `jq` — for JSON-on-disk; Trustfall wins on cross-source joins and typed schemas.
+- `cargo-semver-checks` — flagship Trustfall application worth studying.
 
 ## Internal links
+<!-- reviewed -->
+- [[meilisearch]]
+- [[gluesql]]
+- [[sqlparser]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[db]] — diesel _(score 22.5)_
-- [[diesel]] — diesel _(score 18.5)_
-- [[meilisearch]] — Meilisearch _(score 17.1)_
-- [[programming/rust/data/seaquery|seaquery]] — SeaQuery _(score 17.1)_
-- [[parseable]] — parseable _(score 17.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#trustfall` `#data` `#rust` `#programming` `#query` `#engine` `#querying` `#kind`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#trustfall` `#query-engine` `#graphql` `#graph` `#adapter`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Repo: <https://github.com/obi1kenobi/trustfall>
+- Crates.io: <https://crates.io/crates/trustfall>
+- Playground: <https://play.predr.ag/>
+- 10-min talk + demo: linked from the README.
+- Real-world examples (HackerNews, RSS, Wikipedia, GitHub, crates.io adapters) in the trustfall org.
 
-# Trustfall
-
-- query engine
-- uses graph
-- low code pipeline definitiuons
-
-
-https://github.com/obi1kenobi/trustfall
-
-
-Trustfall is a query engine for querying any kind of data source, from APIs and databases to any kind of files on disk — and even AI models.
-
-Try Trustfall in your browser
-10min tech talk + demo
-Examples of querying real-world data with Trustfall
+> Trustfall is a query engine for querying any kind of data source — from APIs and databases to files on disk and AI models.

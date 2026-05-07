@@ -1,62 +1,57 @@
 ---
-title: iRust
-main_link: https://gitpod.io/#https://github.com/sigmaSd/IRust
-keywords: [repl, rust, gitpod, cross, platform]
-status: draft
+title: repl — `evcxr` and `iRust`, REPLs for Rust
+main_link: https://github.com/evcxr/evcxr
+keywords: [repl, evcxr, irust, rust, jupyter, interactive, prototyping]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# repl — `evcxr` and `iRust`, REPLs for Rust
 
-# iRust
-
-**Main link:** <https://gitpod.io/#https://github.com/sigmaSd/IRust>
+**Main link:** <https://github.com/evcxr/evcxr>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+There is no built-in `cargo repl`, but two third-party Rust REPLs cover the niche:
+
+- **[`evcxr`](https://github.com/evcxr/evcxr)** — David Lattimore's evaluation context for Rust. Run with `cargo install --locked evcxr_repl` and launch `evcxr`. Supports `:dep serde = "1"` to pull crates on the fly, multi-line entry, persistent variables across statements, and is the substrate behind [[rust_in_jupyter|`evcxr_jupyter`]].
+- **[`IRust`](https://github.com/sigmaSd/IRust)** — Mahmoud Saleh's terminal Rust REPL with syntax highlighting, async support, hint completion, and racer-style autocomplete. Try without installing via Gitpod: <https://gitpod.io/#https://github.com/sigmaSd/IRust>.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Rust's compile-and-run model means REPLs aren't the day-to-day workflow they are in Python — but they are surprisingly useful for:
+
+- **Quick API exploration** — `:dep tokio = { version = "1", features = ["full"] }` then play.
+- **Numerical experiments** in [[rust_in_jupyter|Jupyter via `evcxr_jupyter`]] — pair with `polars` and `plotters` for ad-hoc data work.
+- **Teaching / interview prep** — show a chain of `let` statements building up a concept without reaching for a `main.rs` scaffold.
+- **Debugging serialization** — `:dep serde_json` then poke at JSON shapes interactively.
+
+**Pick `evcxr`** if you want the same engine that powers Jupyter; **pick `iRust`** if you want a more polished terminal UX (better syntax highlighting and completion). Both are slow to start (compile-on-eval) compared to a Python REPL — Rust isn't trying to be Python here.
+
+**Gotchas**: every `:dep` triggers a real `cargo build` of that crate inside the REPL's hidden workspace; first use of a heavy crate (e.g. `tokio` with `full` features) takes 30+ seconds. Borrow-checker errors interrupt mid-sentence in a way that can feel jarring. State is per-process; killing the REPL loses everything.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [`IRust`](https://github.com/sigmaSd/IRust) — terminal REPL alternative.
+- [[rust_in_jupyter]] — `evcxr_jupyter` kernel for Jupyter notebooks.
+- [Rust Playground](https://play.rust-lang.org/) — browser-based, no install, single-snippet only.
+- Python `ipython` / `bpython` — what Rust REPLs are not aspiring to be.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[starship]] — starship _(score 17.1)_
-- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 17.1)_
-- [[debug]] — Debug _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-- [[programming/rust/tooling/bottom|bottom]] — bottom _(score 13.1)_
+- [[README]] — tooling section landing.
+- [[rust_in_jupyter]] — Jupyter kernel built on evcxr.
+- [[../learning/_must_have|learning/_must_have]] — broader "what to install when learning Rust".
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#repl` `#tooling` `#rust` `#programming` `#gitpod` `#crates` `#cross` `#platform`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#repl` `#evcxr` `#irust` `#rust` `#interactive` `#jupyter` `#prototyping`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# iRust
-
-https://crates.io/crates/irust
-
-
-Cross Platform Rust Repl
-
-You can try out IRust with no installation or setup (via Gitpod.io) by visiting https://gitpod.io/#https://github.com/sigmaSd/IRust
+- evcxr repo: <https://github.com/evcxr/evcxr>
+- iRust repo: <https://github.com/sigmaSd/IRust>
+- Crate (iRust): <https://crates.io/crates/irust>
+- Try iRust without installing: <https://gitpod.io/#https://github.com/sigmaSd/IRust>
+- Install: `cargo install evcxr_repl` or `cargo install irust`.

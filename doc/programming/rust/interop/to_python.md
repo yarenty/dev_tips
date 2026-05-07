@@ -1,72 +1,98 @@
 ---
-title: Rust - Python interactions
-main_link: https://github.com/apache/datafusion-python/blob/branch-36/Cargo.toml
-keywords: [to-python, rust, python, pyo3, apache]
-status: draft
+title: Rust → Python (publishing recipe)
+main_link: https://pyo3.rs
+keywords: [to-python, rust, python, pyo3, maturin, datafusion, pypi]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Rust → Python (publishing recipe)
 
-# Rust - Python interactions
-
-**Main link:** <https://github.com/apache/datafusion-python/blob/branch-36/Cargo.toml>
+**Main link:** <https://pyo3.rs>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+This is the recipe page for the most common Rust ↔ Python interop
+question: *"I have a Rust crate; how do I make it usable from Python and
+publish it to PyPI?"* The canonical answer is [[pyo3|PyO3]] for the FFI
+bindings + [[maturin]] for the build/wheel/upload pipeline. Apache
+[DataFusion-Python](https://github.com/apache/datafusion-python) is the
+flagship real-world example to read — it's a substantial Rust SQL engine
+shipped as `pip install datafusion`.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The minimal end-to-end flow is:
+
+1. **Cargo.toml**: set `crate-type = ["cdylib"]` and depend on `pyo3` with
+   the right Python-version feature (`extension-module`, optionally
+   `abi3-py38` for a single wheel across Python versions).
+2. **`#[pymodule]`** function in `lib.rs` that registers your
+   `#[pyfunction]`s and `#[pyclass]`es. PyO3's
+   [conversion table](https://pyo3.rs/main/conversions/tables) tells you
+   which Rust types map automatically and which need explicit conversion.
+3. **pyproject.toml** with `[build-system] requires = ["maturin>=1.4,<2"]`
+   and `build-backend = "maturin"`.
+4. **`maturin develop`** for the inner loop, **`maturin build --release`**
+   for a wheel, **`maturin publish`** (or CI + `pypa/gh-action-pypi-publish`)
+   to push to PyPI.
+
+Things to settle up front, before you write a line of binding code:
+
+- **Sync vs async**: PyO3 supports `#[pyfunction] async fn` since 0.21 by
+  bridging to `asyncio` via `pyo3-async-runtimes`. Decide whether your
+  Python API is sync or async — the calling code looks very different.
+- **GIL discipline**: long Rust computations should release the GIL with
+  `py.allow_threads(|| { ... })` so other Python threads can run.
+- **Error mapping**: implement `From<MyError> for PyErr` (or use
+  `pyo3::exceptions::PyValueError::new_err(msg)`) — don't `unwrap()` your
+  way out, that panics across the FFI boundary.
+- **Distribution matrix**: cibuildwheel + maturin in GitHub Actions is the
+  standard recipe. For Linux you want manylinux (or `--zig` cross-build);
+  for macOS, `universal2`; for Windows, both x64 and ARM64 if you care.
+- **Type stubs**: ship a `.pyi` next to the `.so` so IDEs see proper
+  signatures. PyO3 doesn't auto-generate stubs;
+  [pyo3-stub-gen](https://github.com/Jij-Inc/pyo3-stub-gen) does.
+
+For the *inverse* direction (embed CPython inside Rust), see
+[[programming/rust/interop/python|interop/python (PUFF)]]. For Apache
+Ballista's pyo3-based Python bindings as a worked example, see
+[[ballista_py]].
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[pyo3|PyO3]] — the FFI binding crate.
+- [[maturin]] — wheel-build & publish tool.
+- [[ballista_py]] — Python bindings for distributed DataFusion.
+- `setuptools-rust` — older alternative to maturin for setuptools shops.
+- `uniffi-rs` — Mozilla's multi-language binding generator (Python +
+  Kotlin + Swift) when you also need mobile bindings.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[maturin]] — maturin _(score 29.1)_
-- [[pyo3]] — pyo3 _(score 24.5)_
-- [[python]] — PUFF _(score 21.7)_
-- [[apache]] — apache _(score 17.0)_
-- [[cargo_toml]] — Cargo.toml _(score 13.1)_
+- [[pyo3|PyO3]] — FFI layer.
+- [[maturin]] — build & publish.
+- [[programming/rust/interop/python|interop/python]] — the inverse
+  direction (embed CPython in Rust).
+- [[ballista_py]] — worked PyO3 example.
+- [[README]] — Rust interop landing.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#to-python` `#interop` `#rust` `#programming` `#python` `#pyo3` `#datafusion` `#interactions`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#to-python` `#rust` `#python` `#pyo3` `#maturin` `#pypi` `#interop`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- [PyO3 user guide](https://pyo3.rs/v0.20.0/getting_started)
+- [Calling Rust from Python using PyO3 (saidvandeklundert)](https://saidvandeklundert.net/learn/2021-11-18-calling-rust-from-python-using-pyo3/)
+  — short blog intro.
+- [PyO3 conversion tables](https://pyo3.rs/v0.20.0/conversions/tables) —
+  Rust ↔ Python type mapping reference.
 
-# Rust - Python interactions
+### Datafusion (worked example)
 
-## pyo3
-
-[Pyo3](https://pyo3.rs/v0.20.0/getting_started) - guide and how to expose rust in python and python in rust
-
-[Calling rust from python](https://saidvandeklundert.net/learn/2021-11-18-calling-rust-from-python-using-pyo3/) - short blog intro article
-
-
-
-https://pyo3.rs/v0.20.0/conversions/tables
-
-
-
-
-### Datafusion
-
-[datafusion-python](https://github.com/apache/datafusion-python/blob/branch-36/Cargo.toml)
+[apache/datafusion-python](https://github.com/apache/datafusion-python) —
+DataFusion's Python bindings, built with PyO3 + maturin. A good
+production-grade reference for crate layout, CI, manylinux wheels, async
+patterns, and stub generation.

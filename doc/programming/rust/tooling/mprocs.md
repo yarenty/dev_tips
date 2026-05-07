@@ -1,59 +1,79 @@
 ---
-title: mprocs - replacement of tmux for long running processes!
-main_link: 
-keywords: [mprocs-replacement-of-tmux-for-long-running-processes, rust, mprocs, replacement, tmux]
-status: draft
+title: mprocs — multi-process TUI orchestrator
+main_link: https://github.com/pvolok/mprocs
+keywords: [mprocs, rust, procfile, foreman, overmind, hivemind, tui, dev]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# mprocs — multi-process TUI orchestrator
 
-> Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **mprocs - replacement of tmux for long running processes!**.
-
-# mprocs - replacement of tmux for long running processes!
+**Main link:** <https://github.com/pvolok/mprocs>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`mprocs` is a Rust TUI by Pavel Volok that runs *N* commands in parallel, each in its own pane, with one combined keymap to switch focus / send keys / restart. The classic use is the local-dev workflow where you'd otherwise have a tmux window per service: `web`, `worker`, `db`, `redis`, `tail -f log`. Configuration is a single `mprocs.yaml` next to your repo describing the processes to start.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `mprocs` when:
+
+- You have a known fixed set of long-running dev processes that you always start together.
+- You want to *see all logs at once* in one window, switch focus to one with a key, and not deal with `tmux` ergonomics.
+- You want the config in version-controlled YAML so a teammate can `mprocs` and reproduce your dev session.
+
+Sample config:
+
+```yaml
+# mprocs.yaml
+procs:
+  web:
+    cmd: ['cargo', 'run', '--bin', 'web']
+  worker:
+    cmd: ['cargo', 'run', '--bin', 'worker']
+  db:
+    shell: 'docker compose up postgres'
+  redis:
+    shell: 'docker compose up redis'
+  logs:
+    shell: 'tail -F logs/*.log'
+```
+
+**Compared to siblings**:
+
+- **Procfile + [`foreman`](https://github.com/ddollar/foreman) (Ruby)** / **`forego` (Go)** / **`honcho` (Python)** — same idea, no TUI; logs interleaved into stdout. Good for `heroku local`-style "just run it".
+- **[`overmind`](https://github.com/DarthSim/overmind) (Go)** — Procfile + tmux, attach to a single process for interactive use. The most direct competitor to `mprocs`.
+- **[`hivemind`](https://github.com/DarthSim/hivemind)** — overmind's lighter sibling without tmux.
+- **`docker compose up`** — equivalent if every service is already a container.
+- **[[zellij]] / `tmux`** — general-purpose multiplexers; `mprocs` is the *configured workspace* shape.
+
+Pick `mprocs` when (a) you want a TUI and (b) you don't already have tmux muscle memory. Pick `overmind` when you have tmux muscle memory and want Procfile compatibility. Pick `docker compose` when everything is containerised already.
+
+**Gotchas**: `mprocs` doesn't auto-restart on file change (pair with [[watchexec]] or `cargo watch` inside the command); shell-vs-cmd distinction matters for shell expansion; the YAML format has changed across versions — pin a version in CI.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [`foreman`](https://github.com/ddollar/foreman) (Ruby) / `forego` (Go) / `honcho` (Python) — Procfile runners.
+- [`overmind`](https://github.com/DarthSim/overmind) — Procfile + tmux; closest competitor.
+- `docker compose up` — container-shaped equivalent.
+- [[zellij]] / `tmux` — general-purpose multiplexers.
+- [[watchexec]] — pair with mprocs to auto-restart processes on file change.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[programming/rust/tooling/zellij|zellij]] — zellij - replacement of tmux - with colors and stuff _(score 29.4)_
-- [[dusk_replacement_of_du]] — dusk  - replacement of du _(score 23.4)_
-- [[tools/linux/zellij|zellij]] — Zellij _(score 18.0)_
-- [[tools/linux/tmux|tmux]] — TMUX _(score 18.0)_
-- [[tools/linux/tmux|tmux]] — Tmux _(score 18.0)_
+- [[README]] — tooling section landing.
+- [[zellij]] — sibling but general-purpose multiplexer.
+- [[../../../tools/linux/tmux|tools/linux/tmux]] — tmux article (overmind's substrate).
+- [[watchexec]] — file-watch runner; pair with mprocs.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#mprocs-replacement-of-tmux-for-long-running-processes` `#tooling` `#rust` `#programming` `#mprocs` `#replacement` `#tmux` `#long`
-
-## TODO
-
-- No `main_link` could be auto-detected. Add the canonical URL (project homepage / repo / paper) to the frontmatter.
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#mprocs` `#rust` `#tui` `#procfile` `#foreman` `#overmind` `#dev-workflow` `#orchestration`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# mprocs - replacement of tmux for long running processes! 
-like DB, logs , ...
-
-cargo install mprocs
+- Repo: <https://github.com/pvolok/mprocs>
+- Crate: <https://crates.io/crates/mprocs>
+- Install: `cargo install mprocs` or `brew install mprocs`.
+- Use case: long-running dev processes (DB, server, log tail) side-by-side in one TUI.

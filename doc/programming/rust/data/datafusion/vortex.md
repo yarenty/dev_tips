@@ -1,77 +1,83 @@
 ---
-title: Vortex (2024-10-17)
+title: Vortex — modern compressed columnar file format
 main_link: https://github.com/spiraldb/vortex
-keywords: [vortex, rust, apache, arrow, gpus, compilers]
-status: draft
+keywords: [vortex, spiral, columnar, parquet, arrow, compression, file-format, fastlanes, alp]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# Vortex (2024-10-17)
+# Vortex — modern compressed columnar file format
 
 **Main link:** <https://github.com/spiraldb/vortex>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+**Vortex** is a Rust toolkit and aspiring file format for compressed Apache Arrow arrays — in-memory, on-disk, and over-the-wire — built by [Spiral](https://spiraldb.com/). The pitch is to be **what DataFusion is to query engines, or what LLVM+Clang are to compilers**: a highly extensible, batteries-included framework for building modern columnar file formats. The headline claim is "aspiring successor to Apache Parquet" with **100-200× faster random-access reads** and **2-10× faster scans**, while keeping comparable compression ratios and write throughput. It supports very wide tables (10s of thousands of columns) and aims at on-device GPU decompression.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Vortex sits at the **file-format** layer (one below the table-format layer occupied by [[delta|Delta Lake]] / [[iceberg|Iceberg]] / [[lakesoul|LakeSoul]]). The contemporaries to compare against:
+
+| Format | Vendor | Distinguishing trait |
+|---|---|---|
+| **Apache Parquet** | community / ASF | The incumbent; columnar, ~20-year-old design heritage from Trevni/Dremel |
+| **Vortex** | Spiral | Pluggable encodings (FastLanes, ALP, FSST, BtrBlocks); fast random access; GPU-aware design |
+| **Lance** | LanceDB | ML-first columnar format; great random access for vector / image columns |
+| **Nimble** | Meta | Velox-side replacement for Parquet inside Meta's stack |
+| **Apache ORC** | community / ASF | Hive-lineage Parquet sibling, less general adoption |
+
+What makes Vortex architecturally interesting:
+
+- **Logical types separate from physical layout** — schema definition makes no claim about encoding; encoder picks per column.
+- **Cascading + pluggable compression** — FastLanes, ALP, FSST, BtrBlocks-style strategies, recursively composable.
+- **Zero-copy to / from Arrow** — "canonicalised" Vortex arrays are bit-equivalent to Arrow.
+- **Compute on encoded data** — basic kernels (filter pushdown) operate without full decompression.
+- **Lazy statistics** — each array carries summary stats, available to compressors and to query planners.
+- **GPU decompression on the roadmap** — the small intentional set of data-parallel encodings is chosen with vectorised / SIMD / GPU paths in mind.
+
+When to reach for it (today, late 2024 / 2025): you're **building a new system** and Parquet's random-access cost is your bottleneck (analytics over many small lookups, vector-DB-shaped workloads, ML feature stores). When *not* to: anything that has to interoperate with the existing Parquet ecosystem (Spark, Hive, Trino, Snowflake, BigQuery), where Vortex isn't yet a recognised input. The format is young; expect rough edges and breaking changes.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **Apache Parquet** — the incumbent file format Vortex aims to succeed.
+- [[../lance_data_format|lance]] — LanceDB's ML-first columnar format, similar generation.
+- **Nimble (Meta)** — Velox-side Parquet replacement.
+- **FastLanes / ALP / FSST / BtrBlocks** — modern compression encodings Vortex bundles.
+- **Apache Arrow** — the in-memory format Vortex zero-copies to/from.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[gluten]] — gluten _(score 23.4)_
-- [[blaze]] — blaze _(score 22.1)_
-- [[iceberg]] — Iceberg _(score 22.1)_
-- [[rapids]] — Spark rapids _(score 17.1)_
-- [[delta]] — DeltaLake _(score 17.1)_
+- [[README]] — DataFusion ecosystem landing.
+- [[../lance_data_format|lance]] — sibling modern columnar format (ML-first).
+- [[delta]] — table-format layer above (uses Parquet today).
+- [[iceberg]] — table-format layer above (uses Parquet/ORC/Avro today).
+- [[../../../../db/formats/README|db/formats]] — broader format landing.
+- [[../../../../db/formats/nimble_file_format/README|nimble]] — Meta's Velox-side Parquet replacement.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#vortex` `#datafusion` `#data` `#rust` `#apache` `#arrow` `#encodings` `#file`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#vortex` `#spiral` `#columnar` `#parquet` `#arrow` `#compression` `#file-format` `#fastlanes` `#alp`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Repo: <https://github.com/spiraldb/vortex>
+- Spiral (the company): <https://spiraldb.com/>
+- BtrBlocks (the reference compression strategy): <https://github.com/maxi-k/btrblocks>
+- FastLanes (one of the encodings): <https://github.com/cwida/FastLanes>
 
-# Vortex (2024-10-17)
+> Vortex is designed to be to columnar file formats what Apache DataFusion is to query engines (or, analogously, what LLVM + Clang are to compilers): a highly extensible & extremely fast framework for building a modern columnar file format, with a state-of-the-art, "batteries included" reference implementation.
+>
+> Vortex is an aspiring successor to Apache Parquet, with dramatically faster random access reads (100-200× faster) and scans (2-10× faster), while preserving approximately the same compression ratio and write throughput. It will also support very wide tables (at least 10s of thousands of columns) and (eventually) on-device decompression on GPUs.
 
-https://github.com/spiraldb/vortex
+### Major features (per the project README, 2024-10)
 
-Vortex is a toolkit for working with compressed Apache Arrow arrays in-memory, on-disk, and over-the-wire.
-
-Vortex is designed to be to columnar file formats what Apache DataFusion is to query engines (or, analogously, what LLVM + Clang are to compilers): a highly extensible & extremely fast framework for building a modern columnar file format, with a state-of-the-art, "batteries included" reference implementation.
-
-Vortex is an aspiring successor to Apache Parquet, with dramatically faster random access reads (100-200x faster) and scans (2-10x faster), while preserving approximately the same compression ratio and write throughput. It will also support very wide tables (at least 10s of thousands of columns) and (eventually) on-device decompression on GPUs.
-
-
-
-The major features of Vortex are:
-
-- Logical Types - a schema definition that makes no assertions about physical layout.
-- Zero-Copy to Arrow - "canonicalized" (i.e., fully decompressed) Vortex arrays can be zero-copy converted to/from Apache Arrow arrays.
-- Extensible Encodings - a pluggable set of physical layouts. In addition to the builtin set of Arrow-compatible encodings, the Vortex repository includes a number of state-of-the-art encodings (e.g., FastLanes, ALP, FSST, etc.) that are implemented as extensions. While arbitrary encodings can be implemented as extensions, we have intentionally chosen a small set of encodings that are highly data-parallel, which in turn allows for efficient vectorized decoding, random access reads, and (in the future) decompression on GPUs.
-- Cascading Compression - data can be recursively compressed with multiple nested encodings.
-- Pluggable Compression Strategies - the built-in Compressor is based on BtrBlocks, but other strategies can trivially be used instead.
-- Compute - basic compute kernels that can operate over encoded data (e.g., for filter pushdown).
-- Statistics - each array carries around lazily computed summary statistics, optionally populated at read-time. These are available to compute kernels as well as to the compressor.
-- Serialization - Zero-copy serialization of arrays, both for IPC and for file formats.
-- Columnar File Format (in progress) - A modern file format that uses the Vortex serde library to store compressed array data. Optimized for random access reads and extremely fast scans; an aspiring successor to Apache Parquet.
+- **Logical Types** — schema separate from physical layout.
+- **Zero-Copy to Arrow** — canonicalised Vortex arrays convert to/from Arrow with no copy.
+- **Extensible Encodings** — FastLanes, ALP, FSST, etc., as pluggable extensions; the chosen set is intentionally small and data-parallel for vectorised / GPU decoding.
+- **Cascading Compression** — recursive nesting of encodings.
+- **Pluggable Compression Strategies** — built-in `Compressor` based on BtrBlocks; substitutable.
+- **Compute** — basic kernels operating directly on encoded data (e.g., filter pushdown).
+- **Statistics** — per-array lazy summary stats, usable by compressor and planner.
+- **Serialization** — zero-copy IPC + on-disk serialisation.
+- **Columnar File Format** — in progress; the stretch goal is a Parquet-successor file format on top of the Vortex serde layer.

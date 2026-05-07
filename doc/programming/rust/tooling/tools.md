@@ -1,78 +1,66 @@
 ---
-title: coreutils
-main_link: https://github.com/Zij-IT/clido
-keywords: [rust, linux, replacement, tmux]
-status: draft
+title: tools — historical "coreutils" parent (post-split index)
+main_link: 
+keywords: [tools, rust, cli, coreutils, index]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# coreutils
-
-**Main link:** <https://github.com/Zij-IT/clido>
+# tools — historical "coreutils" parent (post-split index)
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+This file is the historical parent of what is now most of the `tooling/` section. The auto-splitter previously extracted 18 sibling articles out of a single multi-topic file titled "coreutils"; what remains here is the empty husk plus a pointer at each child. For the curated thematic index of this section, see [[README]].
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The original raw notes were a single line — `cargo install coreutils` — referring to the [`uutils/coreutils`](https://github.com/uutils/coreutils) project (a Rust-language re-implementation of GNU coreutils, the `cat`/`ls`/`cp`/`mv`/`mkdir`/`rm`/etc. set). That project is genuinely interesting (Ubuntu announced in early 2025 that its 25.10 release would adopt `uutils/coreutils` by default), but it isn't the same as any of the *individual* Rust replacements covered as siblings here:
+
+- `uutils/coreutils` aims to be a **drop-in `cat`/`ls`/`cp`** that matches GNU semantics byte-for-byte — invisible by design.
+- The siblings ([[bat]], [[exa]], [[dust]], [[ripgrep]], [[bottom]], etc.) are deliberately ***not* drop-ins** — they choose new defaults, new flags, new output formats.
+
+You almost never want both: `uutils` if you want the GNU semantic invariants but a Rust implementation; the siblings if you want a friendlier UX.
+
+For the actual section index — which tool to reach for in which situation — see [[README]].
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [`uutils/coreutils`](https://github.com/uutils/coreutils) — the actual "Rust coreutils" project the original note pointed at.
+- [[bat]] / [[exa]] / [[dust]] / [[ripgrep]] / [[bottom]] / [[bandwhich]] / [[zoxide]] / [[topgrade]] / [[difftastic]] / [[lychee]] — the friendlier-than-GNU siblings.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[mprocs]] — mprocs - replacement of tmux for long running processes! _(score 29.4)_
-- [[programming/rust/tooling/zellij|zellij]] — zellij - replacement of tmux - with colors and stuff _(score 29.4)_
-- [[dusk_replacement_of_du]] — dusk  - replacement of du _(score 23.4)_
-- [[tools/linux/zellij|zellij]] — Zellij _(score 22.3)_
-- [[tools/linux/tmux|tmux]] — TMUX _(score 22.3)_
+- [[README]] — the curated thematic index for this section.
+- [[bat]] / [[exa]] / [[dust]] / [[ripgrep]] / [[bottom]] — Unix-replacement siblings.
+- [[zellij]] / [[mprocs]] — multiplexers.
+- [[starship]] / [[zoxide]] / [[watchexec]] — shell productivity.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#tools` `#tooling` `#rust` `#programming` `#crates` `#linux` `#ripgrep` `#windows`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#tools` `#rust` `#cli` `#coreutils` `#uutils` `#index`
 
 ## References / raw notes
-<!-- auto-split by article_split.py -->
-> Auto-split: 18 additional top-level heading(s) extracted into sibling files:
-> - [dusk  - replacement of du](dusk_replacement_of_du.md)
-> - [mprocs - replacement of tmux for long running processes!](mprocs.md)
-> - [zellij - replacement of tmux - with colors and stuff](zellij.md)
-> - [ripgrep](ripgrep.md)
-> - [BAT](bat.md)
-> - [EXA](exa.md)
-> - [bottom](bottom.md)
-> - [RUST in JUPYTER](rust_in_jupyter.md)
-> - [zoxide](zoxide.md)
-> - [clido](clido.md)
-> - [joshuto](joshuto.md)
-> - [topgrade](topgrade.md)
-> - [Bandwhich](bandwhich.md)
-> - [starship](starship.md)
-> - [difftastic](difftastic.md)
-> - [armada](armada.md)
-> - [watchexec](watchexec.md)
-> - [lychee](lychee.md)
 
+- Original cryptic note: `cargo install coreutils` — referring to [`uutils/coreutils`](https://github.com/uutils/coreutils) (Rust re-implementation of GNU coreutils; Ubuntu 25.10+ default).
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+This file was the auto-split parent of these siblings:
 
-# coreutils
-
-cargo isntall coreutile
+- [[dust]] (was `dusk_replacement_of_du`) — `du` replacement.
+- [[mprocs]] — multi-process TUI orchestrator.
+- [[zellij]] — terminal multiplexer.
+- [[ripgrep]] — `grep` replacement.
+- [[bat]] — `cat` replacement.
+- [[exa]] — `ls` replacement.
+- [[bottom]] — `top` replacement.
+- [[rust_in_jupyter]] — `evcxr_jupyter` kernel.
+- [[zoxide]] — smarter `cd`.
+- [[clido]] — CLI to-do list.
+- [[joshuto]] — terminal file manager.
+- [[topgrade]] — package-manager orchestrator.
+- [[bandwhich]] — bandwidth-by-process top.
+- [[starship]] — cross-shell prompt.
+- [[difftastic]] — syntax-aware diff.
+- [[armada]] — TCP SYN scanner.
+- [[watchexec]] — file-watch runner.
+- [[lychee]] — link checker.

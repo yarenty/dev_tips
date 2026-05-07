@@ -1,88 +1,62 @@
 ---
-title: Cache
+title: Cache — Moka and quick_cache
 main_link: https://crates.io/crates/moka
-keywords: [cache, rust, moka, sql, replacement]
-status: draft
+keywords: [cache, moka, quick_cache, lru, concurrent, in-memory]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/data/map_cache_storage.md` by `article_split.py`. Heading: **Cache**.
-
-# Cache
+# Cache — Moka and quick_cache
 
 **Main link:** <https://crates.io/crates/moka>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+This article covers the two leading **in-process** Rust cache crates: `moka` (the modern default, inspired by Java's Caffeine) and `quick_cache` (the lightweight low-overhead alternative). Both provide bounded concurrent hash-map-style caches with eviction policies; `moka` adds time-to-live, time-to-idle, weight-based bounds, and async support; `quick_cache` deliberately omits those for ~10× lower per-op overhead. For function-result memoisation specifically, the older [`cached`](https://crates.io/crates/cached) crate is the canonical choice.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+**Default to `moka`** for any cache where you want TTL, async/await support, eviction notifications, or weight-based capacity (e.g. byte-bounded caches over heterogeneous values). It scales well to many threads, supports both sync (`moka::sync::Cache`) and async (`moka::future::Cache`) flavours, and the API mirrors Caffeine which has 10+ years of tuning behind it. Reach for `quick_cache` when you have a hot read path where the cache itself shows up in a profile and you can live without TTL and event listeners — typical for tight inner loops in a query planner, compiler cache, or HTTP middleware. Reach for `cached` when you specifically want the `#[cached]` proc-macro to memoise a function with one line. Don't reach for `lru` (the crate) unless you specifically need single-threaded LRU with a tiny dep tree — moka's eviction is more sophisticated.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[map_cache_storage]] — DashMap concurrent map (the backing structure for many caches).
+- `cached` — function-memoisation with `#[cached]` macro.
+- `lru` — minimal single-threaded LRU.
+- `mini-moka` — moka's smaller sibling.
+- Java Caffeine — direct API inspiration for moka.
+- Memcached / Redis — out-of-process equivalents.
 
 ## Internal links
+<!-- reviewed -->
+- [[map_cache_storage]] — DashMap (concurrent map)
+- [[memory_storage]] — evmap (eventually-consistent multi-map)
+- [[compilation_cache]] — sccache (build cache; very different scope)
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[map_cache_storage]] — DashMap _(score 38.5)_
-- [[programming/rust/data/sqlparser|sqlparser]] — sqlparser _(score 21.5)_
-- [[gluesql]] — GlueSQL _(score 21.5)_
-- [[barrel]] — barrel _(score 21.5)_
-- [[programming/rust/sql_engine/sqlparser|sqlparser]] — SQLparser _(score 17.5)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#cache` `#data` `#rust` `#programming` `#moka` `#crates` `#quick` `#concurrent`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#cache` `#moka` `#quick_cache` `#lru` `#concurrent`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Moka
 
-# Cache
+- Crate: <https://crates.io/crates/moka>
+- Repo: <https://github.com/moka-rs/moka>
 
-## Moka
+> Moka is a fast, concurrent cache library for Rust, inspired by the Caffeine library for Java. Cache implementations on top of hash maps that support full concurrency of retrievals and high expected concurrency for updates. Also provides a non-thread-safe cache for single-thread applications. Bounded with a best-effort entry-replacement algorithm.
 
-https://crates.io/crates/moka
+### quick_cache
 
+- Crate: <https://crates.io/crates/quick_cache>
+- Repo: <https://github.com/arthurprs/quick-cache>
 
-Moka is a fast, concurrent cache library for Rust. Moka is inspired by the Caffeine library for Java.
-
-Moka provides cache implementations on top of hash maps. They support full concurrency of retrievals and a high expected concurrency for updates. Moka also provides a non-thread-safe cache implementation for single thread applications.
-
-All caches perform a best-effort bounding of a hash map using an entry replacement algorithm to determine which entries to evict when the capacity is exceeded.
-
-
-
-
-
-## quick cache
-
-https://crates.io/crates/quick_cache
-
-
-Lightweight and high performance concurrent cache optimized for low cache overhead.
-
-- Small overhead compared to a concurrent hash table
-- Scan resistent and high hit rate caching policy
-- Scales well with the number of threads
-- Doesn't use background threads
-- 100% safe code in the crate
-- Small dependency tree
-
-- The implementation is optimized for use cases where the cache access times and overhead can add up to be a significant cost. Features like: time to live, cost weighting, or event listeners; are not current implemented in Quick Cache. If you need these features you may want to take a look at the Moka crate.
+> Lightweight and high-performance concurrent cache optimised for low cache overhead.
+>
+> - Small overhead vs. a concurrent hash table.
+> - Scan-resistant, high hit-rate caching policy.
+> - Scales well with thread count.
+> - No background threads.
+> - 100% safe code.
+> - Small dependency tree.
+>
+> Optimised for use cases where access time and overhead can add up to a significant cost. Features like TTL, cost weighting, or event listeners are **not** implemented — use Moka if you need them.

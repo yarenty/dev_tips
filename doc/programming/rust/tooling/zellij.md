@@ -1,58 +1,66 @@
 ---
-title: zellij - replacement of tmux - with colors and stuff
-main_link: 
-keywords: [zellij-replacement-of-tmux-with-colors-and-stuff, rust, zellij, replacement, tmux]
-status: draft
+title: zellij — modern terminal multiplexer (tmux replacement)
+main_link: https://zellij.dev/
+keywords: [zellij, rust, terminal-multiplexer, tmux, screen, layouts, plugins, wasm]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# zellij — modern terminal multiplexer (tmux replacement)
 
-> Auto-split from `doc/programming/rust/tooling/tools.md` by `article_split.py`. Heading: **zellij - replacement of tmux - with colors and stuff**.
-
-# zellij - replacement of tmux - with colors and stuff
+**Main link:** <https://zellij.dev/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`zellij` is a Rust terminal multiplexer / workspace by Aram Drevekenin (also of [[bandwhich]]). It does the same job as `tmux`/`screen` — split the terminal into panes/tabs, persist sessions across SSH disconnects — but with discoverable defaults: a status bar with all keybindings always visible, mouse support, layouts described in KDL, floating panes, and a Wasm plugin system. Sessions are detached and re-attached with `zellij attach`.
+
+> Filename ambiguity: `zellij.md` exists at both `programming/rust/tooling/zellij.md` (this — built-with-Rust angle) and [[../../../tools/linux/zellij|tools/linux/zellij]] (the user-facing tools angle). Both are linked.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `zellij` if `tmux` has always felt user-hostile (the leader key, no on-screen affordances, plugin ecosystem in plain bash) and you want the same persistence model with modern UX. The killer features are:
+
+1. **Always-visible keybinding hint bar** at the bottom — no more `man tmux`-driven exploration.
+2. **Layouts as data** (KDL files) — `zellij --layout dev.kdl` opens a pre-shaped workspace.
+3. **Floating panes** — useful for ephemeral tools (a quick lazygit) without disrupting the main layout.
+4. **Wasm plugins** — write status-bar widgets / pickers in any language that compiles to Wasm.
+
+**Compared to `tmux`**: zellij is friendlier on day one but less battle-tested at extreme scale (hundreds of nested sessions, exotic terminal types). `tmux`'s plugin ecosystem (TPM, tmux-resurrect, tmux-continuum) is still richer. **Cross-link**: the broader tmux deep-dive lives at [[../../../tools/linux/tmux|tools/linux/tmux]] (config, plugins, ~/.tmux.conf starter, vs screen).
+
+**Compared to `mprocs`**: [[mprocs]] is **not a multiplexer** — it's a fixed multi-process orchestrator (more like a Procfile runner with a TUI). Use `zellij` for general terminal work; use `mprocs` when you have N specific long-running commands (DB, server, log tail) that you always want side-by-side.
+
+**Gotchas**: the leader key (`Ctrl+g` for unlock-mode by default) differs from tmux's `Ctrl+b`; `zellij setup --dump-config` writes a starter config. Old SSH targets with no UTF-8 terminal will look broken.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- `tmux` — the dominant incumbent; richer plugin ecosystem.
+- `screen` — the venerable original GNU multiplexer.
+- `byobu` — opinionated tmux/screen wrapper with better defaults.
+- [[mprocs]] — fixed multi-process TUI orchestrator (different model).
+- [[../../../tools/linux/tmux|tools/linux/tmux]] — tmux deep-dive (cross-section sibling).
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[mprocs]] — mprocs - replacement of tmux for long running processes! _(score 29.4)_
-- [[tools/linux/zellij|zellij]] — Zellij _(score 26.9)_
-- [[dusk_replacement_of_du]] — dusk  - replacement of du _(score 23.4)_
-- [[tools/linux/tmux|tmux]] — TMUX _(score 18.0)_
-- [[tools/linux/tmux|tmux]] — Tmux _(score 18.0)_
+- [[README]] — tooling section landing.
+- [[mprocs]] — sibling process-orchestration tool (different niche).
+- [[../../../tools/linux/tmux|tools/linux/tmux]] — tmux deep-dive (the thing zellij replaces).
+- [[bandwhich]] — same author.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#zellij-replacement-of-tmux-with-colors-and-stuff` `#tooling` `#rust` `#programming` `#zellij` `#replacement` `#tmux` `#colors`
-
-## TODO
-
-- No `main_link` could be auto-detected. Add the canonical URL (project homepage / repo / paper) to the frontmatter.
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#zellij` `#rust` `#terminal-multiplexer` `#tmux` `#layouts` `#plugins` `#wasm` `#tui`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Site: <https://zellij.dev/>
+- Repo: <https://github.com/zellij-org/zellij>
+- Install: `cargo install --locked zellij` or `brew install zellij`.
 
-# zellij - replacement of tmux - with colors and stuff
-
-cargo install zellij
+```sh
+cargo install --locked zellij
+zellij                          # start a new session
+zellij list-sessions
+zellij attach <name>
+zellij --layout ~/dev.kdl       # pre-shaped workspace
+```
