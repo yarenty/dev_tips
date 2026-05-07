@@ -1,60 +1,63 @@
 ---
-title: mcp ui
+title: mcp-ui — interactive UI resources from MCP servers
 main_link: https://github.com/idosal/mcp-ui
-keywords: [mcp-ui, models, context, protocol, level]
-status: draft
+keywords: [mcp, ui, agent-ui, generative-ui, react, web-components]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# mcp ui
+# mcp-ui — interactive UI resources from MCP servers
 
 **Main link:** <https://github.com/idosal/mcp-ui>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+**mcp-ui** is a community-driven extension to MCP (by Ido Salomon, [`idosal`](https://github.com/idosal))
+that lets an MCP server return **interactive web UI resources** — small HTML/React/web-component
+fragments — instead of plain text or images. The host (the MCP client, e.g. Claude
+Desktop / Cursor / a custom chat UI) renders them inline. The pitch: "raise Human↔AI
+interaction beyond chat-only" — let an agent draw a form, a chart, a confirmation dialog,
+a domain widget, and let the user interact with it directly.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Where this fits in the broader **agent-generated UI** trend (V0, Bolt.new, Lovable,
+Vercel AI SDK Generative UI, OpenAI Canvas, Claude Artifacts): mcp-ui is the *protocol*
+side rather than the *frontend builder* side. **V0/Bolt/Lovable generate code you ship**;
+**Vercel AI SDK and Artifacts render rich content from a single LLM session**; **mcp-ui
+lets any third-party MCP server contribute interactive UI** to whichever host the user
+already trusts.
+
+Honest 2025 framing: **adoption is early**. The MCP spec itself doesn't standardise
+interactive UI yet; mcp-ui is a *proposal-by-implementation*. Hosts must opt in to render
+its `ui://` resource type, and most MCP clients still only handle text/image. Sandbox
+story (iframe / web-component shadow DOM / CSP) and the prompt-injection attack surface
+("malicious MCP server returns a UI that nags the user into clicking 'approve'") are open
+questions. Watch for: official spec absorption; Cursor / Goose / Claude Desktop shipping
+host-side support.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **A2A `parts`** — Google's A2A also has typed UI fragments (forms, iframes, video) for the same goal.
+- **Vercel AI SDK Generative UI** — same idea, in-process rather than over MCP.
+- **Anthropic Claude Artifacts / OpenAI Canvas** — single-vendor inline interactive panes.
+- **V0 / Bolt.new / Lovable** — agent-generates-frontend-code (different stage of the pipeline).
+- **MCP elicitation** (in-spec) — the lighter-weight "ask the user a structured question" primitive in the MCP spec itself.
 
 ## Internal links
+<!-- reviewed -->
+- [[README]] — section landing.
+- [[articles]] — broader MCP reading list.
+- [[a2a]] — sibling protocol; A2A's `parts` overlap conceptually.
+- [[mcp4db]] — the data-access counterpart.
+- [[../llm/runtimes/goose|goose]] — host that may ship mcp-ui support.
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[anmell]] — anmell _(score 16.3)_
-- [[articles]] — Articles _(score 16.0)_
-- [[a2a]] — Agent2Agent _(score 16.0)_
-- [[mcp4db]] — GenAI Toolbox _(score 16.0)_
-- [[fluent_templates]] — Fluent Templates _(score 5.5)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#mcp-ui` `#mcp` `#ml` `#model` `#context` `#protocol` `#deliver`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#mcp` `#ui` `#agent-ui` `#generative-ui` `#react` `#web-components`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# mcp ui
-
-
-https://github.com/idosal/mcp-ui
-
-mcp-ui brings interactive web components to Model Context Protocol (MCP). Deliver rich, dynamic UI resources directly from your MCP server to be rendered by the client. Take Human<>AI interaction to the next level!
+- Repo: <https://github.com/idosal/mcp-ui>
+- Pitch (verbatim): "mcp-ui brings interactive web components to Model Context Protocol (MCP). Deliver rich, dynamic UI resources directly from your MCP server to be rendered by the client. Take Human↔AI interaction to the next level."
+- Resource type: `ui://...` URIs returned from MCP server responses; the client interprets the payload as renderable HTML/React/web-component content.
+- Adjacent ideas in the official spec to watch: [elicitation](https://modelcontextprotocol.io/specification) (structured user-input prompts), sampling, and roots.

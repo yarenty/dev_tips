@@ -1,56 +1,80 @@
 ---
-title: Task
-main_link: 
-keywords: [agentic]
-status: draft
+title: Agent task framing — how to specify what an agent should do
+main_link: https://www.anthropic.com/engineering/building-effective-agents
+keywords: [agent-task, task-framing, prompt-engineering, scope, agent-design]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Agent task framing
 
-> Auto-split from `doc/ml/agents/memory.md` by `article_split.py`. Heading: **Task**.
-
-# Task
+**Main link:** <https://www.anthropic.com/engineering/building-effective-agents>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+This is a small companion article to [[memory]] and [[../memory/response|ml/memory/response]] — the original `agents/task.md` was the *prompt* that produced the eidetic-memory survey, and is preserved here as a worked example of **agent task framing**: how the way you specify the question to an agent shapes the answer, the search budget, and the citation discipline. The broader insight — task framing is the cheapest agent-design lever — generalises far beyond memory surveys.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Two practical levers, both underused:
+
+1. **Be explicit about scope, freshness, and source-quality bar.** The original survey question succeeded because it specified the topic (*Agentic AI / RAG / memory / eidetic*), the source archives (*arXiv, PubMed*), and the time window (*2024-2025*). Agents that get vague questions go in vague directions; small additions ("with citations", "from peer-reviewed sources only", "no marketing pages") meaningfully steer outcomes.
+2. **Decompose before you delegate.** The Anthropic *orchestrator-workers* pattern ([[claude]]) shines when the orchestrator does explicit task decomposition before assigning to workers. *Generation → Reflection → Ranking → Evolution → Proximity → Meta-review* (Google's [[co_scientist]] pipeline) is a worked example of this; *retrieve → rerank → generate → critique* is the RAG variant.
+
+**Common task-framing mistakes:**
+
+- Asking an open-ended question ("research X") rather than a closed one ("identify all 2024-2025 papers proposing memory architectures for agents that explicitly target eidetic recall").
+- Leaving the *output format* unspecified — agents that don't know what shape the deliverable should take produce mush.
+- Leaving the *budget* unspecified — agents that don't know if they have 10 or 1000 tool calls behave wildly differently.
+- Conflating "task" with "goal" — the goal is what the user wants; the task is what the agent does. Decompose.
+
+The DSPy ([[../frameworks/dspy|dspy]]) abstraction of **Signatures** (`question, context -> answer`) is a clean way to enforce explicit task framing in code; the LangGraph state-graph approach is a more flexible cousin.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **[[memory]]** — the agent-memory companion that preserves the original raw question.
+- **[[claude]]** — Anthropic's task-decomposition patterns.
+- **[[co_scientist]]** — multi-agent task decomposition done well.
+- **DSPy Signatures** — formalised task framing as code.
+- **LangChain output parsers** — the *output format* lever in code.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[README]] — agents section landing.
+- [[memory]] — sibling article preserving the original raw question.
+- [[claude]] — orchestrator-workers and evaluator-optimizer patterns.
+- [[orchestration]] — orchestration frameworks that own task lifecycle.
+- [[co_scientist]] — multi-agent scientific-task decomposition.
+- [[../memory/response|ml/memory/response]] (P5.AC) — the substantive answer this question produced (the eidetic-memory survey).
+- [[../frameworks/dspy|dspy]] (P5.AB) — formalises task framing via Signatures.
 
-- [[202505_recents]] — 202505 Recents _(score 19.8)_
-- [[ml/agents/response|response]] — Response _(score 16.0)_
-- [[agentic_rag]] — Agentic RAG _(score 7.8)_
-- [[llama]] — llama-agentic-system _(score 7.8)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#task` `#agents` `#ml` `#rag` `#memory` `#agentic` `#solution`
-
-## TODO
-
-- No `main_link` could be auto-detected. Add the canonical URL (project homepage / repo / paper) to the frontmatter.
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#agent-task` `#task-framing` `#prompt-engineering` `#scope` `#agent-design`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### The original raw question (preserved as a worked task-framing example)
 
-# Task
-Has anyone looking into Agentic AI/RAG and memory solution,  could be eidetic memory great solution for Agents/RAG/LLM.  could you try find examples like in arXiv or PubMed , could you focus on memory issues / solutions - especially within latest years (2024/20205)
+> Has anyone looked into Agentic AI / RAG and memory solutions — could eidetic memory be a great fit for Agents/RAG/LLM? Try to find examples on arXiv or PubMed; focus on memory issues and solutions, especially within the latest years (2024/2025).
+
+What this question got *right* as a piece of agent task framing:
+
+- **Topic** specified (Agentic AI / RAG / memory / eidetic).
+- **Sources** named (arXiv, PubMed) — the agent knows where to look.
+- **Time window** named (2024-2025) — the agent knows what to ignore.
+- **Output focus** implied (issues + solutions, not just papers).
+
+What it could have specified more sharply:
+
+- **Output format** (table? annotated bibliography? prose review?).
+- **Budget** (how many papers? how many tool calls?).
+- **Quality bar** (peer-reviewed only? include preprints?).
+- **Citation requirement** (verbatim quotes? page numbers?).
+
+The substantive answer the question produced is preserved as **[[../memory/response|ml/memory/response]]** (P5.AC) — the eidetic-memory 2024-2025 survey.
+
+### See also
+
+- Anthropic *Building effective agents*: <https://www.anthropic.com/engineering/building-effective-agents>
+- The FoundationAgents memory section that contextualised the original question: <https://github.com/FoundationAgents/awesome-foundation-agents#memory>

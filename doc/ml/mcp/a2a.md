@@ -1,78 +1,74 @@
 ---
-title: Agent2Agent
-main_link: https://github.com/google/A2A
-keywords: [a2a, kafka]
-status: draft
+title: A2A — Google's Agent2Agent protocol
+main_link: https://github.com/google-a2a/A2A
+keywords: [a2a, agents, google, protocol, mcp, interoperability]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# A2A — Google's Agent2Agent protocol
 
-# Agent2Agent
-
-**Main link:** <https://github.com/google/A2A>
+**Main link:** <https://github.com/google-a2a/A2A>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+**A2A (Agent2Agent)** is an open protocol announced by Google (Apr 2025, [blog](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/))
+for **agent-to-agent** communication: a "client agent" formulates a task and a "remote
+agent" executes it, with capability discovery via a JSON **Agent Card**, a typed **Task**
+object with a lifecycle, **artifact** outputs, and **parts** (typed content fragments) for
+UX negotiation. Donated to the Linux Foundation in Jun 2025. Often paired with — not
+replacing — MCP: **MCP is agent-to-tool, A2A is agent-to-agent**.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The mental model that makes A2A click: **MCP exposes resources/tools to one agent;
+A2A is how two agents (potentially from different vendors, in different processes, on
+different clouds) negotiate work between themselves.** Discovery is via a static
+`/.well-known/agent.json` Agent Card; the actual transport is HTTP+JSON-RPC (with SSE
+for streaming and webhooks for long-running tasks).
+
+Honest 2025 framing: A2A is **still very early**. MCP has dramatically more momentum
+(Claude Desktop, Cursor, Goose, Continue, Zed, Windsurf all support it; A2A adoption is
+mostly Google-orbit demos). The Confluent post argues A2A's task-handoff pattern wants
+a durable broker (Kafka) under it — fair point, also true of any production agent fleet.
+Watch for: convergence with MCP under the LF umbrella; whether agent frameworks
+(LangGraph, CrewAI, AutoGen) ship first-class A2A clients; whether Anthropic/OpenAI ever
+publish A2A-shaped Agent Cards for their hosted agents.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **MCP** — sibling protocol; tool/resource exposure rather than peer-to-peer.
+- **ACP** (Agent Communication Protocol, IBM Research) — older OSS attempt, smaller traction.
+- **OpenAI Assistants API / Responses API** — proprietary single-vendor alternative.
+- **Anthropic computer-use** — another way to "let an agent drive another system" (UI-level).
+- **FIPA-ACL** (1990s multi-agent systems) — historical precursor; A2A is the modern HTTP-native take.
 
 ## Internal links
+<!-- reviewed -->
+- [[README]] — section landing.
+- [[articles]] — broader MCP reading list (incl. A2A vs MCP vs ACP cheat sheet).
+- [[mcp4db]] — sibling MCP-side article.
+- [[../agents/README|agents]] — agent landscape this protocol slots into.
+- [[../llm/runtimes/goose|goose]] — MCP-native agent CLI; A2A is what would let two Gooses talk.
+- [[../frameworks/langgraph|langgraph]] — likely first-class A2A integration target.
+- [[kafka]] — the Confluent argument for a durable broker under A2A task handoffs.
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[kafka]] — Kafka _(score 18.6)_
-- [[kafka]] — Kafka _(score 18.6)_
-- [[articles]] — Articles _(score 16.0)_
-- [[mindsdb]] — MindsDB _(score 6.6)_
-- [[pulsar]] — Pulsar _(score 6.6)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#a2a` `#mcp` `#ml` `#agent` `#agents` `#task` `#each`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#a2a` `#agents` `#google` `#protocol` `#mcp` `#interoperability` `#kafka`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Announcement (Apr 2025): <https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/?utm_source=tldrdata>
+- Spec & SDKs: <https://github.com/google-a2a/A2A> (was `google/A2A`; transferred to `google-a2a/` org).
+- Linux Foundation transition (Jun 2025): A2A donated to LF AI & Data alongside related agent-protocol work.
 
-# Agent2Agent
+### Core concepts (per the announcement)
 
+- **Capability discovery** — agents advertise capabilities via an **Agent Card** (JSON), letting a client agent pick the best remote agent for a task.
+- **Task management** — communication is task-oriented; the `Task` object has a lifecycle (immediate completion or long-running with status updates). Output = **artifact**.
+- **Collaboration** — agents exchange messages with context, replies, artifacts, or user instructions.
+- **UX negotiation** — each message contains **parts** (typed content fragments: text, image, web form, iframe, …); client and remote negotiate the supported subset.
 
-https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/?utm_source=tldrdata
+### Kafka angle (Confluent)
 
-
-A2A facilitates communication between a "client" agent and a “remote” agent. A client agent is responsible for formulating and communicating tasks, while the remote agent is responsible for acting on those tasks in an attempt to provide the correct information or take the correct action. This interaction involves several key capabilities:
-
-Capability discovery: Agents can advertise their capabilities using an “Agent Card” in JSON format, allowing the client agent to identify the best agent that can perform a task and leverage A2A to communicate with the remote agent.
-Task management: The communication between a client and remote agent is oriented towards task completion, in which agents work to fulfill end-user requests. This “task” object is defined by the protocol and has a lifecycle. It can be completed immediately or, for long-running tasks, each of the agents can communicate to stay in sync with each other on the latest status of completing a task. The output of a task is known as an “artifact.”
-Collaboration: Agents can send each other messages to communicate context, replies, artifacts, or user instructions.
-User experience negotiation: Each message includes “parts,” which is a fully formed piece of content, like a generated image. Each part has a specified content type, allowing client and remote agents to negotiate the correct format needed and explicitly include negotiations of the user’s UI capabilities–e.g., iframes, video, web forms, and more.
-
-https://github.com/google/A2A
-
-
-
-
-https://github.com/google/A2A
-
-
-## Kafka
-
-https://www.confluent.io/blog/google-agent2agent-protocol-needs-kafka/?utm_source=tldrdata
+- <https://www.confluent.io/blog/google-agent2agent-protocol-needs-kafka/?utm_source=tldrdata> — argues A2A's long-running tasks need a durable event log; Kafka is the obvious substrate.

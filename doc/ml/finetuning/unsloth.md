@@ -1,56 +1,81 @@
 ---
-title: unsloth
+title: Unsloth — 2× faster LoRA / QLoRA fine-tuning
 main_link: https://github.com/unslothai/unsloth
-keywords: [unsloth, finetuning, cuda, llama, gpu, gpus]
-status: draft
+keywords: [unsloth, fine-tuning, lora, qlora, peft, triton, gpu, llm]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# unsloth
+# Unsloth — 2× faster LoRA / QLoRA fine-tuning
 
 **Main link:** <https://github.com/unslothai/unsloth>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+**Unsloth** (Daniel & Michael Han, 2023–) is a Python library that drop-in-replaces
+Hugging Face TRL / `transformers` fine-tuning to run **~2× faster with ~50–80% less
+VRAM** — by reimplementing the hot kernels in [OpenAI Triton](https://openai.com/index/triton/),
+rewriting the backward pass by hand, and integrating tightly with bitsandbytes 4-bit /
+8-bit quantisation. Same loss, no approximations. Free OSS for SFT / LoRA / QLoRA / DPO /
+ORPO / GRPO / KTO / SimPO on single-GPU consumer hardware (T4 / RTX 30/40/50 / A100 / H100);
+paid Pro tier targets multi-GPU and 70B+ workloads.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Unsloth is the **default "fine-tune a 7–14B model on one GPU"** library in 2024–2025. The
+NVIDIA-only / single-GPU constraint is real but matches 90% of actual fine-tuning jobs.
+Key wins:
+
+- `FastLanguageModel.from_pretrained(...)` + `get_peft_model(...)` with
+  `use_gradient_checkpointing = "unsloth"` is the magic combo (30% extra VRAM saving over
+  HF's checkpointing).
+- Pre-quantised 4-bit model zoo on Hugging Face (`unsloth/...-bnb-4bit`) downloads ~4×
+  faster than re-quantising from FP16.
+- First-class GGUF / vLLM / Ollama export keeps the inference story honest.
+- **GRPO support** (the DeepSeek-R1 reasoning recipe) shipped quickly and is one of the
+  most accessible ways to try RL fine-tuning at home.
+
+**vs the field:**
+
+- **HuggingFace TRL** — more general (any HF model, multi-GPU via `accelerate`/DeepSpeed),
+  less optimised. Unsloth *uses* TRL's `SFTTrainer`/`DPOTrainer` under the hood.
+- **Axolotl** — config-first (YAML) wrapper around TRL/DeepSpeed; better for multi-GPU
+  and reproducible recipe sharing; can sit on top of Unsloth as a kernel backend.
+- **torchtune** — PyTorch-native, opinionated, multi-GPU; less ecosystem velocity.
+- **LLaMA-Factory** — GUI + huge model coverage; popular in CN community.
+- **MLX-LM** (Apple Silicon) and **mistral-finetune** (single-model) — niche alternatives.
+
+**Gotchas:**
+
+- NVIDIA-only (CUDA ≥ 7.0; Volta / Turing / Ampere / Hopper / Ada / Blackwell). No ROCm,
+  no MLX, no CPU.
+- Multi-GPU support is gated to the Pro tier (OSS works on 1 GPU only).
+- Windows install is fiddly (Triton + bitsandbytes); WSL2 or Linux is the smooth path.
+- Pin a known-good combination of `torch` / CUDA / `xformers` / `bitsandbytes` — the
+  Advanced Pip Installation snippet below auto-detects.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **HuggingFace TRL** — the SFT/DPO/PPO/GRPO trainer ecosystem Unsloth plugs into.
+- **Axolotl** — YAML-config fine-tuning; can use Unsloth as a kernel.
+- **torchtune** — PyTorch-native PEFT recipes.
+- **LLaMA-Factory** — GUI + breadth.
+- **bitsandbytes** — the 4-bit / 8-bit quantisation Unsloth depends on.
 
 ## Internal links
+<!-- reviewed -->
+- [[README]] — section landing.
+- [[fedsb]] — federated cousin (LoRA across clients).
+- [[../llm/models/llama|llama]] — the canonical fine-tuneable base; Llama 3.x notebooks are the headline use case.
+- [[../llm/models/deepseek|deepseek]] — GRPO innovator; Unsloth ships GRPO notebooks for R1-style reasoning training.
+- [[../llm/runtimes/ollama|ollama]] — typical export target post-fine-tune.
+- [[../tools/candle|candle]] — alternative inference path (Rust).
+- [[../tools/tabby|tabby]] — self-hosted code assistant that consumes fine-tuned models.
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[fedsb]] — Fed-SB _(score 24.9)_
-- [[llama]] — LLAMA _(score 20.2)_
-- [[tabby]] — TabbyML _(score 13.3)_
-- [[candle]] — Candle _(score 13.1)_
-- [[yarenty_profile_and_projects_summary]] — Yarenty Profile And Projects Summary _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#unsloth` `#finetuning` `#ml` `#install` `#cuda` `#llama` `#pip`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#unsloth` `#fine-tuning` `#lora` `#qlora` `#peft` `#triton` `#gpu` `#llm`
 
 ## References / raw notes
-
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
 
 # unsloth
 

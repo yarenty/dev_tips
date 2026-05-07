@@ -1,65 +1,56 @@
 ---
-title: Devon
-main_link: https://github.com/entropy-research/Devon?utm_source=tldrai
-keywords: [devon, python, features, multi]
-status: draft
+title: Devon — entropy-research's open coding agent (not Devin!)
+main_link: https://github.com/entropy-research/Devon
+keywords: [devon, entropy-research, coding-agent, python, open-source]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Devon — entropy-research's open coding agent
 
-# Devon
-
-**Main link:** <https://github.com/entropy-research/Devon?utm_source=tldrai>
+**Main link:** <https://github.com/entropy-research/Devon>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+**Devon** (entropy-research/Devon) is an open-source coding agent — *not* to be confused with **[[devin|Devin]]** (Cognition AI). Same agentic-coding territory, similar UX (multi-file edits, codebase exploration, test writing, bug fixing), but a different team, much smaller scope, and explicitly Python-focused. The repo went quiet through 2024-2025 and the project has lost ground to better-resourced alternatives like [[../llm/runtimes/goose|Goose]], OpenHands, Cline, and Aider; it's filed here mostly for historical completeness and to disambiguate the name collision.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The honest story:
+
+- **Naming.** *Devin* (Cognition) and *Devon* (entropy-research) launched within weeks of each other in early 2024. Both wrote agentic Python coding agents. The names confused everyone. This article exists to keep the two cleanly separated in the vault graph.
+- **Scope.** Devon's feature list (multi-file editing, codebase exploration, config/test/bug-fixing) is the *table-stakes* coding-agent feature set. By 2025 these are commodity capabilities in every CLI agent.
+- **Python-only.** This is the practical limitation that pushed users to alternatives: by mid-2024 Cursor, Aider, Claude Code, and OpenHands all worked across languages.
+- **Maintenance.** The repo's recent activity is sparse; the original `tldrai`-source notes flagged "not working — no gpt4-o available" which dates to the GPT-4o rollout (May 2024). Treat as **archive-tier**.
+- **When to look at it anyway.** If you're studying agent-architecture history (the early-2024 wave), Devon was a clean small-codebase reference implementation. For *production* agentic coding, pick from [[coding_agents]].
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- **Devin (Cognition AI)** — the closed, much-better-funded namesake; see [[devin]].
+- **OpenHands (was OpenDevin)** — open-source autonomous coding agent that took the OSS niche; see [[devin]].
+- **Aider** — terminal-CLI coding agent, git-aware, much more momentum.
+- **Cline / Roo Code** — open VS Code extension agents.
+- **Goose** — Block's open vendor-neutral CLI; see `[[../llm/runtimes/goose|goose]]`.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
+- [[README]] — agents section landing.
+- [[devin]] — Devin (Cognition AI) + OpenHands; the namesake to keep distinct.
+- [[coding_agents]] — coding-agent landscape (where to look instead).
+- [[../llm/runtimes/goose|goose]] (P5.AD) — open agent CLI to consider as a replacement.
+- [[../programming/rust/ml/ml_in_rust|ml_in_rust]] (P5.Y) — for the Rust-side ML library landscape (the auto-suggested `[[rust_ml]]` reference is now stale; this is the canonical replacement).
 
-- [[devin_2]] — Devin _(score 16.0)_
-- [[devin]] — OpenDevin _(score 16.0)_
-- [[anmell]] — anmell _(score 16.0)_
-- [[orchestration]] — Orchestration _(score 16.0)_
-- [[cuda_kevin]] — Kevin _(score 8.2)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#devon` `#agents` `#ml` `#python` `#features` `#multi` `#file`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#devon` `#entropy-research` `#coding-agent` `#python` `#open-source`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- Repo: <https://github.com/entropy-research/Devon>
+- entropy-research org: <https://github.com/entropy-research>
 
-# Devon
+### Features (per the original README)
 
-!Python only- check update!
- - not working - no gpt4-o available
-
-https://github.com/entropy-research/Devon?utm_source=tldrai
-
-Features
 - Multi-file editing
 - Codebase exploration
 - Config writing
@@ -67,6 +58,8 @@ Features
 - Bug fixing
 - Architecture exploration
 
-Limitations
-- Minimal functionality for non-Python languages
-- Sometimes have to specify the file where you want the change to happen
+### Limitations
+
+- Minimal functionality for non-Python languages.
+- Sometimes the user has to specify the file where the change should happen.
+- Original note flagged "not working — no gpt4-o available" (timing puts this at the May 2024 GPT-4o rollout).
