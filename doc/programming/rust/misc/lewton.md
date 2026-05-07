@@ -1,68 +1,52 @@
 ---
-title: lewton
+title: lewton — pure-Rust Vorbis decoder
 main_link: https://github.com/RustAudio/lewton
-keywords: [lewton, rust, rustaudio, vorbis]
-status: draft
+keywords: [lewton, rust, vorbis, ogg, audio, decoder]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/misc/audio.md` by `article_split.py`. Heading: **lewton**.
-
-# lewton
+# lewton — pure-Rust Vorbis decoder
 
 **Main link:** <https://github.com/RustAudio/lewton>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`lewton` is a pure-Rust decoder for the Xiph Vorbis audio codec (the lossy codec inside `.ogg` files). It lives under the [RustAudio](https://github.com/RustAudio) umbrella and is the Vorbis sibling of [[claxon]] (FLAC) and [[minimp3]] (MP3). It handles the standard Vorbis-in-Ogg packaging, exposes packets as `i16` PCM frames, and ships a runnable `examples/player.rs` that plays a `.ogg` file end-to-end.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `lewton` when you need a small, focused Vorbis decoder and don't want the breadth (or compile time) of [[symphonia]]. It's the Vorbis backend that [[rodio]] uses by default. Decode-only — there is no encoder; encoding Vorbis from Rust still means wrapping `libvorbis` C bindings or using `ffmpeg`. Vorbis itself is patent-free and royalty-free, so this crate is safe to ship in any product without licensing worry.
+
+Quick smoke test from the repo:
+
+```sh
+cargo run --example player /path/to/your/audio_file.ogg
+```
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[symphonia]] — modern unified codec library; Vorbis is one of many it decodes.
+- [[claxon]] — sibling FLAC decoder.
+- [[minimp3]] — sibling MP3 decoder.
+- [`opus`](https://crates.io/crates/opus) / [`audiopus`](https://crates.io/crates/audiopus) — Vorbis's modern successor (used by Discord, WebRTC, etc.).
+- [`ogg`](https://crates.io/crates/ogg) — the Ogg-container layer that lewton sits on top of.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[symphonia]] — Symphonia _(score 17.1)_
-- [[rtic]] — RTIC _(score 17.1)_
-- [[hound]] — Hound _(score 17.1)_
-- [[claxon]] — Claxon _(score 17.1)_
-- [[audio]] — Coreaudio _(score 17.1)_
+- [[audio]] — Rust audio ecosystem overview / decision tree.
+- [[symphonia]] — modern unified replacement.
+- [[rodio]] — uses lewton as its default Vorbis backend.
+- [[claxon]] — FLAC sibling.
+- [[minimp3]] — MP3 sibling.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#lewton` `#misc` `#rust` `#programming` `#rustaudio` `#vorbis` `#audio` `#decoder`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#lewton` `#rust` `#vorbis` `#ogg` `#audio` `#decoder` `#rustaudio`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# lewton
-
-https://github.com/RustAudio/lewton
-
-
-Vorbis decoder written in pure Rust.
-
-
-cargo run --example player /path/to/your/audio_file.ogg
-It will then play back the audio.
-
-If you want to know how to use this crate, look at the examples folder.
+- Repo: <https://github.com/RustAudio/lewton>
+- crates.io: <https://crates.io/crates/lewton>
+- Examples: `examples/player.rs` plays a `.ogg` file using cpal under the hood.

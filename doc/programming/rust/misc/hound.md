@@ -1,66 +1,63 @@
 ---
-title: Hound
+title: Hound — pure-Rust WAV reader / writer
 main_link: https://github.com/ruuda/hound
-keywords: [hound, rust, decoding]
-status: draft
+keywords: [hound, rust, wav, audio, encoder, decoder]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/misc/audio.md` by `article_split.py`. Heading: **Hound**.
-
-# Hound
+# Hound — pure-Rust WAV reader / writer
 
 **Main link:** <https://github.com/ruuda/hound>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Hound is a small, focused, pure-Rust library for reading and writing WAV (the ubiquitous uncompressed PCM container by Microsoft/IBM). Like its sibling [[claxon]], it's written by [Ruud van Asseldonk](https://github.com/ruuda) — Hound was originally created to test Claxon by transcoding FLAC → WAV. Scope is deliberately tiny, and that's why it's the canonical Rust WAV crate: it's stable, well-documented, and you can audit it in an afternoon.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for Hound whenever you need to *write* a WAV (recording, transcoding, generating test fixtures, dumping samples for inspection) — that's the gap [[symphonia]] doesn't fill, since Symphonia is read-only. For *reading* WAV, both work; Hound is smaller, Symphonia is more uniform if you also handle other formats. Limitations to be aware of:
+
+- 24-bit and IEEE-float WAV are supported; obscure variants (ADPCM, A-law, μ-law) are not — those are container-level codecs that Hound treats as opaque.
+- Memory-mapped / streaming-very-large-files patterns aren't first-class; Hound expects to seek over a `BufReader`.
+- For real-time audio in/out (microphone capture, low-latency playback), use `cpal` directly, not Hound — Hound is for the file format, not the device.
+
+Quick "write a sine wave" pattern:
+
+```rust
+let spec = hound::WavSpec {
+    channels: 1, sample_rate: 44_100, bits_per_sample: 16,
+    sample_format: hound::SampleFormat::Int,
+};
+let mut writer = hound::WavWriter::create("sine.wav", spec)?;
+for t in 0..44_100 {
+    let s = (t as f32 / 44_100.0 * 2.0 * std::f32::consts::PI * 440.0).sin();
+    writer.write_sample((s * i16::MAX as f32) as i16)?;
+}
+writer.finalize()?;
+```
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[claxon]] — sibling FLAC decoder by the same author; pair for FLAC ↔ WAV transcoding.
+- [[symphonia]] — read-side multi-format alternative (does not write).
+- [`wav`](https://crates.io/crates/wav) — older, smaller alternative; less full-featured.
+- [`creek`](https://github.com/MeadowlarkDAW/creek) — for streaming very large WAV/FLAC from disk in real time.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[claxon]] — Claxon _(score 26.0)_
-- [[rtic]] — RTIC _(score 17.1)_
-- [[windows]] — Windows RS _(score 17.1)_
-- [[fun]] — bats _(score 17.1)_
-- [[egui]] — egui _(score 13.1)_
+- [[audio]] — Rust audio ecosystem overview / decision tree.
+- [[claxon]] — companion FLAC decoder by the same author.
+- [[symphonia]] — modern read-only multi-format alternative.
+- [[rodio]] — uses Hound under the hood for the WAV format.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#hound` `#misc` `#rust` `#programming` `#decoding` `#library` `#crates` `#changelog`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#hound` `#rust` `#wav` `#audio` `#encoder` `#decoder`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# Hound
-
-https://github.com/ruuda/hound
-
-
-A wav encoding and decoding library in Rust.
-
-Crates.io version Changelog Documentation
-
-Hound can read and write the WAVE audio format, an ubiquitous format for raw, uncompressed audio. The main motivation to write it was to test Claxon, a FLAC decoding library written in Rust.
+- Repo: <https://github.com/ruuda/hound>
+- crates.io: <https://crates.io/crates/hound>
+- Author: Ruud van Asseldonk (also wrote [[claxon]]).

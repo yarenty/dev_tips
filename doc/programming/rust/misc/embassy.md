@@ -1,91 +1,54 @@
 ---
-title: Embassy
-main_link: https://github.com/embassy-rs/embassy
-keywords: [embassy, rust, usb, async]
-status: draft
+title: Embassy — async embedded Rust framework
+main_link: https://embassy.dev/
+keywords: [embassy, rust, embedded, async, no-std, executor, hal]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Embassy — async embedded Rust framework
 
-> Auto-split from `doc/programming/rust/misc/raspberry_pi.md` by `article_split.py`. Heading: **Embassy**.
-
-# Embassy
-
-**Main link:** <https://github.com/embassy-rs/embassy>
+**Main link:** <https://embassy.dev/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Embassy is a modern async-first framework for embedded Rust. It bundles a no-`std` async executor (`embassy-executor`), a hardware-agnostic time abstraction (`embassy-time`), HALs for major MCU families (`embassy-stm32`, `embassy-nrf`, `embassy-rp` for the RP2040/RP2350, `embassy-imxrt`, …), a TCP/IP stack (`embassy-net`), USB device stack (`embassy-usb`), Bluetooth Low Energy via `nrf-softdevice`, LoRa via `embassy-lora`, and a power-fail-safe bootloader (`embassy-boot`). Tasks are compiled into state machines and cooperatively scheduled on a single stack — no per-task stack tuning, no kernel context-switch overhead.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Embassy is the modern alternative to a traditional RTOS for Cortex-M (and increasingly RISC-V) embedded work. Reach for it when your firmware is naturally I/O-bound — multiple peripherals, timers, network, USB, BLE — and you'd otherwise be juggling interrupt handlers, ring buffers, and state machines by hand. The async/await transformation gives you the readability of "linear" code with no allocator and very low overhead. Practical notes:
+
+- **Embassy vs [[rtic]]**: Embassy is async-first (cooperative; one task waits on a future, scheduler runs the next ready one); RTIC is interrupt-priority-first (statically-prioritised hardware tasks, race-free shared resources via priority ceilings). Both can coexist in the same binary, and both are recommended in different problem shapes — RTIC for hard-real-time deterministic latency, Embassy for I/O-rich firmware.
+- **HAL story**: Embassy's HALs are *async-native* — `i2c.write(...).await`, not "kick off a DMA + register an interrupt callback." If your chip family doesn't have an Embassy HAL, you can still use any `embedded-hal-async`–compatible HAL with the Embassy executor.
+- **Power efficiency**: the executor automatically `wfi`s the core when the run-queue is empty; tasks resume on interrupt. Years-of-battery-life devices are a stated design goal, not aspiration.
+- **Boards covered well today**: STM32 (every family), Nordic nRF52/nRF53/nRF91, Raspberry Pi RP2040/RP2350, ESP32 (via `esp-hal` + Embassy executor), i.MX RT, and more landing.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[rtic]] — sibling concurrency framework, interrupt-priority-based.
+- [`embedded-hal-async`](https://github.com/rust-embedded/embedded-hal) — the trait crate Embassy HALs implement.
+- [`smoltcp`](https://github.com/smoltcp-rs/smoltcp) — the no-`std` TCP/IP stack underneath `embassy-net`.
+- [Drone OS](https://www.drone-os.com/) — alternative async embedded executor.
+- [Tock](https://www.tockos.org/) — a more traditional embedded OS in Rust.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[raspberry_pi]] — Rust Embedded - book _(score 26.0)_
-- [[rtic]] — RTIC _(score 17.1)_
-- [[hound]] — Hound _(score 17.1)_
-- [[daktilo]] — Daktilo _(score 17.1)_
-- [[claxon]] — Claxon _(score 17.1)_
+- [[rtic]] — sibling, the interrupt-priority alternative.
+- [[awesome_embedded_in_rust]] — entry-point reading list.
+- [[raspberry_pi]] — Embassy supports the Raspberry Pi Pico (RP2040) via `embassy-rp`.
+- [[../../../iot/drogue|drogue]] — Drogue's device side targets Embassy-style firmware.
+- [[../../../iot/README|iot]] — vault-wide IoT section.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#embassy` `#misc` `#rust` `#programming` `#usb` `#async` `#tasks` `#hals`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#embassy` `#rust` `#embedded` `#async` `#no-std` `#executor` `#hal`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# Embassy
-
-https://github.com/embassy-rs/embassy
-
-https://embassy.dev/dev/index.html
-
-
-Embassy is the next-generation framework for embedded applications. Write safe, correct and energy-efficient embedded code faster, using the Rust programming language, its async facilities, and the Embassy libraries.
-
-
-Rust + async ❤️ embedded
-
-
-Rust's async/await allows for unprecedently easy and efficient multitasking in embedded systems. Tasks get transformed at compile time into state machines that get run cooperatively. It requires no dynamic memory allocation, and runs on a single stack, so no per-task stack size tuning is required. It obsoletes the need for a traditional RTOS with kernel context switching, and is faster and smaller than one!
-
-
-Hardware Abstraction Layers - HALs implement safe, idiomatic Rust APIs to use the hardware capabilities, so raw register manipulation is not needed. The Embassy project maintains HALs for select hardware, but you can still use HALs from other projects with Embassy.
-
-embassy-stm32, for all STM32 microcontroller families.
-embassy-nrf, for the Nordic Semiconductor nRF52, nRF53, nRF91 series.
-Time that Just Works - No more messing with hardware timers. embassy_time provides Instant, Duration and Timer types that are globally available and never overflow.
-
-Real-time ready - Tasks on the same async executor run cooperatively, but you can create multiple executors with different priorities, so that higher priority tasks preempt lower priority ones. See the example.
-
-Low-power ready - Easily build devices with years of battery life. The async executor automatically puts the core to sleep when there's no work to do. Tasks are woken by interrupts, there is no busy-loop polling while waiting.
-
-Networking - The embassy-net network stack implements extensive networking functionality, including Ethernet, IP, TCP, UDP, ICMP and DHCP. Async drastically simplifies managing timeouts and serving multiple connections concurrently.
-
-Bluetooth - The nrf-softdevice crate provides Bluetooth Low Energy 4.x and 5.x support for nRF52 microcontrollers.
-
-LoRa - embassy-lora supports LoRa networking on STM32WL wireless microcontrollers and Semtech SX127x transceivers.
-
-USB - embassy-usb implements a device-side USB stack. Implementations for common classes such as USB serial (CDC ACM) and USB HID are available, and a rich builder API allows building your own.
-
-Bootloader and DFU - embassy-boot is a lightweight bootloader supporting firmware application upgrades in a power-fail-safe way, with trial boots and rollbacks.
+- Site: <https://embassy.dev/>
+- Repo: <https://github.com/embassy-rs/embassy>
+- Docs: <https://embassy.dev/book/>
+- Pitch: Rust + async ❤️ embedded — single-stack cooperative tasks compiled to state machines, no allocator, no per-task stack tuning, obsoletes traditional RTOS context switching for the I/O-bound case.
+- Components: `embassy-executor`, `embassy-time`, `embassy-net` (TCP/IP, ICMP, UDP, DHCP), `embassy-usb`, `embassy-boot`, `embassy-lora`, `nrf-softdevice` (BLE on nRF52).
+- HALs: `embassy-stm32`, `embassy-nrf`, `embassy-rp`, plus community ports.

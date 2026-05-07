@@ -1,84 +1,61 @@
 ---
-title: charts
-main_link: https://github.com/askanium/rustplotlib
-keywords: [charts, rust, bar, tbd, visualization]
-status: draft
+title: Rust charting / plotting crates
+main_link: https://github.com/plotters-rs/plotters
+keywords: [charts, rust, plotting, visualization, plotters, plotly, charming]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Rust charting / plotting crates
 
-# charts
-
-**Main link:** <https://github.com/askanium/rustplotlib>
+**Main link:** <https://github.com/plotters-rs/plotters>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+This article is a small landscape map of charting and plotting in Rust. The historically-pinned link here was [`rustplotlib`](https://github.com/askanium/rustplotlib) (a small D3-inspired bar/line/area/scatter library), but it has not been actively maintained for several years. The modern Rust plotting picture in 2024–2025 is centred on a handful of options: `plotters` for backend-agnostic 2D drawing, `charming` (Apache ECharts wrapper) for rich interactive HTML output, `plotly` (rs) for Plotly.js dashboards, and `egui_plot` for live charts inside `egui` GUIs.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Decision shortcut:
+
+| You want… | Reach for |
+|---|---|
+| Programmatic 2D drawing → PNG/SVG/bitmap, embeddable in GUI/WASM | [[../../../visualization/plotters\|plotters]] |
+| Interactive HTML charts (zoom/pan/hover, ECharts feature parity) | [`charming`](https://github.com/charming-rs/charming) |
+| Plotly.js dashboards from Rust | [`plotly`](https://github.com/plotly/plotly.rs) |
+| Live charts inside an `egui` GUI | [`egui_plot`](https://crates.io/crates/egui_plot) |
+| Tiny terminal-only sparklines / bar charts | [`textplots`](https://crates.io/crates/textplots), [`ratatui`'s charts](https://docs.rs/ratatui/) |
+| ggplot2-style grammar of graphics | [`charts-rs`](https://github.com/vicanso/charts-rs) (closer to ECharts), no exact ggplot port yet |
+
+A few notes:
+
+- **`rustplotlib`** (this article's original main link) is fine for one-off static D3-style charts but unmaintained; use `plotters` if you want the same role with active development.
+- **For dataframe-style "give me a plot of this column"**, the closest Rust experience is `polars` → export to Arrow → render with `plotly` / `charming`. There is no first-class `df.plot()` equivalent yet.
+- **For scientific/technical plots in PDF**, the practical workflow is still "render with `plotters` to SVG, embed in `typst`/`latex`."
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[../../../visualization/plotters|plotters]] — the de-facto pure-Rust 2D plotting crate.
+- [[../../../visualization/README|visualization]] — vault-wide visualization section (also covers diagrams, fonts, manim, rerun).
+- [`charming`](https://github.com/charming-rs/charming) — Apache ECharts wrapper.
+- [`plotly`](https://github.com/plotly/plotly.rs) — Plotly.js bindings.
+- [`egui_plot`](https://crates.io/crates/egui_plot) — for in-GUI live charts.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[rtic]] — RTIC _(score 17.1)_
-- [[hound]] — Hound _(score 17.1)_
-- [[iot/drogue|drogue]] — Drogue _(score 17.1)_
-- [[daktilo]] — Daktilo _(score 17.1)_
-- [[claxon]] — Claxon _(score 17.1)_
+- [[../../../visualization/plotters|plotters]] — canonical Rust plotting crate (covered in P5.I).
+- [[../../../visualization/README|visualization]] — vault-wide viz section.
+- [[../gui/egui|egui]] — for embedding plots in immediate-mode GUIs.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#charts` `#misc` `#rust` `#programming` `#chart` `#bar` `#tbd` `#vertical`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#charts` `#rust` `#plotting` `#visualization` `#plotters` `#plotly` `#charming`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# charts
-
-https://crates.io/crates/charts
-
-A pure Rust visualization library inspired by D3.js.
-
-See gallery and examples for code and more charts.
-
-https://github.com/askanium/rustplotlib/tree/master/gallery
-
-https://github.com/askanium/rustplotlib/tree/master/examples
-
-
-The library supports the following charts (more to be added soon):
-
-Vertical Bar Chart
-Vertical Stacked Bar Chart
-Horizontal Bar Chart
-Horizontal Stacked Bar Chart
-Scatter Chart
-Line Chart
-Area Chart
-Histogram (TBD)
-Box Plot (TBD)
-Other (TBD)
-Also, composite charts are supported (see Composite Charts below)
-
-
-
-https://github.com/askanium/rustplotlib
+- Original main link (now slow-moving): <https://github.com/askanium/rustplotlib>
+- Modern de-facto crate: <https://github.com/plotters-rs/plotters>
+- Apache ECharts wrapper: <https://github.com/charming-rs/charming>
+- Plotly.js Rust bindings: <https://github.com/plotly/plotly.rs>
+- `rustplotlib` originally supported: vertical bar, vertical stacked bar, horizontal bar, horizontal stacked bar, scatter, line, area; histograms / box plots / composite charts were marked TBD.

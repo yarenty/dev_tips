@@ -1,12 +1,9 @@
 ---
 title: Linfa
 main_link: https://github.com/rust-ml/linfa
-keywords: [linfa, ml, rust, tested, vector, linear, python, models]
-status: draft
+keywords: [linfa, ml, rust, scikit-learn, classical-ml, clustering, regression]
+status: reviewed
 ---
-
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
 
 # Linfa
 
@@ -14,138 +11,106 @@ status: draft
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+[`linfa`](https://github.com/rust-ml/linfa) is the most mature
+classical-ML toolkit for Rust — kin in spirit to Python's `scikit-learn`
+and curated by the [rust-ml](https://github.com/rust-ml) working group.
+It ships ~15 sub-crates covering clustering (K-Means, GMM, DBSCAN,
+OPTICS), linear / logistic / elastic-net regression, decision trees,
+SVMs, naive Bayes, hierarchical clustering, ICA, PCA, t-SNE, partial
+least squares, follow-the-regularised-leader, plus pre-processing and
+nearest-neighbour utilities. If your problem fits in scikit-learn's
+"classical ML" box, linfa is the Rust answer.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for linfa when you want:
+
+- A scikit-learn-shaped algorithm (k-means, logistic regression, PCA,
+  decision trees, SVMs, naive Bayes, etc.) inside a Rust service or CLI.
+- No Python runtime in your container / binary / firmware.
+- Static typing, Cargo, and the Rust performance baseline (most
+  algorithms are tested *and* benchmarked).
+
+Reach for something else when:
+
+- You need deep learning. Linfa is *classical* ML — see
+  [[ml_in_rust]] for `candle`, `burn`, `tch-rs`, `dfdx`.
+- You need scikit-learn's full breadth (xgboost, lightgbm, gradient
+  boosting, exotic kernels, advanced model selection). Linfa's
+  algorithm count is in the dozens, not hundreds. The honest fallback
+  is `tch-rs` to call libtorch / a Python sidecar via [[pyo3]].
+- You need GPU. Linfa is CPU-only; the GPU story in Rust ML is in
+  [[cuda|cuda (Rust)]] and `candle`/`burn`.
+
+A few practical notes:
+
+- **Datasets**: `linfa::Dataset` wraps `ndarray::Array2` for features
+  and a label vector. Most algorithms take and return `Dataset`s, which
+  makes pipelines composable but requires you to learn `ndarray` first.
+- **Backends**: linear algebra goes through `ndarray-linalg`, which
+  needs a BLAS — `openblas-static`, `intel-mkl`, or system BLAS via
+  feature flags. Pick one explicitly; a forgotten feature flag is the
+  canonical first-build failure.
+- **Status**: actively maintained but releases are infrequent. The
+  algorithm matrix in the README is the source of truth for what's
+  benchmarked vs merely tested.
+- **Cross-link**: [smartcore](https://github.com/smartcorelib/smartcore)
+  is a parallel project with overlapping goals and a slightly different
+  algorithm set; check both if linfa is missing what you need.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[ml_in_rust]] — wider Rust-ML landscape (deep learning + GPU).
+- `scikit-learn` — the Python reference linfa imitates.
+- `smartcore` — adjacent Rust classical-ML library.
+- `candle` / `burn` — the deep-learning answer (different problem
+  shape).
+- `polars` + DataFusion — feature-engineering substrate that pairs well
+  with linfa.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[ml_in_rust]] — ML libraries in Rust _(score 37.0)_
-- [[rust_ml]] — BAD ONES: _(score 25.3)_
-- [[cuda]] — CUDA in Rust _(score 24.9)_
-- [[classification]] — Classification _(score 16.6)_
-- [[rtic]] — RTIC _(score 13.1)_
+- [[ml_in_rust]] — sibling overview.
+- [[cuda|cuda (Rust)]] — sibling on the GPU side.
+- [[README]] — Rust ML section landing.
+- [[../../../ml/frameworks/README]] — broader ML frameworks hub.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#linfa` `#ml` `#rust` `#programming` `#tested` `#contains` `#linear` `#learning`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#linfa` `#ml` `#rust` `#scikit-learn` `#classical-ml` `#clustering` `#regression`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- [github.com/rust-ml/linfa](https://github.com/rust-ml/linfa)
+- [Linfa website](https://rust-ml.github.io/linfa/)
+- [Community chat (Zulip)](https://rust-ml.zulipchat.com/)
+- [Are we learning yet?](http://www.arewelearningyet.com/) — Rust-ML
+  status tracker.
+- [rust-ml/book](https://github.com/rust-ml/book) — k-means tutorial
+  using linfa.
 
-## Linfa
+### Algorithm matrix
 
-https://github.com/rust-ml/linfa
+| Crate          | Purpose                                   | Status                | Category             | Notes |
+|----------------|-------------------------------------------|-----------------------|----------------------|-------|
+| `clustering`   | Data clustering                           | Tested / Benchmarked  | Unsupervised         | K-Means, GMM, DBSCAN, OPTICS |
+| `kernel`       | Kernel methods                            | Tested                | Pre-processing       | Maps features into higher-dim space |
+| `linear`       | Linear regression                         | Tested                | Partial fit          | OLS + GLMs |
+| `elasticnet`   | Elastic Net                               | Tested                | Supervised           | Linear regression + elastic-net constraints |
+| `logistic`     | Logistic regression                       | Tested                | Partial fit          | Two-class |
+| `reduction`    | Dimensionality reduction                  | Tested                | Pre-processing       | Diffusion mapping + PCA |
+| `trees`        | Decision trees                            | Tested / Benchmarked  | Supervised           | Linear decision trees |
+| `svm`          | Support Vector Machines                   | Tested                | Supervised           | Classification or regression |
+| `hierarchical` | Agglomerative hierarchical clustering     | Tested                | Unsupervised         | Cluster + build cluster hierarchy |
+| `bayes`        | Naive Bayes                               | Tested                | Supervised           | Gaussian Naive Bayes |
+| `ica`          | Independent component analysis            | Tested                | Unsupervised         | FastICA |
+| `pls`          | Partial Least Squares                     | Tested                | Supervised           | Dimensionality reduction + regression |
+| `tsne`         | Dimensionality reduction                  | Tested                | Unsupervised         | Exact + Barnes-Hut t-SNE |
+| `preprocessing`| Normalization & vectorization             | Tested / Benchmarked  | Pre-processing       | Whitening + count vectorization / TF-IDF |
+| `nn`           | Nearest Neighbours & Distances            | Tested / Benchmarked  | Pre-processing       | Spatial indices + distance functions |
+| `ftrl`         | Follow-The-Regularised-Leader (proximal)  | Tested / Benchmarked  | Partial fit          | L1 + L2 regularisation; incremental update |
 
-
-`linfa` aims to provide a comprehensive toolkit to build Machine Learning applications with Rust.
-
-Kin in spirit to Python's `scikit-learn`, it focuses on common preprocessing tasks and classical ML algorithms for your everyday ML tasks.
-
-**[Website](https://rust-ml.github.io/linfa/) | [Community chat](https://rust-ml.zulipchat.com/)**
-
-[Current state](https://github.com/rust-ml/linfa#current-state)
-
-Where does `linfa` stand right now? [Are we learning yet?](http://www.arewelearningyet.com/)
-
-`linfa` currently provides sub-packages with the following algorithms:
-
-
-[clustering](https://github.com/rust-ml/linfa/blob/master/algorithms/linfa-clustering)
-Clustering of unlabeled data; contains K-Means, Gaussian-Mixture-Model, DBSCAN and OPTICS
-
-[kernel](https://github.com/rust-ml/linfa/blob/master/algorithms/linfa-kernel)
-Maps feature vector into higher-dimensional space
-
-[linear](https://github.com/rust-ml/linfa/blob/master/algorithms/linfa-linear)
-Contains Ordinary Least Squares (OLS), Generalized Linear Models (GLM)
-
-[elasticnet](https://github.com/rust-ml/linfa/blob/master/algorithms/linfa-elasticnet)
-Linear regression with elastic net constraints
-
-[logistic](https://github.com/rust-ml/linfa/blob/master/algorithms/linfa-logistic)
-Builds two-class logistic regression models
-
-[reduction](https://github.com/rust-ml/linfa/blob/master/algorithms/linfa-reduction)
-Diffusion mapping and Principal Component Analysis (PCA)
-
-[trees](https://github.com/rust-ml/linfa/blob/master/algorithms/linfa-trees)
-Linear decision trees
-
-[svm](https://github.com/rust-ml/linfa/blob/master/algorithms/linfa-svm)
-Classification or regression analysis of labeled datasets
-
-[hierarchical](https://github.com/rust-ml/linfa/blob/master/algorithms/linfa-hierarchical)
-Agglomerative hierarchical clustering
-Cluster and build hierarchy of clusters
-
-[bayes](https://github.com/rust-ml/linfa/blob/master/algorithms/linfa-bayes)
-Naive Bayes
-Contains Gaussian Naive Bayes
-
-[ica](https://github.com/rust-ml/linfa/blob/master/algorithms/linfa-ica)
-Independent component analysis
-Contains FastICA implementation
-
-[pls](https://github.com/rust-ml/linfa/blob/master/algorithms/linfa-pls)
-Partial Least Squares
-Contains PLS estimators for dimensionality reduction and regression
-
-[tsne](https://github.com/rust-ml/linfa/blob/master/algorithms/linfa-tsne)
-Dimensionality reduction
-Contains exact solution and Barnes-Hut approximation t-SNE
-
-[preprocessing](https://github.com/rust-ml/linfa/blob/master/algorithms/linfa-preprocessing)
-Normalization & Vectorization
-Contains data normalization/whitening and count vectorization/tf-idf
-
-[nn](https://github.com/rust-ml/linfa/blob/master/algorithms/linfa-nn)
-Nearest Neighbours & Distances
-Spatial index structures and distance functions
-
-
-If this strikes a chord with you, please take a look at the [roadmap](https://github.com/rust-ml/linfa/issues/7) and get involved!
-
-
-
-
-
-linfa currently provides sub-packages with the following algorithms:
-
-| Name	| Purpose	                                | Status	| Category	| Notes |
-|----|-----------------------------------------|---|----|----|
-| clustering | Data clustering                         |	Tested / Benchmarked	| Unsupervised learning	| Clustering of unlabeled data; contains K-Means, Gaussian-Mixture-Model, DBSCAN and OPTICS |
-| kernel	| Kernel methods for data transformation	 | Tested	|Pre-processing	| Maps feature vector into higher-dimensional space
-|linear	| Linear regression	                      |Tested	|Partial fit	|Contains Ordinary Least Squares (OLS), Generalized Linear Models (GLM)
-|elasticnet	| Elastic Net|	Tested	|Supervised learning	|Linear regression with elastic net constraints
-|logistic	|Logistic regression	|Tested	|Partial fit	|Builds two-class logistic regression models
-| reduction	| Dimensionality reduction	|Tested	|Pre-processing	|Diffusion mapping and Principal Component Analysis (PCA)
-| trees	|Decision trees	|Tested / Benchmarked	|Supervised learning	|Linear decision trees
-| svm	|Support Vector Machines	|Tested	|Supervised learning	|Classification or regression analysis of labeled datasets
-| hierarchical	|Agglomerative hierarchical clustering	|Tested	|Unsupervised learning	|Cluster and build hierarchy of clusters
-| bayes	|Naive Bayes	|Tested	|Supervised learning	|Contains Gaussian Naive Bayes
-| ica	| Independent component analysis	| Tested	|Unsupervised learning	|Contains FastICA implementation
-| pls	|Partial Least Squares	|Tested	|Supervised learning	|Contains PLS estimators for dimensionality reduction and regression
-| tsne	|Dimensionality reduction	|Tested	|Unsupervised learning|	Contains exact solution and Barnes-Hut approximation t-SNE
-| preprocessing	|Normalization & Vectorization	|Tested / Benchmarked	|Pre-processing	|Contains data normalization/whitening and count vectorization/tf-idf
-| nn	|Nearest Neighbours & Distances	|Tested / Benchmarked	|Pre-processing	|Spatial index structures and distance functions
-| ftrl	|Follow The Reguralized Leader - proximal	|Tested / Benchmarked	|Partial fit	|Contains L1 and L2 regularization. Possible incremental update
+(See the [linfa README](https://github.com/rust-ml/linfa#current-state)
+for current status — the matrix above is a snapshot.)

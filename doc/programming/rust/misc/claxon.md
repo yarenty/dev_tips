@@ -1,83 +1,62 @@
 ---
-title: Claxon
+title: Claxon — pure-Rust FLAC decoder
 main_link: https://github.com/ruuda/claxon
-keywords: [claxon, rust, flac, decoding]
-status: draft
+keywords: [claxon, rust, flac, decoder, audio]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/misc/audio.md` by `article_split.py`. Heading: **Claxon**.
-
-# Claxon
+# Claxon — pure-Rust FLAC decoder
 
 **Main link:** <https://github.com/ruuda/claxon>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Claxon is a pure-Rust FLAC (Free Lossless Audio Codec) decoder by [Ruud van Asseldonk](https://github.com/ruuda). It has been fuzzed and verified against the reference FLAC decoder for correctness, and its decode performance is roughly on par with the reference C implementation. Scope is deliberately narrow: read FLAC files (and the metadata blocks inside them), no encoding, no other formats.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for Claxon when you need a small, single-purpose, well-audited FLAC decoder and don't want to pull in the full `symphonia` codec graph. Pair it with [[hound]] (also by ruuda) when transcoding FLAC → WAV. For modern multi-format apps the recommended default is now [[symphonia]], which decodes FLAC alongside many other formats; Claxon is still the lighter, narrower dependency. Note: encoding FLAC from Rust still effectively means shelling out to the reference `flac` CLI or wrapping `libFLAC` — there is no production-grade pure-Rust FLAC *encoder*.
 
-## Similar / related topics
-
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
-
-## Internal links
-
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[hound]] — Hound _(score 26.0)_
-- [[audio]] — Coreaudio _(score 26.0)_
-- [[rtic]] — RTIC _(score 17.1)_
-- [[lewton]] — lewton _(score 17.1)_
-- [[daktilo]] — Daktilo _(score 17.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
-## Keywords
-
-`#claxon` `#misc` `#rust` `#programming` `#flac` `#example` `#decoding` `#decoder`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
-
-## References / raw notes
-
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# Claxon
-
-https://github.com/ruuda/claxon
-
-
-A FLAC decoding library in Rust.
-
-
-Claxon is a FLAC decoder written in pure Rust. It has been fuzzed and verified against the reference decoder for correctness. Its performance is similar to the reference decoder.
-
-Example
-The following example computes the root mean square (RMS) of a FLAC file:
+Minimal RMS-of-a-FLAC-file example:
 
 ```rust
 let mut reader = claxon::FlacReader::open("testsamples/pop.flac").unwrap();
 let mut sqr_sum = 0.0;
 let mut count = 0;
 for sample in reader.samples() {
-let s = sample.unwrap() as f64;
-sqr_sum += s * s;
-count += 1;
+    let s = sample.unwrap() as f64;
+    sqr_sum += s * s;
+    count += 1;
 }
 println!("RMS is {}", (sqr_sum / count as f64).sqrt());
-
 ```
 
-More examples can be found in the examples directory. For a simple example of decoding a FLAC file to wav with Claxon and Hound, see decode_simple.rs. A more efficient way of decoding requires dealing with a few details of the FLAC format. See decode.rs for an example.
+See `examples/decode_simple.rs` (Claxon + Hound → WAV) and `examples/decode.rs` (faster, format-aware) in the repo.
+
+## Similar / related topics
+
+- [[symphonia]] — modern unified codec library; decodes FLAC and much more.
+- [[hound]] — WAV reader/writer by the same author; natural Claxon companion for transcoding.
+- [`libFLAC`](https://xiph.org/flac/) — the C reference encoder/decoder if you need encoding.
+- [`metaflac`](https://crates.io/crates/metaflac) — FLAC metadata-only reader if you don't need samples.
+
+## Internal links
+
+<!-- reviewed -->
+
+- [[audio]] — Rust audio ecosystem overview / decision tree.
+- [[symphonia]] — modern unified replacement.
+- [[hound]] — WAV companion crate by the same author.
+- [[lewton]] — Vorbis sibling (the .ogg companion to Claxon's .flac).
+- [[minimp3]] — MP3 sibling.
+
+## Keywords
+
+`#claxon` `#rust` `#flac` `#decoder` `#audio` `#pure-rust`
+
+## References / raw notes
+
+- Repo: <https://github.com/ruuda/claxon>
+- Author: Ruud van Asseldonk (also wrote [[hound]]).
+- Relationship: Hound was originally written to *test* Claxon.
+- Examples: `examples/decode_simple.rs`, `examples/decode.rs` in the repo.

@@ -1,60 +1,47 @@
 ---
-title: Daktilo
+title: Daktilo — typewriter sound effects for your keyboard
 main_link: https://github.com/orhun/daktilo
-keywords: [daktilo, rust, typewriter, orhun]
-status: draft
+keywords: [daktilo, rust, typewriter, sound-effects, orhun, fun]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-
-> Auto-split from `doc/programming/rust/misc/audio.md` by `article_split.py`. Heading: **Daktilo**.
-
-# Daktilo
+# Daktilo — typewriter sound effects for your keyboard
 
 **Main link:** <https://github.com/orhun/daktilo>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`daktilo` ("typewriter" in Turkish) is a small Rust CLI by [orhun](https://github.com/orhun) that listens to your keyboard and plays typewriter-style sound effects in response. Different keys can trigger different samples (regular key, space, return, backspace), and the sound presets are configurable. It is a personality / vibe tool — orhun also makes [`git-cliff`](https://github.com/orhun/git-cliff), [`gpg-tui`](https://github.com/orhun/gpg-tui), [`kmon`](https://github.com/orhun/kmon), and [`menyoki`](https://github.com/orhun/menyoki).
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+This is firmly in the *whimsy* category: it is genuinely useful for streamers, screencast recorders, and people who like the auditory feedback of a Selectric while writing prose; it is genuinely *not* useful for production work (the audio thread can interact poorly with focus changes, and constant click-clack will distract people in shared spaces). Under the hood it pairs a global keyboard hook (which usually means accessibility / input-monitoring permissions) with [[rodio]] for playback. Treat it as a fun, well-engineered example of a small Rust CLI that does one cute thing well — a good showcase if you want to read the source of an end-to-end audio-driven Rust app.
+
+Other "Rust + sound for fun" projects in similar territory: [`bongo-cat-rs`](https://github.com/Skirlax/bongo-cat-rs) (animated mascot reacts to keys), [`klack`](https://github.com/nathom/klack) (mechanical-keyboard sounds for non-mechanical keyboards, written in Python), and the broader category of "ambient productivity sounds."
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[rodio]] — the playback library Daktilo uses underneath.
+- [`klack`](https://github.com/nathom/klack) — Python equivalent for mechanical-keyboard simulation.
+- [`git-cliff`](https://github.com/orhun/git-cliff) — orhun's most popular project; changelog generator.
+- [`menyoki`](https://github.com/orhun/menyoki) — orhun's screen-recorder.
+- [[../../../funny/README|Funny / esoteric programming]] — adjacent whimsy section.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[rtic]] — RTIC _(score 17.1)_
-- [[rodio]] — Rodio _(score 17.1)_
-- [[hound]] — Hound _(score 17.1)_
-- [[iot/drogue|drogue]] — Drogue _(score 17.1)_
-- [[claxon]] — Claxon _(score 17.1)_
+- [[audio]] — Rust audio ecosystem overview (Daktilo lives at the playback layer).
+- [[rodio]] — direct dependency for playing sound samples.
+- [[fun]] — sibling whimsy entry in this section.
+- [[../../../funny/README|funny]] — vault-wide fun/esoteric section.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#daktilo` `#misc` `#rust` `#programming` `#typewriter` `#orhun` `#sound` `#effect`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#daktilo` `#rust` `#typewriter` `#sound-effects` `#cli` `#fun` `#orhun`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# Daktilo
-
-https://github.com/orhun/daktilo
-
-Typewriter sound effect
+- Repo: <https://github.com/orhun/daktilo>
+- Author: orhun (also `git-cliff`, `gpg-tui`, `kmon`, `menyoki`).
+- Behaviour: typewriter sound effect on keypress, configurable per-key.
