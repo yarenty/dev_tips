@@ -40,7 +40,7 @@ This is the canonical landing page for the `doc/` tree. Every sub-directory has 
 - [Git](git/README.md) — workflow, configuration, delta.
 - [Live Demos](tools/live_demos/README.md) — recorded shell sessions.
 - [Funny](funny/README.md) — esoteric languages and joke programs.
-- [Published](published/README.md) — paper summaries and external write-ups (Data Interpreter, DataMan).
+- [Research papers](research_papers/README.md) — paper summaries and external write-ups (Data Interpreter, DataMan).
 
 ## Conventions
 
@@ -82,4 +82,4 @@ For tools specifically: install instructions, plugin/extension setup, and a tip 
 
 - `plan.md` (root) — the master reorganization plan and live progress tracker.
 - `inventory/` (root) — machine-readable audit data feeding the plan.
-- `published/` — paper summaries and external write-ups (originally a parking spot for yarenty.blogspot.com posts; now mostly distilled paper notes).
+- `research_papers/` — paper summaries and external write-ups (originally a parking spot for yarenty.blogspot.com posts; now mostly distilled paper notes).

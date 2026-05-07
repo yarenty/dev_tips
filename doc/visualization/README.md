@@ -45,7 +45,7 @@ The articles fall into a few buckets:
 - [[observability/grafana|grafana]] — operator's-view article on Grafana under `observability/`.
 - [[prometheus]] — the canonical metrics datasource for Grafana.
 - [[groot]] — example of a system whose internal state Rerun is good at visualising.
-- [Published](../published/README.md) — when "visualization" is really a "ship a polished doc" problem.
+- [Research papers](../research_papers/README.md) — when "visualization" is really a "ship a polished doc" problem.
 
 ## Keywords
 

@@ -631,8 +631,8 @@
   - [Brainfuck](funny/brainfuck.md)
   - [Sleep sort](funny/sleepsort.md)
 
-# Published
+# Research papers
 
-- [Published — paper summaries and external write-ups](published/README.md)
-  - [Data Interpreter — LLM agent for end-to-end data science](published/data_interpreter.md)
-  - [DataMan — LLM-driven pre-training data selection](published/dataman.md)
+- [Research papers — paper summaries and external write-ups](research_papers/README.md)
+  - [Data Interpreter — LLM agent for end-to-end data science](research_papers/data_interpreter.md)
+  - [DataMan — LLM-driven pre-training data selection](research_papers/dataman.md)

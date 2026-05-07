@@ -63,7 +63,7 @@ For the **Rust-side** of the same story (linfa, candle, burn, tch, dfdx, cudarc)
 - [[../programming/rust/data/datafusion/README|programming/rust/data/datafusion]] — DataFusion ecosystem (often relevant for ML data prep).
 - [[../db/vector/README|db/vector]] — vector databases (Qdrant, Chroma) — the substrate for RAG and semantic search.
 - [[../db/quality/data_quality|db/quality/data_quality]] — data-quality discipline; the upstream concern for any ML training pipeline.
-- [[../published/README|published]] — paper summaries (Data Interpreter, DataMan).
+- [[../research_papers/README|research papers]] — paper summaries (Data Interpreter, DataMan).
 
 ## Keywords
 
