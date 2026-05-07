@@ -1,99 +1,55 @@
 ---
-title: Books
-main_link: https://github.com/DovAmir/awesome-design-patterns
-keywords: [to-learn, rust, atomics, traits, books, design]
-status: draft
+title: Rust books — curated reading list
+main_link: https://doc.rust-lang.org/book/
+keywords: [books, rust, reading-list, atomics, macros, performance, design-patterns, nomicon]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Rust books — curated reading list
 
-# Books
-
-**Main link:** <https://github.com/DovAmir/awesome-design-patterns>
+**Main link:** <https://doc.rust-lang.org/book/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+A small curated reading list of Rust books and book-shaped websites worth keeping bookmarked: the Rust Cookbook (recipes), Mara Bos's *Rust Atomics and Locks* (low-level concurrency), the Rust Design Patterns book, the Rustonomicon (the Dark Arts of `unsafe`), Lukas Wirth's *Little Book of Rust Macros*, Nick Nethercote's *Rust Performance Book*, and the GitHub mirror of Bos's atomics+locks book. They cover everything you'd need beyond [The Rust Programming Language](https://doc.rust-lang.org/book/) itself.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+These are the "level 2" reads — assume you've finished [The Rust Book](https://doc.rust-lang.org/book/) and want to go deeper in one direction. Rough mapping of when to reach for which: *Atomics and Locks* when you start writing lock-free code or care about memory ordering; the *Rustonomicon* when you start writing `unsafe`; *The Little Book of Rust Macros* the first time you write `macro_rules!`; the *Rust Performance Book* when `cargo bench` says you need it; the Cookbook when you remember "there must be a 5-line idiom for this"; the Design Patterns book for object-orientation patterns translated to Rust idioms (often: "use traits, not inheritance"). The DovAmir awesome-design-patterns repo is *language-agnostic* — it's a meta-list, not Rust-specific. See [[scope]] for what topics to study (this article is which books to read about them) and [[tutorials]] for the courses-and-talks angle.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [The Rust Programming Language ("the book")](https://doc.rust-lang.org/book/) — the canonical first book; assumed prerequisite.
+- [Rust for Rustaceans](https://rust-for-rustaceans.com/) — Jon Gjengset's intermediate book; ownership/lifetimes/macros from a working-engineer angle.
+- [Programming Rust (Blandy/Orendorff)](https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586/) — O'Reilly's classic intermediate text.
+- [Effective Rust](https://www.lurklurk.org/effective-rust/) — David Drysdale, modelled on Effective Java/C++.
+- [Zero To Production In Rust](https://www.zero2prod.com/) — Luca Palmieri, project-based web-service walkthrough.
 
 ## Internal links
+<!-- reviewed -->
+- [[scope]]
+- [[tutorials]]
+- [[simple_short_intro_to_rust]]
+- [[cheats]]
+- [[README]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[scope]] — Scope _(score 26.0)_
-- [[programming/rust/sql_engine/books|books]] — Books _(score 20.5)_
-- [[tools/linux/books|books]] — Books _(score 19.4)_
-- [[github_map]] — Github MAP _(score 17.1)_
-- [[cheats_2]] — Cheats _(score 17.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#to-learn` `#learning` `#rust` `#programming` `#atomics` `#traits` `#book` `#error`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#books` `#rust` `#reading-list` `#atomics` `#macros` `#performance` `#nomicon` `#design-patterns`
 
 ## References / raw notes
-<!-- auto-split by article_split.py -->
-> Auto-split: 4 additional top-level heading(s) extracted into sibling files:
-> - [Github MAP](github_map.md)
-> - [Cheats](cheats_2.md)
-> - [Tutorials](tutorials.md)
-> - [Scope](scope.md)
 
-
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# Books
-
-
-## Cookbook
-
-https://rust-lang-nursery.github.io/rust-cookbook/intro.html
-
-## Rust Atomics and Locks
-
-Low-Level Concurrency in Practice
-by Mara Bos
-
-https://marabos.nl/atomics/
-
-## Design patterns
-
-https://rust-unofficial.github.io/patterns/
-
-All patterns:
-https://github.com/DovAmir/awesome-design-patterns
-
-## Rustonomicon - The Dark Arts of Unsafe Rust
-
-https://doc.rust-lang.org/nomicon/intro.html
-
-## The Little Book of Rust Macros
-
-https://veykril.github.io/tlborm/introduction.html
-
-
-## The Rust Performance Book
-
-https://nnethercote.github.io/perf-book/title-page.html
-
-
-## Atomics
-
-https://github.com/m-ou-se/rust-atomics-and-locks
+- **Rust Cookbook** — <https://rust-lang-nursery.github.io/rust-cookbook/intro.html>
+  Recipe-style how-do-I-do-X for the standard library + popular crates.
+- **Rust Atomics and Locks** (Mara Bos) — <https://marabos.nl/atomics/>
+  Low-Level Concurrency in Practice. The definitive book on memory ordering, atomics, and lock primitives in Rust.
+  - GitHub mirror: <https://github.com/m-ou-se/rust-atomics-and-locks>
+- **Rust Design Patterns** — <https://rust-unofficial.github.io/patterns/>
+  Translates classic patterns to Rust idioms; includes anti-patterns and Rust-specific patterns (RAII, type-state, newtype, …).
+  - Language-agnostic meta-list: <https://github.com/DovAmir/awesome-design-patterns>
+- **The Rustonomicon** — <https://doc.rust-lang.org/nomicon/intro.html>
+  The Dark Arts of Unsafe Rust: aliasing, drop semantics, raw pointers, FFI invariants.
+- **The Little Book of Rust Macros** (Lukas Wirth) — <https://veykril.github.io/tlborm/introduction.html>
+  Definitive reference for `macro_rules!` and (lightly) procedural macros.
+- **The Rust Performance Book** (Nick Nethercote) — <https://nnethercote.github.io/perf-book/title-page.html>
+  Practical playbook from the rustc / Firefox perf engineer.

@@ -1,81 +1,49 @@
 ---
-title: 7 more ideas
-main_link: 
-keywords: [7-more-ideas, rust, games, distributed]
-status: draft
+title: 7 more Rust project ideas
+main_link: https://medium.com/
+keywords: [project-ideas, rust, learning, web-scraper, blockchain, chat, game-engine]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# 7 more Rust project ideas
 
-> Auto-split from `doc/programming/rust/learning/_todo_ideas.md` by `article_split.py`. Heading: **7 more ideas**.
-
-# 7 more ideas
+**Main link:** <https://medium.com/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+A short brainstorm list of seven non-trivial Rust project ideas to practise on, each chosen to exercise a specific corner of the ecosystem: web scraping (Actix + reqwest), file encryption (CLI + crypto crates), parallel image processing (rayon/threads + `image`), a toy blockchain, a Rocket-based blog, a WebSocket chat server, and a simulation game in a Rust game engine. Sister list to [[from_easy_to_advanced]] (15 progressively harder ZTM projects); these seven are flatter and more "pick the one that excites you".
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Project-driven learning beats theory once you've read the basics; the trick is picking projects that exercise *one new thing* without you also re-learning a problem domain. The seven here are scoped that way — for example "WebSocket chat" exercises async + shared state + framing, but the chat protocol is trivial. Some specifics deserve modern updates: **Amethyst is archived** (use [Bevy](https://bevyengine.org/) instead — see this vault's `games/engines.md`); **`ws-rs` is unmaintained** (use `tokio-tungstenite` or `axum`'s WebSocket support); **Actix Web** is fine but `axum` is now the more common pick for new code; the `crypto` crate name has moved around — use the [RustCrypto](https://github.com/RustCrypto) project's audited primitives. The blockchain idea pairs well with [[_todo_ideas]] (port a Python tutorial to Rust). For a structured ladder of difficulty rather than a flat list, see [[from_easy_to_advanced]].
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[from_easy_to_advanced]] — ZTM's 15-project ladder, structured beginner→advanced.
+- [[_todo_ideas]] — single-project idea (Python blockchain → Rust port).
+- [Are We Game Yet?](https://arewegameyet.rs/) — current state of Rust game-dev.
+- [Awesome Rust](https://github.com/rust-unofficial/awesome-rust) — discover crates per problem area.
+- [crates.io categories](https://crates.io/categories) — find the right crate for each project.
 
 ## Internal links
+<!-- reviewed -->
+- [[from_easy_to_advanced]]
+- [[_todo_ideas]]
+- [[scope]]
+- [[README]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[_todo_ideas]] — Move blokchain from python to rust _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-- [[alagorithms]] — algorithms _(score 13.1)_
-- [[actors]] — Actix _(score 13.1)_
-- [[rocket]] — Rocket _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#7-more-ideas` `#learning` `#rust` `#programming` `#game` `#build` `#web` `#create`
-
-## TODO
-
-- No `main_link` could be auto-detected. Add the canonical URL (project homepage / repo / paper) to the frontmatter.
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#project-ideas` `#rust` `#learning` `#practice`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+The seven ideas (each ~1 paragraph in the original):
 
-# 7 more ideas
-
-1. Web Scraper with Actix and reqwest:
-   Build a web scraper using the Actix web framework for handling HTTP requests and reqwest for making requests. Create a tool that extracts information from websites, providing valuable insights or data for analysis. Focus on error handling, asynchronous programming, and creating a clean API for your scraper.
-
-2. Command-Line Tool for File Encryption:
-   Develop a command-line tool that encrypts and decrypts files using Rust’s cryptography libraries. Utilize the `crypto` crate to implement secure encryption algorithms. Ensure proper key management and explore the Rust standard library’s file I/O capabilities. This project will enhance your understanding of security practices in Rust.
-
-3. Concurrency in Image Processing:
-   Leverage Rust’s concurrency features to build an image-processing application. Explore parallelism by implementing filters and transformations on images using the `image` crate. Experiment with multithreading and asynchronous programming to optimize the processing speed for large datasets.
-
-4. Blockchain Implementation with Rust:
-   Dive into the world of blockchain by creating a simple blockchain implementation in Rust. Learn about cryptographic hash functions, data structures, and networking. Use the `tokio` library for asynchronous networking to build a decentralized network. This project will deepen your understanding of distributed systems and cryptography.
-
-5. Personal Blog with Rocket Framework:
-   Create a personal blog using the Rocket web framework. Implement features such as user authentication, CRUD operations, and Markdown rendering for blog posts. This project will give you hands-on experience with web development in Rust and the opportunity to explore the Rocket framework’s powerful features.
-
-6. Chat Application with WebSocket:
-   Develop a real-time chat application using Rust and the WebSocket protocol. Use libraries like `ws-rs` to handle WebSocket connections and build a simple chat server. Explore Rust’s ownership system to manage data shared between multiple clients. This project will deepen your understanding of networking and real-time communication.
-
-7. Simulation Game with Amethyst Game Engine:
-   Create a simulation game using the Amethyst game engine. Build an interactive and visually appealing experience that incorporates game mechanics, physics, and graphics. Amethyst allows you to focus on game development without sacrificing performance, making it an ideal choice for exploring Rust in the gaming domain.
-
-
-
------
+1. **Web scraper** — Actix-Web + reqwest. Practice: async HTTP, error handling, clean public API. *Modern note: `axum` or plain `tokio` + `reqwest` is more idiomatic now.*
+2. **CLI file encryption** — uses Rust crypto crates. Practice: key management, file I/O, secure defaults. *Modern note: pull primitives from [RustCrypto](https://github.com/RustCrypto) (`aes-gcm`, `chacha20poly1305`).*
+3. **Parallel image processing** — the `image` crate + `rayon`/threads. Practice: data parallelism, filter algorithms.
+4. **Blockchain implementation** — hashing, PoW, P2P with tokio. Practice: distributed state, networking. See [[_todo_ideas]] for the linked Python tutorial to port.
+5. **Personal blog** — Rocket framework. Practice: routing, auth, CRUD, Markdown rendering. *Alt: `axum` + `askama` templates.*
+6. **WebSocket chat** — was suggested with `ws-rs` (now stale); use `tokio-tungstenite` or `axum`'s WebSocket extractor. Practice: async, shared state, framing.
+7. **Simulation game** — was suggested with [Amethyst](https://amethyst.rs/) (now archived); use [Bevy](https://bevyengine.org/) — ECS-based, actively developed.

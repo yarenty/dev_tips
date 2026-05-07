@@ -1,63 +1,48 @@
 ---
-title: Move blokchain from python to rust
-main_link: https://github.com/joerdav/xc
-keywords: [todo-ideas, rust, api, level, python]
-status: draft
+title: Project idea — port a Python blockchain tutorial to Rust
+main_link: https://medium.com/coinmonks/python-tutorial-build-a-blockchain-713c706f6531
+keywords: [project-ideas, rust, blockchain, python, port, learning]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Project idea — port a Python blockchain tutorial to Rust
 
-# Move blokchain from python to rust
-
-**Main link:** <https://github.com/joerdav/xc>
+**Main link:** <https://medium.com/coinmonks/python-tutorial-build-a-blockchain-713c706f6531>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+A single project-idea note: take an existing Python "build a blockchain in 200 lines" tutorial and re-implement it in Rust. The pedagogical value is that you already know what the system does (the Python article spells out hashes, blocks, mining, the chain validation), so the Rust port forces you to learn the *Rust-specific* machinery — borrowing across structs, `Vec<Block>` ownership, hashing with `sha2`, JSON serialisation with `serde`, and (optionally) HTTP endpoints with `axum`/`actix-web`/`rocket` for the peer-to-peer layer.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Porting a known-good tutorial is one of the highest-leverage Rust learning patterns: you skip the "what should this even do?" friction and spend 100% of your effort on the language. The blockchain choice is good because the data model is small (a `Block` struct with index, timestamp, data, prev-hash, hash, nonce; a `Blockchain` containing `Vec<Block>`) yet exercises ownership, immutability of past blocks, hash recomputation, and validation logic that's easy to test. Natural extensions: add a Tokio-based REST API for `/mine`, `/chain`, `/peers`; add proof-of-stake or proof-of-authority as a second consensus mode to play with traits/enums; benchmark the Python vs Rust implementations to feel the speedup. See [[7_more_ideas]] (which lists the same blockchain idea among 7 others) and [[from_easy_to_advanced]] for a longer ladder of project ideas.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[7_more_ideas]] — same blockchain idea + 6 sibling project ideas.
+- [[from_easy_to_advanced]] — 15 progressively harder Rust practice projects.
+- [Build your own X](https://github.com/codecrafters-io/build-your-own-x) — meta-list of "build a clone of X" tutorials in many languages.
+- [`sha2` crate](https://crates.io/crates/sha2) — RustCrypto's SHA-256, the natural hash backend.
+- [`serde_json`](https://crates.io/crates/serde_json) — for serialising/deserialising blocks.
 
 ## Internal links
+<!-- reviewed -->
+- [[7_more_ideas]]
+- [[from_easy_to_advanced]]
+- [[xc_in_rust]]
+- [[scope]]
+- [[README]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[from_easy_to_advanced]] — from easier to advanced 1-by-1 _(score 28.4)_
-- [[7_more_ideas]] — 7 more ideas _(score 17.1)_
-- [[scope]] — Scope _(score 17.1)_
-- [[xc_in_rust]] — XC in Rust _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#todo-ideas` `#learning` `#rust` `#programming` `#add` `#api` `#project` `#level`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#project-ideas` `#rust` `#blockchain` `#python-port` `#learning`
 
 ## References / raw notes
-<!-- auto-split by article_split.py -->
-> Auto-split: 3 additional top-level heading(s) extracted into sibling files:
-> - [XC in Rust](xc_in_rust.md)
-> - [7 more ideas](7_more_ideas.md)
-> - [from easier to advanced 1-by-1](from_easy_to_advanced.md)
 
-
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# Move blokchain from python to rust
-
-https://medium.com/coinmonks/python-tutorial-build-a-blockchain-713c706f6531
+- Python tutorial to port: <https://medium.com/coinmonks/python-tutorial-build-a-blockchain-713c706f6531>
+- Suggested Rust crates for the port:
+  - `sha2` for SHA-256
+  - `serde` + `serde_json` for serialisation
+  - `chrono` for timestamps
+  - `axum` or `actix-web` for the optional REST API
+  - `tokio` for async networking

@@ -1,58 +1,44 @@
 ---
-title: Cheats
+title: Rust cheat sheets (cheats.rs)
 main_link: https://cheats.rs/
-keywords: [cheats, rust]
-status: draft
+keywords: [cheats, rust, reference, cheatsheet]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-
-> Auto-split from `doc/programming/rust/learning/_must_have.md` by `article_split.py`. Heading: **Cheats**.
-
-# Cheats
+# Rust cheat sheets (cheats.rs)
 
 **Main link:** <https://cheats.rs/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+[cheats.rs](https://cheats.rs/) is the canonical single-page Rust language cheat sheet maintained by Ralf Biedert. It packs syntax, lifetimes, generics, ownership rules, the standard library highlights, formatting placeholders, and the iterator/error/concurrency primitives onto one densely linked page — designed to be a memory-jogger, not a tutorial. There's also a printable PDF and an OpenGraph-friendly index of "books, examples, sites, idioms" linked from the bottom.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for cheats.rs when you've used Rust before but the syntax has half-faded — formatter flags, lifetime elision rules, the difference between `&str` / `String` / `Box<str>` / `Cow<str>`, what `std::mem::*` actually offers, etc. It's *not* a learning resource (the layout is too dense and assumes you already know the words); for that, see [[simple_short_intro_to_rust]] or [[tutorials]]. The companion list of links at the bottom of cheats.rs is itself a high-quality curation that overlaps with this `learning/` folder. Keep the printable PDF on disk for offline lookups.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [Rust by Example](https://doc.rust-lang.org/rust-by-example/) — runnable snippets, more learning-oriented.
+- [The Rust Reference](https://doc.rust-lang.org/reference/) — the formal language spec.
+- [The Rustonomicon](https://doc.rust-lang.org/nomicon/) — the dark arts of `unsafe`.
+- [tour of Rust](https://tourofrust.com/) — interactive step-by-step.
+- [[tutorials]] — long-form tutorials curated in this vault.
 
 ## Internal links
+<!-- reviewed -->
+- [[simple_short_intro_to_rust]]
+- [[tutorials]]
+- [[from_easy_to_advanced]]
+- [[scope]]
+- [[README]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[cheats_2]] — Cheats _(score 26.0)_
-- [[scope]] — Scope _(score 17.1)_
-- [[_todo_ideas]] — Move blokchain from python to rust _(score 17.1)_
-- [[from_easy_to_advanced]] — from easier to advanced 1-by-1 _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#cheats` `#learning` `#rust` `#programming`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#cheats` `#rust` `#reference` `#cheatsheet`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# Cheats
-
-https://cheats.rs/
+- Main site: <https://cheats.rs/>
+- Printable PDF: linked from the top of the page.
+- Source: <https://github.com/ralfbiedert/cheats.rs>

@@ -1,13 +1,9 @@
 ---
 title: anyhow
 main_link: https://crates.io/crates/anyhow
-keywords: [anyhow, rust]
-status: draft
+keywords: [anyhow, rust, error-handling, dtolnay]
+status: reviewed
 ---
-
-<!-- auto-stubbed by article_stub.py -->
-
-> Auto-split from `doc/programming/rust/learning/_must_have.md` by `article_split.py`. Heading: **anyhow**.
 
 # anyhow
 
@@ -15,45 +11,52 @@ status: draft
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`anyhow` is David Tolnay's de-facto crate for ergonomic error handling in Rust **applications** (binaries, scripts, integration glue). It provides one trait-object-based error type, `anyhow::Error`, that can absorb any `std::error::Error` plus a `Context` extension trait for attaching human-readable context as errors propagate. Combined with the `?` operator and the `anyhow!` / `bail!` / `ensure!` macros it removes 90% of the boilerplate around error definitions in code that doesn't need a custom enum.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `anyhow` in **applications** where you mostly want to bubble errors up to `main` (or an HTTP handler) and print a decent backtrace; reach for [[thiserror]] in **libraries** where downstream code needs to match on specific variants. The two are designed to be combined: define your library's typed errors with `thiserror`, then the binary that consumes them uses `anyhow::Result<T>` everywhere and `.context("while loading config")` on calls that need extra info. `color-eyre` (built on [[eyre]], a fork of anyhow) is the prettier alternative if you want themed reports. The main gotcha is that `anyhow::Error` erases the concrete type, so `match err { MyErr::Foo => … }` won't compile — you need `err.downcast_ref::<MyErr>()`.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[thiserror]] — derive macro for library-side typed error enums; the canonical pairing.
+- [[eyre]] / `color-eyre` — fork of anyhow with customisable reports (colours, spans, sections).
+- `snafu` — older alternative emphasising context selectors and per-call-site errors.
+- `failure` — predecessor crate, deprecated; you'll still see it in old codebases.
+- Standard `Box<dyn Error + Send + Sync>` — what `anyhow::Error` essentially is, with ergonomics added.
 
 ## Internal links
+<!-- reviewed -->
+- [[thiserror]]
+- [[eyre]]
+- [[../core/error|core/error]]
+- [[README]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[scope]] — Scope _(score 17.1)_
-- [[_must_have]] — List of awesome libraries !!! _(score 17.1)_
-- [[_to_learn]] — Books _(score 17.1)_
-- [[thiserror]] — thiserror _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#anyhow` `#learning` `#rust` `#programming` `#crates` `#error` `#reporting`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#anyhow` `#rust` `#error-handling` `#dtolnay` `#crates`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- crates.io: <https://crates.io/crates/anyhow>
+- repo: <https://github.com/dtolnay/anyhow>
+- Typical usage:
 
-# anyhow
+```rust
+use anyhow::{Context, Result, bail, ensure};
 
-https://crates.io/crates/anyhow
-Error reporting ...
+fn load_config(path: &str) -> Result<Config> {
+    let bytes = std::fs::read(path)
+        .with_context(|| format!("reading config from {path}"))?;
+    let cfg: Config = toml::from_slice(&bytes)
+        .context("parsing config TOML")?;
+    ensure!(cfg.workers > 0, "workers must be > 0");
+    Ok(cfg)
+}
+
+fn main() -> Result<()> {
+    let cfg = load_config("config.toml")?;
+    if cfg.workers > 1024 { bail!("too many workers: {}", cfg.workers); }
+    Ok(())
+}
+```

@@ -1,58 +1,43 @@
 ---
-title: Simple short intro to rust
+title: A half hour to learn Rust (fasterthanli.me)
 main_link: https://fasterthanli.me/articles/a-half-hour-to-learn-rust
-keywords: [simple-short-intro-to-rust, rust, intro, fasterthanli]
-status: draft
+keywords: [rust, intro, fasterthanli, amos, syntax, primer]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/learning/_must_have.md` by `article_split.py`. Heading: **Simple short intro to rust**.
-
-# Simple short intro to rust
+# A half hour to learn Rust (fasterthanli.me)
 
 **Main link:** <https://fasterthanli.me/articles/a-half-hour-to-learn-rust>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Amos's "A half-hour to learn Rust" is a single long article that walks through Rust's syntax in the smallest sentences-and-snippets it can — variables, blocks, functions, lifetimes, traits, generics, error propagation, the standard collections, closures, async, macros — without explaining the *why* of any of it. It's the fastest way for an experienced programmer to get a reading-level grasp of Rust syntax before diving into [The Rust Book](https://doc.rust-lang.org/book/) or other people's code.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for this when you already know one C-family + one ML-family language and just need a syntax map of Rust quickly: pattern matching, the `?` operator, lifetime annotations, `mut` semantics, `&` vs `&mut` vs `move`. It's deliberately not a tutorial — there are no exercises and very little hand-holding — but the snippets are tight enough that you can mentally trace each one. Pair with cheats.rs ([[cheats]]) as a permanent lookup, and with the Rust Book / [[scope]] for depth. The article is a few years old now (the 2020 generation), but the syntax it covers hasn't moved meaningfully.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [Tour of Rust](https://tourofrust.com/) — interactive, multi-page, similar audience.
+- [Comprehensive Rust](https://google.github.io/comprehensive-rust/) — Google's deeper 4-day course (see [[tutorials]]).
+- [The Rust Book](https://doc.rust-lang.org/book/) — the canonical long-form intro.
+- [Rust by Example](https://doc.rust-lang.org/rust-by-example/) — example-driven, similar density.
+- [[cheats]] — single-page reference once you've internalised the syntax.
 
 ## Internal links
+<!-- reviewed -->
+- [[cheats]]
+- [[tutorials]]
+- [[scope]]
+- [[from_easy_to_advanced]]
+- [[README]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[scope]] — Scope _(score 17.1)_
-- [[_todo_ideas]] — Move blokchain from python to rust _(score 17.1)_
-- [[xc_in_rust]] — XC in Rust _(score 17.1)_
-- [[from_easy_to_advanced]] — from easier to advanced 1-by-1 _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#simple-short-intro-to-rust` `#learning` `#rust` `#programming` `#simple` `#short` `#intro` `#fasterthanli`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#rust` `#intro` `#primer` `#fasterthanli` `#amos` `#syntax`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# Simple short intro to rust
-https://fasterthanli.me/articles/a-half-hour-to-learn-rust
+- Article: <https://fasterthanli.me/articles/a-half-hour-to-learn-rust>
+- Author: Amos Wenger (fasterthanli.me) — also wrote *Why is my Rust build so slow?* and the long-running *Making our own ping* / *Cool bear* series.

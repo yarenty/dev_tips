@@ -1,86 +1,70 @@
 ---
-title: Scope
-main_link: 
-keywords: [scope, rust, traits]
-status: draft
+title: Rust learning scope (topics roadmap)
+main_link: https://doc.rust-lang.org/book/
+keywords: [scope, rust, roadmap, learning, syllabus, traits, lifetimes, error-handling]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Rust learning scope (topics roadmap)
 
-> Auto-split from `doc/programming/rust/learning/_to_learn.md` by `article_split.py`. Heading: **Scope**.
-
-# Scope
+**Main link:** <https://doc.rust-lang.org/book/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+A personal syllabus / roadmap of the intermediate-and-up Rust topics worth working through after the basics: polymorphism via generics & traits, advanced memory management (lifetimes, smart pointers, deref coercion), error-handling conventions, and the functional-style features (closures, iterators, combinators). It's a pointer to "what to study next", not a tutorial in itself; the canonical material lives in [The Rust Programming Language](https://doc.rust-lang.org/book/), [Rust by Example](https://doc.rust-lang.org/rust-by-example/), and the more advanced [Rustonomicon](https://doc.rust-lang.org/nomicon/).
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The list is roughly the demarcation point between "I can write a working CLI" and "I can read other people's library code without flinching". The four buckets are deliberately ordered: traits unlock most of the standard library, lifetimes unlock most of the borrow-checker conversations, error handling unlocks ergonomic application code (see [[anyhow]] / [[thiserror]] / [[eyre]]), and the functional/iterator chapter unlocks idiomatic Rust style. Use it as a self-quiz: if any sub-bullet feels fuzzy, that's the next thing to read about. For each bucket the canonical follow-up reads are *The Rust Programming Language* (chapters 10, 13, 15–16, 19) and *Rust for Rustaceans* by Jon Gjengset.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [The Rust Programming Language ("the book")](https://doc.rust-lang.org/book/) — the canonical learning path.
+- [Rust by Example](https://doc.rust-lang.org/rust-by-example/) — the same topics as runnable snippets.
+- [Rust for Rustaceans](https://rust-for-rustaceans.com/) — Jon Gjengset's intermediate-to-advanced book.
+- [Comprehensive Rust](https://google.github.io/comprehensive-rust/) — Google's 4-day course (see [[tutorials]]).
+- [[from_easy_to_advanced]] — project-based variant of the same idea.
 
 ## Internal links
+<!-- reviewed -->
+- [[tutorials]]
+- [[simple_short_intro_to_rust]]
+- [[from_easy_to_advanced]]
+- [[anyhow]]
+- [[thiserror]]
+- [[_to_learn]]
+- [[README]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[_to_learn]] — Books _(score 26.0)_
-- [[_must_have]] — List of awesome libraries !!! _(score 17.1)_
-- [[anyhow]] — anyhow _(score 17.1)_
-- [[thiserror]] — thiserror _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#scope` `#learning` `#rust` `#programming` `#traits` `#error` `#lifetimes` `#generics`
-
-## TODO
-
-- No `main_link` could be auto-detected. Add the canonical URL (project homepage / repo / paper) to the frontmatter.
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#scope` `#rust` `#roadmap` `#learning` `#syllabus`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+Topics worth getting comfortable with, in roughly this order:
 
-# Scope 
-
-... - todo: fill this ones
-
-
-- polymorphism with generics & traits
+- **Polymorphism with generics & traits**
   - generics, traits
-  - traits bounds, trait objects
-  - super traits
-  - static dispatch vs dynamic
-  - derive traits
-  - traits in standard libs
-- advanced memory management
+  - trait bounds, trait objects (`dyn Trait`)
+  - super-traits
+  - static dispatch vs dynamic dispatch
+  - derive macros
+  - the trait families in the standard library (`Iterator`, `From`/`Into`, `Read`/`Write`, `Display`/`Debug`, …)
+- **Advanced memory management**
   - concrete lifetimes
-  - generic lifetimes annotations
-  - lifetimes in functions & struts
-  - smart pointers
+  - generic lifetime annotations
+  - lifetimes in functions & structs
+  - smart pointers (`Box`, `Rc`, `Arc`, `RefCell`, `Mutex`)
   - implicit deref coercion
-- error handling
-  - throw unrecoverable error
-  - return recoverable error
-  - propagate errors
-  - result & option enums
-  - multiple error types
-  - anyhow & this error
-- functional features
+- **Error handling**
+  - `panic!` for unrecoverable errors
+  - `Result` for recoverable ones; `?` for propagation
+  - `Result` & `Option` combinators
+  - multiple error types in one function ([[anyhow]] / [[thiserror]] / [[eyre]])
+- **Functional features**
   - closures & function pointers
-  - iterator pattern
-  - iter over collections
-  - combinators
-- and ... more
+  - the iterator pattern
+  - iterating over collections
+  - combinators (`map`, `filter`, `fold`, `collect`, …)
+
+…and more: macros (declarative + proc), `unsafe`, FFI, async/await, the type-state pattern.

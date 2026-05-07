@@ -1,230 +1,150 @@
 ---
-title: Actix
+title: "Actix and the Rust actor-model landscape"
 main_link: https://crates.io/crates/actix
-keywords: [actors, rust, messages, self]
-status: draft
+keywords: [actors, rust, actix, ractor, message-passing, concurrency, tokio]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-# Actix
+# Actix and the Rust actor-model landscape
 
 **Main link:** <https://crates.io/crates/actix>
 
+Repo: <https://github.com/actix/actix>
+
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+[`actix`](https://crates.io/crates/actix) is the original Rust actor framework — typed messages, supervised actors, an `Addr<A>` handle you `send` / `do_send` to, all running on top of [[tokio]]. The same project also produces the much-better-known [`actix-web`](https://actix.rs/), but the web framework long ago stopped requiring the actor crate; today the actor library is a smaller, somewhat-quieter dependency that mostly powers existing apps. Newer alternatives — **ractor**, **kameo**, **coerce**, **xtra**, **riker** — explore the same shape with more idiomatic async APIs.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The honest framing: in modern Rust the actor model is "[[tokio]] + a stricter ownership pattern". A `tokio::spawn` task that owns some state and reads commands off an `mpsc::Receiver<Message>` *is* an actor — `send` / `do_send` / `Addr` are syntactic sugar around exactly that. So most projects that *would* have reached for an actor framework five years ago now just write that pattern by hand. Reach for an actor crate when you specifically want:
+
+- **Typed message dispatch** — one `Handler<M>` impl per message type instead of a giant `match` in your task loop.
+- **Supervision trees** — restart-on-panic semantics borrowed from Erlang; useful if you have many short-lived workers and want crash-tolerance without writing the bookkeeping.
+- **Ask-style request/response** — `addr.send(Msg)` returns a future for the reply, vs. having to wire an `oneshot` by hand.
+
+Gotchas worth knowing:
+
+1. **`actix` ≠ `actix-web`.** `actix-web` is the popular web framework; the actor crate is a separate, smaller dependency. Don't pull in `actix` thinking you need it for HTTP.
+2. **Bring-your-own-runtime is awkward.** `actix` runs on its own `System` (a thin wrapper over a current-thread Tokio runtime). Mixing it with a standard `#[tokio::main]` multi-thread runtime takes care.
+3. **The "ractor" school is more idiomatic Rust.** [`ractor`](https://github.com/slawlor/ractor) (by LinkedIn) and [`kameo`](https://github.com/tqwewe/kameo) lean into `async fn handle(...)`, drop the macro-heavy registration, and integrate cleanly with regular Tokio code. If you're starting today and you want actors, look there first.
+4. **You probably don't need actors.** Channels + `tokio::spawn` + a `select!` loop covers ~90% of the use cases; reach for a framework only when you find yourself rebuilding supervision or typed-dispatch by hand.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [`ractor`](https://github.com/slawlor/ractor) — modern Tokio-native actor framework from LinkedIn; Erlang-style supervision, async handlers, no system-runtime ceremony.
+- [`kameo`](https://github.com/tqwewe/kameo) — newer minimal actor library; focuses on ergonomic `async fn` handlers and remote actors via `libp2p`.
+- [`coerce`](https://github.com/leonhartley/coerce-rs) — distributed actors with built-in clustering and persistence.
+- [`xtra`](https://github.com/Restioson/xtra) — small "tiny actor" crate; a thin layer over `tokio::spawn` + channels.
+- [Riker](https://riker.rs/) — older Akka-shaped framework; less active.
+- [[tokio]] — what every Rust actor framework is built on; channels + `spawn` is the pattern actor crates are sugar over.
 
 ## Internal links
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
+<!-- reviewed -->
 
-- [[ised]] — Iced _(score 28.4)_
-- [[streaming]] — par-stream _(score 17.1)_
-- [[timely]] — Timely Dataflow _(score 17.1)_
-- [[cargo_toml]] — Cargo.toml _(score 13.1)_
-- [[rtic]] — RTIC _(score 13.1)_
+- [[tokio]] — the runtime under every actor crate; "actors" is a pattern *on top of* this.
+- [[crossbeam]] — sync-world counterpart; for thread-based message passing without async.
+- [[concurrency/README|Rust concurrency]] — landing page with the workload-→-tool decision table.
 
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#actors` `#concurrency` `#rust` `#programming` `#actor` `#message` `#system` `#messages`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#rust` `#concurrency` `#actors` `#actix` `#ractor` `#message-passing` `#tokio`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+### Actix features (from upstream README)
 
-# Actix
-
-https://crates.io/crates/actix
-
-
-## Features
 - Async and sync actors
-- Actor communication in a local/thread context
-- Uses futures for asynchronous message handling
+- Local / thread-context actor communication
+- Futures-based async message handling
 - Actor supervision
-- Typed messages (No Any type)
-- Runs on stable Rust 1.54+
+- Typed messages (no `Any`)
+- Stable Rust
 
-## Usage
-To use actix, add this to your Cargo.toml:
+### Add to `Cargo.toml`
 
 ```toml
 [dependencies]
-actix = "0.12"
+actix = "0.13"
 ```
 
-## Initialize Actix
-In order to use actix you first need to create a System.
+### Define a `System` (required entry point)
+
 ```rust
 fn main() {
-let system = actix::System::new();
-
-    system.run();
+    let system = actix::System::new();
+    system.run().unwrap();
 }
 ```
-Actix uses the Tokio runtime. System::new() creates a new event loop. System.run() starts the Tokio event loop, and will finish once the System actor receives the SystemExit message.
 
-## Implementing an Actor
-In order to define an actor you need to define a struct and have it implement the Actor trait.
+`System::new()` creates a current-thread Tokio runtime; `system.run()` blocks until the system is told to stop (typically via `System::current().stop()`).
+
+### Implement an actor
+
 ```rust
-use actix::{Actor, Addr, Context, System};
+use actix::{Actor, Context, System};
 
 struct MyActor;
 
 impl Actor for MyActor {
-type Context = Context<Self>;
+    type Context = Context<Self>;
 
-    fn started(&mut self, ctx: &mut Self::Context) {
+    fn started(&mut self, _ctx: &mut Self::Context) {
         println!("I am alive!");
-        System::current().stop(); // <- stop system
+        System::current().stop();
     }
 }
 
 fn main() {
-let mut system = System::new();
-
-    let addr = system.block_on(async { MyActor.start() });
-
-    system.run();
+    let mut system = System::new();
+    let _addr = system.block_on(async { MyActor.start() });
+    system.run().unwrap();
 }
 ```
-Spawning a new actor is achieved via the start and create methods of the Actor trait. It provides several different ways of creating actors; for details, check the docs. You can implement the started, stopping and stopped methods of the Actor trait. started gets called when the actor starts and stopping when the actor finishes. Check the API docs for more information on the actor lifecycle.
 
-## Handle Messages
-An Actor communicates with another Actor by sending messages. In actix all messages are typed. Let's define a simple Sum message with two usize parameters and an actor which will accept this message and return the sum of those two numbers. Here we use the #[actix::main] attribute as an easier way to start our System and drive our main function so we can easily .await for the responses sent back from the Actor.
+`started` / `stopping` / `stopped` are the lifecycle hooks; see the [actix book](https://actix.rs/docs/actix/) for the full state machine.
+
+### Typed messages with a reply
+
 ```rust
 use actix::prelude::*;
 
-// this is our Message
-// we have to define the response type (rtype)
 #[derive(Message)]
 #[rtype(result = "usize")]
 struct Sum(usize, usize);
 
-// Actor definition
 struct Calculator;
 
 impl Actor for Calculator {
-type Context = Context<Self>;
+    type Context = Context<Self>;
 }
 
-// now we need to implement `Handler` on `Calculator` for the `Sum` message.
 impl Handler<Sum> for Calculator {
-type Result = usize; // <- Message response type
+    type Result = usize;
 
-    fn handle(&mut self, msg: Sum, ctx: &mut Context<Self>) -> Self::Result {
+    fn handle(&mut self, msg: Sum, _ctx: &mut Context<Self>) -> Self::Result {
         msg.0 + msg.1
     }
 }
 
-#[actix::main] // <- starts the system and block until future resolves
+#[actix::main]
 async fn main() {
-let addr = Calculator.start();
-let res = addr.send(Sum(10, 5)).await; // <- send message and get future for result
-
+    let addr = Calculator.start();
+    let res = addr.send(Sum(10, 5)).await;
     match res {
-        Ok(result) => println!("SUM: {}", result),
+        Ok(result) => println!("SUM: {result}"),
         _ => println!("Communication to the actor has failed"),
     }
 }
 ```
-All communications with actors go through an Addr object. You can do_send a message without waiting for a response, or you can send an actor a specific message. The Message trait defines the result type for a message.
 
+`send` returns a `Future` for the reply; `do_send` is fire-and-forget. `Recipient<M>` lets you erase the actor type when you only care about the message type.
 
-## Actor State And Subscription For Specific Messages
-You may have noticed that the methods of the Actor and Handler traits accept &mut self, so you are welcome to store anything in an actor and mutate it whenever necessary.
+### Useful entry points
 
-Address objects require an actor type, but if we just want to send a specific message to an actor that can handle the message, we can use the Recipient interface. Let's create a new actor that uses Recipient.
-```rust
-use actix::prelude::*;
-use std::time::Duration;
-
-#[derive(Message)]
-#[rtype(result = "()")]
-struct Ping {
-pub id: usize,
-}
-
-// Actor definition
-struct Game {
-counter: usize,
-name: String,
-recipient: Recipient<Ping>,
-}
-
-impl Actor for Game {
-type Context = Context<Game>;
-}
-
-// simple message handler for Ping message
-impl Handler<Ping> for Game {
-type Result = ();
-
-    fn handle(&mut self, msg: Ping, ctx: &mut Context<Self>) {
-        self.counter += 1;
-
-        if self.counter > 10 {
-            System::current().stop();
-        } else {
-            println!("[{0}] Ping received {1}", self.name, msg.id);
-
-            // wait 100 nanoseconds
-            ctx.run_later(Duration::new(0, 100), move |act, _| {
-                act.recipient.do_send(Ping { id: msg.id + 1 });
-            });
-        }
-    }
-}
-
-fn main() {
-let mut system = System::new();
-
-    // To get a Recipient object, we need to use a different builder method
-    // which will allow postponing actor creation
-    let addr = system.block_on(async {
-        Game::create(|ctx| {
-            // now we can get an address of the first actor and create the second actor
-            let addr = ctx.address();
-
-            let addr2 = Game {
-                counter: 0,
-                name: String::from("Game 2"),
-                recipient: addr.recipient(),
-            }
-            .start();
-
-            // let's start pings
-            addr2.do_send(Ping { id: 10 });
-
-            // now we can finally create first actor
-            Game {
-                counter: 0,
-                name: String::from("Game 1"),
-                recipient: addr2.recipient(),
-            }
-        });
-    });
-
-    system.run();
-}
-```
+- Actix book: <https://actix.rs/docs/actix/>
+- Crate: <https://crates.io/crates/actix>
+- Repo: <https://github.com/actix/actix>
+- Modern alternative — ractor: <https://github.com/slawlor/ractor>
+- Modern alternative — kameo: <https://github.com/tqwewe/kameo>

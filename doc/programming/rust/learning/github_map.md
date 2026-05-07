@@ -1,58 +1,42 @@
 ---
-title: Github MAP
+title: Map of GitHub (anvaka)
 main_link: https://anvaka.github.io/map-of-github
-keywords: [github-map, rust, anvaka]
-status: draft
+keywords: [github-map, anvaka, visualization, discovery, repos]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-
-> Auto-split from `doc/programming/rust/learning/_to_learn.md` by `article_split.py`. Heading: **Github MAP**.
-
-# Github MAP
+# Map of GitHub (anvaka)
 
 **Main link:** <https://anvaka.github.io/map-of-github>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+Andrei Kashcha's "Map of GitHub" treats every repository on GitHub as a point in 2-D space, clustered by which other repositories they share stargazers with. The resulting "map" looks like an actual atlas: continents of `web-development`, `machine-learning`, `game-dev`, peninsulas of niche tooling, islands of weird hobby projects. It's a discovery tool — pan around to find clusters of projects related to one you already know.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for it when you want to *discover adjacent crates* in an area you only know one or two entries in: find the `rust` cluster, zoom in, and you'll see the gravitational neighbours of `tokio`, `serde`, `clap`. Repository popularity is encoded as font size, so you can quickly distinguish established projects from drive-by experiments. Caveats: the dataset is a snapshot (refreshed periodically, not live), and the layout is built from stargazer overlap so projects with cult followings can sit far from objectively-related ones. A useful complement to crates.io's category browser when you don't yet know the right keyword to search for.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [Map of HN](https://anvaka.github.io/map-of-hn/) — same author, applied to Hacker News stories.
+- [crates.io categories](https://crates.io/categories) — official taxonomic browse for Rust packages.
+- [lib.rs](https://lib.rs/) — alternative crates.io front-end with hand-curated category trees.
+- [awesome-rust](https://github.com/rust-unofficial/awesome-rust) — hand-curated; see [[_must_have]].
+- [GitHub Topics](https://github.com/topics) — official tag-based discovery.
 
 ## Internal links
+<!-- reviewed -->
+- [[_must_have]]
+- [[_to_learn]]
+- [[README]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[scope]] — Scope _(score 17.1)_
-- [[_todo_ideas]] — Move blokchain from python to rust _(score 17.1)_
-- [[xc_in_rust]] — XC in Rust _(score 17.1)_
-- [[from_easy_to_advanced]] — from easier to advanced 1-by-1 _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#github-map` `#learning` `#rust` `#programming` `#map` `#anvaka`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#github` `#map` `#anvaka` `#visualization` `#discovery`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# Github MAP
-
-https://anvaka.github.io/map-of-github
+- Live map: <https://anvaka.github.io/map-of-github>
+- Source / methodology: <https://github.com/anvaka/map-of-github>
+- Author: Andrei Kashcha (anvaka) — also built `pm.anvaka.com` (npm dependency map) and `vivagraphjs`.

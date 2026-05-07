@@ -1,59 +1,43 @@
 ---
-title: Cargo.toml
-main_link: 
-keywords: [cargo-toml, rust, serde]
-status: draft
+title: Cargo.toml tricks
+main_link: https://doc.rust-lang.org/cargo/reference/manifest.html
+keywords: [cargo-toml, rust, cargo, profiles, serde, manifest]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Cargo.toml tricks
 
-> Auto-split from `doc/programming/rust/learning/_must_have.md` by `article_split.py`. Heading: **Cargo.toml**.
-
-# Cargo.toml
+**Main link:** <https://doc.rust-lang.org/cargo/reference/manifest.html>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+A grab-bag of practical `Cargo.toml` snippets that come up over and over: the standard set of "foundation" dependencies, release-profile tweaks that strip a binary by ~50%, dev-profile tweaks that keep debug builds usable, the canonical "must-have derives" for serializable structs, and the optional-feature pattern for making `serde` switchable. Also includes the compile-time `Send + Sync` trick.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Most Rust projects share the same first 5–10 lines of dependencies (`tokio`, `serde`, `serde_json`, `chrono`, `log` + a logger, `anyhow`/`thiserror`); keeping a personal snippet of these saves typing on every new crate. The release-profile tweaks (`strip = true`, `panic = "abort"`, `lto = true`, `codegen-units = 1`, `opt-level = "s"|"z"`) are the standard binary-size-shrinking incantation — applying all of them together typically halves a release binary, at the cost of slightly longer build time and losing panic-unwinding (which most CLIs don't need anyway). The dev-profile dance (`opt-level = 1` for own code, `opt-level = 3` for `*` dependencies) is the trick that makes debug builds tolerable on big workspaces — Serde, regex, and image crates are several-times slower at the default `opt-level = 0`. Finally, the `is_normal::<T>()` pattern is a zero-cost compile-time assertion that a type implements `Send + Sync + Unpin`, useful as a regression test for public types.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [Cargo book — Profiles](https://doc.rust-lang.org/cargo/reference/profiles.html) — official reference for `[profile.*]` keys.
+- [`cargo-bloat`](https://github.com/RazrFalcon/cargo-bloat) — finds what makes your binary big before you optimise.
+- [`cargo-edit`](https://github.com/killercup/cargo-edit) — `cargo add/rm/upgrade` (folded into Cargo since 1.62, but still useful for `set-version`).
+- [min-sized-rust](https://github.com/johnthagen/min-sized-rust) — exhaustive playbook for shrinking Rust binaries.
+- [[cheats]] — broader cheat-sheet site (cheats.rs).
 
 ## Internal links
+<!-- reviewed -->
+- [[cheats]]
+- [[_must_have]]
+- [[README]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[_todo_ideas]] — Move blokchain from python to rust _(score 17.1)_
-- [[_tricks]] — println! speedup 500% _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-- [[json]] — JSON _(score 13.1)_
-- [[debug]] — Debug _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#cargo-toml` `#learning` `#rust` `#programming` `#cargo` `#serde` `#trick` `#toml`
-
-## TODO
-
-- No `main_link` could be auto-detected. Add the canonical URL (project homepage / repo / paper) to the frontmatter.
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#cargo` `#cargo-toml` `#rust` `#profiles` `#serde` `#binary-size`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# Cargo.toml
+Standard starting block:
 
 ```toml
 [dependencies]
@@ -64,89 +48,62 @@ tokio = { version = "1", features = ["full"] }
 serde = { version = "1.0", features = ["derive"] }
 ```
 
+Shrink release binary by ~50%:
 
-remove 50% size of binary by:
 ```toml
 [profile.release]
-strip = true # remove if using bloat
-panic = "abort" # Strip expensive panic clean-up logic
-codegen-units = 1 # Compile crates one after another so the compiler can optimize better
-lto = true # Enables link to optimizations
-opt-level = "s" # Optimize for binary size - try "z" 
-
+strip = true        # remove symbols (skip if you're using cargo-bloat)
+panic = "abort"     # drop panic-unwinding tables
+codegen-units = 1   # compile crates serially so the optimiser sees more
+lto = true          # link-time optimisation
+opt-level = "s"     # optimise for size — try "z" for even smaller
 ```
 
-
-speedup debugging builds
+Speed up debug builds (own code lightly optimised, deps fully):
 
 ```toml
-
-# Enable a small amount of optimization in debug mode
 [profile.dev]
 opt-level = 1
 
-# Enable high optimizations for dependencies, but not for our code:
 [profile.dev.package."*"]
 opt-level = 3
-
 ```
 
+Optional `serde` (gate behind a feature so downstream users don't pay for it):
 
-Must have traits:
-
-```rust
-#[cfg(feature="serde")]
-use serde::{Deserialize, Serialize};
-
-
-#[derive(Debug, Clone, Default, PartialEq)]
-#[cfg_attr(feature="serde", derive(Deserialize, Serialize))]
-pub struct UpdateUserRequest {
-    /// <p>The user's email address.</p>
-    #[doc(hidden)]
-    pub email: std::option::Option<std::string::String>,
-    /// <p>The user's first name.</p>
-    #[doc(hidden)]
-    pub first_name: std::option::Option<std::string::String>,
-    /// <p>The user's last name.</p>
-    #[doc(hidden)]
-    pub last_name: std::option::Option<std::string::String>,
-    /// <p>The user's password.</p>
-    #[doc(hidden)]
-    #[cfg_attr(feature="serde" serde(skip)]
-    pub password: std::option::Option<std::string::String>,
-}
-
-
-fn main() {
- 
- let s = "{ \"email\": \"aa@aa.a\", \"first_name\": \"John\",  \"last_name\": \"Travolta\" }";
- let u :UpdateUserRequest = serde_json::from_str(s).unwrap();
- 
-}
-```
-
-Serde - optional  - switched in cargo
 ```toml
-
 [dependencies]
-serde= { version = "1.0", features=["derive"], optional = true}
+serde = { version = "1.0", features = ["derive"], optional = true }
 serde_json = "1.0"
 
 [features]
 serde = ["dep:serde"]
 ```
 
-
-TRICK: automatic test for send & synd :
+Standard derives + cfg-gated serde derive on the type:
 
 ```rust
+#[cfg(feature = "serde")]
+use serde::{Deserialize, Serialize};
 
+#[derive(Debug, Clone, Default, PartialEq)]
+#[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
+pub struct UpdateUserRequest {
+    pub email: Option<String>,
+    pub first_name: Option<String>,
+    pub last_name: Option<String>,
+    #[cfg_attr(feature = "serde", serde(skip))]
+    pub password: Option<String>,
+}
+```
+
+Compile-time `Send + Sync + Unpin` assertion (zero-cost regression test):
+
+```rust
 fn is_normal<T: Sized + Send + Sync + Unpin>() {}
 
 #[test]
 fn normal_types() {
- is_normal<UpdateUserRequest>();
+    is_normal::<UpdateUserRequest>();
 }
-
 ```

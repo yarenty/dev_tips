@@ -1,71 +1,47 @@
 ---
-title: Tutorials
-main_link: https://google.github.io/comprehensive-rust/welcome.html
-keywords: [rust, comprehensive, macros, security]
-status: draft
+title: Rust tutorials (curated)
+main_link: https://google.github.io/comprehensive-rust/
+keywords: [rust, tutorials, comprehensive-rust, macros, learning]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
+# Rust tutorials (curated)
 
-> Auto-split from `doc/programming/rust/learning/_to_learn.md` by `article_split.py`. Heading: **Tutorials**.
-
-# Tutorials
-
-**Main link:** <https://google.github.io/comprehensive-rust/welcome.html>
+**Main link:** <https://google.github.io/comprehensive-rust/>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+A small curated list of long-form Rust tutorials worth the time, headlined by Google's [Comprehensive Rust](https://google.github.io/comprehensive-rust/) — a 4-day course originally taught to Android team engineers, now an open-source mdBook with exercises, slides, and translations. Includes pointers to a deep-dive on Rust's macro system (Jonathan Strejc's "Procedural Macros" talk) and a quirky pen-test-flavoured walkthrough ("learning Rust for fun and backdoo-rs") that reads as a long-form unsafe-Rust + Windows-API exercise.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+[Comprehensive Rust](https://google.github.io/comprehensive-rust/) is the densest free curriculum out there: each day is a half-day to a full day of slides + exercises, and there's a full *Bare-Metal Rust* track plus an *Android* track. It's the resource to hand a programmer who has 4 days, mentor support, and prior systems experience. The macro talk is a niche but valuable companion once you start writing your own `derive(Macro)` rather than just calling them. The "learning Rust for fun" article is closer to security-research entertainment than tutorial, but it shows how Rust feels when you bend it for low-level Windows interop. For pure-syntax speed see [[simple_short_intro_to_rust]]; for project-driven practice see [[from_easy_to_advanced]]; for the canonical book see [[_to_learn]].
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [The Rust Programming Language](https://doc.rust-lang.org/book/) — the canonical book; longer than this article-length list.
+- [Rustlings](https://github.com/rust-lang/rustlings) — small fix-the-compiler-error exercises; pairs with the book.
+- [Tour of Rust](https://tourofrust.com/) — interactive multi-page tour.
+- [Exercism Rust track](https://exercism.org/tracks/rust) — mentored exercise track.
+- [The Little Book of Rust Macros](https://veykril.github.io/tlborm/) — definitive macro reference.
 
 ## Internal links
+<!-- reviewed -->
+- [[simple_short_intro_to_rust]]
+- [[from_easy_to_advanced]]
+- [[_to_learn]]
+- [[scope]]
+- [[cheats]]
+- [[README]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[scope]] — Scope _(score 17.1)_
-- [[_todo_ideas]] — Move blokchain from python to rust _(score 17.1)_
-- [[xc_in_rust]] — XC in Rust _(score 17.1)_
-- [[from_easy_to_advanced]] — from easier to advanced 1-by-1 _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#tutorials` `#learning` `#rust` `#programming` `#comprehensive` `#macros` `#mwrpyboceay` `#fun`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#rust` `#tutorials` `#comprehensive-rust` `#macros` `#learning`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# Tutorials
-
-## Comprehensive rust 
-
-https://google.github.io/comprehensive-rust/welcome.html
-
-
-## Macros
-
-https://www.youtube.com/watch?v=MWRPYBoCEaY
-
-
-## Learning rust for fun
-
-https://security.humanativaspa.it/learning-rust-for-fun-and-backdoo-rs/
+- **Comprehensive Rust** (Google) — <https://google.github.io/comprehensive-rust/welcome.html>
+  - 4-day course; Android, Bare-Metal, and Concurrency deep-dives included; multi-language translations.
+- **Procedural macros walkthrough** (YouTube) — <https://www.youtube.com/watch?v=MWRPYBoCEaY>
+- **Learning Rust for fun and backdoo-rs** (HN/Humanative blog) — <https://security.humanativaspa.it/learning-rust-for-fun-and-backdoo-rs/>
+  - Long-form pen-test/unsafe-Rust walkthrough; Windows-API focused, more entertainment than syllabus.

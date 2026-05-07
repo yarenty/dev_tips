@@ -1,63 +1,43 @@
 ---
-title: XC in Rust
+title: xc — Markdown-defined task runner
 main_link: https://github.com/joerdav/xc
-keywords: [xc-in-rust, rust, markdown, joerdav]
-status: draft
+keywords: [xc, task-runner, markdown, joerdav, make, just]
+status: reviewed
 ---
 
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/learning/_todo_ideas.md` by `article_split.py`. Heading: **XC in Rust**.
-
-# XC in Rust
+# xc — Markdown-defined task runner
 
 **Main link:** <https://github.com/joerdav/xc>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`xc` is a task runner by Joe Davidson that reads its tasks straight out of a project's `README.md` (or any Markdown file). Each level-2 heading becomes a task name, and the fenced shell block under it becomes the task body — so the same document is your developer documentation *and* your runnable task list. There's first-class dependency declaration, env-var blocks, an interactive picker, and a single static binary written in Go (the "in Rust" filename in this vault is aspirational — see Insight).
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The pitch is "kill the README/Makefile drift": instead of a `README` that lists commands and a `Makefile` that runs them (which inevitably diverge), `xc` makes the README the source of truth. Compare to [just](https://github.com/casey/just) (justfile DSL, Rust), [task](https://taskfile.dev/) (YAML, Go), and `make` itself — `xc`'s differentiator is that the task definitions are *literally readable docs*. The "XC in Rust" filename in this vault was originally a TODO note ("port xc to Rust as a learning project"); xc itself is Go. Reach for it on small/medium projects where you also write a project README; on bigger setups with non-trivial dependency graphs, `just` or `make` are still better choices.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [just](https://github.com/casey/just) — Rust task runner with its own justfile DSL; the closest competitor.
+- [task](https://taskfile.dev/) — YAML-defined task runner in Go.
+- [make](https://www.gnu.org/software/make/) — the original; still unbeaten for build graphs.
+- [mask](https://github.com/jacobdeichert/mask) — also Markdown-defined tasks, Rust, slightly older project.
+- [`cargo-make`](https://github.com/sagiegurari/cargo-make) — Rust-ecosystem task runner with TOML config.
 
 ## Internal links
+<!-- reviewed -->
+- [[_todo_ideas]]
+- [[from_easy_to_advanced]]
+- [[README]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[scope]] — Scope _(score 17.1)_
-- [[programming/rust/learning/tutorials|tutorials]] — Tutorials _(score 17.1)_
-- [[_todo_ideas]] — Move blokchain from python to rust _(score 17.1)_
-- [[from_easy_to_advanced]] — from easier to advanced 1-by-1 _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#xc-in-rust` `#learning` `#rust` `#programming` `#markdown` `#joerdav` `#defined` `#task`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#xc` `#task-runner` `#markdown` `#joerdav` `#make` `#just`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# XC in Rust
-
-https://github.com/joerdav/xc
-
-Markdown defined task runner
-
-----
+- Repo: <https://github.com/joerdav/xc>
+- Docs: <https://xcfile.dev/>
+- The xc README is its own task list — read it for an executable example.
+- Possible learning project: re-implement a small `xc`-compatible parser-runner in Rust as practice with `pulldown-cmark` (Markdown parsing) + `tokio::process` (subprocess management).

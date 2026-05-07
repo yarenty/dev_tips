@@ -1,228 +1,65 @@
 ---
 title: eyre
-main_link: https://github.com/awslabs/aws-sdk-rust
-keywords: [eyre, rust, env, shell]
-status: draft
+main_link: https://crates.io/crates/eyre
+keywords: [eyre, color-eyre, rust, error-handling, dtolnay, jane-lusby]
+status: reviewed
 ---
-
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/learning/_must_have.md` by `article_split.py`. Heading: **eyre**.
 
 # eyre
 
-**Main link:** <https://github.com/awslabs/aws-sdk-rust>
+**Main link:** <https://crates.io/crates/eyre>
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`eyre` is a fork of [[anyhow]] (originated by Jane Lusby) that exposes a pluggable `EyreHandler` so libraries and applications can install a **custom report renderer**. The most common pairing is `color-eyre`, which adds colourised, sectioned, backtraced, span-aware error reports — what you'd want from a Rust app's `main()` panic. The core API mirrors `anyhow` exactly: `eyre::Result<T>`, the `eyre!` / `bail!` / `ensure!` macros, and the `WrapErr` (née `Context`) extension trait.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+Reach for `eyre` (specifically `color-eyre`) when you want **prettier panics and error displays** than `anyhow`'s default — typical in CLIs, servers with structured logging, and anything that streams to a TTY. The split between this article and [[../core/error|core/error]] is roughly: this one is the "use it as part of the learning bundle" view, the core one is the deeper crate reference; both point at the same crate. Pair `color-eyre` with `tracing-error` to capture the active `tracing` span chain when an error bubbles up — that combination is the closest Rust comes to a Python-style traceback. The catch versus `anyhow`: an extra dependency, the report handler must be installed once at startup (`color_eyre::install()?`), and you can't downcast through the report handler the same way (use `eyre::Report::downcast_ref`).
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[anyhow]] — the upstream project; same API, no pluggable handler.
+- `color-eyre` — the canonical handler implementation, with colours and sections.
+- `tracing-error` — captures `tracing` spans into eyre/anyhow reports.
+- [[thiserror]] — pair on the library side (typed) with eyre on the application side (report).
+- `miette` — alternative diagnostics-style report crate (fancy LSP-like reports).
 
 ## Internal links
+<!-- reviewed -->
+- [[anyhow]]
+- [[thiserror]]
+- [[../core/error|core/error]]
+- [[README]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[error]] — eyre _(score 22.0)_
-- [[_must_have]] — List of awesome libraries !!! _(score 17.1)_
-- [[anyhow]] — anyhow _(score 17.1)_
-- [[thiserror]] — thiserror _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#eyre` `#learning` `#rust` `#programming` `#file` `#crates` `#env` `#dotenv`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#eyre` `#color-eyre` `#rust` `#error-handling` `#crates`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
-
-# eyre
-looks like need to check switch to this one - proper error display in runtime
- use this together with thiserror:
- - this error for own internal errors
- - eyre for global main or as in example below
-
-https://crates.io/crates/color-eyre
+- eyre crate: <https://crates.io/crates/eyre>
+- color-eyre: <https://crates.io/crates/color-eyre>
+- repo: <https://github.com/eyre-rs/eyre>
 
 ```rust
-use eyre::{eyre, Result};
+use eyre::{eyre, Result, WrapErr};
 
-let opt: Option<()> = None;
-let result: Result<()> = opt.ok_or_else(|| eyre!("new error message"));
+fn main() -> Result<()> {
+    color_eyre::install()?;
 
-```
-
-
-## Environment variables
-from .env file
-The easiest and most common usage consists on calling dotenv::dotenv when the application starts, which will load environment variables from a file named .env in the current directory or any of its parents; after that, you can just call the environment-related method you need as provided by std::os.
-
-If you need finer control about the name of the file or its location, you can use the from_filename and from_path methods provided by the crate.
-
-dotenv_codegen provides the dotenv! macro, which behaves identically to env!, but first tries to load a .env file at compile time.
-
-Examples
-A .env file looks like this:
-```yaml
-# a comment, will be ignored
-REDIS_ADDRESS=localhost:6379
-MEANING_OF_LIFE=42
-```
-You can optionally prefix each line with the word export, which will conveniently allow you to source the whole file on your shell.
-
-A sample project using Dotenv would look like this:
-```rust
-extern crate dotenv;
-
-use dotenv::dotenv;
-use std::env;
-
-fn main() {
-dotenv().ok();
-
-    for (key, value) in env::vars() {
-        println!("{}: {}", key, value);
-    }
+    let opt: Option<()> = None;
+    let _ = opt.ok_or_else(|| eyre!("missing required value"))
+        .wrap_err("while initialising subsystem X")?;
+    Ok(())
 }
 ```
-Variable substitution
-It's possible to reuse variables in the .env file using $VARIABLE syntax. The syntax and rules are similar to bash ones, here's the example:
 
-## Error handling
-
-https://crates.io/crates/thiserror
-
-```toml
-thiserror = "1"
-```
-
-
-
-
-## HTTP Request
-
-https://docs.rs/reqwest/latest/reqwest/
-
-The reqwest crate provides a convenient, higher-level HTTP Client.
-
-It handles many of the things that most people just expect an HTTP client to do for them.
-
-- Async and blocking Clients
-- Plain bodies, JSON, urlencoded, multipart
-- Customizable redirect policy
-- HTTP Proxies
-- Uses system-native TLS
-- Cookies
-
-```rust
-let body = reqwest::get("https://www.rust-lang.org")
-    .await?
-    .text()
-    .await?;
-
-println!("body = {:?}", body);
-
-
-let client = reqwest::Client::new();
-let res = client.post("http://httpbin.org/post")
-.body("the exact body that is sent")
-.send()
-.await?;
-
-
-// This will POST a body of `foo=bar&baz=quux`
-let params = [("foo", "bar"), ("baz", "quux")];
-let client = reqwest::Client::new();
-let res = client.post("http://httpbin.org/post")
-.form(&params)
-.send()
-.await?;
-
-
-// This will POST a body of `{"lang":"rust","body":"json"}`
-let mut map = HashMap::new();
-map.insert("lang", "rust");
-map.insert("body", "json");
-
-let client = reqwest::Client::new();
-let res = client.post("http://httpbin.org/post")
-.json(&map)
-.send()
-.await?;
-```
-
-
-## lazy_static
-
-https://docs.rs/lazy_static/latest/lazy_static/
-
-A macro for declaring lazily evaluated statics.
-
-Using this macro, it is possible to have statics that require code to be executed at runtime in order to be initialized. This includes anything requiring heap allocations, like vectors or hash maps, as well as anything that requires function calls to be computed.
-
-```rust
-#[macro_use]
-extern crate lazy_static;
-
-use std::collections::HashMap;
-
-lazy_static! {
-    static ref HASHMAP: HashMap<u32, &'static str> = {
-        let mut m = HashMap::new();
-        m.insert(0, "foo");
-        m.insert(1, "bar");
-        m.insert(2, "baz");
-        m
-    };
-    static ref COUNT: usize = HASHMAP.len();
-    static ref NUMBER: u32 = times_two(21);
-}
-
-fn times_two(n: u32) -> u32 { n * 2 }
-
-fn main() {
-    println!("The map has {} entries.", *COUNT);
-    println!("The entry for `0` is \"{}\".", HASHMAP.get(&0).unwrap());
-    println!("A expensive calculation on a static results in: {}.", *NUMBER);
-}
-
-```
-
-
-
-
-## Chrono
-
-https://crates.io/crates/chrono
-
-
-## Tokio
-
-https://tokio.rs/
-
-https://docs.rs/tokio/1.18.0/tokio/
-
-
-
-
-## AMAZON SDK
-
-https://github.com/awslabs/aws-sdk-rust
+> **Note:** the original raw-notes for this file (auto-split from `_must_have.md`) bundled together unrelated cookbook snippets for `dotenv`, `reqwest`, `lazy_static`, `chrono`, `tokio`, and the AWS SDK. They've been demoted out of this article — see the parent index [[_must_have]] for the curated landing list. Canonical references for the bundled topics:
+>
+> - dotenv: <https://crates.io/crates/dotenv> (now usually `dotenvy`, the maintained fork: <https://crates.io/crates/dotenvy>)
+> - reqwest: <https://docs.rs/reqwest/latest/reqwest/>
+> - lazy_static: <https://docs.rs/lazy_static/latest/lazy_static/> (largely superseded by `std::sync::LazyLock` in Rust 1.80+, or `once_cell::sync::Lazy`)
+> - chrono: <https://crates.io/crates/chrono>
+> - tokio: see [[../concurrency/tokio|concurrency/tokio]]
+> - AWS SDK for Rust: <https://github.com/awslabs/aws-sdk-rust>

@@ -1,14 +1,9 @@
 ---
 title: thiserror
 main_link: https://crates.io/crates/thiserror
-keywords: [thiserror, rust]
-status: draft
+keywords: [thiserror, rust, error-handling, dtolnay, derive]
+status: reviewed
 ---
-
-<!-- auto-stubbed by article_stub.py -->
-<!-- keywords-extended by P6.5 -->
-
-> Auto-split from `doc/programming/rust/learning/_must_have.md` by `article_split.py`. Heading: **thiserror**.
 
 # thiserror
 
@@ -16,46 +11,53 @@ status: draft
 
 ## Summary
 
-<!-- TODO: 2-5 sentences. What is this? Who made it? What does it do? -->
+`thiserror` is David Tolnay's derive macro for the standard `std::error::Error` trait. You declare an enum with one variant per failure mode, annotate each with `#[error("...")]`, and the macro generates `Display`, `From` conversions for `#[from]` fields, and the `source()` chain. The result is a typed, exhaustive error API for **library** code without the boilerplate of hand-writing `impl Error`.
 
 ## Insight
 
-<!-- TODO: Why care? When and where to reach for this? Gotchas, opinions, comparisons. -->
+The rule of thumb in the Rust ecosystem is: **`thiserror` for libraries, [[anyhow]] for binaries**. Library consumers want to `match` on specific variants and recover; application code mostly wants to bubble-and-print. `thiserror` is a compile-time-only dependency (proc-macro), so it doesn't bloat your downstream users — they only see the generated `impl Error`. Two common gotchas: (1) `#[from]` only works when there's a 1:1 source-to-variant mapping; if multiple variants want to absorb the same upstream type you'll need an explicit `impl From`. (2) The transparent `#[error(transparent)]` attribute is what you want when wrapping a single inner error and you don't want to add prefix text.
 
 ## Similar / related topics
 
-<!-- TODO: 3-5 bullets, each "name — 1-line description". -->
+- [[anyhow]] — the application-side counterpart; pair them.
+- [[eyre]] — anyhow-fork with custom report renderers.
+- `snafu` — alternative derive crate emphasising context selectors.
+- `displaydoc` — sister crate from dtolnay, derives `Display` from doc-comments.
+- `miette` — diagnostics-oriented crate for compiler-style error reports.
 
 ## Internal links
+<!-- reviewed -->
+- [[anyhow]]
+- [[eyre]]
+- [[../core/error|core/error]]
+- [[README]]
 
-<!-- internal-links-suggested by P6.3 -->
-> Auto-suggested by P6.3. Review, prune, and replace this comment with `<!-- reviewed -->` once curated.
-
-- [[scope]] — Scope _(score 17.1)_
-- [[_must_have]] — List of awesome libraries !!! _(score 17.1)_
-- [[_to_learn]] — Books _(score 17.1)_
-- [[anyhow]] — anyhow _(score 17.1)_
-- [[rtic]] — RTIC _(score 13.1)_
-
-<!-- TODO: review the auto-suggested links above; remove low-signal ones, add ones P6.3 missed. -->
 ## Keywords
 
-`#thiserror` `#learning` `#rust` `#programming` `#error` `#crates` `#library` `#provides`
-
-## TODO
-
-- Write a real `## Summary` (2-5 sentences) replacing the auto-stub placeholder.
-- Write a real `## Insight` (when/why/where to use) replacing the auto-stub placeholder.
-- Add 3-5 entries under `## Similar / related topics`.
-- Add `[[wikilinks]]` to at least 2 related articles in the vault under `## Internal links`.
-- Promote `status: draft` to `status: reviewed` once the rewrite is complete.
+`#thiserror` `#rust` `#error-handling` `#dtolnay` `#derive` `#crates`
 
 ## References / raw notes
 
-<!-- Original content preserved verbatim below. Curate / prune during rewrite. -->
+- crates.io: <https://crates.io/crates/thiserror>
+- repo: <https://github.com/dtolnay/thiserror>
 
-# thiserror
+```toml
+[dependencies]
+thiserror = "1"
+```
 
-https://crates.io/crates/thiserror
+```rust
+use thiserror::Error;
 
-This library provides a convenient derive macro for the standard library's std::error::Error trait.
+#[derive(Debug, Error)]
+pub enum DataStoreError {
+    #[error("data store disconnected")]
+    Disconnect(#[from] std::io::Error),
+    #[error("the data for key `{0}` is not available")]
+    Redaction(String),
+    #[error("invalid header (expected {expected:?}, found {found:?})")]
+    InvalidHeader { expected: String, found: String },
+    #[error("unknown data store error")]
+    Unknown,
+}
+```
